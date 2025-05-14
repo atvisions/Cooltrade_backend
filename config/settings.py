@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'kxianjunshi',  #CryptoAnalyst
+        'NAME': 'cooltrade',  #CryptoAnalyst
         'USER': 'root',
         'PASSWORD': '@Liuzhao-9575@',
         'HOST': 'localhost',
@@ -230,6 +230,7 @@ BINANCE_API_SECRET = os.getenv('BINANCE_API_SECRET')
 COINGECKO_API_KEY = os.getenv('COINGECKO_API_KEY')
 
 # Coze API配置
+# 注意：如果 API 密钥已经包含 "pat_" 前缀，则不需要在代码中添加 "Bearer " 前缀
 COZE_API_KEY = os.getenv('COZE_API_KEY', 'pat_mGFYEurP7DS6f9XMW8ZHtAxZwghcYCWfayQraqVYDN4Zz71zvF94Mm3fJ2dV7wBH')
 COZE_BOT_ID = os.getenv('COZE_BOT_ID', '7494575252253720584')
 COZE_SPACE_ID = os.getenv('COZE_SPACE_ID', '7494574941820633105')
@@ -272,9 +273,11 @@ LOGGING = {
 
 # CORS 配置
 CORS_ALLOW_ALL_ORIGINS = False
-CORS_ALLOW_CREDENTIALS = False
+CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "chrome-extension://donikojkgchpmgdbfodnpbjhfpiehfhd",
+    "http://localhost:3001",
+    "http://127.0.0.1:3001",
 ]
 
 CORS_ALLOW_METHODS = [

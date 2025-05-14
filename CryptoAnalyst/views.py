@@ -242,7 +242,7 @@ class TechnicalIndicatorsAPIView(APIView):
         try:
             # 初始化必要的服务
             self._lazy_init_services()
-            
+
             # 增加检查，确保服务已初始化
             if self.ta_service is None:
                 self.ta_service = TechnicalAnalysisService()
@@ -310,7 +310,7 @@ class TechnicalIndicatorsAPIView(APIView):
             try:
                 # 如果有Coze API配置，使用异步调用，但这里需要在同步环境中执行
                 analysis_data = None
-                
+
                 if hasattr(self, 'coze_api_key') and self.coze_api_key:
                     logger.info(f"准备获取Coze分析: {symbol}")
                     # 借助异步转同步执行
@@ -329,23 +329,26 @@ class TechnicalIndicatorsAPIView(APIView):
                             logger.warning("Coze API认证失败，使用默认分析报告")
                     finally:
                         loop.close()
-                
+
                 # 如果没有获取到Coze分析，使用默认分析报告
                 if not analysis_data:
                     logger.info("使用默认分析报告")
                     analysis_data = self._create_default_analysis(indicators, float(market_data['price']))
-                
+
                 # 保存分析报告
                 try:
+                    # 使用默认语言，因为这里没有request对象
+                    language = 'zh-CN'  # 默认语言
+
                     # 使用 report_service 保存分析报告，不用 await
-                    self.report_service.save_analysis_report(clean_symbol, analysis_data)
-                    
+                    self.report_service.save_analysis_report(clean_symbol, analysis_data, language)
+
                     # 添加时间戳字段，使用当前时间
                     analysis_data['last_update_time'] = format_timestamp(timezone.now())
-                    
+
                     # 添加当前价格字段
                     analysis_data['current_price'] = float(market_data['price'])
-                    
+
                 except Exception as e:
                     logger.error(f"保存分析报告失败: {str(e)}")
                     return Response({
@@ -574,20 +577,22 @@ class TechnicalIndicatorsAPIView(APIView):
 
     def _init_coze_api(self):
         """初始化 Coze API 配置"""
-        if not hasattr(self, 'coze_api_key') or not self.coze_api_key:
-            self.coze_api_key = os.getenv('COZE_API_KEY')
-            if not self.coze_api_key:
-                logger.warning("COZE_API_KEY 环境变量未设置")
+        # 直接使用硬编码的 API 密钥，不再从环境变量获取
+        self.coze_api_key = 'pat_mGFYEurP7DS6f9XMW8ZHtAxZwghcYCWfayQraqVYDN4Zz71zvF94Mm3fJ2dV7wBH'
+        logger.info("使用硬编码的 COZE_API_KEY")
+        logger.info(f"使用 Coze API 密钥: {self.coze_api_key[:10]}...{self.coze_api_key[-5:]}")
 
         if not hasattr(self, 'coze_bot_id') or not self.coze_bot_id:
             self.coze_bot_id = os.getenv('COZE_BOT_ID', '7494575252253720584')
             if not self.coze_bot_id:
                 logger.warning("COZE_BOT_ID 环境变量未设置，使用默认值")
+            logger.info(f"使用 Coze Bot ID: {self.coze_bot_id}")
 
         if not hasattr(self, 'coze_api_url') or not self.coze_api_url:
             self.coze_api_url = os.getenv('COZE_API_URL', 'https://api.coze.com')
             if not self.coze_api_url:
                 logger.warning("COZE_API_URL 环境变量未设置，使用默认值")
+            logger.info(f"使用 Coze API URL: {self.coze_api_url}")
 
     def _create_default_analysis(self, indicators: Dict, current_price: float) -> Dict:
         """创建默认的分析报告"""
@@ -675,11 +680,23 @@ class TechnicalIndicatorsAPIView(APIView):
             'risk_details': ['暂无风险评估详情']
         }
 
-    async def _get_coze_analysis(self, symbol: str, indicators: Dict, technical_analysis: TechnicalAnalysis) -> Dict:
-        """异步获取 Coze 分析报告"""
+    async def _get_coze_analysis(self, symbol: str, indicators: Dict, technical_analysis: TechnicalAnalysis, language: str = 'zh-CN') -> Dict:
+        """异步获取 Coze 分析报告
+
+        Args:
+            symbol: 代币符号
+            indicators: 技术指标数据
+            technical_analysis: 技术分析对象
+            language: 语言代码，默认为'zh-CN'
+        """
         try:
             # 初始化 Coze API 配置
             self._init_coze_api()
+
+            # 确保 API 密钥不是占位符
+            if self.coze_api_key == 'your_api_key_here':
+                logger.error("Coze API 密钥是占位符，请设置正确的 API 密钥")
+                return None
 
             # 获取市场数据
             market_data = await sync_to_async(self.market_service.get_market_data)(symbol)
@@ -687,9 +704,9 @@ class TechnicalIndicatorsAPIView(APIView):
                 logger.error(f"获取市场数据失败: {symbol}")
                 return None
 
-            # 构建请求头
+            # 构建请求头 - 与 _test_coze_auth 方法保持一致
             headers = {
-                "Authorization": f"Bearer {self.coze_api_key}",
+                "Authorization": f"{self.coze_api_key}",  # 移除 "Bearer " 前缀
                 "Content-Type": "application/json",
                 "Accept": "*/*",
                 "Connection": "keep-alive"
@@ -707,7 +724,8 @@ class TechnicalIndicatorsAPIView(APIView):
                     },
                     "market_data": {
                         "price": market_data['price']
-                    }
+                    },
+                    "language": language  # 添加语言参数
                 }, ensure_ascii=False),
                 "content_type": "text"
             }]
@@ -731,14 +749,20 @@ class TechnicalIndicatorsAPIView(APIView):
                         headers=headers,
                         json=payload
                     ) as response:
+                        response_text = await response.text()
+                        logger.info(f"Coze API响应: 状态码={response.status}, 内容={response_text}")
+
                         if response.status != 200:
-                            error_text = await response.text()
-                            logger.error(f"Coze API请求失败: {error_text}")
+                            logger.error(f"Coze API请求失败: HTTP状态码 {response.status}")
                             return None
 
-                        response_data = await response.json()
-                        if response_data.get('code') != 0:
-                            logger.error(f"Coze API响应错误: {response_data}")
+                        try:
+                            response_data = json.loads(response_text)
+                            if response_data.get('code') != 0:
+                                logger.error(f"Coze API响应错误: {response_data}")
+                                return None
+                        except json.JSONDecodeError:
+                            logger.error(f"无法解析Coze API响应: {response_text}")
                             return None
 
                         data = response_data.get('data', {})
@@ -866,9 +890,12 @@ class TechnicalIndicatorsAPIView(APIView):
         try:
             url = f"{self.coze_api_url}/v3/chat"
 
-            # 设置请求头
+            # 确保 API 密钥已初始化
+            self._init_coze_api()
+
+            # 设置请求头 - 尝试不同的认证头格式，移除 "Bearer " 前缀
             headers = {
-                "Authorization": f"Bearer {self.coze_api_key}",
+                "Authorization": f"{self.coze_api_key}",  # 移除 "Bearer " 前缀
                 "Content-Type": "application/json",
                 "Accept": "*/*",
                 "Connection": "keep-alive"
@@ -889,6 +916,10 @@ class TechnicalIndicatorsAPIView(APIView):
                 ]
             }
 
+            logger.info(f"Coze API 请求 URL: {url}")
+            logger.info(f"Coze API 请求头: {headers}")
+            logger.info(f"Coze API 请求体: {payload}")
+
             async with aiohttp.ClientSession() as session:
                 async with session.post(url, headers=headers, json=payload) as response:
                     response_text = await response.text()
@@ -897,7 +928,17 @@ class TechnicalIndicatorsAPIView(APIView):
                     logger.info(f"响应头: {dict(response.headers)}")
                     logger.info(f"响应内容: {response_text}")
 
-                    return response.status == 200
+                    # 解析响应内容
+                    try:
+                        response_data = json.loads(response_text)
+                        # 检查响应中的错误代码
+                        if response_data.get('code') != 0:  # 假设 code=0 表示成功
+                            logger.error(f"Coze API认证失败: {response_data}")
+                            return False
+                        return True
+                    except json.JSONDecodeError:
+                        logger.error(f"无法解析响应内容: {response_text}")
+                        return False
 
         except Exception as e:
             logger.error(f"测试认证失败: {str(e)}")
@@ -908,7 +949,7 @@ class TechnicalIndicatorsAPIView(APIView):
         try:
             # 检查是否需要强制刷新
             force_refresh = request.query_params.get('force_refresh', 'false').lower() == 'true'
-            
+
             # 统一 symbol 格式，去除常见后缀 (移到最前面，确保所有分支都能使用)
             clean_symbol = symbol.upper().replace('USDT', '').replace('-PERP', '').replace('_PERP', '').replace('PERP', '')
             logger.info(f"异步处理请求: symbol={symbol}, clean_symbol={clean_symbol}, force_refresh={force_refresh}")
@@ -971,7 +1012,7 @@ class TechnicalIndicatorsAPIView(APIView):
                 try:
                     # 如果有Coze API配置，使用异步调用，但这里需要在同步环境中执行
                     analysis_data = None
-                    
+
                     if hasattr(self, 'coze_api_key') and self.coze_api_key:
                         logger.info(f"准备获取Coze分析: {symbol}")
                         # 借助异步转同步执行
@@ -983,30 +1024,39 @@ class TechnicalIndicatorsAPIView(APIView):
                             auth_ok = loop.run_until_complete(self._test_coze_auth())
                             if auth_ok:
                                 logger.info("Coze API认证成功，获取分析报告")
+                                # 获取用户的语言偏好
+                                language = 'zh-CN'  # 默认语言
+                                if request and hasattr(request, 'user') and request.user.is_authenticated:
+                                    language = request.user.language
+
                                 analysis_data = loop.run_until_complete(
-                                    self._get_coze_analysis(symbol, indicators, technical_analysis)
+                                    self._get_coze_analysis(symbol, indicators, technical_analysis, language)
                                 )
+
+                                # 检查是否成功获取分析数据
+                                if not analysis_data:
+                                    logger.warning("未能获取Coze分析数据，使用默认分析报告")
                             else:
                                 logger.warning("Coze API认证失败，使用默认分析报告")
                         finally:
                             loop.close()
-                    
+
                     # 如果没有获取到Coze分析，使用默认分析报告
                     if not analysis_data:
                         logger.info("使用默认分析报告")
                         analysis_data = self._create_default_analysis(indicators, float(market_data['price']))
-                    
+
                     # 保存分析报告
                     try:
                         # 统一使用 clean_symbol
                         await sync_to_async(self.report_service.save_analysis_report)(clean_symbol, analysis_data)
-                        
+
                         # 添加时间戳字段，使用当前时间
                         analysis_data['last_update_time'] = format_timestamp(timezone.now())
-                        
+
                         # 添加当前价格字段
                         analysis_data['current_price'] = float(market_data['price'])
-                        
+
                     except Exception as e:
                         logger.error(f"保存分析报告失败: {str(e)}")
                         return Response({
@@ -1216,12 +1266,12 @@ class TokenDataAPIView(APIView):
 
     def _sanitize_float(self, value, min_val=-np.inf, max_val=np.inf):
         """将输入转换为有效的浮点数，并限制在指定范围内
-        
+
         Args:
             value: 要处理的输入值
             min_val: 最小有效值，默认为负无穷
             max_val: 最大有效值，默认为正无穷
-            
+
         Returns:
             float: 处理后的浮点数
         """
@@ -1252,7 +1302,7 @@ class TechnicalIndicatorsDataAPIView(APIView):
             if self.market_service is None:
                 self.market_service = MarketDataService()
                 logger.info("TechnicalIndicatorsDataAPIView: 初始化市场数据服务")
-                
+
             # 获取技术指标
             technical_data = await sync_to_async(self.ta_service.get_all_indicators)(symbol)
             if technical_data['status'] == 'error':
@@ -1499,8 +1549,12 @@ class LoginView(APIView):
 
     def post(self, request):
         try:
+            # 打印请求数据，用于调试
+            logger.info(f"登录请求数据: {request.data}")
+
             serializer = LoginSerializer(data=request.data)
             if not serializer.is_valid():
+                logger.error(f"登录序列化器验证失败: {serializer.errors}")
                 return Response({
                     'status': 'error',
                     'message': serializer.errors

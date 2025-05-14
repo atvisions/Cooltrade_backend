@@ -9218,3 +9218,1767 @@ DEBUG 2025-05-08 12:52:53,327 okx_api 12463 6226833408 OKX API响应成功: 耗�
 INFO 2025-05-08 12:52:53,328 okx_api 12463 6226833408 成功获取BTCUSDT价格: 99416.0
 INFO 2025-05-08 12:52:53,342 signals 12463 6226833408 更新代币 BTC 的市场数据
 INFO 2025-05-08 12:52:53,342 basehttp 12463 6226833408 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2635
+INFO 2025-05-13 07:14:11,356 autoreload 50071 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-13 07:22:11,213 autoreload 51691 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-13 07:34:04,837 autoreload 51691 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/models.py changed, reloading.
+INFO 2025-05-13 07:34:05,348 autoreload 53890 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-13 07:34:21,382 autoreload 53890 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/models.py changed, reloading.
+INFO 2025-05-13 07:34:21,875 autoreload 53914 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 04:31:46,663 basehttp 53914 6145273856 "OPTIONS /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 0
+INFO 2025-05-14 04:31:46,667 basehttp 53914 6128447488 "OPTIONS /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 0
+WARNING 2025-05-14 04:31:49,631 log 53914 6128447488 Unauthorized: /api/auth/profile/
+WARNING 2025-05-14 04:31:49,631 basehttp 53914 6128447488 "GET /api/auth/profile/ HTTP/1.1" 401 34
+INFO 2025-05-14 04:31:56,458 basehttp 53914 6128447488 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+WARNING 2025-05-14 04:31:56,488 log 53914 6145273856 Unauthorized: /api/auth/profile/
+WARNING 2025-05-14 04:31:56,488 basehttp 53914 6145273856 "PUT /api/auth/profile/ HTTP/1.1" 401 34
+INFO 2025-05-14 04:31:58,382 basehttp 53914 6128447488 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+WARNING 2025-05-14 04:31:58,400 log 53914 6145273856 Unauthorized: /api/auth/profile/
+WARNING 2025-05-14 04:31:58,400 basehttp 53914 6145273856 "PUT /api/auth/profile/ HTTP/1.1" 401 34
+INFO 2025-05-14 04:31:59,530 basehttp 53914 6128447488 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+WARNING 2025-05-14 04:31:59,539 log 53914 6145273856 Unauthorized: /api/auth/profile/
+WARNING 2025-05-14 04:31:59,539 basehttp 53914 6145273856 "PUT /api/auth/profile/ HTTP/1.1" 401 34
+INFO 2025-05-14 04:32:01,871 basehttp 53914 6128447488 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+WARNING 2025-05-14 04:32:01,887 log 53914 6145273856 Unauthorized: /api/auth/profile/
+WARNING 2025-05-14 04:32:01,887 basehttp 53914 6145273856 "PUT /api/auth/profile/ HTTP/1.1" 401 34
+INFO 2025-05-14 04:32:04,303 basehttp 53914 6128447488 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+WARNING 2025-05-14 04:32:04,332 log 53914 6145273856 Unauthorized: /api/auth/profile/
+WARNING 2025-05-14 04:32:04,333 basehttp 53914 6145273856 "PUT /api/auth/profile/ HTTP/1.1" 401 34
+INFO 2025-05-14 04:32:06,380 basehttp 53914 6128447488 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+WARNING 2025-05-14 04:32:06,396 log 53914 6145273856 Unauthorized: /api/auth/profile/
+WARNING 2025-05-14 04:32:06,396 basehttp 53914 6145273856 "PUT /api/auth/profile/ HTTP/1.1" 401 34
+INFO 2025-05-14 04:32:19,771 basehttp 53914 6128447488 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-05-14 04:59:51,435 basehttp 53914 6128447488 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-05-14 05:39:55,687 basehttp 53914 6128447488 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-05-14 06:40:29,170 basehttp 53914 6128447488 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-05-14 06:42:14,691 basehttp 53914 6128447488 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-05-14 06:44:07,144 autoreload 53914 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/config/settings.py changed, reloading.
+INFO 2025-05-14 06:44:09,187 autoreload 50363 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 06:44:37,566 basehttp 50363 6170472448 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+WARNING 2025-05-14 06:44:38,042 log 50363 6170472448 Bad Request: /api/auth/login/
+WARNING 2025-05-14 06:44:38,043 basehttp 50363 6170472448 "POST /api/auth/login/ HTTP/1.1" 400 52
+WARNING 2025-05-14 06:45:15,559 log 50363 6170472448 Bad Request: /api/auth/login/
+WARNING 2025-05-14 06:45:15,561 basehttp 50363 6170472448 "POST /api/auth/login/ HTTP/1.1" 400 52
+INFO 2025-05-14 06:45:34,220 autoreload 50638 8462421120 Watching for file changes with StatReloader
+WARNING 2025-05-14 06:45:52,045 log 50638 6168899584 Bad Request: /api/auth/login/
+WARNING 2025-05-14 06:45:52,058 basehttp 50638 6168899584 "POST /api/auth/login/ HTTP/1.1" 400 52
+WARNING 2025-05-14 06:46:03,191 log 50638 6168899584 Bad Request: /api/auth/login/
+WARNING 2025-05-14 06:46:03,195 basehttp 50638 6168899584 "POST /api/auth/login/ HTTP/1.1" 400 52
+INFO 2025-05-14 06:46:35,869 basehttp 50638 6168899584 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-05-14 06:46:35,928 basehttp 50638 6168899584 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4188
+INFO 2025-05-14 06:46:36,327 basehttp 50638 6185725952 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2682
+INFO 2025-05-14 06:46:36,333 basehttp 50638 6202552320 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2025-05-14 06:46:36,335 basehttp 50638 6236205056 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-05-14 06:46:36,336 basehttp 50638 6219378688 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17905
+INFO 2025-05-14 06:46:36,394 basehttp 50638 6219378688 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2025-05-14 06:46:36,395 basehttp 50638 6168899584 "GET /static/admin/css/base.css HTTP/1.1" 200 21544
+INFO 2025-05-14 06:46:36,395 basehttp 50638 6236205056 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+WARNING 2025-05-14 06:46:36,634 log 50638 6236205056 Not Found: /favicon.ico
+WARNING 2025-05-14 06:46:36,635 basehttp 50638 6236205056 "GET /favicon.ico HTTP/1.1" 404 2815
+INFO 2025-05-14 06:46:46,467 basehttp 50638 6168899584 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-05-14 06:46:46,511 basehttp 50638 6168899584 "GET /admin/ HTTP/1.1" 200 9840
+INFO 2025-05-14 06:46:46,574 basehttp 50638 6168899584 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-05-14 06:46:46,681 basehttp 50638 6185725952 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-05-14 06:46:46,682 basehttp 50638 6168899584 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-05-14 06:46:48,827 basehttp 50638 6168899584 "GET /admin/CryptoAnalyst/invitationcode/ HTTP/1.1" 200 11802
+INFO 2025-05-14 06:46:48,845 basehttp 50638 6168899584 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6811
+INFO 2025-05-14 06:46:48,860 basehttp 50638 6168899584 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-05-14 06:46:48,867 basehttp 50638 6236205056 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-05-14 06:46:48,884 basehttp 50638 6236205056 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-05-14 06:46:48,888 basehttp 50638 6168899584 "GET /static/admin/js/actions.js HTTP/1.1" 200 8067
+INFO 2025-05-14 06:46:48,889 basehttp 50638 6253031424 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9042
+INFO 2025-05-14 06:46:48,948 basehttp 50638 6168899584 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-05-14 06:46:48,952 basehttp 50638 6219378688 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-05-14 06:46:48,958 basehttp 50638 6185725952 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2025-05-14 06:46:48,959 basehttp 50638 6202552320 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-05-14 06:46:48,960 basehttp 50638 6219378688 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-05-14 06:46:48,964 basehttp 50638 6219378688 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-05-14 06:46:48,988 basehttp 50638 6219378688 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+WARNING 2025-05-14 06:51:25,110 log 50638 6168899584 Bad Request: /api/auth/login/
+WARNING 2025-05-14 06:51:25,112 basehttp 50638 6168899584 "POST /api/auth/login/ HTTP/1.1" 400 52
+INFO 2025-05-14 06:52:04,935 autoreload 51501 8462421120 Watching for file changes with StatReloader
+WARNING 2025-05-14 06:52:07,845 log 51501 6201864192 Bad Request: /api/auth/login/
+WARNING 2025-05-14 06:52:07,845 basehttp 51501 6201864192 "POST /api/auth/login/ HTTP/1.1" 400 52
+INFO 2025-05-14 06:52:55,922 autoreload 51501 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views.py changed, reloading.
+INFO 2025-05-14 06:52:56,685 autoreload 51619 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 06:53:12,099 views 51619 6200324096 登录请求数据: {'email': 'liu.zhao@qq.com', 'password': 'liuzhao8899'}
+WARNING 2025-05-14 06:53:12,527 log 51619 6200324096 Bad Request: /api/auth/login/
+WARNING 2025-05-14 06:53:12,528 basehttp 51619 6200324096 "POST /api/auth/login/ HTTP/1.1" 400 52
+INFO 2025-05-14 06:53:24,338 views 51619 6200324096 登录请求数据: {'email': 'liu.zhao@qq.com', 'password': 'liuzhao9575'}
+INFO 2025-05-14 06:53:24,589 basehttp 51619 6200324096 "POST /api/auth/login/ HTTP/1.1" 200 254
+INFO 2025-05-14 06:54:00,724 views 51619 6217150464 登录请求数据: {'email': 'liu.zhao@qq.com', 'password': 'liuzhao8899'}
+WARNING 2025-05-14 06:54:01,154 log 51619 6217150464 Bad Request: /api/auth/login/
+WARNING 2025-05-14 06:54:01,155 basehttp 51619 6217150464 "POST /api/auth/login/ HTTP/1.1" 400 52
+INFO 2025-05-14 06:55:21,119 views 51619 6217150464 登录请求数据: {'email': 'liu.zhao@qq.com', 'password': 'liuzhao8899'}
+WARNING 2025-05-14 06:55:21,292 log 51619 6217150464 Bad Request: /api/auth/login/
+WARNING 2025-05-14 06:55:21,292 basehttp 51619 6217150464 "POST /api/auth/login/ HTTP/1.1" 400 52
+INFO 2025-05-14 06:55:35,118 views 51619 6217150464 登录请求数据: {'email': 'liu.zhao@qq.com', 'password': 'liuzhao9575'}
+INFO 2025-05-14 06:55:35,350 basehttp 51619 6217150464 "POST /api/auth/login/ HTTP/1.1" 200 254
+INFO 2025-05-14 06:55:35,883 views 51619 6217150464 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 06:55:35,891 views 51619 6217150464 未找到 token: BTC
+WARNING 2025-05-14 06:55:35,895 log 51619 6217150464 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-14 06:55:35,895 basehttp 51619 6217150464 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 404 91
+INFO 2025-05-14 06:55:35,925 views 51619 6217150464 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 06:55:35,927 views 51619 6217150464 未找到 token: BTC
+WARNING 2025-05-14 06:55:35,927 log 51619 6217150464 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-14 06:55:35,928 basehttp 51619 6217150464 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 404 91
+INFO 2025-05-14 06:55:51,389 basehttp 51619 6217150464 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-05-14 06:55:51,409 basehttp 51619 6233976832 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-14 06:55:51,416 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:55:52,865 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:55:52,869 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:55:59,923 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:55:59,926 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:00,504 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:00,507 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:00,973 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:00,974 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:01,394 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:01,400 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:02,590 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:02,591 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:02,880 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:02,881 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:03,473 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:03,474 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:04,210 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:04,230 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:11,028 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:11,032 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:11,834 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:11,835 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:12,253 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:12,255 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:12,704 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:56:12,706 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:57:53,243 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:57:53,246 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:57:57,837 basehttp 51619 6233976832 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-14 06:57:57,915 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:11,813 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:12,268 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:14,245 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:15,020 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:18,240 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:49,148 basehttp 51619 6233976832 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-14 06:58:49,151 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:52,795 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:52,799 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:54,236 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:54,247 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:55,101 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:55,106 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:56,002 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:56,006 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:57,679 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:57,681 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:58,397 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:58:58,399 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:13,370 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:13,370 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:14,026 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:14,027 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:14,585 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:14,586 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:15,079 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:15,082 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:15,573 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:15,575 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:16,181 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:16,183 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:16,860 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:16,861 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:17,354 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:17,354 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:17,810 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 06:59:17,812 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:23,098 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:23,099 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:23,975 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:23,975 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:25,118 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:25,119 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:25,614 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:25,617 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:26,191 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:26,194 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:26,900 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:26,904 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:27,367 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:27,369 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:28,100 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:28,106 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:28,496 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:28,497 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:29,006 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:29,007 basehttp 51619 6233976832 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:00:36,222 views 51619 6217150464 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:00:36,224 views 51619 6217150464 未找到 token: BTC
+WARNING 2025-05-14 07:00:36,225 log 51619 6217150464 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-14 07:00:36,225 basehttp 51619 6217150464 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 404 91
+INFO 2025-05-14 07:00:36,352 views 51619 6217150464 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:00:36,398 views 51619 6217150464 未找到 token: BTC
+WARNING 2025-05-14 07:00:36,412 log 51619 6217150464 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-14 07:00:36,416 basehttp 51619 6217150464 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 404 91
+INFO 2025-05-14 07:00:45,004 views 51619 6217150464 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:00:45,020 views 51619 6217150464 未找到 token: BTC
+INFO 2025-05-14 07:00:45,020 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:00:45,020 technical_analysis 51619 6217150464 技术分析服务初始化完成
+INFO 2025-05-14 07:00:45,020 views 51619 6217150464 延迟初始化: 技术分析服务
+INFO 2025-05-14 07:00:45,020 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:00:45,021 views 51619 6217150464 延迟初始化: 市场数据服务
+INFO 2025-05-14 07:00:45,022 views 51619 6217150464 延迟初始化: 分析报告服务
+INFO 2025-05-14 07:00:45,022 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:00:45,022 views 51619 6217150464 延迟初始化: OKX API服务
+INFO 2025-05-14 07:00:45,030 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:00:45,031 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:00:45,031 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:00:45,032 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:00:45,032 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:00:45,032 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:00:45,033 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:00:45,033 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:00:45,033 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:00:45,033 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:00:46,194 okx_api 51619 6217150464 OKX API响应成功: 耗时: 1.16秒, 数据大小: 372
+INFO 2025-05-14 07:00:46,208 okx_api 51619 6217150464 成功获取BTCUSDT价格: 103746.7
+INFO 2025-05-14 07:00:46,208 technical_analysis 51619 6217150464 成功获取BTCUSDT实时价格: 103746.7，开始计算技术指标
+INFO 2025-05-14 07:00:46,209 okx_api 51619 6217150464 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=100 days ago UTC
+INFO 2025-05-14 07:00:46,209 okx_api 51619 6217150464 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:00:46,224 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:00:47,089 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.87秒, 数据大小: 12060
+INFO 2025-05-14 07:00:47,092 okx_api 51619 6217150464 使用常规K线接口获取了 100 条K线数据
+INFO 2025-05-14 07:00:47,092 technical_analysis 51619 6217150464 获取到100条K线数据，开始计算指标
+WARNING 2025-05-14 07:00:47,113 technical_analysis 51619 6217150464 数据长度不足200天(100天)，某些高级指标可能不准确
+DEBUG 2025-05-14 07:00:47,136 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/public/funding-rate | 参数: {'instId': 'BTC-USDT-SWAP'} | 数据: None
+DEBUG 2025-05-14 07:00:47,859 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.72秒, 数据大小: 490
+INFO 2025-05-14 07:00:47,864 okx_api 51619 6217150464 成功获取 BTCUSDT 的资金费率: 8.329546146e-05
+INFO 2025-05-14 07:00:47,864 technical_analysis 51619 6217150464 获取到 BTCUSDT 的资金费率: 8.329546146e-05
+INFO 2025-05-14 07:00:47,869 technical_analysis 51619 6217150464 数据量不足200天，使用100天数据计算高级指标
+INFO 2025-05-14 07:00:47,869 technical_analysis 51619 6217150464 使用99天数据计算NUPL
+INFO 2025-05-14 07:00:47,887 technical_analysis 51619 6217150464 NUPL计算结果: 17.621369791131855
+INFO 2025-05-14 07:00:47,887 technical_analysis 51619 6217150464 使用99天数据计算梅耶倍数
+INFO 2025-05-14 07:00:47,887 technical_analysis 51619 6217150464 使用99日移动平均线: 89773.2515151515
+INFO 2025-05-14 07:00:47,887 technical_analysis 51619 6217150464 梅耶倍数计算结果: 1.1556526944163332
+INFO 2025-05-14 07:00:47,887 technical_analysis 51619 6217150464 成功计算BTCUSDT的所有技术指标
+INFO 2025-05-14 07:00:47,897 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:00:47,898 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:00:47,898 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:00:47,898 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:00:47,898 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:00:47,898 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:00:47,898 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:00:47,898 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:00:47,898 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:00:47,898 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:00:48,638 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.74秒, 数据大小: 371
+DEBUG 2025-05-14 07:00:48,642 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:00:49,435 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.79秒, 数据大小: 152
+INFO 2025-05-14 07:00:49,438 okx_api 51619 6217150464 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:00:49,438 okx_api 51619 6217150464 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:00:49,438 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:00:50,206 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.77秒, 数据大小: 12060
+INFO 2025-05-14 07:00:50,209 okx_api 51619 6217150464 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:00:50,209 market_data_service 51619 6217150464 获取BTCUSDT的K线数据失败或数据不足
+DEBUG 2025-05-14 07:00:50,209 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:00:51,027 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.82秒, 数据大小: 372
+DEBUG 2025-05-14 07:00:51,030 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:00:51,903 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.87秒, 数据大小: 152
+DEBUG 2025-05-14 07:00:51,904 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:00:52,717 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.81秒, 数据大小: 371
+INFO 2025-05-14 07:00:52,718 okx_api 51619 6217150464 成功获取BTCUSDT价格: 103746.7
+INFO 2025-05-14 07:00:52,719 okx_api 51619 6217150464 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:00:52,719 okx_api 51619 6217150464 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:00:52,719 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:00:53,454 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.74秒, 数据大小: 12060
+INFO 2025-05-14 07:00:53,457 okx_api 51619 6217150464 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:00:53,457 market_data_service 51619 6217150464 无法获取BTCUSDT的足够历史K线数据来计算梅耶倍数
+INFO 2025-05-14 07:00:54,374 signals 51619 6217150464 更新代币 BTC 的技术分析数据
+INFO 2025-05-14 07:00:54,378 signals 51619 6217150464 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:00:54,379 views 51619 6217150464 成功更新代币 BTC 的技术分析数据
+INFO 2025-05-14 07:00:54,379 views 51619 6217150464 准备获取Coze分析: BTCUSDT
+INFO 2025-05-14 07:00:55,958 views 51619 6217150464 === 测试认证响应详情 ===
+INFO 2025-05-14 07:00:55,960 views 51619 6217150464 响应状态码: 200
+INFO 2025-05-14 07:00:55,999 views 51619 6217150464 响应头: {'Content-Type': 'application/json; charset=utf-8', 'X-Tt-Logid': '202505140700548F3EB1A47A0635C12E16', 'x-tt-trace-host': '01a8a485e48a642f25797106db5ecc768315c745681d7e323ea69a1b331d46d96af48c5d19986a4fa6d2befa3e2daff5976f401308e1bdf5fc89af9455848f9bf5c3155516e121dc0e4bc7a2291b4e2be69ced36b50c54e07f9a12c0583c7e57f1a3f809c2a0930c9c296c4fc453df2d0b', 'x-tt-trace-id': '00-2505140700548F3EB1A47A0635C12E16-3999ECF0B24EF6E6-00', 'Server': 'TLB', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Access-Control-Allow-Headers': 'origin,content-type,authorization,X-Coze-Connector-ID,X-Coze-Client-User-Agent', 'Content-Encoding': 'gzip', 'Content-Length': '215', 'X-Origin-Response-Time': '33,23.55.100.198', 'X-Akamai-Request-ID': '1f7c5a00.371959d0', 'Expires': 'Wed, 14 May 2025 07:00:55 GMT', 'Cache-Control': 'max-age=0, no-cache, no-store', 'Pragma': 'no-cache', 'Date': 'Wed, 14 May 2025 07:00:55 GMT', 'X-Cache': 'TCP_MISS from a23-43-242-143.deploy.akamaitechnologies.com (AkamaiGHost/22.1.2-812cedcbf35ba002177d10138ee3fcd0) (-)', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'X-Cache-Remote': 'TCP_MISS from a23-55-100-198.deploy.akamaitechnologies.com (AkamaiGHost/22.1.2-812cedcbf35ba002177d10138ee3fcd0) (-)', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains', 'x-tt-trace-tag': 'id=16;cdn-cache=miss;type=dyn', 'Server-Timing': 'cdn-cache; desc=MISS, edge; dur=57, origin; dur=33', 'X-Parent-Response-Time': '90,23.43.242.143'}
+INFO 2025-05-14 07:00:56,133 views 51619 6217150464 响应内容: {"code":4101,"msg":"The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication","detail":{"logid":"202505140700548F3EB1A47A0635C12E16"}}
+INFO 2025-05-14 07:00:56,333 views 51619 6217150464 Coze API认证成功，获取分析报告
+DEBUG 2025-05-14 07:00:56,369 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:00:57,346 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.97秒, 数据大小: 372
+DEBUG 2025-05-14 07:00:57,348 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:00:58,427 okx_api 51619 6251376640 OKX API响应成功: 耗时: 1.08秒, 数据大小: 152
+INFO 2025-05-14 07:00:58,437 okx_api 51619 6251376640 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:00:58,437 okx_api 51619 6251376640 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:00:58,440 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:00:59,495 okx_api 51619 6251376640 OKX API响应成功: 耗时: 1.05秒, 数据大小: 12060
+INFO 2025-05-14 07:00:59,499 okx_api 51619 6251376640 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:00:59,499 market_data_service 51619 6251376640 获取BTCUSDT的K线数据失败或数据不足
+DEBUG 2025-05-14 07:00:59,499 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:01:00,525 okx_api 51619 6251376640 OKX API响应成功: 耗时: 1.02秒, 数据大小: 371
+DEBUG 2025-05-14 07:01:00,594 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:01:01,434 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.84秒, 数据大小: 152
+DEBUG 2025-05-14 07:01:01,437 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:01:02,458 okx_api 51619 6251376640 OKX API响应成功: 耗时: 1.02秒, 数据大小: 367
+INFO 2025-05-14 07:01:02,463 okx_api 51619 6251376640 成功获取BTCUSDT价格: 103746.7
+INFO 2025-05-14 07:01:02,463 okx_api 51619 6251376640 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:01:02,463 okx_api 51619 6251376640 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:01:02,463 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:01:03,424 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.96秒, 数据大小: 12060
+INFO 2025-05-14 07:01:03,427 okx_api 51619 6251376640 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:01:03,428 market_data_service 51619 6251376640 无法获取BTCUSDT的足够历史K线数据来计算梅耶倍数
+ERROR 2025-05-14 07:01:04,914 views 51619 6217150464 Coze API响应错误: {'code': 4101, 'msg': 'The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication', 'detail': {'logid': '20250514070104206A5EDF9E21F6520E37'}}
+INFO 2025-05-14 07:01:04,917 views 51619 6217150464 使用默认分析报告
+INFO 2025-05-14 07:01:04,976 analysis_report_service 51619 6217150464 成功保存BTC的分析报告
+INFO 2025-05-14 07:01:04,988 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:01:04,988 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:01:04,989 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:01:04,989 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:01:04,989 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:01:04,989 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:01:04,989 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:01:04,989 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:01:04,989 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:01:04,989 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:01:05,868 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.88秒, 数据大小: 370
+INFO 2025-05-14 07:01:05,872 okx_api 51619 6217150464 成功获取BTCUSDT价格: 103746.7
+INFO 2025-05-14 07:01:05,879 signals 51619 6217150464 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:01:05,893 basehttp 51619 6217150464 "GET /api/crypto/technical-indicators/BTCUSDT/?force_refresh=true HTTP/1.1" 200 1567
+INFO 2025-05-14 07:01:07,113 views 51619 6217150464 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:01:07,130 views 51619 6217150464 找到 token: 1, BTC
+INFO 2025-05-14 07:01:07,168 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:01:07,178 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:01:07,179 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:01:07,179 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:01:07,179 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:01:07,179 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:01:07,179 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:01:07,179 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:01:07,179 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:01:07,179 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:01:07,179 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:01:08,870 okx_api 51619 6217150464 OKX API响应成功: 耗时: 1.69秒, 数据大小: 364
+INFO 2025-05-14 07:01:08,898 okx_api 51619 6217150464 成功获取BTCUSDT价格: 103718.0
+INFO 2025-05-14 07:01:08,958 signals 51619 6217150464 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:01:08,964 basehttp 51619 6217150464 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1567
+INFO 2025-05-14 07:03:45,295 basehttp 51619 6234550272 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-14 07:03:45,298 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:03:54,761 basehttp 51619 6234550272 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:03:54,761 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:05:45,743 basehttp 51619 6234550272 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:05:45,746 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:06:22,900 basehttp 51619 6234550272 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:06:22,901 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:06:35,660 basehttp 51619 6234550272 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:06:35,662 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:06:56,247 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:06:56,248 basehttp 51619 6234550272 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:07:00,306 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:07:00,309 basehttp 51619 6234550272 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:07:03,516 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:07:03,517 basehttp 51619 6234550272 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:07:05,650 basehttp 51619 6234550272 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:07:05,650 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:07:11,907 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:07:11,908 basehttp 51619 6234550272 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:07:21,471 basehttp 51619 6234550272 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:07:21,471 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:08:31,775 views 51619 6217150464 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:08:31,778 views 51619 6217150464 找到 token: 1, BTC
+INFO 2025-05-14 07:08:31,787 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:08:31,790 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:08:31,790 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:08:31,790 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:08:31,790 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:08:31,790 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:08:31,790 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:08:31,790 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:08:31,790 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:08:31,790 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:08:31,790 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:08:32,527 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.74秒, 数据大小: 366
+INFO 2025-05-14 07:08:32,528 okx_api 51619 6217150464 成功获取BTCUSDT价格: 103697.7
+INFO 2025-05-14 07:08:32,537 signals 51619 6217150464 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:08:32,538 basehttp 51619 6217150464 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1567
+INFO 2025-05-14 07:08:32,575 views 51619 6217150464 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:08:32,595 views 51619 6217150464 找到 token: 1, BTC
+INFO 2025-05-14 07:08:32,611 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:08:32,614 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:08:32,614 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:08:32,614 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:08:32,614 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:08:32,614 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:08:32,614 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:08:32,614 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:08:32,614 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:08:32,615 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:08:32,615 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:08:33,356 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.74秒, 数据大小: 372
+INFO 2025-05-14 07:08:33,360 okx_api 51619 6217150464 成功获取BTCUSDT价格: 103697.6
+INFO 2025-05-14 07:08:33,366 signals 51619 6217150464 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:08:33,367 basehttp 51619 6217150464 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1567
+INFO 2025-05-14 07:08:45,186 basehttp 51619 6234550272 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-14 07:08:45,187 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:08:47,257 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:08:47,261 basehttp 51619 6234550272 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:08:49,729 views 51619 6234550272 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:08:49,730 views 51619 6234550272 找到 token: 1, BTC
+INFO 2025-05-14 07:08:49,734 okx_api 51619 6234550272 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:08:49,737 okx_api 51619 6234550272 正在检查环境变量...
+INFO 2025-05-14 07:08:49,737 okx_api 51619 6234550272 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:08:49,737 okx_api 51619 6234550272 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:08:49,737 okx_api 51619 6234550272 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:08:49,737 okx_api 51619 6234550272 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:08:49,737 okx_api 51619 6234550272 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:08:49,737 okx_api 51619 6234550272 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:08:49,737 okx_api 51619 6234550272 成功加载 OKX API 密钥
+INFO 2025-05-14 07:08:49,737 okx_api 51619 6234550272 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:08:49,737 okx_api 51619 6234550272 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:08:50,778 okx_api 51619 6234550272 OKX API响应成功: 耗时: 1.04秒, 数据大小: 370
+INFO 2025-05-14 07:08:50,781 okx_api 51619 6234550272 成功获取BTCUSDT价格: 103677.9
+INFO 2025-05-14 07:08:50,786 signals 51619 6234550272 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:08:50,787 basehttp 51619 6234550272 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1567
+INFO 2025-05-14 07:08:50,863 views 51619 6217150464 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:08:50,872 views 51619 6217150464 找到 token: 1, BTC
+INFO 2025-05-14 07:08:50,882 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:08:50,884 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:08:50,884 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:08:50,884 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:08:50,884 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:08:50,884 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:08:50,884 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:08:50,884 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:08:50,884 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:08:50,884 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:08:50,884 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:08:51,658 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.77秒, 数据大小: 359
+INFO 2025-05-14 07:08:51,660 okx_api 51619 6217150464 成功获取BTCUSDT价格: 103680.1
+INFO 2025-05-14 07:08:51,666 signals 51619 6217150464 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:08:51,667 basehttp 51619 6217150464 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1567
+INFO 2025-05-14 07:09:34,879 views 51619 6217150464 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:09:34,938 views 51619 6217150464 找到 token: 1, BTC
+INFO 2025-05-14 07:09:34,940 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:09:34,974 technical_analysis 51619 6217150464 技术分析服务初始化完成
+INFO 2025-05-14 07:09:34,975 views 51619 6217150464 延迟初始化: 技术分析服务
+INFO 2025-05-14 07:09:34,975 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:09:34,976 views 51619 6217150464 延迟初始化: 市场数据服务
+INFO 2025-05-14 07:09:34,978 views 51619 6217150464 延迟初始化: 分析报告服务
+INFO 2025-05-14 07:09:34,981 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:09:34,981 views 51619 6217150464 延迟初始化: OKX API服务
+INFO 2025-05-14 07:09:35,124 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:09:35,125 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:09:35,125 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:09:35,127 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:09:35,128 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:09:35,137 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:09:35,138 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:09:35,146 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:09:35,147 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:09:35,147 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:09:36,232 okx_api 51619 6217150464 OKX API响应成功: 耗时: 1.08秒, 数据大小: 372
+INFO 2025-05-14 07:09:36,264 okx_api 51619 6217150464 成功获取BTCUSDT价格: 103693.2
+INFO 2025-05-14 07:09:36,264 technical_analysis 51619 6217150464 成功获取BTCUSDT实时价格: 103693.2，开始计算技术指标
+INFO 2025-05-14 07:09:36,265 okx_api 51619 6217150464 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=100 days ago UTC
+INFO 2025-05-14 07:09:36,265 okx_api 51619 6217150464 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:09:36,265 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:09:37,150 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.89秒, 数据大小: 12060
+INFO 2025-05-14 07:09:37,156 okx_api 51619 6217150464 使用常规K线接口获取了 100 条K线数据
+INFO 2025-05-14 07:09:37,156 technical_analysis 51619 6217150464 获取到100条K线数据，开始计算指标
+WARNING 2025-05-14 07:09:37,175 technical_analysis 51619 6217150464 数据长度不足200天(100天)，某些高级指标可能不准确
+DEBUG 2025-05-14 07:09:37,220 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/public/funding-rate | 参数: {'instId': 'BTC-USDT-SWAP'} | 数据: None
+DEBUG 2025-05-14 07:09:38,064 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.84秒, 数据大小: 490
+INFO 2025-05-14 07:09:38,078 okx_api 51619 6217150464 成功获取 BTCUSDT 的资金费率: 8.05915952902e-05
+INFO 2025-05-14 07:09:38,078 technical_analysis 51619 6217150464 获取到 BTCUSDT 的资金费率: 8.05915952902e-05
+INFO 2025-05-14 07:09:38,079 technical_analysis 51619 6217150464 数据量不足200天，使用100天数据计算高级指标
+INFO 2025-05-14 07:09:38,079 technical_analysis 51619 6217150464 使用99天数据计算NUPL
+INFO 2025-05-14 07:09:38,081 technical_analysis 51619 6217150464 NUPL计算结果: 17.55967769748976
+INFO 2025-05-14 07:09:38,081 technical_analysis 51619 6217150464 使用99天数据计算梅耶倍数
+INFO 2025-05-14 07:09:38,081 technical_analysis 51619 6217150464 使用99日移动平均线: 89772.7111111111
+INFO 2025-05-14 07:09:38,081 technical_analysis 51619 6217150464 梅耶倍数计算结果: 1.1550637016148437
+INFO 2025-05-14 07:09:38,081 technical_analysis 51619 6217150464 成功计算BTCUSDT的所有技术指标
+INFO 2025-05-14 07:09:38,085 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:09:38,085 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:09:38,085 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:09:38,086 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:09:38,086 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:09:38,086 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:09:38,086 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:09:38,086 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:09:38,087 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:09:38,087 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:09:38,895 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.81秒, 数据大小: 372
+DEBUG 2025-05-14 07:09:38,906 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:09:39,676 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.77秒, 数据大小: 152
+INFO 2025-05-14 07:09:39,679 okx_api 51619 6217150464 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:09:39,679 okx_api 51619 6217150464 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:09:39,679 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:09:40,566 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.89秒, 数据大小: 12060
+INFO 2025-05-14 07:09:40,569 okx_api 51619 6217150464 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:09:40,569 market_data_service 51619 6217150464 获取BTCUSDT的K线数据失败或数据不足
+DEBUG 2025-05-14 07:09:40,569 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:09:41,314 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.75秒, 数据大小: 372
+DEBUG 2025-05-14 07:09:41,317 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:09:42,055 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.74秒, 数据大小: 152
+DEBUG 2025-05-14 07:09:42,059 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:09:42,886 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.83秒, 数据大小: 371
+INFO 2025-05-14 07:09:42,890 okx_api 51619 6217150464 成功获取BTCUSDT价格: 103693.2
+INFO 2025-05-14 07:09:42,890 okx_api 51619 6217150464 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:09:42,890 okx_api 51619 6217150464 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:09:42,890 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:09:43,714 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.82秒, 数据大小: 12060
+INFO 2025-05-14 07:09:43,714 okx_api 51619 6217150464 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:09:43,714 market_data_service 51619 6217150464 无法获取BTCUSDT的足够历史K线数据来计算梅耶倍数
+INFO 2025-05-14 07:09:44,322 signals 51619 6217150464 更新代币 BTC 的技术分析数据
+INFO 2025-05-14 07:09:44,326 signals 51619 6217150464 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:09:44,327 views 51619 6217150464 成功更新代币 BTC 的技术分析数据
+INFO 2025-05-14 07:09:44,327 views 51619 6217150464 准备获取Coze分析: BTCUSDT
+INFO 2025-05-14 07:09:45,241 views 51619 6217150464 === 测试认证响应详情 ===
+INFO 2025-05-14 07:09:45,243 views 51619 6217150464 响应状态码: 200
+INFO 2025-05-14 07:09:45,244 views 51619 6217150464 响应头: {'Content-Type': 'application/json; charset=utf-8', 'X-Tt-Logid': '202505140709446884E4CAFFA6E19396AF', 'Server-Timing': 'inner; dur=8', 'x-tt-trace-host': '014ec305a64c879703b210d5a509eb68102c25703afd0af8210544bd6ef57d4e32fdd357ce3e402374ecbce6e877c9f9ab1e4ee442bd3fef0b4de797c74c440e6ee7e4cc95481f4fc0c1ea9640523b38f5112b44ec3ebabe72eed5bbc65099472b60a7fa1a75bf47a7058fae813de77281', 'x-tt-trace-id': '00-2505140709446884E4CAFFA6E19396AF-04398AABC9CE29F2-00', 'Server': 'TLB', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Access-Control-Allow-Headers': 'origin,content-type,authorization,X-Coze-Connector-ID,X-Coze-Client-User-Agent', 'Content-Encoding': 'gzip', 'Expires': 'Wed, 14 May 2025 07:09:45 GMT', 'Cache-Control': 'max-age=0, no-cache, no-store', 'Pragma': 'no-cache', 'Date': 'Wed, 14 May 2025 07:09:45 GMT', 'Content-Length': '216', 'X-Cache': 'TCP_MISS from a23-43-242-143.deploy.akamaitechnologies.com (AkamaiGHost/22.1.2-812cedcbf35ba002177d10138ee3fcd0) (-)', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains', 'x-tt-trace-tag': 'id=16;cdn-cache=miss;type=dyn', 'X-Origin-Response-Time': '63,23.43.242.143', 'X-Akamai-Request-ID': '3732ba11'}
+INFO 2025-05-14 07:09:45,244 views 51619 6217150464 响应内容: {"code":4101,"msg":"The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication","detail":{"logid":"202505140709446884E4CAFFA6E19396AF"}}
+INFO 2025-05-14 07:09:45,244 views 51619 6217150464 Coze API认证成功，获取分析报告
+DEBUG 2025-05-14 07:09:45,248 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:09:46,058 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.81秒, 数据大小: 372
+DEBUG 2025-05-14 07:09:46,059 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:09:46,863 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.80秒, 数据大小: 152
+INFO 2025-05-14 07:09:46,864 okx_api 51619 6251376640 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:09:46,864 okx_api 51619 6251376640 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:09:46,864 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:09:47,707 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.84秒, 数据大小: 12060
+INFO 2025-05-14 07:09:47,710 okx_api 51619 6251376640 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:09:47,710 market_data_service 51619 6251376640 获取BTCUSDT的K线数据失败或数据不足
+DEBUG 2025-05-14 07:09:47,711 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:09:48,510 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.80秒, 数据大小: 372
+DEBUG 2025-05-14 07:09:48,515 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:09:49,435 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.92秒, 数据大小: 148
+DEBUG 2025-05-14 07:09:49,436 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:09:50,249 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.81秒, 数据大小: 370
+INFO 2025-05-14 07:09:50,251 okx_api 51619 6251376640 成功获取BTCUSDT价格: 103693.2
+INFO 2025-05-14 07:09:50,251 okx_api 51619 6251376640 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:09:50,251 okx_api 51619 6251376640 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:09:50,251 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:09:51,089 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.84秒, 数据大小: 12058
+INFO 2025-05-14 07:09:51,093 okx_api 51619 6251376640 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:09:51,093 market_data_service 51619 6251376640 无法获取BTCUSDT的足够历史K线数据来计算梅耶倍数
+ERROR 2025-05-14 07:09:52,634 views 51619 6217150464 Coze API响应错误: {'code': 4101, 'msg': 'The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication', 'detail': {'logid': '20250514070951DED1F2D17756C755BA20'}}
+INFO 2025-05-14 07:09:52,635 views 51619 6217150464 使用默认分析报告
+INFO 2025-05-14 07:09:52,651 analysis_report_service 51619 6217150464 成功保存BTC的分析报告
+INFO 2025-05-14 07:09:52,659 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:09:52,659 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:09:52,659 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:09:52,659 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:09:52,659 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:09:52,659 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:09:52,659 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:09:52,659 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:09:52,659 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:09:52,659 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:09:53,463 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.80秒, 数据大小: 372
+INFO 2025-05-14 07:09:53,467 okx_api 51619 6217150464 成功获取BTCUSDT价格: 103693.2
+INFO 2025-05-14 07:09:53,470 signals 51619 6217150464 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:09:53,473 basehttp 51619 6217150464 "GET /api/crypto/technical-indicators/BTCUSDT/?force_refresh=true HTTP/1.1" 200 1556
+INFO 2025-05-14 07:09:54,519 views 51619 6217150464 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:09:54,521 views 51619 6217150464 找到 token: 1, BTC
+INFO 2025-05-14 07:09:54,531 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:09:54,534 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:09:54,535 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:09:54,535 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:09:54,535 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:09:54,535 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:09:54,535 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:09:54,535 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:09:54,535 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:09:54,535 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:09:54,535 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:09:55,375 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.84秒, 数据大小: 372
+INFO 2025-05-14 07:09:55,381 okx_api 51619 6217150464 成功获取BTCUSDT价格: 103693.2
+INFO 2025-05-14 07:09:55,391 signals 51619 6217150464 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:09:55,394 basehttp 51619 6217150464 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1556
+INFO 2025-05-14 07:10:54,810 basehttp 51619 6234550272 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-14 07:10:54,823 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:10:56,994 basehttp 51619 6234550272 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:10:56,996 basehttp 51619 6217150464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:10:59,091 views 51619 6234550272 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:10:59,094 views 51619 6234550272 找到 token: 1, BTC
+INFO 2025-05-14 07:10:59,099 okx_api 51619 6234550272 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:10:59,103 okx_api 51619 6234550272 正在检查环境变量...
+INFO 2025-05-14 07:10:59,104 okx_api 51619 6234550272 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:10:59,104 okx_api 51619 6234550272 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:10:59,104 okx_api 51619 6234550272 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:10:59,104 okx_api 51619 6234550272 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:10:59,104 okx_api 51619 6234550272 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:10:59,104 okx_api 51619 6234550272 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:10:59,104 okx_api 51619 6234550272 成功加载 OKX API 密钥
+INFO 2025-05-14 07:10:59,104 okx_api 51619 6234550272 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:10:59,104 okx_api 51619 6234550272 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:10:59,851 okx_api 51619 6234550272 OKX API响应成功: 耗时: 0.75秒, 数据大小: 366
+INFO 2025-05-14 07:10:59,854 okx_api 51619 6234550272 成功获取BTCUSDT价格: 103680.0
+INFO 2025-05-14 07:10:59,860 signals 51619 6234550272 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:10:59,864 basehttp 51619 6234550272 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1556
+INFO 2025-05-14 07:10:59,907 views 51619 6234550272 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:10:59,910 views 51619 6234550272 找到 token: 1, BTC
+INFO 2025-05-14 07:10:59,927 okx_api 51619 6234550272 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:10:59,929 okx_api 51619 6234550272 正在检查环境变量...
+INFO 2025-05-14 07:10:59,930 okx_api 51619 6234550272 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:10:59,930 okx_api 51619 6234550272 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:10:59,930 okx_api 51619 6234550272 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:10:59,930 okx_api 51619 6234550272 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:10:59,930 okx_api 51619 6234550272 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:10:59,930 okx_api 51619 6234550272 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:10:59,930 okx_api 51619 6234550272 成功加载 OKX API 密钥
+INFO 2025-05-14 07:10:59,930 okx_api 51619 6234550272 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:10:59,930 okx_api 51619 6234550272 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:11:00,665 okx_api 51619 6234550272 OKX API响应成功: 耗时: 0.74秒, 数据大小: 368
+INFO 2025-05-14 07:11:00,667 okx_api 51619 6234550272 成功获取BTCUSDT价格: 103680.1
+INFO 2025-05-14 07:11:00,674 signals 51619 6234550272 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:11:00,680 basehttp 51619 6234550272 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1556
+WARNING 2025-05-14 07:18:47,507 log 51619 6217150464 Unauthorized: /api/crypto/technical-indicators/SUIUSDT/
+WARNING 2025-05-14 07:18:47,510 basehttp 51619 6217150464 "GET /api/crypto/technical-indicators/SUIUSDT/?force_refresh=true HTTP/1.1" 401 34
+INFO 2025-05-14 07:18:58,618 views 51619 6217150464 查询 symbol: SUIUSDT, clean_symbol: SUI
+INFO 2025-05-14 07:18:58,621 views 51619 6217150464 未找到 token: SUI
+INFO 2025-05-14 07:18:58,621 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:18:58,621 technical_analysis 51619 6217150464 技术分析服务初始化完成
+INFO 2025-05-14 07:18:58,621 views 51619 6217150464 延迟初始化: 技术分析服务
+INFO 2025-05-14 07:18:58,621 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:18:58,622 views 51619 6217150464 延迟初始化: 市场数据服务
+INFO 2025-05-14 07:18:58,622 views 51619 6217150464 延迟初始化: 分析报告服务
+INFO 2025-05-14 07:18:58,622 okx_api 51619 6217150464 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:18:58,622 views 51619 6217150464 延迟初始化: OKX API服务
+INFO 2025-05-14 07:18:58,627 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:18:58,627 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:18:58,627 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:18:58,627 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:18:58,627 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:18:58,628 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:18:58,628 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:18:58,628 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:18:58,628 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:18:58,628 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'SUI-USDT'} | 数据: None
+DEBUG 2025-05-14 07:18:59,636 okx_api 51619 6217150464 OKX API响应成功: 耗时: 1.01秒, 数据大小: 344
+INFO 2025-05-14 07:18:59,637 okx_api 51619 6217150464 成功获取SUIUSDT价格: 3.9955
+INFO 2025-05-14 07:18:59,637 technical_analysis 51619 6217150464 成功获取SUIUSDT实时价格: 3.9955，开始计算技术指标
+INFO 2025-05-14 07:18:59,637 okx_api 51619 6217150464 获取历史K线数据: 原始符号=SUIUSDT, OKX符号=SUI-USDT, 时间间隔=1d, 开始时间=100 days ago UTC
+INFO 2025-05-14 07:18:59,637 okx_api 51619 6217150464 尝试使用常规K线接口获取数据: SUI-USDT
+DEBUG 2025-05-14 07:18:59,637 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'SUI-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:19:00,421 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.78秒, 数据大小: 11334
+INFO 2025-05-14 07:19:00,423 okx_api 51619 6217150464 使用常规K线接口获取了 100 条K线数据
+INFO 2025-05-14 07:19:00,423 technical_analysis 51619 6217150464 获取到100条K线数据，开始计算指标
+WARNING 2025-05-14 07:19:00,430 technical_analysis 51619 6217150464 数据长度不足200天(100天)，某些高级指标可能不准确
+DEBUG 2025-05-14 07:19:00,443 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/public/funding-rate | 参数: {'instId': 'SUI-USDT-SWAP'} | 数据: None
+DEBUG 2025-05-14 07:19:01,226 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.78秒, 数据大小: 486
+INFO 2025-05-14 07:19:01,227 okx_api 51619 6217150464 成功获取 SUIUSDT 的资金费率: 2.49836407739e-05
+INFO 2025-05-14 07:19:01,227 technical_analysis 51619 6217150464 获取到 SUIUSDT 的资金费率: 2.49836407739e-05
+INFO 2025-05-14 07:19:01,227 technical_analysis 51619 6217150464 数据量不足200天，使用100天数据计算高级指标
+INFO 2025-05-14 07:19:01,227 technical_analysis 51619 6217150464 使用99天数据计算NUPL
+INFO 2025-05-14 07:19:01,229 technical_analysis 51619 6217150464 NUPL计算结果: 40.37881566591303
+INFO 2025-05-14 07:19:01,229 technical_analysis 51619 6217150464 使用99天数据计算梅耶倍数
+INFO 2025-05-14 07:19:01,229 technical_analysis 51619 6217150464 使用99日移动平均线: 2.8281454545454547
+INFO 2025-05-14 07:19:01,229 technical_analysis 51619 6217150464 梅耶倍数计算结果: 1.4129046982281994
+INFO 2025-05-14 07:19:01,229 technical_analysis 51619 6217150464 成功计算SUIUSDT的所有技术指标
+INFO 2025-05-14 07:19:01,230 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:19:01,231 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:19:01,231 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:19:01,231 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:19:01,231 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:19:01,231 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:19:01,231 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:19:01,231 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:19:01,231 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:19:01,231 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'SUI-USDT'} | 数据: None
+DEBUG 2025-05-14 07:19:02,012 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.78秒, 数据大小: 345
+DEBUG 2025-05-14 07:19:02,016 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'SUI-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:19:02,806 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.79秒, 数据大小: 143
+INFO 2025-05-14 07:19:02,808 okx_api 51619 6217150464 获取历史K线数据: 原始符号=SUIUSDT, OKX符号=SUI-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:19:02,808 okx_api 51619 6217150464 尝试使用常规K线接口获取数据: SUI-USDT
+DEBUG 2025-05-14 07:19:02,808 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'SUI-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:19:04,727 okx_api 51619 6217150464 OKX API响应成功: 耗时: 1.92秒, 数据大小: 11334
+INFO 2025-05-14 07:19:04,728 okx_api 51619 6217150464 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:19:04,728 market_data_service 51619 6217150464 获取SUIUSDT的K线数据失败或数据不足
+DEBUG 2025-05-14 07:19:04,728 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'SUI-USDT'} | 数据: None
+DEBUG 2025-05-14 07:19:05,723 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.99秒, 数据大小: 344
+DEBUG 2025-05-14 07:19:05,727 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'SUI-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:19:06,721 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.99秒, 数据大小: 143
+DEBUG 2025-05-14 07:19:06,730 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'SUI-USDT'} | 数据: None
+DEBUG 2025-05-14 07:19:07,768 okx_api 51619 6217150464 OKX API响应成功: 耗时: 1.04秒, 数据大小: 345
+INFO 2025-05-14 07:19:07,771 okx_api 51619 6217150464 成功获取SUIUSDT价格: 3.9953
+INFO 2025-05-14 07:19:07,771 okx_api 51619 6217150464 获取历史K线数据: 原始符号=SUIUSDT, OKX符号=SUI-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:19:07,771 okx_api 51619 6217150464 尝试使用常规K线接口获取数据: SUI-USDT
+DEBUG 2025-05-14 07:19:07,771 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'SUI-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:19:09,973 okx_api 51619 6217150464 OKX API响应成功: 耗时: 2.20秒, 数据大小: 11334
+INFO 2025-05-14 07:19:09,975 okx_api 51619 6217150464 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:19:09,975 market_data_service 51619 6217150464 无法获取SUIUSDT的足够历史K线数据来计算梅耶倍数
+INFO 2025-05-14 07:19:11,120 signals 51619 6217150464 更新代币 SUI 的技术分析数据
+INFO 2025-05-14 07:19:11,130 signals 51619 6217150464 更新代币 SUI 的市场数据
+INFO 2025-05-14 07:19:11,133 views 51619 6217150464 成功更新代币 SUI 的技术分析数据
+INFO 2025-05-14 07:19:11,133 views 51619 6217150464 准备获取Coze分析: SUIUSDT
+INFO 2025-05-14 07:19:12,478 views 51619 6217150464 === 测试认证响应详情 ===
+INFO 2025-05-14 07:19:12,479 views 51619 6217150464 响应状态码: 200
+INFO 2025-05-14 07:19:12,479 views 51619 6217150464 响应头: {'Content-Type': 'application/json; charset=utf-8', 'X-Tt-Logid': '202505140719112DAC687FE63501736BE6', 'Server-Timing': 'inner; dur=8', 'x-tt-trace-host': '014ec305a64c879703b210d5a509eb68102c25703afd0af8210544bd6ef57d4e32fdd357ce3e402374ecbce6e877c9f9abc539d499ecb97293648af4da36a3ac018a5ab0a43645671fe29c5a352c58f70e2302134406078e2e50668b8d6752ce0506e21abde7e20e56c3b609b3aed6b2bb', 'x-tt-trace-id': '00-2505140719112DAC687FE63501736BE6-751ACC04E096E199-00', 'Server': 'TLB', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Access-Control-Allow-Headers': 'origin,content-type,authorization,X-Coze-Connector-ID,X-Coze-Client-User-Agent', 'Content-Encoding': 'gzip', 'Expires': 'Wed, 14 May 2025 07:19:12 GMT', 'Cache-Control': 'max-age=0, no-cache, no-store', 'Pragma': 'no-cache', 'Date': 'Wed, 14 May 2025 07:19:12 GMT', 'Content-Length': '216', 'X-Cache': 'TCP_MISS from a23-43-242-143.deploy.akamaitechnologies.com (AkamaiGHost/22.1.2-812cedcbf35ba002177d10138ee3fcd0) (-)', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains', 'x-tt-trace-tag': 'id=16;cdn-cache=miss;type=dyn', 'X-Origin-Response-Time': '62,23.43.242.143', 'X-Akamai-Request-ID': '374dd714'}
+INFO 2025-05-14 07:19:12,479 views 51619 6217150464 响应内容: {"code":4101,"msg":"The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication","detail":{"logid":"202505140719112DAC687FE63501736BE6"}}
+INFO 2025-05-14 07:19:12,479 views 51619 6217150464 Coze API认证成功，获取分析报告
+DEBUG 2025-05-14 07:19:12,480 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'SUI-USDT'} | 数据: None
+DEBUG 2025-05-14 07:19:13,256 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.78秒, 数据大小: 341
+DEBUG 2025-05-14 07:19:13,259 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'SUI-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:19:14,073 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.81秒, 数据大小: 143
+INFO 2025-05-14 07:19:14,077 okx_api 51619 6251376640 获取历史K线数据: 原始符号=SUIUSDT, OKX符号=SUI-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:19:14,077 okx_api 51619 6251376640 尝试使用常规K线接口获取数据: SUI-USDT
+DEBUG 2025-05-14 07:19:14,077 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'SUI-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:19:14,915 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.84秒, 数据大小: 11334
+INFO 2025-05-14 07:19:14,918 okx_api 51619 6251376640 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:19:14,918 market_data_service 51619 6251376640 获取SUIUSDT的K线数据失败或数据不足
+DEBUG 2025-05-14 07:19:14,919 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'SUI-USDT'} | 数据: None
+DEBUG 2025-05-14 07:19:15,737 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.82秒, 数据大小: 338
+DEBUG 2025-05-14 07:19:15,740 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'SUI-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:19:16,566 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.83秒, 数据大小: 143
+DEBUG 2025-05-14 07:19:16,568 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'SUI-USDT'} | 数据: None
+DEBUG 2025-05-14 07:19:17,372 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.80秒, 数据大小: 345
+INFO 2025-05-14 07:19:17,374 okx_api 51619 6251376640 成功获取SUIUSDT价格: 3.9987
+INFO 2025-05-14 07:19:17,374 okx_api 51619 6251376640 获取历史K线数据: 原始符号=SUIUSDT, OKX符号=SUI-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:19:17,374 okx_api 51619 6251376640 尝试使用常规K线接口获取数据: SUI-USDT
+DEBUG 2025-05-14 07:19:17,374 okx_api 51619 6251376640 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'SUI-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:19:18,217 okx_api 51619 6251376640 OKX API响应成功: 耗时: 0.84秒, 数据大小: 11334
+INFO 2025-05-14 07:19:18,221 okx_api 51619 6251376640 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:19:18,222 market_data_service 51619 6251376640 无法获取SUIUSDT的足够历史K线数据来计算梅耶倍数
+ERROR 2025-05-14 07:19:19,556 views 51619 6217150464 Coze API响应错误: {'code': 4101, 'msg': 'The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication', 'detail': {'logid': '20250514071918756D31EFB6B5E94CF8D6'}}
+INFO 2025-05-14 07:19:19,557 views 51619 6217150464 使用默认分析报告
+INFO 2025-05-14 07:19:19,581 analysis_report_service 51619 6217150464 成功保存SUI的分析报告
+INFO 2025-05-14 07:19:19,589 okx_api 51619 6217150464 正在检查环境变量...
+INFO 2025-05-14 07:19:19,589 okx_api 51619 6217150464 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:19:19,589 okx_api 51619 6217150464 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:19:19,590 okx_api 51619 6217150464 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:19:19,590 okx_api 51619 6217150464 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:19:19,590 okx_api 51619 6217150464 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:19:19,590 okx_api 51619 6217150464 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:19:19,590 okx_api 51619 6217150464 成功加载 OKX API 密钥
+INFO 2025-05-14 07:19:19,590 okx_api 51619 6217150464 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:19:19,590 okx_api 51619 6217150464 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'SUI-USDT'} | 数据: None
+DEBUG 2025-05-14 07:19:20,350 okx_api 51619 6217150464 OKX API响应成功: 耗时: 0.76秒, 数据大小: 344
+INFO 2025-05-14 07:19:20,353 okx_api 51619 6217150464 成功获取SUIUSDT价格: 3.9996
+INFO 2025-05-14 07:19:20,359 signals 51619 6217150464 更新代币 SUI 的市场数据
+INFO 2025-05-14 07:19:20,361 basehttp 51619 6217150464 "GET /api/crypto/technical-indicators/SUIUSDT/?force_refresh=true HTTP/1.1" 200 1535
+INFO 2025-05-14 07:21:35,072 autoreload 51619 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views.py changed, reloading.
+INFO 2025-05-14 07:21:41,662 autoreload 55140 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 07:21:55,361 autoreload 55140 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views.py changed, reloading.
+INFO 2025-05-14 07:21:56,084 autoreload 55229 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 07:22:17,696 autoreload 55229 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views.py changed, reloading.
+INFO 2025-05-14 07:22:18,543 autoreload 55299 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 07:22:33,916 autoreload 55299 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views.py changed, reloading.
+INFO 2025-05-14 07:22:34,641 autoreload 55342 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 07:22:53,062 autoreload 55342 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/config/settings.py changed, reloading.
+INFO 2025-05-14 07:22:53,547 autoreload 55372 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 07:24:44,398 views 55372 6126317568 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:24:44,402 views 55372 6126317568 找到 token: 1, BTC
+INFO 2025-05-14 07:24:44,423 okx_api 55372 6126317568 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:24:44,427 okx_api 55372 6126317568 正在检查环境变量...
+INFO 2025-05-14 07:24:44,428 okx_api 55372 6126317568 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:24:44,428 okx_api 55372 6126317568 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:24:44,428 okx_api 55372 6126317568 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:24:44,428 okx_api 55372 6126317568 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:24:44,428 okx_api 55372 6126317568 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:24:44,429 okx_api 55372 6126317568 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:24:44,429 okx_api 55372 6126317568 成功加载 OKX API 密钥
+INFO 2025-05-14 07:24:44,429 okx_api 55372 6126317568 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:24:44,431 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:24:45,292 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.86秒, 数据大小: 372
+INFO 2025-05-14 07:24:45,296 okx_api 55372 6126317568 成功获取BTCUSDT价格: 103501.8
+INFO 2025-05-14 07:24:45,300 signals 55372 6126317568 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:24:45,301 basehttp 55372 6126317568 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1556
+INFO 2025-05-14 07:24:45,319 views 55372 6126317568 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:24:45,320 views 55372 6126317568 找到 token: 1, BTC
+INFO 2025-05-14 07:24:45,328 okx_api 55372 6126317568 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:24:45,330 okx_api 55372 6126317568 正在检查环境变量...
+INFO 2025-05-14 07:24:45,330 okx_api 55372 6126317568 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:24:45,331 okx_api 55372 6126317568 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:24:45,331 okx_api 55372 6126317568 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:24:45,331 okx_api 55372 6126317568 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:24:45,331 okx_api 55372 6126317568 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:24:45,331 okx_api 55372 6126317568 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:24:45,331 okx_api 55372 6126317568 成功加载 OKX API 密钥
+INFO 2025-05-14 07:24:45,331 okx_api 55372 6126317568 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:24:45,331 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:24:46,133 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.80秒, 数据大小: 372
+INFO 2025-05-14 07:24:46,136 okx_api 55372 6126317568 成功获取BTCUSDT价格: 103501.8
+INFO 2025-05-14 07:24:46,138 signals 55372 6126317568 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:24:46,138 basehttp 55372 6126317568 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1556
+INFO 2025-05-14 07:24:57,224 views 55372 6126317568 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:24:57,227 views 55372 6126317568 找到 token: 1, BTC
+INFO 2025-05-14 07:24:57,227 okx_api 55372 6126317568 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:24:57,227 technical_analysis 55372 6126317568 技术分析服务初始化完成
+INFO 2025-05-14 07:24:57,228 views 55372 6126317568 延迟初始化: 技术分析服务
+INFO 2025-05-14 07:24:57,228 okx_api 55372 6126317568 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:24:57,228 views 55372 6126317568 延迟初始化: 市场数据服务
+INFO 2025-05-14 07:24:57,228 views 55372 6126317568 延迟初始化: 分析报告服务
+INFO 2025-05-14 07:24:57,228 okx_api 55372 6126317568 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:24:57,228 views 55372 6126317568 延迟初始化: OKX API服务
+INFO 2025-05-14 07:24:57,232 okx_api 55372 6126317568 正在检查环境变量...
+INFO 2025-05-14 07:24:57,232 okx_api 55372 6126317568 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:24:57,233 okx_api 55372 6126317568 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:24:57,233 okx_api 55372 6126317568 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:24:57,233 okx_api 55372 6126317568 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:24:57,233 okx_api 55372 6126317568 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:24:57,233 okx_api 55372 6126317568 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:24:57,233 okx_api 55372 6126317568 成功加载 OKX API 密钥
+INFO 2025-05-14 07:24:57,233 okx_api 55372 6126317568 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:24:57,233 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:24:58,079 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.85秒, 数据大小: 368
+INFO 2025-05-14 07:24:58,082 okx_api 55372 6126317568 成功获取BTCUSDT价格: 103432.0
+INFO 2025-05-14 07:24:58,082 technical_analysis 55372 6126317568 成功获取BTCUSDT实时价格: 103432.0，开始计算技术指标
+INFO 2025-05-14 07:24:58,083 okx_api 55372 6126317568 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=100 days ago UTC
+INFO 2025-05-14 07:24:58,083 okx_api 55372 6126317568 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:24:58,083 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:24:58,891 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.81秒, 数据大小: 12060
+INFO 2025-05-14 07:24:58,892 okx_api 55372 6126317568 使用常规K线接口获取了 100 条K线数据
+INFO 2025-05-14 07:24:58,893 technical_analysis 55372 6126317568 获取到100条K线数据，开始计算指标
+WARNING 2025-05-14 07:24:58,913 technical_analysis 55372 6126317568 数据长度不足200天(100天)，某些高级指标可能不准确
+DEBUG 2025-05-14 07:24:58,950 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/public/funding-rate | 参数: {'instId': 'BTC-USDT-SWAP'} | 数据: None
+DEBUG 2025-05-14 07:24:59,740 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.79秒, 数据大小: 490
+INFO 2025-05-14 07:24:59,743 okx_api 55372 6126317568 成功获取 BTCUSDT 的资金费率: 7.60362281977e-05
+INFO 2025-05-14 07:24:59,743 technical_analysis 55372 6126317568 获取到 BTCUSDT 的资金费率: 7.60362281977e-05
+INFO 2025-05-14 07:24:59,746 technical_analysis 55372 6126317568 数据量不足200天，使用100天数据计算高级指标
+INFO 2025-05-14 07:24:59,746 technical_analysis 55372 6126317568 使用99天数据计算NUPL
+INFO 2025-05-14 07:24:59,751 technical_analysis 55372 6126317568 NUPL计算结果: 17.241213341196893
+INFO 2025-05-14 07:24:59,751 technical_analysis 55372 6126317568 使用99天数据计算梅耶倍数
+INFO 2025-05-14 07:24:59,751 technical_analysis 55372 6126317568 使用99日移动平均线: 89769.88585858585
+INFO 2025-05-14 07:24:59,752 technical_analysis 55372 6126317568 梅耶倍数计算结果: 1.151984309781867
+INFO 2025-05-14 07:24:59,752 technical_analysis 55372 6126317568 成功计算BTCUSDT的所有技术指标
+INFO 2025-05-14 07:24:59,756 okx_api 55372 6126317568 正在检查环境变量...
+INFO 2025-05-14 07:24:59,757 okx_api 55372 6126317568 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:24:59,757 okx_api 55372 6126317568 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:24:59,757 okx_api 55372 6126317568 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:24:59,757 okx_api 55372 6126317568 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:24:59,757 okx_api 55372 6126317568 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:24:59,757 okx_api 55372 6126317568 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:24:59,758 okx_api 55372 6126317568 成功加载 OKX API 密钥
+INFO 2025-05-14 07:24:59,758 okx_api 55372 6126317568 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:24:59,758 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:25:00,559 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.80秒, 数据大小: 370
+DEBUG 2025-05-14 07:25:00,562 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:25:01,378 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.82秒, 数据大小: 152
+INFO 2025-05-14 07:25:01,380 okx_api 55372 6126317568 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:25:01,381 okx_api 55372 6126317568 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:25:01,381 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:25:02,353 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.97秒, 数据大小: 12060
+INFO 2025-05-14 07:25:02,357 okx_api 55372 6126317568 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:25:02,357 market_data_service 55372 6126317568 获取BTCUSDT的K线数据失败或数据不足
+DEBUG 2025-05-14 07:25:02,357 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:25:03,159 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.80秒, 数据大小: 366
+DEBUG 2025-05-14 07:25:03,161 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:25:03,949 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.79秒, 数据大小: 150
+DEBUG 2025-05-14 07:25:03,951 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:25:04,756 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.81秒, 数据大小: 370
+INFO 2025-05-14 07:25:04,759 okx_api 55372 6126317568 成功获取BTCUSDT价格: 103439.9
+INFO 2025-05-14 07:25:04,759 okx_api 55372 6126317568 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:25:04,759 okx_api 55372 6126317568 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:25:04,759 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:25:05,590 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.83秒, 数据大小: 12060
+INFO 2025-05-14 07:25:05,591 okx_api 55372 6126317568 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:25:05,592 market_data_service 55372 6126317568 无法获取BTCUSDT的足够历史K线数据来计算梅耶倍数
+INFO 2025-05-14 07:25:06,239 signals 55372 6126317568 更新代币 BTC 的技术分析数据
+INFO 2025-05-14 07:25:06,259 signals 55372 6126317568 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:25:06,262 views 55372 6126317568 成功更新代币 BTC 的技术分析数据
+INFO 2025-05-14 07:25:06,262 views 55372 6126317568 准备获取Coze分析: BTCUSDT
+INFO 2025-05-14 07:25:06,263 views 55372 6126317568 Coze API 请求 URL: https://api.coze.com/v3/chat
+INFO 2025-05-14 07:25:06,263 views 55372 6126317568 Coze API 请求头: {'Authorization': 'your_api_key_here', 'Content-Type': 'application/json', 'Accept': '*/*', 'Connection': 'keep-alive'}
+INFO 2025-05-14 07:25:06,263 views 55372 6126317568 Coze API 请求体: {'bot_id': '7494575252253720584', 'user_id': 'crypto_user_001', 'stream': False, 'auto_save_history': True, 'additional_messages': [{'role': 'user', 'content': 'hi', 'content_type': 'text'}]}
+INFO 2025-05-14 07:25:07,200 views 55372 6126317568 === 测试认证响应详情 ===
+INFO 2025-05-14 07:25:07,200 views 55372 6126317568 响应状态码: 200
+INFO 2025-05-14 07:25:07,200 views 55372 6126317568 响应头: {'Content-Type': 'application/json; charset=utf-8', 'X-Tt-Logid': '202505140725063E1A13B1BB644BF7DF05', 'Server-Timing': 'inner; dur=3', 'x-tt-trace-host': '01a8a485e48a642f25797106db5ecc768393a12a3eb3b7e68b4373763c3bf62f865216809ed3d09e8c1be930d3f1ff5c3f64c15edfbc2902b12a6ad36fa88fe47c15f957261df608e7a62dd016c9ecfd0284f1178a3bd9f33d361b8f1a171cd5d8', 'x-tt-trace-id': '00-2505140725063E1A13B1BB644BF7DF05-47B40E777B4D6E5D-00', 'Server': 'TLB', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Access-Control-Allow-Headers': 'origin,content-type,authorization,X-Coze-Connector-ID,X-Coze-Client-User-Agent', 'Content-Encoding': 'gzip', 'Expires': 'Wed, 14 May 2025 07:25:07 GMT', 'Cache-Control': 'max-age=0, no-cache, no-store', 'Pragma': 'no-cache', 'Date': 'Wed, 14 May 2025 07:25:07 GMT', 'Content-Length': '214', 'X-Cache': 'TCP_MISS from a23-43-242-143.deploy.akamaitechnologies.com (AkamaiGHost/22.1.2-812cedcbf35ba002177d10138ee3fcd0) (-)', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains', 'x-tt-trace-tag': 'id=16;cdn-cache=miss;type=dyn', 'X-Origin-Response-Time': '66,23.43.242.143', 'X-Akamai-Request-ID': '375ce37c'}
+INFO 2025-05-14 07:25:07,200 views 55372 6126317568 响应内容: {"code":4101,"msg":"The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication","detail":{"logid":"202505140725063E1A13B1BB644BF7DF05"}}
+ERROR 2025-05-14 07:25:07,200 views 55372 6126317568 Coze API认证失败: {'code': 4101, 'msg': 'The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication', 'detail': {'logid': '202505140725063E1A13B1BB644BF7DF05'}}
+WARNING 2025-05-14 07:25:07,201 views 55372 6126317568 Coze API认证失败，使用默认分析报告
+INFO 2025-05-14 07:25:07,201 views 55372 6126317568 使用默认分析报告
+INFO 2025-05-14 07:25:07,212 analysis_report_service 55372 6126317568 成功保存BTC的分析报告
+INFO 2025-05-14 07:25:07,223 okx_api 55372 6126317568 正在检查环境变量...
+INFO 2025-05-14 07:25:07,223 okx_api 55372 6126317568 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:25:07,223 okx_api 55372 6126317568 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:25:07,223 okx_api 55372 6126317568 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:25:07,223 okx_api 55372 6126317568 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:25:07,223 okx_api 55372 6126317568 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:25:07,223 okx_api 55372 6126317568 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:25:07,223 okx_api 55372 6126317568 成功加载 OKX API 密钥
+INFO 2025-05-14 07:25:07,224 okx_api 55372 6126317568 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:25:07,224 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:25:07,992 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.77秒, 数据大小: 372
+INFO 2025-05-14 07:25:07,993 okx_api 55372 6126317568 成功获取BTCUSDT价格: 103437.8
+INFO 2025-05-14 07:25:08,003 signals 55372 6126317568 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:25:08,006 basehttp 55372 6126317568 "GET /api/crypto/technical-indicators/BTCUSDT/?force_refresh=true HTTP/1.1" 200 1564
+INFO 2025-05-14 07:25:09,041 views 55372 6126317568 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:25:09,044 views 55372 6126317568 找到 token: 1, BTC
+INFO 2025-05-14 07:25:09,059 okx_api 55372 6126317568 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:25:09,063 okx_api 55372 6126317568 正在检查环境变量...
+INFO 2025-05-14 07:25:09,063 okx_api 55372 6126317568 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:25:09,064 okx_api 55372 6126317568 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:25:09,064 okx_api 55372 6126317568 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:25:09,064 okx_api 55372 6126317568 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:25:09,064 okx_api 55372 6126317568 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:25:09,064 okx_api 55372 6126317568 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:25:09,064 okx_api 55372 6126317568 成功加载 OKX API 密钥
+INFO 2025-05-14 07:25:09,065 okx_api 55372 6126317568 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:25:09,065 okx_api 55372 6126317568 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:25:09,913 okx_api 55372 6126317568 OKX API响应成功: 耗时: 0.85秒, 数据大小: 369
+INFO 2025-05-14 07:25:09,918 okx_api 55372 6126317568 成功获取BTCUSDT价格: 103437.8
+INFO 2025-05-14 07:25:09,921 signals 55372 6126317568 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:25:09,922 basehttp 55372 6126317568 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1564
+INFO 2025-05-14 07:26:33,446 autoreload 55372 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views.py changed, reloading.
+INFO 2025-05-14 07:26:35,227 autoreload 55765 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 07:26:54,888 autoreload 55765 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views.py changed, reloading.
+INFO 2025-05-14 07:26:55,429 autoreload 55802 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 07:27:05,626 autoreload 55802 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views.py changed, reloading.
+INFO 2025-05-14 07:27:06,554 autoreload 55845 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 07:29:07,580 views 55845 6167785472 使用 Coze API 密钥: your_api_k..._here
+INFO 2025-05-14 07:29:07,582 views 55845 6167785472 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 07:29:07,582 views 55845 6167785472 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 07:29:07,781 views 55845 6167785472 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:29:07,814 views 55845 6167785472 找到 token: 1, BTC
+INFO 2025-05-14 07:29:07,818 okx_api 55845 6167785472 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:29:07,819 technical_analysis 55845 6167785472 技术分析服务初始化完成
+INFO 2025-05-14 07:29:07,819 views 55845 6167785472 延迟初始化: 技术分析服务
+INFO 2025-05-14 07:29:07,820 okx_api 55845 6167785472 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:29:07,821 views 55845 6167785472 延迟初始化: 市场数据服务
+INFO 2025-05-14 07:29:07,821 views 55845 6167785472 延迟初始化: 分析报告服务
+INFO 2025-05-14 07:29:07,821 okx_api 55845 6167785472 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:29:07,821 views 55845 6167785472 延迟初始化: OKX API服务
+INFO 2025-05-14 07:29:07,915 okx_api 55845 6167785472 正在检查环境变量...
+INFO 2025-05-14 07:29:07,929 okx_api 55845 6167785472 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:29:08,019 okx_api 55845 6167785472 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:29:08,049 okx_api 55845 6167785472 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:29:08,050 okx_api 55845 6167785472 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:29:08,050 okx_api 55845 6167785472 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:29:08,050 okx_api 55845 6167785472 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:29:08,050 okx_api 55845 6167785472 成功加载 OKX API 密钥
+INFO 2025-05-14 07:29:08,050 okx_api 55845 6167785472 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:29:08,050 okx_api 55845 6167785472 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+WARNING 2025-05-14 07:29:18,382 okx_api 55845 6167785472 OKX API请求超时 (1/3)
+DEBUG 2025-05-14 07:29:19,389 okx_api 55845 6167785472 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+WARNING 2025-05-14 07:29:19,422 okx_api 55845 6167785472 OKX API请求异常 (2/3): HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/market/ticker?instId=BTC-USDT (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x12f26f4d0>: Failed to establish a new connection: [Errno 64] Host is down'))
+DEBUG 2025-05-14 07:29:20,427 okx_api 55845 6167785472 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+WARNING 2025-05-14 07:29:20,431 okx_api 55845 6167785472 OKX API请求异常 (3/3): HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/market/ticker?instId=BTC-USDT (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x12f26d100>: Failed to establish a new connection: [Errno 64] Host is down'))
+ERROR 2025-05-14 07:29:21,437 okx_api 55845 6167785472 在3次尝试后仍无法完成请求: HTTPSConnectionPool(host='www.okx.com', port=443): Max retries exceeded with url: /api/v5/market/ticker?instId=BTC-USDT (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x12f26d100>: Failed to establish a new connection: [Errno 64] Host is down'))
+ERROR 2025-05-14 07:29:21,437 okx_api 55845 6167785472 获取BTCUSDT价格失败
+ERROR 2025-05-14 07:29:21,437 technical_analysis 55845 6167785472 无法获取BTCUSDT的实时价格，交易对可能不存在
+ERROR 2025-05-14 07:29:21,438 views 55845 6167785472 获取技术指标数据失败: 无法获取BTCUSDT的实时价格，请检查交易对是否存在
+ERROR 2025-05-14 07:29:21,440 log 55845 6167785472 Internal Server Error: /api/crypto/technical-indicators/BTCUSDT/
+ERROR 2025-05-14 07:29:21,441 basehttp 55845 6167785472 "GET /api/crypto/technical-indicators/BTCUSDT/?force_refresh=true HTTP/1.1" 500 98
+INFO 2025-05-14 07:29:51,665 views 55845 6168358912 使用 Coze API 密钥: your_api_k..._here
+INFO 2025-05-14 07:29:51,669 views 55845 6168358912 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 07:29:51,669 views 55845 6168358912 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 07:29:51,755 views 55845 6168358912 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:29:51,759 views 55845 6168358912 找到 token: 1, BTC
+INFO 2025-05-14 07:29:51,759 okx_api 55845 6168358912 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:29:51,760 technical_analysis 55845 6168358912 技术分析服务初始化完成
+INFO 2025-05-14 07:29:51,760 views 55845 6168358912 延迟初始化: 技术分析服务
+INFO 2025-05-14 07:29:51,760 okx_api 55845 6168358912 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:29:51,760 views 55845 6168358912 延迟初始化: 市场数据服务
+INFO 2025-05-14 07:29:51,760 views 55845 6168358912 延迟初始化: 分析报告服务
+INFO 2025-05-14 07:29:51,760 okx_api 55845 6168358912 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:29:51,760 views 55845 6168358912 延迟初始化: OKX API服务
+INFO 2025-05-14 07:29:51,763 okx_api 55845 6168358912 正在检查环境变量...
+INFO 2025-05-14 07:29:51,763 okx_api 55845 6168358912 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:29:51,763 okx_api 55845 6168358912 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:29:51,763 okx_api 55845 6168358912 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:29:51,763 okx_api 55845 6168358912 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:29:51,763 okx_api 55845 6168358912 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:29:51,764 okx_api 55845 6168358912 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:29:51,764 okx_api 55845 6168358912 成功加载 OKX API 密钥
+INFO 2025-05-14 07:29:51,764 okx_api 55845 6168358912 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:29:51,764 okx_api 55845 6168358912 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:29:52,209 okx_api 55845 6168358912 OKX API响应成功: 耗时: 0.45秒, 数据大小: 371
+INFO 2025-05-14 07:29:52,212 okx_api 55845 6168358912 成功获取BTCUSDT价格: 103501.7
+INFO 2025-05-14 07:29:52,212 technical_analysis 55845 6168358912 成功获取BTCUSDT实时价格: 103501.7，开始计算技术指标
+INFO 2025-05-14 07:29:52,213 okx_api 55845 6168358912 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=100 days ago UTC
+INFO 2025-05-14 07:29:52,213 okx_api 55845 6168358912 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:29:52,213 okx_api 55845 6168358912 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:29:52,492 okx_api 55845 6168358912 OKX API响应成功: 耗时: 0.28秒, 数据大小: 12060
+INFO 2025-05-14 07:29:52,494 okx_api 55845 6168358912 使用常规K线接口获取了 100 条K线数据
+INFO 2025-05-14 07:29:52,495 technical_analysis 55845 6168358912 获取到100条K线数据，开始计算指标
+WARNING 2025-05-14 07:29:52,503 technical_analysis 55845 6168358912 数据长度不足200天(100天)，某些高级指标可能不准确
+DEBUG 2025-05-14 07:29:52,514 okx_api 55845 6168358912 OKX API 请求: GET https://www.okx.com/api/v5/public/funding-rate | 参数: {'instId': 'BTC-USDT-SWAP'} | 数据: None
+DEBUG 2025-05-14 07:29:52,789 okx_api 55845 6168358912 OKX API响应成功: 耗时: 0.27秒, 数据大小: 490
+INFO 2025-05-14 07:29:52,790 okx_api 55845 6168358912 成功获取 BTCUSDT 的资金费率: 7.3954544685e-05
+INFO 2025-05-14 07:29:52,790 technical_analysis 55845 6168358912 获取到 BTCUSDT 的资金费率: 7.3954544685e-05
+INFO 2025-05-14 07:29:52,790 technical_analysis 55845 6168358912 数据量不足200天，使用100天数据计算高级指标
+INFO 2025-05-14 07:29:52,790 technical_analysis 55845 6168358912 使用99天数据计算NUPL
+INFO 2025-05-14 07:29:52,793 technical_analysis 55845 6168358912 NUPL计算结果: 17.339658272992565
+INFO 2025-05-14 07:29:52,793 technical_analysis 55845 6168358912 使用99天数据计算梅耶倍数
+INFO 2025-05-14 07:29:52,793 technical_analysis 55845 6168358912 使用99日移动平均线: 89770.77676767675
+INFO 2025-05-14 07:29:52,793 technical_analysis 55845 6168358912 梅耶倍数计算结果: 1.15295537954248
+INFO 2025-05-14 07:29:52,793 technical_analysis 55845 6168358912 成功计算BTCUSDT的所有技术指标
+INFO 2025-05-14 07:29:52,796 okx_api 55845 6168358912 正在检查环境变量...
+INFO 2025-05-14 07:29:52,797 okx_api 55845 6168358912 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:29:52,797 okx_api 55845 6168358912 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:29:52,797 okx_api 55845 6168358912 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:29:52,797 okx_api 55845 6168358912 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:29:52,797 okx_api 55845 6168358912 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:29:52,797 okx_api 55845 6168358912 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:29:52,797 okx_api 55845 6168358912 成功加载 OKX API 密钥
+INFO 2025-05-14 07:29:52,797 okx_api 55845 6168358912 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:29:52,797 okx_api 55845 6168358912 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:29:53,078 okx_api 55845 6168358912 OKX API响应成功: 耗时: 0.28秒, 数据大小: 371
+DEBUG 2025-05-14 07:29:53,080 okx_api 55845 6168358912 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:29:53,288 okx_api 55845 6168358912 OKX API响应成功: 耗时: 0.21秒, 数据大小: 152
+INFO 2025-05-14 07:29:53,290 okx_api 55845 6168358912 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:29:53,290 okx_api 55845 6168358912 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:29:53,290 okx_api 55845 6168358912 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:29:53,559 okx_api 55845 6168358912 OKX API响应成功: 耗时: 0.27秒, 数据大小: 12060
+INFO 2025-05-14 07:29:53,560 okx_api 55845 6168358912 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:29:53,560 market_data_service 55845 6168358912 获取BTCUSDT的K线数据失败或数据不足
+DEBUG 2025-05-14 07:29:53,561 okx_api 55845 6168358912 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:29:53,741 okx_api 55845 6168358912 OKX API响应成功: 耗时: 0.18秒, 数据大小: 372
+DEBUG 2025-05-14 07:29:53,744 okx_api 55845 6168358912 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:29:53,942 okx_api 55845 6168358912 OKX API响应成功: 耗时: 0.20秒, 数据大小: 152
+DEBUG 2025-05-14 07:29:53,945 okx_api 55845 6168358912 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:29:54,139 okx_api 55845 6168358912 OKX API响应成功: 耗时: 0.19秒, 数据大小: 370
+INFO 2025-05-14 07:29:54,142 okx_api 55845 6168358912 成功获取BTCUSDT价格: 103491.5
+INFO 2025-05-14 07:29:54,142 okx_api 55845 6168358912 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:29:54,142 okx_api 55845 6168358912 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:29:54,143 okx_api 55845 6168358912 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:29:54,361 okx_api 55845 6168358912 OKX API响应成功: 耗时: 0.22秒, 数据大小: 12060
+INFO 2025-05-14 07:29:54,364 okx_api 55845 6168358912 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:29:54,365 market_data_service 55845 6168358912 无法获取BTCUSDT的足够历史K线数据来计算梅耶倍数
+INFO 2025-05-14 07:29:55,633 signals 55845 6168358912 更新代币 BTC 的技术分析数据
+INFO 2025-05-14 07:29:55,641 signals 55845 6168358912 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:29:55,642 views 55845 6168358912 成功更新代币 BTC 的技术分析数据
+INFO 2025-05-14 07:29:55,642 views 55845 6168358912 准备获取Coze分析: BTCUSDT
+INFO 2025-05-14 07:29:55,643 views 55845 6168358912 Coze API 请求 URL: https://api.coze.com/v3/chat
+INFO 2025-05-14 07:29:55,643 views 55845 6168358912 Coze API 请求头: {'Authorization': 'your_api_key_here', 'Content-Type': 'application/json', 'Accept': '*/*', 'Connection': 'keep-alive'}
+INFO 2025-05-14 07:29:55,643 views 55845 6168358912 Coze API 请求体: {'bot_id': '7494575252253720584', 'user_id': 'crypto_user_001', 'stream': False, 'auto_save_history': True, 'additional_messages': [{'role': 'user', 'content': 'hi', 'content_type': 'text'}]}
+INFO 2025-05-14 07:29:56,209 views 55845 6168358912 === 测试认证响应详情 ===
+INFO 2025-05-14 07:29:56,210 views 55845 6168358912 响应状态码: 200
+INFO 2025-05-14 07:29:56,210 views 55845 6168358912 响应头: {'Content-Type': 'application/json; charset=utf-8', 'X-Tt-Logid': '20250514072955EC688309E78CB234CECF', 'Server-Timing': 'inner; dur=9', 'x-tt-trace-host': '01eeb80b75c39159ae20c35ecc031ae96e8aff50f6f74ae6cb53afa1c36adaba359ce1009406420fc13c050967b343105945d9bd318d7c95106ce2539beb16729e36f1a42f47043fd315d055f44b5c7754c4b1d5f900f7ae4a71770ae9d7ead928', 'x-tt-trace-id': '00-250514072955EC688309E78CB234CECF-47B01D2D5B5725B5-00', 'Server': 'TLB', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Access-Control-Allow-Headers': 'origin,content-type,authorization,X-Coze-Connector-ID,X-Coze-Client-User-Agent', 'Content-Encoding': 'gzip', 'Expires': 'Wed, 14 May 2025 07:29:56 GMT', 'Cache-Control': 'max-age=0, no-cache, no-store', 'Pragma': 'no-cache', 'Date': 'Wed, 14 May 2025 07:29:56 GMT', 'Content-Length': '215', 'X-Cache': 'TCP_MISS from a23-33-91-120.deploy.akamaitechnologies.com (AkamaiGHost/22.1.2-812cedcbf35ba002177d10138ee3fcd0) (-)', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains', 'x-tt-trace-tag': 'id=16;cdn-cache=miss;type=dyn', 'X-Origin-Response-Time': '47,23.33.91.120', 'X-Akamai-Request-ID': '302ddac8'}
+INFO 2025-05-14 07:29:56,210 views 55845 6168358912 响应内容: {"code":4101,"msg":"The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication","detail":{"logid":"20250514072955EC688309E78CB234CECF"}}
+ERROR 2025-05-14 07:29:56,210 views 55845 6168358912 Coze API认证失败: {'code': 4101, 'msg': 'The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication', 'detail': {'logid': '20250514072955EC688309E78CB234CECF'}}
+WARNING 2025-05-14 07:29:56,211 views 55845 6168358912 Coze API认证失败，使用默认分析报告
+INFO 2025-05-14 07:29:56,211 views 55845 6168358912 使用默认分析报告
+INFO 2025-05-14 07:29:56,240 analysis_report_service 55845 6168358912 成功保存BTC的分析报告
+INFO 2025-05-14 07:29:56,253 okx_api 55845 6168358912 正在检查环境变量...
+INFO 2025-05-14 07:29:56,253 okx_api 55845 6168358912 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:29:56,253 okx_api 55845 6168358912 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:29:56,253 okx_api 55845 6168358912 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:29:56,253 okx_api 55845 6168358912 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:29:56,253 okx_api 55845 6168358912 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:29:56,253 okx_api 55845 6168358912 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:29:56,253 okx_api 55845 6168358912 成功加载 OKX API 密钥
+INFO 2025-05-14 07:29:56,254 okx_api 55845 6168358912 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:29:56,254 okx_api 55845 6168358912 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:29:56,448 okx_api 55845 6168358912 OKX API响应成功: 耗时: 0.19秒, 数据大小: 372
+INFO 2025-05-14 07:29:56,450 okx_api 55845 6168358912 成功获取BTCUSDT价格: 103487.6
+INFO 2025-05-14 07:29:56,453 signals 55845 6168358912 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:29:56,455 basehttp 55845 6168358912 "GET /api/crypto/technical-indicators/BTCUSDT/?force_refresh=true HTTP/1.1" 200 1568
+INFO 2025-05-14 07:29:57,468 views 55845 6168358912 使用 Coze API 密钥: your_api_k..._here
+INFO 2025-05-14 07:29:57,468 views 55845 6168358912 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 07:29:57,468 views 55845 6168358912 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 07:29:57,472 views 55845 6168358912 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:29:57,474 views 55845 6168358912 找到 token: 1, BTC
+INFO 2025-05-14 07:29:57,483 okx_api 55845 6168358912 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:29:57,485 okx_api 55845 6168358912 正在检查环境变量...
+INFO 2025-05-14 07:29:57,485 okx_api 55845 6168358912 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:29:57,485 okx_api 55845 6168358912 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:29:57,485 okx_api 55845 6168358912 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:29:57,485 okx_api 55845 6168358912 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:29:57,486 okx_api 55845 6168358912 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:29:57,486 okx_api 55845 6168358912 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:29:57,486 okx_api 55845 6168358912 成功加载 OKX API 密钥
+INFO 2025-05-14 07:29:57,486 okx_api 55845 6168358912 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:29:57,486 okx_api 55845 6168358912 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:29:57,732 okx_api 55845 6168358912 OKX API响应成功: 耗时: 0.25秒, 数据大小: 372
+INFO 2025-05-14 07:29:57,733 okx_api 55845 6168358912 成功获取BTCUSDT价格: 103487.6
+INFO 2025-05-14 07:29:57,735 signals 55845 6168358912 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:29:57,735 basehttp 55845 6168358912 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1568
+INFO 2025-05-14 07:31:02,709 autoreload 55845 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views.py changed, reloading.
+INFO 2025-05-14 07:31:03,517 autoreload 56328 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 07:31:32,260 views 56328 6201765888 使用环境变量中的 COZE_API_KEY
+INFO 2025-05-14 07:31:32,260 views 56328 6201765888 使用 Coze API 密钥: your_api_k..._here
+INFO 2025-05-14 07:31:32,260 views 56328 6201765888 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 07:31:32,261 views 56328 6201765888 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 07:31:32,358 views 56328 6201765888 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:31:32,360 views 56328 6201765888 找到 token: 1, BTC
+INFO 2025-05-14 07:31:32,360 okx_api 56328 6201765888 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:31:32,360 technical_analysis 56328 6201765888 技术分析服务初始化完成
+INFO 2025-05-14 07:31:32,361 views 56328 6201765888 延迟初始化: 技术分析服务
+INFO 2025-05-14 07:31:32,361 okx_api 56328 6201765888 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:31:32,361 views 56328 6201765888 延迟初始化: 市场数据服务
+INFO 2025-05-14 07:31:32,361 views 56328 6201765888 延迟初始化: 分析报告服务
+INFO 2025-05-14 07:31:32,362 okx_api 56328 6201765888 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:31:32,362 views 56328 6201765888 延迟初始化: OKX API服务
+INFO 2025-05-14 07:31:32,367 okx_api 56328 6201765888 正在检查环境变量...
+INFO 2025-05-14 07:31:32,367 okx_api 56328 6201765888 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:31:32,367 okx_api 56328 6201765888 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:31:32,367 okx_api 56328 6201765888 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:31:32,367 okx_api 56328 6201765888 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:31:32,368 okx_api 56328 6201765888 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:31:32,368 okx_api 56328 6201765888 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:31:32,368 okx_api 56328 6201765888 成功加载 OKX API 密钥
+INFO 2025-05-14 07:31:32,368 okx_api 56328 6201765888 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:31:32,368 okx_api 56328 6201765888 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:31:32,588 okx_api 56328 6201765888 OKX API响应成功: 耗时: 0.22秒, 数据大小: 370
+INFO 2025-05-14 07:31:32,589 okx_api 56328 6201765888 成功获取BTCUSDT价格: 103447.9
+INFO 2025-05-14 07:31:32,589 technical_analysis 56328 6201765888 成功获取BTCUSDT实时价格: 103447.9，开始计算技术指标
+INFO 2025-05-14 07:31:32,589 okx_api 56328 6201765888 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=100 days ago UTC
+INFO 2025-05-14 07:31:32,589 okx_api 56328 6201765888 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:31:32,589 okx_api 56328 6201765888 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:31:32,782 okx_api 56328 6201765888 OKX API响应成功: 耗时: 0.19秒, 数据大小: 12060
+INFO 2025-05-14 07:31:32,785 okx_api 56328 6201765888 使用常规K线接口获取了 100 条K线数据
+INFO 2025-05-14 07:31:32,787 technical_analysis 56328 6201765888 获取到100条K线数据，开始计算指标
+WARNING 2025-05-14 07:31:32,801 technical_analysis 56328 6201765888 数据长度不足200天(100天)，某些高级指标可能不准确
+DEBUG 2025-05-14 07:31:32,812 okx_api 56328 6201765888 OKX API 请求: GET https://www.okx.com/api/v5/public/funding-rate | 参数: {'instId': 'BTC-USDT-SWAP'} | 数据: None
+DEBUG 2025-05-14 07:31:33,004 okx_api 56328 6201765888 OKX API响应成功: 耗时: 0.19秒, 数据大小: 490
+INFO 2025-05-14 07:31:33,005 okx_api 56328 6201765888 成功获取 BTCUSDT 的资金费率: 7.24337579752e-05
+INFO 2025-05-14 07:31:33,005 technical_analysis 56328 6201765888 获取到 BTCUSDT 的资金费率: 7.24337579752e-05
+INFO 2025-05-14 07:31:33,007 technical_analysis 56328 6201765888 数据量不足200天，使用100天数据计算高级指标
+INFO 2025-05-14 07:31:33,007 technical_analysis 56328 6201765888 使用99天数据计算NUPL
+INFO 2025-05-14 07:31:33,010 technical_analysis 56328 6201765888 NUPL计算结果: 17.259312829319214
+INFO 2025-05-14 07:31:33,012 technical_analysis 56328 6201765888 使用99天数据计算梅耶倍数
+INFO 2025-05-14 07:31:33,012 technical_analysis 56328 6201765888 使用99日移动平均线: 89770.0616161616
+INFO 2025-05-14 07:31:33,012 technical_analysis 56328 6201765888 梅耶倍数计算结果: 1.1521758828934454
+INFO 2025-05-14 07:31:33,012 technical_analysis 56328 6201765888 成功计算BTCUSDT的所有技术指标
+INFO 2025-05-14 07:31:33,033 okx_api 56328 6201765888 正在检查环境变量...
+INFO 2025-05-14 07:31:33,033 okx_api 56328 6201765888 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:31:33,033 okx_api 56328 6201765888 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:31:33,034 okx_api 56328 6201765888 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:31:33,034 okx_api 56328 6201765888 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:31:33,034 okx_api 56328 6201765888 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:31:33,034 okx_api 56328 6201765888 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:31:33,034 okx_api 56328 6201765888 成功加载 OKX API 密钥
+INFO 2025-05-14 07:31:33,034 okx_api 56328 6201765888 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:31:33,034 okx_api 56328 6201765888 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:31:33,298 okx_api 56328 6201765888 OKX API响应成功: 耗时: 0.26秒, 数据大小: 370
+DEBUG 2025-05-14 07:31:33,300 okx_api 56328 6201765888 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:31:33,487 okx_api 56328 6201765888 OKX API响应成功: 耗时: 0.19秒, 数据大小: 150
+INFO 2025-05-14 07:31:33,489 okx_api 56328 6201765888 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:31:33,489 okx_api 56328 6201765888 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:31:33,489 okx_api 56328 6201765888 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:31:33,690 okx_api 56328 6201765888 OKX API响应成功: 耗时: 0.20秒, 数据大小: 12060
+INFO 2025-05-14 07:31:33,693 okx_api 56328 6201765888 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:31:33,694 market_data_service 56328 6201765888 获取BTCUSDT的K线数据失败或数据不足
+DEBUG 2025-05-14 07:31:33,694 okx_api 56328 6201765888 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:31:33,950 okx_api 56328 6201765888 OKX API响应成功: 耗时: 0.26秒, 数据大小: 370
+DEBUG 2025-05-14 07:31:33,953 okx_api 56328 6201765888 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:31:34,177 okx_api 56328 6201765888 OKX API响应成功: 耗时: 0.22秒, 数据大小: 152
+DEBUG 2025-05-14 07:31:34,178 okx_api 56328 6201765888 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:31:34,421 okx_api 56328 6201765888 OKX API响应成功: 耗时: 0.24秒, 数据大小: 370
+INFO 2025-05-14 07:31:34,424 okx_api 56328 6201765888 成功获取BTCUSDT价格: 103447.9
+INFO 2025-05-14 07:31:34,424 okx_api 56328 6201765888 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:31:34,424 okx_api 56328 6201765888 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:31:34,425 okx_api 56328 6201765888 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:31:34,654 okx_api 56328 6201765888 OKX API响应成功: 耗时: 0.23秒, 数据大小: 12058
+INFO 2025-05-14 07:31:34,657 okx_api 56328 6201765888 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:31:34,658 market_data_service 56328 6201765888 无法获取BTCUSDT的足够历史K线数据来计算梅耶倍数
+INFO 2025-05-14 07:31:35,693 signals 56328 6201765888 更新代币 BTC 的技术分析数据
+INFO 2025-05-14 07:31:35,702 signals 56328 6201765888 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:31:35,705 views 56328 6201765888 成功更新代币 BTC 的技术分析数据
+INFO 2025-05-14 07:31:35,705 views 56328 6201765888 准备获取Coze分析: BTCUSDT
+INFO 2025-05-14 07:31:35,708 views 56328 6201765888 使用环境变量中的 COZE_API_KEY
+INFO 2025-05-14 07:31:35,708 views 56328 6201765888 使用 Coze API 密钥: your_api_k..._here
+INFO 2025-05-14 07:31:35,708 views 56328 6201765888 Coze API 请求 URL: https://api.coze.com/v3/chat
+INFO 2025-05-14 07:31:35,708 views 56328 6201765888 Coze API 请求头: {'Authorization': 'your_api_key_here', 'Content-Type': 'application/json', 'Accept': '*/*', 'Connection': 'keep-alive'}
+INFO 2025-05-14 07:31:35,708 views 56328 6201765888 Coze API 请求体: {'bot_id': '7494575252253720584', 'user_id': 'crypto_user_001', 'stream': False, 'auto_save_history': True, 'additional_messages': [{'role': 'user', 'content': 'hi', 'content_type': 'text'}]}
+INFO 2025-05-14 07:31:36,582 views 56328 6201765888 === 测试认证响应详情 ===
+INFO 2025-05-14 07:31:36,582 views 56328 6201765888 响应状态码: 200
+INFO 2025-05-14 07:31:36,583 views 56328 6201765888 响应头: {'Content-Type': 'application/json; charset=utf-8', 'X-Tt-Logid': '202505140731359A3A56737B5A7E6EEB33', 'Server-Timing': 'inner; dur=6', 'x-tt-trace-host': '01eeb80b75c39159ae20c35ecc031ae96e8aff50f6f74ae6cb53afa1c36adaba357b93b256bbbf3f6278199f8a3739754a48b19d05152b52528c49563eb4d0406b75cf457070fc0a9df4e2049da0e83fd7fa5d2135d75b3627d94ceeeaa4927872', 'x-tt-trace-id': '00-2505140731359A3A56737B5A7E6EEB33-6C2AC789230B6438-00', 'Server': 'TLB', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Access-Control-Allow-Headers': 'origin,content-type,authorization,X-Coze-Connector-ID,X-Coze-Client-User-Agent', 'Content-Encoding': 'gzip', 'Expires': 'Wed, 14 May 2025 07:31:36 GMT', 'Cache-Control': 'max-age=0, no-cache, no-store', 'Pragma': 'no-cache', 'Date': 'Wed, 14 May 2025 07:31:36 GMT', 'Content-Length': '215', 'X-Cache': 'TCP_MISS from a23-33-91-122.deploy.akamaitechnologies.com (AkamaiGHost/22.1.2-812cedcbf35ba002177d10138ee3fcd0) (-)', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains', 'x-tt-trace-tag': 'id=16;cdn-cache=miss;type=dyn', 'X-Origin-Response-Time': '45,23.33.91.122', 'X-Akamai-Request-ID': '2d57d701'}
+INFO 2025-05-14 07:31:36,583 views 56328 6201765888 响应内容: {"code":4101,"msg":"The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication","detail":{"logid":"202505140731359A3A56737B5A7E6EEB33"}}
+ERROR 2025-05-14 07:31:36,583 views 56328 6201765888 Coze API认证失败: {'code': 4101, 'msg': 'The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication', 'detail': {'logid': '202505140731359A3A56737B5A7E6EEB33'}}
+WARNING 2025-05-14 07:31:36,583 views 56328 6201765888 Coze API认证失败，使用默认分析报告
+INFO 2025-05-14 07:31:36,583 views 56328 6201765888 使用默认分析报告
+INFO 2025-05-14 07:31:36,619 analysis_report_service 56328 6201765888 成功保存BTC的分析报告
+INFO 2025-05-14 07:31:36,635 okx_api 56328 6201765888 正在检查环境变量...
+INFO 2025-05-14 07:31:36,635 okx_api 56328 6201765888 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:31:36,635 okx_api 56328 6201765888 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:31:36,635 okx_api 56328 6201765888 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:31:36,635 okx_api 56328 6201765888 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:31:36,635 okx_api 56328 6201765888 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:31:36,635 okx_api 56328 6201765888 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:31:36,635 okx_api 56328 6201765888 成功加载 OKX API 密钥
+INFO 2025-05-14 07:31:36,638 okx_api 56328 6201765888 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:31:36,638 okx_api 56328 6201765888 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:31:36,923 okx_api 56328 6201765888 OKX API响应成功: 耗时: 0.28秒, 数据大小: 365
+INFO 2025-05-14 07:31:36,928 okx_api 56328 6201765888 成功获取BTCUSDT价格: 103434.0
+INFO 2025-05-14 07:31:36,942 signals 56328 6201765888 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:31:36,950 basehttp 56328 6201765888 "GET /api/crypto/technical-indicators/BTCUSDT/?force_refresh=true HTTP/1.1" 200 1568
+INFO 2025-05-14 07:31:38,009 views 56328 6201765888 使用环境变量中的 COZE_API_KEY
+INFO 2025-05-14 07:31:38,010 views 56328 6201765888 使用 Coze API 密钥: your_api_k..._here
+INFO 2025-05-14 07:31:38,010 views 56328 6201765888 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 07:31:38,010 views 56328 6201765888 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 07:31:38,035 views 56328 6201765888 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:31:38,039 views 56328 6201765888 找到 token: 1, BTC
+INFO 2025-05-14 07:31:38,049 okx_api 56328 6201765888 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:31:38,052 okx_api 56328 6201765888 正在检查环境变量...
+INFO 2025-05-14 07:31:38,053 okx_api 56328 6201765888 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:31:38,053 okx_api 56328 6201765888 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:31:38,053 okx_api 56328 6201765888 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:31:38,053 okx_api 56328 6201765888 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:31:38,053 okx_api 56328 6201765888 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:31:38,053 okx_api 56328 6201765888 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:31:38,053 okx_api 56328 6201765888 成功加载 OKX API 密钥
+INFO 2025-05-14 07:31:38,053 okx_api 56328 6201765888 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:31:38,053 okx_api 56328 6201765888 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:31:38,311 okx_api 56328 6201765888 OKX API响应成功: 耗时: 0.26秒, 数据大小: 370
+INFO 2025-05-14 07:31:38,312 okx_api 56328 6201765888 成功获取BTCUSDT价格: 103444.4
+INFO 2025-05-14 07:31:38,315 signals 56328 6201765888 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:31:38,316 basehttp 56328 6201765888 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1568
+INFO 2025-05-14 07:37:36,322 autoreload 56328 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views.py changed, reloading.
+INFO 2025-05-14 07:37:37,436 autoreload 57527 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 07:38:03,562 views 57527 6160052224 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 07:38:03,562 views 57527 6160052224 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 07:38:03,562 views 57527 6160052224 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 07:38:03,563 views 57527 6160052224 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 07:38:03,574 views 57527 6160052224 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:38:03,575 views 57527 6160052224 找到 token: 1, BTC
+INFO 2025-05-14 07:38:03,575 okx_api 57527 6160052224 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:38:03,576 technical_analysis 57527 6160052224 技术分析服务初始化完成
+INFO 2025-05-14 07:38:03,576 views 57527 6160052224 延迟初始化: 技术分析服务
+INFO 2025-05-14 07:38:03,576 okx_api 57527 6160052224 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:38:03,576 views 57527 6160052224 延迟初始化: 市场数据服务
+INFO 2025-05-14 07:38:03,576 views 57527 6160052224 延迟初始化: 分析报告服务
+INFO 2025-05-14 07:38:03,577 okx_api 57527 6160052224 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:38:03,577 views 57527 6160052224 延迟初始化: OKX API服务
+INFO 2025-05-14 07:38:03,581 okx_api 57527 6160052224 正在检查环境变量...
+INFO 2025-05-14 07:38:03,581 okx_api 57527 6160052224 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:38:03,582 okx_api 57527 6160052224 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:38:03,582 okx_api 57527 6160052224 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:38:03,582 okx_api 57527 6160052224 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:38:03,582 okx_api 57527 6160052224 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:38:03,582 okx_api 57527 6160052224 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:38:03,582 okx_api 57527 6160052224 成功加载 OKX API 密钥
+INFO 2025-05-14 07:38:03,582 okx_api 57527 6160052224 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:38:03,582 okx_api 57527 6160052224 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:38:03,794 okx_api 57527 6160052224 OKX API响应成功: 耗时: 0.21秒, 数据大小: 368
+INFO 2025-05-14 07:38:03,796 okx_api 57527 6160052224 成功获取BTCUSDT价格: 103536.0
+INFO 2025-05-14 07:38:03,796 technical_analysis 57527 6160052224 成功获取BTCUSDT实时价格: 103536.0，开始计算技术指标
+INFO 2025-05-14 07:38:03,796 okx_api 57527 6160052224 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=100 days ago UTC
+INFO 2025-05-14 07:38:03,796 okx_api 57527 6160052224 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:38:03,796 okx_api 57527 6160052224 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:38:04,008 okx_api 57527 6160052224 OKX API响应成功: 耗时: 0.21秒, 数据大小: 12056
+INFO 2025-05-14 07:38:04,011 okx_api 57527 6160052224 使用常规K线接口获取了 100 条K线数据
+INFO 2025-05-14 07:38:04,012 technical_analysis 57527 6160052224 获取到100条K线数据，开始计算指标
+WARNING 2025-05-14 07:38:04,029 technical_analysis 57527 6160052224 数据长度不足200天(100天)，某些高级指标可能不准确
+DEBUG 2025-05-14 07:38:04,054 okx_api 57527 6160052224 OKX API 请求: GET https://www.okx.com/api/v5/public/funding-rate | 参数: {'instId': 'BTC-USDT-SWAP'} | 数据: None
+DEBUG 2025-05-14 07:38:04,245 okx_api 57527 6160052224 OKX API响应成功: 耗时: 0.19秒, 数据大小: 490
+INFO 2025-05-14 07:38:04,246 okx_api 57527 6160052224 成功获取 BTCUSDT 的资金费率: 6.93783948738e-05
+INFO 2025-05-14 07:38:04,247 technical_analysis 57527 6160052224 获取到 BTCUSDT 的资金费率: 6.93783948738e-05
+INFO 2025-05-14 07:38:04,247 technical_analysis 57527 6160052224 数据量不足200天，使用100天数据计算高级指标
+INFO 2025-05-14 07:38:04,247 technical_analysis 57527 6160052224 使用99天数据计算NUPL
+INFO 2025-05-14 07:38:04,251 technical_analysis 57527 6160052224 NUPL计算结果: 17.37770394010425
+INFO 2025-05-14 07:38:04,251 technical_analysis 57527 6160052224 使用99天数据计算梅耶倍数
+INFO 2025-05-14 07:38:04,251 technical_analysis 57527 6160052224 使用99日移动平均线: 89771.12323232323
+INFO 2025-05-14 07:38:04,251 technical_analysis 57527 6160052224 梅耶倍数计算结果: 1.153333012577485
+INFO 2025-05-14 07:38:04,251 technical_analysis 57527 6160052224 成功计算BTCUSDT的所有技术指标
+INFO 2025-05-14 07:38:04,253 okx_api 57527 6160052224 正在检查环境变量...
+INFO 2025-05-14 07:38:04,253 okx_api 57527 6160052224 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:38:04,253 okx_api 57527 6160052224 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:38:04,253 okx_api 57527 6160052224 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:38:04,253 okx_api 57527 6160052224 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:38:04,254 okx_api 57527 6160052224 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:38:04,254 okx_api 57527 6160052224 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:38:04,254 okx_api 57527 6160052224 成功加载 OKX API 密钥
+INFO 2025-05-14 07:38:04,254 okx_api 57527 6160052224 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:38:04,254 okx_api 57527 6160052224 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:38:04,456 okx_api 57527 6160052224 OKX API响应成功: 耗时: 0.20秒, 数据大小: 367
+DEBUG 2025-05-14 07:38:04,461 okx_api 57527 6160052224 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:38:04,715 okx_api 57527 6160052224 OKX API响应成功: 耗时: 0.25秒, 数据大小: 152
+INFO 2025-05-14 07:38:04,716 okx_api 57527 6160052224 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:38:04,717 okx_api 57527 6160052224 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:38:04,717 okx_api 57527 6160052224 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:38:04,913 okx_api 57527 6160052224 OKX API响应成功: 耗时: 0.20秒, 数据大小: 12060
+INFO 2025-05-14 07:38:04,916 okx_api 57527 6160052224 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:38:04,916 market_data_service 57527 6160052224 获取BTCUSDT的K线数据失败或数据不足
+DEBUG 2025-05-14 07:38:04,917 okx_api 57527 6160052224 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:38:05,112 okx_api 57527 6160052224 OKX API响应成功: 耗时: 0.20秒, 数据大小: 365
+DEBUG 2025-05-14 07:38:05,115 okx_api 57527 6160052224 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 07:38:05,332 okx_api 57527 6160052224 OKX API响应成功: 耗时: 0.22秒, 数据大小: 150
+DEBUG 2025-05-14 07:38:05,334 okx_api 57527 6160052224 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:38:05,523 okx_api 57527 6160052224 OKX API响应成功: 耗时: 0.19秒, 数据大小: 367
+INFO 2025-05-14 07:38:05,526 okx_api 57527 6160052224 成功获取BTCUSDT价格: 103520.0
+INFO 2025-05-14 07:38:05,526 okx_api 57527 6160052224 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 07:38:05,527 okx_api 57527 6160052224 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 07:38:05,527 okx_api 57527 6160052224 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 07:38:05,742 okx_api 57527 6160052224 OKX API响应成功: 耗时: 0.21秒, 数据大小: 12060
+INFO 2025-05-14 07:38:05,745 okx_api 57527 6160052224 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 07:38:05,745 market_data_service 57527 6160052224 无法获取BTCUSDT的足够历史K线数据来计算梅耶倍数
+INFO 2025-05-14 07:38:06,796 signals 57527 6160052224 更新代币 BTC 的技术分析数据
+INFO 2025-05-14 07:38:06,803 signals 57527 6160052224 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:38:06,803 views 57527 6160052224 成功更新代币 BTC 的技术分析数据
+INFO 2025-05-14 07:38:06,804 views 57527 6160052224 准备获取Coze分析: BTCUSDT
+INFO 2025-05-14 07:38:06,804 views 57527 6160052224 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 07:38:06,804 views 57527 6160052224 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 07:38:06,804 views 57527 6160052224 Coze API 请求 URL: https://api.coze.com/v3/chat
+INFO 2025-05-14 07:38:06,804 views 57527 6160052224 Coze API 请求头: {'Authorization': 'pat_mGFYEurP7DS6f9XMW8ZHtAxZwghcYCWfayQraqVYDN4Zz71zvF94Mm3fJ2dV7wBH', 'Content-Type': 'application/json', 'Accept': '*/*', 'Connection': 'keep-alive'}
+INFO 2025-05-14 07:38:06,804 views 57527 6160052224 Coze API 请求体: {'bot_id': '7494575252253720584', 'user_id': 'crypto_user_001', 'stream': False, 'auto_save_history': True, 'additional_messages': [{'role': 'user', 'content': 'hi', 'content_type': 'text'}]}
+INFO 2025-05-14 07:38:07,287 views 57527 6160052224 === 测试认证响应详情 ===
+INFO 2025-05-14 07:38:07,288 views 57527 6160052224 响应状态码: 200
+INFO 2025-05-14 07:38:07,288 views 57527 6160052224 响应头: {'Content-Type': 'application/json; charset=utf-8', 'X-Tt-Logid': '20250514073806EC5588E4FDC26C20AC3D', 'Server-Timing': 'inner; dur=5', 'x-tt-trace-host': '01e94a3461a9a1740bc1466a29080456ef172b50c7a994663662deed34ed35f990181fdb09060bd2ba530414acdc771f6e204fcc72d884cbf7ecf7c63c10bbb466e6296f6432f742f80e1f1fd60ecba57da7455c6e59c125597686bdc656d15083', 'x-tt-trace-id': '00-250514073806EC5588E4FDC26C20AC3D-002184468486536F-00', 'Server': 'TLB', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Access-Control-Allow-Headers': 'origin,content-type,authorization,X-Coze-Connector-ID,X-Coze-Client-User-Agent', 'Content-Encoding': 'gzip', 'Expires': 'Wed, 14 May 2025 07:38:07 GMT', 'Cache-Control': 'max-age=0, no-cache, no-store', 'Pragma': 'no-cache', 'Date': 'Wed, 14 May 2025 07:38:07 GMT', 'Content-Length': '216', 'X-Cache': 'TCP_MISS from a23-202-34-167.deploy.akamaitechnologies.com (AkamaiGHost/22.1.2-812cedcbf35ba002177d10138ee3fcd0) (-)', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains', 'x-tt-trace-tag': 'id=16;cdn-cache=miss;type=dyn', 'X-Origin-Response-Time': '52,23.202.34.167', 'X-Akamai-Request-ID': 'f94a5961'}
+INFO 2025-05-14 07:38:07,288 views 57527 6160052224 响应内容: {"code":4101,"msg":"The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication","detail":{"logid":"20250514073806EC5588E4FDC26C20AC3D"}}
+ERROR 2025-05-14 07:38:07,290 views 57527 6160052224 Coze API认证失败: {'code': 4101, 'msg': 'The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication', 'detail': {'logid': '20250514073806EC5588E4FDC26C20AC3D'}}
+WARNING 2025-05-14 07:38:07,290 views 57527 6160052224 Coze API认证失败，使用默认分析报告
+INFO 2025-05-14 07:38:07,291 views 57527 6160052224 使用默认分析报告
+INFO 2025-05-14 07:38:07,304 analysis_report_service 57527 6160052224 成功保存BTC的分析报告
+INFO 2025-05-14 07:38:07,318 okx_api 57527 6160052224 正在检查环境变量...
+INFO 2025-05-14 07:38:07,318 okx_api 57527 6160052224 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:38:07,318 okx_api 57527 6160052224 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:38:07,318 okx_api 57527 6160052224 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:38:07,318 okx_api 57527 6160052224 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:38:07,318 okx_api 57527 6160052224 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:38:07,318 okx_api 57527 6160052224 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:38:07,318 okx_api 57527 6160052224 成功加载 OKX API 密钥
+INFO 2025-05-14 07:38:07,318 okx_api 57527 6160052224 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:38:07,318 okx_api 57527 6160052224 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:38:07,517 okx_api 57527 6160052224 OKX API响应成功: 耗时: 0.20秒, 数据大小: 369
+INFO 2025-05-14 07:38:07,521 okx_api 57527 6160052224 成功获取BTCUSDT价格: 103522.5
+INFO 2025-05-14 07:38:07,524 signals 57527 6160052224 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:38:07,525 basehttp 57527 6160052224 "GET /api/crypto/technical-indicators/BTCUSDT/?force_refresh=true HTTP/1.1" 200 1560
+INFO 2025-05-14 07:38:08,544 views 57527 6160052224 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 07:38:08,544 views 57527 6160052224 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 07:38:08,544 views 57527 6160052224 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 07:38:08,544 views 57527 6160052224 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 07:38:08,553 views 57527 6160052224 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 07:38:08,555 views 57527 6160052224 找到 token: 1, BTC
+INFO 2025-05-14 07:38:08,561 okx_api 57527 6160052224 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 07:38:08,564 okx_api 57527 6160052224 正在检查环境变量...
+INFO 2025-05-14 07:38:08,565 okx_api 57527 6160052224 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 07:38:08,565 okx_api 57527 6160052224 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 07:38:08,566 okx_api 57527 6160052224 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 07:38:08,566 okx_api 57527 6160052224 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 07:38:08,566 okx_api 57527 6160052224 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 07:38:08,566 okx_api 57527 6160052224 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 07:38:08,566 okx_api 57527 6160052224 成功加载 OKX API 密钥
+INFO 2025-05-14 07:38:08,566 okx_api 57527 6160052224 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 07:38:08,567 okx_api 57527 6160052224 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 07:38:08,744 okx_api 57527 6160052224 OKX API响应成功: 耗时: 0.18秒, 数据大小: 368
+INFO 2025-05-14 07:38:08,745 okx_api 57527 6160052224 成功获取BTCUSDT价格: 103517.8
+INFO 2025-05-14 07:38:08,747 signals 57527 6160052224 更新代币 BTC 的市场数据
+INFO 2025-05-14 07:38:08,748 basehttp 57527 6160052224 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1560
+INFO 2025-05-14 07:50:46,711 basehttp 57527 6177452032 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-14 07:50:46,721 basehttp 57527 6160052224 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 07:51:44,299 basehttp 57527 6160052224 "GET /admin/CryptoAnalyst/invitationcode/ HTTP/1.1" 200 11802
+INFO 2025-05-14 07:51:44,362 basehttp 57527 6160052224 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2025-05-14 13:39:07,464 autoreload 93117 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-14 13:43:51,341 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:43:51,343 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:43:51,343 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:43:51,343 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:43:51,397 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:43:51,432 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:43:51,503 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:43:51,525 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:43:51,526 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:43:51,526 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:43:51,526 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:43:51,526 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:43:51,526 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:43:51,526 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:43:51,526 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:43:51,526 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:43:51,526 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:43:52,100 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.57秒, 数据大小: 370
+INFO 2025-05-14 13:43:52,103 okx_api 93117 6198472704 成功获取BTCUSDT价格: 104038.8
+INFO 2025-05-14 13:43:52,119 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:43:52,120 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1560
+INFO 2025-05-14 13:43:52,129 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:43:52,129 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:43:52,130 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:43:52,130 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:43:52,153 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:43:52,159 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:43:52,163 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:43:52,167 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:43:52,167 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:43:52,167 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:43:52,167 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:43:52,167 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:43:52,167 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:43:52,167 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:43:52,167 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:43:52,167 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:43:52,167 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:43:52,478 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.31秒, 数据大小: 370
+INFO 2025-05-14 13:43:52,479 okx_api 93117 6198472704 成功获取BTCUSDT价格: 104038.8
+INFO 2025-05-14 13:43:52,480 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:43:52,481 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1560
+INFO 2025-05-14 13:43:52,854 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:43:52,856 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:43:52,857 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:43:52,858 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:43:52,872 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:43:52,873 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:43:52,873 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:43:52,873 technical_analysis 93117 6198472704 技术分析服务初始化完成
+INFO 2025-05-14 13:43:52,873 views 93117 6198472704 延迟初始化: 技术分析服务
+INFO 2025-05-14 13:43:52,873 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:43:52,873 views 93117 6198472704 延迟初始化: 市场数据服务
+INFO 2025-05-14 13:43:52,873 views 93117 6198472704 延迟初始化: 分析报告服务
+INFO 2025-05-14 13:43:52,873 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:43:52,873 views 93117 6198472704 延迟初始化: OKX API服务
+INFO 2025-05-14 13:43:52,877 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:43:52,877 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:43:52,877 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:43:52,877 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:43:52,877 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:43:52,877 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:43:52,877 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:43:52,877 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:43:52,877 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:43:52,878 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:43:53,286 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.41秒, 数据大小: 366
+INFO 2025-05-14 13:43:53,288 okx_api 93117 6198472704 成功获取BTCUSDT价格: 104040.0
+INFO 2025-05-14 13:43:53,289 technical_analysis 93117 6198472704 成功获取BTCUSDT实时价格: 104040.0，开始计算技术指标
+INFO 2025-05-14 13:43:53,289 okx_api 93117 6198472704 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=100 days ago UTC
+INFO 2025-05-14 13:43:53,289 okx_api 93117 6198472704 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 13:43:53,289 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 13:43:53,988 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.70秒, 数据大小: 12060
+INFO 2025-05-14 13:43:53,990 okx_api 93117 6198472704 使用常规K线接口获取了 100 条K线数据
+INFO 2025-05-14 13:43:53,990 technical_analysis 93117 6198472704 获取到100条K线数据，开始计算指标
+WARNING 2025-05-14 13:43:54,004 technical_analysis 93117 6198472704 数据长度不足200天(100天)，某些高级指标可能不准确
+DEBUG 2025-05-14 13:43:54,022 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/public/funding-rate | 参数: {'instId': 'BTC-USDT-SWAP'} | 数据: None
+DEBUG 2025-05-14 13:43:54,702 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.68秒, 数据大小: 490
+INFO 2025-05-14 13:43:54,703 okx_api 93117 6198472704 成功获取 BTCUSDT 的资金费率: 2.02646922441e-05
+INFO 2025-05-14 13:43:54,703 technical_analysis 93117 6198472704 获取到 BTCUSDT 的资金费率: 2.02646922441e-05
+INFO 2025-05-14 13:43:54,704 technical_analysis 93117 6198472704 数据量不足200天，使用100天数据计算高级指标
+INFO 2025-05-14 13:43:54,704 technical_analysis 93117 6198472704 使用99天数据计算NUPL
+INFO 2025-05-14 13:43:54,717 technical_analysis 93117 6198472704 NUPL计算结果: 17.90693655376465
+INFO 2025-05-14 13:43:54,717 technical_analysis 93117 6198472704 使用99天数据计算梅耶倍数
+INFO 2025-05-14 13:43:54,718 technical_analysis 93117 6198472704 使用99日移动平均线: 89776.21313131312
+INFO 2025-05-14 13:43:54,718 technical_analysis 93117 6198472704 梅耶倍数计算结果: 1.1588804692377008
+INFO 2025-05-14 13:43:54,718 technical_analysis 93117 6198472704 成功计算BTCUSDT的所有技术指标
+INFO 2025-05-14 13:43:54,729 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:43:54,729 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:43:54,729 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:43:54,729 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:43:54,729 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:43:54,729 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:43:54,729 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:43:54,729 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:43:54,729 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:43:54,729 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:43:55,052 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.32秒, 数据大小: 361
+DEBUG 2025-05-14 13:43:55,053 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 13:43:55,364 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.31秒, 数据大小: 150
+INFO 2025-05-14 13:43:55,368 okx_api 93117 6198472704 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 13:43:55,369 okx_api 93117 6198472704 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 13:43:55,369 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 13:43:55,768 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.40秒, 数据大小: 12058
+INFO 2025-05-14 13:43:55,770 okx_api 93117 6198472704 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 13:43:55,771 market_data_service 93117 6198472704 获取BTCUSDT的K线数据失败或数据不足
+DEBUG 2025-05-14 13:43:55,771 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:43:56,160 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.39秒, 数据大小: 369
+DEBUG 2025-05-14 13:43:56,163 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 1} | 数据: None
+DEBUG 2025-05-14 13:43:56,468 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.30秒, 数据大小: 150
+DEBUG 2025-05-14 13:43:56,470 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:43:56,767 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.30秒, 数据大小: 365
+INFO 2025-05-14 13:43:56,770 okx_api 93117 6198472704 成功获取BTCUSDT价格: 104040.0
+INFO 2025-05-14 13:43:56,770 okx_api 93117 6198472704 获取历史K线数据: 原始符号=BTCUSDT, OKX符号=BTC-USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+INFO 2025-05-14 13:43:56,770 okx_api 93117 6198472704 尝试使用常规K线接口获取数据: BTC-USDT
+DEBUG 2025-05-14 13:43:56,770 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/candles | 参数: {'instId': 'BTC-USDT', 'bar': '1D', 'limit': 100} | 数据: None
+DEBUG 2025-05-14 13:43:57,123 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.35秒, 数据大小: 12058
+INFO 2025-05-14 13:43:57,130 okx_api 93117 6198472704 使用常规K线接口获取了 100 条K线数据
+WARNING 2025-05-14 13:43:57,131 market_data_service 93117 6198472704 无法获取BTCUSDT的足够历史K线数据来计算梅耶倍数
+INFO 2025-05-14 13:43:58,103 signals 93117 6198472704 更新代币 BTC 的技术分析数据
+INFO 2025-05-14 13:43:58,110 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:43:58,112 views 93117 6198472704 成功更新代币 BTC 的技术分析数据
+INFO 2025-05-14 13:43:58,112 views 93117 6198472704 准备获取Coze分析: BTCUSDT
+INFO 2025-05-14 13:43:58,113 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:43:58,113 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:43:58,113 views 93117 6198472704 Coze API 请求 URL: https://api.coze.com/v3/chat
+INFO 2025-05-14 13:43:58,113 views 93117 6198472704 Coze API 请求头: {'Authorization': 'pat_mGFYEurP7DS6f9XMW8ZHtAxZwghcYCWfayQraqVYDN4Zz71zvF94Mm3fJ2dV7wBH', 'Content-Type': 'application/json', 'Accept': '*/*', 'Connection': 'keep-alive'}
+INFO 2025-05-14 13:43:58,113 views 93117 6198472704 Coze API 请求体: {'bot_id': '7494575252253720584', 'user_id': 'crypto_user_001', 'stream': False, 'auto_save_history': True, 'additional_messages': [{'role': 'user', 'content': 'hi', 'content_type': 'text'}]}
+INFO 2025-05-14 13:43:58,931 views 93117 6198472704 === 测试认证响应详情 ===
+INFO 2025-05-14 13:43:58,931 views 93117 6198472704 响应状态码: 200
+INFO 2025-05-14 13:43:58,931 views 93117 6198472704 响应头: {'Content-Type': 'application/json; charset=utf-8', 'X-Tt-Logid': '20250514134358567C7264371FAC83CA66', 'Server-Timing': 'inner; dur=10', 'x-tt-trace-host': '013920a7b1b8a85d0f097d52a0059ab1f027816ed0d54c7a3cda3a225224e3375319be635e0470f7b76236b999ec404ca8c1ed653a8b8ef0f52217ca8de6bae0531854731c4ba1f39f5f2e7772a1d4048ecd49da65820ae2a57eaa4e21328bd756', 'x-tt-trace-id': '00-250514134358567C7264371FAC83CA66-7ED52878845E4556-00', 'Server': 'TLB', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'false', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Access-Control-Allow-Headers': 'origin,content-type,authorization,X-Coze-Connector-ID,X-Coze-Client-User-Agent', 'Content-Encoding': 'gzip', 'Expires': 'Wed, 14 May 2025 13:43:59 GMT', 'Cache-Control': 'max-age=0, no-cache, no-store', 'Pragma': 'no-cache', 'Date': 'Wed, 14 May 2025 13:43:59 GMT', 'Content-Length': '215', 'X-Cache': 'TCP_MISS from a23-51-15-81.deploy.akamaitechnologies.com (AkamaiGHost/22.1.2-812cedcbf35ba002177d10138ee3fcd0) (-)', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains', 'x-tt-trace-tag': 'id=16;cdn-cache=miss;type=dyn', 'X-Origin-Response-Time': '84,23.51.15.81', 'X-Akamai-Request-ID': '683fcaef'}
+INFO 2025-05-14 13:43:58,931 views 93117 6198472704 响应内容: {"code":4101,"msg":"The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication","detail":{"logid":"20250514134358567C7264371FAC83CA66"}}
+ERROR 2025-05-14 13:43:58,931 views 93117 6198472704 Coze API认证失败: {'code': 4101, 'msg': 'The token you entered is incorrect. Please double-check and try again. For more information, refer to https://coze.com/docs/developer_guides/authentication', 'detail': {'logid': '20250514134358567C7264371FAC83CA66'}}
+WARNING 2025-05-14 13:43:58,932 views 93117 6198472704 Coze API认证失败，使用默认分析报告
+INFO 2025-05-14 13:43:58,932 views 93117 6198472704 使用默认分析报告
+INFO 2025-05-14 13:43:58,945 analysis_report_service 93117 6198472704 成功保存BTC的分析报告
+INFO 2025-05-14 13:43:58,967 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:43:58,967 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:43:58,967 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:43:58,967 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:43:58,967 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:43:58,967 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:43:58,967 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:43:58,967 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:43:58,967 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:43:58,967 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:43:59,289 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.32秒, 数据大小: 367
+INFO 2025-05-14 13:43:59,291 okx_api 93117 6198472704 成功获取BTCUSDT价格: 104050.0
+INFO 2025-05-14 13:43:59,297 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:43:59,298 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/?force_refresh=true HTTP/1.1" 200 1553
+INFO 2025-05-14 13:44:00,305 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:44:00,306 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:44:00,306 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:44:00,306 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:44:00,313 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:44:00,314 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:44:00,321 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:44:00,323 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:44:00,323 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:44:00,323 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:44:00,323 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:44:00,323 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:44:00,323 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:44:00,323 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:44:00,323 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:44:00,323 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:44:00,323 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:44:00,717 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.39秒, 数据大小: 371
+INFO 2025-05-14 13:44:00,718 okx_api 93117 6198472704 成功获取BTCUSDT价格: 104020.1
+INFO 2025-05-14 13:44:00,744 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:44:00,746 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1553
+INFO 2025-05-14 13:44:19,493 basehttp 93117 6198472704 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-05-14 13:44:19,517 basehttp 93117 6215872512 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-14 13:44:19,520 basehttp 93117 6198472704 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 13:44:28,563 views 93117 6198472704 登录请求数据: {'email': 'liu.zhao@qq.com', 'password': 'liuzhao9575'}
+INFO 2025-05-14 13:44:28,847 basehttp 93117 6198472704 "POST /api/auth/login/ HTTP/1.1" 200 254
+INFO 2025-05-14 13:44:29,370 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:44:29,371 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:44:29,371 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:44:29,371 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:44:29,376 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:44:29,379 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:44:29,384 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:44:29,387 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:44:29,387 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:44:29,387 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:44:29,387 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:44:29,387 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:44:29,387 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:44:29,387 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:44:29,387 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:44:29,387 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:44:29,387 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:44:29,776 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.39秒, 数据大小: 366
+INFO 2025-05-14 13:44:29,779 okx_api 93117 6198472704 成功获取BTCUSDT价格: 103790.5
+INFO 2025-05-14 13:44:29,788 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:44:29,789 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1553
+INFO 2025-05-14 13:44:29,798 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:44:29,798 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:44:29,799 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:44:29,799 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:44:29,827 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:44:29,843 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:44:29,882 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:44:29,888 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:44:29,889 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:44:29,889 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:44:29,889 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:44:29,889 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:44:29,890 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:44:29,890 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:44:29,890 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:44:29,890 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:44:29,890 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:44:30,236 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.35秒, 数据大小: 369
+INFO 2025-05-14 13:44:30,239 okx_api 93117 6198472704 成功获取BTCUSDT价格: 103790.6
+INFO 2025-05-14 13:44:30,246 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:44:30,247 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1553
+INFO 2025-05-14 13:44:31,464 basehttp 93117 6215872512 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-14 13:44:31,474 basehttp 93117 6198472704 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 13:44:45,881 basehttp 93117 6198472704 "POST /api/auth/request-password-reset/ HTTP/1.1" 200 78
+INFO 2025-05-14 13:45:12,582 basehttp 93117 6198472704 "POST /api/auth/reset-password-with-code/ HTTP/1.1" 200 285
+INFO 2025-05-14 13:45:21,540 views 93117 6198472704 登录请求数据: {'email': 'liu.zhao@qq.com', 'password': 'liuzhao8899'}
+INFO 2025-05-14 13:45:21,740 basehttp 93117 6198472704 "POST /api/auth/login/ HTTP/1.1" 200 254
+INFO 2025-05-14 13:45:22,260 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:45:22,260 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:45:22,260 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:45:22,260 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:45:22,265 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:45:22,268 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:45:22,272 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:45:22,277 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:45:22,277 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:45:22,277 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:45:22,277 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:45:22,277 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:45:22,277 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:45:22,278 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:45:22,278 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:45:22,278 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:45:22,278 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:45:22,800 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.52秒, 数据大小: 368
+INFO 2025-05-14 13:45:22,802 okx_api 93117 6198472704 成功获取BTCUSDT价格: 103701.9
+INFO 2025-05-14 13:45:22,808 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:45:22,809 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1553
+INFO 2025-05-14 13:45:22,819 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:45:22,820 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:45:22,820 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:45:22,820 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:45:22,828 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:45:22,879 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:45:22,935 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:45:22,938 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:45:22,938 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:45:22,938 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:45:22,938 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:45:22,938 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:45:22,939 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:45:22,939 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:45:22,939 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:45:22,939 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:45:22,939 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:45:23,478 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.54秒, 数据大小: 370
+INFO 2025-05-14 13:45:23,479 okx_api 93117 6198472704 成功获取BTCUSDT价格: 103696.8
+INFO 2025-05-14 13:45:23,482 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:45:23,482 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1553
+INFO 2025-05-14 13:45:24,920 basehttp 93117 6215872512 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-14 13:45:24,921 basehttp 93117 6198472704 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-14 13:45:58,037 views 93117 6198472704 尝试发送邮件到 smartwallet2025@gmail.com
+INFO 2025-05-14 13:45:58,044 views 93117 6198472704 使用邮箱: liuzhao5556@gmail.com
+INFO 2025-05-14 13:45:58,045 views 93117 6198472704 使用服务器: smtp.gmail.com:587
+INFO 2025-05-14 13:46:03,341 views 93117 6198472704 成功发送验证码到 smartwallet2025@gmail.com
+INFO 2025-05-14 13:46:03,345 basehttp 93117 6198472704 "POST /api/auth/send-code/ HTTP/1.1" 200 51
+INFO 2025-05-14 13:46:33,109 basehttp 93117 6198472704 "GET /admin/CryptoAnalyst/invitationcode/ HTTP/1.1" 302 0
+INFO 2025-05-14 13:46:33,151 basehttp 93117 6198472704 "GET /admin/login/?next=/admin/CryptoAnalyst/invitationcode/ HTTP/1.1" 200 4246
+INFO 2025-05-14 13:46:46,326 basehttp 93117 6198472704 "POST /admin/login/?next=/admin/CryptoAnalyst/invitationcode/ HTTP/1.1" 302 0
+INFO 2025-05-14 13:46:46,356 basehttp 93117 6198472704 "GET /admin/CryptoAnalyst/invitationcode/ HTTP/1.1" 200 11802
+INFO 2025-05-14 13:46:46,395 basehttp 93117 6198472704 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2025-05-14 13:46:51,144 basehttp 93117 6198472704 "GET /admin/CryptoAnalyst/invitationcode/generate-codes/ HTTP/1.1" 200 3668
+INFO 2025-05-14 13:46:52,838 basehttp 93117 6198472704 "POST /admin/CryptoAnalyst/invitationcode/generate-codes/ HTTP/1.1" 302 0
+INFO 2025-05-14 13:46:52,871 basehttp 93117 6198472704 "GET /admin/CryptoAnalyst/invitationcode/ HTTP/1.1" 200 18740
+INFO 2025-05-14 13:46:52,895 basehttp 93117 6198472704 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2025-05-14 13:46:52,896 basehttp 93117 6215872512 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2025-05-14 13:46:52,959 basehttp 93117 6215872512 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-05-14 13:46:58,604 views 93117 6198472704 开始注册流程，请求数据: {'email': 'smartwallet2025@gmail.com', 'password': 'liuzhao9575', 'code': '978285', 'invitation_code': '436P044L'}
+INFO 2025-05-14 13:46:58,636 views 93117 6198472704 验证验证码: email=smartwallet2025@gmail.com, code=978285
+INFO 2025-05-14 13:46:58,640 views 93117 6198472704 验证邀请码: 436P044L
+INFO 2025-05-14 13:46:58,646 views 93117 6198472704 生成随机用户名: user_5pnolaia
+INFO 2025-05-14 13:46:58,647 views 93117 6198472704 创建用户: email=smartwallet2025@gmail.com, username=user_5pnolaia
+INFO 2025-05-14 13:46:58,836 views 93117 6198472704 更新验证码状态
+INFO 2025-05-14 13:46:58,838 views 93117 6198472704 更新邀请码状态
+INFO 2025-05-14 13:46:58,839 views 93117 6198472704 关联邀请码到用户
+INFO 2025-05-14 13:46:58,840 views 93117 6198472704 注册成功: user_id=2
+INFO 2025-05-14 13:46:58,841 basehttp 93117 6198472704 "POST /api/auth/register/ HTTP/1.1" 201 229
+INFO 2025-05-14 13:47:22,958 views 93117 6198472704 登录请求数据: {'email': 'smartwallet2025@gmail.com', 'password': 'liuzhao9575'}
+INFO 2025-05-14 13:47:23,183 basehttp 93117 6198472704 "POST /api/auth/login/ HTTP/1.1" 200 264
+INFO 2025-05-14 13:47:23,696 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:47:23,697 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:47:23,697 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:47:23,697 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:47:23,707 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:47:23,709 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:47:23,719 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:47:23,725 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:47:23,725 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:47:23,725 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:47:23,725 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:47:23,725 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:47:23,725 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:47:23,725 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:47:23,726 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:47:23,726 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:47:23,726 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:47:24,046 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.32秒, 数据大小: 367
+INFO 2025-05-14 13:47:24,047 okx_api 93117 6198472704 成功获取BTCUSDT价格: 103674.0
+INFO 2025-05-14 13:47:24,049 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:47:24,049 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1553
+INFO 2025-05-14 13:47:24,052 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:47:24,052 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:47:24,052 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:47:24,052 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:47:24,060 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:47:24,064 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:47:24,077 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:47:24,079 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:47:24,079 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:47:24,079 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:47:24,079 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:47:24,079 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:47:24,079 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:47:24,079 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:47:24,079 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:47:24,079 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:47:24,079 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:47:24,416 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.34秒, 数据大小: 366
+INFO 2025-05-14 13:47:24,418 okx_api 93117 6198472704 成功获取BTCUSDT价格: 103674.0
+INFO 2025-05-14 13:47:24,421 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:47:24,424 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1553
+INFO 2025-05-14 13:47:25,308 basehttp 93117 6215872512 "GET /api/auth/profile/ HTTP/1.1" 200 204
+INFO 2025-05-14 13:47:25,310 basehttp 93117 6198472704 "PUT /api/auth/profile/ HTTP/1.1" 200 229
+INFO 2025-05-14 13:47:31,486 basehttp 93117 6198472704 "PUT /api/auth/profile/ HTTP/1.1" 200 229
+INFO 2025-05-14 13:47:31,489 basehttp 93117 6215872512 "PUT /api/auth/profile/ HTTP/1.1" 200 229
+INFO 2025-05-14 13:47:38,506 basehttp 93117 6198472704 "PUT /api/auth/profile/ HTTP/1.1" 200 229
+INFO 2025-05-14 13:47:38,508 basehttp 93117 6215872512 "PUT /api/auth/profile/ HTTP/1.1" 200 229
+INFO 2025-05-14 13:47:43,908 basehttp 93117 6198472704 "PUT /api/auth/profile/ HTTP/1.1" 200 229
+INFO 2025-05-14 13:47:43,909 basehttp 93117 6215872512 "PUT /api/auth/profile/ HTTP/1.1" 200 229
+INFO 2025-05-14 13:47:46,197 basehttp 93117 6198472704 "PUT /api/auth/profile/ HTTP/1.1" 200 229
+INFO 2025-05-14 13:47:46,198 basehttp 93117 6215872512 "PUT /api/auth/profile/ HTTP/1.1" 200 229
+INFO 2025-05-14 13:47:49,229 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:47:49,230 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:47:49,230 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:47:49,230 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:47:49,238 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:47:49,239 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:47:49,255 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:47:49,258 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:47:49,258 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:47:49,258 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:47:49,258 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:47:49,258 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:47:49,258 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:47:49,258 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:47:49,259 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:47:49,259 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:47:49,259 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:47:49,786 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.53秒, 数据大小: 370
+INFO 2025-05-14 13:47:49,788 okx_api 93117 6198472704 成功获取BTCUSDT价格: 103672.1
+INFO 2025-05-14 13:47:49,794 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:47:49,794 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1553
+INFO 2025-05-14 13:47:49,798 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:47:49,799 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:47:49,799 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:47:49,799 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:47:49,870 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:47:49,897 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:47:49,908 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:47:49,910 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:47:49,910 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:47:49,910 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:47:49,910 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:47:49,910 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:47:49,911 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:47:49,911 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:47:49,912 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:47:49,912 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:47:49,912 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:47:50,464 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.55秒, 数据大小: 367
+INFO 2025-05-14 13:47:50,466 okx_api 93117 6198472704 成功获取BTCUSDT价格: 103674.3
+INFO 2025-05-14 13:47:50,469 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:47:50,470 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1553
+INFO 2025-05-14 13:47:51,419 basehttp 93117 6198472704 "PUT /api/auth/profile/ HTTP/1.1" 200 229
+INFO 2025-05-14 13:47:51,419 basehttp 93117 6215872512 "GET /api/auth/profile/ HTTP/1.1" 200 204
+INFO 2025-05-14 13:47:53,493 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:47:53,494 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:47:53,494 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:47:53,494 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:47:53,500 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:47:53,504 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:47:53,515 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:47:53,518 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:47:53,518 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:47:53,518 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:47:53,518 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:47:53,518 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:47:53,518 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:47:53,518 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:47:53,518 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:47:53,518 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:47:53,518 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:47:53,844 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.33秒, 数据大小: 367
+INFO 2025-05-14 13:47:53,846 okx_api 93117 6198472704 成功获取BTCUSDT价格: 103668.0
+INFO 2025-05-14 13:47:53,849 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:47:53,852 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1553
+INFO 2025-05-14 13:47:53,856 views 93117 6198472704 使用硬编码的 COZE_API_KEY
+INFO 2025-05-14 13:47:53,857 views 93117 6198472704 使用 Coze API 密钥: pat_mGFYEu...V7wBH
+INFO 2025-05-14 13:47:53,857 views 93117 6198472704 使用 Coze Bot ID: 7494575252253720584
+INFO 2025-05-14 13:47:53,857 views 93117 6198472704 使用 Coze API URL: https://api.coze.com
+INFO 2025-05-14 13:47:53,868 views 93117 6198472704 查询 symbol: BTCUSDT, clean_symbol: BTC
+INFO 2025-05-14 13:47:53,872 views 93117 6198472704 找到 token: 1, BTC
+INFO 2025-05-14 13:47:53,878 okx_api 93117 6198472704 OKXAPI 实例创建，尚未初始化
+INFO 2025-05-14 13:47:53,880 okx_api 93117 6198472704 正在检查环境变量...
+INFO 2025-05-14 13:47:53,880 okx_api 93117 6198472704 尝试获取 OKX_API_KEY: 已设置
+INFO 2025-05-14 13:47:53,880 okx_api 93117 6198472704 尝试获取 OKX_API_SECRET: 已设置
+INFO 2025-05-14 13:47:53,880 okx_api 93117 6198472704 尝试获取 OKX_API_PASSPHRASE: 已设置
+INFO 2025-05-14 13:47:53,880 okx_api 93117 6198472704 尝试获取 OKEX_API_SECRET: 未设置
+INFO 2025-05-14 13:47:53,880 okx_api 93117 6198472704 尝试获取 OKX_SECRET: 未设置
+INFO 2025-05-14 13:47:53,880 okx_api 93117 6198472704 正在使用硬编码的API密钥进行测试...
+INFO 2025-05-14 13:47:53,881 okx_api 93117 6198472704 成功加载 OKX API 密钥
+INFO 2025-05-14 13:47:53,881 okx_api 93117 6198472704 OKXAPI 客户端初始化完成
+DEBUG 2025-05-14 13:47:53,881 okx_api 93117 6198472704 OKX API 请求: GET https://www.okx.com/api/v5/market/ticker | 参数: {'instId': 'BTC-USDT'} | 数据: None
+DEBUG 2025-05-14 13:47:54,204 okx_api 93117 6198472704 OKX API响应成功: 耗时: 0.32秒, 数据大小: 366
+INFO 2025-05-14 13:47:54,206 okx_api 93117 6198472704 成功获取BTCUSDT价格: 103646.1
+INFO 2025-05-14 13:47:54,209 signals 93117 6198472704 更新代币 BTC 的市场数据
+INFO 2025-05-14 13:47:54,212 basehttp 93117 6198472704 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 1553
