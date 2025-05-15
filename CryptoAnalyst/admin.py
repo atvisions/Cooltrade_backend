@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (
-    Chain, Token, TechnicalAnalysis, MarketData,
+    Chain, Token, TechnicalAnalysis,
     AnalysisReport, User, VerificationCode, InvitationCode
 )
 from django.utils.html import format_html
@@ -18,14 +18,14 @@ class InvitationCodeAdmin(admin.ModelAdmin):
     search_fields = ('code', 'created_by__email', 'used_by__email')
     readonly_fields = ('created_at', 'used_at')
     change_list_template = 'admin/invitation_code_change_list.html'
-    
+
     def get_urls(self):
         urls = super().get_urls()
         custom_urls = [
             path('generate-codes/', self.generate_codes, name='generate-codes'),
         ]
         return custom_urls + urls
-    
+
     def generate_codes(self, request):
         if request.method == 'POST':
             try:
@@ -37,7 +37,7 @@ class InvitationCodeAdmin(admin.ModelAdmin):
                         messages.ERROR
                     )
                     return HttpResponseRedirect('../')
-                
+
                 codes = []
                 for _ in range(count):
                     code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
@@ -46,7 +46,7 @@ class InvitationCodeAdmin(admin.ModelAdmin):
                         created_by=request.user
                     )
                     codes.append(code)
-                
+
                 self.message_user(
                     request,
                     f'成功生成 {count} 个邀请码：{", ".join(codes)}',
@@ -65,7 +65,7 @@ class InvitationCodeAdmin(admin.ModelAdmin):
                     messages.ERROR
                 )
             return HttpResponseRedirect('../')
-        
+
         return render(
             request,
             'admin/generate_codes.html',
@@ -76,7 +76,7 @@ class InvitationCodeAdmin(admin.ModelAdmin):
 admin.site.register(Chain)
 admin.site.register(Token)
 admin.site.register(TechnicalAnalysis)
-admin.site.register(MarketData)
+# MarketData 模型已移除
 admin.site.register(AnalysisReport)
 admin.site.register(User)
-admin.site.register(VerificationCode) 
+admin.site.register(VerificationCode)

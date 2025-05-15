@@ -1,0 +1,198 @@
+"""
+技术指标API视图
+"""
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
+import asyncio
+from asgiref.sync import sync_to_async
+from django.utils import timezone
+import time
+import logging
+
+from .services.technical_analysis import TechnicalAnalysisService
+from .services.market_data_service import MarketDataService
+from .models import Token, Chain, AnalysisReport, TechnicalAnalysis
+
+# 配置日志
+logger = logging.getLogger(__name__)
+
+class TechnicalIndicatorsAPIView(APIView):
+    """技术指标API视图
+
+    处理 /api/crypto/technical-indicators/<str:symbol>/ 接口的请求
+    返回指定代币的技术指标分析报告
+    """
+    permission_classes = [IsAuthenticated]
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.ta_service = None
+        self.market_service = None
+
+    def get(self, request, symbol: str):
+        """同步入口点，调用异步处理"""
+        return asyncio.run(self.async_get(request, symbol))
+
+    async def async_get(self, request, symbol: str):
+        """异步处理 GET 请求"""
+        try:
+            # 确保服务已初始化
+            if self.ta_service is None:
+                self.ta_service = TechnicalAnalysisService()
+            if self.market_service is None:
+                self.market_service = MarketDataService()
+
+            # 统一 symbol 格式，去除常见后缀
+            clean_symbol = symbol.upper().replace('USDT', '').replace('-PERP', '').replace('_PERP', '').replace('PERP', '')
+
+            # 处理查询
+
+            # 查找代币记录
+            token_qs = await sync_to_async(Token.objects.filter)(symbol=clean_symbol)
+            token = await sync_to_async(token_qs.first)()
+
+            if not token:
+                return Response({
+                    'status': 'not_found',
+                    'message': f"未找到代币 {clean_symbol} 的分析数据",
+                    'needs_refresh': True
+                }, status=status.HTTP_404_NOT_FOUND)
+
+            # 获取最新的分析报告
+            reports_qs = await sync_to_async(AnalysisReport.objects.filter)(token=token)
+            reports_qs = await sync_to_async(reports_qs.order_by)('-timestamp')
+            latest_report = await sync_to_async(reports_qs.first)()
+
+            if not latest_report:
+                return Response({
+                    'status': 'not_found',
+                    'message': f"未找到代币 {clean_symbol} 的分析数据",
+                    'needs_refresh': True
+                }, status=status.HTTP_404_NOT_FOUND)
+
+            # 获取相关的技术分析数据
+            ta_qs = await sync_to_async(TechnicalAnalysis.objects.filter)(token=token)
+            ta_qs = await sync_to_async(ta_qs.order_by)('-timestamp')
+            technical_analysis = await sync_to_async(ta_qs.first)()
+
+            if not technical_analysis:
+                return Response({
+                    'status': 'not_found',
+                    'message': f"未找到代币 {clean_symbol} 的技术分析数据",
+                    'needs_refresh': True
+                }, status=status.HTTP_404_NOT_FOUND)
+
+            # 只使用数据库中的报告价格，不请求实时价格
+
+            # 构建响应数据
+            response_data = {
+                'status': 'success',
+                'data': {
+                    'symbol': symbol,
+                    'price': float(latest_report.snapshot_price),  # 使用报告中的价格
+                    'trend_analysis': {
+                        'probabilities': {
+                            'up': latest_report.trend_up_probability,
+                            'sideways': latest_report.trend_sideways_probability,
+                            'down': latest_report.trend_down_probability
+                        },
+                        'summary': latest_report.trend_summary
+                    },
+                    'indicators_analysis': {
+                        'RSI': {
+                            'value': float(technical_analysis.rsi) if technical_analysis.rsi is not None else None,
+                            'analysis': latest_report.rsi_analysis,
+                            'support_trend': latest_report.rsi_support_trend
+                        },
+                        'MACD': {
+                            'value': {
+                                'line': float(technical_analysis.macd_line) if technical_analysis.macd_line is not None else None,
+                                'signal': float(technical_analysis.macd_signal) if technical_analysis.macd_signal is not None else None,
+                                'histogram': float(technical_analysis.macd_histogram) if technical_analysis.macd_histogram is not None else None
+                            },
+                            'analysis': latest_report.macd_analysis,
+                            'support_trend': latest_report.macd_support_trend
+                        },
+                        'BollingerBands': {
+                            'value': {
+                                'upper': float(technical_analysis.bollinger_upper) if technical_analysis.bollinger_upper is not None else None,
+                                'middle': float(technical_analysis.bollinger_middle) if technical_analysis.bollinger_middle is not None else None,
+                                'lower': float(technical_analysis.bollinger_lower) if technical_analysis.bollinger_lower is not None else None
+                            },
+                            'analysis': latest_report.bollinger_analysis,
+                            'support_trend': latest_report.bollinger_support_trend
+                        },
+                        'BIAS': {
+                            'value': float(technical_analysis.bias) if technical_analysis.bias is not None else None,
+                            'analysis': latest_report.bias_analysis,
+                            'support_trend': latest_report.bias_support_trend
+                        },
+                        'PSY': {
+                            'value': float(technical_analysis.psy) if technical_analysis.psy is not None else None,
+                            'analysis': latest_report.psy_analysis,
+                            'support_trend': latest_report.psy_support_trend
+                        },
+                        'DMI': {
+                            'value': {
+                                'plus_di': float(technical_analysis.dmi_plus) if technical_analysis.dmi_plus is not None else None,
+                                'minus_di': float(technical_analysis.dmi_minus) if technical_analysis.dmi_minus is not None else None,
+                                'adx': float(technical_analysis.dmi_adx) if technical_analysis.dmi_adx is not None else None
+                            },
+                            'analysis': latest_report.dmi_analysis,
+                            'support_trend': latest_report.dmi_support_trend
+                        },
+                        'VWAP': {
+                            'value': float(technical_analysis.vwap) if technical_analysis.vwap is not None else None,
+                            'analysis': latest_report.vwap_analysis,
+                            'support_trend': latest_report.vwap_support_trend
+                        },
+                        'FundingRate': {
+                            'value': float(technical_analysis.funding_rate) if technical_analysis.funding_rate is not None else None,
+                            'analysis': latest_report.funding_rate_analysis,
+                            'support_trend': latest_report.funding_rate_support_trend
+                        },
+                        'ExchangeNetflow': {
+                            'value': float(technical_analysis.exchange_netflow) if technical_analysis.exchange_netflow is not None else None,
+                            'analysis': latest_report.exchange_netflow_analysis,
+                            'support_trend': latest_report.exchange_netflow_support_trend
+                        },
+                        'NUPL': {
+                            'value': float(technical_analysis.nupl) if technical_analysis.nupl is not None else None,
+                            'analysis': latest_report.nupl_analysis,
+                            'support_trend': latest_report.nupl_support_trend
+                        },
+                        'MayerMultiple': {
+                            'value': float(technical_analysis.mayer_multiple) if technical_analysis.mayer_multiple is not None else None,
+                            'analysis': latest_report.mayer_multiple_analysis,
+                            'support_trend': latest_report.mayer_multiple_support_trend
+                        }
+                    },
+                    'trading_advice': {
+                        'action': latest_report.trading_action,
+                        'reason': latest_report.trading_reason,
+                        'entry_price': float(latest_report.entry_price),
+                        'stop_loss': float(latest_report.stop_loss),
+                        'take_profit': float(latest_report.take_profit)
+                    },
+                    'risk_assessment': {
+                        'level': latest_report.risk_level,
+                        'score': int(latest_report.risk_score),
+                        'details': latest_report.risk_details
+                    },
+                    'current_price': float(latest_report.snapshot_price),  # 使用报告中的价格
+                    'snapshot_price': float(latest_report.snapshot_price),
+                    'last_update_time': latest_report.timestamp.isoformat()
+                }
+            }
+
+            return Response(response_data)
+
+        except Exception as e:
+            logger.error(f"处理请求时发生错误: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': f"处理请求失败: {str(e)}",
+                'needs_refresh': True
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -22,8 +22,15 @@ class OKXAPI:
         self.base_url = "https://www.okx.com"
         self._client_initialized = False
         logger.info("OKXAPI 实例创建，尚未初始化")
-        self.price_cache = {}
-        self.price_cache_lock = {}
+        self.price_cache = {}  # 价格缓存
+        self.price_cache_time = {}  # 价格缓存时间
+        self.kline_cache = {}  # K线数据缓存
+        self.kline_cache_time = {}  # K线数据缓存时间
+        self.ticker_cache = {}  # Ticker数据缓存
+        self.ticker_cache_time = {}  # Ticker数据缓存时间
+        self.funding_rate_cache = {}  # 资金费率缓存
+        self.funding_rate_cache_time = {}  # 资金费率缓存时间
+        self.cache_ttl = 60  # 缓存有效期（秒）
     
     def _init_client(self):
         if not self._client_initialized:
@@ -209,6 +216,16 @@ class OKXAPI:
                 okx_symbol = f"{symbol[:-4]}-USDT"
             else:
                 okx_symbol = f"{symbol}-USDT"
+                
+            # 检查缓存
+            current_time = time.time()
+            if (symbol in self.price_cache and 
+                symbol in self.price_cache_time and 
+                current_time - self.price_cache_time[symbol] < self.cache_ttl):
+                # 使用缓存中的价格
+                cached_price = self.price_cache[symbol]
+                logger.info(f"使用缓存获取{symbol}价格: {cached_price}")
+                return cached_price
             
             endpoint = '/api/v5/market/ticker'
             params = {'instId': okx_symbol}
@@ -217,6 +234,11 @@ class OKXAPI:
             if response and len(response) > 0:
                 price = float(response[0]['last'])
                 logger.info(f"成功获取{symbol}价格: {price}")
+                
+                # 更新缓存
+                self.price_cache[symbol] = price
+                self.price_cache_time[symbol] = current_time
+                
                 return price
             
             logger.error(f"获取{symbol}价格失败")
@@ -256,6 +278,17 @@ class OKXAPI:
             
             okx_interval = interval_map.get(interval, '1D')
             
+            # 检查缓存
+            cache_key = f"{symbol}_{interval}_{limit}"
+            current_time = time.time()
+            if (cache_key in self.kline_cache and 
+                cache_key in self.kline_cache_time and 
+                current_time - self.kline_cache_time[cache_key] < self.cache_ttl):
+                # 使用缓存中的K线数据
+                cached_klines = self.kline_cache[cache_key]
+                logger.info(f"使用缓存获取{symbol}的K线数据，数量: {len(cached_klines)}")
+                return cached_klines
+            
             endpoint = '/api/v5/market/candles'
             params = {
                 'instId': okx_symbol,
@@ -286,7 +319,12 @@ class OKXAPI:
                     0   # ignore (不适用)
                 ]
                 klines.append(kline)
-                
+            
+            # 更新缓存
+            self.kline_cache[cache_key] = klines
+            self.kline_cache_time[cache_key] = current_time
+            
+            logger.info(f"使用常规K线接口获取了 {len(klines)} 条K线数据")
             return klines
             
         except Exception as e:
@@ -312,6 +350,16 @@ class OKXAPI:
             else:
                 okx_symbol = f"{symbol}-USDT-SWAP"
             
+            # 检查缓存
+            current_time = time.time()
+            if (symbol in self.funding_rate_cache and 
+                symbol in self.funding_rate_cache_time and 
+                current_time - self.funding_rate_cache_time[symbol] < self.cache_ttl):
+                # 使用缓存中的资金费率
+                cached_rate = self.funding_rate_cache[symbol]
+                logger.info(f"使用缓存获取 {symbol} 的资金费率: {cached_rate}")
+                return cached_rate
+            
             endpoint = '/api/v5/public/funding-rate'
             params = {'instId': okx_symbol}
             
@@ -319,6 +367,11 @@ class OKXAPI:
             if response and len(response) > 0:
                 rate = float(response[0]['fundingRate'])
                 logger.info(f"成功获取 {symbol} 的资金费率: {rate}")
+                
+                # 更新缓存
+                self.funding_rate_cache[symbol] = rate
+                self.funding_rate_cache_time[symbol] = current_time
+                
                 return rate
             
             logger.error(f"获取{symbol}资金费率失败")
@@ -336,12 +389,31 @@ class OKXAPI:
         Args:
             symbol: 交易对符号，例如 'BTCUSDT'
             interval: K线间隔，例如 '1d', '4h', '1h'
-            start_str: 开始时间，例如 '1000 days ago UTC'
+            start_str: 开始时间，例如 '1 day ago UTC', '1 Jan 2020'
             
         Returns:
-            List: 历史K线数据列表，如果获取失败则返回None
+            List: K线数据列表，如果获取失败则返回None
         """
         try:
+            # 转换币安格式为OKX格式
+            symbol = symbol.upper()
+            if symbol.endswith('USDT'):
+                okx_symbol = f"{symbol[:-4]}-USDT"
+            else:
+                okx_symbol = f"{symbol}-USDT"
+            
+            # 检查缓存 (仅对短周期的历史数据使用缓存，例如"1 day ago UTC")
+            if "day ago" in start_str and int(start_str.split()[0]) <= 7:
+                cache_key = f"{symbol}_{interval}_{start_str}"
+                current_time = time.time()
+                if (cache_key in self.kline_cache and 
+                    cache_key in self.kline_cache_time and 
+                    current_time - self.kline_cache_time[cache_key] < self.cache_ttl):
+                    # 使用缓存中的K线数据
+                    cached_klines = self.kline_cache[cache_key]
+                    logger.info(f"使用缓存获取{symbol}的历史K线数据，数量: {len(cached_klines)}")
+                    return cached_klines
+            
             # 处理时间字符串
             if 'days ago' in start_str:
                 days = int(start_str.split(' ')[0])
@@ -349,13 +421,6 @@ class OKXAPI:
             else:
                 # 其他格式的时间处理...
                 start_time = int(time.time() - 86400000)  # 默认获取过去1000天的数据
-            
-            # 转换币安格式为OKX格式
-            symbol = symbol.upper()
-            if symbol.endswith('USDT'):
-                okx_symbol = f"{symbol[:-4]}-USDT"
-            else:
-                okx_symbol = f"{symbol}-USDT"
             
             logger.info(f"获取历史K线数据: 原始符号={symbol}, OKX符号={okx_symbol}, 时间间隔={interval}, 开始时间={start_str}")
             
@@ -469,6 +534,10 @@ class OKXAPI:
                 logger.warning(f"未能获取到任何K线数据")
                 return None
                 
+            # 更新缓存
+            self.kline_cache[cache_key] = all_klines
+            self.kline_cache_time[cache_key] = time.time()
+            
             return all_klines
             
         except Exception as e:
@@ -493,6 +562,16 @@ class OKXAPI:
                 okx_symbol = f"{symbol[:-4]}-USDT"
             else:
                 okx_symbol = f"{symbol}-USDT"
+            
+            # 检查缓存
+            current_time = time.time()
+            if (symbol in self.ticker_cache and 
+                symbol in self.ticker_cache_time and 
+                current_time - self.ticker_cache_time[symbol] < self.cache_ttl):
+                # 使用缓存中的ticker数据
+                cached_ticker = self.ticker_cache[symbol]
+                logger.info(f"使用缓存获取{symbol}的ticker数据")
+                return cached_ticker
             
             # 获取实时行情数据，OKX API不提供单独的24小时统计接口
             endpoint = '/api/v5/market/ticker'
@@ -553,6 +632,10 @@ class OKXAPI:
                 
                 ticker['buyVolume'] = str(buy_volume)
                 ticker['sellVolume'] = str(sell_volume)
+                
+                # 更新缓存
+                self.ticker_cache[symbol] = ticker
+                self.ticker_cache_time[symbol] = current_time
                 
                 return ticker
             

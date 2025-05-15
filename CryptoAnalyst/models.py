@@ -77,20 +77,7 @@ class TechnicalAnalysis(models.Model):
         ordering = ['-timestamp']
         get_latest_by = 'timestamp'
 
-class MarketData(models.Model):
-    """市场数据模型"""
-    token = models.ForeignKey(Token, on_delete=models.CASCADE, related_name='market_data')
-    timestamp = models.DateTimeField(default=timezone.now)
-    price = models.FloatField()
-    volume = models.FloatField(null=True)
-    price_change_24h = models.FloatField(null=True)
-    price_change_percent_24h = models.FloatField(null=True)
-    high_24h = models.FloatField(null=True)
-    low_24h = models.FloatField(null=True)
-
-    class Meta:
-        ordering = ['-timestamp']
-        get_latest_by = 'timestamp'
+# MarketData 模型已移除，使用 AnalysisReport 中的 snapshot_price 作为价格数据
 
 class AnalysisReport(models.Model):
     """分析报告模型 - 存储所有分析结果"""

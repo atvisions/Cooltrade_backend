@@ -1,7 +1,5 @@
 from django.urls import path
 from .views import (
-    TechnicalIndicatorsAPIView,
-    TechnicalIndicatorsDataAPIView,
     TokenDataAPIView,
     SendVerificationCodeView,
     RegisterView,
@@ -13,12 +11,19 @@ from .views import (
     RequestPasswordResetView,
     ResetPasswordWithCodeView
 )
+from .views_report import GetReportAPIView
+from .views_indicators_data import TechnicalIndicatorsDataAPIView
+from .views_technical_indicators import TechnicalIndicatorsAPIView
 
 urlpatterns = [
     # 技术指标数据
     path('crypto/technical-indicators-data/<str:symbol>/', TechnicalIndicatorsDataAPIView.as_view(), name='technical_indicators_data'),
+
+    # 技术指标分析
     path('crypto/technical-indicators/<str:symbol>/', TechnicalIndicatorsAPIView.as_view(), name='technical_indicators'),
-    path('crypto/technical-indicators/<str:symbol>/force-refresh/', TechnicalIndicatorsAPIView.as_view(), name='technical_indicators_force_refresh'),
+
+    # 分析报告API
+    path('crypto/get_report/<str:symbol>/', GetReportAPIView.as_view(), name='get_report'),
 
     # 用户相关
     path('auth/send-code/', SendVerificationCodeView.as_view(), name='send_verification_code'),
@@ -27,7 +32,7 @@ urlpatterns = [
     path('auth/profile/', UserProfileView.as_view(), name='profile'),
     path('auth/refresh-token/', TokenRefreshView.as_view(), name='refresh_token'),
     path('auth/generate-invitation-code/', GenerateInvitationCodeView.as_view(), name='generate_invitation_code'),
-    
+
     # 密码管理相关
     path('auth/change-password/', ChangePasswordView.as_view(), name='change_password'),
     path('auth/request-password-reset/', RequestPasswordResetView.as_view(), name='request_password_reset'),

@@ -16,12 +16,15 @@ import pymysql
 from dotenv import load_dotenv
 
 # 加载.env文件
-load_dotenv()
+load_dotenv(override=True)  # 添加 override=True 参数，确保覆盖系统环境变量
+raw_coze_api_key_from_env = os.getenv('COZE_API_KEY')
+print(f"[DEBUG Settings] Raw COZE_API_KEY from os.getenv after load_dotenv(): '{raw_coze_api_key_from_env}'")
 
 pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+print(f"[DEBUG Settings] BASE_DIR for .env: {BASE_DIR}")
 
 
 # Quick-start development settings - unsuitable for production
@@ -91,7 +94,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cooltrade',  #CryptoAnalyst
+        'NAME': 'cooltrade',
         'USER': 'root',
         'PASSWORD': '@Liuzhao-9575@',
         'HOST': 'localhost',
@@ -230,8 +233,7 @@ BINANCE_API_SECRET = os.getenv('BINANCE_API_SECRET')
 COINGECKO_API_KEY = os.getenv('COINGECKO_API_KEY')
 
 # Coze API配置
-# 注意：如果 API 密钥已经包含 "pat_" 前缀，则不需要在代码中添加 "Bearer " 前缀
-COZE_API_KEY = os.getenv('COZE_API_KEY', 'pat_mGFYEurP7DS6f9XMW8ZHtAxZwghcYCWfayQraqVYDN4Zz71zvF94Mm3fJ2dV7wBH')
+COZE_API_KEY = os.getenv('COZE_API_KEY')
 COZE_BOT_ID = os.getenv('COZE_BOT_ID', '7494575252253720584')
 COZE_SPACE_ID = os.getenv('COZE_SPACE_ID', '7494574941820633105')
 COZE_API_URL = os.getenv('COZE_API_URL', 'https://api.coze.com')

@@ -1,5 +1,5 @@
 from celery import shared_task
-from .models import Token, TechnicalAnalysis, MarketData
+from .models import Token, TechnicalAnalysis, AnalysisReport
 from .services.market_data_service import MarketDataService
 from .services.technical_analysis import TechnicalAnalysisService
 from .services.analysis_report_service import AnalysisReportService
@@ -19,41 +19,12 @@ import asyncio
     retry_jitter=True
 )
 def update_market_data(self):
-    """更新所有代币的市场数据"""
-    try:
-        tokens = Token.objects.all()
-        market_service = MarketDataService()
-        
-        for token in tokens:
-            try:
-                with transaction.atomic():
-                    # 使用原始符号，不添加USDT后缀
-                    market_data = market_service.get_market_data(token.symbol)
-                    
-                    if market_data:
-                        MarketData.objects.update_or_create(
-                            token=token,
-                            defaults={
-                                'price': market_data['price'],
-                                'volume': market_data['volume'],
-                                'price_change_24h': market_data['price_change_24h'],
-                                'price_change_percent_24h': market_data['price_change_percent_24h'],
-                                'high_24h': market_data['high_24h'],
-                                'low_24h': market_data['low_24h'],
-                            }
-                        )
-                        logger.info(f"更新代币 {token.symbol} 的市场数据成功")
-                    else:
-                        logger.error(f"无法获取代币 {token.symbol} 的市场数据")
-                        
-            except Exception as e:
-                logger.error(f"更新代币 {token.symbol} 的市场数据失败: {str(e)}")
-                # 单个代币失败不影响其他代币的更新
-                continue
-                
-    except Exception as e:
-        logger.error(f"更新市场数据任务失败: {str(e)}")
-        raise self.retry(exc=e)
+    """更新所有代币的市场数据 - 已废弃，使用 update_coze_analysis 代替
+
+    MarketData 模型已移除，价格数据现在保存在 AnalysisReport 中
+    """
+    logger.info("MarketData 模型已移除，此任务已废弃")
+    return
 
 @shared_task(
     bind=True,
@@ -69,7 +40,7 @@ def update_technical_analysis(self):
     try:
         tokens = Token.objects.all()
         analysis_service = TechnicalAnalysisService()
-        
+
         for token in tokens:
             try:
                 with transaction.atomic():
@@ -102,7 +73,7 @@ def update_technical_analysis(self):
                 logger.error(f"更新代币 {token.symbol} 的技术分析数据失败: {str(e)}")
                 # 单个代币失败不影响其他代币的更新
                 continue
-                
+
     except Exception as e:
         logger.error(f"更新技术分析数据任务失败: {str(e)}")
         raise self.retry(exc=e)
@@ -121,27 +92,27 @@ def update_coze_analysis(self):
     try:
         tokens = Token.objects.all()
         api_view = TechnicalIndicatorsAPIView()
-        
+
         for token in tokens:
             try:
                 with transaction.atomic():
                     # 使用原始符号，不添加USDT后缀
                     symbol = token.symbol
-                    
+
                     # 获取技术指标数据
                     technical_data = api_view.ta_service.get_all_indicators(symbol)
                     if technical_data['status'] == 'error':
                         logger.error(f"获取代币 {symbol} 的技术指标数据失败")
                         continue
-                        
+
                     indicators = technical_data['data']['indicators']
-                    
+
                     # 获取市场数据
                     market_data = api_view.market_service.get_market_data(symbol)
                     if not market_data:
                         logger.error(f"获取代币 {symbol} 的市场数据失败")
                         continue
-                    
+
                     # 异步获取 Coze 分析结果
                     loop = asyncio.new_event_loop()
                     asyncio.set_event_loop(loop)
@@ -149,7 +120,7 @@ def update_coze_analysis(self):
                         api_view._get_coze_analysis(symbol, indicators)
                     )
                     loop.close()
-                    
+
                     # 生成分析报告
                     analysis_report = {
                         'trend_analysis': coze_analysis['trend_analysis'],
@@ -157,16 +128,16 @@ def update_coze_analysis(self):
                         'trading_advice': coze_analysis['trading_advice'],
                         'risk_assessment': coze_analysis['risk_assessment']
                     }
-                    
+
                     # 保存分析报告
                     api_view.report_service.save_analysis_report(symbol, analysis_report)
                     logger.info(f"更新代币 {symbol} 的 Coze 分析报告成功")
-                    
+
             except Exception as e:
                 logger.error(f"更新代币 {symbol} 的 Coze 分析报告失败: {str(e)}")
                 # 单个代币失败不影响其他代币的更新
                 continue
-                
+
     except Exception as e:
         logger.error(f"更新 Coze 分析报告任务失败: {str(e)}")
         raise self.retry(exc=e)
