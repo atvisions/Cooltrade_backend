@@ -21,7 +21,6 @@ class GateAPI:
         self.api_secret = None
         self.base_url = "https://api.gateio.ws/api/v4"
         self._client_initialized = False
-        logger.info("GateAPI 实例创建，尚未初始化")
         self.price_cache = {}  # 价格缓存
         self.price_cache_time = {}  # 价格缓存时间
         self.kline_cache = {}  # K线数据缓存
@@ -37,22 +36,13 @@ class GateAPI:
             try:
                 load_dotenv()
 
-                # 打印环境变量调试信息
-                logger.info("正在检查环境变量...")
-                logger.info(f"尝试获取 GATE_API_KEY: {'已设置' if os.getenv('GATE_API_KEY') else '未设置'}")
-                logger.info(f"尝试获取 GATE_API_SECRET: {'已设置' if os.getenv('GATE_API_SECRET') else '未设置'}")
-
                 # 主要变量名
                 self.api_key = os.getenv('GATE_API_KEY')
                 self.api_secret = os.getenv('GATE_API_SECRET')
 
                 if not self.api_key or not self.api_secret:
                     logger.warning("未找到 Gate API 密钥，将使用公共 API")
-                    logger.info(f"环境变量检查: API_KEY存在: {bool(self.api_key)}, API_SECRET存在: {bool(self.api_secret)}")
-                else:
-                    logger.info("成功加载 Gate API 密钥")
                 self._client_initialized = True
-                logger.info("GateAPI 客户端初始化完成")
             except Exception as e:
                 logger.error(f"GateAPI 客户端初始化失败: {e}")
                 logger.error(traceback.format_exc())
@@ -134,7 +124,7 @@ class GateAPI:
                         'Content-Type': 'application/json'
                     }
 
-                logger.debug(f"Gate API 请求: {method} {url} | 参数: {params} | 数据: {data}")
+                # 准备发送请求
 
                 # 发送请求
                 start_time = time.time()
@@ -152,7 +142,7 @@ class GateAPI:
                 # 解析响应
                 response_data = response.json()
 
-                logger.debug(f"Gate API响应成功: 耗时: {elapsed:.2f}秒, 数据大小: {len(response.text)}")
+                # 请求成功
                 return response_data
 
             except requests.exceptions.Timeout:
@@ -201,7 +191,6 @@ class GateAPI:
                 current_time - self.price_cache_time[symbol] < self.cache_ttl):
                 # 使用缓存中的价格
                 cached_price = self.price_cache[symbol]
-                logger.info(f"使用缓存获取{symbol}价格: {cached_price}")
                 return cached_price
 
             endpoint = '/spot/tickers'
@@ -210,7 +199,7 @@ class GateAPI:
             response = self._request('GET', endpoint, params=params)
             if response and len(response) > 0:
                 price = float(response[0]['last'])
-                logger.info(f"成功获取{symbol}价格: {price}")
+                # 成功获取价格
 
                 # 更新缓存
                 self.price_cache[symbol] = price
@@ -263,7 +252,6 @@ class GateAPI:
                 current_time - self.kline_cache_time[cache_key] < self.cache_ttl):
                 # 使用缓存中的K线数据
                 cached_klines = self.kline_cache[cache_key]
-                logger.info(f"使用缓存获取{symbol}的K线数据，数量: {len(cached_klines)}")
                 return cached_klines
 
             endpoint = '/spot/candlesticks'
@@ -301,7 +289,7 @@ class GateAPI:
             self.kline_cache[cache_key] = klines
             self.kline_cache_time[cache_key] = current_time
 
-            logger.info(f"使用Gate API获取了 {len(klines)} 条K线数据")
+            # 成功获取K线数据
             return klines
 
         except Exception as e:
@@ -331,7 +319,6 @@ class GateAPI:
                 current_time - self.funding_rate_cache_time[symbol] < self.cache_ttl):
                 # 使用缓存中的资金费率
                 cached_rate = self.funding_rate_cache[symbol]
-                logger.info(f"使用缓存获取 {symbol} 的资金费率: {cached_rate}")
                 return cached_rate
 
             # 尝试获取永续合约当前资金费率
@@ -343,7 +330,7 @@ class GateAPI:
                 # 获取最新的资金费率
                 latest_rate = response[0]
                 rate = float(latest_rate.get('rate', 0))
-                logger.info(f"成功获取 {symbol} 的当前资金费率: {rate}")
+                # 成功获取资金费率
 
                 # 如果资金费率为0，尝试获取预测资金费率
                 if rate == 0:
@@ -367,7 +354,7 @@ class GateAPI:
                                 # 尝试获取预测资金费率
                                 predicted_rate = float(contract.get('funding_rate_indicative', 0))
                                 if predicted_rate != 0:
-                                    logger.info(f"使用 {symbol} 的预测资金费率: {predicted_rate}")
+                                    # 使用预测资金费率
                                     rate = predicted_rate
                                     break
 
@@ -388,7 +375,7 @@ class GateAPI:
 
                         if rates:
                             avg_rate = sum(rates) / len(rates)
-                            logger.info(f"使用 {symbol} 的历史平均资金费率: {avg_rate}")
+                            # 使用历史平均资金费率
                             rate = avg_rate
 
                 # 如果资金费率仍然为0，使用硬编码的默认值
@@ -448,10 +435,10 @@ class GateAPI:
                             }
 
                             default_rate = default_rates.get(symbol, 0.0001)  # 如果没有特定币种的默认值，使用0.0001
-                            logger.info(f"使用 {symbol} 的硬编码默认资金费率: {default_rate}")
+                            # 使用默认资金费率
                             rate = default_rate
 
-                        logger.info(f"成功获取 {symbol} 的资金费率(从合约信息): {rate}")
+                        # 成功获取资金费率
 
                         # 更新缓存
                         self.funding_rate_cache[symbol] = rate
@@ -472,7 +459,7 @@ class GateAPI:
             }
 
             default_rate = default_rates.get(symbol, 0.0001)  # 如果没有特定币种的默认值，使用0.0001
-            logger.info(f"使用 {symbol} 的硬编码默认资金费率: {default_rate}")
+            # 使用默认资金费率
 
             # 更新缓存
             self.funding_rate_cache[symbol] = default_rate
@@ -494,7 +481,7 @@ class GateAPI:
             }
 
             default_rate = default_rates.get(symbol, 0.0001)  # 如果没有特定币种的默认值，使用0.0001
-            logger.info(f"异常处理：使用 {symbol} 的硬编码默认资金费率: {default_rate}")
+            # 异常处理：使用默认资金费率
             return default_rate
 
     def get_historical_klines(self, symbol: str, interval: str, start_str: str) -> Optional[List]:
@@ -526,7 +513,6 @@ class GateAPI:
                     current_time - self.kline_cache_time[cache_key] < self.cache_ttl):
                     # 使用缓存中的K线数据
                     cached_klines = self.kline_cache[cache_key]
-                    logger.info(f"使用缓存获取{symbol}的历史K线数据，数量: {len(cached_klines)}")
                     return cached_klines
 
             # 处理时间字符串
@@ -537,7 +523,7 @@ class GateAPI:
                 # 其他格式的时间处理...
                 start_time = int(time.time() - 86400 * 100)  # 默认获取过去100天的数据
 
-            logger.info(f"获取历史K线数据: 原始符号={symbol}, Gate符号={gate_symbol}, 时间间隔={interval}, 开始时间={start_str}")
+            # 准备获取历史K线数据
 
             # 转换时间间隔
             interval_map = {
@@ -587,7 +573,7 @@ class GateAPI:
                 self.kline_cache[cache_key] = klines
                 self.kline_cache_time[cache_key] = current_time
 
-            logger.info(f"使用Gate API获取了 {len(klines)} 条历史K线数据")
+            # 成功获取历史K线数据
             return klines
 
         except Exception as e:
@@ -620,7 +606,6 @@ class GateAPI:
                 current_time - self.ticker_cache_time[symbol] < self.cache_ttl):
                 # 使用缓存中的ticker数据
                 cached_ticker = self.ticker_cache[symbol]
-                logger.info(f"使用缓存获取{symbol}的ticker数据")
                 return cached_ticker
 
             endpoint = '/spot/tickers'
@@ -642,7 +627,7 @@ class GateAPI:
                     'sellVolume': float(ticker_data.get('quote_volume', 0)) / 2  # 估算卖出量
                 }
 
-                logger.info(f"成功获取{symbol}的ticker数据")
+                # 成功获取ticker数据
 
                 # 更新缓存
                 self.ticker_cache[symbol] = ticker

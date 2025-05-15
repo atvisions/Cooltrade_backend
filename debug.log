@@ -17625,3 +17625,1694 @@ INFO 2025-05-15 13:33:41,206 technical_analysis 71899 6144651264 使用100日移
 INFO 2025-05-15 13:33:41,206 technical_analysis 71899 6144651264 梅耶倍数计算结果: 1.1378678972313938
 INFO 2025-05-15 13:33:41,206 technical_analysis 71899 6144651264 成功计算BTCUSDT的所有技术指标
 INFO 2025-05-15 13:33:41,213 basehttp 71899 6127824896 "GET /api/crypto/technical-indicators-data/BTCUSDT/ HTTP/1.1" 200 412
+INFO 2025-05-15 13:38:14,848 autoreload 72908 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:38:21,461 gate_api 72908 6174683136 GateAPI 实例创建，尚未初始化
+INFO 2025-05-15 13:38:21,461 technical_analysis 72908 6174683136 技术分析服务初始化完成
+INFO 2025-05-15 13:38:21,461 gate_api 72908 6174683136 GateAPI 实例创建，尚未初始化
+INFO 2025-05-15 13:38:21,479 basehttp 72908 6174683136 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3139
+INFO 2025-05-15 13:38:26,240 gate_api 72908 6174683136 GateAPI 实例创建，尚未初始化
+INFO 2025-05-15 13:38:26,240 technical_analysis 72908 6174683136 技术分析服务初始化完成
+INFO 2025-05-15 13:38:26,240 gate_api 72908 6174683136 GateAPI 实例创建，尚未初始化
+INFO 2025-05-15 13:38:26,245 gate_api 72908 6191509504 正在检查环境变量...
+INFO 2025-05-15 13:38:26,245 gate_api 72908 6191509504 尝试获取 GATE_API_KEY: 已设置
+INFO 2025-05-15 13:38:26,245 gate_api 72908 6191509504 尝试获取 GATE_API_SECRET: 已设置
+INFO 2025-05-15 13:38:26,245 gate_api 72908 6191509504 成功加载 Gate API 密钥
+INFO 2025-05-15 13:38:26,246 gate_api 72908 6191509504 GateAPI 客户端初始化完成
+DEBUG 2025-05-15 13:38:26,246 gate_api 72908 6191509504 Gate API 请求: GET https://api.gateio.ws/api/v4/spot/tickers | 参数: {'currency_pair': 'BTC_USDT'} | 数据: None
+DEBUG 2025-05-15 13:38:26,993 gate_api 72908 6191509504 Gate API响应成功: 耗时: 0.75秒, 数据大小: 283
+INFO 2025-05-15 13:38:26,997 gate_api 72908 6191509504 成功获取BTCUSDT价格: 102319.4
+INFO 2025-05-15 13:38:26,997 technical_analysis 72908 6191509504 成功获取BTCUSDT实时价格: 102319.4，开始计算技术指标
+INFO 2025-05-15 13:38:26,997 gate_api 72908 6191509504 获取历史K线数据: 原始符号=BTCUSDT, Gate符号=BTC_USDT, 时间间隔=1d, 开始时间=100 days ago UTC
+DEBUG 2025-05-15 13:38:26,997 gate_api 72908 6191509504 Gate API 请求: GET https://api.gateio.ws/api/v4/spot/candlesticks | 参数: {'currency_pair': 'BTC_USDT', 'interval': '1d', 'from': 1738676306, 'to': 1747316306, 'limit': 1000} | 数据: None
+DEBUG 2025-05-15 13:38:27,531 gate_api 72908 6191509504 Gate API响应成功: 耗时: 0.53秒, 数据大小: 9895
+INFO 2025-05-15 13:38:27,534 gate_api 72908 6191509504 使用Gate API获取了 101 条历史K线数据
+INFO 2025-05-15 13:38:27,535 technical_analysis 72908 6191509504 获取到101条K线数据，开始计算指标
+WARNING 2025-05-15 13:38:27,540 technical_analysis 72908 6191509504 数据长度不足200天(101天)，某些高级指标可能不准确
+DEBUG 2025-05-15 13:38:27,647 gate_api 72908 6191509504 Gate API 请求: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate | 参数: {'contract': 'BTC_USDT'} | 数据: None
+DEBUG 2025-05-15 13:38:28,283 gate_api 72908 6191509504 Gate API响应成功: 耗时: 0.64秒, 数据大小: 2890
+INFO 2025-05-15 13:38:28,287 gate_api 72908 6191509504 成功获取 BTCUSDT 的当前资金费率: 0.0
+DEBUG 2025-05-15 13:38:28,287 gate_api 72908 6191509504 Gate API 请求: GET https://api.gateio.ws/api/v4/futures/usdt/contracts | 参数: {'settle': 'usdt'} | 数据: None
+DEBUG 2025-05-15 13:38:29,559 gate_api 72908 6191509504 Gate API响应成功: 耗时: 1.26秒, 数据大小: 617953
+INFO 2025-05-15 13:38:29,561 gate_api 72908 6191509504 使用 BTCUSDT 的预测资金费率: 6.2e-05
+INFO 2025-05-15 13:38:29,561 technical_analysis 72908 6191509504 获取到 BTCUSDT 的资金费率: 6.2e-05 (相当于 0.006200000000000001%)
+INFO 2025-05-15 13:38:29,562 technical_analysis 72908 6191509504 数据量不足200天，使用101天数据计算高级指标
+INFO 2025-05-15 13:38:29,562 technical_analysis 72908 6191509504 使用100天数据计算NUPL
+INFO 2025-05-15 13:38:29,566 technical_analysis 72908 6191509504 NUPL计算结果: 14.0064864556147
+INFO 2025-05-15 13:38:29,566 technical_analysis 72908 6191509504 使用100天数据计算梅耶倍数
+INFO 2025-05-15 13:38:29,567 technical_analysis 72908 6191509504 使用100日移动平均线: 90024.90800000001
+INFO 2025-05-15 13:38:29,567 technical_analysis 72908 6191509504 梅耶倍数计算结果: 1.1365676708050618
+INFO 2025-05-15 13:38:29,567 technical_analysis 72908 6191509504 成功计算BTCUSDT的所有技术指标
+INFO 2025-05-15 13:38:29,570 gate_api 72908 6191509504 正在检查环境变量...
+INFO 2025-05-15 13:38:29,570 gate_api 72908 6191509504 尝试获取 GATE_API_KEY: 已设置
+INFO 2025-05-15 13:38:29,570 gate_api 72908 6191509504 尝试获取 GATE_API_SECRET: 已设置
+INFO 2025-05-15 13:38:29,570 gate_api 72908 6191509504 成功加载 Gate API 密钥
+INFO 2025-05-15 13:38:29,570 gate_api 72908 6191509504 GateAPI 客户端初始化完成
+DEBUG 2025-05-15 13:38:29,571 gate_api 72908 6191509504 Gate API 请求: GET https://api.gateio.ws/api/v4/spot/tickers | 参数: {'currency_pair': 'BTC_USDT'} | 数据: None
+DEBUG 2025-05-15 13:38:30,077 gate_api 72908 6191509504 Gate API响应成功: 耗时: 0.51秒, 数据大小: 282
+INFO 2025-05-15 13:38:30,079 gate_api 72908 6191509504 成功获取BTCUSDT的ticker数据
+INFO 2025-05-15 13:38:30,080 gate_api 72908 6191509504 获取历史K线数据: 原始符号=BTCUSDT, Gate符号=BTC_USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+DEBUG 2025-05-15 13:38:30,080 gate_api 72908 6191509504 Gate API 请求: GET https://api.gateio.ws/api/v4/spot/candlesticks | 参数: {'currency_pair': 'BTC_USDT', 'interval': '1d', 'from': 1730036310, 'to': 1747316310, 'limit': 1000} | 数据: None
+DEBUG 2025-05-15 13:38:30,718 gate_api 72908 6191509504 Gate API响应成功: 耗时: 0.64秒, 数据大小: 19783
+INFO 2025-05-15 13:38:30,722 gate_api 72908 6191509504 使用Gate API获取了 201 条历史K线数据
+INFO 2025-05-15 13:38:30,726 gate_api 72908 6191509504 使用缓存获取BTCUSDT的ticker数据
+DEBUG 2025-05-15 13:38:30,726 gate_api 72908 6191509504 Gate API 请求: GET https://api.gateio.ws/api/v4/spot/tickers | 参数: {'currency_pair': 'BTC_USDT'} | 数据: None
+DEBUG 2025-05-15 13:38:31,667 gate_api 72908 6191509504 Gate API响应成功: 耗时: 0.94秒, 数据大小: 283
+INFO 2025-05-15 13:38:31,670 gate_api 72908 6191509504 成功获取BTCUSDT价格: 102307.5
+INFO 2025-05-15 13:38:31,670 gate_api 72908 6191509504 获取历史K线数据: 原始符号=BTCUSDT, Gate符号=BTC_USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+DEBUG 2025-05-15 13:38:31,670 gate_api 72908 6191509504 Gate API 请求: GET https://api.gateio.ws/api/v4/spot/candlesticks | 参数: {'currency_pair': 'BTC_USDT', 'interval': '1d', 'from': 1730036311, 'to': 1747316311, 'limit': 1000} | 数据: None
+DEBUG 2025-05-15 13:38:32,321 gate_api 72908 6191509504 Gate API响应成功: 耗时: 0.65秒, 数据大小: 19781
+INFO 2025-05-15 13:38:32,327 gate_api 72908 6191509504 使用Gate API获取了 201 条历史K线数据
+INFO 2025-05-15 13:38:32,327 gate_api 72908 6191509504 使用缓存获取BTCUSDT价格: 102307.5
+INFO 2025-05-15 13:38:33,348 signals 72908 6191509504 更新代币 BTC 的技术分析数据
+INFO 2025-05-15 13:38:33,351 gate_api 72908 6174683136 使用缓存获取BTCUSDT的ticker数据
+INFO 2025-05-15 13:38:33,352 gate_api 72908 6174683136 获取历史K线数据: 原始符号=BTCUSDT, Gate符号=BTC_USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+DEBUG 2025-05-15 13:38:33,352 gate_api 72908 6174683136 Gate API 请求: GET https://api.gateio.ws/api/v4/spot/candlesticks | 参数: {'currency_pair': 'BTC_USDT', 'interval': '1d', 'from': 1730036313, 'to': 1747316313, 'limit': 1000} | 数据: None
+DEBUG 2025-05-15 13:38:33,849 gate_api 72908 6174683136 Gate API响应成功: 耗时: 0.50秒, 数据大小: 19783
+INFO 2025-05-15 13:38:33,853 gate_api 72908 6174683136 使用Gate API获取了 201 条历史K线数据
+INFO 2025-05-15 13:38:33,858 gate_api 72908 6174683136 使用缓存获取BTCUSDT的ticker数据
+INFO 2025-05-15 13:38:33,858 gate_api 72908 6174683136 使用缓存获取BTCUSDT价格: 102307.5
+INFO 2025-05-15 13:38:33,858 gate_api 72908 6174683136 获取历史K线数据: 原始符号=BTCUSDT, Gate符号=BTC_USDT, 时间间隔=1d, 开始时间=200 days ago UTC
+DEBUG 2025-05-15 13:38:33,858 gate_api 72908 6174683136 Gate API 请求: GET https://api.gateio.ws/api/v4/spot/candlesticks | 参数: {'currency_pair': 'BTC_USDT', 'interval': '1d', 'from': 1730036313, 'to': 1747316313, 'limit': 1000} | 数据: None
+DEBUG 2025-05-15 13:38:34,798 gate_api 72908 6174683136 Gate API响应成功: 耗时: 0.94秒, 数据大小: 19783
+INFO 2025-05-15 13:38:34,801 gate_api 72908 6174683136 使用Gate API获取了 201 条历史K线数据
+INFO 2025-05-15 13:38:34,802 gate_api 72908 6174683136 使用缓存获取BTCUSDT价格: 102307.5
+WARNING 2025-05-15 13:38:36,226 views_report 72908 6174683136 未找到助手的回复
+INFO 2025-05-15 13:38:48,441 basehttp 72908 6174683136 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2615
+INFO 2025-05-15 13:40:32,847 autoreload 72908 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:40:33,497 autoreload 73156 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:40:48,556 autoreload 73156 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:40:50,005 autoreload 73193 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:41:04,359 autoreload 73193 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:41:05,333 autoreload 73227 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:41:16,492 autoreload 73227 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:41:17,228 autoreload 73271 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:41:29,508 autoreload 73271 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:41:30,319 autoreload 73295 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:43:12,461 autoreload 73295 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:43:13,357 autoreload 73483 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:43:26,748 autoreload 73483 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:43:27,235 autoreload 73523 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:43:38,329 autoreload 73523 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:43:39,038 autoreload 73549 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:43:52,154 autoreload 73549 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:43:52,788 autoreload 73572 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:44:03,661 autoreload 73572 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:44:04,384 autoreload 73597 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:44:22,647 autoreload 73597 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:44:23,104 autoreload 73645 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:44:34,105 autoreload 73645 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:44:34,709 autoreload 73672 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:45:03,135 autoreload 73672 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:45:03,976 autoreload 73727 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:45:13,950 autoreload 73727 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:45:14,589 autoreload 73768 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:45:50,625 autoreload 73768 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:45:51,310 autoreload 73825 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:46:04,551 autoreload 73825 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:46:05,220 autoreload 73850 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:46:22,513 autoreload 73850 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:46:24,023 autoreload 73885 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:46:37,258 autoreload 73885 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:46:38,359 autoreload 73931 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:46:51,457 autoreload 73931 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:46:52,698 autoreload 73965 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:47:03,759 autoreload 73965 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:47:04,333 autoreload 73994 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:47:16,588 autoreload 73994 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-15 13:47:17,309 autoreload 74033 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:47:30,389 autoreload 74033 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:47:31,038 autoreload 74056 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:47:41,603 autoreload 74056 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:47:42,268 autoreload 74097 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:47:54,230 autoreload 74097 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:47:54,754 autoreload 74113 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:48:05,136 autoreload 74113 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:48:05,691 autoreload 74152 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:48:14,491 autoreload 74152 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:48:16,162 autoreload 74197 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:48:54,127 autoreload 74197 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:48:54,671 autoreload 74268 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:49:08,039 autoreload 74268 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:49:08,675 autoreload 74314 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:49:39,437 autoreload 74314 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:49:40,078 autoreload 74376 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:49:52,210 autoreload 74376 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:49:53,192 autoreload 74403 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:50:07,768 autoreload 74403 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:50:09,308 autoreload 74462 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:50:21,712 autoreload 74462 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:50:22,583 autoreload 74533 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:50:33,809 autoreload 74533 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:50:34,888 autoreload 74614 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:50:44,185 autoreload 74614 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:50:45,049 autoreload 74658 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:51:00,424 autoreload 74658 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/signals.py changed, reloading.
+INFO 2025-05-15 13:51:01,425 autoreload 74699 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:51:18,489 autoreload 74765 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:51:35,101 basehttp 74765 6168260608 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2669
+INFO 2025-05-15 13:51:59,118 technical_analysis 74699 6216970240 获取到 BTCUSDT 的资金费率: 6.2e-05 (相当于 0.006200000000000001%)
+INFO 2025-05-15 13:51:59,618 basehttp 74699 6200143872 "GET /api/crypto/technical-indicators-data/BTCUSDT/ HTTP/1.1" 200 425
+INFO 2025-05-15 13:52:29,970 basehttp 74699 6200143872 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2669
+INFO 2025-05-15 13:52:41,357 technical_analysis 74699 6216970240 获取到 BTCUSDT 的资金费率: 6.3e-05 (相当于 0.0063%)
+WARNING 2025-05-15 13:52:55,940 views_report 74699 6200143872 未找到助手的回复
+INFO 2025-05-15 13:53:08,656 basehttp 74699 6200143872 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2734
+INFO 2025-05-15 13:53:20,419 basehttp 74699 6200143872 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2802
+INFO 2025-05-15 13:54:20,159 autoreload 74765 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:54:20,175 autoreload 74699 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:54:21,704 autoreload 75120 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:54:21,704 autoreload 75119 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:54:39,501 autoreload 75119 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-15 13:54:39,576 autoreload 75120 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-15 13:54:40,772 autoreload 75176 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:54:40,778 autoreload 75177 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:55:01,219 autoreload 75177 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-15 13:55:02,679 autoreload 75243 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:55:13,751 autoreload 75318 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:55:29,309 technical_analysis 75243 6144012288 获取到 BTCUSDT 的资金费率: 6.3e-05 (相当于 0.0063%)
+INFO 2025-05-15 13:55:29,734 autoreload 75366 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:55:48,231 basehttp 75243 6127185920 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2803
+INFO 2025-05-15 13:55:51,065 basehttp 75366 6130216960 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2871
+INFO 2025-05-15 13:56:12,744 technical_analysis 75366 6147043328 获取到 BTCUSDT 的资金费率: 6.3e-05 (相当于 0.0063%)
+INFO 2025-05-15 13:56:12,760 basehttp 75366 6130216960 "GET /api/crypto/technical-indicators-data/BTCUSDT/ HTTP/1.1" 200 411
+INFO 2025-05-15 13:56:53,681 autoreload 75366 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:56:53,697 autoreload 75243 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:56:54,601 autoreload 75549 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:56:54,601 autoreload 75548 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:57:07,862 autoreload 75548 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:57:07,900 autoreload 75549 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:57:08,533 autoreload 75606 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:57:08,533 autoreload 75607 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:57:31,097 autoreload 75682 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:57:51,806 basehttp 75682 6159708160 "GET /api/crypto/technical-indicators-data/BTCUSDT/ HTTP/1.1" 200 412
+INFO 2025-05-15 13:58:08,758 autoreload 75607 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-15 13:58:09,496 autoreload 75800 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 13:58:30,990 autoreload 75876 8462421120 Watching for file changes with StatReloader
+WARNING 2025-05-15 13:58:41,241 log 75800 13035925504 Unauthorized: /api/auth/profile/
+WARNING 2025-05-15 13:58:41,275 basehttp 75800 13035925504 "GET /api/auth/profile/ HTTP/1.1" 401 34
+INFO 2025-05-15 13:58:45,264 basehttp 75800 13035925504 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+WARNING 2025-05-15 13:58:45,287 log 75800 13035925504 Unauthorized: /api/auth/profile/
+WARNING 2025-05-15 13:58:45,288 basehttp 75800 13035925504 "PUT /api/auth/profile/ HTTP/1.1" 401 34
+WARNING 2025-05-15 13:58:45,289 log 75800 13052751872 Unauthorized: /api/auth/profile/
+WARNING 2025-05-15 13:58:45,289 basehttp 75800 13052751872 "PUT /api/auth/profile/ HTTP/1.1" 401 34
+WARNING 2025-05-15 13:58:47,913 log 75800 13052751872 Unauthorized: /api/crypto/get_report/BTCUSDT/
+WARNING 2025-05-15 13:58:47,915 basehttp 75800 13052751872 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 401 34
+WARNING 2025-05-15 13:58:47,945 log 75800 13052751872 Unauthorized: /api/crypto/get_report/BTCUSDT/
+WARNING 2025-05-15 13:58:47,945 basehttp 75800 13052751872 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 401 34
+INFO 2025-05-15 13:58:55,867 basehttp 75876 6209007616 "GET /api/crypto/technical-indicators-data/BTCUSDT/ HTTP/1.1" 200 410
+WARNING 2025-05-15 13:58:59,744 log 75800 13035925504 Unauthorized: /api/crypto/get_report/BTCUSDT/
+WARNING 2025-05-15 13:58:59,745 basehttp 75800 13035925504 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 401 34
+WARNING 2025-05-15 13:58:59,770 log 75800 13035925504 Unauthorized: /api/crypto/get_report/BTCUSDT/
+WARNING 2025-05-15 13:58:59,770 basehttp 75800 13035925504 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 401 34
+WARNING 2025-05-15 13:59:06,480 log 75800 13035925504 Unauthorized: /api/auth/profile/
+WARNING 2025-05-15 13:59:06,484 basehttp 75800 13035925504 "GET /api/auth/profile/ HTTP/1.1" 401 34
+INFO 2025-05-15 13:59:13,834 views 75800 13035925504 登录请求数据: {'email': 'liu.zhao@qq.com', 'password': 'liuzhao9575'}
+INFO 2025-05-15 13:59:14,020 basehttp 75800 13035925504 "POST /api/auth/login/ HTTP/1.1" 200 254
+INFO 2025-05-15 13:59:48,014 basehttp 75800 13035925504 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2917
+INFO 2025-05-15 14:00:13,273 basehttp 75800 13103230976 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2712
+INFO 2025-05-15 14:00:16,169 basehttp 75800 13120057344 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2521
+INFO 2025-05-15 14:00:17,266 basehttp 75800 13086404608 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 3191
+INFO 2025-05-15 14:00:33,392 basehttp 75800 13153710080 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2639
+INFO 2025-05-15 14:01:21,486 basehttp 75800 13035925504 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 3155
+INFO 2025-05-15 14:01:42,767 basehttp 75800 13086404608 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2758
+INFO 2025-05-15 14:02:21,462 basehttp 75800 13069578240 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-15 14:02:21,484 basehttp 75800 13035925504 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:02:23,772 basehttp 75800 13035925504 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:02:23,776 basehttp 75800 13069578240 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:02:26,378 basehttp 75876 6209007616 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2812
+INFO 2025-05-15 14:03:10,525 basehttp 75800 13035925504 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2438
+INFO 2025-05-15 14:03:10,562 basehttp 75800 13069578240 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2743
+INFO 2025-05-15 14:04:01,593 basehttp 75800 13069578240 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-15 14:04:01,610 basehttp 75800 13035925504 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:04:08,657 basehttp 75800 13069578240 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:04:08,658 basehttp 75800 13035925504 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:04:31,724 basehttp 75800 13120057344 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-15 14:04:31,728 basehttp 75800 13103230976 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:04:35,771 basehttp 75800 13069578240 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2724
+INFO 2025-05-15 14:05:03,406 basehttp 75800 13086404608 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2756
+INFO 2025-05-15 14:05:07,976 basehttp 75800 13035925504 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2816
+INFO 2025-05-15 14:05:16,648 basehttp 75800 13120057344 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2565
+INFO 2025-05-15 14:06:08,172 basehttp 75800 13035925504 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2813
+INFO 2025-05-15 14:06:29,886 basehttp 75800 13103230976 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2935
+INFO 2025-05-15 14:06:33,282 basehttp 75800 13086404608 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2833
+INFO 2025-05-15 14:06:44,577 basehttp 75800 13136883712 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2926
+ERROR 2025-05-15 14:06:50,257 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:06:50,261 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+ERROR 2025-05-15 14:06:55,851 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:06:55,851 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+ERROR 2025-05-15 14:07:01,623 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:07:01,625 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+ERROR 2025-05-15 14:07:07,234 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:07:07,234 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+ERROR 2025-05-15 14:07:13,006 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:07:13,011 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+ERROR 2025-05-15 14:07:18,738 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:07:18,738 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+ERROR 2025-05-15 14:07:24,314 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:07:24,317 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+ERROR 2025-05-15 14:07:29,803 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:07:29,804 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+ERROR 2025-05-15 14:07:35,653 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:07:35,654 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+INFO 2025-05-15 14:07:36,286 basehttp 75800 13035925504 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2943
+ERROR 2025-05-15 14:07:41,893 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:07:41,893 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+ERROR 2025-05-15 14:07:47,702 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:07:47,703 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+ERROR 2025-05-15 14:07:53,537 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:07:53,538 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+ERROR 2025-05-15 14:07:59,135 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:07:59,135 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+ERROR 2025-05-15 14:08:05,701 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:08:05,702 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+INFO 2025-05-15 14:08:06,315 basehttp 75800 13086404608 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2944
+ERROR 2025-05-15 14:08:11,636 views_report 75800 13120057344 解析JSON失败: Unterminated string starting at: line 91 column 13 (char 4312)
+ERROR 2025-05-15 14:08:11,640 views_report 75800 13120057344 JSON内容: {
+    "trend_analysis": {
+        "probabilities": {
+            "up": 60,
+            "sideways": 25,
+            "down": 15
+        },
+        "summary": "The current technical indicators suggest a bullish trend for BTCUSDT. The RSI is above 60, indicating positive momentum. The MACD is also showing a bullish crossover with the histogram in positive territory. Bollinger Bands indicate the price is near the upper band, suggesting a potential continuation of the upward trend. Overall, the market sentiment is leaning towards an upward movement with some caution for potential sideways movement."
+    },
+    "indicators_analysis": {
+        "RSI": {
+            "value": 64.97,
+            "analysis": "The RSI is at 64.97, which is in the bullish territory, indicating strong buying momentum.",
+            "support_trend": "bullish"
+        },
+        "MACD": {
+            "value": {
+                "macd_line": 3856.35,
+                "signal_line": 3740.72,
+                "histogram": 115.63
+            },
+            "analysis": "The MACD line is above the signal line with a positive histogram value of 115.63, indicating a bullish crossover and potential upward momentum.",
+            "support_trend": "bullish"
+        },
+        "BollingerBands": {
+            "value": {
+                "upper_band": 107052.83,
+                "middle_band": 98587.99,
+                "lower_band": 90123.14
+            },
+            "analysis": "The price is near the upper Bollinger Band, suggesting a strong upward trend but also cautioning against potential overbought conditions.",
+            "support_trend": "bullish"
+        },
+        "BIAS": {
+            "value": -1.29,
+            "analysis": "The BIAS is slightly negative at -1.29, indicating a minor correction or consolidation within the bullish trend.",
+            "support_trend": "neutral"
+        },
+        "PSY": {
+            "value": 50.0,
+            "analysis": "The PSY is neutral at 50.0, suggesting an equal balance between buyers and sellers.",
+            "support_trend": "neutral"
+        },
+        "DMI": {
+            "value": {
+                "+DI": 27.1,
+                "-DI": 17.3,
+                "ADX": 40.0
+            },
+            "analysis": "The DMI shows a strong trend with +DI above -DI and an ADX of 40.0, indicating a strong bullish trend.",
+            "support_trend": "bullish"
+        },
+        "VWAP": {
+            "value": 89920.02,
+            "analysis": "The current price is above the VWAP, indicating a bullish trend as the price is trading higher than the average value.",
+            "support_trend": "bullish"
+        },
+        "FundingRate": {
+            "value": 0.0063,
+            "analysis": "The funding rate is positive at 0.0063%, indicating that long positions are paying to short positions, which is typically a bullish sign.",
+            "support_trend": "bullish"
+        },
+        "ExchangeNetflow": {
+            "value": -23.36,
+            "analysis": "The net outflow of -23.36 suggests that more BTC is being withdrawn from exchanges, which is generally bullish as it indicates accumulation.",
+            "support_trend": "bullish"
+        },
+        "NUPL": {
+            "value": 13.94,
+            "analysis": "The NUPL is positive at 13.94, indicating that the market is in a state of profit, which is typically bullish.",
+            "support_trend": "bullish"
+        },
+        "MayerMultiple": {
+            "value": 1.14,
+            "analysis": "The Mayer Multiple is at 1.14, which is above the historical average of 1.0, suggesting that BTC is in a bullish phase but not excessively overbought.",
+            "support_trend": "bullish"
+        }
+    },
+    "trading_advice": {
+        "action": "buy",
+        "reason": "The majority of technical indicators support a bullish trend. The RSI, MACD, and DMI all indicate strong upward momentum. The price is also above the VWAP, and the net outflow from exchanges suggests accumulation.",
+        "entry_price": 102251.3,
+        "stop_loss": 98000.0,
+        "take_profit": 110000.0
+    },
+    "risk_assessment": {
+        "level": "medium",
+        "score": 50,
+        "details": [
+            "The price is near the upper Bollinger Band, indicating potential overbought conditions.",
+            "The BIAS
+WARNING 2025-05-15 14:08:16,642 views_report 75800 13120057344 轮询Coze API未获得有效响应，返回默认分析
+INFO 2025-05-15 14:08:20,817 basehttp 75800 13120057344 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 1840
+INFO 2025-05-15 14:08:48,416 basehttp 75800 13035925504 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2669
+INFO 2025-05-15 14:08:52,632 basehttp 75800 13069578240 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2857
+INFO 2025-05-15 14:10:04,282 basehttp 75800 13086404608 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-15 14:10:04,289 basehttp 75800 13069578240 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:10:09,020 basehttp 75800 13103230976 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-15 14:10:09,021 basehttp 75800 13069578240 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:10:19,872 basehttp 75800 13035925504 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2977
+INFO 2025-05-15 14:10:40,547 basehttp 75800 13069578240 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2744
+INFO 2025-05-15 14:10:48,059 basehttp 75800 13069578240 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2796
+INFO 2025-05-15 14:10:48,200 basehttp 75800 13069578240 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2796
+INFO 2025-05-15 14:11:02,504 basehttp 75800 13035925504 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2593
+INFO 2025-05-15 14:11:02,741 basehttp 75800 13136883712 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2595
+INFO 2025-05-15 14:11:03,891 basehttp 75800 13120057344 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2611
+INFO 2025-05-15 14:11:04,702 basehttp 75800 13069578240 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-15 14:11:04,705 basehttp 75800 13035925504 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:11:06,690 basehttp 75800 13035925504 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:11:06,692 basehttp 75800 13069578240 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:11:08,207 basehttp 75800 13103230976 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2842
+INFO 2025-05-15 14:11:08,883 basehttp 75800 13035925504 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2895
+INFO 2025-05-15 14:11:08,910 basehttp 75800 13035925504 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2895
+INFO 2025-05-15 14:11:30,373 basehttp 75800 13069578240 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-15 14:11:30,375 basehttp 75800 13035925504 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:11:32,159 basehttp 75800 13069578240 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2895
+INFO 2025-05-15 14:11:32,202 basehttp 75800 13069578240 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2895
+INFO 2025-05-15 14:11:50,652 basehttp 75800 13069578240 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-15 14:11:50,660 basehttp 75800 13035925504 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:11:53,046 basehttp 75800 13035925504 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:11:53,056 basehttp 75800 13069578240 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:11:55,371 basehttp 75800 13069578240 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2895
+INFO 2025-05-15 14:11:55,435 basehttp 75800 13069578240 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 2895
+INFO 2025-05-15 14:12:53,241 basehttp 75800 13035925504 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2895
+INFO 2025-05-15 14:12:53,384 basehttp 75800 13035925504 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2895
+INFO 2025-05-15 14:13:23,999 basehttp 75800 13069578240 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-15 14:13:24,010 basehttp 75800 13035925504 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:13:25,949 basehttp 75800 13069578240 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:13:25,950 basehttp 75800 13035925504 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:13:27,884 basehttp 75800 13069578240 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2895
+INFO 2025-05-15 14:13:27,907 basehttp 75800 13069578240 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2895
+INFO 2025-05-15 14:14:42,330 autoreload 75800 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-15 14:14:43,306 autoreload 78124 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 14:15:01,921 autoreload 78124 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-15 14:15:02,476 autoreload 78167 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 14:15:35,233 basehttp 78167 6204977152 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2895
+INFO 2025-05-15 14:15:35,253 basehttp 78167 6204977152 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2895
+INFO 2025-05-15 14:15:55,572 basehttp 78167 6204977152 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2895
+INFO 2025-05-15 14:15:55,611 basehttp 78167 6204977152 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2895
+INFO 2025-05-15 14:16:34,907 autoreload 78429 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 14:17:10,755 basehttp 78167 6238629888 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-15 14:17:10,763 basehttp 78167 6255456256 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN&force_refresh=true HTTP/1.1" 200 2895
+INFO 2025-05-15 14:17:10,776 basehttp 78167 6204977152 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:17:13,944 basehttp 78167 6204977152 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:17:13,945 basehttp 78167 6238629888 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:17:13,950 basehttp 78167 6255456256 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 200 2895
+INFO 2025-05-15 14:17:15,679 basehttp 78167 6238629888 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 2895
+INFO 2025-05-15 14:17:15,718 basehttp 78167 6238629888 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 2895
+INFO 2025-05-15 14:18:50,578 autoreload 78167 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-15 14:18:50,588 autoreload 78429 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-15 14:18:51,985 autoreload 78667 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 14:18:51,987 autoreload 78668 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 14:19:33,168 autoreload 78668 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-15 14:19:33,170 autoreload 78667 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-15 14:19:33,791 autoreload 78775 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 14:19:33,791 autoreload 78776 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 14:20:54,911 autoreload 78775 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-15 14:20:54,980 autoreload 78776 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-15 14:20:55,667 autoreload 78939 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 14:20:55,667 autoreload 78940 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-15 14:21:16,826 autoreload 79026 8462421120 Watching for file changes with StatReloader
+WARNING 2025-05-15 14:22:02,202 log 78940 6140342272 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-15 14:22:02,202 basehttp 78940 6140342272 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 404 91
+INFO 2025-05-15 14:22:31,469 basehttp 78940 6140342272 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 2475
+INFO 2025-05-15 14:22:51,980 basehttp 78940 6191394816 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-15 14:22:51,983 basehttp 78940 6174568448 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-15 14:22:52,000 basehttp 78940 6208221184 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 200 2528
+INFO 2025-05-15 14:22:52,030 basehttp 78940 6191394816 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 200 2528
+INFO 2025-05-15 14:22:54,729 basehttp 78940 6174568448 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 2528
+INFO 2025-05-15 14:22:54,755 basehttp 78940 6174568448 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 2528

@@ -64,7 +64,7 @@ class GetReportAPIView(APIView):
         Returns:
             Response: 包含分析报告的响应
         """
-        # 获取用户语言偏好（注意：目前我们只保存英文报告，此参数仅用于记录）
+        # 获取用户语言偏好
         language = request.query_params.get('language', 'en-US')
         if request.user.is_authenticated and hasattr(request.user, 'language') and request.user.language:
             language = request.user.language
@@ -204,13 +204,18 @@ class GetReportAPIView(APIView):
             technical_analysis: TechnicalAnalysis模型实例
             analysis_data: 分析数据
             price: 当前价格
-            language: 语言代码（注意：目前我们只保存英文报告，忽略此参数）
+            language: 语言代码
 
         Returns:
             AnalysisReport: 分析报告记录
         """
-        # 强制使用英文，忽略传入的language参数
-        language = 'en-US'
+        # 使用传入的语言参数
+        # 支持的语言列表
+        supported_languages = ['en-US', 'zh-CN', 'ja-JP', 'ko-KR']
+
+        # 如果传入的语言不在支持列表中，默认使用英文
+        if language not in supported_languages:
+            language = 'en-US'
 
         # 创建分析报告
         report, _ = await sync_to_async(AnalysisReport.objects.update_or_create)(
@@ -266,13 +271,20 @@ class GetReportAPIView(APIView):
             symbol: 代币符号
             indicators: 技术指标数据
             technical_analysis: 技术分析记录
-            language: 语言代码，默认为'en-US'（注意：目前我们只保存英文报告，忽略此参数）
+            language: 语言代码，默认为'en-US'，但会同时获取所有支持的语言
 
         Returns:
-            dict: 分析数据
+            dict: 包含所有语言分析数据的字典，格式为 {'en-US': {...}, 'zh-CN': {...}, ...}
         """
-        # 强制使用英文，忽略传入的language参数
-        language = 'en-US'
+        # 支持的语言列表
+        supported_languages = ['en-US', 'zh-CN', 'ja-JP', 'ko-KR']
+
+        # 如果传入的语言不在支持列表中，默认使用英文
+        if language not in supported_languages:
+            language = 'en-US'
+
+        # 创建一个字典，用于存储所有语言的分析数据
+        all_language_data = {}
         try:
             # 记录开始时间
             coze_start_time = time.time()
@@ -305,91 +317,93 @@ class GetReportAPIView(APIView):
             if funding_rate is not None:
                 funding_rate = funding_rate * 100  # 转换为百分比形式
 
-            # 构建技术指标消息
-            indicators_message = f"""
-            请分析以下加密货币 {symbol} 的技术指标数据，并提供详细的分析报告：
+            # 为每种支持的语言获取分析报告
+            for current_lang in supported_languages:
+                # 构建技术指标消息
+                indicators_message = f"""
+                请分析以下加密货币 {symbol} 的技术指标数据，并提供详细的分析报告：
 
-            当前价格: {market_data['price']} USDT
+                当前价格: {market_data['price']} USDT
 
-            技术指标:
-            - RSI: {indicators.get('RSI')}
-            - MACD: 线 {indicators.get('MACD', {}).get('line')}, 信号线 {indicators.get('MACD', {}).get('signal')}, 柱状图 {indicators.get('MACD', {}).get('histogram')}
-            - 布林带: 上轨 {indicators.get('BollingerBands', {}).get('upper')}, 中轨 {indicators.get('BollingerBands', {}).get('middle')}, 下轨 {indicators.get('BollingerBands', {}).get('lower')}
-            - BIAS: {indicators.get('BIAS')}
-            - PSY: {indicators.get('PSY')}
-            - DMI: +DI {indicators.get('DMI', {}).get('plus_di')}, -DI {indicators.get('DMI', {}).get('minus_di')}, ADX {indicators.get('DMI', {}).get('adx')}
-            - VWAP: {indicators.get('VWAP')}
-            - 资金费率: {funding_rate}%
-            - 交易所净流入: {indicators.get('ExchangeNetflow')}
-            - NUPL: {indicators.get('NUPL')}
-            - Mayer Multiple: {indicators.get('MayerMultiple')}
+                技术指标:
+                - RSI: {indicators.get('RSI')}
+                - MACD: 线 {indicators.get('MACD', {}).get('line')}, 信号线 {indicators.get('MACD', {}).get('signal')}, 柱状图 {indicators.get('MACD', {}).get('histogram')}
+                - 布林带: 上轨 {indicators.get('BollingerBands', {}).get('upper')}, 中轨 {indicators.get('BollingerBands', {}).get('middle')}, 下轨 {indicators.get('BollingerBands', {}).get('lower')}
+                - BIAS: {indicators.get('BIAS')}
+                - PSY: {indicators.get('PSY')}
+                - DMI: +DI {indicators.get('DMI', {}).get('plus_di')}, -DI {indicators.get('DMI', {}).get('minus_di')}, ADX {indicators.get('DMI', {}).get('adx')}
+                - VWAP: {indicators.get('VWAP')}
+                - 资金费率: {funding_rate}%
+                - 交易所净流入: {indicators.get('ExchangeNetflow')}
+                - NUPL: {indicators.get('NUPL')}
+                - Mayer Multiple: {indicators.get('MayerMultiple')}
 
-            请使用 {language} 语言回复，并按照以下JSON格式提供分析结果：
-            ```json
-            {{
-                "trend_up_probability": 0-100之间的整数，表示上涨概率,
-                "trend_sideways_probability": 0-100之间的整数，表示横盘概率,
-                "trend_down_probability": 0-100之间的整数，表示下跌概率,
-                "trend_summary": "对趋势的总体分析和预测",
-                "indicators_analysis": {{
-                    "RSI": {{
-                        "analysis": "RSI指标分析",
-                        "support_trend": "bullish/bearish/neutral"
+                请使用 {current_lang} 语言回复，并按照以下JSON格式提供分析结果：
+                ```json
+                {{
+                    "trend_up_probability": 0-100之间的整数，表示上涨概率,
+                    "trend_sideways_probability": 0-100之间的整数，表示横盘概率,
+                    "trend_down_probability": 0-100之间的整数，表示下跌概率,
+                    "trend_summary": "对趋势的总体分析和预测",
+                    "indicators_analysis": {{
+                        "RSI": {{
+                            "analysis": "RSI指标分析",
+                            "support_trend": "bullish/bearish/neutral"
+                        }},
+                        "MACD": {{
+                            "analysis": "MACD指标分析",
+                            "support_trend": "bullish/bearish/neutral"
+                        }},
+                        "BollingerBands": {{
+                            "analysis": "布林带指标分析",
+                            "support_trend": "bullish/bearish/neutral"
+                        }},
+                        "BIAS": {{
+                            "analysis": "BIAS指标分析",
+                            "support_trend": "bullish/bearish/neutral"
+                        }},
+                        "PSY": {{
+                            "analysis": "PSY指标分析",
+                            "support_trend": "bullish/bearish/neutral"
+                        }},
+                        "DMI": {{
+                            "analysis": "DMI指标分析",
+                            "support_trend": "bullish/bearish/neutral"
+                        }},
+                        "VWAP": {{
+                            "analysis": "VWAP指标分析",
+                            "support_trend": "bullish/bearish/neutral"
+                        }},
+                        "FundingRate": {{
+                            "analysis": "资金费率分析",
+                            "support_trend": "bullish/bearish/neutral"
+                        }},
+                        "ExchangeNetflow": {{
+                            "analysis": "交易所净流入分析",
+                            "support_trend": "bullish/bearish/neutral"
+                        }},
+                        "NUPL": {{
+                            "analysis": "NUPL指标分析",
+                            "support_trend": "bullish/bearish/neutral"
+                        }},
+                        "MayerMultiple": {{
+                            "analysis": "Mayer Multiple指标分析",
+                            "support_trend": "bullish/bearish/neutral"
+                        }}
                     }},
-                    "MACD": {{
-                        "analysis": "MACD指标分析",
-                        "support_trend": "bullish/bearish/neutral"
-                    }},
-                    "BollingerBands": {{
-                        "analysis": "布林带指标分析",
-                        "support_trend": "bullish/bearish/neutral"
-                    }},
-                    "BIAS": {{
-                        "analysis": "BIAS指标分析",
-                        "support_trend": "bullish/bearish/neutral"
-                    }},
-                    "PSY": {{
-                        "analysis": "PSY指标分析",
-                        "support_trend": "bullish/bearish/neutral"
-                    }},
-                    "DMI": {{
-                        "analysis": "DMI指标分析",
-                        "support_trend": "bullish/bearish/neutral"
-                    }},
-                    "VWAP": {{
-                        "analysis": "VWAP指标分析",
-                        "support_trend": "bullish/bearish/neutral"
-                    }},
-                    "FundingRate": {{
-                        "analysis": "资金费率分析",
-                        "support_trend": "bullish/bearish/neutral"
-                    }},
-                    "ExchangeNetflow": {{
-                        "analysis": "交易所净流入分析",
-                        "support_trend": "bullish/bearish/neutral"
-                    }},
-                    "NUPL": {{
-                        "analysis": "NUPL指标分析",
-                        "support_trend": "bullish/bearish/neutral"
-                    }},
-                    "MayerMultiple": {{
-                        "analysis": "Mayer Multiple指标分析",
-                        "support_trend": "bullish/bearish/neutral"
-                    }}
-                }},
-                "trading_action": "买入/卖出/持有/等待",
-                "trading_reason": "交易建议的原因",
-                "entry_price": 建议入场价格,
-                "stop_loss": 建议止损价格,
-                "take_profit": 建议止盈价格,
-                "risk_level": "高/中/低",
-                "risk_score": 0-100之间的整数，表示风险评分,
-                "risk_details": ["风险因素1", "风险因素2", ...]
-            }}
-            ```
+                    "trading_action": "买入/卖出/持有/等待",
+                    "trading_reason": "交易建议的原因",
+                    "entry_price": 建议入场价格,
+                    "stop_loss": 建议止损价格,
+                    "take_profit": 建议止盈价格,
+                    "risk_level": "高/中/低",
+                    "risk_score": 0-100之间的整数，表示风险评分,
+                    "risk_details": ["风险因素1", "风险因素2", ...]
+                }}
+                ```
 
-            请确保所有概率之和为100，并提供详细的分析理由。
-            """
+                请确保所有概率之和为100，并提供详细的分析理由。
+                """
 
             # 准备发送给Coze的提示内容
 
@@ -483,7 +497,8 @@ class GetReportAPIView(APIView):
                                     except json.JSONDecodeError:
                                         logger.warning("直接解析整个回复失败")
                             else:
-                                logger.warning("未找到助手的回复")
+                                # 未找到助手的回复
+                                pass
                         except Exception as e:
                             logger.error(f"处理Coze响应时发生错误: {str(e)}")
 

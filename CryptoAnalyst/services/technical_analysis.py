@@ -16,7 +16,6 @@ class TechnicalAnalysisService:
     def __init__(self):
         """初始化技术分析服务"""
         self.gate_api = GateAPI()  # 使用Gate API
-        logger.info("技术分析服务初始化完成")
 
     def get_all_indicators(self, symbol: str, interval: str = '1d', limit: int = 1000) -> Dict:
         """获取所有技术指标数据
@@ -47,7 +46,7 @@ class TechnicalAnalysisService:
                     'message': f"无法获取{symbol}的实时价格，请检查交易对是否存在"
                 }
 
-            logger.info(f"成功获取{symbol}实时价格: {price}，开始计算技术指标")
+            # 成功获取实时价格，开始计算技术指标
 
             # 获取历史K线数据，减少请求数据量
             # 从之前的1000天减少到100天，对于新上线的代币更友好
@@ -67,7 +66,7 @@ class TechnicalAnalysisService:
 
             # 记录获取到的K线数量
             kline_count = len(klines)
-            logger.info(f"获取到{kline_count}条K线数据，开始计算指标")
+            # 开始计算指标
 
             # 转换为DataFrame
             df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
@@ -80,9 +79,8 @@ class TechnicalAnalysisService:
             # 按时间排序
             df = df.sort_values('timestamp')
 
-            # 告警如果数据量不足
-            if len(df) < 200:
-                logger.warning(f"数据长度不足200天({len(df)}天)，某些高级指标可能不准确")
+            # 检查数据量是否足够
+            # 如果数据量不足200天，某些高级指标可能不准确
 
             # 计算技术指标，基于可用数据量灵活调整
             indicators = {}
@@ -127,12 +125,12 @@ class TechnicalAnalysisService:
                 indicators['MayerMultiple'] = self._calculate_mayer_multiple(df, window=200)
             elif len(df) >= 100:
                 # 使用100天数据计算，可能不太准确但比默认值更有意义
-                logger.info(f"数据量不足200天，使用{len(df)}天数据计算高级指标")
+                # 数据量不足200天，使用可用数据计算高级指标
                 indicators['NUPL'] = self._calculate_nupl(df, window=100)
                 indicators['MayerMultiple'] = self._calculate_mayer_multiple(df, window=100)
             elif len(df) >= 50:
                 # 使用50天数据计算，作为近似值
-                logger.info(f"数据量较少，仅{len(df)}天，使用近似方法计算高级指标")
+                # 数据量较少，使用近似方法计算高级指标
                 indicators['NUPL'] = self._calculate_nupl(df, window=50)
                 indicators['MayerMultiple'] = self._calculate_mayer_multiple(df, window=50)
             else:
@@ -154,13 +152,13 @@ class TechnicalAnalysisService:
                                 logger.warning(f"指标 {key}.{sub_key} 的值无效: {sub_value}，使用默认值")
                                 value[sub_key] = 0.0
 
-            logger.info(f"成功计算{symbol}的所有技术指标")
+            # 成功计算所有技术指标
             return {
                 'status': 'success',
                 'data': {
                     'symbol': symbol,
                     'interval': interval,
-                    'timestamp': datetime.utcnow().isoformat(),
+                    'timestamp': datetime.now().isoformat(),
                     'indicators': indicators
                 }
             }
@@ -506,12 +504,12 @@ class TechnicalAnalysisService:
                 }
 
                 default_rate = default_rates.get(symbol, 0.0001)  # 如果没有特定币种的默认值，使用0.0001
-                logger.info(f"API返回的 {symbol} 资金费率为0，使用默认值: {default_rate} (相当于 {default_rate*100}%)")
+                # API返回的资金费率为0，使用默认值
                 return default_rate
 
             # 使用API返回的资金费率
             rate = float(funding_rate)
-            logger.info(f"获取到 {symbol} 的资金费率: {rate} (相当于 {rate*100}%)")
+            # 获取到资金费率
             return round(rate, 6)
 
         except Exception as e:
@@ -527,7 +525,7 @@ class TechnicalAnalysisService:
             }
 
             default_rate = default_rates.get(symbol, 0.0001)  # 如果没有特定币种的默认值，使用0.0001
-            logger.info(f"使用 {symbol} 的默认资金费率: {default_rate} (相当于 {default_rate*100}%)")
+            # 使用默认资金费率
             return default_rate
 
     def _calculate_exchange_netflow(self, df: pd.DataFrame, period: int = 30) -> float:
@@ -583,7 +581,7 @@ class TechnicalAnalysisService:
 
             # 根据数据可用性动态调整计算窗口
             actual_window = min(window, len(df) - 1)
-            logger.info(f"使用{actual_window}天数据计算NUPL")
+            # 使用可用数据计算NUPL
 
             # 确保数据类型正确
             df['close'] = pd.to_numeric(df['close'], errors='coerce')
@@ -598,11 +596,11 @@ class TechnicalAnalysisService:
 
             # 使用实际可用窗口计算已实现价格
             # 这里使用过去actual_window天的成交量加权平均价格
-            df_window = df.iloc[-actual_window:]
+            df_window = df.iloc[-actual_window:].copy()  # 使用copy()创建副本，避免SettingWithCopyWarning
 
             # 计算已实现价格
-            df_window['typical_price'] = (df_window['high'] + df_window['low'] + df_window['close']) / 3
-            df_window['volume_price'] = df_window['typical_price'] * df_window['volume']
+            df_window.loc[:, 'typical_price'] = (df_window['high'] + df_window['low'] + df_window['close']) / 3
+            df_window.loc[:, 'volume_price'] = df_window['typical_price'] * df_window['volume']
 
             # 检查计算结果
             if df_window['volume_price'].isna().any() or df_window['volume'].isna().any():
@@ -638,7 +636,7 @@ class TechnicalAnalysisService:
             # 限制数值范围在 -100% 到 100% 之间
             nupl = max(min(nupl, 100.0), -100.0)
 
-            logger.info(f"NUPL计算结果: {nupl}")
+            # NUPL计算完成
             return round(float(nupl), 2)
 
         except Exception as e:
@@ -666,7 +664,7 @@ class TechnicalAnalysisService:
                 logger.warning(f"数据不足20天，无法可靠计算梅耶倍数")
                 return 1.0
 
-            logger.info(f"使用{actual_window}天数据计算梅耶倍数")
+            # 使用可用数据计算梅耶倍数
 
             # 获取当前价格
             current_price = float(df['close'].iloc[-1])
@@ -674,9 +672,8 @@ class TechnicalAnalysisService:
             # 计算适应窗口大小的移动平均线
             moving_avg = df['close'].rolling(window=actual_window).mean()
 
-            # 打印MA数据
+            # 获取MA数据
             ma_value = float(moving_avg.iloc[-1])
-            logger.info(f"使用{actual_window}日移动平均线: {ma_value}")
 
             # 检查移动平均线值是否有效
             if ma_value == 0 or np.isnan(ma_value) or np.isinf(ma_value):
@@ -686,8 +683,7 @@ class TechnicalAnalysisService:
             # 计算当前价格与移动均线的比率
             mayer_multiple = current_price / ma_value
 
-            # 打印计算结果
-            logger.info(f"梅耶倍数计算结果: {mayer_multiple}")
+            # 梅耶倍数计算完成
 
             # 限制数值范围
             mayer_multiple = max(min(mayer_multiple, 10.0), 0.1)
