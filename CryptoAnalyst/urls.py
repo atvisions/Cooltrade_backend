@@ -11,7 +11,7 @@ from .views import (
     RequestPasswordResetView,
     ResetPasswordWithCodeView
 )
-from .views_report import GetReportAPIView
+from .views_report import CryptoReportAPIView
 from .views_indicators_data import TechnicalIndicatorsDataAPIView
 from .views_technical_indicators import TechnicalIndicatorsAPIView
 
@@ -23,7 +23,7 @@ urlpatterns = [
     path('crypto/technical-indicators/<str:symbol>/', TechnicalIndicatorsAPIView.as_view(), name='technical_indicators'),
 
     # 分析报告API
-    path('crypto/get_report/<str:symbol>/', GetReportAPIView.as_view(), name='get_report'),
+    path('crypto/get_report/<str:symbol>/', CryptoReportAPIView.as_view(), name='get_report'),
 
     # 用户相关
     path('auth/send-code/', SendVerificationCodeView.as_view(), name='send_verification_code'),

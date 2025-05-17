@@ -17,8 +17,6 @@ from dotenv import load_dotenv
 
 # 加载.env文件
 load_dotenv(override=True)  # 添加 override=True 参数，确保覆盖系统环境变量
-raw_coze_api_key_from_env = os.getenv('COZE_API_KEY')
-print(f"[DEBUG Settings] Raw COZE_API_KEY from os.getenv after load_dotenv(): '{raw_coze_api_key_from_env}'")
 
 pymysql.install_as_MySQLdb()
 
@@ -234,9 +232,20 @@ COINGECKO_API_KEY = os.getenv('COINGECKO_API_KEY')
 
 # Coze API配置
 COZE_API_KEY = os.getenv('COZE_API_KEY')
-COZE_BOT_ID = os.getenv('COZE_BOT_ID', '7494575252253720584')
-COZE_SPACE_ID = os.getenv('COZE_SPACE_ID', '7494574941820633105')
-COZE_API_URL = os.getenv('COZE_API_URL', 'https://api.coze.com')
+COZE_API_URL = os.getenv('COZE_API_URL')
+COZE_SPACE_ID = os.getenv('COZE_SPACE_ID')
+
+# Coze Bot ID 配置
+COZE_BOT_ID_ZH = os.getenv('COZE_BOT_ID_ZH', '7504984466486984721')  # 中文 Bot ID
+COZE_BOT_ID_EN = os.getenv('COZE_BOT_ID_EN', '7504983775349489680')  # 英文 Bot ID
+COZE_BOT_ID_JA = os.getenv('COZE_BOT_ID_JA', '7504985637318475792')  # 日文 Bot ID
+COZE_BOT_ID_KO = os.getenv('COZE_BOT_ID_KO', '7504984181148581905')  # 韩文 Bot ID
+
+# 打印 Coze Bot ID，用于调试
+print(f"[DEBUG Settings] COZE_BOT_ID_ZH: {COZE_BOT_ID_ZH}")
+print(f"[DEBUG Settings] COZE_BOT_ID_EN: {COZE_BOT_ID_EN}")
+print(f"[DEBUG Settings] COZE_BOT_ID_JA: {COZE_BOT_ID_JA}")
+print(f"[DEBUG Settings] COZE_BOT_ID_KO: {COZE_BOT_ID_KO}")
 
 # 日志配置
 LOGGING = {

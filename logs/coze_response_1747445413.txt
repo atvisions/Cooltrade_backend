@@ -1,0 +1,66 @@
+{
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 25,
+    "down_probability": 15,
+    "summary": "現在の市場は上昇トレンドの可能性が高いです。RSIが68.59であり、これは過熱感があることを示していますが、まだ上昇余地がある可能性があります。その他の指標も上昇トレンドを支持しているようです。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSIは68.59であり、これは過熱感があることを示していますが、まだ上昇余地がある可能性があります。",
+      "support_trend": "up"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、ヒストグラムがすべて0であり、現在のトレンドを示す明確なシグナルはありません。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボリンジャーバンドのデータが提供されていないため、分析ができません。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIASは-0.04であり、これは市場がやや売られ過ぎであることを示しています。",
+      "support_trend": "sideways"
+    },
+    "psy": {
+      "analysis": "PSYは58.3であり、市場の心理がポジティブであることを示しています。",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMIのデータが提供されていないため、分析ができません。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAPは89961.64であり、現在の価格102963.7はVWAPを上回っているため、上昇トレンドを示しています。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "資金調達率は非常に低く、市場への影響はほとんどありません。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "取引所の正味流入は-26.88であり、資金が取引所から流出していることを示しています。これは一般的に強気のサインです。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPLは15.27であり、市場が利益を出している状態を示しています。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "メイヤーマルチプルは1.15であり、これは市場が過熱していないことを示しています。",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "buy",
+    "reason": "複数の指標が上昇トレンドを支持しており、現在の市場状況が有利であるため。",
+    "entry_price": 102963.7,
+    "stop_loss": 98000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 60,
+    "details": ["RSIが過熱感を示している", "市場心理がポジティブである", "資金が取引所から流出している"]
+  }
+}

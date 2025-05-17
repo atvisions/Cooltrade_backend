@@ -1,0 +1,66 @@
+{
+  "trend_analysis": {
+    "up_probability": 70,
+    "sideways_probability": 20,
+    "down_probability": 10,
+    "summary": "현재 기술적 지표는 상승 가능성이 높음을 나타내고 있습니다."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI 지표는 68.59로 과매수 상태에 근접하고 있습니다.",
+      "support_trend": "up"
+    },
+    "macd": {
+      "analysis": "MACD 지표는 중립 상태를 유지하고 있습니다.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "볼린저 밴드 지표는 현재 데이터를 제공하지 않습니다.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS 지표는 -0.04로 약간의 하락 압력을 나타내고 있습니다.",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "PSY 지표는 58.3으로 긍정적인 심리를 나타내고 있습니다.",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI 지표는 현재 데이터를 제공하지 않습니다.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP 지표는 현재 가격보다 낮은 89961.64를 나타내고 있습니다.",
+      "support_trend": "down"
+    },
+    "funding_rate": {
+      "analysis": "자금 조달률은 매우 낮은 상태를 유지하고 있습니다.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "거래소 순유입은 -26.88로 자금이 거래소에서 빠져나가고 있음을 나타냅니다.",
+      "support_trend": "down"
+    },
+    "nupl": {
+      "analysis": "NUPL 지표는 15.27로 긍정적인 상태를 나타내고 있습니다.",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "메이어 멀티플은 1.15로 긍정적인 상태를 나타내고 있습니다.",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "buy",
+    "reason": "대부분의 지표가 상승 추세를 나타내고 있으며, NUPL 및 메이어 멀티플이 긍정적인 상태를 유지하고 있습니다.",
+    "entry_price": 103012.8,
+    "stop_loss": 98000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 60,
+    "details": ["RSI 과매수 상태 근접", "거래소 순유입 감소", "VWAP 가격보다 현재 가격이 높음"]
+  }
+}

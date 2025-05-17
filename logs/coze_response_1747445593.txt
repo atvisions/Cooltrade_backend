@@ -1,0 +1,66 @@
+{
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 40,
+    "down_probability": 20,
+    "summary": "현재 암호화폐 시장은 중립적인 상태로 보이며, 상승과 횡보의 가능성이 높습니다."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI 지표는 68.59로 과매수 영역에 근접해 있습니다.",
+      "support_trend": "up"
+    },
+    "macd": {
+      "analysis": "MACD 지표는 현재 신호선과 히스토그램 모두 0을 나타내며, 뚜렷한 방향성을 제시하지 않습니다.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "볼린저 밴드 지표는 현재 제공되지 않았습니다.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS 지표는 -0.04로 중립적입니다.",
+      "support_trend": "neutral"
+    },
+    "psy": {
+      "analysis": "PSY 지표는 58.3으로 다소 긍정적인 신호를 보여줍니다.",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI 지표는 현재 제공되지 않았습니다.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP 지표는 89961.64로 현재 가격보다 낮아, 가격이 상승할 가능성을 시사합니다.",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "자금 조달률은 매우 낮아, 시장에 큰 영향을 미치지 않을 것입니다.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "거래소 순유입은 -26.88로, 자금이 거래소에서 빠져나가고 있습니다.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL 지표는 15.27로, 시장에 긍정적인 신호를 보입니다.",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "메이어 멀티플은 1.15로, 시장이 안정적인 상태임을 나타냅니다.",
+      "support_trend": "neutral"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "대부분의 지표가 상승 또는 중립을 가리키고 있으며, 현재 시장은 안정적인 상태입니다.",
+    "entry_price": 102864.0,
+    "stop_loss": 98000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 60,
+    "details": ["RSI 과매수 근접", "VWAP 지표 상승 가능성", "거래소 순유입 감소"]
+  }
+}

@@ -1,0 +1,72 @@
+```json
+{
+  "trend_analysis": {
+    "up_probability": 30,
+    "sideways_probability": 50,
+    "down_probability": 20,
+    "summary": "当前市场趋势较为平稳，横盘概率较高，市场情绪较为中性。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI指标接近超买区域，表明市场可能存在回调压力。",
+      "support_trend": "sideways"
+    },
+    "macd": {
+      "analysis": "MACD指标显示零值，表明市场缺乏明确趋势信号。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "布林带指标未提供有效数据，无法判断市场波动性。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS指标为负，表明市场存在一定的卖压。",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "PSY指标处于50，表明市场情绪中性。",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI指标未提供有效数据，无法判断市场动向。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "当前价格高于VWAP，表明市场处于较强状态。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "资金费率为正，表明市场情绪偏多。",
+      "support_trend": "up"
+    },
+    "exchange_netflow": {
+      "analysis": "交易所净流入为负，表明资金流出市场，可能存在卖压。",
+      "support_trend": "down"
+    },
+    "nupl": {
+      "analysis": "NUPL指标显示市场处于盈利状态，投资者情绪较好。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "Mayer Multiple高于1，表明市场处于相对高位。",
+      "support_trend": "sideways"
+    }
+  },
+  "trading_advice": {
+    "action": "等待",
+    "reason": "市场趋势不明朗，建议保持观望，等待更明确的信号。",
+    "entry_price": 102907.2,
+    "stop_loss": 98000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "中",
+    "score": 60,
+    "details": [
+      "RSI接近超买区域",
+      "BIAS为负",
+      "交易所净流出"
+    ]
+  }
+}
+```

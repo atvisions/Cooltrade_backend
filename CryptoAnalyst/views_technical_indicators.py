@@ -44,26 +44,58 @@ class TechnicalIndicatorsAPIView(APIView):
             if self.market_service is None:
                 self.market_service = MarketDataService()
 
+            # 获取语言参数
+            language = request.GET.get('language', 'zh-CN')
+            logger.info(f"请求的语言: {language}")
+
+            # 支持的语言列表
+            supported_languages = ['zh-CN', 'en-US', 'ja-JP', 'ko-KR']
+
+            # 验证语言支持
+            if language not in supported_languages:
+                logger.warning(f"不支持的语言: {language}，使用默认语言 zh-CN")
+                language = 'zh-CN'
+
             # 统一 symbol 格式，去除常见后缀
             clean_symbol = symbol.upper().replace('USDT', '').replace('-PERP', '').replace('_PERP', '').replace('PERP', '')
 
             # 处理查询
 
-            # 查找代币记录
-            token_qs = await sync_to_async(Token.objects.filter)(symbol=clean_symbol)
+            # 首先尝试使用完整的 symbol 查找代币记录
+            token_qs = await sync_to_async(Token.objects.filter)(symbol=symbol.upper())
             token = await sync_to_async(token_qs.first)()
 
+            # 如果找不到，再尝试使用清理后的 symbol 查找
             if not token:
+                token_qs = await sync_to_async(Token.objects.filter)(symbol=clean_symbol)
+                token = await sync_to_async(token_qs.first)()
+
+            if not token:
+                # 记录日志，帮助调试
+                logger.error(f"未找到代币记录，尝试查找的符号: {symbol.upper()} 和 {clean_symbol}")
+
+                # 查看数据库中有哪些代币记录
+                all_tokens = await sync_to_async(list)(Token.objects.all())
+                token_symbols = [t.symbol for t in all_tokens]
+                logger.info(f"数据库中的代币记录: {token_symbols}")
+
                 return Response({
                     'status': 'not_found',
-                    'message': f"未找到代币 {clean_symbol} 的分析数据",
+                    'message': f"未找到代币 {symbol} 的分析数据",
                     'needs_refresh': True
                 }, status=status.HTTP_404_NOT_FOUND)
 
-            # 获取最新的分析报告
-            reports_qs = await sync_to_async(AnalysisReport.objects.filter)(token=token)
+            # 获取指定语言的最新分析报告
+            reports_qs = await sync_to_async(AnalysisReport.objects.filter)(token=token, language=language)
             reports_qs = await sync_to_async(reports_qs.order_by)('-timestamp')
             latest_report = await sync_to_async(reports_qs.first)()
+
+            # 如果找不到指定语言的报告，尝试获取任何语言的最新报告
+            if not latest_report:
+                logger.warning(f"未找到语言为 {language} 的报告，尝试获取任何语言的最新报告")
+                reports_qs = await sync_to_async(AnalysisReport.objects.filter)(token=token)
+                reports_qs = await sync_to_async(reports_qs.order_by)('-timestamp')
+                latest_report = await sync_to_async(reports_qs.first)()
 
             if not latest_report:
                 return Response({

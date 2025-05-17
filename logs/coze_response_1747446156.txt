@@ -1,0 +1,66 @@
+{
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "The market trend shows a moderate likelihood of an uptrend, with some chances of sideways or downward movement."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI value of 69.91 suggests the asset is nearing overbought conditions, which could indicate a potential reversal or consolidation.",
+      "support_trend": "up"
+    },
+    "macd": {
+      "analysis": "The MACD line, signal line, and histogram are all at 0, indicating a neutral stance with no clear momentum.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "Bollinger Bands values are all at 0, indicating no current volatility data is available.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "The BIAS value of -0.49 indicates slight bearish sentiment, suggesting a minor downward pressure.",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "The PSY value of 50.0 indicates a balanced market sentiment with no clear direction.",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI values are all at 0, indicating no directional movement strength or trend clarity.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "The VWAP value of 89970.54 suggests the current price is above the average price, indicating potential bullish sentiment.",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "The funding rate value of 7.6e-09 is negligible and does not indicate significant market sentiment.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "The exchange netflow value of -90.69 indicates more assets are leaving exchanges, suggesting potential bullish sentiment.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "The NUPL value of 14.49 indicates the market is in a state of profit, suggesting potential bullish sentiment.",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "The Mayer Multiple value of 1.14 indicates the asset is trading above its historical average, suggesting bullish sentiment.",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "The indicators show mixed signals with a slight bullish bias. Holding is advised until clearer signals emerge.",
+    "entry_price": 102807.8,
+    "stop_loss": 95000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 50,
+    "details": ["RSI nearing overbought", "Mixed sentiment indicators", "Price above VWAP"]
+  }
+}
