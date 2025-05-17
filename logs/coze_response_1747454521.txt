@@ -1,0 +1,66 @@
+{
+  "trend_analysis": {
+    "up_probability": 30,
+    "sideways_probability": 50,
+    "down_probability": 20,
+    "summary": "The market is showing mixed signals with a higher probability of moving sideways. There is some potential for an uptrend, but it is not strongly supported by the indicators."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI value of 69.91 indicates that the market is approaching overbought conditions, suggesting a potential for a price correction or consolidation.",
+      "support_trend": "sideways"
+    },
+    "macd": {
+      "analysis": "The MACD line, signal line, and histogram all being at 0 indicate a lack of momentum and a neutral market condition.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "The Bollinger Bands data is missing, making it difficult to analyze the volatility and potential price movements.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "The BIAS value of -0.49 suggests a slight bearish sentiment in the market, but it is not strong enough to indicate a significant downtrend.",
+      "support_trend": "sideways"
+    },
+    "psy": {
+      "analysis": "The PSY value of 50.0 indicates a balanced market sentiment, with an equal number of buyers and sellers.",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "The DMI indicators (plus_di, minus_di, and adx) all being at 0 suggest no clear directional movement in the market.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "The VWAP value of 89970.54 indicates the average price at which the asset has traded throughout the day, suggesting the current price is above the VWAP, which is generally a bullish signal.",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "The funding rate value of 7.6e-17 is negligible and does not provide significant insight into market sentiment.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "The exchange netflow value of -90.69 indicates more assets are being withdrawn from exchanges than deposited, which can be a bullish signal as it suggests accumulation.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "The NUPL value of 14.49 indicates that the majority of market participants are in profit, which can lead to profit-taking and potential price corrections.",
+      "support_trend": "sideways"
+    },
+    "mayer_multiple": {
+      "analysis": "The Mayer Multiple value of 1.14 suggests the price is slightly above the 200-day moving average, indicating a generally bullish market condition.",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "The market is showing mixed signals with a higher probability of moving sideways. It is advisable to hold the current position and wait for clearer signals.",
+    "entry_price": 103500.5,
+    "stop_loss": 100000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 50,
+    "details": ["RSI nearing overbought conditions", "Neutral MACD and DMI indicators", "Slight bearish BIAS", "Balanced PSY value", "Positive VWAP and exchange netflow signals"]
+  }
+}

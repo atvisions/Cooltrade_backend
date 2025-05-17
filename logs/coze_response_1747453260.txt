@@ -1,0 +1,66 @@
+{
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "The market trend shows a moderate probability for an uptrend, with equal chances for sideways and downtrend movements."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI value of 69.91 suggests that the market is approaching overbought conditions.",
+      "support_trend": "up"
+    },
+    "macd": {
+      "analysis": "MACD values are neutral, indicating a lack of clear momentum in either direction.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "Bollinger Bands data is missing, unable to provide analysis.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS value of -0.49 indicates a slight bearish sentiment.",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "PSY value of 50.0 indicates a balanced market sentiment.",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI values are neutral, indicating no strong directional movement.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP value of 89970.54 suggests the current price is above the average value, indicating potential bullish sentiment.",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "Funding rate is extremely low, indicating minimal impact from funding fees.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "Negative exchange netflow of -90.69 suggests more coins are leaving exchanges, which can be a bullish indicator.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL value of 14.49 indicates that most investors are in profit, which can lead to selling pressure.",
+      "support_trend": "down"
+    },
+    "mayer_multiple": {
+      "analysis": "Mayer Multiple value of 1.14 suggests the price is slightly above the historical average, indicating a potential overvaluation.",
+      "support_trend": "down"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "Mixed signals from technical indicators suggest caution. Holding is recommended until clearer trends emerge.",
+    "entry_price": null,
+    "stop_loss": null,
+    "take_profit": null
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 50,
+    "details": ["Approaching overbought RSI", "Negative exchange netflow", "Mixed sentiment from multiple indicators"]
+  }
+}

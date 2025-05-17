@@ -60,7 +60,6 @@ class TechnicalIndicatorsAPIView(APIView):
             clean_symbol = symbol.upper().replace('USDT', '').replace('-PERP', '').replace('_PERP', '').replace('PERP', '')
 
             # 处理查询
-
             # 首先尝试使用完整的 symbol 查找代币记录
             token_qs = await sync_to_async(Token.objects.filter)(symbol=symbol.upper())
             token = await sync_to_async(token_qs.first)()
@@ -90,17 +89,11 @@ class TechnicalIndicatorsAPIView(APIView):
             reports_qs = await sync_to_async(reports_qs.order_by)('-timestamp')
             latest_report = await sync_to_async(reports_qs.first)()
 
-            # 如果找不到指定语言的报告，尝试获取任何语言的最新报告
-            if not latest_report:
-                logger.warning(f"未找到语言为 {language} 的报告，尝试获取任何语言的最新报告")
-                reports_qs = await sync_to_async(AnalysisReport.objects.filter)(token=token)
-                reports_qs = await sync_to_async(reports_qs.order_by)('-timestamp')
-                latest_report = await sync_to_async(reports_qs.first)()
-
+            # 如果找不到指定语言的报告，直接返回错误
             if not latest_report:
                 return Response({
                     'status': 'not_found',
-                    'message': f"未找到代币 {clean_symbol} 的分析数据",
+                    'message': f"未找到代币 {symbol} 的 {language} 语言分析报告",
                     'needs_refresh': True
                 }, status=status.HTTP_404_NOT_FOUND)
 
@@ -112,18 +105,16 @@ class TechnicalIndicatorsAPIView(APIView):
             if not technical_analysis:
                 return Response({
                     'status': 'not_found',
-                    'message': f"未找到代币 {clean_symbol} 的技术分析数据",
+                    'message': f"未找到代币 {symbol} 的技术分析数据",
                     'needs_refresh': True
                 }, status=status.HTTP_404_NOT_FOUND)
-
-            # 只使用数据库中的报告价格，不请求实时价格
 
             # 构建响应数据
             response_data = {
                 'status': 'success',
                 'data': {
                     'symbol': symbol,
-                    'price': float(latest_report.snapshot_price),  # 使用报告中的价格
+                    'price': float(latest_report.snapshot_price),
                     'trend_analysis': {
                         'probabilities': {
                             'up': latest_report.trend_up_probability,
@@ -213,7 +204,7 @@ class TechnicalIndicatorsAPIView(APIView):
                         'score': int(latest_report.risk_score),
                         'details': latest_report.risk_details
                     },
-                    'current_price': float(latest_report.snapshot_price),  # 使用报告中的价格
+                    'current_price': float(latest_report.snapshot_price),
                     'snapshot_price': float(latest_report.snapshot_price),
                     'last_update_time': latest_report.timestamp.isoformat()
                 }

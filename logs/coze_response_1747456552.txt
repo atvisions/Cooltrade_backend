@@ -1,0 +1,70 @@
+{
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 25,
+    "down_probability": 15,
+    "summary": "基于当前指标，市场显示出更高的上涨概率，中等的横盘概率和较低的下跌概率。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI值为72.32表明市场处于超买状态，暗示价格可能进行修正或盘整。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD线、信号线和直方图值均为零，表明MACD没有显示出显著的动量或趋势方向。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "由于所有布林带值均为零，因此没有可用的波动性信息，难以根据该指标评估趋势方向。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS值为0.05表明市场情绪略微看涨。",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "PSY值为58.3表明市场情绪中度看涨，暗示大多数市场参与者持乐观态度。",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "由于DMI值为零，该指标没有显示出明确的方向性运动。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "当前价格显著高于VWAP值89986.95，表明价格高于平均价格，显示出看涨趋势。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "正的资金费率0.000012表明多头支付空头，显示出看涨情绪。",
+      "support_trend": "up"
+    },
+    "exchange_netflow": {
+      "analysis": "负的交易所净流入值为-78.38表明更多资金从交易所撤出，可以解释为看涨信号。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL值为15.21表明大多数投资者处于盈利状态，通常支持看涨趋势。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "Mayer Multiple值为1.15表明价格高于历史平均值，暗示可能的高估但支持看涨趋势。",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "买入",
+    "reason": "多个指标显示出看涨趋势，市场显示出强劲的上升动能。",
+    "entry_price": 103580.8,
+    "stop_loss": 100000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "中",
+    "score": 50,
+    "details": [
+      "超买的RSI表明可能的修正",
+      "高于VWAP的价格",
+      "正的资金费率表明看涨情绪"
+    ]
+  }
+}

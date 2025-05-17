@@ -1,6 +1,7 @@
 import logging
 import json
 import time
+import re  # 添加 re 模块导入
 from typing import Dict, Any, Optional
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -9,7 +10,7 @@ from django.db import transaction
 from django.conf import settings
 from django.utils import timezone
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 from .models import Token, Chain, AnalysisReport, TechnicalAnalysis
 from .views_indicators_data import TechnicalIndicatorsDataAPIView
 from .services.technical_analysis import TechnicalAnalysisService
@@ -64,7 +65,7 @@ class CryptoReportAPIView(APIView):
             language = request.GET.get('language', 'zh-CN')
 
             # 验证语言支持
-            if language != 'all' and language not in self.SUPPORTED_LANGUAGES:
+            if language not in self.SUPPORTED_LANGUAGES:
                 return Response({
                     'status': 'error',
                     'message': f'不支持的语言: {language}。支持的语言: {", ".join(self.SUPPORTED_LANGUAGES)}'
@@ -90,48 +91,200 @@ class CryptoReportAPIView(APIView):
             if created:
                 logger.info(f"创建新交易对记录: {symbol}")
 
-            # 获取技术指标数据
-            technical_data = self._get_technical_data(symbol)
-            if not technical_data:
+            # 获取最新的技术分析记录（24小时内）
+            time_window = timezone.now() - timedelta(hours=24)
+            latest_analysis = TechnicalAnalysis.objects.filter(
+                token=token,
+                timestamp__gte=time_window
+            ).order_by('-timestamp').first()
+
+            if not latest_analysis:
+                # 没有技术分析，走获取技术参数逻辑并新建 TechnicalAnalysis
+                technical_data = self._get_technical_data(symbol)
+                if not technical_data:
+                    return Response({
+                        'status': 'error',
+                        'message': '获取技术指标数据失败'
+                    }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                # 创建新的 TechnicalAnalysis
+                indicators = technical_data.get('indicators', {})
+                def get_indicator_value(indicator_data, default=0):
+                    if isinstance(indicator_data, dict):
+                        return indicator_data.get('value', default)
+                    return indicator_data if indicator_data is not None else default
+                def get_macd_value(macd_data, key, default=0):
+                    if isinstance(macd_data, dict):
+                        return macd_data.get(key, default)
+                    return default
+                def get_bollinger_value(bollinger_data, key, default=0):
+                    if isinstance(bollinger_data, dict):
+                        return bollinger_data.get(key, default)
+                    return default
+                def get_dmi_value(dmi_data, key, default=0):
+                    if isinstance(dmi_data, dict):
+                        return dmi_data.get(key, default)
+                    return default
+                latest_analysis = TechnicalAnalysis.objects.create(
+                    token=token,
+                    timestamp=timezone.now(),
+                    rsi=get_indicator_value(indicators.get('rsi')),
+                    macd_line=get_macd_value(indicators.get('macd'), 'macd_line'),
+                    macd_signal=get_macd_value(indicators.get('macd'), 'signal_line'),
+                    macd_histogram=get_macd_value(indicators.get('macd'), 'histogram'),
+                    bollinger_upper=get_bollinger_value(indicators.get('bollinger_bands'), 'upper'),
+                    bollinger_middle=get_bollinger_value(indicators.get('bollinger_bands'), 'middle'),
+                    bollinger_lower=get_bollinger_value(indicators.get('bollinger_bands'), 'lower'),
+                    bias=get_indicator_value(indicators.get('bias')),
+                    psy=get_indicator_value(indicators.get('psy')),
+                    dmi_plus=get_dmi_value(indicators.get('dmi'), 'plus_di'),
+                    dmi_minus=get_dmi_value(indicators.get('dmi'), 'minus_di'),
+                    dmi_adx=get_dmi_value(indicators.get('dmi'), 'adx'),
+                    vwap=get_indicator_value(indicators.get('vwap')),
+                    funding_rate=get_indicator_value(indicators.get('funding_rate')),
+                    exchange_netflow=get_indicator_value(indicators.get('exchange_netflow')),
+                    nupl=get_indicator_value(indicators.get('nupl')),
+                    mayer_multiple=get_indicator_value(indicators.get('mayer_multiple'))
+                )
+
+            # 查询是否已有与该技术分析关联的报告
+            existing_report = AnalysisReport.objects.filter(
+                token=token,
+                language=language,
+                technical_analysis=latest_analysis
+            ).first()
+
+            if existing_report:
+                logger.info(f"找到与最新技术分析关联的 {language} 报告，直接返回")
+                report_data = self._format_report_data(existing_report)
                 return Response({
-                    'status': 'error',
-                    'message': '获取技术指标数据失败'
-                }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                    'status': 'success',
+                    'data': {
+                        'symbol': symbol,
+                        'reports': [report_data]
+                    }
+                })
 
-            # 生成报告
-            reports = []
-            if language == 'all':
-                # 生成所有语言的报告
-                for lang in self.SUPPORTED_LANGUAGES:
-                    report = self._generate_and_save_report(token, technical_data, lang)
-                    if report:
-                        reports.append(report)
-            else:
-                # 生成指定语言的报告
+            # 没有则生成新报告
+            if language == 'en-US':
+                # 英文报告直接生成
+                technical_data = self._get_technical_data(symbol)
+                if not technical_data:
+                    return Response({
+                        'status': 'error',
+                        'message': '获取技术指标数据失败'
+                    }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
                 report = self._generate_and_save_report(token, technical_data, language)
-                if report:
-                    reports.append(report)
+            else:
+                # 非英文报告，先查英文报告
+                english_report = AnalysisReport.objects.filter(
+                    token=token,
+                    language='en-US',
+                    technical_analysis=latest_analysis
+                ).first()
+                if not english_report:
+                    # 没有英文报告则先生成英文报告
+                    technical_data = self._get_technical_data(symbol)
+                    if not technical_data:
+                        return Response({
+                            'status': 'error',
+                            'message': '获取技术指标数据失败'
+                        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                    english_report = self._generate_and_save_report(token, technical_data, 'en-US')
+                # 翻译英文报告
+                report = self._translate_report(token, english_report, language)
 
-            if not reports:
+            if not report:
                 return Response({
                     'status': 'error',
                     'message': '生成分析报告失败'
                 }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+            report_data = self._format_report_data(report)
             return Response({
                 'status': 'success',
                 'data': {
                     'symbol': symbol,
-                    'reports': reports
+                    'reports': [report_data]
                 }
             })
-
         except Exception as e:
             logger.error(f"生成分析报告时发生错误: {str(e)}", exc_info=True)
             return Response({
                 'status': 'error',
                 'message': f'生成分析报告时发生错误: {str(e)}'
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    def _format_report_data(self, report):
+        """格式化报告数据"""
+        return {
+            'language': report.language,
+            'timestamp': report.timestamp,
+            'price': report.snapshot_price,  # 使用 snapshot_price 替代 price
+            'trend_analysis': {
+                'up_probability': report.trend_up_probability,
+                'sideways_probability': report.trend_sideways_probability,
+                'down_probability': report.trend_down_probability,
+                'summary': report.trend_summary
+            },
+            'indicators_analysis': {
+                'rsi': {
+                    'analysis': report.rsi_analysis,
+                    'support_trend': report.rsi_support_trend
+                },
+                'macd': {
+                    'analysis': report.macd_analysis,
+                    'support_trend': report.macd_support_trend
+                },
+                'bollinger_bands': {
+                    'analysis': report.bollinger_analysis,
+                    'support_trend': report.bollinger_support_trend
+                },
+                'bias': {
+                    'analysis': report.bias_analysis,
+                    'support_trend': report.bias_support_trend
+                },
+                'psy': {
+                    'analysis': report.psy_analysis,
+                    'support_trend': report.psy_support_trend
+                },
+                'dmi': {
+                    'analysis': report.dmi_analysis,
+                    'support_trend': report.dmi_support_trend
+                },
+                'vwap': {
+                    'analysis': report.vwap_analysis,
+                    'support_trend': report.vwap_support_trend
+                },
+                'funding_rate': {
+                    'analysis': report.funding_rate_analysis,
+                    'support_trend': report.funding_rate_support_trend
+                },
+                'exchange_netflow': {
+                    'analysis': report.exchange_netflow_analysis,
+                    'support_trend': report.exchange_netflow_support_trend
+                },
+                'nupl': {
+                    'analysis': report.nupl_analysis,
+                    'support_trend': report.nupl_support_trend
+                },
+                'mayer_multiple': {
+                    'analysis': report.mayer_multiple_analysis,
+                    'support_trend': report.mayer_multiple_support_trend
+                }
+            },
+            'trading_advice': {
+                'action': report.trading_action,
+                'reason': report.trading_reason,
+                'entry_price': report.entry_price,
+                'stop_loss': report.stop_loss,
+                'take_profit': report.take_profit
+            },
+            'risk_assessment': {
+                'level': report.risk_level,
+                'score': report.risk_score,
+                'details': report.risk_details
+            }
+        }
 
     def _get_technical_data(self, symbol: str) -> Optional[Dict[str, Any]]:
         """获取技术指标数据
@@ -303,6 +456,55 @@ class CryptoReportAPIView(APIView):
     def _generate_and_save_report(self, token: Token, technical_data: Dict[str, Any], language: str) -> Optional[Dict[str, Any]]:
         """生成并保存分析报告"""
         try:
+            # 首先创建或获取技术分析记录
+            indicators = technical_data.get('indicators', {})
+            
+            # 辅助函数：从指标数据中提取数值
+            def get_indicator_value(indicator_data, default=0):
+                if isinstance(indicator_data, dict):
+                    return indicator_data.get('value', default)
+                return indicator_data if indicator_data is not None else default
+
+            # 辅助函数：从MACD数据中提取数值
+            def get_macd_value(macd_data, key, default=0):
+                if isinstance(macd_data, dict):
+                    return macd_data.get(key, default)
+                return default
+
+            # 辅助函数：从布林带数据中提取数值
+            def get_bollinger_value(bollinger_data, key, default=0):
+                if isinstance(bollinger_data, dict):
+                    return bollinger_data.get(key, default)
+                return default
+
+            # 辅助函数：从DMI数据中提取数值
+            def get_dmi_value(dmi_data, key, default=0):
+                if isinstance(dmi_data, dict):
+                    return dmi_data.get(key, default)
+                return default
+
+            technical_analysis = TechnicalAnalysis.objects.create(
+                token=token,
+                timestamp=timezone.now(),
+                rsi=get_indicator_value(indicators.get('rsi')),
+                macd_line=get_macd_value(indicators.get('macd'), 'macd_line'),
+                macd_signal=get_macd_value(indicators.get('macd'), 'signal_line'),
+                macd_histogram=get_macd_value(indicators.get('macd'), 'histogram'),
+                bollinger_upper=get_bollinger_value(indicators.get('bollinger_bands'), 'upper'),
+                bollinger_middle=get_bollinger_value(indicators.get('bollinger_bands'), 'middle'),
+                bollinger_lower=get_bollinger_value(indicators.get('bollinger_bands'), 'lower'),
+                bias=get_indicator_value(indicators.get('bias')),
+                psy=get_indicator_value(indicators.get('psy')),
+                dmi_plus=get_dmi_value(indicators.get('dmi'), 'plus_di'),
+                dmi_minus=get_dmi_value(indicators.get('dmi'), 'minus_di'),
+                dmi_adx=get_dmi_value(indicators.get('dmi'), 'adx'),
+                vwap=get_indicator_value(indicators.get('vwap')),
+                funding_rate=get_indicator_value(indicators.get('funding_rate')),
+                exchange_netflow=get_indicator_value(indicators.get('exchange_netflow')),
+                nupl=get_indicator_value(indicators.get('nupl')),
+                mayer_multiple=get_indicator_value(indicators.get('mayer_multiple'))
+            )
+
             # 构建提示词
             prompt = self._build_prompt(technical_data, language)
 
@@ -318,15 +520,14 @@ class CryptoReportAPIView(APIView):
                 return None
 
             # 调用 Coze API 创建对话
-            # 根据 old.py 文件，正确的 API 端点是 /v3/chat
             chat_url = f"{self.coze_api_url}/v3/chat"
             logger.info(f"调用 Coze API 创建对话: {chat_url}")
 
             # 构建请求体
             payload = {
                 "bot_id": bot_id,
-                "user_id": f"crypto_user_{int(time.time())}",  # 使用时间戳生成唯一用户ID
-                "stream": False,  # 不使用流式响应
+                "user_id": f"crypto_user_{int(time.time())}",
+                "stream": False,
                 "auto_save_history": True,
                 "additional_messages": [
                     {
@@ -345,21 +546,63 @@ class CryptoReportAPIView(APIView):
                 "Connection": "keep-alive"
             }
 
-            # 发送请求创建对话
-            response = requests.post(
-                chat_url,
-                headers=headers,
-                json=payload,
-                timeout=30
-            )
+            # 发送请求创建对话，增加重试机制
+            max_retries = 3
+            retry_count = 0
+            retry_interval = 1.0
+            max_retry_interval = 5.0
+
+            while retry_count < max_retries:
+                try:
+                    response = requests.post(
+                        chat_url,
+                        headers=headers,
+                        json=payload,
+                        timeout=30,
+                        verify=True  # 确保 SSL 验证
+                    )
+
+                    if response.status_code == 200:
+                        break
+                    else:
+                        logger.warning(f"创建对话请求失败，状态码: {response.status_code}，响应: {response.text}")
+                        retry_count += 1
+                        if retry_count < max_retries:
+                            time.sleep(retry_interval)
+                            retry_interval = min(retry_interval * 1.5, max_retry_interval)
+                        continue
+
+                except requests.exceptions.Timeout:
+                    logger.warning(f"创建对话请求超时，重试 {retry_count + 1}/{max_retries}")
+                    retry_count += 1
+                    if retry_count < max_retries:
+                        time.sleep(retry_interval)
+                        retry_interval = min(retry_interval * 1.5, max_retry_interval)
+                    continue
+
+                except requests.exceptions.ConnectionError as e:
+                    logger.warning(f"创建对话连接错误: {str(e)}，重试 {retry_count + 1}/{max_retries}")
+                    retry_count += 1
+                    if retry_count < max_retries:
+                        time.sleep(retry_interval)
+                        retry_interval = min(retry_interval * 1.5, max_retry_interval)
+                    continue
+
+                except Exception as e:
+                    logger.error(f"创建对话时发生未知错误: {str(e)}")
+                    retry_count += 1
+                    if retry_count < max_retries:
+                        time.sleep(retry_interval)
+                        retry_interval = min(retry_interval * 1.5, max_retry_interval)
+                    continue
+
+            if retry_count >= max_retries:
+                logger.error("创建对话失败，已达到最大重试次数")
+                return None
 
             # 获取当前价格和时间
             current_price = technical_data.get('current_price', 0)
             current_time = timezone.now()
-
-            if response.status_code != 200:
-                logger.error(f"Coze API 调用失败: {response.status_code} - {response.text}")
-                return None
 
             # 解析响应
             try:
@@ -381,42 +624,19 @@ class CryptoReportAPIView(APIView):
                     logger.error("创建对话响应中缺少必要的ID")
                     return None
 
-                # 尝试从创建对话的响应中获取内容
-                try:
-                    messages = data.get('messages', [])
-
-                    # 查找助手的回复
-                    assistant_message = None
-                    for message in messages:
-                        if message.get('role') == 'assistant':
-                            assistant_message = message
-                            break
-
-                    if assistant_message:
-                        # 提取JSON内容
-                        content = assistant_message.get('content', '')
-                        analysis_result = self._extract_json_from_content(content)
-                        if analysis_result:
-                            logger.info(f"成功从创建对话响应中解析分析数据")
-                            return analysis_result
-                except Exception as e:
-                    logger.error(f"处理Coze响应时发生错误: {str(e)}")
-
                 # 轮询获取对话结果
-                max_retries = 20  # 最大重试次数
-                retry_count = 0
-                retry_interval = 1.0  # 初始重试间隔（秒）
-                max_retry_interval = 5.0  # 最大重试间隔（秒）
+                max_poll_retries = 20
+                poll_retry_count = 0
+                poll_retry_interval = 1.0
+                max_poll_retry_interval = 5.0
 
-                # 添加初始延迟，给Coze API更多时间来生成回复
+                # 添加初始延迟
                 time.sleep(2.0)
 
-                # 轮询获取对话结果
-                while retry_count < max_retries:
+                while poll_retry_count < max_poll_retries:
                     try:
-                        # 构建获取对话状态的请求
-                        # 根据 old.py 文件，正确的 API 端点是 /v3/chat/retrieve
-                        retrieve_url = f"{self.coze_api_url.replace('/api/v3', '')}/v3/chat/retrieve"
+                        # 获取对话状态
+                        retrieve_url = f"{self.coze_api_url}/v3/chat/retrieve"
                         retrieve_params = {
                             "bot_id": bot_id,
                             "chat_id": chat_id,
@@ -427,260 +647,133 @@ class CryptoReportAPIView(APIView):
                             retrieve_url,
                             headers=headers,
                             params=retrieve_params,
-                            timeout=30
+                            timeout=30,
+                            verify=True
                         )
 
                         if status_response.status_code == 200:
-                            try:
-                                status_data = status_response.json()
-                                if status_data.get('code') == 0:
-                                    data = status_data.get('data', {})
-                                    status = data.get('status')
+                            status_data = status_response.json()
+                            if status_data.get('code') == 0:
+                                data = status_data.get('data', {})
+                                status = data.get('status')
 
-                                    if status == "completed":
-                                        # 获取消息列表
-                                        # 根据 old.py 文件，正确的 API 端点是 /v3/chat/message/list
-                                        message_list_url = f"{self.coze_api_url.replace('/api/v3', '')}/v3/chat/message/list"
-                                        message_list_params = {
-                                            "bot_id": bot_id,
-                                            "chat_id": chat_id,
-                                            "conversation_id": conversation_id
-                                        }
+                                if status == "completed":
+                                    # 获取消息列表
+                                    message_list_url = f"{self.coze_api_url}/v3/chat/message/list"
+                                    message_list_params = {
+                                        "bot_id": bot_id,
+                                        "chat_id": chat_id,
+                                        "conversation_id": conversation_id
+                                    }
 
-                                        messages_response = requests.get(
-                                            message_list_url,
-                                            headers=headers,
-                                            params=message_list_params,
-                                            timeout=30
-                                        )
+                                    messages_response = requests.get(
+                                        message_list_url,
+                                        headers=headers,
+                                        params=message_list_params,
+                                        timeout=30,
+                                        verify=True
+                                    )
 
-                                        if messages_response.status_code == 200:
-                                            try:
-                                                messages_data = messages_response.json()
-                                                if messages_data.get('code') == 0:
-                                                    # 处理消息列表数据
-                                                    messages = []
-                                                    if "data" in messages_data and isinstance(messages_data["data"], dict) and "messages" in messages_data["data"]:
-                                                        messages = messages_data["data"]["messages"]
-                                                    elif "data" in messages_data and isinstance(messages_data["data"], list):
-                                                        messages = messages_data["data"]
-                                                    else:
-                                                        logger.error("无法解析消息列表格式")
-                                                        retry_count += 1
-                                                        time.sleep(retry_interval)
-                                                        retry_interval = min(retry_interval * 1.5, max_retry_interval)
-                                                        continue
-
-                                                    # 查找助手的回复
-                                                    for message in messages:
-                                                        if message.get('role') == 'assistant' and message.get('type') == 'answer':
-                                                            content = message.get('content', '')
-                                                            if content and content != '###':
-                                                                analysis_result = self._extract_json_from_content(content)
-                                                                if analysis_result:
-                                                                    logger.info(f"成功从消息列表中解析分析数据")
-
-                                                                    # 创建技术分析记录
-                                                                    # 确保 technical_data 是字典类型
-                                                                    if not isinstance(technical_data, dict):
-                                                                        logger.error(f"technical_data 不是字典类型")
-                                                                        return None
-
-                                                                    # 处理技术指标数据
-                                                                    technical_analysis = TechnicalAnalysis.objects.create(
-                                                                        token=token,
-                                                                        timestamp=current_time,
-                                                                        rsi=technical_data.get('indicators', {}).get('rsi', {}).get('value'),
-                                                                        macd_line=technical_data.get('indicators', {}).get('macd', {}).get('macd_line'),
-                                                                        macd_signal=technical_data.get('indicators', {}).get('macd', {}).get('signal_line'),
-                                                                        macd_histogram=technical_data.get('indicators', {}).get('macd', {}).get('histogram'),
-                                                                        bollinger_upper=technical_data.get('indicators', {}).get('bollinger_bands', {}).get('upper'),
-                                                                        bollinger_middle=technical_data.get('indicators', {}).get('bollinger_bands', {}).get('middle'),
-                                                                        bollinger_lower=technical_data.get('indicators', {}).get('bollinger_bands', {}).get('lower'),
-                                                                        bias=technical_data.get('indicators', {}).get('bias', {}).get('value'),
-                                                                        psy=technical_data.get('indicators', {}).get('psy', {}).get('value'),
-                                                                        dmi_plus=technical_data.get('indicators', {}).get('dmi', {}).get('plus_di'),
-                                                                        dmi_minus=technical_data.get('indicators', {}).get('dmi', {}).get('minus_di'),
-                                                                        dmi_adx=technical_data.get('indicators', {}).get('dmi', {}).get('adx'),
-                                                                        vwap=technical_data.get('indicators', {}).get('vwap', {}).get('value'),
-                                                                        funding_rate=technical_data.get('indicators', {}).get('funding_rate', {}).get('value'),
-                                                                        exchange_netflow=technical_data.get('indicators', {}).get('exchange_netflow', {}).get('value'),
-                                                                        nupl=technical_data.get('indicators', {}).get('nupl', {}).get('value'),
-                                                                        mayer_multiple=technical_data.get('indicators', {}).get('mayer_multiple', {}).get('value')
-                                                                    )
-
-                                                                    # 创建分析报告
-                                                                    report = AnalysisReport.objects.create(
-                                                                        token=token,
-                                                                        technical_analysis=technical_analysis,
-                                                                        timestamp=current_time,
-                                                                        snapshot_price=current_price,
-                                                                        language=language,
-                                                                        trend_up_probability=analysis_result.get('trend_analysis', {}).get('up_probability', 33),
-                                                                        trend_sideways_probability=analysis_result.get('trend_analysis', {}).get('sideways_probability', 34),
-                                                                        trend_down_probability=analysis_result.get('trend_analysis', {}).get('down_probability', 33),
-                                                                        trend_summary=analysis_result.get('trend_analysis', {}).get('summary', ''),
-                                                                        rsi_analysis=analysis_result.get('indicators_analysis', {}).get('rsi', {}).get('analysis', ''),
-                                                                        rsi_support_trend=analysis_result.get('indicators_analysis', {}).get('rsi', {}).get('support_trend', 'neutral'),
-                                                                        macd_analysis=analysis_result.get('indicators_analysis', {}).get('macd', {}).get('analysis', ''),
-                                                                        macd_support_trend=analysis_result.get('indicators_analysis', {}).get('macd', {}).get('support_trend', 'neutral'),
-                                                                        bollinger_analysis=analysis_result.get('indicators_analysis', {}).get('bollinger_bands', {}).get('analysis', ''),
-                                                                        bollinger_support_trend=analysis_result.get('indicators_analysis', {}).get('bollinger_bands', {}).get('support_trend', 'neutral'),
-                                                                        bias_analysis=analysis_result.get('indicators_analysis', {}).get('bias', {}).get('analysis', ''),
-                                                                        bias_support_trend=analysis_result.get('indicators_analysis', {}).get('bias', {}).get('support_trend', 'neutral'),
-                                                                        psy_analysis=analysis_result.get('indicators_analysis', {}).get('psy', {}).get('analysis', ''),
-                                                                        psy_support_trend=analysis_result.get('indicators_analysis', {}).get('psy', {}).get('support_trend', 'neutral'),
-                                                                        dmi_analysis=analysis_result.get('indicators_analysis', {}).get('dmi', {}).get('analysis', ''),
-                                                                        dmi_support_trend=analysis_result.get('indicators_analysis', {}).get('dmi', {}).get('support_trend', 'neutral'),
-                                                                        vwap_analysis=analysis_result.get('indicators_analysis', {}).get('vwap', {}).get('analysis', ''),
-                                                                        vwap_support_trend=analysis_result.get('indicators_analysis', {}).get('vwap', {}).get('support_trend', 'neutral'),
-                                                                        funding_rate_analysis=analysis_result.get('indicators_analysis', {}).get('funding_rate', {}).get('analysis', ''),
-                                                                        funding_rate_support_trend=analysis_result.get('indicators_analysis', {}).get('funding_rate', {}).get('support_trend', 'neutral'),
-                                                                        exchange_netflow_analysis=analysis_result.get('indicators_analysis', {}).get('exchange_netflow', {}).get('analysis', ''),
-                                                                        exchange_netflow_support_trend=analysis_result.get('indicators_analysis', {}).get('exchange_netflow', {}).get('support_trend', 'neutral'),
-                                                                        nupl_analysis=analysis_result.get('indicators_analysis', {}).get('nupl', {}).get('analysis', ''),
-                                                                        nupl_support_trend=analysis_result.get('indicators_analysis', {}).get('nupl', {}).get('support_trend', 'neutral'),
-                                                                        mayer_multiple_analysis=analysis_result.get('indicators_analysis', {}).get('mayer_multiple', {}).get('analysis', ''),
-                                                                        mayer_multiple_support_trend=analysis_result.get('indicators_analysis', {}).get('mayer_multiple', {}).get('support_trend', 'neutral'),
-                                                                        trading_action=analysis_result.get('trading_advice', {}).get('action', '等待'),
-                                                                        trading_reason=analysis_result.get('trading_advice', {}).get('reason', ''),
-                                                                        entry_price=analysis_result.get('trading_advice', {}).get('entry_price', current_price),
-                                                                        stop_loss=analysis_result.get('trading_advice', {}).get('stop_loss', current_price * 0.95),
-                                                                        take_profit=analysis_result.get('trading_advice', {}).get('take_profit', current_price * 1.05),
-                                                                        risk_level=analysis_result.get('risk_assessment', {}).get('level', '中'),
-                                                                        risk_score=analysis_result.get('risk_assessment', {}).get('score', 50),
-                                                                        risk_details=analysis_result.get('risk_assessment', {}).get('details', ['无法完成分析，使用默认风险评估'])
-                                                                    )
-
-                                                                    return {
-                                                                        'language': language,
-                                                                        'timestamp': current_time.isoformat(),
-                                                                        'price': current_price,
-                                                                        'trend_analysis': {
-                                                                            'probabilities': {
-                                                                                'up': report.trend_up_probability,
-                                                                                'sideways': report.trend_sideways_probability,
-                                                                                'down': report.trend_down_probability
-                                                                            },
-                                                                            'summary': report.trend_summary
-                                                                        },
-                                                                        'indicators_analysis': {
-                                                                            'RSI': {
-                                                                                'value': technical_analysis.rsi,
-                                                                                'analysis': report.rsi_analysis,
-                                                                                'support_trend': report.rsi_support_trend
-                                                                            },
-                                                                            'MACD': {
-                                                                                'value': {
-                                                                                    'macd_line': technical_analysis.macd_line,
-                                                                                    'signal_line': technical_analysis.macd_signal,
-                                                                                    'histogram': technical_analysis.macd_histogram
-                                                                                },
-                                                                                'analysis': report.macd_analysis,
-                                                                                'support_trend': report.macd_support_trend
-                                                                            },
-                                                                            'BollingerBands': {
-                                                                                'value': {
-                                                                                    'upper': technical_analysis.bollinger_upper,
-                                                                                    'middle': technical_analysis.bollinger_middle,
-                                                                                    'lower': technical_analysis.bollinger_lower
-                                                                                },
-                                                                                'analysis': report.bollinger_analysis,
-                                                                                'support_trend': report.bollinger_support_trend
-                                                                            },
-                                                                            'BIAS': {
-                                                                                'value': technical_analysis.bias,
-                                                                                'analysis': report.bias_analysis,
-                                                                                'support_trend': report.bias_support_trend
-                                                                            },
-                                                                            'PSY': {
-                                                                                'value': technical_analysis.psy,
-                                                                                'analysis': report.psy_analysis,
-                                                                                'support_trend': report.psy_support_trend
-                                                                            },
-                                                                            'DMI': {
-                                                                                'value': {
-                                                                                    'plus_di': technical_analysis.dmi_plus,
-                                                                                    'minus_di': technical_analysis.dmi_minus,
-                                                                                    'adx': technical_analysis.dmi_adx
-                                                                                },
-                                                                                'analysis': report.dmi_analysis,
-                                                                                'support_trend': report.dmi_support_trend
-                                                                            },
-                                                                            'VWAP': {
-                                                                                'value': technical_analysis.vwap,
-                                                                                'analysis': report.vwap_analysis,
-                                                                                'support_trend': report.vwap_support_trend
-                                                                            },
-                                                                            'FundingRate': {
-                                                                                'value': technical_analysis.funding_rate,
-                                                                                'analysis': report.funding_rate_analysis,
-                                                                                'support_trend': report.funding_rate_support_trend
-                                                                            },
-                                                                            'ExchangeNetflow': {
-                                                                                'value': technical_analysis.exchange_netflow,
-                                                                                'analysis': report.exchange_netflow_analysis,
-                                                                                'support_trend': report.exchange_netflow_support_trend
-                                                                            },
-                                                                            'NUPL': {
-                                                                                'value': technical_analysis.nupl,
-                                                                                'analysis': report.nupl_analysis,
-                                                                                'support_trend': report.nupl_support_trend
-                                                                            },
-                                                                            'MayerMultiple': {
-                                                                                'value': technical_analysis.mayer_multiple,
-                                                                                'analysis': report.mayer_multiple_analysis,
-                                                                                'support_trend': report.mayer_multiple_support_trend
-                                                                            }
-                                                                        },
-                                                                        'trading_advice': {
-                                                                            'action': report.trading_action,
-                                                                            'reason': report.trading_reason,
-                                                                            'entry_price': report.entry_price,
-                                                                            'stop_loss': report.stop_loss,
-                                                                            'take_profit': report.take_profit
-                                                                        },
-                                                                        'risk_assessment': {
-                                                                            'level': report.risk_level,
-                                                                            'score': report.risk_score,
-                                                                            'details': report.risk_details
-                                                                        }
-                                                                    }
+                                    if messages_response.status_code == 200:
+                                        try:
+                                            messages_data = messages_response.json()
+                                            if messages_data.get('code') == 0:
+                                                # 处理消息列表数据
+                                                messages = []
+                                                if isinstance(messages_data.get('data'), dict):
+                                                    messages = messages_data.get('data', {}).get('messages', [])
+                                                elif isinstance(messages_data.get('data'), list):
+                                                    messages = messages_data.get('data', [])
                                                 else:
-                                                    logger.error(f"获取消息列表响应错误: {messages_data}")
-                                            except json.JSONDecodeError:
-                                                logger.error(f"解析消息列表响应失败: {messages_response.text}")
+                                                    logger.error(f"无法解析消息列表格式: {messages_data}")
+                                                    continue
+
+                                                for message in messages:
+                                                    if message.get('role') == 'assistant' and message.get('type') == 'answer':
+                                                        content = message.get('content', '')
+                                                        if content and content != '###':
+                                                            # 解析翻译后的内容
+                                                            translated_data = self._extract_json_from_content(content)
+                                                            if translated_data:
+                                                                # 提取 trading_advice
+                                                                trading_advice = translated_data.get('trading_advice', {})
+                                                                # 创建新的分析报告
+                                                                translated_report = AnalysisReport.objects.create(
+                                                                    token=token,
+                                                                    technical_analysis=technical_analysis,  # 使用之前创建的技术分析记录
+                                                                    timestamp=current_time,
+                                                                    snapshot_price=current_price,
+                                                                    language=language,
+                                                                    trend_up_probability=translated_data.get('trend_analysis', {}).get('up_probability', 33),
+                                                                    trend_sideways_probability=translated_data.get('trend_analysis', {}).get('sideways_probability', 34),
+                                                                    trend_down_probability=translated_data.get('trend_analysis', {}).get('down_probability', 33),
+                                                                    trend_summary=translated_data.get('trend_analysis', {}).get('summary', ''),
+                                                                    rsi_analysis=translated_data.get('indicators_analysis', {}).get('rsi', {}).get('analysis', ''),
+                                                                    rsi_support_trend=translated_data.get('indicators_analysis', {}).get('rsi', {}).get('support_trend', 'neutral'),
+                                                                    macd_analysis=translated_data.get('indicators_analysis', {}).get('macd', {}).get('analysis', ''),
+                                                                    macd_support_trend=translated_data.get('indicators_analysis', {}).get('macd', {}).get('support_trend', 'neutral'),
+                                                                    bollinger_analysis=translated_data.get('indicators_analysis', {}).get('bollinger_bands', {}).get('analysis', ''),
+                                                                    bollinger_support_trend=translated_data.get('indicators_analysis', {}).get('bollinger_bands', {}).get('support_trend', 'neutral'),
+                                                                    bias_analysis=translated_data.get('indicators_analysis', {}).get('bias', {}).get('analysis', ''),
+                                                                    bias_support_trend=translated_data.get('indicators_analysis', {}).get('bias', {}).get('support_trend', 'neutral'),
+                                                                    psy_analysis=translated_data.get('indicators_analysis', {}).get('psy', {}).get('analysis', ''),
+                                                                    psy_support_trend=translated_data.get('indicators_analysis', {}).get('psy', {}).get('support_trend', 'neutral'),
+                                                                    dmi_analysis=translated_data.get('indicators_analysis', {}).get('dmi', {}).get('analysis', ''),
+                                                                    dmi_support_trend=translated_data.get('indicators_analysis', {}).get('dmi', {}).get('support_trend', 'neutral'),
+                                                                    vwap_analysis=translated_data.get('indicators_analysis', {}).get('vwap', {}).get('analysis', ''),
+                                                                    vwap_support_trend=translated_data.get('indicators_analysis', {}).get('vwap', {}).get('support_trend', 'neutral'),
+                                                                    funding_rate_analysis=translated_data.get('indicators_analysis', {}).get('funding_rate', {}).get('analysis', ''),
+                                                                    funding_rate_support_trend=translated_data.get('indicators_analysis', {}).get('funding_rate', {}).get('support_trend', 'neutral'),
+                                                                    exchange_netflow_analysis=translated_data.get('indicators_analysis', {}).get('exchange_netflow', {}).get('analysis', ''),
+                                                                    exchange_netflow_support_trend=translated_data.get('indicators_analysis', {}).get('exchange_netflow', {}).get('support_trend', 'neutral'),
+                                                                    nupl_analysis=translated_data.get('indicators_analysis', {}).get('nupl', {}).get('analysis', ''),
+                                                                    nupl_support_trend=translated_data.get('indicators_analysis', {}).get('nupl', {}).get('support_trend', 'neutral'),
+                                                                    mayer_multiple_analysis=translated_data.get('indicators_analysis', {}).get('mayer_multiple', {}).get('analysis', ''),
+                                                                    mayer_multiple_support_trend=translated_data.get('indicators_analysis', {}).get('mayer_multiple', {}).get('support_trend', 'neutral'),
+                                                                    trading_action=trading_advice.get('action', ''),
+                                                                    trading_reason=trading_advice.get('reason', ''),
+                                                                    entry_price=trading_advice.get('entry_price', current_price),
+                                                                    stop_loss=trading_advice.get('stop_loss', 0),
+                                                                    take_profit=trading_advice.get('take_profit', 0),
+                                                                    risk_level=translated_data.get('risk_assessment', {}).get('level', ''),
+                                                                    risk_score=translated_data.get('risk_assessment', {}).get('score', 50),
+                                                                    risk_details=translated_data.get('risk_assessment', {}).get('details', [])
+                                                                )
+                                                                return translated_report
+                                        except json.JSONDecodeError:
+                                            logger.error(f"解析消息列表响应失败: {messages_response.text}")
+                                        except Exception as e:
+                                            logger.error(f"处理消息列表时发生错误: {str(e)}")
+                                            raise  # 重新抛出异常以触发事务回滚
                                         else:
                                             logger.error(f"获取消息列表失败: HTTP状态码 {messages_response.status_code}")
                                 else:
                                     logger.warning(f"获取对话状态响应错误: {status_data}")
-                            except json.JSONDecodeError:
-                                logger.error(f"解析对话状态响应失败: {status_response.text}")
                         else:
                             logger.error(f"获取对话状态失败: HTTP状态码 {status_response.status_code}")
-                    except requests.Timeout:
-                        logger.error("获取对话状态超时")
+
+                    except requests.exceptions.Timeout:
+                        logger.warning(f"获取对话状态超时，重试 {poll_retry_count + 1}/{max_poll_retries}")
+                    except requests.exceptions.ConnectionError as e:
+                        logger.warning(f"获取对话状态连接错误: {str(e)}，重试 {poll_retry_count + 1}/{max_poll_retries}")
                     except Exception as e:
                         logger.error(f"获取对话状态时发生错误: {str(e)}")
+                        raise  # 重新抛出异常以触发事务回滚
 
-                    # 如果没有获取到完整结果，继续重试
-                    retry_count += 1
-                    time.sleep(retry_interval)
-                    retry_interval = min(retry_interval * 1.5, max_retry_interval)  # 指数退避，最大5秒
+                    poll_retry_count += 1
+                    time.sleep(poll_retry_interval)
+                    poll_retry_interval = min(poll_retry_interval * 1.5, max_poll_retry_interval)
 
-                # 在重试失败后，返回错误
                 logger.error("轮询Coze API未获得有效响应")
                 return None
 
             except Exception as e:
                 logger.error(f"解析 Coze API 响应时发生错误: {str(e)}", exc_info=True)
-                return None
-
-            # 这里不需要重复的代码，因为我们已经在上面的代码中处理了这个逻辑
+                raise  # 重新抛出异常以触发事务回滚
 
         except Exception as e:
             logger.error(f"生成并保存报告时发生错误: {str(e)}", exc_info=True)
-            return None
+            raise  # 重新抛出异常以触发事务回滚
 
     def _build_prompt(self, technical_data: Dict[str, Any], language: str) -> str:
         """构建提示词
@@ -765,7 +858,7 @@ class CryptoReportAPIView(APIView):
                     ja_json = match.group(0)
                     logger.info(f"提取的日语 JSON: {ja_json}")
                     return json.loads(ja_json)
-            
+
             # 韩语格式处理
             elif "상승 확률" in content:
                 logger.info("处理韩语 JSON 格式")
@@ -776,7 +869,7 @@ class CryptoReportAPIView(APIView):
                     ko_json = match.group(0)
                     logger.info(f"提取的韩语 JSON: {ko_json}")
                     return json.loads(ko_json)
-            
+
             # 中文格式处理
             elif "上涨概率" in content:
                 logger.info("处理中文 JSON 格式")
@@ -787,7 +880,7 @@ class CryptoReportAPIView(APIView):
                     zh_json = match.group(0)
                     logger.info(f"提取的中文 JSON: {zh_json}")
                     return json.loads(zh_json)
-            
+
             # 英文格式处理
             elif "up_probability" in content:
                 logger.info("处理英文 JSON 格式")
@@ -798,7 +891,7 @@ class CryptoReportAPIView(APIView):
                     en_json = match.group(0)
                     logger.info(f"提取的英文 JSON: {en_json}")
                     return json.loads(en_json)
-            
+
             return None
         except Exception as e:
             logger.error(f"处理语言特定 JSON 时发生错误: {str(e)}")
@@ -809,12 +902,12 @@ class CryptoReportAPIView(APIView):
         try:
             # 保存原始内容到文件，方便调试
             self._save_coze_response_to_file(content)
-            
+
             # 添加语言检测日志
             logger.info("=== 开始分析 Coze 返回的原始数据 ===")
             logger.info(f"原始内容长度: {len(content)}")
             logger.info(f"原始内容前500个字符: {content[:500]}")
-            
+
             # 检测语言
             if "上昇確率" in content or "トレンド概要" in content:
                 logger.info("检测到日语内容")
@@ -824,16 +917,15 @@ class CryptoReportAPIView(APIView):
                 logger.info("检测到中文内容")
             elif "up_probability" in content or "trend_summary" in content:
                 logger.info("检测到英文内容")
-            
+
             # 首先尝试语言特定的 JSON 处理
             language_specific_result = self._handle_language_specific_json(content)
             if language_specific_result:
                 logger.info("成功使用语言特定的 JSON 处理")
                 return self._convert_chinese_to_english_fields(language_specific_result)
-            
+
             # 如果语言特定的处理失败，尝试直接解析
             try:
-                import json
                 analysis_result = json.loads(content)
                 logger.info(f"从内容中直接提取的分析结果: {json.dumps(analysis_result, ensure_ascii=False, indent=2)}")
                 return self._convert_chinese_to_english_fields(analysis_result)
@@ -921,9 +1013,6 @@ class CryptoReportAPIView(APIView):
                         fixed_content = fixed_content + ']' * (open_brackets - close_brackets)
 
                     # 4. 尝试使用正则表达式提取有效的JSON对象
-                    import re
-
-                    # 尝试提取完整的JSON对象
                     json_pattern = r'\{(?:[^{}]|(?:\{(?:[^{}]|(?:\{[^{}]*\}))*\}))*\}'
                     matches = re.finditer(json_pattern, fixed_content)
 
@@ -1361,3 +1450,327 @@ class CryptoReportAPIView(APIView):
         except Exception as e:
             logger.error(f"转换中文字段名时发生错误: {str(e)}", exc_info=True)
             return analysis_result
+
+    def _translate_report(self, token: Token, english_report: AnalysisReport, target_language: str) -> Optional[AnalysisReport]:
+        """将英文报告翻译为目标语言
+
+        Args:
+            token: 代币对象
+            english_report: 英文报告对象
+            target_language: 目标语言代码
+
+        Returns:
+            Optional[AnalysisReport]: 翻译后的报告对象，如果翻译失败则返回 None
+        """
+        try:
+            # 获取对应语言的 Bot ID
+            bot_id = self.COZE_BOT_IDS.get(target_language)
+            if not bot_id:
+                logger.error(f"未找到语言 {target_language} 对应的 Coze Bot ID")
+                return None
+
+            # 构建翻译提示词
+            prompt = self._build_translation_prompt(english_report, target_language)
+
+            # 调用 Coze API 创建对话
+            chat_url = f"{self.coze_api_url}/v3/chat"
+            logger.info(f"调用 Coze API 创建翻译对话: {chat_url}")
+
+            # 构建请求体
+            payload = {
+                "bot_id": bot_id,
+                "user_id": f"crypto_user_{int(time.time())}",
+                "stream": False,
+                "auto_save_history": True,
+                "additional_messages": [
+                    {
+                        "role": "user",
+                        "content": prompt,
+                        "content_type": "text"
+                    }
+                ]
+            }
+
+            # 构建请求头
+            headers = {
+                "Authorization": f"Bearer {self.coze_api_key}",
+                "Content-Type": "application/json",
+                "Accept": "*/*",
+                "Connection": "keep-alive"
+            }
+
+            # 发送请求创建对话
+            response = requests.post(
+                chat_url,
+                headers=headers,
+                json=payload,
+                timeout=30
+            )
+
+            if response.status_code != 200:
+                logger.error(f"Coze API 调用失败: {response.status_code} - {response.text}")
+                return None
+
+            # 解析响应
+            try:
+                response_data = response.json()
+                if response_data.get('code') != 0:
+                    logger.error(f"Coze API 响应错误: {response_data}")
+                    return None
+
+                # 获取对话ID和会话ID
+                data = response_data.get('data', {})
+                chat_id = data.get('id')
+                conversation_id = data.get('conversation_id')
+
+                if not chat_id or not conversation_id:
+                    logger.error("创建对话响应中缺少必要的ID")
+                    return None
+
+                # 轮询获取对话结果
+                max_retries = 20
+                retry_count = 0
+                retry_interval = 1.0
+                max_retry_interval = 5.0
+
+                # 添加初始延迟
+                time.sleep(2.0)
+
+                while retry_count < max_retries:
+                    try:
+                        # 获取对话状态
+                        retrieve_url = f"{self.coze_api_url}/v3/chat/retrieve"
+                        retrieve_params = {
+                            "bot_id": bot_id,
+                            "chat_id": chat_id,
+                            "conversation_id": conversation_id
+                        }
+
+                        status_response = requests.get(
+                            retrieve_url,
+                            headers=headers,
+                            params=retrieve_params,
+                            timeout=30
+                        )
+
+                        if status_response.status_code == 200:
+                            status_data = status_response.json()
+                            if status_data.get('code') == 0:
+                                data = status_data.get('data', {})
+                                status = data.get('status')
+
+                                if status == "completed":
+                                    # 获取消息列表
+                                    message_list_url = f"{self.coze_api_url}/v3/chat/message/list"
+                                    message_list_params = {
+                                        "bot_id": bot_id,
+                                        "chat_id": chat_id,
+                                        "conversation_id": conversation_id
+                                    }
+
+                                    messages_response = requests.get(
+                                        message_list_url,
+                                        headers=headers,
+                                        params=message_list_params,
+                                        timeout=30
+                                    )
+
+                                    if messages_response.status_code == 200:
+                                        try:
+                                            messages_data = messages_response.json()
+                                            if messages_data.get('code') == 0:
+                                                # 处理消息列表数据
+                                                messages = []
+                                                if isinstance(messages_data.get('data'), dict):
+                                                    messages = messages_data.get('data', {}).get('messages', [])
+                                                elif isinstance(messages_data.get('data'), list):
+                                                    messages = messages_data.get('data', [])
+                                                else:
+                                                    logger.error(f"无法解析消息列表格式: {messages_data}")
+                                                    continue
+
+                                                for message in messages:
+                                                    if message.get('role') == 'assistant' and message.get('type') == 'answer':
+                                                        content = message.get('content', '')
+                                                        if content and content != '###':
+                                                            # 解析翻译后的内容
+                                                            translated_data = self._extract_json_from_content(content)
+                                                            if translated_data:
+                                                                # 创建新的分析报告
+                                                                translated_report = AnalysisReport.objects.create(
+                                                                    token=token,
+                                                                    technical_analysis=english_report.technical_analysis,
+                                                                    timestamp=timezone.now(),
+                                                                    snapshot_price=english_report.snapshot_price,
+                                                                    language=target_language,
+                                                                    trend_up_probability=english_report.trend_up_probability,
+                                                                    trend_sideways_probability=english_report.trend_sideways_probability,
+                                                                    trend_down_probability=english_report.trend_down_probability,
+                                                                    trend_summary=translated_data.get('trend_analysis', {}).get('summary', ''),
+                                                                    rsi_analysis=translated_data.get('indicators_analysis', {}).get('rsi', {}).get('analysis', ''),
+                                                                    rsi_support_trend=english_report.rsi_support_trend,
+                                                                    macd_analysis=translated_data.get('indicators_analysis', {}).get('macd', {}).get('analysis', ''),
+                                                                    macd_support_trend=english_report.macd_support_trend,
+                                                                    bollinger_analysis=translated_data.get('indicators_analysis', {}).get('bollinger_bands', {}).get('analysis', ''),
+                                                                    bollinger_support_trend=english_report.bollinger_support_trend,
+                                                                    bias_analysis=translated_data.get('indicators_analysis', {}).get('bias', {}).get('analysis', ''),
+                                                                    bias_support_trend=english_report.bias_support_trend,
+                                                                    psy_analysis=translated_data.get('indicators_analysis', {}).get('psy', {}).get('analysis', ''),
+                                                                    psy_support_trend=english_report.psy_support_trend,
+                                                                    dmi_analysis=translated_data.get('indicators_analysis', {}).get('dmi', {}).get('analysis', ''),
+                                                                    dmi_support_trend=english_report.dmi_support_trend,
+                                                                    vwap_analysis=translated_data.get('indicators_analysis', {}).get('vwap', {}).get('analysis', ''),
+                                                                    vwap_support_trend=english_report.vwap_support_trend,
+                                                                    funding_rate_analysis=translated_data.get('indicators_analysis', {}).get('funding_rate', {}).get('analysis', ''),
+                                                                    funding_rate_support_trend=english_report.funding_rate_support_trend,
+                                                                    exchange_netflow_analysis=translated_data.get('indicators_analysis', {}).get('exchange_netflow', {}).get('analysis', ''),
+                                                                    exchange_netflow_support_trend=english_report.exchange_netflow_support_trend,
+                                                                    nupl_analysis=translated_data.get('indicators_analysis', {}).get('nupl', {}).get('analysis', ''),
+                                                                    nupl_support_trend=english_report.nupl_support_trend,
+                                                                    mayer_multiple_analysis=translated_data.get('indicators_analysis', {}).get('mayer_multiple', {}).get('analysis', ''),
+                                                                    mayer_multiple_support_trend=english_report.mayer_multiple_support_trend,
+                                                                    trading_action=translated_data.get('trading_advice', {}).get('action', ''),
+                                                                    trading_reason=translated_data.get('trading_advice', {}).get('reason', ''),
+                                                                    entry_price=english_report.entry_price,
+                                                                    stop_loss=english_report.stop_loss,
+                                                                    take_profit=english_report.take_profit,
+                                                                    risk_level=translated_data.get('risk_assessment', {}).get('level', ''),
+                                                                    risk_score=english_report.risk_score,
+                                                                    risk_details=translated_data.get('risk_assessment', {}).get('details', [])
+                                                                )
+                                                                return translated_report
+                                        except json.JSONDecodeError:
+                                            logger.error(f"解析消息列表响应失败: {messages_response.text}")
+                                        except Exception as e:
+                                            logger.error(f"处理消息列表时发生错误: {str(e)}")
+                                    else:
+                                        logger.error(f"获取消息列表失败: HTTP状态码 {messages_response.status_code}")
+                            else:
+                                logger.warning(f"获取对话状态响应错误: {status_data}")
+                        else:
+                            logger.error(f"获取对话状态失败: HTTP状态码 {status_response.status_code}")
+
+                    except requests.Timeout:
+                        logger.error("获取对话状态超时")
+                    except Exception as e:
+                        logger.error(f"获取对话状态时发生错误: {str(e)}")
+
+                    retry_count += 1
+                    time.sleep(retry_interval)
+                    retry_interval = min(retry_interval * 1.5, max_retry_interval)
+
+                logger.error("轮询Coze API未获得有效响应")
+                return None
+
+            except Exception as e:
+                logger.error(f"解析 Coze API 响应时发生错误: {str(e)}", exc_info=True)
+                return None
+
+        except Exception as e:
+            logger.error(f"翻译报告时发生错误: {str(e)}", exc_info=True)
+            return None
+
+    def _build_translation_prompt(self, english_report: AnalysisReport, target_language: str) -> str:
+        """构建翻译提示词
+
+        Args:
+            english_report: 英文报告对象
+            target_language: 目标语言代码
+
+        Returns:
+            str: 翻译提示词
+        """
+        # 构建英文报告数据
+        report_data = {
+            "trend_analysis": {
+                "up_probability": english_report.trend_up_probability,
+                "sideways_probability": english_report.trend_sideways_probability,
+                "down_probability": english_report.trend_down_probability,
+                "summary": english_report.trend_summary
+            },
+            "indicators_analysis": {
+                "rsi": {
+                    "analysis": english_report.rsi_analysis,
+                    "support_trend": english_report.rsi_support_trend
+                },
+                "macd": {
+                    "analysis": english_report.macd_analysis,
+                    "support_trend": english_report.macd_support_trend
+                },
+                "bollinger_bands": {
+                    "analysis": english_report.bollinger_analysis,
+                    "support_trend": english_report.bollinger_support_trend
+                },
+                "bias": {
+                    "analysis": english_report.bias_analysis,
+                    "support_trend": english_report.bias_support_trend
+                },
+                "psy": {
+                    "analysis": english_report.psy_analysis,
+                    "support_trend": english_report.psy_support_trend
+                },
+                "dmi": {
+                    "analysis": english_report.dmi_analysis,
+                    "support_trend": english_report.dmi_support_trend
+                },
+                "vwap": {
+                    "analysis": english_report.vwap_analysis,
+                    "support_trend": english_report.vwap_support_trend
+                },
+                "funding_rate": {
+                    "analysis": english_report.funding_rate_analysis,
+                    "support_trend": english_report.funding_rate_support_trend
+                },
+                "exchange_netflow": {
+                    "analysis": english_report.exchange_netflow_analysis,
+                    "support_trend": english_report.exchange_netflow_support_trend
+                },
+                "nupl": {
+                    "analysis": english_report.nupl_analysis,
+                    "support_trend": english_report.nupl_support_trend
+                },
+                "mayer_multiple": {
+                    "analysis": english_report.mayer_multiple_analysis,
+                    "support_trend": english_report.mayer_multiple_support_trend
+                }
+            },
+            "trading_advice": {
+                "action": english_report.trading_action,
+                "reason": english_report.trading_reason,
+                "entry_price": english_report.entry_price,
+                "stop_loss": english_report.stop_loss,
+                "take_profit": english_report.take_profit
+            },
+            "risk_assessment": {
+                "level": english_report.risk_level,
+                "score": english_report.risk_score,
+                "details": english_report.risk_details
+            }
+        }
+
+        # 将英文报告数据转换为字符串
+        import json
+        report_str = json.dumps(report_data, ensure_ascii=False, indent=2)
+
+        # 根据目标语言生成对应的语言名称
+        lang_map = {
+            'zh-CN': '中文',
+            'en-US': '英文',
+            'ja-JP': '日语',
+            'ko-KR': '韩语'
+        }
+        lang_name = lang_map.get(target_language, '目标语言')
+
+        # 构建翻译提示词
+        prompt = (
+            f"请将以下英文加密货币分析报告翻译为{lang_name}，只翻译文本内容，输出请务必为{lang_name}：\n\n"
+            f"{report_str}\n\n"
+            "请确保：\n"
+            "1. 保持所有数值不变\n"
+            "2. 保持JSON结构不变\n"
+            "3. 只翻译文本内容\n"
+            "4. 保持专业术语的准确性\n"
+            "5. 保持分析逻辑的一致性"
+        )
+
+        return prompt

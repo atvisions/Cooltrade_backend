@@ -1,0 +1,66 @@
+{
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "The market trend is currently showing a higher probability of an uptrend, but there are significant chances of sideways or downtrend movements as well."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI is at 69.91, which is approaching the overbought territory (above 70). This suggests that the asset might be overbought and could be due for a correction.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "The MACD line, signal line, and histogram are all at 0, indicating a lack of clear momentum or direction in the market.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "Bollinger Bands data is not provided, making it difficult to analyze volatility or potential price movements.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "The BIAS value is -0.49, indicating a slight bearish sentiment in the market.",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "The PSY value is 50.0, indicating a neutral market sentiment with no clear directional bias.",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "The DMI values (plus_di, minus_di, and adx) are all at 0, indicating no clear directional movement in the market.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "The current price is significantly above the VWAP value of 89970.54, indicating that the asset might be overvalued and could face selling pressure.",
+      "support_trend": "down"
+    },
+    "funding_rate": {
+      "analysis": "The funding rate is extremely low at 7.6e-19, suggesting minimal impact on the market trend.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "The exchange netflow is -90.69, indicating that more assets are being withdrawn from exchanges than deposited, which could be a bullish signal.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "The NUPL value is 14.49, indicating that the market is in a state of profit, which could lead to profit-taking and a potential price decline.",
+      "support_trend": "down"
+    },
+    "mayer_multiple": {
+      "analysis": "The Mayer Multiple is 1.14, suggesting that the asset is slightly above its historical average price, which could indicate overvaluation.",
+      "support_trend": "down"
+    }
+  },
+  "trading_advice": {
+    "action": "wait",
+    "reason": "Multiple indicators suggest potential overvaluation and a possible price correction. It is advisable to wait for clearer signals before making a trade.",
+    "entry_price": null,
+    "stop_loss": null,
+    "take_profit": null
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 60,
+    "details": ["RSI nearing overbought territory", "Current price above VWAP", "Negative BIAS value", "NUPL indicating profit-taking potential"]
+  }
+}

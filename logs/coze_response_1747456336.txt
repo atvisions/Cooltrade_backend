@@ -1,0 +1,66 @@
+{
+  "trend_analysis": {
+    "up_probability": 55,
+    "sideways_probability": 25,
+    "down_probability": 20,
+    "summary": "The current trend analysis indicates a moderate probability for an uptrend, with less likelihood of sideways or downtrend movements."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI value of 72.32 indicates that the market is currently overbought, suggesting potential for a price correction or consolidation.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "The MACD indicator shows neutral values with no clear signal, indicating a lack of momentum.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "Bollinger Bands values are not provided, making it difficult to assess volatility and potential price movements.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "The BIAS value of 0.05 suggests a slight bullish bias in the market.",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "The PSY value of 58.3 indicates a moderately bullish sentiment among traders.",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI values are neutral, indicating no strong directional movement in the market.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "The VWAP value of 89986.95 is below the current price, suggesting the market price is above average and potentially overvalued.",
+      "support_trend": "down"
+    },
+    "funding_rate": {
+      "analysis": "The positive funding rate indicates a slightly bullish sentiment among futures traders.",
+      "support_trend": "up"
+    },
+    "exchange_netflow": {
+      "analysis": "The negative exchange netflow value of -78.38 suggests more outflows than inflows, indicating potential selling pressure.",
+      "support_trend": "down"
+    },
+    "nupl": {
+      "analysis": "The NUPL value of 15.21 indicates that the market is in a state of profit, which could lead to selling pressure as traders realize gains.",
+      "support_trend": "down"
+    },
+    "mayer_multiple": {
+      "analysis": "The Mayer Multiple value of 1.15 suggests the market is slightly overvalued compared to historical norms.",
+      "support_trend": "down"
+    }
+  },
+  "trading_advice": {
+    "action": "wait",
+    "reason": "Given the mixed signals from various indicators and the overbought RSI, it is advisable to wait for clearer signs before making a trading decision.",
+    "entry_price": null,
+    "stop_loss": null,
+    "take_profit": null
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 60,
+    "details": ["Overbought RSI", "Negative exchange netflow", "High NUPL value", "VWAP below current price"]
+  }
+}
