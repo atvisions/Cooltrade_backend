@@ -1,0 +1,70 @@
+{
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "현재 시장은 강한 상승세를 보이고 있으며 지속될 가능성이 높습니다."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI 값은 72.32로, 시장이 과매수 상태에 있음을 나타냅니다. 이는 가격 조정 또는 후퇴 가능성을 시사합니다.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD 라인, 시그널 라인 및 히스토그램 모두 0에 있어 모멘텀이 부족하고 중립 신호를 나타냅니다.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "볼린저 밴드 데이터가 없어 변동성과 가격 범위를 분석하기 어렵습니다.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS 값은 0.05로, 시장에 약간의 강세 편향이 있음을 시사합니다.",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "PSY 값은 58.3으로, 시장 심리가 약간 강세임을 나타냅니다.",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI 데이터가 없어 방향성 움직임과 트렌드 강도를 분석하기 어렵습니다.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP 값은 89986.95로 현재 가격보다 낮아 시장이 평균 가격보다 높은 가격에서 거래되고 있음을 나타내며 강세 트렌드를 시사합니다.",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "자금 조달률은 1.2e-11로 매우 낮아 롱 포지션을 유지하는 데 드는 비용이 최소화되어 있으며 중립적인 영향을 시사합니다.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "거래소 순유입은 -78.38로 거래소에서 자금이 순유출되고 있음을 나타내며, 이는 투자자들이 자금을 인출하고 있음을 나타내며 일반적으로 강세 신호입니다.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL 값이 15.21로 시장이 수익 상태에 있음을 나타내며 강세 심리를 시사합니다.",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "메이어 멀티플 값이 1.15로, 가격이 역사적 평균보다 높아 잠재적인 과대평가를 시사하지만 여전히 강세 트렌드 내에 있습니다.",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "대부분의 지표가 강세 트렌드를 시사하지만 과매수 RSI는 단기 조정 가능성을 나타냅니다. 포지션을 유지하고 명확한 신호를 기다리는 것이 좋습니다.",
+    "entry_price": 103079.6,
+    "stop_loss": 98000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 55,
+    "details": [
+      "과매수 상태를 나타내는 높은 RSI",
+      "강한 강세 지표",
+      "단기 조정 가능성"
+    ]
+  }
+}

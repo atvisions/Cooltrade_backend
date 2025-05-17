@@ -42792,3 +42792,2563 @@ WARNING 2025-05-17 04:37:09,188 views_technical_indicators 44235 6126727168 不�
 INFO 2025-05-17 04:37:09,199 basehttp 44235 6126727168 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US2 HTTP/1.1" 200 2549
 INFO 2025-05-17 04:37:17,647 views_technical_indicators 44235 6126727168 请求的语言: ko-KR
 INFO 2025-05-17 04:37:17,660 basehttp 44235 6126727168 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3237
+INFO 2025-05-17 04:50:17,317 autoreload 46465 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-17 04:50:22,136 views_report 46465 6141177856 使用 settings 中的 API 密钥
+INFO 2025-05-17 04:50:22,136 views_report 46465 6141177856 使用 API URL: https://api.coze.com
+INFO 2025-05-17 04:50:22,166 views_report 46465 6141177856 从数据库获取技术指标数据: BTCUSDT, ID: 127
+INFO 2025-05-17 04:50:22,476 views_report 46465 6141177856 提交给Coze的技术指标数据: {
+  "price": 103498.6,
+  "indicators": {
+    "rsi": {
+      "value": 72.32
+    },
+    "macd": {
+      "macd_line": 0,
+      "signal_line": 0,
+      "histogram": 0
+    },
+    "bollinger_bands": {
+      "upper": 0,
+      "middle": 0,
+      "lower": 0
+    },
+    "bias": {
+      "value": 0.05
+    },
+    "psy": {
+      "value": 58.3
+    },
+    "dmi": {
+      "plus_di": 0,
+      "minus_di": 0,
+      "adx": 0
+    },
+    "vwap": {
+      "value": 89986.95
+    },
+    "funding_rate": {
+      "value": 1.2000000000000002e-09
+    },
+    "exchange_netflow": {
+      "value": -78.38
+    },
+    "nupl": {
+      "value": 15.21
+    },
+    "mayer_multiple": {
+      "value": 1.15
+    }
+  }
+}
+INFO 2025-05-17 04:50:22,476 views_report 46465 6141177856 使用语言 en-US 对应的 Coze Bot ID: 7504983775349489680
+INFO 2025-05-17 04:50:22,476 views_report 46465 6141177856 所有语言的 Coze Bot ID: {'zh-CN': '7504984466486984721', 'en-US': '7504983775349489680', 'ja-JP': '7504985637318475792', 'ko-KR': '7504984181148581905'}
+INFO 2025-05-17 04:50:22,476 views_report 46465 6141177856 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 04:50:22,799 views_report 46465 6141177856 Coze API 创建对话响应: {'data': {'id': '7505272397843431431', 'conversation_id': '7505272397843415047', 'bot_id': '7504983775349489680', 'created_at': 1747457422, 'last_error': {'code': 0, 'msg': ''}, 'status': 'in_progress'}, 'code': 0, 'msg': ''}
+WARNING 2025-05-17 04:50:25,052 views_report 46465 6141177856 获取对话状态响应错误: {'code': 0, 'data': {'bot_id': '7504983775349489680', 'conversation_id': '7505272397843415047', 'created_at': 1747457423, 'id': '7505272397843431431', 'status': 'in_progress'}, 'detail': {'logid': '2025051704502496214222EC605A25EF43'}, 'msg': ''}
+WARNING 2025-05-17 04:50:26,307 views_report 46465 6141177856 获取对话状态响应错误: {'code': 0, 'data': {'bot_id': '7504983775349489680', 'conversation_id': '7505272397843415047', 'created_at': 1747457423, 'id': '7505272397843431431', 'status': 'in_progress'}, 'detail': {'logid': '2025051704502516D2C6393AB8FF21C215'}, 'msg': ''}
+WARNING 2025-05-17 04:50:28,109 views_report 46465 6141177856 获取对话状态响应错误: {'code': 0, 'data': {'bot_id': '7504983775349489680', 'conversation_id': '7505272397843415047', 'created_at': 1747457423, 'id': '7505272397843431431', 'status': 'in_progress'}, 'detail': {'logid': '2025051704502796214222EC605A25F12F'}, 'msg': ''}
+WARNING 2025-05-17 04:50:30,604 views_report 46465 6141177856 获取对话状态响应错误: {'code': 0, 'data': {'bot_id': '7504983775349489680', 'conversation_id': '7505272397843415047', 'created_at': 1747457423, 'id': '7505272397843431431', 'status': 'in_progress'}, 'detail': {'logid': '2025051704502916D2C6393AB8FF21C575'}, 'msg': ''}
+INFO 2025-05-17 04:50:34,558 views_report 46465 6141177856 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747457434.txt
+INFO 2025-05-17 04:50:34,558 views_report 46465 6141177856 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 04:50:34,558 views_report 46465 6141177856 原始内容长度: 2852
+INFO 2025-05-17 04:50:34,559 views_report 46465 6141177856 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "The market trend appears to have a higher probability of continuing to an uptrend given the current technical indicators."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI value of 72.32 indicates that the market is in an overbought condition, suggesting a potential for a price pullback or consolidation.",
+      "support_trend": "down"
+    },
+    "m
+INFO 2025-05-17 04:50:34,559 views_report 46465 6141177856 检测到英文内容
+INFO 2025-05-17 04:50:34,559 views_report 46465 6141177856 处理英文 JSON 格式
+ERROR 2025-05-17 04:50:34,559 views_report 46465 6141177856 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 04:50:34,559 views_report 46465 6141177856 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "The market trend appears to have a higher probability of continuing to an uptrend given the current technical indicators."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI value of 72.32 indicates that the market is in an overbought condition, suggesting a potential for a price pullback or consolidation.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "The MACD line, signal line, and histogram values are all at 0, indicating a lack of momentum and a neutral market condition.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "Bollinger Bands values are not provided, making it difficult to assess the volatility and potential price range.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "The BIAS value of 0.05 suggests a slight bullish sentiment in the market.",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "The PSY value of 58.3 indicates a moderately bullish sentiment among traders.",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI values are not provided, making it difficult to assess the strength and direction of the trend.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "The current price is significantly above the VWAP value of 89986.95, indicating a strong bullish trend.",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "The funding rate is extremely low at 1.2e-09, suggesting a lack of significant funding pressure in the market.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "The negative exchange netflow value of -78.38 indicates that more cryptocurrency is being withdrawn from exchanges than deposited, which is typically a bullish signal.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "The NUPL value of 15.21 suggests that the market is in a state of profit, indicating a bullish sentiment.",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "The Mayer Multiple value of 1.15 indicates that the price is above the historical average, suggesting a bullish trend.",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "buy",
+    "reason": "The majority of technical indicators suggest a bullish trend, with a higher probability of price continuation to the upside.",
+    "entry_price": 103498.6,
+    "stop_loss": 98000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 55,
+    "details": [
+      "Overbought RSI indicates potential for pullback",
+      "Neutral MACD suggests lack of momentum",
+      "Strong bullish signals from multiple indicators"
+    ]
+  }
+}
+INFO 2025-05-17 04:50:34,560 views_report 46465 6141177856 数据已经是英文格式，无需转换
+INFO 2025-05-17 04:50:34,573 views_report 46465 6141177856 调用 Coze API 创建翻译对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 04:50:42,944 views_report 46465 6141177856 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747457442.txt
+INFO 2025-05-17 04:50:42,944 views_report 46465 6141177856 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 04:50:42,944 views_report 46465 6141177856 原始内容长度: 2007
+INFO 2025-05-17 04:50:42,945 views_report 46465 6141177856 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "현재 기술적 지표를 고려할 때 시장 트렌드는 상승세를 지속할 가능성이 더 높아 보입니다."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "72.32의 RSI 값은 시장이 과매수 상태에 있으며, 가격 조정 또는 통합 가능성을 시사합니다.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD 라인, 신호 라인 및 히스토그램 값이 모두 0에 있으며, 이는 모멘텀 부족과 중립적인 시장 상태를 나타냅니다.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": 
+INFO 2025-05-17 04:50:42,945 views_report 46465 6141177856 检测到英文内容
+INFO 2025-05-17 04:50:42,945 views_report 46465 6141177856 处理英文 JSON 格式
+ERROR 2025-05-17 04:50:42,945 views_report 46465 6141177856 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 04:50:42,945 views_report 46465 6141177856 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "현재 기술적 지표를 고려할 때 시장 트렌드는 상승세를 지속할 가능성이 더 높아 보입니다."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "72.32의 RSI 값은 시장이 과매수 상태에 있으며, 가격 조정 또는 통합 가능성을 시사합니다.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD 라인, 신호 라인 및 히스토그램 값이 모두 0에 있으며, 이는 모멘텀 부족과 중립적인 시장 상태를 나타냅니다.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "볼린저 밴드 값이 제공되지 않아 변동성과 잠재적인 가격 범위를 평가하기 어렵습니다.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "0.05의 BIAS 값은 시장에 약간의 강세 분위기가 있음을 시사합니다.",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "58.3의 PSY 값은 트레이더들 사이에서 중간 정도의 강세 분위기를 나타냅니다.",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI 값이 제공되지 않아 트렌드의 강도와 방향을 평가하기 어렵습니다.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "현재 가격이 89986.95의 VWAP 값보다 상당히 높아 강한 강세 트렌드를 나타냅니다.",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "자금 조달률이 1.2e-09으로 매우 낮아 시장에서 중요한 자금 조달 압력이 없음을 시사합니다.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "-78.38의 부정적인 거래소 순유입 값은 거래소에서 출금되는 암호화폐가 예금되는 암호화폐보다 많음을 나타내며, 이는 일반적으로 강세 신호입니다.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "15.21의 NUPL 값은 시장이 이익 상태에 있음을 나타내며, 이는 강세 분위기를 시사합니다.",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "1.15의 메이어 멀티플 값은 가격이 역사적 평균을 상회함을 나타내며, 이는 강세 트렌드를 시사합니다.",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "buy",
+    "reason": "대부분의 기술적 지표가 강세 트렌드를 시사하며, 가격이 상승할 가능성이 높습니다.",
+    "entry_price": 103498.6,
+    "stop_loss": 98000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 55,
+    "details": [
+      "과매수 RSI는 가격 조정 가능성을 시사",
+      "중립적인 MACD는 모멘텀 부족을 시사",
+      "여러 지표에서 강한 강세 신호"
+    ]
+  }
+}
+INFO 2025-05-17 04:50:42,945 views_report 46465 6141177856 数据已经是英文格式，无需转换
+INFO 2025-05-17 04:50:42,960 basehttp 46465 6141177856 "GET /api/crypto/get_report/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2692
+INFO 2025-05-17 04:51:11,620 views_report 46465 6141177856 使用 settings 中的 API 密钥
+INFO 2025-05-17 04:51:11,621 views_report 46465 6141177856 使用 API URL: https://api.coze.com
+INFO 2025-05-17 04:51:11,648 views_report 46465 6141177856 调用 Coze API 创建翻译对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 04:51:20,278 views_report 46465 6141177856 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747457480.txt
+INFO 2025-05-17 04:51:20,280 views_report 46465 6141177856 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 04:51:20,282 views_report 46465 6141177856 原始内容长度: 1698
+INFO 2025-05-17 04:51:20,283 views_report 46465 6141177856 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "市场趋势在当前技术指标的支持下，继续上涨的概率较高。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI值为72.32，表明市场处于超买状态，可能会出现价格回调或盘整。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD线、信号线和柱状图值均为0，表明缺乏动能，市场处于中性状态。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "未提供布林带值，难以评估波动性和潜在价格区间。",
+      "support_trend": "neu
+INFO 2025-05-17 04:51:20,283 views_report 46465 6141177856 检测到英文内容
+INFO 2025-05-17 04:51:20,283 views_report 46465 6141177856 处理英文 JSON 格式
+ERROR 2025-05-17 04:51:20,283 views_report 46465 6141177856 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 04:51:20,284 views_report 46465 6141177856 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "市场趋势在当前技术指标的支持下，继续上涨的概率较高。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI值为72.32，表明市场处于超买状态，可能会出现价格回调或盘整。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD线、信号线和柱状图值均为0，表明缺乏动能，市场处于中性状态。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "未提供布林带值，难以评估波动性和潜在价格区间。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS值为0.05，表明市场略有看涨情绪。",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "PSY值为58.3，表明交易者情绪偏向温和看涨。",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "未提供DMI值，难以评估趋势的强度和方向。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "当前价格显著高于VWAP值89986.95，表明强烈的看涨趋势。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "资金费率极低，为1.2e-09，表明市场缺乏显著的资金压力。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "交易所净流入值为-78.38，表明更多的加密货币从交易所提取，而不是存入，这通常是看涨信号。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL值为15.21，表明市场处于盈利状态，显示看涨情绪。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "Mayer Multiple值为1.15，表明价格高于历史平均水平，显示看涨趋势。",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "买入",
+    "reason": "大多数技术指标显示看涨趋势，价格继续上涨的概率较高。",
+    "entry_price": 103498.6,
+    "stop_loss": 98000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "中",
+    "score": 55,
+    "details": [
+      "超买的RSI表明可能出现回调",
+      "中性的MACD表明缺乏动能",
+      "多个指标显示强烈的看涨信号"
+    ]
+  }
+}
+INFO 2025-05-17 04:51:20,284 views_report 46465 6141177856 数据已经是英文格式，无需转换
+INFO 2025-05-17 04:51:20,299 basehttp 46465 6141177856 "GET /api/crypto/get_report/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2099
+INFO 2025-05-17 04:51:42,252 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 04:51:42,257 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 04:51:42,318 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2411
+INFO 2025-05-17 04:51:45,475 views_technical_indicators 46465 6175404032 请求的语言: en-US
+INFO 2025-05-17 04:51:45,485 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 04:51:45,497 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2907
+INFO 2025-05-17 04:51:47,998 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 04:51:48,005 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 04:51:48,006 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 04:51:48,006 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 04:51:51,689 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 04:51:51,695 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 04:51:51,715 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3008
+INFO 2025-05-17 04:51:53,590 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 04:51:53,595 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 04:51:53,599 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 04:51:53,599 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 04:52:01,389 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 04:52:01,395 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 04:52:01,402 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2411
+INFO 2025-05-17 04:52:02,368 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 04:52:02,375 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 04:52:02,409 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2411
+INFO 2025-05-17 04:52:02,774 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 04:52:02,777 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 04:52:02,787 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 04:52:02,788 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 04:52:03,554 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 04:52:03,557 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 04:52:03,569 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3008
+INFO 2025-05-17 04:52:04,748 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 04:52:04,749 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 04:52:04,762 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 04:52:04,763 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 07:44:20,104 basehttp 46465 6158577664 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-05-17 07:44:20,381 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 07:44:20,391 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 07:44:20,392 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 07:44:20,412 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 07:44:21,730 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 07:44:21,737 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 07:44:21,749 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2411
+INFO 2025-05-17 07:44:23,468 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 07:44:23,470 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 07:44:23,481 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3008
+INFO 2025-05-17 07:44:24,751 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 07:44:24,751 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 07:44:24,759 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 07:44:24,759 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 07:44:34,561 views_technical_indicators 46465 6158577664 请求的语言: ja-JP
+WARNING 2025-05-17 07:44:34,595 log 46465 6158577664 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 07:44:34,596 basehttp 46465 6158577664 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 404 108
+INFO 2025-05-17 07:45:05,243 views_technical_indicators 46465 6175404032 请求的语言: en-US
+INFO 2025-05-17 07:45:05,249 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 07:45:05,265 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2907
+INFO 2025-05-17 07:45:09,558 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 07:45:09,560 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 07:45:09,571 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2411
+INFO 2025-05-17 07:45:12,389 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 07:45:12,400 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 07:45:12,418 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3008
+INFO 2025-05-17 07:45:13,869 views_technical_indicators 46465 6175404032 请求的语言: en-US
+INFO 2025-05-17 07:45:13,873 basehttp 46465 6158577664 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 07:45:13,878 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2907
+INFO 2025-05-17 14:51:44,242 views_technical_indicators 46465 6158577664 请求的语言: en-US
+INFO 2025-05-17 14:51:44,288 basehttp 46465 6158577664 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2907
+INFO 2025-05-17 14:51:44,352 views_technical_indicators 46465 6158577664 请求的语言: en-US
+INFO 2025-05-17 14:51:44,362 basehttp 46465 6158577664 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2907
+INFO 2025-05-17 14:52:16,425 views_report 46465 6158577664 使用 settings 中的 API 密钥
+INFO 2025-05-17 14:52:16,427 views_report 46465 6158577664 使用 API URL: https://api.coze.com
+INFO 2025-05-17 14:52:16,473 views_report 46465 6158577664 找到与最新技术分析关联的 zh-CN 报告，直接返回
+INFO 2025-05-17 14:52:16,476 basehttp 46465 6158577664 "GET /api/crypto/get_report/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2099
+INFO 2025-05-17 14:52:43,562 basehttp 46465 6175404032 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-05-17 14:52:43,676 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 14:52:43,689 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2411
+INFO 2025-05-17 14:52:43,739 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 14:52:47,672 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 14:52:47,681 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 14:52:47,687 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 14:52:47,687 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:00:06,279 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:00:06,303 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:00:06,304 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:00:06,329 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:00:06,340 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:00:06,340 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:00:20,434 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:00:20,446 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:00:20,448 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:00:20,481 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:00:20,501 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:00:20,502 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:00:25,129 views_report 46465 6175404032 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:00:25,129 views_report 46465 6175404032 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:00:25,249 views_report 46465 6175404032 找到与最新技术分析关联的 en-US 报告，直接返回
+INFO 2025-05-17 15:00:25,251 basehttp 46465 6175404032 "GET /api/crypto/get_report/BTCUSDT/?language=en-US HTTP/1.1" 200 2595
+INFO 2025-05-17 15:00:25,283 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:00:25,290 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:00:25,290 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 404 108
+INFO 2025-05-17 15:01:05,568 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:01:05,574 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:01:05,574 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:01:05,586 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:01:05,600 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:01:05,600 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:01:10,301 views_report 46465 6175404032 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:01:10,301 views_report 46465 6175404032 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:01:10,378 views_report 46465 6175404032 找到与最新技术分析关联的 en-US 报告，直接返回
+INFO 2025-05-17 15:01:10,379 basehttp 46465 6175404032 "GET /api/crypto/get_report/BTCUSDT/?language=en-US HTTP/1.1" 200 2595
+INFO 2025-05-17 15:01:10,439 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:01:10,582 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:01:10,583 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:01:54,333 views_report 46465 6175404032 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:01:54,334 views_report 46465 6175404032 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:01:54,370 views_report 46465 6175404032 调用 Coze API 创建翻译对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 15:02:00,517 views_report 46465 6209056768 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:02:00,517 views_report 46465 6209056768 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:02:00,519 views_report 46465 6225883136 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:02:00,527 views_report 46465 6225883136 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:02:00,646 views_report 46465 6225883136 调用 Coze API 创建翻译对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 15:02:00,651 views_report 46465 6209056768 调用 Coze API 创建翻译对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 15:02:07,270 views_report 46465 6175404032 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747494127.txt
+INFO 2025-05-17 15:02:07,271 views_report 46465 6175404032 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 15:02:07,271 views_report 46465 6175404032 原始内容长度: 1968
+INFO 2025-05-17 15:02:07,271 views_report 46465 6175404032 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "現在のテクニカル指標に基づくと、市場のトレンドは上昇トレンドが継続する可能性が高いようです。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値72.32は、市場が買われ過ぎの状態にあることを示しており、価格の調整または統合の可能性を示唆しています。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、およびヒストグラム値がすべて0であり、モメンタムの欠如と中立的な市場状態を示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+    
+INFO 2025-05-17 15:02:07,271 views_report 46465 6175404032 检测到英文内容
+INFO 2025-05-17 15:02:07,271 views_report 46465 6175404032 处理英文 JSON 格式
+ERROR 2025-05-17 15:02:07,271 views_report 46465 6175404032 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 15:02:07,272 views_report 46465 6175404032 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "現在のテクニカル指標に基づくと、市場のトレンドは上昇トレンドが継続する可能性が高いようです。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値72.32は、市場が買われ過ぎの状態にあることを示しており、価格の調整または統合の可能性を示唆しています。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、およびヒストグラム値がすべて0であり、モメンタムの欠如と中立的な市場状態を示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボリンジャーバンドの値が提供されていないため、ボラティリティと潜在的な価格範囲を評価するのが難しいです。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS値0.05は、市場にわずかな強気のセンチメントがあることを示しています。",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "PSY値58.3は、トレーダーの間で中程度の強気のセンチメントを示しています。",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI値が提供されていないため、トレンドの強さと方向性を評価するのが難しいです。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "現在の価格はVWAP値89986.95を大幅に上回っており、強い強気トレンドを示しています。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "資金調達率は1.2e-09と非常に低く、市場に重要な資金圧力がないことを示しています。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "取引所の正味流入値-78.38は、取引所に預けられるよりも引き出される暗号資産が多いことを示しており、通常は強気のシグナルです。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL値15.21は、市場が利益状態にあることを示しており、強気のセンチメントを示しています。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "メイヤーマルチプル値1.15は、価格が歴史的平均を上回っていることを示しており、強気トレンドを示しています。",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "buy",
+    "reason": "大多数のテクニカル指標が強気トレンドを示しており、価格が上昇する可能性が高いことを示唆しています。",
+    "entry_price": 103498.6,
+    "stop_loss": 98000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 55,
+    "details": [
+      "買われ過ぎのRSIは価格調整の可能性を示唆",
+      "中立的なMACDはモメンタムの欠如を示唆",
+      "複数の指標から強い強気シグナル"
+    ]
+  }
+}
+INFO 2025-05-17 15:02:07,272 views_report 46465 6175404032 数据已经是英文格式，无需转换
+INFO 2025-05-17 15:02:07,293 basehttp 46465 6175404032 "GET /api/crypto/get_report/BTCUSDT/?language=ja-JP HTTP/1.1" 200 2919
+INFO 2025-05-17 15:02:10,980 views_report 46465 6209056768 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747494130.txt
+INFO 2025-05-17 15:02:10,981 views_report 46465 6209056768 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 15:02:10,981 views_report 46465 6209056768 原始内容长度: 1943
+INFO 2025-05-17 15:02:10,981 views_report 46465 6209056768 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "現在のテクニカル指標を考慮すると、市場トレンドは上昇トレンドを継続する可能性が高いようです。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値72.32は市場が買われ過ぎの状態にあることを示しており、価格の引き戻しや調整の可能性を示唆しています。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、ヒストグラムの値がすべて0で、勢いの欠如と中立的な市場状態を示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analy
+INFO 2025-05-17 15:02:10,981 views_report 46465 6209056768 检测到英文内容
+INFO 2025-05-17 15:02:10,981 views_report 46465 6209056768 处理英文 JSON 格式
+ERROR 2025-05-17 15:02:10,981 views_report 46465 6209056768 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 15:02:10,981 views_report 46465 6209056768 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "現在のテクニカル指標を考慮すると、市場トレンドは上昇トレンドを継続する可能性が高いようです。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値72.32は市場が買われ過ぎの状態にあることを示しており、価格の引き戻しや調整の可能性を示唆しています。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、ヒストグラムの値がすべて0で、勢いの欠如と中立的な市場状態を示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボリンジャーバンドの値が提供されていないため、ボラティリティや潜在的な価格範囲を評価するのが難しいです。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS値0.05は市場にわずかに強気の感情があることを示しています。",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "PSY値58.3はトレーダーの間で適度に強気の感情を示しています。",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI値が提供されていないため、トレンドの強さと方向性を評価するのが難しいです。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "現在の価格はVWAP値89986.95を大幅に上回っており、強い強気トレンドを示しています。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "資金調達率は1.2e-09と非常に低く、市場に重要な資金調達圧力が欠如していることを示しています。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "負の取引所正味流入値-78.38は、取引所に預けられるよりも多くの暗号資産が引き出されていることを示しており、通常は強気のシグナルです。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL値15.21は市場が利益状態にあることを示しており、強気の感情を示しています。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "メイヤーマルチプル値1.15は価格が歴史的平均を上回っていることを示しており、強気トレンドを示しています。",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "buy",
+    "reason": "大多数のテクニカル指標が強気トレンドを示しており、価格が上昇する可能性が高いです。",
+    "entry_price": 103498.6,
+    "stop_loss": 98000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 55,
+    "details": [
+      "買われ過ぎのRSIは引き戻しの可能性を示唆",
+      "中立的なMACDは勢いの欠如を示唆",
+      "複数の指標からの強い強気シグナル"
+    ]
+  }
+}
+INFO 2025-05-17 15:02:10,982 views_report 46465 6209056768 数据已经是英文格式，无需转换
+INFO 2025-05-17 15:02:10,997 basehttp 46465 6209056768 "GET /api/crypto/get_report/BTCUSDT/?language=ja-JP HTTP/1.1" 200 2844
+INFO 2025-05-17 15:02:15,519 views_report 46465 6225883136 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747494135.txt
+INFO 2025-05-17 15:02:15,519 views_report 46465 6225883136 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 15:02:15,519 views_report 46465 6225883136 原始内容长度: 1949
+INFO 2025-05-17 15:02:15,519 views_report 46465 6225883136 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "現在のテクニカル指標に基づいて、市場のトレンドは上昇トレンドが続く可能性が高いようです。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値72.32は市場が買われ過ぎの状態にあることを示しており、価格の押し戻しや調整の可能性を示唆しています。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、ヒストグラムの値はすべて0であり、勢いの欠如と中立的な市場状態を示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analy
+INFO 2025-05-17 15:02:15,519 views_report 46465 6225883136 检测到英文内容
+INFO 2025-05-17 15:02:15,520 views_report 46465 6225883136 处理英文 JSON 格式
+ERROR 2025-05-17 15:02:15,520 views_report 46465 6225883136 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 15:02:15,520 views_report 46465 6225883136 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "現在のテクニカル指標に基づいて、市場のトレンドは上昇トレンドが続く可能性が高いようです。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値72.32は市場が買われ過ぎの状態にあることを示しており、価格の押し戻しや調整の可能性を示唆しています。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、ヒストグラムの値はすべて0であり、勢いの欠如と中立的な市場状態を示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボリンジャーバンドの値が提供されていないため、ボラティリティと潜在的な価格範囲を評価するのは難しいです。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS値0.05は市場にわずかな強気の感情があることを示しています。",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "PSY値58.3はトレーダーの間で適度な強気の感情を示しています。",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI値が提供されていないため、トレンドの強さと方向を評価するのは難しいです。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "現在の価格はVWAP値89986.95を大幅に上回っており、強い強気のトレンドを示しています。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "資金調達率は1.2e-09と非常に低く、市場に重要な資金調達圧力がないことを示しています。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "取引所の正味流入値-78.38は、取引所に預けられる暗号資産よりも引き出される暗号資産が多いことを示しており、通常は強気のシグナルです。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL値15.21は市場が利益状態にあることを示しており、強気の感情を示しています。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "メイヤーマルチプル値1.15は価格が歴史的平均を上回っていることを示しており、強気のトレンドを示唆しています。",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "buy",
+    "reason": "多数のテクニカル指標が強気のトレンドを示しており、価格が上昇する可能性が高いことを示しています。",
+    "entry_price": 103498.6,
+    "stop_loss": 98000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 55,
+    "details": [
+      "買われ過ぎのRSIは押し戻しの可能性を示唆",
+      "中立的なMACDは勢いの欠如を示唆",
+      "複数の指標からの強い強気のシグナル"
+    ]
+  }
+}
+INFO 2025-05-17 15:02:15,520 views_report 46465 6225883136 数据已经是英文格式，无需转换
+INFO 2025-05-17 15:02:15,527 basehttp 46465 6225883136 "GET /api/crypto/get_report/BTCUSDT/?language=ja-JP HTTP/1.1" 200 2862
+INFO 2025-05-17 15:04:15,240 views_report 46465 6175404032 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:04:15,241 views_report 46465 6175404032 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:04:15,339 views_report 46465 6175404032 找到与最新技术分析关联的 ja-JP 报告，直接返回
+INFO 2025-05-17 15:04:15,340 basehttp 46465 6175404032 "GET /api/crypto/get_report/BTCUSDT/?language=ja-JP HTTP/1.1" 200 2862
+INFO 2025-05-17 15:04:15,367 views_report 46465 6175404032 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:04:15,369 views_report 46465 6175404032 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:04:15,421 views_report 46465 6175404032 找到与最新技术分析关联的 ja-JP 报告，直接返回
+INFO 2025-05-17 15:04:15,421 basehttp 46465 6175404032 "GET /api/crypto/get_report/BTCUSDT/?language=ja-JP HTTP/1.1" 200 2862
+INFO 2025-05-17 15:04:17,717 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:04:17,737 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3174
+INFO 2025-05-17 15:04:17,749 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:04:17,761 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3174
+INFO 2025-05-17 15:04:43,652 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:04:43,672 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3174
+INFO 2025-05-17 15:04:43,717 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:04:43,724 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3174
+INFO 2025-05-17 15:04:48,580 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:04:48,590 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3174
+INFO 2025-05-17 15:04:49,627 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:04:49,651 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3174
+INFO 2025-05-17 15:05:08,639 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:05:08,668 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:05:08,679 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:05:08,719 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:05:08,748 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:05:08,749 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:05:14,030 views_report 46465 6175404032 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:05:14,030 views_report 46465 6175404032 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:05:14,074 views_report 46465 6175404032 从数据库获取技术指标数据: BTCUSDT, ID: 128
+INFO 2025-05-17 15:05:14,698 views_report 46465 6175404032 提交给Coze的技术指标数据: {
+  "price": 103079.6,
+  "indicators": {
+    "rsi": {
+      "value": 72.32
+    },
+    "macd": {
+      "macd_line": 0,
+      "signal_line": 0,
+      "histogram": 0
+    },
+    "bollinger_bands": {
+      "upper": 0,
+      "middle": 0,
+      "lower": 0
+    },
+    "bias": {
+      "value": 0.05
+    },
+    "psy": {
+      "value": 58.3
+    },
+    "dmi": {
+      "plus_di": 0,
+      "minus_di": 0,
+      "adx": 0
+    },
+    "vwap": {
+      "value": 89986.95
+    },
+    "funding_rate": {
+      "value": 1.2000000000000002e-11
+    },
+    "exchange_netflow": {
+      "value": -78.38
+    },
+    "nupl": {
+      "value": 15.21
+    },
+    "mayer_multiple": {
+      "value": 1.15
+    }
+  }
+}
+INFO 2025-05-17 15:05:14,698 views_report 46465 6175404032 使用语言 en-US 对应的 Coze Bot ID: 7504983775349489680
+INFO 2025-05-17 15:05:14,698 views_report 46465 6175404032 所有语言的 Coze Bot ID: {'zh-CN': '7504984466486984721', 'en-US': '7504983775349489680', 'ja-JP': '7504985637318475792', 'ko-KR': '7504984181148581905'}
+INFO 2025-05-17 15:05:14,699 views_report 46465 6175404032 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 15:05:15,287 views_report 46465 6175404032 Coze API 创建对话响应: {'data': {'id': '7505430774850633746', 'conversation_id': '7505430774850617362', 'bot_id': '7504983775349489680', 'created_at': 1747494315, 'last_error': {'code': 0, 'msg': ''}, 'status': 'in_progress'}, 'code': 0, 'msg': ''}
+WARNING 2025-05-17 15:05:18,120 views_report 46465 6175404032 获取对话状态响应错误: {'code': 0, 'data': {'bot_id': '7504983775349489680', 'conversation_id': '7505430774850617362', 'created_at': 1747494315, 'id': '7505430774850633746', 'status': 'in_progress'}, 'detail': {'logid': '2025051715051667D4B2D0E8DBE40A6E19'}, 'msg': ''}
+WARNING 2025-05-17 15:05:19,522 views_report 46465 6175404032 获取对话状态响应错误: {'code': 0, 'data': {'bot_id': '7504983775349489680', 'conversation_id': '7505430774850617362', 'created_at': 1747494315, 'id': '7505430774850633746', 'status': 'in_progress'}, 'detail': {'logid': '20250517150518DAAF7FC8BC153299B1CA'}, 'msg': ''}
+WARNING 2025-05-17 15:05:21,358 views_report 46465 6175404032 获取对话状态响应错误: {'code': 0, 'data': {'bot_id': '7504983775349489680', 'conversation_id': '7505430774850617362', 'created_at': 1747494315, 'id': '7505430774850633746', 'status': 'in_progress'}, 'detail': {'logid': '2025051715052067D4B2D0E8DBE40A71C1'}, 'msg': ''}
+WARNING 2025-05-17 15:05:24,270 views_report 46465 6175404032 获取对话状态响应错误: {'code': 0, 'data': {'bot_id': '7504983775349489680', 'conversation_id': '7505430774850617362', 'created_at': 1747494315, 'id': '7505430774850633746', 'status': 'in_progress'}, 'detail': {'logid': '20250517150522DAAF7FC8BC153299B5B4'}, 'msg': ''}
+INFO 2025-05-17 15:05:28,377 views_report 46465 6175404032 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747494328.txt
+INFO 2025-05-17 15:05:28,377 views_report 46465 6175404032 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 15:05:28,377 views_report 46465 6175404032 原始内容长度: 2918
+INFO 2025-05-17 15:05:28,378 views_report 46465 6175404032 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "The market is currently exhibiting a strong uptrend with a high probability of continuation."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI value is 72.32, indicating that the market is in overbought territory. This suggests a potential for a price correction or pullback.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "The
+INFO 2025-05-17 15:05:28,378 views_report 46465 6175404032 检测到英文内容
+INFO 2025-05-17 15:05:28,378 views_report 46465 6175404032 处理英文 JSON 格式
+ERROR 2025-05-17 15:05:28,378 views_report 46465 6175404032 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 15:05:28,378 views_report 46465 6175404032 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "The market is currently exhibiting a strong uptrend with a high probability of continuation."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI value is 72.32, indicating that the market is in overbought territory. This suggests a potential for a price correction or pullback.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "The MACD line, signal line, and histogram are all at 0, indicating a lack of momentum and a neutral signal.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "Bollinger Bands data is missing, making it difficult to analyze volatility and price range.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "The BIAS value is 0.05, suggesting a slight bullish bias in the market.",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "The PSY value is 58.3, indicating that the market sentiment is slightly bullish.",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI data is missing, making it difficult to analyze the directional movement and trend strength.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "The VWAP value is 89986.95, which is below the current price, indicating that the market is trading above its average price and suggesting a bullish trend.",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "The funding rate is extremely low at 1.2e-11, indicating minimal cost for holding long positions and suggesting a neutral impact.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "The exchange netflow is -78.38, indicating a net outflow from exchanges which suggests that investors are withdrawing funds, typically a bullish sign.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "The NUPL value of 15.21 indicates that the market is in a state of profit, suggesting a bullish sentiment.",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "The Mayer Multiple value of 1.15 indicates that the price is above the historical average, suggesting a potential overvaluation but still within a bullish trend.",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "The majority of indicators suggest a bullish trend, but the overbought RSI indicates the potential for a short-term correction. It is advisable to hold positions and wait for a clearer signal.",
+    "entry_price": 103079.6,
+    "stop_loss": 98000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 55,
+    "details": [
+      "High RSI indicating overbought conditions",
+      "Strong bullish indicators",
+      "Potential for short-term correction"
+    ]
+  }
+}
+INFO 2025-05-17 15:05:28,379 views_report 46465 6175404032 数据已经是英文格式，无需转换
+INFO 2025-05-17 15:05:28,391 views_report 46465 6175404032 调用 Coze API 创建翻译对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 15:05:41,820 views_report 46465 6175404032 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747494341.txt
+INFO 2025-05-17 15:05:41,820 views_report 46465 6175404032 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 15:05:41,821 views_report 46465 6175404032 原始内容长度: 1998
+INFO 2025-05-17 15:05:41,821 views_report 46465 6175404032 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "現在、市場は強い上昇トレンドを示しており、継続する可能性が高いです。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値は72.32で、市場が買われすぎの状態にあることを示しています。これは価格修正や反落の可能性を示唆しています。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、およびヒストグラムはすべて0であり、モメンタムの欠如と中立のシグナルを示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis"
+INFO 2025-05-17 15:05:41,821 views_report 46465 6175404032 检测到英文内容
+INFO 2025-05-17 15:05:41,821 views_report 46465 6175404032 处理英文 JSON 格式
+ERROR 2025-05-17 15:05:41,821 views_report 46465 6175404032 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 15:05:41,821 views_report 46465 6175404032 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "現在、市場は強い上昇トレンドを示しており、継続する可能性が高いです。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値は72.32で、市場が買われすぎの状態にあることを示しています。これは価格修正や反落の可能性を示唆しています。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、およびヒストグラムはすべて0であり、モメンタムの欠如と中立のシグナルを示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボリンジャーバンドのデータが不足しているため、ボラティリティや価格範囲の分析が困難です。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS値は0.05で、市場にわずかな強気バイアスがあることを示唆しています。",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "PSY値は58.3で、市場のセンチメントがやや強気であることを示しています。",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMIデータが不足しているため、方向性の動きやトレンドの強さの分析が困難です。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP値は89986.95で、現在の価格よりも低く、市場が平均価格を上回って取引されており、強気トレンドを示唆しています。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "資金調達率は1.2e-11と非常に低く、ロングポジションを保持するコストが最小限であり、中立的な影響を示唆しています。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "取引所の正味流入は-78.38で、取引所からの流出があり、投資家が資金を引き出していることを示しており、通常は強気のサインです。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL値は15.21で、市場が利益状態にあることを示しており、強気のセンチメントを示唆しています。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "メイヤーマルチプル値は1.15で、価格が歴史的平均を上回っており、潜在的な過大評価を示唆していますが、依然として強気トレンド内にあります。",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "ほとんどの指標が強気トレンドを示していますが、RSIの買われすぎ状態は短期的な修正の可能性を示唆しています。ポジションを保持し、より明確なシグナルを待つことをお勧めします。",
+    "entry_price": 103079.6,
+    "stop_loss": 98000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 55,
+    "details": [
+      "RSIの買われすぎ状態",
+      "強気の指標",
+      "短期的な修正の可能性"
+    ]
+  }
+}
+INFO 2025-05-17 15:05:41,822 views_report 46465 6175404032 数据已经是英文格式，无需转换
+INFO 2025-05-17 15:05:41,837 basehttp 46465 6175404032 "GET /api/crypto/get_report/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3017
+INFO 2025-05-17 15:05:42,028 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:05:42,042 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:05:43,066 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:05:43,077 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:05:50,432 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:05:50,437 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:05:50,443 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:05:52,834 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:05:52,837 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+WARNING 2025-05-17 15:05:52,840 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:05:52,841 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-17 15:05:54,189 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:05:54,204 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 15:05:54,210 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:05:54,210 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:05:55,471 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:05:55,473 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:05:55,488 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:05:59,884 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:05:59,963 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:06:00,979 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:06:00,994 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:06:04,967 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:06:04,970 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 15:06:04,977 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:06:04,978 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-17 15:06:10,661 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+WARNING 2025-05-17 15:06:10,673 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:06:10,674 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-17 15:06:24,762 views_report 46465 6175404032 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:06:24,762 views_report 46465 6175404032 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:06:24,900 views_report 46465 6175404032 调用 Coze API 创建翻译对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 15:06:40,464 views_report 46465 6175404032 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747494400.txt
+INFO 2025-05-17 15:06:40,466 views_report 46465 6175404032 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 15:06:40,466 views_report 46465 6175404032 原始内容长度: 1710
+INFO 2025-05-17 15:06:40,467 views_report 46465 6175404032 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "市场目前表现出强劲的上涨趋势，继续上涨的概率较高。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI值为72.32，表明市场处于超买区域。这表明价格可能会出现修正或回调。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD线、信号线和柱状图均为0，表明缺乏动量，信号中性。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "布林带数据缺失，难以分析波动性和价格范围。",
+      "support_trend": "neutral"
+INFO 2025-05-17 15:06:40,467 views_report 46465 6175404032 检测到英文内容
+INFO 2025-05-17 15:06:40,467 views_report 46465 6175404032 处理英文 JSON 格式
+ERROR 2025-05-17 15:06:40,467 views_report 46465 6175404032 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 15:06:40,467 views_report 46465 6175404032 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "市场目前表现出强劲的上涨趋势，继续上涨的概率较高。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI值为72.32，表明市场处于超买区域。这表明价格可能会出现修正或回调。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD线、信号线和柱状图均为0，表明缺乏动量，信号中性。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "布林带数据缺失，难以分析波动性和价格范围。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS值为0.05，表明市场略微看涨。",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "PSY值为58.3，表明市场情绪略微看涨。",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI数据缺失，难以分析方向运动和趋势强度。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP值为89986.95，低于当前价格，表明市场在平均价格之上交易，暗示看涨趋势。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "资金费率极低，为1.2e-11，表明持有多头仓位的成本极低，影响中性。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "交易所净流入为-78.38，表明资金从交易所净流出，通常是看涨信号。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL值为15.21，表明市场处于盈利状态，暗示看涨情绪。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "Mayer Multiple值为1.15，表明价格高于历史平均水平，暗示潜在的高估，但仍处于看涨趋势。",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "持有",
+    "reason": "大多数指标表明看涨趋势，但超买的RSI表明短期内可能出现修正。建议持有仓位，等待更明确的信号。",
+    "entry_price": 103079.6,
+    "stop_loss": 98000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "中",
+    "score": 55,
+    "details": [
+      "高RSI表明超买状态",
+      "强劲的看涨指标",
+      "短期内可能出现修正"
+    ]
+  }
+}
+INFO 2025-05-17 15:06:40,468 views_report 46465 6175404032 数据已经是英文格式，无需转换
+INFO 2025-05-17 15:06:40,494 basehttp 46465 6175404032 "GET /api/crypto/get_report/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2137
+INFO 2025-05-17 15:06:40,586 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:06:40,597 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:06:41,609 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:06:41,616 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:01,007 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:07:00,935 views_technical_indicators 46465 6225883136 请求的语言: en-US
+INFO 2025-05-17 15:07:01,029 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:07:01,049 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:03,847 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:03,876 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:03,896 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:03,909 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:07,211 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:07:07,212 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:07:07,212 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:07:07,219 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:07,230 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:07,240 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:10,801 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:07:10,851 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:10,878 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:07:10,923 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:12,441 views_technical_indicators 46465 6225883136 请求的语言: en-US
+INFO 2025-05-17 15:07:12,443 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:07:12,447 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:07:12,460 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:12,469 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:12,474 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:12,485 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:12,496 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:15,350 views_technical_indicators 46465 6175404032 请求的语言: en-US
+INFO 2025-05-17 15:07:15,364 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:15,385 views_technical_indicators 46465 6175404032 请求的语言: en-US
+INFO 2025-05-17 15:07:15,396 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:17,504 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:07:17,507 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:07:17,509 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:07:17,514 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:17,542 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:17,549 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:17,557 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:17,564 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:17,573 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:17,583 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:19,652 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:19,684 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:19,700 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:19,709 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:20,698 views_technical_indicators 46465 6225883136 请求的语言: en-US
+INFO 2025-05-17 15:07:20,699 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:07:20,704 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:07:20,712 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:20,721 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:20,731 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:20,744 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:20,753 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:20,762 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:20,773 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:20,784 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:20,794 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:23,423 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:23,441 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:23,479 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:23,495 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:27,491 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:07:27,495 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:07:27,585 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:07:27,591 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:27,609 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:27,669 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:27,731 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:27,738 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:27,766 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:27,771 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:27,779 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:27,783 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:27,792 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:27,802 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:33,070 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:07:33,084 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:33,110 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:07:33,121 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:38,435 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:07:38,437 views_technical_indicators 46465 6225883136 请求的语言: en-US
+INFO 2025-05-17 15:07:38,440 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:07:38,455 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:38,478 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:38,497 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:38,504 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:38,510 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:38,522 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:38,528 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:38,537 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:38,543 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:38,559 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:38,564 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:38,577 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:38,583 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:41,057 views_technical_indicators 46465 6175404032 请求的语言: en-US
+INFO 2025-05-17 15:07:41,070 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:41,084 views_technical_indicators 46465 6175404032 请求的语言: en-US
+INFO 2025-05-17 15:07:41,096 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:42,862 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:07:42,862 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:07:42,864 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:07:42,879 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:42,891 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:42,898 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:42,907 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:42,914 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:42,922 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:42,929 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:42,937 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:42,943 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:42,952 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:42,960 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:42,968 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:42,973 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:42,982 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:42,988 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:45,159 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:07:45,175 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:45,190 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:07:45,233 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:07:45,792 views_technical_indicators 46465 6225883136 请求的语言: en-US
+INFO 2025-05-17 15:07:45,795 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:07:45,796 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:07:45,809 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:45,818 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:45,825 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:45,833 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:45,839 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:45,848 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:45,856 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:45,898 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:45,909 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:45,921 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:45,928 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:45,934 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:45,940 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:45,948 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:45,953 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:07:45,962 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:07:45,968 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:09:05,203 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:09:05,307 views_technical_indicators 46465 6242709504 请求的语言: zh-CN
+INFO 2025-05-17 15:09:05,318 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:05,319 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:09:05,322 basehttp 46465 6175404032 - Broken pipe from ('192.168.3.16', 63153)
+INFO 2025-05-17 15:09:05,407 basehttp 46465 6242709504 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:05,419 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:05,933 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:09:05,971 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:09,328 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:09,328 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:09:09,342 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:09,344 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:10,232 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:09:10,234 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:10,236 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:09:10,242 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:12,008 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:09:12,021 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:12,044 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:09:12,059 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:12,994 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:09:13,000 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:09:13,002 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:13,012 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:13,023 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:13,033 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:14,715 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:14,731 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:14,748 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:14,763 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:15,390 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:15,392 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:09:15,394 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:09:15,403 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:15,413 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:15,421 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:15,430 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:15,439 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:18,414 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:18,421 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:18,423 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:18,444 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:18,460 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:18,467 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:18,477 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:18,487 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:20,260 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:09:20,271 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:09:20,295 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:09:20,309 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:09:22,140 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:09:22,140 views_technical_indicators 46465 6225883136 请求的语言: en-US
+INFO 2025-05-17 15:09:22,140 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:22,150 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:09:22,161 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:09:22,170 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:09:22,181 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:09:22,190 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:09:22,199 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:09:22,205 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:09:24,074 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:24,081 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:09:24,083 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:24,093 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:09:24,103 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:09:24,115 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:09:24,128 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:09:24,141 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:09:24,164 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:09:24,170 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:09:25,682 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:09:25,692 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:25,714 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:09:25,723 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:28,570 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:09:28,571 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:09:28,579 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:28,598 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:28,608 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:28,615 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:28,648 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:28,705 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:28,726 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:28,732 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:28,737 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:28,742 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:31,175 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:31,182 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:31,185 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:31,189 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:31,197 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:31,204 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:31,214 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:31,232 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:31,245 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:31,258 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:31,268 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:09:31,275 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:09:32,868 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:09:32,881 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:32,922 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:09:32,980 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:36,107 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:09:36,109 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:36,111 views_technical_indicators 46465 6225883136 请求的语言: ja-JP
+INFO 2025-05-17 15:09:36,118 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:36,134 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:09:36,148 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:36,155 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:09:36,163 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:36,171 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:09:36,177 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:36,185 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:09:36,193 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:36,203 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:09:36,212 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:38,454 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:38,455 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:09:38,464 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:09:38,479 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:38,492 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:09:38,502 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:38,512 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:09:38,522 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:38,537 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:09:38,543 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:38,550 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:09:38,555 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:38,571 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:09:38,578 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:09:40,554 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:09:40,581 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:09:40,582 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:09:40,592 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:09:40,598 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:09:40,598 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:09:52,650 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:09:52,664 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:09:52,664 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:09:52,683 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:09:52,695 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:09:52,697 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:17,368 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:17,376 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:17,377 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:17,385 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:17,398 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:17,399 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:23,221 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:23,230 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:23,231 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:23,243 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:23,248 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:23,249 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:31,771 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:31,778 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:31,779 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:31,800 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:31,806 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:31,806 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:38,998 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:39,098 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:39,098 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:39,118 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:39,124 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:39,125 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:49,368 views_technical_indicators 46465 6225883136 请求的语言: ko-KR
+INFO 2025-05-17 15:12:49,368 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:12:49,374 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 15:12:49,389 log 46465 6225883136 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:49,390 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:52,362 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:52,383 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:52,383 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:52,503 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:52,548 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:52,573 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:55,079 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:12:55,085 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:55,093 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:55,093 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:55,111 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:55,115 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:55,115 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:56,555 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:12:56,556 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 15:12:56,560 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:56,561 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:56,568 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:56,571 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:56,571 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:58,881 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:12:58,882 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 15:12:58,886 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:58,886 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:12:58,896 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+WARNING 2025-05-17 15:12:58,911 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:12:58,912 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:13:00,117 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:13:00,118 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+WARNING 2025-05-17 15:13:00,127 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:13:00,127 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:13:00,181 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+WARNING 2025-05-17 15:13:00,184 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:13:00,184 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:13:11,622 views_technical_indicators 46465 6225883136 请求的语言: ko-KR
+INFO 2025-05-17 15:13:11,624 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:13:11,626 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 15:13:11,631 log 46465 6225883136 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:13:11,631 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:13:11,646 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+WARNING 2025-05-17 15:13:11,652 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:13:11,652 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:13:13,665 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:13:13,671 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:13:13,676 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:13:13,695 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:13:13,786 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:13:13,806 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:13:15,422 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:13:15,440 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:13:15,456 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:13:15,474 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:13:19,247 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:13:19,247 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:13:19,251 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:13:19,254 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:13:19,270 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:13:19,283 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:13:19,289 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:13:19,295 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:13:21,036 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:13:21,037 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:13:21,041 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:13:21,054 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:13:21,064 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:13:21,074 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:13:21,094 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:13:21,104 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2449
+INFO 2025-05-17 15:13:22,539 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:13:22,555 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:13:22,571 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:13:22,616 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:13:24,332 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:13:24,335 views_technical_indicators 46465 6225883136 请求的语言: en-US
+INFO 2025-05-17 15:13:24,336 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:13:24,346 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:13:24,359 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:13:24,365 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:13:24,372 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:13:24,379 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:13:24,387 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:13:24,394 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:13:26,129 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:13:26,131 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:13:26,143 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:13:26,153 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:13:26,162 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:13:26,172 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:13:26,184 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:13:26,203 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:13:26,213 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:13:26,220 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2973
+INFO 2025-05-17 15:13:28,052 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:13:28,074 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:13:28,095 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:13:28,113 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:13:30,334 views_technical_indicators 46465 6225883136 请求的语言: ja-JP
+INFO 2025-05-17 15:13:30,342 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:13:30,348 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:13:30,356 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:13:30,365 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:13:30,380 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:13:30,388 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:13:30,394 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:13:30,403 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:13:30,411 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:13:30,420 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:13:30,426 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:13:32,321 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:13:32,333 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:13:32,345 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:13:32,353 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:13:32,362 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:13:32,373 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:13:32,383 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:13:32,394 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:13:32,409 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:13:32,454 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:13:32,471 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:13:32,481 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3333
+INFO 2025-05-17 15:13:34,155 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+WARNING 2025-05-17 15:13:34,163 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:13:34,164 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:13:34,178 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+WARNING 2025-05-17 15:13:34,186 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:13:34,189 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:14:49,140 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:14:49,174 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:14:49,175 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:14:49,206 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:14:49,219 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:14:49,220 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:14:50,676 views_report 46465 6175404032 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:14:50,677 views_report 46465 6175404032 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:14:50,706 views_report 46465 6175404032 调用 Coze API 创建翻译对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 15:15:02,963 views_report 46465 6175404032 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747494902.txt
+INFO 2025-05-17 15:15:02,964 views_report 46465 6175404032 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 15:15:02,964 views_report 46465 6175404032 原始内容长度: 2052
+INFO 2025-05-17 15:15:02,964 views_report 46465 6175404032 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "현재 시장은 강한 상승세를 보이고 있으며 지속될 가능성이 높습니다."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI 값은 72.32로, 시장이 과매수 상태에 있음을 나타냅니다. 이는 가격 조정 또는 후퇴 가능성을 시사합니다.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD 라인, 시그널 라인 및 히스토그램 모두 0에 있어 모멘텀이 부족하고 중립 신호를 나타냅니다.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "ana
+INFO 2025-05-17 15:15:02,964 views_report 46465 6175404032 检测到英文内容
+INFO 2025-05-17 15:15:02,965 views_report 46465 6175404032 处理英文 JSON 格式
+ERROR 2025-05-17 15:15:02,965 views_report 46465 6175404032 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 15:15:02,966 views_report 46465 6175404032 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "현재 시장은 강한 상승세를 보이고 있으며 지속될 가능성이 높습니다."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI 값은 72.32로, 시장이 과매수 상태에 있음을 나타냅니다. 이는 가격 조정 또는 후퇴 가능성을 시사합니다.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD 라인, 시그널 라인 및 히스토그램 모두 0에 있어 모멘텀이 부족하고 중립 신호를 나타냅니다.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "볼린저 밴드 데이터가 없어 변동성과 가격 범위를 분석하기 어렵습니다.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS 값은 0.05로, 시장에 약간의 강세 편향이 있음을 시사합니다.",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "PSY 값은 58.3으로, 시장 심리가 약간 강세임을 나타냅니다.",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI 데이터가 없어 방향성 움직임과 트렌드 강도를 분석하기 어렵습니다.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP 값은 89986.95로 현재 가격보다 낮아 시장이 평균 가격보다 높은 가격에서 거래되고 있음을 나타내며 강세 트렌드를 시사합니다.",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "자금 조달률은 1.2e-11로 매우 낮아 롱 포지션을 유지하는 데 드는 비용이 최소화되어 있으며 중립적인 영향을 시사합니다.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "거래소 순유입은 -78.38로 거래소에서 자금이 순유출되고 있음을 나타내며, 이는 투자자들이 자금을 인출하고 있음을 나타내며 일반적으로 강세 신호입니다.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL 값이 15.21로 시장이 수익 상태에 있음을 나타내며 강세 심리를 시사합니다.",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "메이어 멀티플 값이 1.15로, 가격이 역사적 평균보다 높아 잠재적인 과대평가를 시사하지만 여전히 강세 트렌드 내에 있습니다.",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "대부분의 지표가 강세 트렌드를 시사하지만 과매수 RSI는 단기 조정 가능성을 나타냅니다. 포지션을 유지하고 명확한 신호를 기다리는 것이 좋습니다.",
+    "entry_price": 103079.6,
+    "stop_loss": 98000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 55,
+    "details": [
+      "과매수 상태를 나타내는 높은 RSI",
+      "강한 강세 지표",
+      "단기 조정 가능성"
+    ]
+  }
+}
+INFO 2025-05-17 15:15:02,966 views_report 46465 6175404032 数据已经是英文格式，无需转换
+INFO 2025-05-17 15:15:02,990 basehttp 46465 6175404032 "GET /api/crypto/get_report/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2803
+INFO 2025-05-17 15:15:03,031 views_report 46465 6175404032 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:15:03,032 views_report 46465 6175404032 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:15:03,094 views_report 46465 6175404032 找到与最新技术分析关联的 ko-KR 报告，直接返回
+INFO 2025-05-17 15:15:03,095 basehttp 46465 6175404032 "GET /api/crypto/get_report/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2803
+INFO 2025-05-17 15:15:58,302 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:15:58,318 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3115
+INFO 2025-05-17 15:15:58,343 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:15:58,356 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3115
+INFO 2025-05-17 15:16:09,163 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:16:09,174 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:16:09,175 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:16:09,202 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+WARNING 2025-05-17 15:16:09,205 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:16:09,206 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-17 15:16:11,280 views_report 46465 6175404032 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:16:11,280 views_report 46465 6175404032 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:16:11,343 views_report 46465 6175404032 从数据库获取技术指标数据: BTCUSDT, ID: 129
+INFO 2025-05-17 15:16:11,614 views_report 46465 6175404032 提交给Coze的技术指标数据: {
+  "price": 103029.8,
+  "indicators": {
+    "rsi": {
+      "value": 72.32
+    },
+    "macd": {
+      "macd_line": 0,
+      "signal_line": 0,
+      "histogram": 0
+    },
+    "bollinger_bands": {
+      "upper": 0,
+      "middle": 0,
+      "lower": 0
+    },
+    "bias": {
+      "value": 0.05
+    },
+    "psy": {
+      "value": 58.3
+    },
+    "dmi": {
+      "plus_di": 0,
+      "minus_di": 0,
+      "adx": 0
+    },
+    "vwap": {
+      "value": 89986.95
+    },
+    "funding_rate": {
+      "value": 1.2000000000000002e-13
+    },
+    "exchange_netflow": {
+      "value": -78.38
+    },
+    "nupl": {
+      "value": 15.21
+    },
+    "mayer_multiple": {
+      "value": 1.15
+    }
+  }
+}
+INFO 2025-05-17 15:16:11,614 views_report 46465 6175404032 使用语言 en-US 对应的 Coze Bot ID: 7504983775349489680
+INFO 2025-05-17 15:16:11,614 views_report 46465 6175404032 所有语言的 Coze Bot ID: {'zh-CN': '7504984466486984721', 'en-US': '7504983775349489680', 'ja-JP': '7504985637318475792', 'ko-KR': '7504984181148581905'}
+INFO 2025-05-17 15:16:11,614 views_report 46465 6175404032 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 15:16:12,013 views_report 46465 6175404032 Coze API 创建对话响应: {'data': {'id': '7505433620086063112', 'conversation_id': '7505433620086046728', 'bot_id': '7504983775349489680', 'created_at': 1747494972, 'last_error': {'code': 0, 'msg': ''}, 'status': 'in_progress'}, 'code': 0, 'msg': ''}
+WARNING 2025-05-17 15:16:14,301 views_report 46465 6175404032 获取对话状态响应错误: {'code': 0, 'data': {'bot_id': '7504983775349489680', 'conversation_id': '7505433620086046728', 'created_at': 1747494972, 'id': '7505433620086063112', 'status': 'in_progress'}, 'detail': {'logid': '20250517151613B50DEC93727CDD98153F'}, 'msg': ''}
+WARNING 2025-05-17 15:16:15,557 views_report 46465 6175404032 获取对话状态响应错误: {'code': 0, 'data': {'bot_id': '7504983775349489680', 'conversation_id': '7505433620086046728', 'created_at': 1747494972, 'id': '7505433620086063112', 'status': 'in_progress'}, 'detail': {'logid': '20250517151614B50DEC93727CDD981699'}, 'msg': ''}
+WARNING 2025-05-17 15:16:17,391 views_report 46465 6175404032 获取对话状态响应错误: {'code': 0, 'data': {'bot_id': '7504983775349489680', 'conversation_id': '7505433620086046728', 'created_at': 1747494972, 'id': '7505433620086063112', 'status': 'in_progress'}, 'detail': {'logid': '20250517151616B50DEC93727CDD981819'}, 'msg': ''}
+WARNING 2025-05-17 15:16:20,045 views_report 46465 6175404032 获取对话状态响应错误: {'code': 0, 'data': {'bot_id': '7504983775349489680', 'conversation_id': '7505433620086046728', 'created_at': 1747494972, 'id': '7505433620086063112', 'status': 'in_progress'}, 'detail': {'logid': '20250517151618DA4E3CF2D1D8619BC543'}, 'msg': ''}
+INFO 2025-05-17 15:16:24,032 views_report 46465 6175404032 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747494984.txt
+INFO 2025-05-17 15:16:24,032 views_report 46465 6175404032 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 15:16:24,032 views_report 46465 6175404032 原始内容长度: 2807
+INFO 2025-05-17 15:16:24,032 views_report 46465 6175404032 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "The market shows a mixed trend with a slight inclination towards an uptrend, but significant sideways and downtrend probabilities exist."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI is at 72.32, indicating that the asset is in overbought territory, which could lead to a potential price correction.",
+      "support_trend": "down"
+    },
+    "mac
+INFO 2025-05-17 15:16:24,032 views_report 46465 6175404032 检测到英文内容
+INFO 2025-05-17 15:16:24,032 views_report 46465 6175404032 处理英文 JSON 格式
+ERROR 2025-05-17 15:16:24,032 views_report 46465 6175404032 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 15:16:24,033 views_report 46465 6175404032 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "The market shows a mixed trend with a slight inclination towards an uptrend, but significant sideways and downtrend probabilities exist."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI is at 72.32, indicating that the asset is in overbought territory, which could lead to a potential price correction.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "The MACD line, signal line, and histogram are all at 0, indicating a neutral stance with no clear trend direction.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "Bollinger Bands data is missing, hence no analysis can be provided.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "The BIAS value is 0.05, suggesting a slight bullish sentiment in the market.",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "The PSY value of 58.3 indicates that the market is moderately bullish.",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI values are missing, hence no analysis can be provided.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "The current price is significantly above the VWAP of 89986.95, indicating that the asset is overvalued in the short term.",
+      "support_trend": "down"
+    },
+    "funding_rate": {
+      "analysis": "The funding rate is very close to zero, indicating a balanced market with no significant long or short bias.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "The exchange netflow is -78.38, suggesting more outflows than inflows, which is typically a bullish sign as it indicates accumulation.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "The NUPL value of 15.21 indicates that the market is in a state of profit, which could lead to profit-taking and a potential price drop.",
+      "support_trend": "down"
+    },
+    "mayer_multiple": {
+      "analysis": "The Mayer Multiple is 1.15, indicating that the asset is slightly overvalued compared to its historical average.",
+      "support_trend": "down"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "Mixed signals from technical indicators suggest uncertainty. Holding is recommended until a clearer trend emerges.",
+    "entry_price": 103029.8,
+    "stop_loss": 95000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 50,
+    "details": [
+      "RSI indicates overbought conditions",
+      "Price above VWAP suggests overvaluation",
+      "Exchange netflow indicates accumulation",
+      "NUPL suggests potential profit-taking"
+    ]
+  }
+}
+INFO 2025-05-17 15:16:24,033 views_report 46465 6175404032 数据已经是英文格式，无需转换
+INFO 2025-05-17 15:16:24,046 views_report 46465 6175404032 调用 Coze API 创建翻译对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 15:16:37,386 views_report 46465 6175404032 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747494997.txt
+INFO 2025-05-17 15:16:37,386 views_report 46465 6175404032 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 15:16:37,386 views_report 46465 6175404032 原始内容长度: 2005
+INFO 2025-05-17 15:16:37,387 views_report 46465 6175404032 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "시장은 혼합된 추세를 보이며 약간의 상승 추세 기울기를 보이지만, 상당한 횡보 및 하락 확률이 존재합니다."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI가 72.32로 자산이 과매수 상태에 있음을 나타내며, 이는 잠재적인 가격 조정을 초래할 수 있습니다.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD 라인, 신호 라인 및 히스토그램이 모두 0에 있어 명확한 추세 방향이 없는 중립적 입장을 나타냅니다.",
+      "support_trend": "neutral"
+    },
+    "bolling
+INFO 2025-05-17 15:16:37,387 views_report 46465 6175404032 检测到英文内容
+INFO 2025-05-17 15:16:37,389 views_report 46465 6175404032 处理英文 JSON 格式
+ERROR 2025-05-17 15:16:37,389 views_report 46465 6175404032 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 15:16:37,390 views_report 46465 6175404032 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "시장은 혼합된 추세를 보이며 약간의 상승 추세 기울기를 보이지만, 상당한 횡보 및 하락 확률이 존재합니다."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI가 72.32로 자산이 과매수 상태에 있음을 나타내며, 이는 잠재적인 가격 조정을 초래할 수 있습니다.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD 라인, 신호 라인 및 히스토그램이 모두 0에 있어 명확한 추세 방향이 없는 중립적 입장을 나타냅니다.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "볼린저 밴드 데이터가 없어 분석을 제공할 수 없습니다.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS 값이 0.05로 시장에 약간의 강세 심리가 있음을 나타냅니다.",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "PSY 값이 58.3으로 시장이 다소 강세임을 나타냅니다.",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI 값이 없어 분석을 제공할 수 없습니다.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "현재 가격이 VWAP 89986.95를 크게 상회하여 자산이 단기적으로 과대평가되었음을 나타냅니다.",
+      "support_trend": "down"
+    },
+    "funding_rate": {
+      "analysis": "자금 조달률이 거의 0에 가까워 시장이 균형을 이루고 있으며, 특별한 롱 또는 숏 편향이 없음을 나타냅니다.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "거래소 순유입이 -78.38로 유출이 유입보다 많아 보통 축적을 나타내는 강세 신호입니다.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL 값이 15.21로 시장이 이익 상태에 있으며, 이는 이익 실현과 잠재적인 가격 하락을 초래할 수 있습니다.",
+      "support_trend": "down"
+    },
+    "mayer_multiple": {
+      "analysis": "메이어 멀티플이 1.15로 자산이 역사적 평균에 비해 약간 과대평가되었음을 나타냅니다.",
+      "support_trend": "down"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "기술 지표로부터 혼합 신호가 나타나 불확실성을 시사합니다. 명확한 추세가 나타날 때까지 보유를 권장합니다.",
+    "entry_price": 103029.8,
+    "stop_loss": 95000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 50,
+    "details": [
+      "RSI가 과매수 상태를 나타냄",
+      "가격이 VWAP를 상회하여 과대평가됨을 시사",
+      "거래소 순유입이 축적을 나타냄",
+      "NUPL이 잠재적인 이익 실현을 시사"
+    ]
+  }
+}
+INFO 2025-05-17 15:16:37,390 views_report 46465 6175404032 数据已经是英文格式，无需转换
+INFO 2025-05-17 15:16:37,401 basehttp 46465 6175404032 "GET /api/crypto/get_report/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2657
+INFO 2025-05-17 15:16:38,474 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:16:38,494 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:16:39,512 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:16:39,543 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:16:51,688 views_technical_indicators 46465 6225883136 请求的语言: ko-KR
+INFO 2025-05-17 15:16:51,711 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:16:51,725 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:16:51,768 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:16:53,752 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:16:53,753 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:16:53,759 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:16:53,772 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:16:56,055 views_technical_indicators 46465 6175404032 请求的语言: en-US
+INFO 2025-05-17 15:16:56,088 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:16:56,103 views_technical_indicators 46465 6175404032 请求的语言: en-US
+INFO 2025-05-17 15:16:56,131 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:17:04,569 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:17:04,597 views_technical_indicators 46465 6225883136 请求的语言: en-US
+INFO 2025-05-17 15:17:04,616 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:17:04,660 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:17:04,685 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:17:04,706 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:17:06,591 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:17:06,645 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:17:06,710 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:17:06,811 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:17:07,111 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:17:07,165 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:17:09,643 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+WARNING 2025-05-17 15:17:09,862 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:17:09,867 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:17:10,131 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+WARNING 2025-05-17 15:17:10,169 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:17:10,170 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:10,759 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:18:10,797 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:18:10,801 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:10,838 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+WARNING 2025-05-17 15:18:10,844 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:18:10,845 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:15,194 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+WARNING 2025-05-17 15:18:15,211 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:18:15,211 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:15,216 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:18:16,235 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+WARNING 2025-05-17 15:18:16,246 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+INFO 2025-05-17 15:18:16,248 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 15:18:16,250 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:20,710 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:18:20,720 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:18:20,721 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:20,736 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:18:20,744 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:18:20,744 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:24,991 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:18:24,993 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:18:24,995 views_technical_indicators 46465 6225883136 请求的语言: ja-JP
+WARNING 2025-05-17 15:18:25,001 log 46465 6225883136 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:18:25,002 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:26,916 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:18:26,917 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:18:26,922 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:18:26,928 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:18:28,625 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+WARNING 2025-05-17 15:18:28,639 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:18:28,639 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:28,652 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+WARNING 2025-05-17 15:18:28,663 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:18:28,663 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:31,711 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:18:31,713 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:18:31,722 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 15:18:31,727 log 46465 6225883136 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:18:31,727 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:31,746 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+WARNING 2025-05-17 15:18:31,752 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:18:31,753 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:34,045 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:18:34,067 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:18:34,071 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-17 15:18:34,113 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:18:34,114 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:34,195 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+WARNING 2025-05-17 15:18:34,201 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:18:34,201 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-17 15:18:36,021 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:18:36,054 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:18:36,086 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:18:36,110 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:19:50,206 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:19:50,232 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:19:50,246 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:19:50,271 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:19:52,586 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:19:52,597 views_technical_indicators 46465 6225883136 请求的语言: ko-KR
+INFO 2025-05-17 15:19:52,600 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:19:52,620 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:19:54,606 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:19:54,612 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:19:55,343 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:19:55,351 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:19:55,376 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:19:55,395 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:20:00,372 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:20:00,384 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:20:00,404 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:20:00,430 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:20:04,788 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:20:04,799 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:20:04,817 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:20:04,845 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:20:35,311 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:20:35,325 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:20:35,433 views_technical_indicators 46465 6175404032 请求的语言: ko-KR
+INFO 2025-05-17 15:20:35,447 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:20:42,940 views_technical_indicators 46465 6225883136 请求的语言: ko-KR
+INFO 2025-05-17 15:20:42,942 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:20:42,963 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:20:42,965 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:20:42,986 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:20:42,997 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:20:45,368 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:20:45,368 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:20:45,371 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:20:45,378 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:20:45,386 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:20:45,396 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:20:46,791 views_technical_indicators 46465 6175404032 请求的语言: en-US
+INFO 2025-05-17 15:20:46,807 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:20:46,828 views_technical_indicators 46465 6175404032 请求的语言: en-US
+INFO 2025-05-17 15:20:46,841 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:20:53,979 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:20:53,990 views_technical_indicators 46465 6225883136 请求的语言: en-US
+INFO 2025-05-17 15:20:54,019 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:20:54,078 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:20:54,113 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:20:54,126 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:20:54,135 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:20:54,142 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:20:55,545 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:20:55,546 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:20:55,552 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:20:55,559 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:20:55,567 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:20:55,582 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:20:55,593 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:20:55,604 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:20:57,251 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+WARNING 2025-05-17 15:20:57,255 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:20:57,255 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-17 15:20:57,272 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+WARNING 2025-05-17 15:20:57,276 log 46465 6209056768 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:20:57,276 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-17 15:21:00,091 views_report 46465 6209056768 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:21:00,100 views_report 46465 6209056768 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:21:04,166 views_report 46465 6209056768 调用 Coze API 创建翻译对话: https://api.coze.com/v3/chat
+ERROR 2025-05-17 15:21:37,416 views_report 46465 6209056768 翻译报告时发生错误: HTTPSConnectionPool(host='api.coze.com', port=443): Read timed out. (read timeout=30)
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/urllib3/connectionpool.py", line 468, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/urllib3/connectionpool.py", line 463, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/http/client.py", line 1430, in getresponse
+    response.begin()
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/urllib3/connectionpool.py", line 802, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/urllib3/util/retry.py", line 552, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/urllib3/packages/six.py", line 770, in reraise
+    raise value
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/urllib3/connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/urllib3/connectionpool.py", line 470, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/urllib3/connectionpool.py", line 358, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.coze.com', port=443): Read timed out. (read timeout=30)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py", line 1503, in _translate_report
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/requests/adapters.py", line 578, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.coze.com', port=443): Read timed out. (read timeout=30)
+ERROR 2025-05-17 15:21:37,441 log 46465 6209056768 Internal Server Error: /api/crypto/get_report/BTCUSDT/
+ERROR 2025-05-17 15:21:37,442 basehttp 46465 6209056768 "GET /api/crypto/get_report/BTCUSDT/?language=zh-CN HTTP/1.1" 500 55
+INFO 2025-05-17 15:21:44,951 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+WARNING 2025-05-17 15:21:44,986 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:21:44,988 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-17 15:21:45,016 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+WARNING 2025-05-17 15:21:45,026 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:21:45,026 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-17 15:24:04,784 views_report 46465 6175404032 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:24:04,791 views_report 46465 6175404032 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:24:04,872 views_report 46465 6175404032 调用 Coze API 创建翻译对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 15:24:19,233 views_report 46465 6175404032 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747495459.txt
+INFO 2025-05-17 15:24:19,234 views_report 46465 6175404032 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 15:24:19,234 views_report 46465 6175404032 原始内容长度: 1708
+INFO 2025-05-17 15:24:19,234 views_report 46465 6175404032 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "市场显示出混合趋势，略微倾向于上涨趋势，但也存在显著的横盘和下跌概率。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI为72.32，表明资产处于超买状态，可能导致价格回调。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD线、信号线和柱状图均为0，表明中立立场，没有明确的趋势方向。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "缺少布林带数据，因此无法提供分析。",
+      "support_trend": "neutr
+INFO 2025-05-17 15:24:19,234 views_report 46465 6175404032 检测到英文内容
+INFO 2025-05-17 15:24:19,235 views_report 46465 6175404032 处理英文 JSON 格式
+ERROR 2025-05-17 15:24:19,235 views_report 46465 6175404032 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 15:24:19,235 views_report 46465 6175404032 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "市场显示出混合趋势，略微倾向于上涨趋势，但也存在显著的横盘和下跌概率。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI为72.32，表明资产处于超买状态，可能导致价格回调。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD线、信号线和柱状图均为0，表明中立立场，没有明确的趋势方向。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "缺少布林带数据，因此无法提供分析。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS值为0.05，表明市场略微看涨。",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "PSY值为58.3，表明市场适度看涨。",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "缺少DMI值，因此无法提供分析。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "当前价格显著高于VWAP的89986.95，表明短期内资产被高估。",
+      "support_trend": "down"
+    },
+    "funding_rate": {
+      "analysis": "资金费率非常接近零，表明市场平衡，没有显著的多头或空头偏向。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "交易所净流入为-78.38，表明流出多于流入，通常是看涨信号，因为这表明积累。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL值为15.21，表明市场处于盈利状态，可能导致获利回吐和价格下跌。",
+      "support_trend": "down"
+    },
+    "mayer_multiple": {
+      "analysis": "Mayer Multiple为1.15，表明资产相对于其历史平均值略有高估。",
+      "support_trend": "down"
+    }
+  },
+  "trading_advice": {
+    "action": "持有",
+    "reason": "技术指标的混合信号表明不确定性。建议持有，直到出现更明确的趋势。",
+    "entry_price": 103029.8,
+    "stop_loss": 95000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "中",
+    "score": 50,
+    "details": [
+      "RSI表明超买状态",
+      "价格高于VWAP表明高估",
+      "交易所净流入表明积累",
+      "NUPL表明潜在的获利回吐"
+    ]
+  }
+}
+INFO 2025-05-17 15:24:19,236 views_report 46465 6175404032 数据已经是英文格式，无需转换
+INFO 2025-05-17 15:24:19,256 basehttp 46465 6175404032 "GET /api/crypto/get_report/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2096
+INFO 2025-05-17 15:24:20,311 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:24:20,337 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2408
+INFO 2025-05-17 15:24:21,363 views_technical_indicators 46465 6175404032 请求的语言: zh-CN
+INFO 2025-05-17 15:24:21,386 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2408
+INFO 2025-05-17 15:24:39,963 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:24:39,964 views_technical_indicators 46465 6225883136 请求的语言: zh-CN
+INFO 2025-05-17 15:24:39,977 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:24:40,001 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2408
+INFO 2025-05-17 15:24:41,956 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:24:41,972 views_technical_indicators 46465 6209056768 请求的语言: zh-CN
+INFO 2025-05-17 15:24:41,976 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:24:41,983 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2408
+INFO 2025-05-17 15:24:43,920 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:24:43,938 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:24:43,956 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:24:43,973 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:25:13,142 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:25:13,165 views_technical_indicators 46465 6225883136 请求的语言: en-US
+INFO 2025-05-17 15:25:13,173 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:25:13,233 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:25:13,268 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:25:13,289 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:25:15,614 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:25:15,622 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:25:15,635 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:25:15,647 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:28,697 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:26:28,707 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:26:28,713 views_technical_indicators 46465 6225883136 请求的语言: en-US
+INFO 2025-05-17 15:26:28,865 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:28,911 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:26:28,938 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:28,964 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:26:28,979 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:31,358 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:26:31,373 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:31,408 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:26:31,428 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:33,448 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:26:33,452 views_technical_indicators 46465 6225883136 请求的语言: en-US
+INFO 2025-05-17 15:26:33,453 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:26:33,473 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:33,482 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:26:33,487 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:33,505 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:26:33,516 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:33,527 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:26:33,536 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:37,131 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:26:37,131 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:26:37,134 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:26:37,158 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:37,181 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:26:37,187 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:37,195 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:26:37,202 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:37,208 views_technical_indicators 46465 6209056768 请求的语言: en-US
+INFO 2025-05-17 15:26:37,215 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2831
+INFO 2025-05-17 15:26:39,295 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:26:39,305 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:26:39,305 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:26:39,325 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:26:39,334 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:26:39,334 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:26:52,171 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:26:52,188 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:26:52,191 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:26:52,245 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:26:52,288 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:26:52,288 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:27:55,798 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:27:55,812 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:27:55,813 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:27:55,835 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:27:55,841 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:27:55,841 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:28:51,295 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:28:51,316 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:28:51,316 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:28:51,355 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:28:51,362 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:28:51,362 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:29:03,421 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:29:03,427 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:29:03,427 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:29:03,441 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:29:03,454 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:29:03,455 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:29:09,332 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:29:09,340 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:29:09,341 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:29:09,348 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:29:09,353 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:29:09,354 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:29:43,874 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:29:43,977 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:29:43,985 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:29:44,083 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:29:44,110 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:29:44,110 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:30:28,136 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:30:28,144 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:30:28,144 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:30:28,184 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:30:28,212 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:30:28,213 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:30:32,096 views_technical_indicators 46465 6225883136 请求的语言: ja-JP
+INFO 2025-05-17 15:30:32,097 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+WARNING 2025-05-17 15:30:32,111 log 46465 6225883136 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:30:32,112 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:30:32,114 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:30:33,957 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:30:33,968 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:30:33,971 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:30:33,993 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+WARNING 2025-05-17 15:30:33,996 log 46465 6175404032 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-17 15:30:33,996 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-17 15:30:34,815 views_report 46465 6175404032 使用 settings 中的 API 密钥
+INFO 2025-05-17 15:30:34,815 views_report 46465 6175404032 使用 API URL: https://api.coze.com
+INFO 2025-05-17 15:30:34,856 views_report 46465 6175404032 调用 Coze API 创建翻译对话: https://api.coze.com/v3/chat
+INFO 2025-05-17 15:30:47,355 views_report 46465 6175404032 已保存Coze原始响应到文件: /Users/liuzhao/Documents/Projects/Cooltrade/backend/logs/coze_response_1747495847.txt
+INFO 2025-05-17 15:30:47,356 views_report 46465 6175404032 === 开始分析 Coze 返回的原始数据 ===
+INFO 2025-05-17 15:30:47,356 views_report 46465 6175404032 原始内容长度: 1950
+INFO 2025-05-17 15:30:47,356 views_report 46465 6175404032 原始内容前500个字符: {
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "市場は混合傾向を示しており、若干の上昇傾向が見られるが、横ばいおよび下降傾向の確率も高い。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSIは72.32で、資産が買われ過ぎの領域にあることを示しており、価格修正の可能性がある。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、ヒストグラムはすべて0であり、明確なトレンド方向がない中立的な立場を示している。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボ
+INFO 2025-05-17 15:30:47,357 views_report 46465 6175404032 检测到英文内容
+INFO 2025-05-17 15:30:47,357 views_report 46465 6175404032 处理英文 JSON 格式
+ERROR 2025-05-17 15:30:47,357 views_report 46465 6175404032 处理语言特定 JSON 时发生错误: cannot access local variable 're' where it is not associated with a value
+INFO 2025-05-17 15:30:47,357 views_report 46465 6175404032 从内容中直接提取的分析结果: {
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "市場は混合傾向を示しており、若干の上昇傾向が見られるが、横ばいおよび下降傾向の確率も高い。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSIは72.32で、資産が買われ過ぎの領域にあることを示しており、価格修正の可能性がある。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、ヒストグラムはすべて0であり、明確なトレンド方向がない中立的な立場を示している。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボリンジャーバンドのデータが欠落しているため、分析を提供できない。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS値は0.05で、市場に若干の強気感があることを示している。",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "PSY値は58.3で、市場が中程度の強気であることを示している。",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "DMI値が欠落しているため、分析を提供できない。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "現在の価格はVWAPの89986.95を大幅に上回っており、短期的に資産が過大評価されていることを示している。",
+      "support_trend": "down"
+    },
+    "funding_rate": {
+      "analysis": "資金調達率はほぼゼロに近く、長期または短期のバイアスがないバランスの取れた市場を示している。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "取引所の正味流入は-78.38で、流入よりも流出が多いことを示しており、これは通常蓄積を示す強気のサインである。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL値は15.21で、市場が利益状態にあることを示しており、利益確定と価格下落の可能性がある。",
+      "support_trend": "down"
+    },
+    "mayer_multiple": {
+      "analysis": "メイヤーマルチプルは1.15で、資産が歴史的な平均と比較して若干過大評価されていることを示している。",
+      "support_trend": "down"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "テクニカル指標からの混合信号は不確実性を示している。明確なトレンドが現れるまで保有することをお勧めする。",
+    "entry_price": 103029.8,
+    "stop_loss": 95000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 50,
+    "details": [
+      "RSIは買われ過ぎの状態を示している",
+      "価格がVWAPを上回り過大評価されていることを示している",
+      "取引所の正味流入は蓄積を示している",
+      "NUPLは利益確定の可能性を示している"
+    ]
+  }
+}
+INFO 2025-05-17 15:30:47,358 views_report 46465 6175404032 数据已经是英文格式，无需转换
+INFO 2025-05-17 15:30:47,384 basehttp 46465 6175404032 "GET /api/crypto/get_report/BTCUSDT/?language=ja-JP HTTP/1.1" 200 2830
+INFO 2025-05-17 15:30:48,441 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:30:48,455 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142
+INFO 2025-05-17 15:30:49,474 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:30:49,490 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142
+INFO 2025-05-17 15:31:02,180 views_technical_indicators 46465 6225883136 请求的语言: ja-JP
+INFO 2025-05-17 15:31:02,181 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:31:02,204 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:31:02,226 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142
+INFO 2025-05-17 15:31:02,243 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:31:02,258 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142
+INFO 2025-05-17 15:31:04,016 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:31:04,022 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:31:04,024 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:31:04,035 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142
+INFO 2025-05-17 15:31:04,047 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:31:04,056 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142
+INFO 2025-05-17 15:31:05,827 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:31:05,839 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:31:05,869 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:31:05,883 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:31:13,633 views_technical_indicators 46465 6225883136 请求的语言: ko-KR
+INFO 2025-05-17 15:31:13,633 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:31:13,634 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:31:13,643 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:31:13,664 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:31:13,677 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:31:13,686 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:31:13,696 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:31:15,919 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:31:15,924 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:31:15,926 basehttp 46465 6225883136 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:31:15,932 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:31:15,944 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:31:15,956 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:31:15,965 views_technical_indicators 46465 6209056768 请求的语言: ko-KR
+INFO 2025-05-17 15:31:15,974 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 2973
+INFO 2025-05-17 15:31:17,703 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:31:17,715 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142
+INFO 2025-05-17 15:31:17,728 views_technical_indicators 46465 6175404032 请求的语言: ja-JP
+INFO 2025-05-17 15:31:17,785 basehttp 46465 6175404032 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142
+INFO 2025-05-17 15:31:24,248 basehttp 46465 6175404032 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-17 15:31:24,305 basehttp 46465 6209056768 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-17 15:31:24,307 views_technical_indicators 46465 6225883136 请求的语言: ja-JP
+INFO 2025-05-17 15:31:24,335 basehttp 46465 6225883136 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142
+INFO 2025-05-17 15:31:24,363 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:31:24,367 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142
+INFO 2025-05-17 15:31:24,376 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:31:24,383 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142
+INFO 2025-05-17 15:31:24,398 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:31:24,408 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142
+INFO 2025-05-17 15:31:25,547 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:31:25,568 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142
+INFO 2025-05-17 15:31:25,716 views_technical_indicators 46465 6209056768 请求的语言: ja-JP
+INFO 2025-05-17 15:31:25,723 basehttp 46465 6209056768 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3142

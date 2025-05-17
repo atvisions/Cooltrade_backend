@@ -1,0 +1,70 @@
+{
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "市场趋势在当前技术指标的支持下，继续上涨的概率较高。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI值为72.32，表明市场处于超买状态，可能会出现价格回调或盘整。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACD线、信号线和柱状图值均为0，表明缺乏动能，市场处于中性状态。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "未提供布林带值，难以评估波动性和潜在价格区间。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS值为0.05，表明市场略有看涨情绪。",
+      "support_trend": "up"
+    },
+    "psy": {
+      "analysis": "PSY值为58.3，表明交易者情绪偏向温和看涨。",
+      "support_trend": "up"
+    },
+    "dmi": {
+      "analysis": "未提供DMI值，难以评估趋势的强度和方向。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "当前价格显著高于VWAP值89986.95，表明强烈的看涨趋势。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "资金费率极低，为1.2e-09，表明市场缺乏显著的资金压力。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "交易所净流入值为-78.38，表明更多的加密货币从交易所提取，而不是存入，这通常是看涨信号。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL值为15.21，表明市场处于盈利状态，显示看涨情绪。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "Mayer Multiple值为1.15，表明价格高于历史平均水平，显示看涨趋势。",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "买入",
+    "reason": "大多数技术指标显示看涨趋势，价格继续上涨的概率较高。",
+    "entry_price": 103498.6,
+    "stop_loss": 98000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "中",
+    "score": 55,
+    "details": [
+      "超买的RSI表明可能出现回调",
+      "中性的MACD表明缺乏动能",
+      "多个指标显示强烈的看涨信号"
+    ]
+  }
+}
