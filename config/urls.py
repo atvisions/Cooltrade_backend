@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('CryptoAnalyst.urls')),
+    path('api/auth/', include('user.urls')),
+    path('api/crypto/', include('CryptoAnalyst.urls')),
     path('', include('website.urls')),
 ]
 # 静态文件和媒体文件都要加

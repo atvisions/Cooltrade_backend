@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'user',
     'CryptoAnalyst',
     'website',
 ]
@@ -152,7 +153,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # 用户模型配置
-AUTH_USER_MODEL = 'CryptoAnalyst.User'
+AUTH_USER_MODEL = 'user.User'
 
 # 邮件配置
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
