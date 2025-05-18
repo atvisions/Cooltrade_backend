@@ -1,0 +1,70 @@
+{
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "市場のトレンドは現在上昇傾向にあり、継続する可能性が高いです。ただし、横ばいの動きの可能性も依然として顕著です。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値78.11は市場が買われすぎの領域にあることを示しており、調整や反落の可能性を示唆しています。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、ヒストグラムはすべて0であり、勢いがなく中立的な立場を示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボリンジャーバンドの値はすべて0であり、この指標からはボラティリティやトレンド方向を判断するのが難しいです。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS値-0.12は市場に若干の弱気感があることを示しています。",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "PSY値50.0は市場が均衡しており、明確な方向性がないことを示しています。",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI値（plus_di、minus_di、adx）はすべて0であり、明確な方向性の動きがないことを示しています。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP値90011.97は現在の価格よりも低く、市場が平均価格を上回って取引されていることを示しており、これは強気のシグナルと見なされます。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "資金調達率値4e-05は比較的低く、ロングとショートポジションの間の需要が均衡していることを示しています。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "取引所の正味流入値-91.42は、取引所からの引き出しが預金よりも多いことを示しており、これは通常強気のシグナルと見なされます。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL値15.05は市場が利益状態にあることを示しており、これは強気の感情の兆候となります。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "メイヤーマルチプル値1.15は市場が過去の平均を上回って取引されていることを示しており、これは強気のシグナルと見なされます。",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "buy",
+    "reason": "VWAP、取引所正味流入、NUPL、およびメイヤーマルチプルなどの複数の指標が上昇トレンドを支持しています。RSIが買われすぎの状態を示しているにもかかわらず、全体的な感情は強気市場に傾いています。",
+    "entry_price": 103443.7,
+    "stop_loss": 98000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 55,
+    "details": [
+      "買われすぎ状態を示す高いRSI値",
+      "MACDおよびDMIからの中立的なシグナル",
+      "VWAP、取引所正味流入、NUPL、およびメイヤーマルチプルからの強気シグナル"
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "trend_analysis": {
+    "up_probability": 70,
+    "sideways_probability": 20,
+    "down_probability": 10,
+    "summary": "市場トレンド分析によると、ほとんどの指標が強気の感情を示しているため、上昇トレンドの高い可能性が示唆されています。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSIは78.08で、これは資産が買われ過ぎの領域にあることを示しています。これにより、価格の調整や統合の可能性が示唆されるかもしれません。",
+      "support_trend": "up"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、ヒストグラムはすべて0にあり、明確なモメンタム方向を示していません。これは中立的なトレンドを示唆しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボリンジャーバンドの値はすべて0であり、ボラティリティ情報の欠如を示しています。この指標はトレンド分析に寄与していません。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS値は-0.14で、わずかに弱気の感情を示しています。しかし、これは強い下降トレンドを示唆するほどの重要な値ではありません。",
+      "support_trend": "neutral"
+    },
+    "psy": {
+      "analysis": "PSY値は50.0で、市場の感情が買い手と売り手の間で均衡していることを示しています。",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI指標（plus_di、minus_di、adx）はすべて0で、明確な方向性の動きを示していません。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAPは90011.38で、現在の価格よりもかなり低く、資産が平均値を上回って取引されていることを示しており、強気の感情を示唆しています。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "資金調達率は0.00004と非常に低く、わずかな強気の感情を示していますが、重要な影響はありません。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "取引所の正味流入値は-91.85で、流入よりも流出が多く、トレーダーが資産を取引所から移動しているため、強気の感情を示唆しています。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL値は15.03で、ほとんどの保有者が利益を上げていることを示しており、強気の感情を示唆しています。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "メイヤーマルチプル値は1.15で、資産が歴史的平均を上回って取引されていることを示しており、強気の感情を示唆しています。",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "buy",
+    "reason": "ほとんどの指標が強気の感情と上昇トレンドの高い可能性を示唆しているため。",
+    "entry_price": 103450.9,
+    "stop_loss": 100000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 60,
+    "details": [
+      "買われ過ぎ状態を示す高いRSI",
+      "中立的なMACDとDMI指標",
+      "重要な取引所の正味流出"
+    ]
+  }
+}

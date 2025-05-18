@@ -106,7 +106,6 @@ class CryptoReportAPIView(APIView):
                         'status': 'error',
                         'message': '获取技术指标数据失败'
                     }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-                # 创建新的 TechnicalAnalysis
                 indicators = technical_data.get('indicators', {})
                 def get_indicator_value(indicator_data, default=0):
                     if isinstance(indicator_data, dict):
@@ -124,26 +123,32 @@ class CryptoReportAPIView(APIView):
                     if isinstance(dmi_data, dict):
                         return dmi_data.get(key, default)
                     return default
-                latest_analysis = TechnicalAnalysis.objects.create(
+                now = timezone.now()
+                period_hour = (now.hour // 12) * 12
+                period_start = now.replace(minute=0, second=0, microsecond=0, hour=period_hour)
+                latest_analysis, _ = TechnicalAnalysis.objects.get_or_create(
                     token=token,
-                    timestamp=timezone.now(),
-                    rsi=get_indicator_value(indicators.get('rsi')),
-                    macd_line=get_macd_value(indicators.get('macd'), 'macd_line'),
-                    macd_signal=get_macd_value(indicators.get('macd'), 'signal_line'),
-                    macd_histogram=get_macd_value(indicators.get('macd'), 'histogram'),
-                    bollinger_upper=get_bollinger_value(indicators.get('bollinger_bands'), 'upper'),
-                    bollinger_middle=get_bollinger_value(indicators.get('bollinger_bands'), 'middle'),
-                    bollinger_lower=get_bollinger_value(indicators.get('bollinger_bands'), 'lower'),
-                    bias=get_indicator_value(indicators.get('bias')),
-                    psy=get_indicator_value(indicators.get('psy')),
-                    dmi_plus=get_dmi_value(indicators.get('dmi'), 'plus_di'),
-                    dmi_minus=get_dmi_value(indicators.get('dmi'), 'minus_di'),
-                    dmi_adx=get_dmi_value(indicators.get('dmi'), 'adx'),
-                    vwap=get_indicator_value(indicators.get('vwap')),
-                    funding_rate=get_indicator_value(indicators.get('funding_rate')),
-                    exchange_netflow=get_indicator_value(indicators.get('exchange_netflow')),
-                    nupl=get_indicator_value(indicators.get('nupl')),
-                    mayer_multiple=get_indicator_value(indicators.get('mayer_multiple'))
+                    period_start=period_start,
+                    defaults={
+                        'timestamp': now,
+                        'rsi': get_indicator_value(indicators.get('rsi')),
+                        'macd_line': get_macd_value(indicators.get('macd'), 'macd_line'),
+                        'macd_signal': get_macd_value(indicators.get('macd'), 'signal_line'),
+                        'macd_histogram': get_macd_value(indicators.get('macd'), 'histogram'),
+                        'bollinger_upper': get_bollinger_value(indicators.get('bollinger_bands'), 'upper'),
+                        'bollinger_middle': get_bollinger_value(indicators.get('bollinger_bands'), 'middle'),
+                        'bollinger_lower': get_bollinger_value(indicators.get('bollinger_bands'), 'lower'),
+                        'bias': get_indicator_value(indicators.get('bias')),
+                        'psy': get_indicator_value(indicators.get('psy')),
+                        'dmi_plus': get_dmi_value(indicators.get('dmi'), 'plus_di'),
+                        'dmi_minus': get_dmi_value(indicators.get('dmi'), 'minus_di'),
+                        'dmi_adx': get_dmi_value(indicators.get('dmi'), 'adx'),
+                        'vwap': get_indicator_value(indicators.get('vwap')),
+                        'funding_rate': get_indicator_value(indicators.get('funding_rate')),
+                        'exchange_netflow': get_indicator_value(indicators.get('exchange_netflow')),
+                        'nupl': get_indicator_value(indicators.get('nupl')),
+                        'mayer_multiple': get_indicator_value(indicators.get('mayer_multiple'))
+                    }
                 )
 
             # 查询是否已有与该技术分析关联的报告
@@ -456,65 +461,67 @@ class CryptoReportAPIView(APIView):
     def _generate_and_save_report(self, token: Token, technical_data: Dict[str, Any], language: str) -> Optional[Dict[str, Any]]:
         """生成并保存分析报告"""
         try:
+            # 获取当前价格，确保不为空
+            current_price = technical_data.get('current_price', 0)
+            if not current_price:
+                logger.error("无法获取当前价格")
+                return None
+
             # 首先创建或获取技术分析记录
             indicators = technical_data.get('indicators', {})
-            
-            # 辅助函数：从指标数据中提取数值
             def get_indicator_value(indicator_data, default=0):
                 if isinstance(indicator_data, dict):
                     return indicator_data.get('value', default)
                 return indicator_data if indicator_data is not None else default
-
-            # 辅助函数：从MACD数据中提取数值
             def get_macd_value(macd_data, key, default=0):
                 if isinstance(macd_data, dict):
                     return macd_data.get(key, default)
                 return default
-
-            # 辅助函数：从布林带数据中提取数值
             def get_bollinger_value(bollinger_data, key, default=0):
                 if isinstance(bollinger_data, dict):
                     return bollinger_data.get(key, default)
                 return default
-
-            # 辅助函数：从DMI数据中提取数值
             def get_dmi_value(dmi_data, key, default=0):
                 if isinstance(dmi_data, dict):
                     return dmi_data.get(key, default)
                 return default
 
-            technical_analysis = TechnicalAnalysis.objects.create(
-                token=token,
-                timestamp=timezone.now(),
-                rsi=get_indicator_value(indicators.get('rsi')),
-                macd_line=get_macd_value(indicators.get('macd'), 'macd_line'),
-                macd_signal=get_macd_value(indicators.get('macd'), 'signal_line'),
-                macd_histogram=get_macd_value(indicators.get('macd'), 'histogram'),
-                bollinger_upper=get_bollinger_value(indicators.get('bollinger_bands'), 'upper'),
-                bollinger_middle=get_bollinger_value(indicators.get('bollinger_bands'), 'middle'),
-                bollinger_lower=get_bollinger_value(indicators.get('bollinger_bands'), 'lower'),
-                bias=get_indicator_value(indicators.get('bias')),
-                psy=get_indicator_value(indicators.get('psy')),
-                dmi_plus=get_dmi_value(indicators.get('dmi'), 'plus_di'),
-                dmi_minus=get_dmi_value(indicators.get('dmi'), 'minus_di'),
-                dmi_adx=get_dmi_value(indicators.get('dmi'), 'adx'),
-                vwap=get_indicator_value(indicators.get('vwap')),
-                funding_rate=get_indicator_value(indicators.get('funding_rate')),
-                exchange_netflow=get_indicator_value(indicators.get('exchange_netflow')),
-                nupl=get_indicator_value(indicators.get('nupl')),
-                mayer_multiple=get_indicator_value(indicators.get('mayer_multiple'))
-            )
+            now = timezone.now()
+            period_hour = (now.hour // 12) * 12
+            period_start = now.replace(minute=0, second=0, microsecond=0, hour=period_hour)
+
+            # 使用事务确保数据一致性
+            with transaction.atomic():
+                technical_analysis, _ = TechnicalAnalysis.objects.get_or_create(
+                    token=token,
+                    period_start=period_start,
+                    defaults={
+                        'timestamp': now,
+                        'rsi': get_indicator_value(indicators.get('rsi')),
+                        'macd_line': get_macd_value(indicators.get('macd'), 'macd_line'),
+                        'macd_signal': get_macd_value(indicators.get('macd'), 'signal_line'),
+                        'macd_histogram': get_macd_value(indicators.get('macd'), 'histogram'),
+                        'bollinger_upper': get_bollinger_value(indicators.get('bollinger_bands'), 'upper'),
+                        'bollinger_middle': get_bollinger_value(indicators.get('bollinger_bands'), 'middle'),
+                        'bollinger_lower': get_bollinger_value(indicators.get('bollinger_bands'), 'lower'),
+                        'bias': get_indicator_value(indicators.get('bias')),
+                        'psy': get_indicator_value(indicators.get('psy')),
+                        'dmi_plus': get_dmi_value(indicators.get('dmi'), 'plus_di'),
+                        'dmi_minus': get_dmi_value(indicators.get('dmi'), 'minus_di'),
+                        'dmi_adx': get_dmi_value(indicators.get('dmi'), 'adx'),
+                        'vwap': get_indicator_value(indicators.get('vwap')),
+                        'funding_rate': get_indicator_value(indicators.get('funding_rate')),
+                        'exchange_netflow': get_indicator_value(indicators.get('exchange_netflow')),
+                        'nupl': get_indicator_value(indicators.get('nupl')),
+                        'mayer_multiple': get_indicator_value(indicators.get('mayer_multiple'))
+                    }
+                )
 
             # 构建提示词
             prompt = self._build_prompt(technical_data, language)
 
             # 获取对应语言的 Bot ID
             bot_id = self.COZE_BOT_IDS.get(language)
-            logger.info(f"使用语言 {language} 对应的 Coze Bot ID: {bot_id}")
-
-            # 打印所有语言的 Bot ID，用于调试
-            logger.info(f"所有语言的 Coze Bot ID: {self.COZE_BOT_IDS}")
-
             if not bot_id:
                 logger.error(f"未找到语言 {language} 对应的 Coze Bot ID")
                 return None
@@ -551,6 +558,7 @@ class CryptoReportAPIView(APIView):
             retry_count = 0
             retry_interval = 1.0
             max_retry_interval = 5.0
+            response = None
 
             while retry_count < max_retries:
                 try:
@@ -559,7 +567,7 @@ class CryptoReportAPIView(APIView):
                         headers=headers,
                         json=payload,
                         timeout=30,
-                        verify=True  # 确保 SSL 验证
+                        verify=True
                     )
 
                     if response.status_code == 200:
@@ -596,21 +604,13 @@ class CryptoReportAPIView(APIView):
                         retry_interval = min(retry_interval * 1.5, max_retry_interval)
                     continue
 
-            if retry_count >= max_retries:
+            if not response or retry_count >= max_retries:
                 logger.error("创建对话失败，已达到最大重试次数")
                 return None
-
-            # 获取当前价格和时间
-            current_price = technical_data.get('current_price', 0)
-            current_time = timezone.now()
 
             # 解析响应
             try:
                 response_data = response.json()
-                # 记录响应内容，便于调试
-                logger.info(f"Coze API 创建对话响应: {response_data}")
-
-                # 检查响应状态
                 if response_data.get('code') != 0:
                     logger.error(f"Coze API 响应错误: {response_data}")
                     return None
@@ -697,11 +697,16 @@ class CryptoReportAPIView(APIView):
                                                             if translated_data:
                                                                 # 提取 trading_advice
                                                                 trading_advice = translated_data.get('trading_advice', {})
+                                                                # 确保 entry_price 不为空
+                                                                entry_price = trading_advice.get('entry_price', current_price)
+                                                                if not entry_price:
+                                                                    entry_price = current_price
+
                                                                 # 创建新的分析报告
                                                                 translated_report = AnalysisReport.objects.create(
                                                                     token=token,
-                                                                    technical_analysis=technical_analysis,  # 使用之前创建的技术分析记录
-                                                                    timestamp=current_time,
+                                                                    technical_analysis=technical_analysis,
+                                                                    timestamp=now,
                                                                     snapshot_price=current_price,
                                                                     language=language,
                                                                     trend_up_probability=translated_data.get('trend_analysis', {}).get('up_probability', 33),
@@ -732,7 +737,7 @@ class CryptoReportAPIView(APIView):
                                                                     mayer_multiple_support_trend=translated_data.get('indicators_analysis', {}).get('mayer_multiple', {}).get('support_trend', 'neutral'),
                                                                     trading_action=trading_advice.get('action', ''),
                                                                     trading_reason=trading_advice.get('reason', ''),
-                                                                    entry_price=trading_advice.get('entry_price', current_price),
+                                                                    entry_price=entry_price,
                                                                     stop_loss=trading_advice.get('stop_loss', 0),
                                                                     take_profit=trading_advice.get('take_profit', 0),
                                                                     risk_level=translated_data.get('risk_assessment', {}).get('level', ''),
@@ -744,7 +749,7 @@ class CryptoReportAPIView(APIView):
                                             logger.error(f"解析消息列表响应失败: {messages_response.text}")
                                         except Exception as e:
                                             logger.error(f"处理消息列表时发生错误: {str(e)}")
-                                            raise  # 重新抛出异常以触发事务回滚
+                                            raise
                                         else:
                                             logger.error(f"获取消息列表失败: HTTP状态码 {messages_response.status_code}")
                                 else:
@@ -758,7 +763,7 @@ class CryptoReportAPIView(APIView):
                         logger.warning(f"获取对话状态连接错误: {str(e)}，重试 {poll_retry_count + 1}/{max_poll_retries}")
                     except Exception as e:
                         logger.error(f"获取对话状态时发生错误: {str(e)}")
-                        raise  # 重新抛出异常以触发事务回滚
+                        raise
 
                     poll_retry_count += 1
                     time.sleep(poll_retry_interval)
@@ -769,11 +774,11 @@ class CryptoReportAPIView(APIView):
 
             except Exception as e:
                 logger.error(f"解析 Coze API 响应时发生错误: {str(e)}", exc_info=True)
-                raise  # 重新抛出异常以触发事务回滚
+                raise
 
         except Exception as e:
             logger.error(f"生成并保存报告时发生错误: {str(e)}", exc_info=True)
-            raise  # 重新抛出异常以触发事务回滚
+            raise
 
     def _build_prompt(self, technical_data: Dict[str, Any], language: str) -> str:
         """构建提示词

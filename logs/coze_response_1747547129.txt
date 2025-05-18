@@ -1,0 +1,70 @@
+{
+  "trend_analysis": {
+    "up_probability": 70,
+    "sideways_probability": 20,
+    "down_probability": 10,
+    "summary": "현재 지표를 고려할 때 시장 트렌드는 상승할 확률이 높습니다."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI 값 78.16은 시장이 과매수 상태에 있으며, 잠재적인 상승 모멘텀을 시사하지만, 조정 가능성에 대한 주의도 필요합니다.",
+      "support_trend": "up"
+    },
+    "macd": {
+      "analysis": "MACD 라인, 시그널 라인, 히스토그램 값이 모두 0에 있어, 강한 트렌드 방향이 없는 중립적인 입장을 나타냅니다.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "볼린저 밴드 값이 제공되지 않아 변동성과 잠재적인 가격 움직임을 평가하기 어렵습니다.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS 값 -0.09는 약간의 약세 심리를 시사하지만, 강한 하락세를 나타낼 정도로 유의미하지 않습니다.",
+      "support_trend": "neutral"
+    },
+    "psy": {
+      "analysis": "PSY 값 50.0은 트레이더들 사이에서 중립적인 심리 상태를 나타내며, 매수나 매도에 대한 명확한 편향이 없습니다.",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI 값 (plus_di, minus_di, adx)이 모두 0에 있어, 방향성 움직임이나 트렌드 강도가 없습니다.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP 값 90012.13이 현재 가격보다 낮아, 자산이 평균 가격보다 높은 가격에 거래되고 있음을 시사하며, 이는 상승 트렌드를 지지합니다.",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "자금 조달률 값 3.8e-05는 양수로, 롱 포지션이 숏 포지션에 지불하고 있음을 나타내며, 이는 일반적으로 상승 트렌드를 지지합니다.",
+      "support_trend": "up"
+    },
+    "exchange_netflow": {
+      "analysis": "거래소 순유입 값 -91.31은 예치된 것보다 더 많은 자산이 거래소에서 인출되고 있음을 나타내며, 이는 트레이더들이 더 높은 가격을 기대하고 자산을 보유하고 있을 가능성이 있어 상승 신호로 볼 수 있습니다.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL 값 15.09는 시장이 이익 상태에 있음을 시사하며, 이는 상승 트렌드의 지속을 지지합니다.",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "메이어 멀티플 값 1.15는 자산이 역사적 평균보다 높은 가격에 거래되고 있음을 나타내며, 이는 상승 트렌드를 지지합니다.",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "buy",
+    "reason": "여러 지표에서 강한 상승 신호가 나타나므로 매수를 권장합니다.",
+    "entry_price": 103481.2,
+    "stop_loss": 99000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 60,
+    "details": [
+      "과매수 상태를 나타내는 높은 RSI",
+      "중립적인 DMI 및 MACD 지표",
+      "긍정적인 자금 조달률 및 거래소 순유입"
+    ]
+  }
+}

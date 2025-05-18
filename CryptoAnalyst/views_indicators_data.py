@@ -8,6 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 import asyncio
 from asgiref.sync import sync_to_async
 from django.utils import timezone
+from datetime import timedelta
 
 from .services.technical_analysis import TechnicalAnalysisService
 from .services.market_data_service import MarketDataService
@@ -148,36 +149,48 @@ class TechnicalIndicatorsDataAPIView(APIView):
                 async def create_technical_analysis():
                     # 使用 Django ORM 的事务管理
                     from django.db import transaction
+                    from django.utils import timezone
+                    from datetime import timedelta
+
+                    # 计算12小时分段起点
+                    now = timezone.now()
+                    period_hour = (now.hour // 12) * 12
+                    period_start = now.replace(minute=0, second=0, microsecond=0, hour=period_hour)
 
                     # 使用 sync_to_async 包装事务操作
                     @sync_to_async
-                    def create_record():
+                    def get_or_create_record():
                         with transaction.atomic():
-                            # 创建技术分析记录
-                            return TechnicalAnalysis.objects.create(
+                            obj, created = TechnicalAnalysis.objects.get_or_create(
                                 token=token,
-                                timestamp=timezone.now(),
-                                rsi=formatted_indicators['rsi'],
-                                macd_line=formatted_indicators['macd_line'],
-                                macd_signal=formatted_indicators['macd_signal'],
-                                macd_histogram=formatted_indicators['macd_histogram'],
-                                bollinger_upper=formatted_indicators['bollinger_upper'],
-                                bollinger_middle=formatted_indicators['bollinger_middle'],
-                                bollinger_lower=formatted_indicators['bollinger_lower'],
-                                bias=formatted_indicators['bias'],
-                                psy=formatted_indicators['psy'],
-                                dmi_plus=formatted_indicators['dmi_plus'],
-                                dmi_minus=formatted_indicators['dmi_minus'],
-                                dmi_adx=formatted_indicators['dmi_adx'],
-                                vwap=formatted_indicators['vwap'],
-                                funding_rate=formatted_indicators['funding_rate'],
-                                exchange_netflow=formatted_indicators['exchange_netflow'],
-                                nupl=formatted_indicators['nupl'],
-                                mayer_multiple=formatted_indicators['mayer_multiple']
+                                period_start=period_start,
+                                defaults={
+                                    'timestamp': now,
+                                    'rsi': formatted_indicators['rsi'],
+                                    'macd_line': formatted_indicators['macd_line'],
+                                    'macd_signal': formatted_indicators['macd_signal'],
+                                    'macd_histogram': formatted_indicators['macd_histogram'],
+                                    'bollinger_upper': formatted_indicators['bollinger_upper'],
+                                    'bollinger_middle': formatted_indicators['bollinger_middle'],
+                                    'bollinger_lower': formatted_indicators['bollinger_lower'],
+                                    'bias': formatted_indicators['bias'],
+                                    'psy': formatted_indicators['psy'],
+                                    'dmi_plus': formatted_indicators['dmi_plus'],
+                                    'dmi_minus': formatted_indicators['dmi_minus'],
+                                    'dmi_adx': formatted_indicators['dmi_adx'],
+                                    'vwap': formatted_indicators['vwap'],
+                                    'funding_rate': formatted_indicators['funding_rate'],
+                                    'exchange_netflow': formatted_indicators['exchange_netflow'],
+                                    'nupl': formatted_indicators['nupl'],
+                                    'mayer_multiple': formatted_indicators['mayer_multiple']
+                                }
                             )
+                            if not created:
+                                logger.info(f"12小时内已有技术分析记录，ID: {obj.id}，不再新建")
+                            return obj
 
                     # 调用包装后的函数
-                    technical_analysis = await create_record()
+                    technical_analysis = await get_or_create_record()
                     return technical_analysis
 
                 # 执行异步函数

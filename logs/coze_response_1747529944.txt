@@ -1,0 +1,66 @@
+{
+  "trend_analysis": {
+    "up_probability": 20,
+    "sideways_probability": 30,
+    "down_probability": 50,
+    "summary": "The market is showing signs of a potential downtrend, with a higher probability for a downward movement based on the current indicators."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI is at 78.02, indicating that the market is overbought and might be due for a correction.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "The MACD line, signal line, and histogram are all at 0, suggesting no clear momentum in either direction.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "Bollinger Bands data is not available, making it difficult to assess volatility.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "The BIAS value is -0.17, indicating a slight bearish sentiment in the market.",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "The PSY value is 50.0, suggesting a balanced market sentiment with no clear direction.",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI values are all at 0, indicating a lack of directional movement.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "The current price is significantly above the VWAP value of 90004.35, indicating a potential overvaluation.",
+      "support_trend": "down"
+    },
+    "funding_rate": {
+      "analysis": "The funding rate is positive at 6.5e-05, suggesting that long positions are paying short positions, which could indicate a slight bullish sentiment.",
+      "support_trend": "up"
+    },
+    "exchange_netflow": {
+      "analysis": "The exchange netflow is -97.04, indicating more outflows from exchanges, which could imply accumulation by investors.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "The NUPL value of 14.99 suggests that the market is in profit, which might lead to profit-taking and a potential price drop.",
+      "support_trend": "down"
+    },
+    "mayer_multiple": {
+      "analysis": "The Mayer Multiple is 1.15, indicating that the price is slightly above the historical average, which could suggest overvaluation.",
+      "support_trend": "down"
+    }
+  },
+  "trading_advice": {
+    "action": "sell",
+    "reason": "Multiple indicators suggest that the market is overbought and due for a correction.",
+    "entry_price": 103379.6,
+    "stop_loss": 105000,
+    "take_profit": 95000
+  },
+  "risk_assessment": {
+    "level": "high",
+    "score": 80,
+    "details": ["High RSI indicating overbought conditions", "Price significantly above VWAP", "Negative NUPL suggesting potential profit-taking"]
+  }
+}

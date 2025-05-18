@@ -1,0 +1,71 @@
+{
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "市場トレンドは混在したシグナルを示しており、わずかに上昇トレンドに傾いています。ただし、横ばいと下降トレンドの確率も高く、潜在的なボラティリティを示しています。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値は78.2で、市場が買われ過ぎの状態にあることを示しています。これにより、反転または調整の可能性が示唆されます。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、ヒストグラムはすべて0で、モメンタムの欠如と中立的な市場状況を示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボリンジャーバンドのデータが提供されていないため、分析は行えません。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS値は-0.07で、市場にわずかな弱気の感情があることを示しています。",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "PSY値は50.0で、強いバイアスのないバランスの取れた市場感情を示しています。",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI値はすべて0で、方向性の動きがなく、中立的な市場状況を示しています。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP値は90012.21で、現在の価格が平均価格を大幅に上回っており、過大評価の可能性を示しています。",
+      "support_trend": "down"
+    },
+    "funding_rate": {
+      "analysis": "資金調達率は3.8e-05で、先物トレーダーの間で強気の感情を示唆しています。",
+      "support_trend": "up"
+    },
+    "exchange_netflow": {
+      "analysis": "取引所の正味流入は-91.26で、より多くの資金が取引所から流出していることを示しており、投資家が保有している可能性があるため強気のシグナルとなります。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL値は15.13で、ホルダーの間で高い利益水準を示しており、売り圧力につながる可能性があります。",
+      "support_trend": "down"
+    },
+    "mayer_multiple": {
+      "analysis": "メイヤーマルチプルは1.15で、価格が歴史的平均を上回っており、過大評価の可能性を示しています。",
+      "support_trend": "down"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "さまざまな指標からの混在したシグナルにより、明確なトレンドが出るまで現在のポジションを維持することをお勧めします。",
+    "entry_price": 103515.2,
+    "stop_loss": 99000.0,
+    "take_profit": 108000.0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 60,
+    "details": [
+      "買われ過ぎの状態を示す高いRSI",
+      "モメンタムの欠如を示す中立的なMACDとDMI",
+      "強気の感情を示す正の資金調達率",
+      "売り圧力の可能性を示す高いNUPL"
+    ]
+  }
+}

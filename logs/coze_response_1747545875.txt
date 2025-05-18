@@ -1,0 +1,70 @@
+{
+  "trend_analysis": {
+    "up_probability": 30,
+    "sideways_probability": 50,
+    "down_probability": 20,
+    "summary": "現在の市場は横ばいの可能性が高く、上昇トレンドの可能性が中程度、下降トレンドの可能性が低いことを示しています。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値が78.14であり、資産が買われ過ぎの領域にあることを示しており、価格修正や統合の可能性を示唆しています。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDラインとシグナルラインが共に0であり、ヒストグラムもないため、モメンタムが欠如し、中立的なトレンドを示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボリンジャーバンドのデータが利用できないため、ボラティリティや潜在的な価格反転を評価するのが難しいです。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS値が-0.1であり、市場に若干の弱気の感情があることを示しています。",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "PSY値が50.0であり、市場の感情がバランスしており、明確な方向性のバイアスがないことを示しています。",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI値がすべて0であり、明確なトレンドの強さや方向性がないことを示しています。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "現在の価格がVWAP値の90011.85を大幅に上回っており、過大評価されている可能性があり、価格の引き戻しの可能性が高いです。",
+      "support_trend": "down"
+    },
+    "funding_rate": {
+      "analysis": "資金調達率が0.00004であり、ロングポジションとショートポジションがバランスしていることを示唆しています。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "取引所の正味流入値が-91.51であり、取引所から引き出される資産が預け入れられる資産より多いことを示しており、投資家による蓄積の可能性を示しています。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL値が15.08であり、大多数の投資家が利益を上げていることを示しており、これは利益確定と潜在的な価格統合を前兆とすることが多いです。",
+      "support_trend": "sideways"
+    },
+    "mayer_multiple": {
+      "analysis": "メイヤーマルチプル値が1.15であり、資産が長期平均と比較して若干過大評価されていることを示しており、価格修正の可能性を示唆しています。",
+      "support_trend": "down"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "さまざまな指標からの混在したシグナルと横ばい市場の可能性が高いため、ポジションを維持し、より明確なトレンドシグナルを待つことをお勧めします。",
+    "entry_price": 103470.0,
+    "stop_loss": 98000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 60,
+    "details": [
+      "買われ過ぎを示す高いRSI",
+      "過大評価を示唆するVWAPを大幅に上回る価格",
+      "蓄積の可能性を示す負の取引所正味流入"
+    ]
+  }
+}

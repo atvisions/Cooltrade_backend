@@ -1,0 +1,66 @@
+{
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "The market shows mixed signals with a slight bias towards an uptrend, but there is significant uncertainty."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI value of 78.07 indicates that the asset is currently overbought, suggesting a potential for a price correction.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "The MACD line, signal line, and histogram are all at 0, indicating a lack of momentum and suggesting a neutral trend.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "Bollinger Bands values are all at 0, making it difficult to derive any meaningful analysis. This indicates a neutral trend.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "The BIAS value of -0.14 suggests a slight bearish sentiment in the market.",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "The PSY value of 50.0 suggests market indecision and a neutral trend.",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "The DMI values are all at 0, indicating no clear directional movement and suggesting a neutral trend.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "The VWAP value of 90003.78 is below the current price, indicating that the asset is trading above its average price, which can be seen as bullish.",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "The funding rate of 7.1e-05 indicates a slight positive sentiment among traders, which can support an upward trend.",
+      "support_trend": "up"
+    },
+    "exchange_netflow": {
+      "analysis": "The exchange netflow of -97.46 suggests that more assets are being withdrawn from exchanges, which can be seen as a bullish signal.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "The NUPL value of 15.03 indicates that the market is in a state of profit, which can support a continued uptrend.",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "The Mayer Multiple value of 1.15 indicates the asset is trading above its historical average, which can be seen as bullish.",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "Mixed signals from technical indicators suggest uncertainty. Holding is recommended until clearer signals emerge.",
+    "entry_price": 103352.9,
+    "stop_loss": 100000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 55,
+    "details": ["Overbought RSI", "Neutral MACD", "Neutral Bollinger Bands", "Slight bearish BIAS", "Neutral PSY", "Neutral DMI", "Positive VWAP", "Positive funding rate", "Positive exchange netflow", "Positive NUPL", "Positive Mayer Multiple"]
+  }
+}

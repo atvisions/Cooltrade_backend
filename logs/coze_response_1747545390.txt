@@ -1,0 +1,66 @@
+{
+  "trend_analysis": {
+    "up_probability": 30,
+    "sideways_probability": 50,
+    "down_probability": 20,
+    "summary": "The market is currently exhibiting a sideways trend with a moderate probability of an uptrend."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "The RSI value of 78.08 indicates that the market is in the overbought region, suggesting a potential for a price correction.",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "The MACD lines and histogram are at zero, indicating a lack of momentum and a neutral trend.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "Bollinger Bands data is not provided, making it difficult to analyze volatility and potential price movements.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "The BIAS value of -0.14 suggests a slight bearish sentiment in the market.",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "The PSY value of 50.0 indicates market indecision, with an equal number of buyers and sellers.",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI values are at zero, indicating a lack of directional movement and a neutral trend.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "The VWAP value of 90011.38 is significantly lower than the current price, indicating that the asset is overvalued.",
+      "support_trend": "down"
+    },
+    "funding_rate": {
+      "analysis": "The funding rate of 4e-05 suggests a slight bullish sentiment among futures traders.",
+      "support_trend": "up"
+    },
+    "exchange_netflow": {
+      "analysis": "A negative exchange netflow of -91.85 indicates more assets are being withdrawn from exchanges, which could be a bullish signal.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "The NUPL value of 15.03 suggests that the market is in a state of profit, which could lead to profit-taking and a potential price drop.",
+      "support_trend": "down"
+    },
+    "mayer_multiple": {
+      "analysis": "The Mayer Multiple value of 1.15 indicates that the asset is slightly overvalued compared to its historical average.",
+      "support_trend": "down"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "The market is currently exhibiting a sideways trend with mixed signals from technical indicators. It is advisable to hold and wait for a clearer trend direction.",
+    "entry_price": null,
+    "stop_loss": null,
+    "take_profit": null
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 55,
+    "details": ["High RSI indicating overbought conditions", "Neutral MACD and DMI", "Overvalued VWAP and Mayer Multiple", "Mixed signals from other indicators"]
+  }
+}

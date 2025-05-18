@@ -1,0 +1,71 @@
+{
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "市場は上昇トレンドの確率が中程度で、横ばいと下降トレンドの確率が同等であることを示しています。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値は70.45で、市場が買われ過ぎの領域にあることを示しています。これは潜在的な反転や調整を示唆する可能性があります。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、およびヒストグラムはすべて0で、勢いがなく明確なトレンドがないことを示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボリンジャーバンドのデータが提供されていないため、ボラティリティや潜在的な価格目標を分析することが困難です。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS値は-0.38で、市場にわずかな弱気の感情があることを示しています。",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "PSY値は50.0で、市場感情が中立で明確な方向性がないことを示しています。",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMIデータが提供されていないため、方向性の動きやトレンドの強さを分析することが困難です。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP値は90037.23で、現在の価格よりも低く、市場が平均値を上回って取引されており、過剰に拡張されている可能性があることを示しています。",
+      "support_trend": "down"
+    },
+    "funding_rate": {
+      "analysis": "資金調達率は4e-05で、ロングポジションがショートポジションに支払っていることを示しており、これは強気の感情を示唆する可能性があります。",
+      "support_trend": "up"
+    },
+    "exchange_netflow": {
+      "analysis": "取引所の正味流入は-40.41で、取引所に入る資産よりも出る資産が多いことを示しており、これは通常、蓄積を示唆する強気のサインです。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL値は14.56で、市場が利益状態にあることを示しており、利益確定と潜在的な価格調整につながる可能性があります。",
+      "support_trend": "down"
+    },
+    "mayer_multiple": {
+      "analysis": "メイヤーマルチプル値は1.14で、市場が歴史的な平均と比較してわずかに過大評価されていることを示しています。",
+      "support_trend": "down"
+    }
+  },
+  "trading_advice": {
+    "action": "wait",
+    "reason": "市場はわずかに弱気の感情を示す混合信号を示しています。取引を行う前に明確な信号を待つことをお勧めします。",
+    "entry_price": 0,
+    "stop_loss": 0,
+    "take_profit": 0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 55,
+    "details": [
+      "RSIは買われ過ぎの状態を示している",
+      "市場はVWAPを上回って取引されている",
+      "資金調達率がプラス",
+      "取引所の正味流入がマイナス"
+    ]
+  }
+}

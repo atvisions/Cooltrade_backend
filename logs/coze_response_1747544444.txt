@@ -1,0 +1,70 @@
+{
+  "trend_analysis": {
+    "up_probability": 60,
+    "sideways_probability": 20,
+    "down_probability": 20,
+    "summary": "由于强劲的RSI和积极的NUPL值，市场显示出更高的上涨概率。然而，其他指标的中性读数表明需要一些谨慎。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI值78.02表明资产目前处于超买状态，建议可能出现价格修正或继续看涨的势头。",
+      "support_trend": "up"
+    },
+    "macd": {
+      "analysis": "MACD值为中性（MACD线、信号线和直方图均为0），表明没有明确的动量方向。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "布林带数据缺失，因此无法进行分析。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS值为-0.17，表明市场情绪略微看跌，但接近中性。",
+      "support_trend": "neutral"
+    },
+    "psy": {
+      "analysis": "PSY值为50.0，表明市场情绪平衡，没有强烈的买入或卖出倾向。",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI值为中性（plus_di、minus_di和adx均为0），表明没有明确的方向性运动。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP值为90004.35，表明当前价格高于平均交易价格，表明看涨情绪。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "正的资金费率为6.5e-05，表明交易者支付费用以维持多头头寸，表明看涨情绪。",
+      "support_trend": "up"
+    },
+    "exchange_netflow": {
+      "analysis": "净流出为-97.04，表明流出交易所的资产多于流入，这可能是看涨信号，因为它表明积累。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL值为14.99，表明市场处于盈利状态，表明看涨情绪。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "Mayer Multiple值为1.15，表明资产交易价格高于历史平均水平，表明看涨情绪。",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "买入",
+    "reason": "RSI、VWAP、资金费率、交易所净流入、NUPL和Mayer Multiple的强烈看涨信号表明潜在的上涨趋势。",
+    "entry_price": 103344.4,
+    "stop_loss": 99000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "中",
+    "score": 60,
+    "details": [
+      "超买的RSI表明可能出现修正",
+      "中性的MACD和DMI表明缺乏强劲的动量",
+      "平衡的PSY表明市场情绪不极端"
+    ]
+  }
+}

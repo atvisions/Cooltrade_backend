@@ -1,0 +1,70 @@
+{
+  "trend_analysis": {
+    "up_probability": 70,
+    "sideways_probability": 20,
+    "down_probability": 10,
+    "summary": "시장 트렌드 분석에 따르면 대부분의 지표가 강세 심리를 시사하여 상승 가능성이 높습니다."
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI가 78.08로 자산이 과매수 구간에 있음을 나타냅니다. 이는 잠재적인 가격 조정이나 통합을 시사할 수 있습니다.",
+      "support_trend": "up"
+    },
+    "macd": {
+      "analysis": "MACD 라인, 시그널 라인, 히스토그램이 모두 0에 있어 명확한 모멘텀 방향이 없습니다. 이는 중립적인 트렌드를 시사합니다.",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "볼린저 밴드 값이 모두 0에 있어 변동성 정보가 부족합니다. 이 지표는 트렌드 분석에 기여하지 않습니다.",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS 값이 -0.14로 약간의 약세 심리를 나타냅니다. 그러나 이는 강한 하락세를 시사할 만큼 중요하지 않습니다.",
+      "support_trend": "neutral"
+    },
+    "psy": {
+      "analysis": "PSY 값이 50.0으로 매수자와 매도자 간의 시장 심리가 균형을 이루고 있음을 나타냅니다.",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI 지표들(plus_di, minus_di, adx)이 모두 0에 있어 명확한 방향성 움직임이 없습니다.",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP가 90011.38로 현재 가격보다 훨씬 낮아 자산이 평균 가치 이상으로 거래되고 있음을 나타내며 강세 심리를 시사할 수 있습니다.",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "자금 조달률이 0.00004로 매우 낮아 약간의 강세 심리를 나타내지만 큰 영향을 미치지 않습니다.",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "거래소 순유입 값이 -91.85로 유입보다 유출이 많아 트레이더들이 자산을 거래소에서 이동시키고 있음을 나타내며 강세 심리를 시사합니다.",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL 값이 15.03으로 대부분의 보유자가 이익을 보고 있음을 나타내며 강세 심리를 시사합니다.",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "메이어 멀티플 값이 1.15로 자산이 역사적 평균 이상으로 거래되고 있음을 나타내며 강세 심리를 시사합니다.",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "buy",
+    "reason": "대부분의 지표가 강세 심리와 높은 상승 가능성을 시사합니다.",
+    "entry_price": 103450.9,
+    "stop_loss": 100000.0,
+    "take_profit": 110000.0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 60,
+    "details": [
+      "과매수 조건을 나타내는 높은 RSI",
+      "중립적인 MACD 및 DMI 지표",
+      "상당한 거래소 순유출"
+    ]
+  }
+}

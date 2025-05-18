@@ -1,0 +1,70 @@
+{
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "市場は混合信号を示しており、高いRSIとポジティブなNUPLにより上昇トレンドへのわずかなバイアスがあります。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値78.11は市場が買われ過ぎの状態にあることを示しており、価格修正の可能性を示唆しています。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、ヒストグラムがすべて0であり、勢いがなく、市場の状態が中立であることを示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボリンジャーバンドのデータが提供されていないため、ボラティリティや潜在的な価格範囲を評価するのが難しいです。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS値-0.12は市場にわずかな弱気の感情があることを示唆しています。",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "PSY値50.0は市場感情が均衡しており、明確な方向性がないことを示しています。",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI値がすべて0であり、市場に方向性の動きやトレンドの強さがないことを示しています。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP値90011.97は現在の価格よりも低く、市場が平均値を上回って取引されていることを示しており、通常は強気のシグナルです。",
+      "support_trend": "up"
+    },
+    "funding_rate": {
+      "analysis": "資金調達率0.00004は、先物トレーダーの間でわずかにポジティブな感情を示しています。",
+      "support_trend": "up"
+    },
+    "exchange_netflow": {
+      "analysis": "取引所の正味流入-91.42は、取引所に入る資金よりも出る資金が多いことを示しており、一般的に蓄積を示す強気のシグナルです。",
+      "support_trend": "up"
+    },
+    "nupl": {
+      "analysis": "NUPL値15.05は市場が利益状態にあることを示しており、強気のシグナルとなりえます。",
+      "support_trend": "up"
+    },
+    "mayer_multiple": {
+      "analysis": "メイヤーマルチプル値1.15は価格が歴史的平均をわずかに上回っていることを示しており、強気のシグナルとなりえます。",
+      "support_trend": "up"
+    }
+  },
+  "trading_advice": {
+    "action": "hold",
+    "reason": "テクニカル指標からの混合信号は慎重なアプローチを示唆しています。一部の指標は強気ですが、高いRSIとネガティブなBIASは価格修正の可能性を示唆しています。",
+    "entry_price": 103443.7,
+    "stop_loss": 98000,
+    "take_profit": 110000
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 60,
+    "details": [
+      "買われ過ぎ状態を示す高いRSI",
+      "強気の感情を示すポジティブなNUPLとVWAP",
+      "勢いの欠如を示す中立のMACDとDMI"
+    ]
+  }
+}

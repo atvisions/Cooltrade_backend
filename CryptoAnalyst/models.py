@@ -73,9 +73,13 @@ class TechnicalAnalysis(models.Model):
     nupl = models.FloatField(null=True)
     mayer_multiple = models.FloatField(null=True)
 
+    # 每12小时唯一分段起点
+    period_start = models.DateTimeField(null=True, default=timezone.now)
+
     class Meta:
         ordering = ['-timestamp']
         get_latest_by = 'timestamp'
+        unique_together = ('token', 'period_start')
 
 # MarketData 模型已移除，使用 AnalysisReport 中的 snapshot_price 作为价格数据
 

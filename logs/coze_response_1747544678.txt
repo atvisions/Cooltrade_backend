@@ -1,0 +1,71 @@
+{
+  "trend_analysis": {
+    "up_probability": 40,
+    "sideways_probability": 30,
+    "down_probability": 30,
+    "summary": "市場のトレンドは明確に定義されていません。上昇トレンドの可能性は中程度ですが、横ばいと下降トレンドの可能性もかなりあります。"
+  },
+  "indicators_analysis": {
+    "rsi": {
+      "analysis": "RSI値が78.02であることは、市場が買われ過ぎの領域にあることを示し、潜在的な反転または統合を示唆しています。",
+      "support_trend": "down"
+    },
+    "macd": {
+      "analysis": "MACDライン、シグナルライン、およびヒストグラムがすべてゼロにあることは、モメンタムの欠如または中立的なトレンドを示しています。",
+      "support_trend": "neutral"
+    },
+    "bollinger_bands": {
+      "analysis": "ボリンジャーバンドのデータが欠如しているため、ボラティリティや潜在的なブレイクアウトポイントを評価するのが難しいです。",
+      "support_trend": "neutral"
+    },
+    "bias": {
+      "analysis": "BIAS値が-0.17であることは、市場にわずかな弱気の感情があることを示しています。",
+      "support_trend": "down"
+    },
+    "psy": {
+      "analysis": "PSY値が50.0であることは、市場の優柔不断を示しており、買われ過ぎでも売られ過ぎでもありません。",
+      "support_trend": "neutral"
+    },
+    "dmi": {
+      "analysis": "DMI値がすべてゼロにあることは、方向性の動きの欠如と中立的なトレンドを示しています。",
+      "support_trend": "neutral"
+    },
+    "vwap": {
+      "analysis": "VWAP値が90004.35であり、現在の価格よりも低いことは、市場が平均価格を上回って取引されており、過大評価されている可能性があることを示しています。",
+      "support_trend": "down"
+    },
+    "funding_rate": {
+      "analysis": "資金調達率が6.5e-05であることは、ロングポジションとショートポジションの間の感情が均衡していることを示しています。",
+      "support_trend": "neutral"
+    },
+    "exchange_netflow": {
+      "analysis": "取引所の正味流入が-97.04であることは、流入よりも流出が多いことを示しており、潜在的な売り圧力を示唆しています。",
+      "support_trend": "down"
+    },
+    "nupl": {
+      "analysis": "NUPL値が14.99であることは、市場が利益確定の領域にあり、売り圧力につながる可能性があることを示しています。",
+      "support_trend": "down"
+    },
+    "mayer_multiple": {
+      "analysis": "メイヤーマルチプル値が1.15であることは、市場が歴史的な平均と比較してわずかに過大評価されていることを示しています。",
+      "support_trend": "down"
+    }
+  },
+  "trading_advice": {
+    "action": "sell",
+    "reason": "複数の指標が買われ過ぎの状態と潜在的な売り圧力を示唆しています。",
+    "entry_price": 103405.2,
+    "stop_loss": 108000.0,
+    "take_profit": 95000.0
+  },
+  "risk_assessment": {
+    "level": "medium",
+    "score": 60,
+    "details": [
+      "買われ過ぎのRSI",
+      "負の取引所正味流入",
+      "わずかに過大評価されたメイヤーマルチプル",
+      "VWAPを上回る市場取引"
+    ]
+  }
+}
