@@ -37,7 +37,6 @@ class CryptoReportAPIView(APIView):
         """初始化 Coze API 配置"""
         # 从 settings 获取 API 密钥
         self.coze_api_key = settings.COZE_API_KEY
-        logger.info(f"使用 settings 中的 API 密钥")
 
         # 从 settings 获取 API URL
         self.coze_api_url = settings.COZE_API_URL
@@ -47,8 +46,6 @@ class CryptoReportAPIView(APIView):
         # 不需要 /api/v3 后缀，因为我们会在构建具体 API 端点时添加 /v3/chat 等
         if self.coze_api_url.endswith('/api/v3'):
             self.coze_api_url = self.coze_api_url.replace('/api/v3', '')
-
-        logger.info(f"使用 API URL: {self.coze_api_url}")
 
     def get(self, request, symbol: str) -> Response:
         """获取加密货币分析报告
@@ -81,15 +78,14 @@ class CryptoReportAPIView(APIView):
             )
 
             # 获取或创建交易对记录
-            token, created = Token.objects.get_or_create(
+            token, _ = Token.objects.get_or_create(
                 symbol=symbol,
                 defaults={
                     'chain': chain,
                     'name': symbol
                 }
             )
-            if created:
-                logger.info(f"创建新交易对记录: {symbol}")
+            # 创建新交易对记录
 
             # 获取最新的技术分析记录（24小时内）
             time_window = timezone.now() - timedelta(hours=24)
@@ -159,7 +155,7 @@ class CryptoReportAPIView(APIView):
             ).first()
 
             if existing_report:
-                logger.info(f"找到与最新技术分析关联的 {language} 报告，直接返回")
+                # 找到与最新技术分析关联的报告，直接返回
                 report_data = self._format_report_data(existing_report)
                 return Response({
                     'status': 'success',
@@ -326,7 +322,7 @@ class CryptoReportAPIView(APIView):
                 # 计算时间差
                 time_diff = timezone.now() - latest_analysis.timestamp
                 if time_diff.total_seconds() < 24 * 60 * 60:
-                    logger.info(f"从数据库获取技术指标数据: {symbol}, ID: {latest_analysis.id}")
+                    # 从数据库获取技术指标数据
 
                     # 获取实时价格
                     current_price = 0
@@ -397,7 +393,7 @@ class CryptoReportAPIView(APIView):
                     }
 
             # 如果没有找到最新的技术分析记录，或者时间超过24小时，调用 API 获取
-            logger.info(f"数据库中没有找到最新的技术指标数据，调用 API 获取: {symbol}")
+            # 数据库中没有找到最新的技术指标数据，调用 API 获取
 
             # 使用 TechnicalIndicatorsAPIView 获取数据
             # 创建一个模拟的请求对象
@@ -410,9 +406,6 @@ class CryptoReportAPIView(APIView):
             if hasattr(self, 'request') and hasattr(self.request, '_request'):
                 mock_request._request = self.request._request
 
-            # 添加日志记录
-            logger.info(f"获取技术指标数据: {symbol}")
-
             # 确保 technical_indicators_view 已初始化并设置为内部调用
             if not hasattr(self, 'technical_indicators_view') or self.technical_indicators_view is None:
                 self.technical_indicators_view = TechnicalIndicatorsDataAPIView(internal_call=True)
@@ -421,12 +414,8 @@ class CryptoReportAPIView(APIView):
 
             response = self.technical_indicators_view.get(mock_request, symbol)
 
-            # 添加日志记录
-            logger.info(f"技术指标数据响应状态码: {response.status_code}")
-
             if response.status_code == status.HTTP_200_OK:
                 data = response.data.get('data', {})
-                logger.info(f"成功获取技术指标数据: {symbol}")
 
                 # 如果返回的数据中没有 current_price，尝试获取实时价格
                 if 'current_price' not in data:
@@ -445,7 +434,7 @@ class CryptoReportAPIView(APIView):
                         # 如果获取到价格，添加到数据中
                         if current_price:
                             data['current_price'] = current_price
-                            logger.info(f"成功获取实时价格: {current_price}")
+                            # 成功获取实时价格
                     except Exception as e:
                         logger.error(f"获取实时价格失败: {str(e)}")
 
@@ -746,41 +735,45 @@ class CryptoReportAPIView(APIView):
                                                                 )
                                                                 return translated_report
                                         except json.JSONDecodeError:
-                                            logger.error(f"解析消息列表响应失败: {messages_response.text}")
-                                        except Exception as e:
-                                            logger.error(f"处理消息列表时发生错误: {str(e)}")
-                                            raise
+                                            pass
+                                        except Exception:
+                                            pass
                                         else:
-                                            logger.error(f"获取消息列表失败: HTTP状态码 {messages_response.status_code}")
+                                            # 获取消息列表失败
+                                            pass
                                 else:
-                                    logger.warning(f"获取对话状态响应错误: {status_data}")
+                                    # 获取对话状态响应错误
+                                    pass
                         else:
-                            logger.error(f"获取对话状态失败: HTTP状态码 {status_response.status_code}")
+                            # 获取对话状态失败
+                            pass
 
                     except requests.exceptions.Timeout:
-                        logger.warning(f"获取对话状态超时，重试 {poll_retry_count + 1}/{max_poll_retries}")
-                    except requests.exceptions.ConnectionError as e:
-                        logger.warning(f"获取对话状态连接错误: {str(e)}，重试 {poll_retry_count + 1}/{max_poll_retries}")
-                    except Exception as e:
-                        logger.error(f"获取对话状态时发生错误: {str(e)}")
-                        raise
+                        # 获取对话状态超时，重试
+                        pass
+                    except requests.exceptions.ConnectionError:
+                        # 获取对话状态连接错误，重试
+                        pass
+                    except Exception:
+                        # 获取对话状态时发生错误
+                        pass
 
                     poll_retry_count += 1
                     time.sleep(poll_retry_interval)
                     poll_retry_interval = min(poll_retry_interval * 1.5, max_poll_retry_interval)
 
-                logger.error("轮询Coze API未获得有效响应")
+                # 轮询Coze API未获得有效响应
                 return None
 
-            except Exception as e:
-                logger.error(f"解析 Coze API 响应时发生错误: {str(e)}", exc_info=True)
-                raise
+            except Exception:
+                # 解析 Coze API 响应时发生错误
+                return None
 
-        except Exception as e:
-            logger.error(f"生成并保存报告时发生错误: {str(e)}", exc_info=True)
-            raise
+        except Exception:
+            # 生成并保存报告时发生错误
+            return None
 
-    def _build_prompt(self, technical_data: Dict[str, Any], language: str) -> str:
+    def _build_prompt(self, technical_data: Dict[str, Any], _: str) -> str:
         """构建提示词
 
         由于 Coze 已经配置了提示语，我们只需要提交技术参数就可以了
@@ -840,12 +833,9 @@ class CryptoReportAPIView(APIView):
             import json
             formatted_str = json.dumps(formatted_data, ensure_ascii=False, indent=2)
 
-            # 打印提交给Coze的技术指标数据
-            logger.info(f"提交给Coze的技术指标数据: {formatted_str}")
-
             return formatted_str
-        except Exception as e:
-            logger.error(f"格式化技术指标数据时发生错误: {str(e)}", exc_info=True)
+        except Exception:
+            # 格式化技术指标数据时发生错误
             # 如果格式化失败，直接返回原始数据的字符串表示
             return str(technical_data)
 
@@ -854,47 +844,38 @@ class CryptoReportAPIView(APIView):
         try:
             # 日语格式处理
             if "上昇確率" in content:
-                logger.info("处理日语 JSON 格式")
                 # 尝试提取日语 JSON 对象
-                import re
                 ja_pattern = r'\{"上昇確率":[^}]*,"横ばい確率":[^}]*,"下降確率":[^}]*,"トレンド概要":"[^"]*"\}'
                 match = re.search(ja_pattern, content)
                 if match:
                     ja_json = match.group(0)
-                    logger.info(f"提取的日语 JSON: {ja_json}")
                     return json.loads(ja_json)
 
             # 韩语格式处理
             elif "상승 확률" in content:
-                logger.info("处理韩语 JSON 格式")
                 # 尝试提取韩语 JSON 对象
                 ko_pattern = r'\{"상승 확률":[^}]*,"횡보 확률":[^}]*,"하락 확률":[^}]*,"트렌드 요약":"[^"]*"\}'
                 match = re.search(ko_pattern, content)
                 if match:
                     ko_json = match.group(0)
-                    logger.info(f"提取的韩语 JSON: {ko_json}")
                     return json.loads(ko_json)
 
             # 中文格式处理
             elif "上涨概率" in content:
-                logger.info("处理中文 JSON 格式")
                 # 尝试提取中文 JSON 对象
                 zh_pattern = r'\{"上涨概率":[^}]*,"横盘概率":[^}]*,"下跌概率":[^}]*,"趋势总结":"[^"]*"\}'
                 match = re.search(zh_pattern, content)
                 if match:
                     zh_json = match.group(0)
-                    logger.info(f"提取的中文 JSON: {zh_json}")
                     return json.loads(zh_json)
 
             # 英文格式处理
             elif "up_probability" in content:
-                logger.info("处理英文 JSON 格式")
                 # 尝试提取英文 JSON 对象
                 en_pattern = r'\{"up_probability":[^}]*,"sideways_probability":[^}]*,"down_probability":[^}]*,"trend_summary":"[^"]*"\}'
                 match = re.search(en_pattern, content)
                 if match:
                     en_json = match.group(0)
-                    logger.info(f"提取的英文 JSON: {en_json}")
                     return json.loads(en_json)
 
             return None
@@ -908,34 +889,19 @@ class CryptoReportAPIView(APIView):
             # 保存原始内容到文件，方便调试
             self._save_coze_response_to_file(content)
 
-            # 添加语言检测日志
-            logger.info("=== 开始分析 Coze 返回的原始数据 ===")
-            logger.info(f"原始内容长度: {len(content)}")
-            logger.info(f"原始内容前500个字符: {content[:500]}")
-
-            # 检测语言
-            if "上昇確率" in content or "トレンド概要" in content:
-                logger.info("检测到日语内容")
-            elif "상승 확률" in content or "트렌드 요약" in content:
-                logger.info("检测到韩语内容")
-            elif "上涨概率" in content or "趋势总结" in content:
-                logger.info("检测到中文内容")
-            elif "up_probability" in content or "trend_summary" in content:
-                logger.info("检测到英文内容")
+            # 检测语言（无需记录日志）
 
             # 首先尝试语言特定的 JSON 处理
             language_specific_result = self._handle_language_specific_json(content)
             if language_specific_result:
-                logger.info("成功使用语言特定的 JSON 处理")
                 return self._convert_chinese_to_english_fields(language_specific_result)
 
             # 如果语言特定的处理失败，尝试直接解析
             try:
                 analysis_result = json.loads(content)
-                logger.info(f"从内容中直接提取的分析结果: {json.dumps(analysis_result, ensure_ascii=False, indent=2)}")
                 return self._convert_chinese_to_english_fields(analysis_result)
-            except json.JSONDecodeError as e:
-                logger.warning(f"直接解析JSON失败，尝试修复JSON格式: {str(e)}")
+            except json.JSONDecodeError:
+                # 直接解析JSON失败，尝试修复JSON格式
                 try:
                     # 尝试修复JSON格式
                     # 1. 移除可能的markdown代码块标记
@@ -1027,8 +993,6 @@ class CryptoReportAPIView(APIView):
                     for potential_json in potential_jsons:
                         try:
                             analysis_result = json.loads(potential_json)
-                            logger.info(f"使用正则表达式提取的分析结果: {json.dumps(analysis_result, ensure_ascii=False, indent=2)}")
-
                             # 检查是否是有意义的JSON（至少包含一些关键字段）
                             if any(key in analysis_result for key in ["上昇確率", "上涨概率", "상승 확률", "市場トレンド分析", "市场趋势分析", "시장 트렌드 분석"]):
                                 return self._convert_chinese_to_english_fields(analysis_result)
@@ -1051,7 +1015,6 @@ class CryptoReportAPIView(APIView):
                                 # 修复可能的JSON格式问题
                                 trend_json = trend_json.replace('""', '"')
                                 analysis_result = json.loads(trend_json)
-                                logger.info(f"提取到趋势分析部分: {json.dumps(analysis_result, ensure_ascii=False, indent=2)}")
                                 return self._convert_chinese_to_english_fields(analysis_result)
                             except json.JSONDecodeError:
                                 continue
@@ -1059,7 +1022,6 @@ class CryptoReportAPIView(APIView):
                     # 5. 尝试解析修复后的JSON
                     try:
                         analysis_result = json.loads(fixed_content)
-                        logger.info(f"修复后提取的分析结果: {json.dumps(analysis_result, ensure_ascii=False, indent=2)}")
                         return self._convert_chinese_to_english_fields(analysis_result)
                     except json.JSONDecodeError:
                         # 6. 尝试使用更宽松的JSON解析器
@@ -1068,19 +1030,19 @@ class CryptoReportAPIView(APIView):
                             try:
                                 import json5
                                 analysis_result = json5.loads(fixed_content)
-                                logger.info(f"使用json5提取的分析结果: {json.dumps(analysis_result, ensure_ascii=False, indent=2)}")
                                 return self._convert_chinese_to_english_fields(analysis_result)
                             except ImportError:
-                                logger.warning("json5库未安装，尝试其他方法")
+                                # json5库未安装，尝试其他方法
+                                pass
 
                             # 尝试使用 demjson3 库（另一个宽松的JSON解析器）
                             try:
                                 import demjson3
                                 analysis_result = demjson3.decode(fixed_content)
-                                logger.info(f"使用demjson3提取的分析结果: {json.dumps(analysis_result, ensure_ascii=False, indent=2)}")
                                 return self._convert_chinese_to_english_fields(analysis_result)
                             except ImportError:
-                                logger.warning("demjson3库未安装，尝试其他方法")
+                                # demjson3库未安装，尝试其他方法
+                                pass
 
                             # 尝试使用 ast.literal_eval（Python内置的安全求值函数）
                             try:
@@ -1088,49 +1050,31 @@ class CryptoReportAPIView(APIView):
                                 # 将JSON格式的字符串转换为Python字典
                                 fixed_content = fixed_content.replace('null', 'None').replace('true', 'True').replace('false', 'False')
                                 analysis_result = ast.literal_eval(fixed_content)
-                                logger.info(f"使用ast.literal_eval提取的分析结果: {json.dumps(analysis_result, ensure_ascii=False, indent=2)}")
                                 return self._convert_chinese_to_english_fields(analysis_result)
                             except (SyntaxError, ValueError):
-                                logger.warning("ast.literal_eval解析失败")
-                        except Exception as e:
-                            logger.warning(f"所有宽松JSON解析器都失败: {str(e)}")
+                                # ast.literal_eval解析失败
+                                pass
+                        except Exception:
+                            # 所有宽松JSON解析器都失败
+                            pass
 
                     # 7. 如果所有尝试都失败，创建一个默认的分析结果
-                    logger.error("所有JSON修复尝试都失败，使用默认分析结果")
                     default_result = self._create_default_analysis_result()
                     return default_result
 
-                except Exception as fix_error:
-                    logger.error(f"修复JSON格式失败: {str(fix_error)}")
-                    # 创建一个默认的分析结果
+                except Exception:
+                    # 修复JSON格式失败，创建一个默认的分析结果
                     default_result = self._create_default_analysis_result()
                     return default_result
 
-        except Exception as e:
-            logger.error(f"处理语言特定 JSON 时发生错误: {str(e)}")
+        except Exception:
+            # 处理语言特定 JSON 时发生错误
             return None
 
-    def _save_coze_response_to_file(self, content: str) -> None:
+    def _save_coze_response_to_file(self, _: str) -> None:
         """保存Coze响应内容到文件"""
-        try:
-            import os
-            import time
-
-            # 创建日志目录
-            log_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'logs')
-            os.makedirs(log_dir, exist_ok=True)
-
-            # 生成文件名
-            timestamp = int(time.time())
-            log_file = os.path.join(log_dir, f'coze_response_{timestamp}.txt')
-
-            # 写入文件
-            with open(log_file, 'w', encoding='utf-8') as f:
-                f.write(content)
-
-            logger.info(f"已保存Coze原始响应到文件: {log_file}")
-        except Exception as e:
-            logger.error(f"保存Coze响应到文件时发生错误: {str(e)}")
+        # 此功能已禁用，不再保存响应到文件
+        pass
 
     def _create_default_analysis_result(self) -> Dict[str, Any]:
         """创建默认的分析结果"""
@@ -1206,13 +1150,11 @@ class CryptoReportAPIView(APIView):
         try:
             # 检查是否已经是英文格式
             if "trend_analysis" in analysis_result:
-                logger.info("数据已经是英文格式，无需转换")
                 return analysis_result
 
             # 检查是否是部分提取的JSON数据
             # 如果只有趋势分析部分，创建一个完整的结构
             if "上昇確率" in analysis_result or "上涨概率" in analysis_result or "상승 확률" in analysis_result:
-                logger.info("检测到部分提取的JSON数据，创建完整结构")
 
                 # 创建一个默认的完整结构
                 complete_result = self._create_default_analysis_result()
@@ -1450,10 +1392,9 @@ class CryptoReportAPIView(APIView):
                     }
                     break
 
-            logger.info(f"转换后的分析结果: {json.dumps(converted_result, ensure_ascii=False, indent=2)}")
             return converted_result
-        except Exception as e:
-            logger.error(f"转换中文字段名时发生错误: {str(e)}", exc_info=True)
+        except Exception:
+            # 转换中文字段名时发生错误
             return analysis_result
 
     def _translate_report(self, token: Token, english_report: AnalysisReport, target_language: str) -> Optional[AnalysisReport]:
@@ -1479,7 +1420,6 @@ class CryptoReportAPIView(APIView):
 
             # 调用 Coze API 创建对话
             chat_url = f"{self.coze_api_url}/v3/chat"
-            logger.info(f"调用 Coze API 创建翻译对话: {chat_url}")
 
             # 构建请求体
             payload = {
@@ -1513,14 +1453,12 @@ class CryptoReportAPIView(APIView):
             )
 
             if response.status_code != 200:
-                logger.error(f"Coze API 调用失败: {response.status_code} - {response.text}")
                 return None
 
             # 解析响应
             try:
                 response_data = response.json()
                 if response_data.get('code') != 0:
-                    logger.error(f"Coze API 响应错误: {response_data}")
                     return None
 
                 # 获取对话ID和会话ID
@@ -1529,7 +1467,6 @@ class CryptoReportAPIView(APIView):
                 conversation_id = data.get('conversation_id')
 
                 if not chat_id or not conversation_id:
-                    logger.error("创建对话响应中缺少必要的ID")
                     return None
 
                 # 轮询获取对话结果
@@ -1591,7 +1528,6 @@ class CryptoReportAPIView(APIView):
                                                 elif isinstance(messages_data.get('data'), list):
                                                     messages = messages_data.get('data', [])
                                                 else:
-                                                    logger.error(f"无法解析消息列表格式: {messages_data}")
                                                     continue
 
                                                 for message in messages:
@@ -1645,9 +1581,9 @@ class CryptoReportAPIView(APIView):
                                                                 )
                                                                 return translated_report
                                         except json.JSONDecodeError:
-                                            logger.error(f"解析消息列表响应失败: {messages_response.text}")
-                                        except Exception as e:
-                                            logger.error(f"处理消息列表时发生错误: {str(e)}")
+                                            pass
+                                        except Exception:
+                                            pass
                                     else:
                                         logger.error(f"获取消息列表失败: HTTP状态码 {messages_response.status_code}")
                             else:

@@ -9,14 +9,10 @@ import asyncio
 from asgiref.sync import sync_to_async
 from django.utils import timezone
 import time
-import logging
 
 from .services.technical_analysis import TechnicalAnalysisService
 from .services.market_data_service import MarketDataService
 from .models import Token, Chain, AnalysisReport, TechnicalAnalysis
-
-# 配置日志
-logger = logging.getLogger(__name__)
 
 class TechnicalIndicatorsAPIView(APIView):
     """技术指标API视图
@@ -46,14 +42,12 @@ class TechnicalIndicatorsAPIView(APIView):
 
             # 获取语言参数
             language = request.GET.get('language', 'zh-CN')
-            logger.info(f"请求的语言: {language}")
 
             # 支持的语言列表
             supported_languages = ['zh-CN', 'en-US', 'ja-JP', 'ko-KR']
 
             # 验证语言支持
             if language not in supported_languages:
-                logger.warning(f"不支持的语言: {language}，使用默认语言 zh-CN")
                 language = 'zh-CN'
 
             # 统一 symbol 格式，去除常见后缀
@@ -70,14 +64,6 @@ class TechnicalIndicatorsAPIView(APIView):
                 token = await sync_to_async(token_qs.first)()
 
             if not token:
-                # 记录日志，帮助调试
-                logger.error(f"未找到代币记录，尝试查找的符号: {symbol.upper()} 和 {clean_symbol}")
-
-                # 查看数据库中有哪些代币记录
-                all_tokens = await sync_to_async(list)(Token.objects.all())
-                token_symbols = [t.symbol for t in all_tokens]
-                logger.info(f"数据库中的代币记录: {token_symbols}")
-
                 return Response({
                     'status': 'not_found',
                     'message': f"未找到代币 {symbol} 的分析数据",
@@ -213,7 +199,6 @@ class TechnicalIndicatorsAPIView(APIView):
             return Response(response_data)
 
         except Exception as e:
-            logger.error(f"处理请求时发生错误: {str(e)}")
             return Response({
                 'status': 'error',
                 'message': f"处理请求失败: {str(e)}",

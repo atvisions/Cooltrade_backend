@@ -22,7 +22,6 @@ pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(f"[DEBUG Settings] BASE_DIR for .env: {BASE_DIR}")
 
 
 # Quick-start development settings - unsuitable for production
@@ -260,12 +259,6 @@ COZE_BOT_ID_ZH = os.getenv('COZE_BOT_ID_ZH', '7504984466486984721')  # 中文 Bo
 COZE_BOT_ID_EN = os.getenv('COZE_BOT_ID_EN', '7504983775349489680')  # 英文 Bot ID
 COZE_BOT_ID_JA = os.getenv('COZE_BOT_ID_JA', '7504985637318475792')  # 日文 Bot ID
 COZE_BOT_ID_KO = os.getenv('COZE_BOT_ID_KO', '7504984181148581905')  # 韩文 Bot ID
-
-# 打印 Coze Bot ID，用于调试
-print(f"[DEBUG Settings] COZE_BOT_ID_ZH: {COZE_BOT_ID_ZH}")
-print(f"[DEBUG Settings] COZE_BOT_ID_EN: {COZE_BOT_ID_EN}")
-print(f"[DEBUG Settings] COZE_BOT_ID_JA: {COZE_BOT_ID_JA}")
-print(f"[DEBUG Settings] COZE_BOT_ID_KO: {COZE_BOT_ID_KO}")
 
 # 日志配置
 LOGGING = {

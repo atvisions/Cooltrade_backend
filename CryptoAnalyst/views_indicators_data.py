@@ -13,7 +13,6 @@ from datetime import timedelta
 from .services.technical_analysis import TechnicalAnalysisService
 from .services.market_data_service import MarketDataService
 from .models import Token, AnalysisReport, TechnicalAnalysis
-from .utils import logger
 
 
 class TechnicalIndicatorsDataAPIView(APIView):
@@ -58,18 +57,8 @@ class TechnicalIndicatorsDataAPIView(APIView):
                 token = await sync_to_async(token_qs.first)()
 
             if not token:
-                # 记录日志，帮助调试
-                logger.error(f"未找到代币记录，尝试查找的符号: {symbol.upper()} 和 {clean_symbol}")
-
-                # 查看数据库中有哪些代币记录
-                all_tokens = await sync_to_async(list)(Token.objects.all())
-                token_symbols = [t.symbol for t in all_tokens]
-                logger.info(f"数据库中的代币记录: {token_symbols}")
-
                 # 如果数据库中没有代币记录，尝试创建一个
-                if not all_tokens:
-                    logger.info(f"数据库中没有代币记录，尝试创建一个: {symbol.upper()}")
-
+                if not await sync_to_async(list)(Token.objects.all()):
                     # 创建默认链
                     from .models import Chain
                     chain_qs = await sync_to_async(Chain.objects.get_or_create)(
@@ -91,7 +80,6 @@ class TechnicalIndicatorsDataAPIView(APIView):
                     )
                     token = token_qs[0]
 
-                    logger.info(f"成功创建代币记录: {token.symbol}")
                 else:
                     return Response({
                         'status': 'error',
@@ -105,18 +93,13 @@ class TechnicalIndicatorsDataAPIView(APIView):
             # 如果技术指标数据中没有当前价格，尝试从 Gate API 获取
             if not current_price:
                 try:
-                    # 确保 ta_service 已初始化
-                    if self.ta_service is None:
-                        self.ta_service = TechnicalAnalysisService()
-
                     # 获取实时价格
                     current_price = await sync_to_async(self.ta_service.gate_api.get_realtime_price)(symbol)
 
                     # 如果仍然无法获取价格，使用默认值
                     if not current_price:
                         current_price = 0
-                except Exception as e:
-                    logger.error(f"获取实时价格失败: {str(e)}")
+                except Exception:
                     current_price = 0
 
             # 使用当前价格
@@ -186,8 +169,7 @@ class TechnicalIndicatorsDataAPIView(APIView):
                                 }
                             )
                             if not created:
-                                logger.info(f"12小时内已有技术分析记录，ID: {obj.id}，不再新建")
-                            return obj
+                                return obj
 
                     # 调用包装后的函数
                     technical_analysis = await get_or_create_record()
@@ -195,10 +177,9 @@ class TechnicalIndicatorsDataAPIView(APIView):
 
                 # 执行异步函数
                 technical_analysis = await create_technical_analysis()
-                logger.info(f"成功保存技术指标数据: {symbol}, ID: {technical_analysis.id}")
-            except Exception as e:
-                logger.error(f"保存技术指标数据失败: {str(e)}")
+            except Exception:
                 # 即使保存失败，仍然返回数据，不影响 API 响应
+                pass
 
             return Response({
                 'status': 'success',
@@ -209,11 +190,10 @@ class TechnicalIndicatorsDataAPIView(APIView):
                 }
             })
 
-        except Exception as e:
-            logger.error(f"获取技术指标数据失败: {str(e)}")
+        except Exception:
             return Response({
                 'status': 'error',
-                'message': str(e)
+                'message': '获取技术指标数据失败'
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def get(self, request, symbol: str):
