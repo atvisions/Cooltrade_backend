@@ -114,8 +114,8 @@ class SendVerificationCodeView(APIView):
             )
 
             # 发送邮件
-            subject = 'K线军师 - 验证码'
-            message = settings.EMAIL_TEMPLATE.format(code=code)
+            subject = 'Cooltrade Verification Code'
+            html_message = settings.EMAIL_TEMPLATE.format(code=code)
             from_email = settings.DEFAULT_FROM_EMAIL
             recipient_list = [email]
 
@@ -124,7 +124,7 @@ class SendVerificationCodeView(APIView):
                 logger.info(f"使用邮箱: {settings.EMAIL_HOST_USER}")
                 logger.info(f"使用服务器: {settings.EMAIL_HOST}:{settings.EMAIL_PORT}")
 
-                send_mail(subject, message, from_email, recipient_list)
+                send_mail(subject, '', from_email, recipient_list, html_message=html_message)
                 logger.info(f"成功发送验证码到 {email}")
 
                 return Response({
@@ -479,25 +479,14 @@ class RequestPasswordResetView(APIView):
             )
 
             # 发送邮件
-            subject = '重置您的密码 - K线军师'
-            message = f"""
-尊敬的用户：
-
-您的验证码是：{code}
-
-验证码有效期为10分钟，请尽快使用验证码重置您的密码。
-
-如果这不是您的操作，请忽略此邮件。
-
-K线军师团队
-"""
-
-            # 发送邮件
+            subject = 'Cooltrade Verification Code'
+            html_message = settings.EMAIL_TEMPLATE.format(code=code)
             send_mail(
                 subject,
-                message,
+                '',
                 settings.DEFAULT_FROM_EMAIL,
                 [email],
+                html_message=html_message,
                 fail_silently=False,
             )
 

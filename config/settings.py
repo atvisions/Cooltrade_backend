@@ -179,17 +179,37 @@ EMAIL_DEBUG = True
 EMAIL_TIMEOUT = 30  # 设置超时时间
 
 # 邮件模板
-EMAIL_TEMPLATE = """
-尊敬的用户：
-
-您的验证码是：{code}
-
-验证码有效期为10分钟，请尽快使用。
-
-如果这不是您的操作，请忽略此邮件。
-
-K线军师团队
-"""
+EMAIL_TEMPLATE = '''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cooltrade Verification Code</title>
+  <style>
+    body {{ background: #f6f8fa; font-family: system-ui, Arial, sans-serif; color: #222; margin: 0; padding: 0; }}
+    .container {{ max-width: 420px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px #0001; padding: 32px 28px 24px 28px; }}
+    .logo {{ display: flex; justify-content: center; margin-bottom: 18px; }}
+    .logo img {{ width: 56px; height: 56px; border-radius: 12px; box-shadow: 0 2px 8px #0002; }}
+    .brand {{ text-align: center; font-size: 1.6rem; font-weight: 700; color: #f97316; margin-bottom: 18px; letter-spacing: 1px; }}
+    .code-box {{ background: linear-gradient(90deg, #f97316 0%, #f43f5e 100%); color: #fff; font-size: 2.2rem; font-weight: bold; letter-spacing: 6px; text-align: center; border-radius: 10px; padding: 18px 0; margin: 18px 0 24px 0; }}
+    .desc {{ font-size: 1.1rem; color: #444; text-align: center; margin-bottom: 18px; }}
+    .footer {{ color: #888; font-size: 0.95rem; text-align: center; margin-top: 32px; }}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="https://www.cooltrade.xyz/icons/icon128.png" alt="Cooltrade Logo" />
+    </div>
+    <div class="brand">Cooltrade</div>
+    <div class="desc">Your verification code is:</div>
+    <div class="code-box">{code}</div>
+    <div class="desc">This code is valid for 10 minutes. Please do not share it with anyone.<br>If you did not request this code, please ignore this email.</div>
+    <div class="footer">&copy; 2024 Cooltrade. All rights reserved.</div>
+  </div>
+</body>
+</html>
+'''
 
 # REST Framework配置
 REST_FRAMEWORK = {
