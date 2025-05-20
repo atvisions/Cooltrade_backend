@@ -147,23 +147,47 @@ class CryptoReportAPIView(APIView):
                     }
                 )
 
-            # 查询是否已有与该技术分析关联的报告
-            existing_report = AnalysisReport.objects.filter(
+            # 查询是否已有与该技术分析关联的英文报告
+            latest_english_report = AnalysisReport.objects.filter(
                 token=token,
-                language=language,
+                language='en-US',
                 technical_analysis=latest_analysis
             ).first()
 
-            if existing_report:
-                # 找到与最新技术分析关联的报告，直接返回
-                report_data = self._format_report_data(existing_report)
-                return Response({
-                    'status': 'success',
-                    'data': {
-                        'symbol': symbol,
-                        'reports': [report_data]
-                    }
-                })
+            # 如果请求的是英文报告，直接返回最新的英文报告（如果有）
+            if language == 'en-US':
+                if latest_english_report:
+                    # 找到与最新技术分析关联的英文报告，直接返回
+                    report_data = self._format_report_data(latest_english_report)
+                    return Response({
+                        'status': 'success',
+                        'data': {
+                            'symbol': symbol,
+                            'reports': [report_data]
+                        }
+                    })
+            else:
+                # 如果请求的是非英文报告，检查是否有基于最新英文报告的对应语言报告
+                if latest_english_report:
+                    # 查找基于最新英文报告的对应语言报告
+                    # 使用英文报告的时间戳作为参考，确保非英文报告是在英文报告之后生成的
+                    existing_report = AnalysisReport.objects.filter(
+                        token=token,
+                        language=language,
+                        technical_analysis=latest_analysis,
+                        timestamp__gte=latest_english_report.timestamp  # 确保是基于最新英文报告生成的
+                    ).first()
+
+                    if existing_report:
+                        # 找到基于最新英文报告的对应语言报告，直接返回
+                        report_data = self._format_report_data(existing_report)
+                        return Response({
+                            'status': 'success',
+                            'data': {
+                                'symbol': symbol,
+                                'reports': [report_data]
+                            }
+                        })
 
             # 没有则生成新报告
             if language == 'en-US':
@@ -176,23 +200,30 @@ class CryptoReportAPIView(APIView):
                     }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
                 report = self._generate_and_save_report(token, technical_data, language)
             else:
-                # 非英文报告，先查英文报告
-                english_report = AnalysisReport.objects.filter(
-                    token=token,
-                    language='en-US',
-                    technical_analysis=latest_analysis
-                ).first()
-                if not english_report:
-                    # 没有英文报告则先生成英文报告
+                # 非英文报告，总是基于最新的英文报告
+                # 如果前面的代码已经找到了最新的英文报告，直接使用
+                if not latest_english_report:
+                    # 没有找到最新的英文报告，需要生成
                     technical_data = self._get_technical_data(symbol)
                     if not technical_data:
                         return Response({
                             'status': 'error',
                             'message': '获取技术指标数据失败'
                         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-                    english_report = self._generate_and_save_report(token, technical_data, 'en-US')
-                # 翻译英文报告
-                report = self._translate_report(token, english_report, language)
+                    latest_english_report = self._generate_and_save_report(token, technical_data, 'en-US')
+
+                # 确保我们有英文报告
+                if not latest_english_report:
+                    return Response({
+                        'status': 'error',
+                        'message': '生成英文报告失败，无法翻译'
+                    }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+                # 翻译最新的英文报告
+                report = self._translate_report(token, latest_english_report, language)
+
+                # 记录日志
+                logger.info(f"基于最新英文报告 (ID: {latest_english_report.id}, 时间: {latest_english_report.timestamp}) 生成 {language} 报告")
 
             if not report:
                 return Response({
@@ -448,7 +479,7 @@ class CryptoReportAPIView(APIView):
 
     @transaction.atomic
     def _generate_and_save_report(self, token: Token, technical_data: Dict[str, Any], language: str) -> Optional[Dict[str, Any]]:
-        """生成并保存分析报告"""
+        """生成并保存分析报告，包含自我修复功能"""
         try:
             # 获取当前价格，确保不为空
             current_price = technical_data.get('current_price', 0)
@@ -506,14 +537,29 @@ class CryptoReportAPIView(APIView):
                     }
                 )
 
-            # 构建提示词
-            prompt = self._build_prompt(technical_data, language)
+            # 查找上一份报告（同一代币、同一语言，最近7天内）
+            time_window = timezone.now() - timedelta(days=7)
+            previous_report = AnalysisReport.objects.filter(
+                token=token,
+                language=language,
+                timestamp__gte=time_window
+            ).order_by('-timestamp').first()
 
             # 获取对应语言的 Bot ID
             bot_id = self.COZE_BOT_IDS.get(language)
             if not bot_id:
                 logger.error(f"未找到语言 {language} 对应的 Coze Bot ID")
                 return None
+
+            # 如果有上一份报告，构建优化提示
+            if previous_report and language == 'en-US':  # 只对英文报告进行自我修复
+                logger.info(f"找到上一份报告 ID: {previous_report.id}，时间: {previous_report.timestamp}，将进行自我修复")
+                prompt = self._build_optimization_prompt(technical_data, previous_report, language)
+                logger.info("已构建优化提示词，包含上一份报告的内容和技术指标变化")
+            else:
+                if language == 'en-US':
+                    logger.info(f"没有找到上一份报告，将生成全新的报告")
+                prompt = self._build_prompt(technical_data, language)
 
             # 调用 Coze API 创建对话
             chat_url = f"{self.coze_api_url}/v3/chat"
@@ -692,6 +738,11 @@ class CryptoReportAPIView(APIView):
                                                                     entry_price = current_price
 
                                                                 # 创建新的分析报告
+                                                                # 记录是否是自我修复的报告
+                                                                is_self_repair = 'request_type' in technical_data and technical_data.get('request_type') == 'optimization'
+                                                                if is_self_repair and language == 'en-US':
+                                                                    logger.info(f"生成自我修复的报告: {token.symbol}")
+
                                                                 translated_report = AnalysisReport.objects.create(
                                                                     token=token,
                                                                     technical_analysis=technical_analysis,
@@ -783,6 +834,131 @@ class CryptoReportAPIView(APIView):
 
         # 直接返回格式化后的技术指标数据
         return formatted_data
+
+    def _build_optimization_prompt(self, technical_data: Dict[str, Any], previous_report: AnalysisReport, _: str) -> str:
+        """构建优化提示词，包含上一份报告的内容和技术指标变化
+
+        Args:
+            technical_data: 当前技术指标数据
+            previous_report: 上一份报告对象
+            _: 语言代码（未使用）
+
+        Returns:
+            str: 优化提示词
+        """
+        # 格式化当前技术指标数据
+        current_indicators = self._format_technical_data_for_prompt(technical_data)
+
+        # 获取上一份报告的技术指标数据
+        previous_technical_analysis = previous_report.technical_analysis
+        previous_indicators = {
+            "price": previous_report.snapshot_price,
+            "indicators": {
+                "rsi": previous_technical_analysis.rsi,
+                "macd": {
+                    "macd_line": previous_technical_analysis.macd_line,
+                    "signal_line": previous_technical_analysis.macd_signal,
+                    "histogram": previous_technical_analysis.macd_histogram
+                },
+                "bollinger_bands": {
+                    "upper": previous_technical_analysis.bollinger_upper,
+                    "middle": previous_technical_analysis.bollinger_middle,
+                    "lower": previous_technical_analysis.bollinger_lower
+                },
+                "bias": previous_technical_analysis.bias,
+                "psy": previous_technical_analysis.psy,
+                "dmi": {
+                    "plus_di": previous_technical_analysis.dmi_plus,
+                    "minus_di": previous_technical_analysis.dmi_minus,
+                    "adx": previous_technical_analysis.dmi_adx
+                },
+                "vwap": previous_technical_analysis.vwap,
+                "funding_rate": previous_technical_analysis.funding_rate,
+                "exchange_netflow": previous_technical_analysis.exchange_netflow,
+                "nupl": previous_technical_analysis.nupl,
+                "mayer_multiple": previous_technical_analysis.mayer_multiple
+            }
+        }
+
+        # 获取上一份报告的分析结果
+        previous_analysis = {
+            "trend_analysis": {
+                "up_probability": previous_report.trend_up_probability,
+                "sideways_probability": previous_report.trend_sideways_probability,
+                "down_probability": previous_report.trend_down_probability,
+                "summary": previous_report.trend_summary
+            },
+            "indicators_analysis": {
+                "rsi": {
+                    "analysis": previous_report.rsi_analysis,
+                    "support_trend": previous_report.rsi_support_trend
+                },
+                "macd": {
+                    "analysis": previous_report.macd_analysis,
+                    "support_trend": previous_report.macd_support_trend
+                },
+                "bollinger_bands": {
+                    "analysis": previous_report.bollinger_analysis,
+                    "support_trend": previous_report.bollinger_support_trend
+                },
+                "bias": {
+                    "analysis": previous_report.bias_analysis,
+                    "support_trend": previous_report.bias_support_trend
+                },
+                "psy": {
+                    "analysis": previous_report.psy_analysis,
+                    "support_trend": previous_report.psy_support_trend
+                },
+                "dmi": {
+                    "analysis": previous_report.dmi_analysis,
+                    "support_trend": previous_report.dmi_support_trend
+                },
+                "vwap": {
+                    "analysis": previous_report.vwap_analysis,
+                    "support_trend": previous_report.vwap_support_trend
+                },
+                "funding_rate": {
+                    "analysis": previous_report.funding_rate_analysis,
+                    "support_trend": previous_report.funding_rate_support_trend
+                },
+                "exchange_netflow": {
+                    "analysis": previous_report.exchange_netflow_analysis,
+                    "support_trend": previous_report.exchange_netflow_support_trend
+                },
+                "nupl": {
+                    "analysis": previous_report.nupl_analysis,
+                    "support_trend": previous_report.nupl_support_trend
+                },
+                "mayer_multiple": {
+                    "analysis": previous_report.mayer_multiple_analysis,
+                    "support_trend": previous_report.mayer_multiple_support_trend
+                }
+            },
+            "trading_advice": {
+                "action": previous_report.trading_action,
+                "reason": previous_report.trading_reason,
+                "entry_price": previous_report.entry_price,
+                "stop_loss": previous_report.stop_loss,
+                "take_profit": previous_report.take_profit
+            },
+            "risk_assessment": {
+                "level": previous_report.risk_level,
+                "score": previous_report.risk_score,
+                "details": previous_report.risk_details
+            }
+        }
+
+        # 构建优化提示词
+        optimization_prompt = {
+            "current_data": json.loads(current_indicators),
+            "previous_data": previous_indicators,
+            "previous_analysis": previous_analysis,
+            "timestamp": previous_report.timestamp.isoformat(),
+            "request_type": "optimization"
+        }
+
+        # 将优化提示词转换为字符串
+        return json.dumps(optimization_prompt, ensure_ascii=False, indent=2)
 
     def _format_technical_data_for_prompt(self, technical_data: Dict[str, Any]) -> str:
         """格式化技术指标数据，确保格式一致"""
@@ -1026,22 +1202,30 @@ class CryptoReportAPIView(APIView):
                     except json.JSONDecodeError:
                         # 6. 尝试使用更宽松的JSON解析器
                         try:
-                            # 尝试使用 json5 库（更宽松的JSON解析器）
+                            # 尝试使用更宽松的JSON解析方法
+                            # 注意：这些库可能未安装，所以使用try-except捕获ImportError
                             try:
-                                import json5
-                                analysis_result = json5.loads(fixed_content)
-                                return self._convert_chinese_to_english_fields(analysis_result)
-                            except ImportError:
-                                # json5库未安装，尝试其他方法
-                                pass
+                                # 尝试使用 json5 库
+                                try:
+                                    # 动态导入，避免IDE警告
+                                    json5 = __import__('json5')
+                                    analysis_result = json5.loads(fixed_content)
+                                    return self._convert_chinese_to_english_fields(analysis_result)
+                                except (ImportError, ModuleNotFoundError):
+                                    # json5库未安装，尝试其他方法
+                                    pass
 
-                            # 尝试使用 demjson3 库（另一个宽松的JSON解析器）
-                            try:
-                                import demjson3
-                                analysis_result = demjson3.decode(fixed_content)
-                                return self._convert_chinese_to_english_fields(analysis_result)
-                            except ImportError:
-                                # demjson3库未安装，尝试其他方法
+                                # 尝试使用 demjson3 库
+                                try:
+                                    # 动态导入，避免IDE警告
+                                    demjson3 = __import__('demjson3')
+                                    analysis_result = demjson3.decode(fixed_content)
+                                    return self._convert_chinese_to_english_fields(analysis_result)
+                                except (ImportError, ModuleNotFoundError):
+                                    # demjson3库未安装，尝试其他方法
+                                    pass
+                            except Exception as e:
+                                logger.debug(f"尝试使用宽松JSON解析器失败: {str(e)}")
                                 pass
 
                             # 尝试使用 ast.literal_eval（Python内置的安全求值函数）
