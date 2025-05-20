@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-your-secret-key-her
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.3.16', 'www.kxianjunshi.com', 'kxianjunshi.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.3.16', 'www.cooltrade.xyz', 'cooltrade.xyz']
 
 
 # Application definition
