@@ -1,23 +1,31 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from rest_framework.authtoken.models import Token
-from .models import User, VerificationCode
+from .models import User, VerificationCode, InvitationCode, InvitationRecord
 from datetime import datetime, timedelta
 from django.utils import timezone
 import re
 
 class UserSerializer(serializers.ModelSerializer):
     """用户序列化器"""
+    invitation_code = serializers.SerializerMethodField()
+
     class Meta:
         model = User
-        fields = ['id', 'email', 'username', 'language', 'created_at', 'updated_at']
-        read_only_fields = ['id', 'created_at', 'updated_at']
+        fields = ['id', 'email', 'username', 'language', 'points', 'invitation_code', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'points', 'invitation_code', 'created_at', 'updated_at']
+
+    def get_invitation_code(self, obj):
+        """获取用户的个人邀请码"""
+        invitation = obj.get_personal_invitation_code()
+        return invitation.code if invitation else None
 
 class RegisterSerializer(serializers.Serializer):
     """注册序列化器"""
     email = serializers.EmailField()
     password = serializers.CharField(write_only=True, min_length=6)
     code = serializers.CharField(min_length=6, max_length=6)
+    invitation_code = serializers.CharField(required=False, allow_blank=True)
 
     def validate_email(self, value):
         if User.objects.filter(email=value).exists():
@@ -35,6 +43,17 @@ class RegisterSerializer(serializers.Serializer):
 
         if not verification:
             raise serializers.ValidationError("验证码无效或已过期")
+        return value
+
+    def validate_invitation_code(self, value):
+        if not value:
+            return value
+
+        # 验证邀请码是否存在且有效
+        invitation = InvitationCode.objects.filter(code=value).first()
+        if not invitation:
+            raise serializers.ValidationError("邀请码不存在")
+
         return value
 
 class LoginSerializer(serializers.Serializer):
@@ -169,3 +188,21 @@ class ResetPasswordCodeSerializer(serializers.Serializer):
             raise serializers.ValidationError("该邮箱未注册")
 
         return value
+
+class InvitationCodeSerializer(serializers.ModelSerializer):
+    """邀请码序列化器"""
+    class Meta:
+        model = InvitationCode
+        fields = ['code', 'is_personal', 'is_used', 'created_at']
+        read_only_fields = ['code', 'is_personal', 'is_used', 'created_at']
+
+class InvitationRecordSerializer(serializers.ModelSerializer):
+    """邀请记录序列化器"""
+    invitee_email = serializers.EmailField(source='invitee.email', read_only=True)
+    invitee_username = serializers.CharField(source='invitee.username', read_only=True)
+    created_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S", read_only=True)
+
+    class Meta:
+        model = InvitationRecord
+        fields = ['invitee_email', 'invitee_username', 'points_awarded', 'created_at']
+        read_only_fields = ['invitee_email', 'invitee_username', 'points_awarded', 'created_at']

@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.conf import settings
-from .models import User, VerificationCode, InvitationCode
+from .models import User, VerificationCode, InvitationCode, InvitationRecord, SystemSetting
 from django.utils import timezone
 import random
 import string
@@ -14,9 +14,11 @@ from rest_framework.authtoken.models import Token as AuthToken
 from .serializers import (
     UserSerializer, RegisterSerializer, LoginSerializer,
     SendVerificationCodeSerializer, TokenRefreshSerializer,
-    ChangePasswordSerializer, ResetPasswordWithCodeSerializer, ResetPasswordCodeSerializer
+    ChangePasswordSerializer, ResetPasswordWithCodeSerializer, ResetPasswordCodeSerializer,
+    InvitationCodeSerializer, InvitationRecordSerializer
 )
 from django.core.mail import send_mail
+from django.db import transaction
 import logging
 
 # 创建日志记录器
@@ -95,6 +97,7 @@ class RegisterView(APIView):
             # 验证验证码
             email = serializer.validated_data['email']
             code = serializer.validated_data['code']
+            invitation_code_str = serializer.validated_data.get('invitation_code', '')
 
             verification = VerificationCode.objects.filter(
                 email=email,
@@ -109,63 +112,71 @@ class RegisterView(APIView):
                     'message': '验证码无效或已过期'
                 }, status=status.HTTP_400_BAD_REQUEST)
 
-            # 验证邀请码
-            invitation_code = request.data.get('invitation_code')
-            if not invitation_code:
-                return Response({
-                    'status': 'error',
-                    'message': '邀请码不能为空'
-                }, status=status.HTTP_400_BAD_REQUEST)
+            # 使用事务确保所有操作要么全部成功，要么全部失败
+            with transaction.atomic():
+                # 生成随机用户名
+                username = f"user_{''.join(random.choices(string.ascii_lowercase + string.digits, k=8))}"
 
-            try:
-                invitation = InvitationCode.objects.get(code=invitation_code, is_used=False)
-            except InvitationCode.DoesNotExist:
-                return Response({
-                    'status': 'error',
-                    'message': '无效的邀请码'
-                }, status=status.HTTP_400_BAD_REQUEST)
-
-            # 生成随机用户名
-            username = f"user_{''.join(random.choices(string.ascii_lowercase + string.digits, k=8))}"
-
-            # 创建用户
-            try:
+                # 创建用户
                 user = User.objects.create_user(
                     email=email,
                     password=serializer.validated_data['password']
                 )
                 user.username = username
                 user.is_active = True  # 设置用户为激活状态
-                user.save()
-            except Exception as e:
-                logger.error(f"创建用户失败: {str(e)}")
-                raise
 
-            # 更新验证码状态
-            try:
+                # 处理邀请码
+                invitation = None
+                inviter = None
+
+                if invitation_code_str:
+                    try:
+                        invitation = InvitationCode.objects.get(code=invitation_code_str)
+                        inviter = invitation.created_by
+
+                        # 如果是一次性邀请码且已使用，则报错
+                        if not invitation.is_personal and invitation.is_used:
+                            return Response({
+                                'status': 'error',
+                                'message': '邀请码已被使用'
+                            }, status=status.HTTP_400_BAD_REQUEST)
+
+                        # 设置邀请人
+                        user.inviter = inviter
+
+                        # 如果是一次性邀请码，标记为已使用
+                        if not invitation.is_personal:
+                            invitation.is_used = True
+                            invitation.used_by = user
+                            invitation.used_at = timezone.now()
+                            invitation.save()
+
+                        # 关联邀请码到用户
+                        user.invitation_code = invitation
+
+                        # 给邀请人增加积分
+                        invitation_points = SystemSetting.get_invitation_points()
+                        if inviter:
+                            inviter.points += invitation_points
+                            inviter.save()
+
+                            # 创建邀请记录
+                            InvitationRecord.objects.create(
+                                inviter=inviter,
+                                invitee=user,
+                                invitation_code=invitation,
+                                points_awarded=invitation_points
+                            )
+                    except InvitationCode.DoesNotExist:
+                        # 邀请码不存在，但不阻止注册
+                        pass
+
+                # 保存用户
+                user.save()
+
+                # 更新验证码状态
                 verification.is_used = True
                 verification.save()
-            except Exception as e:
-                logger.error(f"更新验证码状态失败: {str(e)}")
-                raise
-
-            # 更新邀请码状态
-            try:
-                invitation.is_used = True
-                invitation.used_by = user
-                invitation.used_at = timezone.now()
-                invitation.save()
-            except Exception as e:
-                logger.error(f"更新邀请码状态失败: {str(e)}")
-                raise
-
-            # 关联邀请码到用户
-            try:
-                user.invitation_code = invitation
-                user.save()
-            except Exception as e:
-                logger.error(f"关联邀请码到用户失败: {str(e)}")
-                raise
 
             return Response({
                 'status': 'success',
@@ -270,22 +281,92 @@ class UserProfileView(APIView):
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class GenerateInvitationCodeView(APIView):
+    """生成邀请码视图"""
     permission_classes = [IsAuthenticated]
 
+    def get(self, request):
+        """获取用户的个人邀请码"""
+        try:
+            # 获取用户的个人邀请码
+            invitation = request.user.get_personal_invitation_code()
+
+            return Response({
+                'status': 'success',
+                'data': {
+                    'code': invitation.code,
+                    'is_personal': True,
+                    'created_at': invitation.created_at
+                }
+            })
+        except Exception as e:
+            logger.error(f"获取个人邀请码失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '获取个人邀请码失败'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
     def post(self, request):
-        # 生成随机邀请码
-        code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+        """生成一次性邀请码"""
+        try:
+            # 生成随机邀请码
+            code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
 
-        # 创建邀请码
-        invitation = InvitationCode.objects.create(
-            code=code,
-            created_by=request.user
-        )
+            # 创建邀请码
+            invitation = InvitationCode.objects.create(
+                code=code,
+                created_by=request.user,
+                is_personal=False
+            )
 
-        return Response({
-            'code': code,
-            'created_at': invitation.created_at
-        }, status=status.HTTP_201_CREATED)
+            return Response({
+                'status': 'success',
+                'data': {
+                    'code': invitation.code,
+                    'is_personal': False,
+                    'created_at': invitation.created_at
+                }
+            }, status=status.HTTP_201_CREATED)
+        except Exception as e:
+            logger.error(f"生成邀请码失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '生成邀请码失败'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class UserInvitationView(APIView):
+    """用户邀请信息视图"""
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        """获取用户的邀请信息"""
+        try:
+            user = request.user
+
+            # 获取用户的个人邀请码
+            invitation = user.get_personal_invitation_code()
+
+            # 获取用户的邀请记录
+            invitation_records = InvitationRecord.objects.filter(inviter=user).order_by('-created_at')
+
+            # 获取邀请积分设置
+            invitation_points = SystemSetting.get_invitation_points()
+
+            return Response({
+                'status': 'success',
+                'data': {
+                    'invitation_code': invitation.code,
+                    'points': user.points,
+                    'invitation_points_per_user': invitation_points,
+                    'invitation_count': invitation_records.count(),
+                    'invitation_records': InvitationRecordSerializer(invitation_records, many=True).data
+                }
+            })
+        except Exception as e:
+            logger.error(f"获取邀请信息失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '获取邀请信息失败'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class TokenRefreshView(APIView):
     """Token刷新视图"""

@@ -1,0 +1,63 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <style>
+        .form-row {
+            margin-bottom: 15px;
+        }
+        .form-row label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-row input {
+            padding: 5px;
+            width: 100%;
+            max-width: 300px;
+        }
+        .submit-row {
+            margin-top: 20px;
+        }
+        .submit-row input {
+            padding: 10px 15px;
+            background-color: #417690;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-row input:hover {
+            background-color: #2b5070;
+        }
+    </style>
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+    &rsaquo; <a href="{% url 'admin:app_list' app_label='user' %}">用户</a>
+    &rsaquo; <a href="{% url 'admin:user_invitationcode_changelist' %}">邀请码</a>
+    &rsaquo; 批量生成邀请码
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <h1>批量生成邀请码</h1>
+    <div class="module">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-row">
+                <label for="count">生成数量:</label>
+                <input type="number" name="count" id="count" min="1" max="100" value="10">
+                <p class="help">请输入要生成的邀请码数量（1-100）</p>
+            </div>
+            <div class="submit-row">
+                <input type="submit" value="生成邀请码">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

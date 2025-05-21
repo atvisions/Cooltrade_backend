@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (
     SendVerificationCodeView, RegisterView, LoginView, UserProfileView,
     TokenRefreshView, ChangePasswordView, RequestPasswordResetView,
-    ResetPasswordWithCodeView, GenerateInvitationCodeView
+    ResetPasswordWithCodeView, GenerateInvitationCodeView, UserInvitationView
 )
 
 urlpatterns = [
@@ -12,7 +12,10 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name='login'),
     path('profile/', UserProfileView.as_view(), name='user_profile'),
     path('refresh-token/', TokenRefreshView.as_view(), name='token_refresh'),
+
+    # 邀请码相关
     path('generate-invitation-code/', GenerateInvitationCodeView.as_view(), name='generate_invitation_code'),
+    path('invitation-info/', UserInvitationView.as_view(), name='user_invitation_info'),
 
     # 密码管理相关
     path('change-password/', ChangePasswordView.as_view(), name='change_password'),

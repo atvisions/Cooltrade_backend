@@ -1,0 +1,56 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block extrahead %}
+{{ block.super }}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 只在用户应用页面添加积分排行榜链接
+    if (window.location.pathname.includes('/admin/user/')) {
+      // 查找用户模型和系统设置模型的行
+      var userModelRow = document.querySelector('.model-user');
+      var systemSettingModelRow = document.querySelector('.model-systemsetting');
+      
+      // 如果找到了用户模型行，在其后添加积分排行榜行
+      if (userModelRow) {
+        // 创建积分排行榜行
+        var leaderboardRow = document.createElement('tr');
+        leaderboardRow.className = 'model-pointsleaderboard';
+        
+        // 创建标题单元格
+        var titleCell = document.createElement('th');
+        titleCell.scope = 'row';
+        
+        // 创建链接
+        var link = document.createElement('a');
+        link.href = '/admin/user/user/points-leaderboard/';
+        link.textContent = '用户积分排行榜';
+        
+        // 添加链接到标题单元格
+        titleCell.appendChild(link);
+        
+        // 创建空单元格
+        var emptyCell1 = document.createElement('td');
+        var emptyCell2 = document.createElement('td');
+        
+        // 创建查看链接单元格
+        var viewCell = document.createElement('td');
+        var viewLink = document.createElement('a');
+        viewLink.href = '/admin/user/user/points-leaderboard/';
+        viewLink.className = 'viewlink';
+        viewLink.textContent = '查看';
+        viewCell.appendChild(viewLink);
+        
+        // 添加所有单元格到行
+        leaderboardRow.appendChild(titleCell);
+        leaderboardRow.appendChild(emptyCell1);
+        leaderboardRow.appendChild(emptyCell2);
+        leaderboardRow.appendChild(viewCell);
+        
+        // 将积分排行榜行插入到用户模型行之后
+        userModelRow.parentNode.insertBefore(leaderboardRow, userModelRow.nextSibling);
+      }
+    }
+  });
+</script>
+{% endblock %}

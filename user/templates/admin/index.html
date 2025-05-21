@@ -1,0 +1,59 @@
+{% extends "admin/index.html" %}
+{% load i18n %}
+
+{% block content %}
+<div id="content-main">
+  {% if app_list %}
+    {% for app in app_list %}
+      <div class="app-{{ app.app_label }} module{% if app.app_url in request.path %} current-app{% endif %}">
+        <table>
+          <caption>
+            <a href="{{ app.app_url }}" class="section" title="{% blocktranslate with name=app.name %}Models in the {{ name }} application{% endblocktranslate %}">{{ app.name }}</a>
+          </caption>
+          {% for model in app.models %}
+            <tr class="model-{{ model.object_name|lower }}{% if model.admin_url in request.path %} current-model{% endif %}">
+              {% if model.admin_url %}
+                <th scope="row"><a href="{{ model.admin_url }}"{% if model.admin_url in request.path %} aria-current="page"{% endif %}>{{ model.name }}</a></th>
+              {% else %}
+                <th scope="row">{{ model.name }}</th>
+              {% endif %}
+
+              {% if model.add_url %}
+                <td><a href="{{ model.add_url }}" class="addlink">{% translate 'Add' %}</a></td>
+              {% else %}
+                <td></td>
+              {% endif %}
+
+              {% if model.admin_url and model.view_only %}
+                <td><a href="{{ model.admin_url }}" class="viewlink">{% translate 'View' %}</a></td>
+              {% else %}
+                <td></td>
+              {% endif %}
+
+              {% if model.admin_url and not model.view_only %}
+                <td><a href="{{ model.admin_url }}" class="changelink">{% translate 'Change' %}</a></td>
+              {% else %}
+                <td></td>
+              {% endif %}
+            </tr>
+          {% endfor %}
+
+          {% if app.app_label == 'user' %}
+            <!-- 添加积分排行榜链接，放在用户和系统设置之间 -->
+            {% if model.object_name == 'User' %}
+              <tr>
+                <th scope="row"><a href="{% url 'admin:user_points_leaderboard' %}">用户积分排行榜</a></th>
+                <td></td>
+                <td></td>
+                <td><a href="{% url 'admin:user_points_leaderboard' %}" class="viewlink">查看</a></td>
+              </tr>
+            {% endif %}
+          {% endif %}
+        </table>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>{% translate 'You don't have permission to view or edit anything.' %}</p>
+  {% endif %}
+</div>
+{% endblock %}
