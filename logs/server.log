@@ -1,0 +1,4 @@
+Watching for file changes with StatReloader
+[22/Apr/2025 01:14:08] "GET /api/crypto/technical-indicators/EOSUSDT/ HTTP/1.1" 200 412
+[22/Apr/2025 01:15:29] "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 428
+[22/Apr/2025 07:41:41] "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 414

@@ -278,19 +278,39 @@ LOGGING = {
         },
         'file': {
             'class': 'logging.FileHandler',
-            'filename': 'debug.log',
+            'filename': 'logs/debug.log',
+            'formatter': 'verbose',
+        },
+        'crypto_analyst_file': {
+            'class': 'logging.FileHandler',
+            'filename': 'logs/crypto_analyst.log',
+            'formatter': 'verbose',
+        },
+        'django_file': {
+            'class': 'logging.FileHandler',
+            'filename': 'logs/django.log',
             'formatter': 'verbose',
         },
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'file'],
+            'handlers': ['console', 'django_file'],
             'level': 'INFO',
             'propagate': True,
         },
         'CryptoAnalyst': {
-            'handlers': ['console', 'file'],
+            'handlers': ['console', 'crypto_analyst_file'],
             'level': 'DEBUG',
+            'propagate': True,
+        },
+        'celery': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'tasks': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
             'propagate': True,
         },
     },

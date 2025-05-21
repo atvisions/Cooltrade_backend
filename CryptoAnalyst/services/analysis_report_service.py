@@ -1,6 +1,6 @@
 from typing import Dict
 from datetime import datetime, timezone
-from CryptoAnalyst.models import Token, TechnicalAnalysis, MarketData, AnalysisReport, Chain
+from CryptoAnalyst.models import Token, TechnicalAnalysis, AnalysisReport, Chain
 from CryptoAnalyst.utils import logger
 
 class AnalysisReportService:
@@ -45,10 +45,16 @@ class AnalysisReportService:
             if not technical_analysis:
                 raise ValueError(f"未找到代币 {clean_symbol} 的技术分析数据")
 
-            # 获取最新的市场数据
-            market_data = MarketData.objects.filter(token=token).order_by('-timestamp').first()
-            if not market_data:
-                raise ValueError(f"未找到代币 {clean_symbol} 的市场数据")
+            # 获取当前价格（从技术分析数据中获取）
+            current_price = technical_analysis.snapshot_price if hasattr(technical_analysis, 'snapshot_price') else 0
+            # 如果技术分析数据中没有价格，尝试从最新的分析报告中获取
+            if current_price == 0:
+                latest_report = AnalysisReport.objects.filter(token=token).order_by('-timestamp').first()
+                if latest_report:
+                    current_price = latest_report.snapshot_price
+                else:
+                    # 如果没有任何价格数据，使用默认值
+                    current_price = 0
 
             # 从 indicators_analysis 中提取各个指标的分析结果
             indicators = analysis_data['indicators_analysis']
@@ -58,7 +64,7 @@ class AnalysisReportService:
                 token=token,
                 timestamp=datetime.now(timezone.utc),
                 technical_analysis=technical_analysis,
-                snapshot_price=float(market_data.price),  # 添加报告生成时的价格
+                snapshot_price=float(current_price),  # 添加报告生成时的价格
                 language=language,  # 添加语言字段
 
                 # 趋势分析

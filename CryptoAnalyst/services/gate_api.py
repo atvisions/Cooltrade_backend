@@ -10,6 +10,7 @@ import hashlib
 import datetime
 from typing import List, Optional, Dict, Union
 from dotenv import load_dotenv
+from datetime import datetime, timedelta
 
 logger = logging.getLogger(__name__)
 
@@ -180,34 +181,30 @@ class GateAPI:
             # 转换为Gate格式
             symbol = symbol.upper()
             if symbol.endswith('USDT'):
-                gate_symbol = f"{symbol[:-4]}_USDT"
+                base_symbol = symbol[:-4]  # 移除USDT后缀
+                gate_symbol = f"{base_symbol}_USDT"  # 使用下划线格式
             else:
-                gate_symbol = f"{symbol}_USDT"
+                gate_symbol = f"{symbol}_USDT"  # 使用下划线格式
 
             # 检查缓存
             current_time = time.time()
             if (symbol in self.price_cache and
                 symbol in self.price_cache_time and
                 current_time - self.price_cache_time[symbol] < self.cache_ttl):
-                # 使用缓存中的价格
-                cached_price = self.price_cache[symbol]
-                return cached_price
+                return self.price_cache[symbol]
 
             endpoint = '/spot/tickers'
             params = {'currency_pair': gate_symbol}
 
             response = self._request('GET', endpoint, params=params)
             if response and len(response) > 0:
-                price = float(response[0]['last'])
-                # 成功获取价格
-
+                price = float(response[0].get('last', 0))
                 # 更新缓存
                 self.price_cache[symbol] = price
                 self.price_cache_time[symbol] = current_time
-
                 return price
 
-            logger.error(f"获取{symbol}价格失败")
+            logger.error(f"获取{symbol}实时价格失败")
             return None
 
         except Exception as e:
@@ -490,8 +487,8 @@ class GateAPI:
 
         Args:
             symbol: 交易对符号，例如 'BTCUSDT'
-            interval: K线间隔，例如 '1d', '4h', '1h'
-            start_str: 开始时间，例如 '1 day ago UTC', '1 Jan 2020'
+            interval: K线间隔，例如 '1m', '5m', '1h', '1d'
+            start_str: 开始时间，例如 '1 day ago UTC'
 
         Returns:
             List: K线数据列表，如果获取失败则返回None
@@ -500,38 +497,51 @@ class GateAPI:
             # 转换为Gate格式
             symbol = symbol.upper()
             if symbol.endswith('USDT'):
-                gate_symbol = f"{symbol[:-4]}_USDT"
+                base_symbol = symbol[:-4]  # 移除USDT后缀
+                gate_symbol = f"{base_symbol}_USDT"  # 使用下划线格式
             else:
-                gate_symbol = f"{symbol}_USDT"
+                gate_symbol = f"{symbol}_USDT"  # 使用下划线格式
 
-            # 检查缓存 (仅对短周期的历史数据使用缓存，例如"1 day ago UTC")
-            if "day ago" in start_str and int(start_str.split()[0]) <= 7:
-                cache_key = f"{symbol}_{interval}_{start_str}"
-                current_time = time.time()
-                if (cache_key in self.kline_cache and
-                    cache_key in self.kline_cache_time and
-                    current_time - self.kline_cache_time[cache_key] < self.cache_ttl):
-                    # 使用缓存中的K线数据
-                    cached_klines = self.kline_cache[cache_key]
-                    return cached_klines
+            # 检查缓存
+            cache_key = f"{symbol}_{interval}_{start_str}"
+            current_time = time.time()
+            if (cache_key in self.kline_cache and
+                cache_key in self.kline_cache_time and
+                current_time - self.kline_cache_time[cache_key] < self.cache_ttl):
+                return self.kline_cache[cache_key]
 
-            # 处理时间字符串
-            if 'days ago' in start_str or 'day ago' in start_str:
-                days = int(start_str.split(' ')[0])
-                start_time = int((datetime.datetime.now() - datetime.timedelta(days=days)).timestamp())
+            # 转换时间格式
+            if 'ago' in start_str:
+                # 处理相对时间
+                parts = start_str.split()
+                amount = int(parts[0])
+                unit = parts[1]
+                if unit == 'day' or unit == 'days':
+                    start_time = int((datetime.now() - timedelta(days=amount)).timestamp())
+                elif unit == 'hour' or unit == 'hours':
+                    start_time = int((datetime.now() - timedelta(hours=amount)).timestamp())
+                elif unit == 'minute' or unit == 'minutes':
+                    start_time = int((datetime.now() - timedelta(minutes=amount)).timestamp())
+                else:
+                    start_time = int((datetime.now() - timedelta(days=100)).timestamp())
             else:
-                # 其他格式的时间处理...
-                start_time = int(time.time() - 86400 * 100)  # 默认获取过去100天的数据
+                # 处理绝对时间
+                try:
+                    start_time = int(datetime.strptime(start_str, '%Y-%m-%d %H:%M:%S').timestamp())
+                except:
+                    start_time = int((datetime.now() - timedelta(days=100)).timestamp())
 
-            # 准备获取历史K线数据
-
-            # 转换时间间隔
+            # 转换间隔格式
             interval_map = {
-                '1m': '1m', '5m': '5m', '15m': '15m',
-                '30m': '30m', '1h': '1h', '4h': '4h',
-                '8h': '8h', '1d': '1d', '7d': '7d'
+                '1m': '1m',
+                '5m': '5m',
+                '15m': '15m',
+                '30m': '30m',
+                '1h': '1h',
+                '4h': '4h',
+                '1d': '1d',
+                '1w': '1w'
             }
-
             gate_interval = interval_map.get(interval, '1d')
 
             endpoint = '/spot/candlesticks'
@@ -539,51 +549,27 @@ class GateAPI:
                 'currency_pair': gate_symbol,
                 'interval': gate_interval,
                 'from': start_time,
-                'to': int(time.time()),
-                'limit': 1000  # Gate API限制最多1000条
+                'limit': 1000
             }
 
             response = self._request('GET', endpoint, params=params)
-            if not response:
-                return None
-
-            # Gate返回格式: [timestamp, volume, close, high, low, open]
-            # 转换为标准格式: [timestamp, open, high, low, close, volume, ...]
-            klines = []
-            for candle in response:
-                kline = [
-                    int(float(candle[0]) * 1000),  # timestamp (转换为毫秒)
-                    float(candle[5]),  # open
-                    float(candle[3]),  # high
-                    float(candle[4]),  # low
-                    float(candle[2]),  # close
-                    float(candle[1]),  # volume
-                    0,  # close_time (不适用)
-                    0,  # quote_volume (不适用)
-                    0,  # trades (不适用)
-                    0,  # taker_buy_base (不适用)
-                    0,  # taker_buy_quote (不适用)
-                    0   # ignore (不适用)
-                ]
-                klines.append(kline)
-
-            # 更新缓存
-            if "day ago" in start_str and int(start_str.split()[0]) <= 7:
-                cache_key = f"{symbol}_{interval}_{start_str}"
-                self.kline_cache[cache_key] = klines
+            if response:
+                # 更新缓存
+                self.kline_cache[cache_key] = response
                 self.kline_cache_time[cache_key] = current_time
+                return response
 
-            # 成功获取历史K线数据
-            return klines
+            logger.error(f"获取{symbol}历史K线数据失败")
+            return None
 
         except Exception as e:
-            logger.error(f"获取历史K线数据失败: {str(e)}")
+            logger.error(f"获取{symbol}历史K线数据失败: {str(e)}")
             logger.error(traceback.format_exc())
             return None
 
     def get_ticker(self, symbol: str) -> Optional[Dict]:
         """
-        获取24小时行情数据
+        获取交易对行情数据
 
         Args:
             symbol: 交易对符号，例如 'BTCUSDT'
@@ -595,18 +581,17 @@ class GateAPI:
             # 转换为Gate格式
             symbol = symbol.upper()
             if symbol.endswith('USDT'):
-                gate_symbol = f"{symbol[:-4]}_USDT"
+                base_symbol = symbol[:-4]  # 移除USDT后缀
+                gate_symbol = f"{base_symbol}_USDT"  # 使用下划线格式
             else:
-                gate_symbol = f"{symbol}_USDT"
+                gate_symbol = f"{symbol}_USDT"  # 使用下划线格式
 
             # 检查缓存
             current_time = time.time()
             if (symbol in self.ticker_cache and
                 symbol in self.ticker_cache_time and
                 current_time - self.ticker_cache_time[symbol] < self.cache_ttl):
-                # 使用缓存中的ticker数据
-                cached_ticker = self.ticker_cache[symbol]
-                return cached_ticker
+                return self.ticker_cache[symbol]
 
             endpoint = '/spot/tickers'
             params = {'currency_pair': gate_symbol}
@@ -614,32 +599,16 @@ class GateAPI:
             response = self._request('GET', endpoint, params=params)
             if response and len(response) > 0:
                 ticker_data = response[0]
-
-                # 转换为标准格式
-                ticker = {
-                    'lastPrice': float(ticker_data['last']),
-                    'volume': float(ticker_data['base_volume']),
-                    'priceChange': float(ticker_data.get('change_percentage', 0)) * float(ticker_data['last']) / 100,  # 根据百分比和当前价格计算价格变化
-                    'priceChangePercent': float(ticker_data.get('change_percentage', 0)),
-                    'highPrice': float(ticker_data['high_24h']),
-                    'lowPrice': float(ticker_data['low_24h']),
-                    'buyVolume': float(ticker_data.get('quote_volume', 0)) / 2,  # 估算买入量
-                    'sellVolume': float(ticker_data.get('quote_volume', 0)) / 2  # 估算卖出量
-                }
-
-                # 成功获取ticker数据
-
                 # 更新缓存
-                self.ticker_cache[symbol] = ticker
+                self.ticker_cache[symbol] = ticker_data
                 self.ticker_cache_time[symbol] = current_time
+                return ticker_data
 
-                return ticker
-
-            logger.error(f"获取{symbol}的ticker数据失败")
+            logger.error(f"获取{symbol}行情数据失败")
             return None
 
         except Exception as e:
-            logger.error(f"获取ticker数据失败: {str(e)}")
+            logger.error(f"获取{symbol}行情数据失败: {str(e)}")
             logger.error(traceback.format_exc())
             return None
 

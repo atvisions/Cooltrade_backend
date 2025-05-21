@@ -1,235 +1,222 @@
+"""
+定时任务模块
+
+包含所有与定时任务相关的功能，如：
+- 更新技术指标参数
+- 生成分析报告
+"""
+import logging
 from celery import shared_task
-from .models import Token, TechnicalAnalysis, AnalysisReport
-from .services.market_data_service import MarketDataService
-from .services.technical_analysis import TechnicalAnalysisService
-from .services.analysis_report_service import AnalysisReportService
-from .views import TechnicalIndicatorsAPIView
-from .utils import logger
-from celery.exceptions import MaxRetriesExceededError
+from django.utils import timezone
 from django.db import transaction
-import asyncio
 
-@shared_task(
-    bind=True,
-    max_retries=3,
-    default_retry_delay=60,
-    autoretry_for=(Exception,),
-    retry_backoff=True,
-    retry_backoff_max=600,
-    retry_jitter=True
-)
-def update_market_data(self):
-    """更新所有代币的市场数据 - 已废弃，使用 update_coze_analysis 代替
+from .models import Token, TechnicalAnalysis, AnalysisReport
+from .services.technical_analysis import TechnicalAnalysisService
+from .views_report import CryptoReportAPIView
 
-    MarketData 模型已移除，价格数据现在保存在 AnalysisReport 中
+# 配置日志
+logger = logging.getLogger(__name__)
+
+
+@shared_task
+def update_technical_analysis():
     """
-    logger.info("MarketData 模型已移除，此任务已废弃")
-    return
+    更新所有代币的技术指标参数
 
-@shared_task(
-    bind=True,
-    max_retries=3,
-    default_retry_delay=60,
-    autoretry_for=(Exception,),
-    retry_backoff=True,
-    retry_backoff_max=600,
-    retry_jitter=True
-)
-def update_technical_analysis(self):
-    """更新所有代币的技术分析数据
-
-    此任务会在每天0点和12点执行，获取所有代币的技术指标数据并保存到数据库
+    从数据库中获取所有活跃的代币，并更新它们的技术指标参数
     """
+    logger.info("开始执行技术指标参数更新任务")
+
     try:
+        # 获取所有代币
         tokens = Token.objects.all()
-        analysis_service = TechnicalAnalysisService()
 
-        # 记录成功更新的代币，用于后续触发分析报告任务
-        updated_tokens = []
+        if not tokens:
+            logger.warning("数据库中没有找到代币记录")
+            return "数据库中没有找到代币记录"
+
+        # 初始化服务
+        ta_service = TechnicalAnalysisService()
+
+        # 计算当前12小时周期的起始时间
+        now = timezone.now()
+        # 如果当前时间小于12点，则周期起始时间为当天0点
+        # 否则周期起始时间为当天12点
+        if now.hour < 12:
+            period_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+        else:
+            period_start = now.replace(hour=12, minute=0, second=0, microsecond=0)
+
+        # 更新每个代币的技术指标
+        success_count = 0
+        error_count = 0
 
         for token in tokens:
             try:
+                symbol = token.symbol
+
+                # 检查是否已经有当前周期的技术分析数据
+                existing_analysis = TechnicalAnalysis.objects.filter(
+                    token=token,
+                    period_start=period_start
+                ).first()
+
+                if existing_analysis:
+                    logger.info(f"代币 {symbol} 在当前周期已有技术分析数据，跳过更新")
+                    continue
+
+                # 获取技术指标数据
+                # 为了与Gate API兼容，确保符号格式正确
+                # 清理符号格式，去除可能的USDT后缀
+                clean_symbol = symbol.upper().replace('USDT', '').replace('-PERP', '').replace('_PERP', '').replace('PERP', '')
+                # 添加USDT后缀
+                api_symbol = f"{clean_symbol}USDT"
+                technical_data = ta_service.get_all_indicators(api_symbol)
+
+                if technical_data['status'] == 'error':
+                    logger.error(f"获取代币 {symbol} 的技术指标数据失败: {technical_data['message']}")
+                    error_count += 1
+                    continue
+
+                # 获取指标数据
+                indicators = technical_data['data']['indicators']
+
+                # 获取实时价格
+                current_price = 0
+                try:
+                    current_price = ta_service.gate_api.get_realtime_price(api_symbol)
+                except Exception as e:
+                    logger.error(f"获取代币 {symbol} 的实时价格失败: {str(e)}")
+
+                # 格式化指标数据
+                formatted_indicators = {
+                    'rsi': indicators['RSI'],
+                    'macd_line': indicators['MACD']['line'],
+                    'macd_signal': indicators['MACD']['signal'],
+                    'macd_histogram': indicators['MACD']['histogram'],
+                    'bollinger_upper': indicators['BollingerBands']['upper'],
+                    'bollinger_middle': indicators['BollingerBands']['middle'],
+                    'bollinger_lower': indicators['BollingerBands']['lower'],
+                    'bias': indicators['BIAS'],
+                    'psy': indicators['PSY'],
+                    'dmi_plus': indicators['DMI']['plus_di'],
+                    'dmi_minus': indicators['DMI']['minus_di'],
+                    'dmi_adx': indicators['DMI']['adx'],
+                    'vwap': indicators.get('VWAP', 0),
+                    'funding_rate': indicators.get('FundingRate', 0),
+                    'exchange_netflow': indicators.get('ExchangeNetflow', 0),
+                    'nupl': indicators.get('NUPL', 0),
+                    'mayer_multiple': indicators.get('MayerMultiple', 0)
+                }
+
+                # 保存技术分析数据
                 with transaction.atomic():
-                    # 使用原始符号，不添加USDT后缀
-                    analysis_data = analysis_service.get_technical_analysis(token.symbol)
-
-                    # 计算12小时分段起点
-                    from django.utils import timezone
-                    now = timezone.now()
-                    period_hour = (now.hour // 12) * 12
-                    period_start = now.replace(minute=0, second=0, microsecond=0, hour=period_hour)
-
-                    # 创建或更新技术分析数据
-                    ta, created = TechnicalAnalysis.objects.update_or_create(
+                    technical_analysis = TechnicalAnalysis.objects.create(
                         token=token,
+                        timestamp=timezone.now(),
                         period_start=period_start,
-                        defaults={
-                            'timestamp': now,
-                            'rsi': analysis_data['rsi'],
-                            'macd_line': analysis_data['macd_line'],
-                            'macd_signal': analysis_data['macd_signal'],
-                            'macd_histogram': analysis_data['macd_histogram'],
-                            'bollinger_upper': analysis_data['bollinger_upper'],
-                            'bollinger_middle': analysis_data['bollinger_middle'],
-                            'bollinger_lower': analysis_data['bollinger_lower'],
-                            'bias': analysis_data['bias'],
-                            'psy': analysis_data['psy'],
-                            'dmi_plus': analysis_data['dmi_plus'],
-                            'dmi_minus': analysis_data['dmi_minus'],
-                            'dmi_adx': analysis_data['dmi_adx'],
-                            'vwap': analysis_data['vwap'],
-                            'funding_rate': analysis_data['funding_rate'],
-                            'exchange_netflow': analysis_data['exchange_netflow'],
-                            'nupl': analysis_data['nupl'],
-                            'mayer_multiple': analysis_data['mayer_multiple'],
-                        }
+                        **formatted_indicators
                     )
 
-                    # 添加到成功更新列表
-                    updated_tokens.append(token.symbol)
-
-                    if created:
-                        logger.info(f"创建代币 {token.symbol} 的技术分析数据成功")
-                    else:
-                        logger.info(f"更新代币 {token.symbol} 的技术分析数据成功")
+                logger.info(f"成功更新代币 {symbol} 的技术指标数据，ID: {technical_analysis.id}")
+                success_count += 1
 
             except Exception as e:
-                logger.error(f"更新代币 {token.symbol} 的技术分析数据失败: {str(e)}")
-                # 单个代币失败不影响其他代币的更新
-                continue
+                logger.error(f"更新代币 {token.symbol} 的技术指标数据时发生错误: {str(e)}")
+                error_count += 1
 
-        # 如果有成功更新的代币，5分钟后触发分析报告任务
-        if updated_tokens:
-            logger.info(f"成功更新了 {len(updated_tokens)} 个代币的技术分析数据，将在5分钟后获取分析报告")
-            # 使用 Celery 的 countdown 参数设置延迟执行
-            generate_analysis_reports.apply_async(args=[updated_tokens], countdown=300)  # 300秒 = 5分钟
-
-        return updated_tokens
+        result_message = f"技术指标参数更新任务完成。成功: {success_count}, 失败: {error_count}, 总计: {len(tokens)}"
+        logger.info(result_message)
+        return result_message
 
     except Exception as e:
-        logger.error(f"更新技术分析数据任务失败: {str(e)}")
-        raise self.retry(exc=e)
+        error_message = f"执行技术指标参数更新任务时发生错误: {str(e)}"
+        logger.error(error_message)
+        return error_message
 
-@shared_task(
-    bind=True,
-    max_retries=3,
-    default_retry_delay=60,
-    autoretry_for=(Exception,),
-    retry_backoff=True,
-    retry_backoff_max=600,
-    retry_jitter=True
-)
-def generate_analysis_reports(self, symbols=None):
-    """生成指定代币的分析报告
 
-    此任务会在技术参数更新后5分钟执行，获取指定代币的分析报告
-
-    Args:
-        symbols: 代币符号列表，如果为None则处理所有代币
+@shared_task
+def generate_analysis_reports():
     """
+    为所有代币生成英文分析报告
+
+    从数据库中获取所有代币，并为每个代币生成英文分析报告
+    """
+    logger.info("开始执行分析报告生成任务")
+
     try:
-        api_view = TechnicalIndicatorsAPIView()
+        # 获取所有代币
+        tokens = Token.objects.all()
 
-        # 如果没有指定代币，则处理所有代币
-        if not symbols:
-            tokens = Token.objects.all()
-            symbols = [token.symbol for token in tokens]
-        else:
-            # 确保symbols是列表
-            if isinstance(symbols, str):
-                symbols = [symbols]
+        if not tokens:
+            logger.warning("数据库中没有找到代币记录")
+            return "数据库中没有找到代币记录"
 
-        logger.info(f"开始生成 {len(symbols)} 个代币的分析报告")
+        # 初始化报告API视图
+        report_view = CryptoReportAPIView()
 
-        for symbol in symbols:
+        # 生成每个代币的英文分析报告
+        success_count = 0
+        error_count = 0
+
+        for token in tokens:
             try:
-                with transaction.atomic():
-                    # 获取代币记录
-                    token = Token.objects.filter(symbol=symbol).first()
-                    if not token:
-                        logger.error(f"找不到代币 {symbol} 的记录")
-                        continue
+                symbol = token.symbol
 
-                    # 获取最新的技术分析数据
-                    technical_analysis = TechnicalAnalysis.objects.filter(token=token).order_by('-timestamp').first()
-                    if not technical_analysis:
-                        logger.error(f"找不到代币 {symbol} 的技术分析数据")
-                        continue
+                # 检查是否有最新的技术分析数据
+                latest_analysis = TechnicalAnalysis.objects.filter(
+                    token=token
+                ).order_by('-timestamp').first()
 
-                    # 构建技术指标数据
-                    indicators = {
-                        'RSI': technical_analysis.rsi,
-                        'MACD': {
-                            'line': technical_analysis.macd_line,
-                            'signal': technical_analysis.macd_signal,
-                            'histogram': technical_analysis.macd_histogram
-                        },
-                        'BollingerBands': {
-                            'upper': technical_analysis.bollinger_upper,
-                            'middle': technical_analysis.bollinger_middle,
-                            'lower': technical_analysis.bollinger_lower
-                        },
-                        'BIAS': technical_analysis.bias,
-                        'PSY': technical_analysis.psy,
-                        'DMI': {
-                            'plus_di': technical_analysis.dmi_plus,
-                            'minus_di': technical_analysis.dmi_minus,
-                            'adx': technical_analysis.dmi_adx
-                        },
-                        'VWAP': technical_analysis.vwap,
-                        'FundingRate': technical_analysis.funding_rate,
-                        'ExchangeNetflow': technical_analysis.exchange_netflow,
-                        'NUPL': technical_analysis.nupl,
-                        'MayerMultiple': technical_analysis.mayer_multiple
-                    }
+                if not latest_analysis:
+                    logger.warning(f"代币 {symbol} 没有技术分析数据，跳过生成报告")
+                    continue
 
-                    # 获取市场数据
-                    market_data = api_view.market_service.get_market_data(symbol)
-                    if not market_data:
-                        logger.error(f"获取代币 {symbol} 的市场数据失败")
-                        continue
+                # 检查是否已经有基于此技术分析数据的英文报告
+                existing_report = AnalysisReport.objects.filter(
+                    token=token,
+                    technical_analysis=latest_analysis,
+                    language='en-US'
+                ).first()
 
-                    # 异步获取 Coze 分析结果
-                    loop = asyncio.new_event_loop()
-                    asyncio.set_event_loop(loop)
-                    coze_analysis = loop.run_until_complete(
-                        api_view._get_coze_analysis(symbol, indicators)
-                    )
-                    loop.close()
+                if existing_report:
+                    logger.info(f"代币 {symbol} 已有基于最新技术分析数据的英文报告，跳过生成")
+                    continue
 
-                    # 生成分析报告
-                    analysis_report = {
-                        'trend_analysis': coze_analysis['trend_analysis'],
-                        'indicators_analysis': coze_analysis['indicators_analysis'],
-                        'trading_advice': coze_analysis['trading_advice'],
-                        'risk_assessment': coze_analysis['risk_assessment']
-                    }
+                # 为了与Gate API兼容，确保符号格式正确
+                # 清理符号格式，去除可能的USDT后缀
+                clean_symbol = symbol.upper().replace('USDT', '').replace('-PERP', '').replace('_PERP', '').replace('PERP', '')
+                # 添加USDT后缀
+                api_symbol = f"{clean_symbol}USDT"
 
-                    # 保存分析报告
-                    api_view.report_service.save_analysis_report(symbol, analysis_report)
-                    logger.info(f"生成代币 {symbol} 的分析报告成功")
+                # 获取技术指标数据
+                technical_data = report_view._get_technical_data(api_symbol)
+
+                if not technical_data:
+                    logger.error(f"获取代币 {symbol} 的技术指标数据失败")
+                    error_count += 1
+                    continue
+
+                # 生成英文分析报告
+                report = report_view._generate_and_save_report(token, technical_data, 'en-US')
+
+                if not report:
+                    logger.error(f"生成代币 {symbol} 的英文分析报告失败")
+                    error_count += 1
+                    continue
+
+                logger.info(f"成功生成代币 {symbol} 的英文分析报告，ID: {report.id}")
+                success_count += 1
 
             except Exception as e:
-                logger.error(f"生成代币 {symbol} 的分析报告失败: {str(e)}")
-                # 单个代币失败不影响其他代币的更新
-                continue
+                logger.error(f"生成代币 {token.symbol} 的英文分析报告时发生错误: {str(e)}")
+                error_count += 1
 
-        return True
+        result_message = f"分析报告生成任务完成。成功: {success_count}, 失败: {error_count}, 总计: {len(tokens)}"
+        logger.info(result_message)
+        return result_message
 
     except Exception as e:
-        logger.error(f"生成分析报告任务失败: {str(e)}")
-        raise self.retry(exc=e)
-
-@shared_task(
-    bind=True,
-    max_retries=3,
-    default_retry_delay=60,
-    autoretry_for=(Exception,),
-    retry_backoff=True,
-    retry_backoff_max=600,
-    retry_jitter=True
-)
-def update_coze_analysis(self):
-    """更新所有代币的 Coze 分析报告 (旧版本，保留兼容性)"""
-    # 调用新的分析报告生成任务
-    return generate_analysis_reports(self)
+        error_message = f"执行分析报告生成任务时发生错误: {str(e)}"
+        logger.error(error_message)
+        return error_message

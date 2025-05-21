@@ -1,6 +1,7 @@
 import logging
 import numpy as np
 import pandas as pd
+import time
 from typing import Dict, List, Optional, Union
 from datetime import datetime, timedelta
 from CryptoAnalyst.services.gate_api import GateAPI
@@ -69,12 +70,42 @@ class TechnicalAnalysisService:
             # 开始计算指标
 
             # 转换为DataFrame
-            df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
+            # Gate API返回的K线数据只有8列，而不是12列
+            # 格式为: [timestamp, volume, close, high, low, open, ...]
+            # 我们需要适应这种格式
+            try:
+                # 首先检查数据格式
+                if len(klines) > 0 and len(klines[0]) == 8:
+                    # Gate API格式
+                    df = pd.DataFrame(klines, columns=['timestamp', 'volume', 'close', 'high', 'low', 'open', 'quote_volume', 'trades'])
+                elif len(klines) > 0 and len(klines[0]) == 12:
+                    # 标准格式
+                    df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
+                else:
+                    # 未知格式，尝试使用最少的列
+                    logger.warning(f"未知的K线数据格式，尝试使用最少的必要列。列数: {len(klines[0]) if klines and len(klines) > 0 else 'unknown'}")
+                    # 创建一个最小的DataFrame，只包含必要的列
+                    df = pd.DataFrame()
+                    df['timestamp'] = [k[0] for k in klines]
+                    df['open'] = [float(k[1]) if len(k) > 1 else 0 for k in klines]
+                    df['high'] = [float(k[2]) if len(k) > 2 else 0 for k in klines]
+                    df['low'] = [float(k[3]) if len(k) > 3 else 0 for k in klines]
+                    df['close'] = [float(k[4]) if len(k) > 4 else 0 for k in klines]
+                    df['volume'] = [float(k[5]) if len(k) > 5 else 0 for k in klines]
+            except Exception as e:
+                logger.error(f"创建DataFrame时发生错误: {str(e)}")
+                # 创建一个空的DataFrame，包含必要的列
+                df = pd.DataFrame(columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
+                # 添加一行数据，避免后续计算出错
+                df.loc[0] = [int(time.time() * 1000), price, price * 1.01, price * 0.99, price, 0]
 
             # 确保数据类型正确
             df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
             df['close'] = df['close'].astype(float)
             df['volume'] = df['volume'].astype(float)
+            df['open'] = df['open'].astype(float)
+            df['high'] = df['high'].astype(float)
+            df['low'] = df['low'].astype(float)
 
             # 按时间排序
             df = df.sort_values('timestamp')

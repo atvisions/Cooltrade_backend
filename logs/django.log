@@ -1,0 +1,102 @@
+INFO 2025-05-20 10:35:22,796 autoreload 91915 8462421120 Watching for file changes with StatReloader
+WARNING 2025-05-20 11:08:26,645 log 91915 6141374464 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 11:08:26,646 basehttp 91915 6141374464 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+WARNING 2025-05-20 11:08:26,675 log 91915 6141374464 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 11:08:26,675 basehttp 91915 6141374464 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+WARNING 2025-05-20 11:08:58,978 log 91915 6141374464 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 11:08:58,979 basehttp 91915 6141374464 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+WARNING 2025-05-20 11:08:58,999 log 91915 6141374464 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 11:08:59,000 basehttp 91915 6141374464 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-20 11:09:00,702 basehttp 91915 6141374464 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-05-20 11:09:00,733 basehttp 91915 6175027200 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-20 11:09:00,737 basehttp 91915 6141374464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-20 11:09:00,739 log 91915 6191853568 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 11:09:00,739 basehttp 91915 6191853568 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-20 11:09:02,722 basehttp 91915 6141374464 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 11:09:02,728 basehttp 91915 6175027200 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-20 11:09:02,730 log 91915 6191853568 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 11:09:02,731 basehttp 91915 6191853568 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-20 11:09:04,403 basehttp 91915 6141374464 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 3214
+INFO 2025-05-20 11:09:04,423 basehttp 91915 6141374464 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 3214
+INFO 2025-05-20 14:56:44,658 basehttp 91915 6141374464 "GET /api/crypto/get_report/BTCUSDT/?language=en-US HTTP/1.1" 200 2618
+INFO 2025-05-20 14:57:33,138 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2922
+INFO 2025-05-20 14:57:33,164 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2922
+INFO 2025-05-20 14:58:02,990 basehttp 91915 6175600640 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-05-20 14:58:03,038 basehttp 91915 6209253376 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2922
+INFO 2025-05-20 14:58:03,063 basehttp 91915 6192427008 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-20 14:58:03,066 basehttp 91915 6175600640 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 14:58:05,940 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2922
+INFO 2025-05-20 14:58:05,959 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2922
+INFO 2025-05-20 14:58:09,668 basehttp 91915 6192427008 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-20 14:58:09,669 basehttp 91915 6175600640 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 14:58:09,681 basehttp 91915 6209253376 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2922
+INFO 2025-05-20 14:58:09,696 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2922
+INFO 2025-05-20 14:58:11,526 basehttp 91915 6175600640 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 14:58:11,530 basehttp 91915 6209253376 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 14:58:11,536 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2922
+INFO 2025-05-20 14:58:11,554 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2922
+WARNING 2025-05-20 14:58:13,322 log 91915 6192427008 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 14:58:13,322 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+WARNING 2025-05-20 14:58:13,342 log 91915 6192427008 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 14:58:13,342 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 108
+INFO 2025-05-20 14:58:29,525 basehttp 91915 6175600640 "GET /api/crypto/get_report/BTCUSDT/?language=ja-JP&_t=1747753096208 HTTP/1.1" 200 3034
+INFO 2025-05-20 14:58:30,421 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+INFO 2025-05-20 14:58:31,482 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+INFO 2025-05-20 15:00:58,705 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+INFO 2025-05-20 15:00:58,731 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+INFO 2025-05-20 15:01:09,639 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+INFO 2025-05-20 15:01:09,678 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+INFO 2025-05-20 15:01:40,493 basehttp 91915 6192427008 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-20 15:01:40,502 basehttp 91915 6209253376 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+INFO 2025-05-20 15:01:40,517 basehttp 91915 6175600640 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 15:01:43,289 basehttp 91915 6175600640 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 15:01:43,298 basehttp 91915 6209253376 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 15:01:43,307 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+WARNING 2025-05-20 15:01:45,360 log 91915 6175600640 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 15:01:45,360 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+WARNING 2025-05-20 15:01:45,378 log 91915 6175600640 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 15:01:45,378 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-20 15:01:50,356 basehttp 91915 6192427008 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-20 15:01:50,363 basehttp 91915 6175600640 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-20 15:01:50,364 log 91915 6209253376 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 15:01:50,364 basehttp 91915 6209253376 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+WARNING 2025-05-20 15:01:50,374 log 91915 6192427008 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 15:01:50,374 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-20 15:01:52,703 basehttp 91915 6175600640 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 15:01:52,705 basehttp 91915 6192427008 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+WARNING 2025-05-20 15:01:52,708 log 91915 6209253376 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 15:01:52,708 basehttp 91915 6209253376 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+WARNING 2025-05-20 15:01:52,718 log 91915 6192427008 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 15:01:52,718 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+WARNING 2025-05-20 15:01:54,586 log 91915 6175600640 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 15:01:54,586 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+WARNING 2025-05-20 15:01:54,604 log 91915 6175600640 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 15:01:54,604 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 404 108
+INFO 2025-05-20 15:02:09,410 basehttp 91915 6175600640 "GET /api/crypto/get_report/BTCUSDT/?language=ko-KR&_t=1747753315504 HTTP/1.1" 200 2753
+INFO 2025-05-20 15:02:10,300 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3053
+INFO 2025-05-20 15:02:11,326 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3053
+INFO 2025-05-20 15:04:20,652 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3053
+INFO 2025-05-20 15:04:20,680 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3053
+INFO 2025-05-20 15:04:29,196 basehttp 91915 6192427008 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-20 15:04:29,199 basehttp 91915 6175600640 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 15:04:29,208 basehttp 91915 6209253376 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3053
+INFO 2025-05-20 15:04:31,240 basehttp 91915 6175600640 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 15:04:31,244 basehttp 91915 6209253376 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 15:04:31,253 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3053
+INFO 2025-05-20 15:04:32,851 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+INFO 2025-05-20 15:04:32,876 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+INFO 2025-05-20 15:04:33,512 basehttp 91915 6175600640 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 15:04:33,516 basehttp 91915 6192427008 "GET /api/auth/profile/ HTTP/1.1" 200 194
+INFO 2025-05-20 15:04:33,526 basehttp 91915 6209253376 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+INFO 2025-05-20 15:04:33,542 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+INFO 2025-05-20 15:04:35,112 basehttp 91915 6175600640 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 15:04:35,113 basehttp 91915 6192427008 "PUT /api/auth/profile/ HTTP/1.1" 200 219
+INFO 2025-05-20 15:04:35,121 basehttp 91915 6209253376 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+INFO 2025-05-20 15:04:35,139 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3334
+WARNING 2025-05-20 15:04:36,723 log 91915 6192427008 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 15:04:36,723 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+WARNING 2025-05-20 15:04:36,749 log 91915 6192427008 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 15:04:36,749 basehttp 91915 6192427008 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-20 15:04:50,477 basehttp 91915 6192427008 "GET /api/crypto/get_report/BTCUSDT/?language=zh-CN&_t=1747753477319 HTTP/1.1" 200 2173
+INFO 2025-05-20 15:04:51,432 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2473
+INFO 2025-05-20 15:04:52,463 basehttp 91915 6175600640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 200 2473

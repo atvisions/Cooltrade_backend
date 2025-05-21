@@ -1,0 +1,479 @@
+INFO 2025-05-20 10:00:57,617 autoreload 85153 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-20 10:04:20,968 tasks 86325 8462421120 开始执行技术指标参数更新任务
+ERROR 2025-05-20 10:04:22,516 technical_analysis 86325 8462421120 计算技术指标时发生错误: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:22,522 technical_analysis 86325 8462421120 Traceback (most recent call last):
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 939, in _finalize_columns_and_data
+    columns = _validate_or_indexify_columns(contents, columns)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 986, in _validate_or_indexify_columns
+    raise AssertionError(
+AssertionError: 12 columns passed, passed data had 8 columns
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py", line 72, in get_all_indicators
+    df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/frame.py", line 840, in __init__
+    arrays, columns, index = nested_data_to_arrays(
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 520, in nested_data_to_arrays
+    arrays, columns = to_arrays(data, columns, dtype=dtype)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 845, in to_arrays
+    content, columns = _finalize_columns_and_data(arr, columns, dtype)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 942, in _finalize_columns_and_data
+    raise ValueError(err) from err
+ValueError: 12 columns passed, passed data had 8 columns
+
+ERROR 2025-05-20 10:04:22,523 tasks 86325 8462421120 获取代币 BTCUSDT 的技术指标数据失败: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:23,942 technical_analysis 86325 8462421120 计算技术指标时发生错误: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:23,943 technical_analysis 86325 8462421120 Traceback (most recent call last):
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 939, in _finalize_columns_and_data
+    columns = _validate_or_indexify_columns(contents, columns)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 986, in _validate_or_indexify_columns
+    raise AssertionError(
+AssertionError: 12 columns passed, passed data had 8 columns
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py", line 72, in get_all_indicators
+    df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/frame.py", line 840, in __init__
+    arrays, columns, index = nested_data_to_arrays(
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 520, in nested_data_to_arrays
+    arrays, columns = to_arrays(data, columns, dtype=dtype)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 845, in to_arrays
+    content, columns = _finalize_columns_and_data(arr, columns, dtype)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 942, in _finalize_columns_and_data
+    raise ValueError(err) from err
+ValueError: 12 columns passed, passed data had 8 columns
+
+ERROR 2025-05-20 10:04:23,943 tasks 86325 8462421120 获取代币 ETHUSDT 的技术指标数据失败: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:25,384 technical_analysis 86325 8462421120 计算技术指标时发生错误: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:25,385 technical_analysis 86325 8462421120 Traceback (most recent call last):
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 939, in _finalize_columns_and_data
+    columns = _validate_or_indexify_columns(contents, columns)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 986, in _validate_or_indexify_columns
+    raise AssertionError(
+AssertionError: 12 columns passed, passed data had 8 columns
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py", line 72, in get_all_indicators
+    df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/frame.py", line 840, in __init__
+    arrays, columns, index = nested_data_to_arrays(
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 520, in nested_data_to_arrays
+    arrays, columns = to_arrays(data, columns, dtype=dtype)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 845, in to_arrays
+    content, columns = _finalize_columns_and_data(arr, columns, dtype)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 942, in _finalize_columns_and_data
+    raise ValueError(err) from err
+ValueError: 12 columns passed, passed data had 8 columns
+
+ERROR 2025-05-20 10:04:25,386 tasks 86325 8462421120 获取代币 BNBUSDT 的技术指标数据失败: 12 columns passed, passed data had 8 columns
+INFO 2025-05-20 10:04:25,387 tasks 86325 8462421120 代币 SOLUSDT 在当前周期已有技术分析数据，跳过更新
+ERROR 2025-05-20 10:04:26,851 technical_analysis 86325 8462421120 计算技术指标时发生错误: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:26,853 technical_analysis 86325 8462421120 Traceback (most recent call last):
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 939, in _finalize_columns_and_data
+    columns = _validate_or_indexify_columns(contents, columns)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 986, in _validate_or_indexify_columns
+    raise AssertionError(
+AssertionError: 12 columns passed, passed data had 8 columns
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py", line 72, in get_all_indicators
+    df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/frame.py", line 840, in __init__
+    arrays, columns, index = nested_data_to_arrays(
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 520, in nested_data_to_arrays
+    arrays, columns = to_arrays(data, columns, dtype=dtype)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 845, in to_arrays
+    content, columns = _finalize_columns_and_data(arr, columns, dtype)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 942, in _finalize_columns_and_data
+    raise ValueError(err) from err
+ValueError: 12 columns passed, passed data had 8 columns
+
+ERROR 2025-05-20 10:04:26,853 tasks 86325 8462421120 获取代币 XRPUSDT 的技术指标数据失败: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:28,301 technical_analysis 86325 8462421120 计算技术指标时发生错误: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:28,303 technical_analysis 86325 8462421120 Traceback (most recent call last):
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 939, in _finalize_columns_and_data
+    columns = _validate_or_indexify_columns(contents, columns)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 986, in _validate_or_indexify_columns
+    raise AssertionError(
+AssertionError: 12 columns passed, passed data had 8 columns
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py", line 72, in get_all_indicators
+    df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/frame.py", line 840, in __init__
+    arrays, columns, index = nested_data_to_arrays(
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 520, in nested_data_to_arrays
+    arrays, columns = to_arrays(data, columns, dtype=dtype)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 845, in to_arrays
+    content, columns = _finalize_columns_and_data(arr, columns, dtype)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 942, in _finalize_columns_and_data
+    raise ValueError(err) from err
+ValueError: 12 columns passed, passed data had 8 columns
+
+ERROR 2025-05-20 10:04:28,303 tasks 86325 8462421120 获取代币 ADAUSDT 的技术指标数据失败: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:29,713 technical_analysis 86325 8462421120 计算技术指标时发生错误: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:29,715 technical_analysis 86325 8462421120 Traceback (most recent call last):
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 939, in _finalize_columns_and_data
+    columns = _validate_or_indexify_columns(contents, columns)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 986, in _validate_or_indexify_columns
+    raise AssertionError(
+AssertionError: 12 columns passed, passed data had 8 columns
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py", line 72, in get_all_indicators
+    df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/frame.py", line 840, in __init__
+    arrays, columns, index = nested_data_to_arrays(
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 520, in nested_data_to_arrays
+    arrays, columns = to_arrays(data, columns, dtype=dtype)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 845, in to_arrays
+    content, columns = _finalize_columns_and_data(arr, columns, dtype)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 942, in _finalize_columns_and_data
+    raise ValueError(err) from err
+ValueError: 12 columns passed, passed data had 8 columns
+
+ERROR 2025-05-20 10:04:29,716 tasks 86325 8462421120 获取代币 DOGEUSDT 的技术指标数据失败: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:31,063 technical_analysis 86325 8462421120 计算技术指标时发生错误: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:31,064 technical_analysis 86325 8462421120 Traceback (most recent call last):
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 939, in _finalize_columns_and_data
+    columns = _validate_or_indexify_columns(contents, columns)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 986, in _validate_or_indexify_columns
+    raise AssertionError(
+AssertionError: 12 columns passed, passed data had 8 columns
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py", line 72, in get_all_indicators
+    df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/frame.py", line 840, in __init__
+    arrays, columns, index = nested_data_to_arrays(
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 520, in nested_data_to_arrays
+    arrays, columns = to_arrays(data, columns, dtype=dtype)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 845, in to_arrays
+    content, columns = _finalize_columns_and_data(arr, columns, dtype)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 942, in _finalize_columns_and_data
+    raise ValueError(err) from err
+ValueError: 12 columns passed, passed data had 8 columns
+
+ERROR 2025-05-20 10:04:31,065 tasks 86325 8462421120 获取代币 AVAXUSDT 的技术指标数据失败: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:32,481 technical_analysis 86325 8462421120 计算技术指标时发生错误: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:32,483 technical_analysis 86325 8462421120 Traceback (most recent call last):
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 939, in _finalize_columns_and_data
+    columns = _validate_or_indexify_columns(contents, columns)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 986, in _validate_or_indexify_columns
+    raise AssertionError(
+AssertionError: 12 columns passed, passed data had 8 columns
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py", line 72, in get_all_indicators
+    df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/frame.py", line 840, in __init__
+    arrays, columns, index = nested_data_to_arrays(
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 520, in nested_data_to_arrays
+    arrays, columns = to_arrays(data, columns, dtype=dtype)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 845, in to_arrays
+    content, columns = _finalize_columns_and_data(arr, columns, dtype)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 942, in _finalize_columns_and_data
+    raise ValueError(err) from err
+ValueError: 12 columns passed, passed data had 8 columns
+
+ERROR 2025-05-20 10:04:32,483 tasks 86325 8462421120 获取代币 DOTUSDT 的技术指标数据失败: 12 columns passed, passed data had 8 columns
+WARNING 2025-05-20 10:04:33,149 gate_api 86325 8462421120 Gate API请求失败 (1/3): HTTP 400, 耗时: 0.67秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:04:33,150 gate_api 86325 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+WARNING 2025-05-20 10:04:34,793 gate_api 86325 8462421120 Gate API请求失败 (2/3): HTTP 400, 耗时: 0.64秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:04:34,793 gate_api 86325 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+WARNING 2025-05-20 10:04:36,449 gate_api 86325 8462421120 Gate API请求失败 (3/3): HTTP 400, 耗时: 0.65秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:04:36,449 gate_api 86325 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+ERROR 2025-05-20 10:04:37,454 gate_api 86325 8462421120 在3次尝试后仍无法完成请求: None
+ERROR 2025-05-20 10:04:37,458 gate_api 86325 8462421120 获取MATICUSDT实时价格失败
+ERROR 2025-05-20 10:04:37,458 technical_analysis 86325 8462421120 无法获取MATICUSDT的实时价格，交易对可能不存在
+ERROR 2025-05-20 10:04:37,459 tasks 86325 8462421120 获取代币 MATICUSDT 的技术指标数据失败: 无法获取MATICUSDT的实时价格，请检查交易对是否存在
+ERROR 2025-05-20 10:04:38,888 technical_analysis 86325 8462421120 计算技术指标时发生错误: 12 columns passed, passed data had 8 columns
+ERROR 2025-05-20 10:04:38,890 technical_analysis 86325 8462421120 Traceback (most recent call last):
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 939, in _finalize_columns_and_data
+    columns = _validate_or_indexify_columns(contents, columns)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 986, in _validate_or_indexify_columns
+    raise AssertionError(
+AssertionError: 12 columns passed, passed data had 8 columns
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py", line 72, in get_all_indicators
+    df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/frame.py", line 840, in __init__
+    arrays, columns, index = nested_data_to_arrays(
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 520, in nested_data_to_arrays
+    arrays, columns = to_arrays(data, columns, dtype=dtype)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 845, in to_arrays
+    content, columns = _finalize_columns_and_data(arr, columns, dtype)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/cooltrade/lib/python3.12/site-packages/pandas/core/internals/construction.py", line 942, in _finalize_columns_and_data
+    raise ValueError(err) from err
+ValueError: 12 columns passed, passed data had 8 columns
+
+ERROR 2025-05-20 10:04:38,890 tasks 86325 8462421120 获取代币 LINKUSDT 的技术指标数据失败: 12 columns passed, passed data had 8 columns
+INFO 2025-05-20 10:04:38,890 tasks 86325 8462421120 技术指标参数更新任务完成。成功: 0, 失败: 10, 总计: 11
+INFO 2025-05-20 10:04:43,894 tasks 86325 8462421120 开始执行分析报告生成任务
+WARNING 2025-05-20 10:04:43,901 tasks 86325 8462421120 代币 BTCUSDT 没有技术分析数据，跳过生成报告
+WARNING 2025-05-20 10:04:43,906 tasks 86325 8462421120 代币 ETHUSDT 没有技术分析数据，跳过生成报告
+WARNING 2025-05-20 10:04:43,908 tasks 86325 8462421120 代币 BNBUSDT 没有技术分析数据，跳过生成报告
+INFO 2025-05-20 10:04:43,921 tasks 86325 8462421120 代币 SOLUSDT 已有基于最新技术分析数据的英文报告，跳过生成
+WARNING 2025-05-20 10:04:43,928 tasks 86325 8462421120 代币 XRPUSDT 没有技术分析数据，跳过生成报告
+WARNING 2025-05-20 10:04:43,929 tasks 86325 8462421120 代币 ADAUSDT 没有技术分析数据，跳过生成报告
+WARNING 2025-05-20 10:04:43,931 tasks 86325 8462421120 代币 DOGEUSDT 没有技术分析数据，跳过生成报告
+WARNING 2025-05-20 10:04:43,933 tasks 86325 8462421120 代币 AVAXUSDT 没有技术分析数据，跳过生成报告
+WARNING 2025-05-20 10:04:43,938 tasks 86325 8462421120 代币 DOTUSDT 没有技术分析数据，跳过生成报告
+WARNING 2025-05-20 10:04:43,943 tasks 86325 8462421120 代币 MATICUSDT 没有技术分析数据，跳过生成报告
+WARNING 2025-05-20 10:04:43,951 tasks 86325 8462421120 代币 LINKUSDT 没有技术分析数据，跳过生成报告
+INFO 2025-05-20 10:04:43,952 tasks 86325 8462421120 分析报告生成任务完成。成功: 0, 失败: 0, 总计: 11
+INFO 2025-05-20 10:05:27,693 autoreload 85153 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-20 10:05:28,394 autoreload 86532 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-20 10:05:36,288 autoreload 86532 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-20 10:05:36,867 autoreload 86547 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-20 10:05:45,717 tasks 86708 8462421120 开始执行技术指标参数更新任务
+INFO 2025-05-20 10:05:49,122 tasks 86708 8462421120 成功更新代币 BTCUSDT 的技术指标数据，ID: 278
+INFO 2025-05-20 10:05:52,367 tasks 86708 8462421120 成功更新代币 ETHUSDT 的技术指标数据，ID: 279
+INFO 2025-05-20 10:05:55,568 tasks 86708 8462421120 成功更新代币 BNBUSDT 的技术指标数据，ID: 280
+INFO 2025-05-20 10:05:55,570 tasks 86708 8462421120 代币 SOLUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:05:59,061 tasks 86708 8462421120 成功更新代币 XRPUSDT 的技术指标数据，ID: 281
+INFO 2025-05-20 10:06:02,440 tasks 86708 8462421120 成功更新代币 ADAUSDT 的技术指标数据，ID: 282
+INFO 2025-05-20 10:06:05,732 tasks 86708 8462421120 成功更新代币 DOGEUSDT 的技术指标数据，ID: 283
+INFO 2025-05-20 10:06:09,199 tasks 86708 8462421120 成功更新代币 AVAXUSDT 的技术指标数据，ID: 284
+INFO 2025-05-20 10:06:12,377 tasks 86708 8462421120 成功更新代币 DOTUSDT 的技术指标数据，ID: 285
+WARNING 2025-05-20 10:06:13,089 gate_api 86708 8462421120 Gate API请求失败 (1/3): HTTP 400, 耗时: 0.71秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:06:13,089 gate_api 86708 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+WARNING 2025-05-20 10:06:14,982 gate_api 86708 8462421120 Gate API请求失败 (2/3): HTTP 400, 耗时: 0.89秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:06:14,983 gate_api 86708 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+WARNING 2025-05-20 10:06:16,710 gate_api 86708 8462421120 Gate API请求失败 (3/3): HTTP 400, 耗时: 0.72秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:06:16,710 gate_api 86708 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+ERROR 2025-05-20 10:06:17,715 gate_api 86708 8462421120 在3次尝试后仍无法完成请求: None
+ERROR 2025-05-20 10:06:17,718 gate_api 86708 8462421120 获取MATICUSDT实时价格失败
+ERROR 2025-05-20 10:06:17,718 technical_analysis 86708 8462421120 无法获取MATICUSDT的实时价格，交易对可能不存在
+ERROR 2025-05-20 10:06:17,718 tasks 86708 8462421120 获取代币 MATICUSDT 的技术指标数据失败: 无法获取MATICUSDT的实时价格，请检查交易对是否存在
+INFO 2025-05-20 10:06:22,245 tasks 86708 8462421120 成功更新代币 LINKUSDT 的技术指标数据，ID: 286
+INFO 2025-05-20 10:06:22,246 tasks 86708 8462421120 技术指标参数更新任务完成。成功: 9, 失败: 1, 总计: 11
+INFO 2025-05-20 10:06:27,254 tasks 86708 8462421120 开始执行分析报告生成任务
+ERROR 2025-05-20 10:06:27,919 tasks 86708 8462421120 生成代币 BTCUSDT 的英文分析报告时发生错误: 'CryptoReportAPIView' object has no attribute '_generate_report'
+ERROR 2025-05-20 10:06:28,622 tasks 86708 8462421120 生成代币 ETHUSDT 的英文分析报告时发生错误: 'CryptoReportAPIView' object has no attribute '_generate_report'
+ERROR 2025-05-20 10:06:29,406 tasks 86708 8462421120 生成代币 BNBUSDT 的英文分析报告时发生错误: 'CryptoReportAPIView' object has no attribute '_generate_report'
+INFO 2025-05-20 10:06:29,413 tasks 86708 8462421120 代币 SOLUSDT 已有基于最新技术分析数据的英文报告，跳过生成
+ERROR 2025-05-20 10:06:30,227 tasks 86708 8462421120 生成代币 XRPUSDT 的英文分析报告时发生错误: 'CryptoReportAPIView' object has no attribute '_generate_report'
+ERROR 2025-05-20 10:06:30,973 tasks 86708 8462421120 生成代币 ADAUSDT 的英文分析报告时发生错误: 'CryptoReportAPIView' object has no attribute '_generate_report'
+ERROR 2025-05-20 10:06:31,607 tasks 86708 8462421120 生成代币 DOGEUSDT 的英文分析报告时发生错误: 'CryptoReportAPIView' object has no attribute '_generate_report'
+ERROR 2025-05-20 10:06:32,297 tasks 86708 8462421120 生成代币 AVAXUSDT 的英文分析报告时发生错误: 'CryptoReportAPIView' object has no attribute '_generate_report'
+ERROR 2025-05-20 10:06:32,948 tasks 86708 8462421120 生成代币 DOTUSDT 的英文分析报告时发生错误: 'CryptoReportAPIView' object has no attribute '_generate_report'
+WARNING 2025-05-20 10:06:32,951 tasks 86708 8462421120 代币 MATICUSDT 没有技术分析数据，跳过生成报告
+ERROR 2025-05-20 10:06:33,696 tasks 86708 8462421120 生成代币 LINKUSDT 的英文分析报告时发生错误: 'CryptoReportAPIView' object has no attribute '_generate_report'
+INFO 2025-05-20 10:06:33,696 tasks 86708 8462421120 分析报告生成任务完成。成功: 0, 失败: 9, 总计: 11
+INFO 2025-05-20 10:07:10,203 tasks 87052 8462421120 开始执行技术指标参数更新任务
+INFO 2025-05-20 10:07:10,218 tasks 87052 8462421120 代币 BTCUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:07:10,219 tasks 87052 8462421120 代币 ETHUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:07:10,220 tasks 87052 8462421120 代币 BNBUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:07:10,220 tasks 87052 8462421120 代币 SOLUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:07:10,221 tasks 87052 8462421120 代币 XRPUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:07:10,222 tasks 87052 8462421120 代币 ADAUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:07:10,224 tasks 87052 8462421120 代币 DOGEUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:07:10,225 tasks 87052 8462421120 代币 AVAXUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:07:10,225 tasks 87052 8462421120 代币 DOTUSDT 在当前周期已有技术分析数据，跳过更新
+WARNING 2025-05-20 10:07:11,075 gate_api 87052 8462421120 Gate API请求失败 (1/3): HTTP 400, 耗时: 0.85秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:07:11,075 gate_api 87052 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+WARNING 2025-05-20 10:07:12,802 gate_api 87052 8462421120 Gate API请求失败 (2/3): HTTP 400, 耗时: 0.73秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:07:12,802 gate_api 87052 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+WARNING 2025-05-20 10:07:14,559 gate_api 87052 8462421120 Gate API请求失败 (3/3): HTTP 400, 耗时: 0.76秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:07:14,559 gate_api 87052 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+ERROR 2025-05-20 10:07:15,562 gate_api 87052 8462421120 在3次尝试后仍无法完成请求: None
+ERROR 2025-05-20 10:07:15,566 gate_api 87052 8462421120 获取MATICUSDT实时价格失败
+ERROR 2025-05-20 10:07:15,566 technical_analysis 87052 8462421120 无法获取MATICUSDT的实时价格，交易对可能不存在
+ERROR 2025-05-20 10:07:15,566 tasks 87052 8462421120 获取代币 MATICUSDT 的技术指标数据失败: 无法获取MATICUSDT的实时价格，请检查交易对是否存在
+INFO 2025-05-20 10:07:15,570 tasks 87052 8462421120 代币 LINKUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:07:15,570 tasks 87052 8462421120 技术指标参数更新任务完成。成功: 0, 失败: 1, 总计: 11
+INFO 2025-05-20 10:07:20,576 tasks 87052 8462421120 开始执行分析报告生成任务
+INFO 2025-05-20 10:07:21,277 views_report 87052 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:07:21,278 views_report 87052 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:07:34,866 tasks 87052 8462421120 成功生成代币 BTCUSDT 的英文分析报告，ID: 16
+INFO 2025-05-20 10:07:35,526 views_report 87052 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:07:35,526 views_report 87052 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:07:48,776 tasks 87052 8462421120 成功生成代币 ETHUSDT 的英文分析报告，ID: 17
+INFO 2025-05-20 10:07:49,552 views_report 87052 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:07:49,553 views_report 87052 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:08:02,460 tasks 87052 8462421120 成功生成代币 BNBUSDT 的英文分析报告，ID: 18
+INFO 2025-05-20 10:08:02,465 tasks 87052 8462421120 代币 SOLUSDT 已有基于最新技术分析数据的英文报告，跳过生成
+INFO 2025-05-20 10:08:03,174 views_report 87052 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:08:03,174 views_report 87052 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:08:12,716 tasks 87052 8462421120 成功生成代币 XRPUSDT 的英文分析报告，ID: 19
+INFO 2025-05-20 10:08:13,453 views_report 87052 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:08:13,453 views_report 87052 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:08:28,639 tasks 87052 8462421120 成功生成代币 ADAUSDT 的英文分析报告，ID: 20
+INFO 2025-05-20 10:08:30,582 views_report 87052 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:08:30,583 views_report 87052 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:08:42,673 tasks 87052 8462421120 成功生成代币 DOGEUSDT 的英文分析报告，ID: 21
+INFO 2025-05-20 10:08:43,356 views_report 87052 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:08:43,356 views_report 87052 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:08:56,487 tasks 87052 8462421120 成功生成代币 AVAXUSDT 的英文分析报告，ID: 22
+INFO 2025-05-20 10:08:57,168 views_report 87052 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:08:57,168 views_report 87052 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:09:07,846 tasks 87052 8462421120 成功生成代币 DOTUSDT 的英文分析报告，ID: 23
+WARNING 2025-05-20 10:09:07,849 tasks 87052 8462421120 代币 MATICUSDT 没有技术分析数据，跳过生成报告
+INFO 2025-05-20 10:09:08,506 views_report 87052 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:09:08,506 views_report 87052 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:09:21,621 tasks 87052 8462421120 成功生成代币 LINKUSDT 的英文分析报告，ID: 24
+INFO 2025-05-20 10:09:21,621 tasks 87052 8462421120 分析报告生成任务完成。成功: 9, 失败: 0, 总计: 11
+INFO 2025-05-20 10:09:31,074 tasks 87521 8462421120 开始执行技术指标参数更新任务
+INFO 2025-05-20 10:09:31,085 tasks 87521 8462421120 代币 BTCUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:09:31,087 tasks 87521 8462421120 代币 ETHUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:09:31,088 tasks 87521 8462421120 代币 BNBUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:09:31,091 tasks 87521 8462421120 代币 SOLUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:09:31,092 tasks 87521 8462421120 代币 XRPUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:09:31,094 tasks 87521 8462421120 代币 ADAUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:09:31,094 tasks 87521 8462421120 代币 DOGEUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:09:31,095 tasks 87521 8462421120 代币 AVAXUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:09:31,096 tasks 87521 8462421120 代币 DOTUSDT 在当前周期已有技术分析数据，跳过更新
+WARNING 2025-05-20 10:09:31,824 gate_api 87521 8462421120 Gate API请求失败 (1/3): HTTP 400, 耗时: 0.73秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:09:31,824 gate_api 87521 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+WARNING 2025-05-20 10:09:33,471 gate_api 87521 8462421120 Gate API请求失败 (2/3): HTTP 400, 耗时: 0.64秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:09:33,471 gate_api 87521 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+WARNING 2025-05-20 10:09:35,198 gate_api 87521 8462421120 Gate API请求失败 (3/3): HTTP 400, 耗时: 0.72秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:09:35,198 gate_api 87521 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+ERROR 2025-05-20 10:09:36,201 gate_api 87521 8462421120 在3次尝试后仍无法完成请求: None
+ERROR 2025-05-20 10:09:36,204 gate_api 87521 8462421120 获取MATICUSDT实时价格失败
+ERROR 2025-05-20 10:09:36,204 technical_analysis 87521 8462421120 无法获取MATICUSDT的实时价格，交易对可能不存在
+ERROR 2025-05-20 10:09:36,204 tasks 87521 8462421120 获取代币 MATICUSDT 的技术指标数据失败: 无法获取MATICUSDT的实时价格，请检查交易对是否存在
+INFO 2025-05-20 10:09:36,213 tasks 87521 8462421120 代币 LINKUSDT 在当前周期已有技术分析数据，跳过更新
+INFO 2025-05-20 10:09:36,213 tasks 87521 8462421120 技术指标参数更新任务完成。成功: 0, 失败: 1, 总计: 11
+INFO 2025-05-20 10:09:41,218 tasks 87521 8462421120 开始执行分析报告生成任务
+INFO 2025-05-20 10:09:41,244 tasks 87521 8462421120 代币 BTCUSDT 已有基于最新技术分析数据的英文报告，跳过生成
+INFO 2025-05-20 10:09:41,248 tasks 87521 8462421120 代币 ETHUSDT 已有基于最新技术分析数据的英文报告，跳过生成
+INFO 2025-05-20 10:09:41,254 tasks 87521 8462421120 代币 BNBUSDT 已有基于最新技术分析数据的英文报告，跳过生成
+INFO 2025-05-20 10:09:41,256 tasks 87521 8462421120 代币 SOLUSDT 已有基于最新技术分析数据的英文报告，跳过生成
+INFO 2025-05-20 10:09:41,260 tasks 87521 8462421120 代币 XRPUSDT 已有基于最新技术分析数据的英文报告，跳过生成
+INFO 2025-05-20 10:09:41,262 tasks 87521 8462421120 代币 ADAUSDT 已有基于最新技术分析数据的英文报告，跳过生成
+INFO 2025-05-20 10:09:41,264 tasks 87521 8462421120 代币 DOGEUSDT 已有基于最新技术分析数据的英文报告，跳过生成
+INFO 2025-05-20 10:09:41,267 tasks 87521 8462421120 代币 AVAXUSDT 已有基于最新技术分析数据的英文报告，跳过生成
+INFO 2025-05-20 10:09:41,286 tasks 87521 8462421120 代币 DOTUSDT 已有基于最新技术分析数据的英文报告，跳过生成
+WARNING 2025-05-20 10:09:41,359 tasks 87521 8462421120 代币 MATICUSDT 没有技术分析数据，跳过生成报告
+INFO 2025-05-20 10:09:41,368 tasks 87521 8462421120 代币 LINKUSDT 已有基于最新技术分析数据的英文报告，跳过生成
+INFO 2025-05-20 10:09:41,368 tasks 87521 8462421120 分析报告生成任务完成。成功: 0, 失败: 0, 总计: 11
+INFO 2025-05-20 10:10:11,978 tasks 87791 8462421120 开始执行技术指标参数更新任务
+INFO 2025-05-20 10:10:15,175 tasks 87791 8462421120 成功更新代币 BTCUSDT 的技术指标数据，ID: 287
+INFO 2025-05-20 10:10:18,604 tasks 87791 8462421120 成功更新代币 ETHUSDT 的技术指标数据，ID: 288
+INFO 2025-05-20 10:10:21,724 tasks 87791 8462421120 成功更新代币 BNBUSDT 的技术指标数据，ID: 289
+INFO 2025-05-20 10:10:24,862 tasks 87791 8462421120 成功更新代币 SOLUSDT 的技术指标数据，ID: 290
+INFO 2025-05-20 10:10:27,914 tasks 87791 8462421120 成功更新代币 XRPUSDT 的技术指标数据，ID: 291
+INFO 2025-05-20 10:10:31,556 tasks 87791 8462421120 成功更新代币 ADAUSDT 的技术指标数据，ID: 292
+INFO 2025-05-20 10:10:34,801 tasks 87791 8462421120 成功更新代币 DOGEUSDT 的技术指标数据，ID: 293
+INFO 2025-05-20 10:10:37,937 tasks 87791 8462421120 成功更新代币 AVAXUSDT 的技术指标数据，ID: 294
+INFO 2025-05-20 10:10:41,568 tasks 87791 8462421120 成功更新代币 DOTUSDT 的技术指标数据，ID: 295
+WARNING 2025-05-20 10:10:42,231 gate_api 87791 8462421120 Gate API请求失败 (1/3): HTTP 400, 耗时: 0.66秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:10:42,232 gate_api 87791 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+WARNING 2025-05-20 10:10:44,021 gate_api 87791 8462421120 Gate API请求失败 (2/3): HTTP 400, 耗时: 0.78秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:10:44,022 gate_api 87791 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+WARNING 2025-05-20 10:10:45,784 gate_api 87791 8462421120 Gate API请求失败 (3/3): HTTP 400, 耗时: 0.76秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-05-20 10:10:45,784 gate_api 87791 8462421120 响应内容: {"label":"INVALID_CURRENCY_PAIR","message":"Invalid currency pair MATIC_USDT"}
+ERROR 2025-05-20 10:10:46,789 gate_api 87791 8462421120 在3次尝试后仍无法完成请求: None
+ERROR 2025-05-20 10:10:46,793 gate_api 87791 8462421120 获取MATICUSDT实时价格失败
+ERROR 2025-05-20 10:10:46,794 technical_analysis 87791 8462421120 无法获取MATICUSDT的实时价格，交易对可能不存在
+ERROR 2025-05-20 10:10:46,794 tasks 87791 8462421120 获取代币 MATICUSDT 的技术指标数据失败: 无法获取MATICUSDT的实时价格，请检查交易对是否存在
+INFO 2025-05-20 10:10:49,906 tasks 87791 8462421120 成功更新代币 LINKUSDT 的技术指标数据，ID: 296
+INFO 2025-05-20 10:10:49,906 tasks 87791 8462421120 技术指标参数更新任务完成。成功: 10, 失败: 1, 总计: 11
+INFO 2025-05-20 10:10:54,913 tasks 87791 8462421120 开始执行分析报告生成任务
+INFO 2025-05-20 10:10:55,674 views_report 87791 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:10:55,674 views_report 87791 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:11:09,961 tasks 87791 8462421120 成功生成代币 BTCUSDT 的英文分析报告，ID: 25
+INFO 2025-05-20 10:11:10,652 views_report 87791 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:11:10,653 views_report 87791 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:11:23,595 tasks 87791 8462421120 成功生成代币 ETHUSDT 的英文分析报告，ID: 26
+INFO 2025-05-20 10:11:24,239 views_report 87791 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:11:24,239 views_report 87791 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:11:36,951 tasks 87791 8462421120 成功生成代币 BNBUSDT 的英文分析报告，ID: 27
+INFO 2025-05-20 10:11:37,610 views_report 87791 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:11:37,611 views_report 87791 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:11:51,021 tasks 87791 8462421120 成功生成代币 SOLUSDT 的英文分析报告，ID: 28
+INFO 2025-05-20 10:11:51,827 views_report 87791 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:11:51,828 views_report 87791 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+ERROR 2025-05-20 10:13:37,842 tasks 87791 8462421120 生成代币 XRPUSDT 的英文分析报告失败
+INFO 2025-05-20 10:13:38,592 views_report 87791 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:13:38,593 views_report 87791 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:13:51,699 tasks 87791 8462421120 成功生成代币 ADAUSDT 的英文分析报告，ID: 29
+INFO 2025-05-20 10:13:52,406 views_report 87791 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:13:52,407 views_report 87791 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:14:05,482 tasks 87791 8462421120 成功生成代币 DOGEUSDT 的英文分析报告，ID: 30
+INFO 2025-05-20 10:14:06,188 views_report 87791 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:14:06,188 views_report 87791 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:14:17,104 tasks 87791 8462421120 成功生成代币 AVAXUSDT 的英文分析报告，ID: 31
+INFO 2025-05-20 10:14:17,806 views_report 87791 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:14:17,806 views_report 87791 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:15:32,365 views_technical_indicators 86547 6202683392 请求的语言: zh-CN
+WARNING 2025-05-20 10:15:32,377 log 86547 6202683392 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-20 10:15:32,377 basehttp 86547 6202683392 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 108
+INFO 2025-05-20 10:15:59,375 views_technical_indicators 86547 6202683392 请求的语言: en-US
+INFO 2025-05-20 10:15:59,386 basehttp 86547 6202683392 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2774
+ERROR 2025-05-20 10:16:04,046 tasks 87791 8462421120 生成代币 DOTUSDT 的英文分析报告失败
+WARNING 2025-05-20 10:16:04,050 tasks 87791 8462421120 代币 MATICUSDT 没有技术分析数据，跳过生成报告
+INFO 2025-05-20 10:16:04,783 views_report 87791 8462421120 没有找到上一份报告，将生成全新的报告
+INFO 2025-05-20 10:16:04,784 views_report 87791 8462421120 调用 Coze API 创建对话: https://api.coze.com/v3/chat
+INFO 2025-05-20 10:16:18,638 tasks 87791 8462421120 成功生成代币 LINKUSDT 的英文分析报告，ID: 32
+INFO 2025-05-20 10:16:18,639 tasks 87791 8462421120 分析报告生成任务完成。成功: 8, 失败: 2, 总计: 11
+INFO 2025-05-20 10:16:26,240 basehttp 86547 6202683392 "GET /api/crypto/get_report/BTCUSDT/?language=en-US HTTP/1.1" 200 2474
+INFO 2025-05-20 10:35:08,432 autoreload 86547 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/config/settings.py changed, reloading.
+INFO 2025-05-20 10:35:09,095 autoreload 91878 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-20 10:35:22,280 autoreload 91878 8462421120 /Users/liuzhao/Documents/Projects/Cooltrade/backend/config/settings.py changed, reloading.
