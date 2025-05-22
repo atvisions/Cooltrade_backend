@@ -320,9 +320,11 @@ LOGGING = {
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
+    "chrome-extension://diiipggohidleibcopmihbenfhckbihg",  # 您的扩展 ID
     "chrome-extension://donikojkgchpmgdbfodnpbjhfpiehfhd",
     "http://localhost:3001",
     "http://127.0.0.1:3001",
+    "http://192.168.3.16:8000",  # 添加本地开发服务器
 ]
 
 CORS_ALLOW_METHODS = [

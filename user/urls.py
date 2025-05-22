@@ -2,7 +2,8 @@ from django.urls import path
 from .views import (
     SendVerificationCodeView, RegisterView, LoginView, UserProfileView,
     TokenRefreshView, ChangePasswordView, RequestPasswordResetView,
-    ResetPasswordWithCodeView, GenerateInvitationCodeView, UserInvitationView
+    ResetPasswordWithCodeView, GenerateInvitationCodeView, UserInvitationView, UserRankingView,
+    ClaimTemporaryInvitationView
 )
 
 urlpatterns = [
@@ -16,6 +17,8 @@ urlpatterns = [
     # 邀请码相关
     path('generate-invitation-code/', GenerateInvitationCodeView.as_view(), name='generate_invitation_code'),
     path('invitation-info/', UserInvitationView.as_view(), name='user_invitation_info'),
+    path('invitation-info/ranking/', UserRankingView.as_view(), name='user_ranking'),
+    path('claim-temporary-invitation/', ClaimTemporaryInvitationView.as_view(), name='claim_temporary_invitation'),
 
     # 密码管理相关
     path('change-password/', ChangePasswordView.as_view(), name='change_password'),

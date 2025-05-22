@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.conf import settings
-from .models import User, VerificationCode, InvitationCode, InvitationRecord, SystemSetting
+from .models import User, VerificationCode, InvitationCode, InvitationRecord, SystemSetting, TemporaryInvitation
 from django.utils import timezone
 import random
 import string
@@ -129,44 +129,44 @@ class RegisterView(APIView):
                 invitation = None
                 inviter = None
 
-                if invitation_code_str:
+                if invitation_code_str: # 检查是否有邀请码（无论是临时的还是注册时提供的）
                     try:
                         invitation = InvitationCode.objects.get(code=invitation_code_str)
                         inviter = invitation.created_by
 
-                        # 如果是一次性邀请码且已使用，则报错
-                        if not invitation.is_personal and invitation.is_used:
-                            return Response({
-                                'status': 'error',
-                                'message': '邀请码已被使用'
-                            }, status=status.HTTP_400_BAD_REQUEST)
+                        # 如果是一次性邀请码且已使用，则报错 (这个逻辑可能需要调整，取决于您的具体业务需求)
+                        # 在认领临时邀请时已经处理了一次性邀请码的逻辑，这里可能不再需要严格检查
+                        # 但为了安全，保留检查逻辑，如果出现问题再根据实际情况调整
+                        if not invitation.is_personal and invitation.is_used and invitation.used_by != user:
+                             # 如果是一次性邀请码且被其他用户使用了，则无效
+                            pass # 不阻止注册，但忽略邀请码
+                        else:
+                             # 设置邀请人
+                            user.inviter = inviter
 
-                        # 设置邀请人
-                        user.inviter = inviter
+                            # 如果是一次性邀请码，标记为已使用 (如果之前没标记)
+                            if not invitation.is_personal and not invitation.is_used:
+                                invitation.is_used = True
+                                invitation.used_by = user
+                                invitation.used_at = timezone.now()
+                                invitation.save()
 
-                        # 如果是一次性邀请码，标记为已使用
-                        if not invitation.is_personal:
-                            invitation.is_used = True
-                            invitation.used_by = user
-                            invitation.used_at = timezone.now()
-                            invitation.save()
+                            # 关联邀请码到用户
+                            user.invitation_code = invitation
 
-                        # 关联邀请码到用户
-                        user.invitation_code = invitation
+                            # 给邀请人增加积分 (确保邀请人存在且不是自己，并且没有重复奖励)
+                            if inviter and inviter != user and not InvitationRecord.objects.filter(inviter=inviter, invitee=user).exists():
+                                invitation_points = SystemSetting.get_invitation_points()
+                                inviter.points += invitation_points
+                                inviter.save()
 
-                        # 给邀请人增加积分
-                        invitation_points = SystemSetting.get_invitation_points()
-                        if inviter:
-                            inviter.points += invitation_points
-                            inviter.save()
-
-                            # 创建邀请记录
-                            InvitationRecord.objects.create(
-                                inviter=inviter,
-                                invitee=user,
-                                invitation_code=invitation,
-                                points_awarded=invitation_points
-                            )
+                                # 创建邀请记录
+                                InvitationRecord.objects.create(
+                                    inviter=inviter,
+                                    invitee=user,
+                                    invitation_code=invitation,
+                                    points_awarded=invitation_points
+                                )
                     except InvitationCode.DoesNotExist:
                         # 邀请码不存在，但不阻止注册
                         pass
@@ -564,4 +564,124 @@ class ResetPasswordWithCodeView(APIView):
             return Response({
                 'status': 'error',
                 'message': '重置密码失败，请稍后重试'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+# 新增用户排名视图
+class UserRankingView(APIView):
+    """用户排名视图"""
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        """获取用户的积分排名"""
+        try:
+            # 按积分降序获取所有用户
+            users_by_points = User.objects.order_by('-points')
+
+            # 查找当前用户的排名
+            ranking = None
+            for i, user in enumerate(users_by_points):
+                if user == request.user:
+                    ranking = i + 1
+                    break
+
+            return Response({
+                'status': 'success',
+                'ranking': ranking
+            })
+        except Exception as e:
+            logger.error(f"获取用户排名失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '获取用户排名失败'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+# 新增认领临时邀请视图
+class ClaimTemporaryInvitationView(APIView):
+    """认领从网站捕获的临时邀请码"""
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        try:
+            user = request.user
+            # 从请求体中获取临时邀请的 UUID
+            temporary_invitation_uuid = request.data.get('temporary_invitation_uuid')
+            if not temporary_invitation_uuid:
+                return Response({
+                    'status': 'error',
+                    'message': '缺少临时邀请码 UUID'
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            # 查找是否有匹配的临时邀请记录
+            try:
+                temporary_invitation = TemporaryInvitation.objects.get(uuid=temporary_invitation_uuid)
+            except TemporaryInvitation.DoesNotExist:
+                 return Response({
+                    'status': 'error',
+                    'message': '没有待认领的邀请码或已过期'
+                }, status=status.HTTP_404_NOT_FOUND)
+
+            if temporary_invitation:
+                invitation_code = temporary_invitation.invitation_code
+
+                # 查找对应的邀请码对象
+                try:
+                    invitation = InvitationCode.objects.get(code=invitation_code)
+                    inviter = invitation.created_by
+
+                    # 检查是否重复认领 (如果需要)
+                    if InvitationRecord.objects.filter(inviter=inviter, invitee=user).exists():
+                         # 如果已经存在邀请记录，直接删除临时邀请，返回成功但不重复奖励
+                        temporary_invitation.delete()
+                        return Response({
+                            'status': 'success',
+                            'message': '已认领过该邀请'
+                        })
+
+                    # 确保邀请人存在且不是自己
+                    if inviter and inviter != user:
+                        # 给邀请人增加积分
+                        invitation_points = SystemSetting.get_invitation_points()
+                        inviter.points += invitation_points
+                        inviter.save()
+
+                        # 创建邀请记录
+                        InvitationRecord.objects.create(
+                            inviter=inviter,
+                            invitee=user,
+                            invitation_code=invitation,
+                            points_awarded=invitation_points
+                        )
+
+                        # 删除临时邀请记录
+                        temporary_invitation.delete()
+
+                        return Response({
+                            'status': 'success',
+                            'message': '成功认领邀请并获得奖励'
+                        })
+                    else:
+                         # 邀请人不存在或邀请的是自己，删除临时邀请，返回失败
+                        temporary_invitation.delete()
+                        return Response({
+                            'status': 'error',
+                            'message': '无效的邀请码'
+                        }, status=status.HTTP_400_BAD_REQUEST)
+                except InvitationCode.DoesNotExist:
+                    # 邀请码对象不存在，删除临时邀请，返回失败
+                    temporary_invitation.delete()
+                    return Response({
+                        'status': 'error',
+                        'message': '无效的邀请码'
+                    }, status=status.HTTP_400_BAD_REQUEST)
+            else:
+                return Response({
+                    'status': 'error',
+                    'message': '没有待认领的邀请码'
+                }, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as e:
+            logger.error(f"认领临时邀请失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '认领临时邀请失败'
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager
 import random
 import string
 from datetime import timedelta
+import uuid
 
 class UserManager(BaseUserManager):
     """自定义用户管理器"""
@@ -172,3 +173,13 @@ class SystemSetting(models.Model):
         except (cls.DoesNotExist, ValueError):
             # 默认值为10
             return 10
+
+# 新增临时邀请模型
+class TemporaryInvitation(models.Model):
+    """暂存从网站捕获的邀请码，等待用户在插件中认领"""
+    invitation_code = models.CharField(max_length=8, help_text="捕获的邀请码")
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True, help_text="用于认领的唯一标识符")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'临时邀请码: {{self.invitation_code}} (UUID: {{self.uuid}})'

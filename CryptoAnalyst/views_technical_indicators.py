@@ -10,6 +10,7 @@ from asgiref.sync import sync_to_async
 from django.utils import timezone
 import time
 import logging
+import datetime
 
 from .services.technical_analysis import TechnicalAnalysisService
 from .services.market_data_service import MarketDataService
@@ -89,11 +90,20 @@ class TechnicalIndicatorsAPIView(APIView):
             reports_qs = await sync_to_async(reports_qs.order_by)('-timestamp')
             latest_report = await sync_to_async(reports_qs.first)()
 
+            # 定义报告新鲜度阈值 (12小时)
+            freshness_threshold = timezone.now() - datetime.timedelta(hours=12)
+
             # 如果找不到指定语言的报告，直接返回错误
-            if not latest_report:
+            if not latest_report or latest_report.timestamp < freshness_threshold:
+                # 记录日志
+                if not latest_report:
+                    logger.warning(f"未找到代币 {symbol} 的 {language} 语言分析报告，返回 404。")
+                else:
+                    logger.warning(f"代币 {symbol} 的 {language} 语言最新报告 ({latest_report.timestamp}) 已超过 12 小时新鲜度阈值 ({freshness_threshold})，返回 404。")
+
                 return Response({
                     'status': 'not_found',
-                    'message': f"未找到代币 {symbol} 的 {language} 语言分析报告",
+                    'message': f"未找到代币 {symbol} 的最新 {language} 语言分析数据或数据已过期",
                     'needs_refresh': True
                 }, status=status.HTTP_404_NOT_FOUND)
 
@@ -114,7 +124,7 @@ class TechnicalIndicatorsAPIView(APIView):
                 'status': 'success',
                 'data': {
                     'symbol': symbol,
-                    'price': float(latest_report.snapshot_price),
+                    'price': float(latest_report.snapshot_price) if latest_report.snapshot_price is not None else None,
                     'trend_analysis': {
                         'probabilities': {
                             'up': latest_report.trend_up_probability,
@@ -195,17 +205,17 @@ class TechnicalIndicatorsAPIView(APIView):
                     'trading_advice': {
                         'action': latest_report.trading_action,
                         'reason': latest_report.trading_reason,
-                        'entry_price': float(latest_report.entry_price),
-                        'stop_loss': float(latest_report.stop_loss),
-                        'take_profit': float(latest_report.take_profit)
+                        'entry_price': float(latest_report.entry_price) if latest_report.entry_price is not None else None,
+                        'stop_loss': float(latest_report.stop_loss) if latest_report.stop_loss is not None else None,
+                        'take_profit': float(latest_report.take_profit) if latest_report.take_profit is not None else None
                     },
                     'risk_assessment': {
                         'level': latest_report.risk_level,
-                        'score': int(latest_report.risk_score),
+                        'score': int(latest_report.risk_score) if latest_report.risk_score is not None else None,
                         'details': latest_report.risk_details
                     },
-                    'current_price': float(latest_report.snapshot_price),
-                    'snapshot_price': float(latest_report.snapshot_price),
+                    'current_price': float(latest_report.snapshot_price) if latest_report.snapshot_price is not None else None,
+                    'snapshot_price': float(latest_report.snapshot_price) if latest_report.snapshot_price is not None else None,
                     'last_update_time': latest_report.timestamp.isoformat()
                 }
             }
