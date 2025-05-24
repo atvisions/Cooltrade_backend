@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'user',
     'CryptoAnalyst',
-    'website',
+    'website.apps.WebsiteConfig',
 ]
 
 MIDDLEWARE = [

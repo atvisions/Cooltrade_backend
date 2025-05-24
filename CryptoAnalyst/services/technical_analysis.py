@@ -35,7 +35,7 @@ class TechnicalAnalysisService:
                 logger.error("无法初始化 Gate API 客户端")
                 return {
                     'status': 'error',
-                    'message': "无法连接到 Gate API"
+                    'message': "无法连接到 Gate API，请检查API配置"
                 }
 
             # 首先检查是否能获取实时价格，这可以验证交易对是否存在
@@ -48,6 +48,7 @@ class TechnicalAnalysisService:
                 }
 
             # 成功获取实时价格，开始计算技术指标
+            logger.info(f"开始计算{symbol}的技术指标")
 
             # 获取历史K线数据，减少请求数据量
             # 从之前的1000天减少到100天，对于新上线的代币更友好
@@ -62,28 +63,52 @@ class TechnicalAnalysisService:
                     logger.warning(f"无法获取足够的K线数据进行分析: {symbol}")
                     return {
                         'status': 'error',
-                        'message': f"无法获取{symbol}的K线数据"
+                        'message': f"无法获取{symbol}的K线数据，请稍后重试"
                     }
 
             # 记录获取到的K线数量
             kline_count = len(klines)
-            # 开始计算指标
+            logger.info(f"获取到{symbol}的{kline_count}条K线数据")
 
             # 转换为DataFrame
-            # Gate API返回的K线数据只有8列，而不是12列
-            # 格式为: [timestamp, volume, close, high, low, open, ...]
-            # 我们需要适应这种格式
             try:
-                # 首先检查数据格式
-                if len(klines) > 0 and len(klines[0]) == 8:
-                    # Gate API格式
-                    df = pd.DataFrame(klines, columns=['timestamp', 'volume', 'close', 'high', 'low', 'open', 'quote_volume', 'trades'])
-                elif len(klines) > 0 and len(klines[0]) == 12:
-                    # 标准格式
+                # 检查数据格式并记录详细信息
+                if not klines or len(klines) == 0:
+                    logger.error(f"K线数据为空: {symbol}")
+                    return {
+                        'status': 'error',
+                        'message': f"无法获取{symbol}的K线数据，请稍后重试"
+                    }
+
+                # 记录数据格式信息
+                first_kline = klines[0]
+                logger.info(f"K线数据格式 - 总数: {len(klines)}, 列数: {len(first_kline)}, 示例: {first_kline}")
+
+                # 统一使用12列标准格式（Gate API已经转换为标准格式）
+                if len(first_kline) == 12:
+                    # 标准格式: [timestamp, open, high, low, close, volume, close_time, quote_volume, trades, taker_buy_base, taker_buy_quote, ignore]
                     df = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
+                elif len(first_kline) == 6:
+                    # Gate原始格式: [timestamp, volume, close, high, low, open]
+                    logger.warning(f"检测到Gate原始格式，进行转换")
+                    converted_klines = []
+                    for candle in klines:
+                        converted_kline = [
+                            int(float(candle[0]) * 1000) if float(candle[0]) < 1e12 else int(float(candle[0])),  # timestamp
+                            float(candle[5]),  # open
+                            float(candle[3]),  # high
+                            float(candle[4]),  # low
+                            float(candle[2]),  # close
+                            float(candle[1]),  # volume
+                            0, 0, 0, 0, 0, 0   # 填充其他列
+                        ]
+                        converted_klines.append(converted_kline)
+                    df = pd.DataFrame(converted_klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_volume', 'trades', 'taker_buy_base', 'taker_buy_quote', 'ignore'])
                 else:
-                    # 未知格式，尝试使用最少的列
-                    logger.warning(f"未知的K线数据格式，尝试使用最少的必要列。列数: {len(klines[0]) if klines and len(klines) > 0 else 'unknown'}")
+                    # 未知格式，尝试使用最少的必要列
+                    logger.warning(f"未知的K线数据格式，列数: {len(first_kline)}, 尝试使用最少的必要列")
+                    logger.warning(f"示例数据: {first_kline}")
+
                     # 创建一个最小的DataFrame，只包含必要的列
                     df = pd.DataFrame()
                     df['timestamp'] = [k[0] for k in klines]
@@ -92,98 +117,122 @@ class TechnicalAnalysisService:
                     df['low'] = [float(k[3]) if len(k) > 3 else 0 for k in klines]
                     df['close'] = [float(k[4]) if len(k) > 4 else 0 for k in klines]
                     df['volume'] = [float(k[5]) if len(k) > 5 else 0 for k in klines]
+
             except Exception as e:
                 logger.error(f"创建DataFrame时发生错误: {str(e)}")
+                logger.error(f"K线数据格式: {klines[:2] if klines else 'None'}")  # 只显示前两条数据用于调试
+                logger.error(traceback.format_exc())
                 # 创建一个空的DataFrame，包含必要的列
                 df = pd.DataFrame(columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
                 # 添加一行数据，避免后续计算出错
                 df.loc[0] = [int(time.time() * 1000), price, price * 1.01, price * 0.99, price, 0]
 
             # 确保数据类型正确
-            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
-            df['close'] = df['close'].astype(float)
-            df['volume'] = df['volume'].astype(float)
-            df['open'] = df['open'].astype(float)
-            df['high'] = df['high'].astype(float)
-            df['low'] = df['low'].astype(float)
+            try:
+                df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+                df['close'] = df['close'].astype(float)
+                df['volume'] = df['volume'].astype(float)
+                df['open'] = df['open'].astype(float)
+                df['high'] = df['high'].astype(float)
+                df['low'] = df['low'].astype(float)
+            except Exception as e:
+                logger.error(f"转换数据类型时发生错误: {str(e)}")
+                logger.error(traceback.format_exc())
+                return {
+                    'status': 'error',
+                    'message': "数据处理错误，请稍后重试"
+                }
 
             # 按时间排序
             df = df.sort_values('timestamp')
 
-            # 检查数据量是否足够
-            # 如果数据量不足200天，某些高级指标可能不准确
-
             # 计算技术指标，基于可用数据量灵活调整
             indicators = {}
 
-            # 基本指标，至少需要14天数据
-            if len(df) >= 14:
-                indicators['RSI'] = self._calculate_rsi(df)
-                indicators['MACD'] = self._calculate_macd(df)
-                indicators['BollingerBands'] = self._calculate_bollinger_bands(df)
-                indicators['BIAS'] = self._calculate_bias(df)
-            else:
-                logger.warning(f"数据不足，无法计算基本技术指标")
-                # 提供默认值
-                indicators['RSI'] = 50.0
-                indicators['MACD'] = {'line': 0.0, 'signal': 0.0, 'histogram': 0.0}
-                indicators['BollingerBands'] = {'upper': price * 1.02, 'middle': price, 'lower': price * 0.98}
-                indicators['BIAS'] = 0.0
+            try:
+                # 基本指标，至少需要14天数据
+                if len(df) >= 14:
+                    indicators['RSI'] = self._calculate_rsi(df)
+                    indicators['MACD'] = self._calculate_macd(df)
+                    indicators['BollingerBands'] = self._calculate_bollinger_bands(df)
+                    indicators['BIAS'] = self._calculate_bias(df)
+                else:
+                    logger.warning(f"数据不足，无法计算基本技术指标")
+                    # 提供默认值
+                    indicators['RSI'] = 50.0
+                    indicators['MACD'] = {'line': 0.0, 'signal': 0.0, 'histogram': 0.0}
+                    indicators['BollingerBands'] = {'upper': price * 1.02, 'middle': price, 'lower': price * 0.98}
+                    indicators['BIAS'] = 0.0
 
-            # 其他指标
-            if len(df) >= 12:
-                indicators['PSY'] = self._calculate_psy(df)
-            else:
-                indicators['PSY'] = 50.0
+                # 其他指标
+                if len(df) >= 12:
+                    indicators['PSY'] = self._calculate_psy(df)
+                else:
+                    indicators['PSY'] = 50.0
 
-            if len(df) >= 14:
-                indicators['DMI'] = self._calculate_dmi(df)
-            else:
-                indicators['DMI'] = {'plus_di': 25.0, 'minus_di': 25.0, 'adx': 20.0}
+                if len(df) >= 14:
+                    indicators['DMI'] = self._calculate_dmi(df)
+                else:
+                    indicators['DMI'] = {'plus_di': 25.0, 'minus_di': 25.0, 'adx': 20.0}
 
-            if len(df) >= 20:
-                indicators['VWAP'] = self._calculate_vwap(df)
-            else:
-                indicators['VWAP'] = price
+                if len(df) >= 20:
+                    indicators['VWAP'] = self._calculate_vwap(df)
+                else:
+                    indicators['VWAP'] = price
 
-            # 资金费率和交易所净流入可能不依赖于历史K线长度
-            indicators['FundingRate'] = self._get_funding_rate(symbol)
-            indicators['ExchangeNetflow'] = self._calculate_exchange_netflow(df)
+                # 资金费率和交易所净流入可能不依赖于历史K线长度
+                indicators['FundingRate'] = self._get_funding_rate(symbol)
+                indicators['ExchangeNetflow'] = self._calculate_exchange_netflow(df)
 
-            # 高级指标需要更多数据
-            if len(df) >= 200:
-                indicators['NUPL'] = self._calculate_nupl(df, window=200)
-                indicators['MayerMultiple'] = self._calculate_mayer_multiple(df, window=200)
-            elif len(df) >= 100:
-                # 使用100天数据计算，可能不太准确但比默认值更有意义
-                # 数据量不足200天，使用可用数据计算高级指标
-                indicators['NUPL'] = self._calculate_nupl(df, window=100)
-                indicators['MayerMultiple'] = self._calculate_mayer_multiple(df, window=100)
-            elif len(df) >= 50:
-                # 使用50天数据计算，作为近似值
-                # 数据量较少，使用近似方法计算高级指标
-                indicators['NUPL'] = self._calculate_nupl(df, window=50)
-                indicators['MayerMultiple'] = self._calculate_mayer_multiple(df, window=50)
-            else:
-                # 数据太少，使用默认值
-                logger.warning(f"数据量过少({len(df)}天)，无法计算高级指标，使用默认值")
-                indicators['NUPL'] = 0.0
-                indicators['MayerMultiple'] = 1.0
+                # 高级指标需要更多数据
+                if len(df) >= 200:
+                    indicators['NUPL'] = self._calculate_nupl(df, window=200)
+                    indicators['MayerMultiple'] = self._calculate_mayer_multiple(df, window=200)
+                elif len(df) >= 100:
+                    # 使用100天数据计算，可能不太准确但比默认值更有意义
+                    indicators['NUPL'] = self._calculate_nupl(df, window=100)
+                    indicators['MayerMultiple'] = self._calculate_mayer_multiple(df, window=100)
+                elif len(df) >= 50:
+                    # 使用50天数据计算，作为近似值
+                    indicators['NUPL'] = self._calculate_nupl(df, window=50)
+                    indicators['MayerMultiple'] = self._calculate_mayer_multiple(df, window=50)
+                else:
+                    # 数据太少，使用默认值
+                    logger.warning(f"数据量过少({len(df)}天)，无法计算高级指标，使用默认值")
+                    indicators['NUPL'] = 0.0
+                    indicators['MayerMultiple'] = 1.0
+
+            except Exception as e:
+                logger.error(f"计算技术指标时发生错误: {str(e)}")
+                logger.error(traceback.format_exc())
+                return {
+                    'status': 'error',
+                    'message': "计算技术指标时发生错误，请稍后重试"
+                }
 
             # 检查所有指标是否有效
-            for key, value in indicators.items():
-                if isinstance(value, (int, float)):
-                    if np.isnan(value) or np.isinf(value):
-                        logger.warning(f"指标 {key} 的值无效: {value}，使用默认值")
-                        indicators[key] = 0.0
-                elif isinstance(value, dict):
-                    for sub_key, sub_value in value.items():
-                        if isinstance(sub_value, (int, float)):
-                            if np.isnan(sub_value) or np.isinf(sub_value):
-                                logger.warning(f"指标 {key}.{sub_key} 的值无效: {sub_value}，使用默认值")
-                                value[sub_key] = 0.0
+            try:
+                for key, value in indicators.items():
+                    if isinstance(value, (int, float)):
+                        if np.isnan(value) or np.isinf(value):
+                            logger.warning(f"指标 {key} 的值无效: {value}，使用默认值")
+                            indicators[key] = 0.0
+                    elif isinstance(value, dict):
+                        for sub_key, sub_value in value.items():
+                            if isinstance(sub_value, (int, float)):
+                                if np.isnan(sub_value) or np.isinf(sub_value):
+                                    logger.warning(f"指标 {key}.{sub_key} 的值无效: {sub_value}，使用默认值")
+                                    value[sub_key] = 0.0
+            except Exception as e:
+                logger.error(f"验证指标值时发生错误: {str(e)}")
+                logger.error(traceback.format_exc())
+                return {
+                    'status': 'error',
+                    'message': "验证指标值时发生错误，请稍后重试"
+                }
 
             # 成功计算所有技术指标
+            logger.info(f"成功计算{symbol}的所有技术指标")
             return {
                 'status': 'success',
                 'data': {
@@ -194,24 +243,12 @@ class TechnicalAnalysisService:
                 }
             }
 
-        except requests.exceptions.Timeout:
-            logger.error(f"请求OKX API超时")
-            return {
-                'status': 'error',
-                'message': "连接OKX API超时，请稍后重试"
-            }
-        except requests.exceptions.RequestException as e:
-            logger.error(f"请求OKX API失败: {str(e)}")
-            return {
-                'status': 'error',
-                'message': f"连接OKX API失败: {str(e)}"
-            }
         except Exception as e:
-            logger.error(f"计算技术指标时发生错误: {str(e)}")
+            logger.error(f"获取技术指标时发生错误: {str(e)}")
             logger.error(traceback.format_exc())
             return {
                 'status': 'error',
-                'message': str(e)
+                'message': "获取技术指标时发生错误，请稍后重试"
             }
 
     def _calculate_rsi(self, df: pd.DataFrame, period: int = 14) -> float:

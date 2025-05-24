@@ -125,7 +125,12 @@ class GateAPI:
                         'Content-Type': 'application/json'
                     }
 
-                # 准备发送请求
+                # 记录请求信息
+                logger.debug(f"发送请求到Gate API: {method} {url}")
+                if params:
+                    logger.debug(f"请求参数: {params}")
+                if data:
+                    logger.debug(f"请求数据: {data}")
 
                 # 发送请求
                 start_time = time.time()
@@ -134,16 +139,38 @@ class GateAPI:
 
                 # 检查响应状态
                 if response.status_code != 200:
-                    logger.warning(f"Gate API请求失败 ({retry_count+1}/{max_retries}): HTTP {response.status_code}, 耗时: {elapsed:.2f}秒, URL: {url}")
+                    error_msg = f"Gate API请求失败 ({retry_count+1}/{max_retries}): HTTP {response.status_code}, 耗时: {elapsed:.2f}秒, URL: {url}"
+                    logger.warning(error_msg)
                     logger.warning(f"响应内容: {response.text}")
+
+                    # 如果是认证错误，直接返回
+                    if response.status_code in [401, 403]:
+                        logger.error("API认证失败，请检查API密钥")
+                        return None
+
                     retry_count += 1
                     time.sleep(1)  # 暂停1秒再重试
                     continue
 
                 # 解析响应
-                response_data = response.json()
+                try:
+                    response_data = response.json()
+                except json.JSONDecodeError as e:
+                    logger.error(f"解析响应JSON失败: {str(e)}")
+                    logger.error(f"响应内容: {response.text}")
+                    retry_count += 1
+                    time.sleep(1)
+                    continue
+
+                # 检查响应数据是否为空
+                if not response_data:
+                    logger.warning(f"Gate API返回空数据 ({retry_count+1}/{max_retries})")
+                    retry_count += 1
+                    time.sleep(1)
+                    continue
 
                 # 请求成功
+                logger.debug(f"Gate API请求成功，耗时: {elapsed:.2f}秒")
                 return response_data
 
             except requests.exceptions.Timeout:
@@ -160,6 +187,7 @@ class GateAPI:
 
             except Exception as e:
                 logger.warning(f"处理Gate API请求时发生错误 ({retry_count+1}/{max_retries}): {str(e)}")
+                logger.warning(traceback.format_exc())
                 last_error = str(e)
                 retry_count += 1
                 time.sleep(1)  # 暂停1秒再重试
@@ -553,14 +581,35 @@ class GateAPI:
             }
 
             response = self._request('GET', endpoint, params=params)
-            if response:
-                # 更新缓存
-                self.kline_cache[cache_key] = response
-                self.kline_cache_time[cache_key] = current_time
-                return response
+            if not response:
+                logger.error(f"获取{symbol}历史K线数据失败")
+                return None
 
-            logger.error(f"获取{symbol}历史K线数据失败")
-            return None
+            # Gate返回格式: [timestamp, volume, close, high, low, open]
+            # 转换为标准格式: [timestamp, open, high, low, close, volume, ...]
+            klines = []
+            for candle in response:
+                kline = [
+                    int(float(candle[0]) * 1000),  # timestamp (转换为毫秒)
+                    float(candle[5]),  # open
+                    float(candle[3]),  # high
+                    float(candle[4]),  # low
+                    float(candle[2]),  # close
+                    float(candle[1]),  # volume
+                    0,  # close_time (不适用)
+                    0,  # quote_volume (不适用)
+                    0,  # trades (不适用)
+                    0,  # taker_buy_base (不适用)
+                    0,  # taker_buy_quote (不适用)
+                    0   # ignore (不适用)
+                ]
+                klines.append(kline)
+
+            # 更新缓存
+            self.kline_cache[cache_key] = klines
+            self.kline_cache_time[cache_key] = current_time
+
+            return klines
 
         except Exception as e:
             logger.error(f"获取{symbol}历史K线数据失败: {str(e)}")

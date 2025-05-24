@@ -16,21 +16,7 @@ app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 
 # 配置定时任务
 app.conf.beat_schedule = {
-    # 测试用：每5分钟执行技术参数更新任务（开发环境使用）
-    'update-technical-analysis-every-5-min': {
-        'task': 'CryptoAnalyst.tasks.update_technical_analysis',
-        'schedule': crontab(minute='*/5'),  # 每5分钟执行一次
-        'args': (),
-    },
-
-    # 测试用：每5分钟后执行分析报告任务（错开1分钟）（开发环境使用）
-    'update-coze-analysis-every-5-min': {
-        'task': 'CryptoAnalyst.tasks.generate_analysis_reports',
-        'schedule': crontab(minute='1,6,11,16,21,26,31,36,41,46,51,56'),  # 每5分钟执行一次，错开1分钟
-        'args': (),
-    },
-
-    # 生产环境定时任务：每天0点和12点更新技术指标参数
+    # 每天0点和12点更新技术指标参数
     'update-technical-analysis-at-0': {
         'task': 'CryptoAnalyst.tasks.update_technical_analysis',
         'schedule': crontab(hour='0', minute='0'),  # 每天0点执行
@@ -42,7 +28,7 @@ app.conf.beat_schedule = {
         'args': (),
     },
 
-    # 生产环境定时任务：每天0:05和12:05生成分析报告（错开5分钟，确保技术指标已更新）
+    # 每天0:05和12:05生成分析报告（错开5分钟，确保技术指标已更新）
     'generate-analysis-reports-at-0': {
         'task': 'CryptoAnalyst.tasks.generate_analysis_reports',
         'schedule': crontab(hour='0', minute='5'),  # 每天0:05执行

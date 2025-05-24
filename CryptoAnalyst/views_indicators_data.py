@@ -72,24 +72,33 @@ class TechnicalIndicatorsDataAPIView(APIView):
 
                     # 创建默认链
                     from .models import Chain
-                    chain_qs = await sync_to_async(Chain.objects.get_or_create)(
-                        chain=symbol.upper(),
-                        defaults={
-                            'is_active': True,
-                            'is_testnet': False
-                        }
-                    )
-                    chain = chain_qs[0]
+
+                    @sync_to_async
+                    def create_chain():
+                        chain, created = Chain.objects.get_or_create(
+                            chain=symbol.upper(),
+                            defaults={
+                                'is_active': True,
+                                'is_testnet': False
+                            }
+                        )
+                        return chain
+
+                    chain = await create_chain()
 
                     # 创建代币记录
-                    token_qs = await sync_to_async(Token.objects.get_or_create)(
-                        symbol=symbol.upper(),
-                        defaults={
-                            'chain': chain,
-                            'name': symbol.upper()
-                        }
-                    )
-                    token = token_qs[0]
+                    @sync_to_async
+                    def create_token():
+                        token, created = Token.objects.get_or_create(
+                            symbol=symbol.upper(),
+                            defaults={
+                                'chain': chain,
+                                'name': symbol.upper()
+                            }
+                        )
+                        return token
+
+                    token = await create_token()
 
                     logger.info(f"成功创建代币记录: {token.symbol}")
                 else:

@@ -1270,3 +1270,196 @@ INFO 2025-05-22 12:50:48,269 basehttp 32789 6200406016 "PUT /api/auth/profile/ H
 INFO 2025-05-22 12:50:48,269 basehttp 32789 6200406016 - Broken pipe from ('192.168.3.16', 49930)
 INFO 2025-05-22 12:50:48,861 basehttp 32789 6217232384 "GET /api/auth/profile/ HTTP/1.1" 200 235
 INFO 2025-05-22 12:50:48,866 basehttp 32789 6200406016 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-05-22 23:28:39,476 autoreload 98293 8462421120 Watching for file changes with StatReloader
+INFO 2025-05-22 23:28:43,397 basehttp 98293 6204600320 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-05-22 23:31:22,935 basehttp 98293 6204600320 "GET /api/auth/invitation-info/ HTTP/1.1" 200 281
+INFO 2025-05-22 23:31:22,976 basehttp 98293 6204600320 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 200 32
+INFO 2025-05-22 23:31:25,296 basehttp 98293 6204600320 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-05-22 23:31:25,318 basehttp 98293 6221426688 "GET /api/auth/profile/ HTTP/1.1" 200 235
+INFO 2025-05-22 23:31:25,330 basehttp 98293 6204600320 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-05-22 23:31:30,002 basehttp 98293 6221426688 "GET /api/auth/invitation-info/ HTTP/1.1" 200 281
+INFO 2025-05-22 23:31:30,017 basehttp 98293 6221426688 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 200 32
+INFO 2025-05-22 23:31:43,296 basehttp 98293 6221426688 "GET /api/auth/profile/ HTTP/1.1" 200 235
+INFO 2025-05-22 23:31:43,297 basehttp 98293 6204600320 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-05-23 04:34:11,177 autoreload 17725 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-23 04:34:34,181 basehttp 17725 6199177216 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-05-23 04:34:34,246 basehttp 17725 6216003584 "GET /api/auth/profile/ HTTP/1.1" 200 235
+INFO 2025-05-23 04:34:34,254 basehttp 17725 6199177216 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-05-23 04:34:43,277 basehttp 17725 6216003584 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-05-23 04:38:19,150 basehttp 17725 6216003584 "GET /api/auth/profile/ HTTP/1.1" 200 235
+INFO 2025-05-23 04:38:19,151 basehttp 17725 6199177216 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-05-23 04:38:19,371 basehttp 17725 6199177216 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-05-23 04:38:19,371 basehttp 17725 6216003584 "GET /api/auth/profile/ HTTP/1.1" 200 235
+INFO 2025-05-23 04:38:20,016 basehttp 17725 6216003584 "GET /api/auth/profile/ HTTP/1.1" 200 235
+INFO 2025-05-23 04:38:20,026 basehttp 17725 6199177216 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-05-23 04:44:08,803 basehttp 17725 6216003584 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-05-23 04:44:08,845 basehttp 17725 6216003584 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-05-23 10:41:58,482 autoreload 17725 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-23 10:42:00,288 autoreload 32639 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-23 10:42:10,854 autoreload 32639 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-23 10:42:14,333 autoreload 32658 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-23 10:42:23,636 autoreload 32658 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-23 10:42:24,609 autoreload 32673 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-23 10:42:34,775 autoreload 32673 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-05-23 10:42:35,469 autoreload 32686 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-23 13:37:12,504 autoreload 32686 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/config/celery.py changed, reloading.
+INFO 2025-05-23 13:37:13,011 autoreload 36969 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-23 13:37:39,332 autoreload 36969 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/config/celery.py changed, reloading.
+INFO 2025-05-23 13:37:39,641 autoreload 37588 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-23 14:12:38,013 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 55142
+INFO 2025-05-23 14:12:38,059 basehttp 37588 6161952768 "GET /static/website/images/icon128.png HTTP/1.1" 304 0
+INFO 2025-05-23 14:12:38,061 basehttp 37588 6325039104 "GET /static/website/images/binance.ico HTTP/1.1" 304 0
+INFO 2025-05-23 14:12:38,065 basehttp 37588 6325039104 "GET /static/website/images/okx.ico HTTP/1.1" 304 0
+INFO 2025-05-23 14:12:38,068 basehttp 37588 6161952768 "GET /static/website/images/gate.ico HTTP/1.1" 304 0
+INFO 2025-05-23 14:12:38,099 basehttp 37588 6161952768 "GET /static/website/images/bybit.ico HTTP/1.1" 304 0
+INFO 2025-05-23 14:12:38,768 basehttp 37588 6161952768 "GET /static/website/images/htx.ico HTTP/1.1" 304 0
+WARNING 2025-05-23 14:12:38,781 basehttp 37588 6161952768 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-23 14:12:39,124 basehttp 37588 6325039104 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-23 14:12:40,679 basehttp 37588 6161952768 "GET /static/website/images/favicon.ico HTTP/1.1" 304 0
+INFO 2025-05-23 14:17:07,864 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 54634
+WARNING 2025-05-23 14:17:07,911 basehttp 37588 6161952768 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-23 14:17:07,921 basehttp 37588 6325039104 "GET /static/website/images/logo.svg HTTP/1.1" 404 1932
+WARNING 2025-05-23 14:17:07,989 basehttp 37588 6161952768 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-23 14:20:19,653 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 42377
+WARNING 2025-05-23 14:20:19,717 basehttp 37588 6325039104 "GET /static/website/images/logo.svg HTTP/1.1" 404 1932
+WARNING 2025-05-23 14:20:19,717 basehttp 37588 6161952768 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-23 14:20:19,769 basehttp 37588 6161952768 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-23 14:25:32,970 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 42407
+WARNING 2025-05-23 14:25:33,109 basehttp 37588 6161952768 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-23 14:25:33,192 basehttp 37588 6325039104 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-23 14:27:21,982 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 42436
+WARNING 2025-05-23 14:27:22,100 basehttp 37588 6161952768 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-23 14:27:22,156 basehttp 37588 6325039104 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-23 14:35:07,778 basehttp 37588 6161952768 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-05-23 14:35:07,804 basehttp 37588 6161952768 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4188
+INFO 2025-05-23 14:35:07,852 basehttp 37588 6161952768 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-05-23 14:35:07,867 basehttp 37588 6358691840 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-05-23 14:35:07,886 basehttp 37588 6325039104 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-05-23 14:35:07,884 basehttp 37588 6375518208 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-05-23 14:35:07,884 basehttp 37588 6341865472 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-05-23 14:35:08,175 basehttp 37588 6341865472 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-05-23 14:35:08,176 basehttp 37588 6325039104 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+WARNING 2025-05-23 14:35:08,322 log 37588 6325039104 Not Found: /favicon.ico
+WARNING 2025-05-23 14:35:08,323 basehttp 37588 6325039104 "GET /favicon.ico HTTP/1.1" 404 2931
+INFO 2025-05-23 14:35:11,736 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 42436
+INFO 2025-05-23 14:35:12,107 basehttp 37588 6161952768 "GET /static/website/images/binance.ico HTTP/1.1" 304 0
+INFO 2025-05-23 14:35:12,111 basehttp 37588 6161952768 "GET /static/website/images/okx.ico HTTP/1.1" 304 0
+INFO 2025-05-23 14:35:12,117 basehttp 37588 6161952768 "GET /static/website/images/gate.ico HTTP/1.1" 304 0
+INFO 2025-05-23 14:35:12,124 basehttp 37588 6161952768 "GET /static/website/images/bybit.ico HTTP/1.1" 304 0
+INFO 2025-05-23 14:35:12,164 basehttp 37588 6161952768 "GET /static/website/images/htx.ico HTTP/1.1" 304 0
+WARNING 2025-05-23 14:35:12,169 basehttp 37588 6161952768 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-23 14:35:12,235 basehttp 37588 6325039104 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-23 14:35:12,264 basehttp 37588 6161952768 "GET /static/website/images/favicon.ico HTTP/1.1" 304 0
+INFO 2025-05-23 14:43:08,954 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 42436
+WARNING 2025-05-23 14:43:09,356 basehttp 37588 6161952768 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-23 14:43:09,812 basehttp 37588 6325039104 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-23 14:44:16,918 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 42436
+WARNING 2025-05-23 14:44:17,167 basehttp 37588 6161952768 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-23 14:44:17,223 basehttp 37588 6325039104 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-23 14:44:26,319 basehttp 37588 6161952768 "GET /static/website/images/favicon.ico HTTP/1.1" 200 4286
+INFO 2025-05-23 14:44:29,709 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 42436
+WARNING 2025-05-23 14:44:29,866 basehttp 37588 6161952768 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-23 14:44:29,913 basehttp 37588 6325039104 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-23 14:44:51,688 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 42436
+INFO 2025-05-23 14:44:52,587 basehttp 37588 6161952768 "GET /static/website/images/binance.ico HTTP/1.1" 200 4286
+INFO 2025-05-23 14:44:52,591 basehttp 37588 6161952768 "GET /static/website/images/okx.ico HTTP/1.1" 200 2462
+INFO 2025-05-23 14:44:52,595 basehttp 37588 6161952768 "GET /static/website/images/gate.ico HTTP/1.1" 200 619
+INFO 2025-05-23 14:44:52,601 basehttp 37588 6161952768 "GET /static/website/images/bybit.ico HTTP/1.1" 200 15086
+INFO 2025-05-23 14:44:52,676 basehttp 37588 6161952768 "GET /static/website/images/htx.ico HTTP/1.1" 200 1536
+WARNING 2025-05-23 14:44:52,685 basehttp 37588 6161952768 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-23 14:44:52,743 basehttp 37588 6325039104 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-23 14:44:53,181 basehttp 37588 6161952768 "GET /static/website/images/favicon.ico HTTP/1.1" 200 4286
+INFO 2025-05-23 14:44:54,506 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 42436
+INFO 2025-05-23 14:44:54,684 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 42436
+INFO 2025-05-23 14:44:54,946 basehttp 37588 6161952768 "GET /static/website/images/binance.ico HTTP/1.1" 200 4286
+INFO 2025-05-23 14:44:54,948 basehttp 37588 6161952768 "GET /static/website/images/okx.ico HTTP/1.1" 200 2462
+INFO 2025-05-23 14:44:54,950 basehttp 37588 6161952768 "GET /static/website/images/gate.ico HTTP/1.1" 200 619
+INFO 2025-05-23 14:44:54,953 basehttp 37588 6161952768 "GET /static/website/images/bybit.ico HTTP/1.1" 200 15086
+INFO 2025-05-23 14:44:55,029 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 42436
+INFO 2025-05-23 14:44:55,187 basehttp 37588 6161952768 "GET /static/website/images/binance.ico HTTP/1.1" 200 4286
+INFO 2025-05-23 14:44:55,189 basehttp 37588 6161952768 "GET /static/website/images/okx.ico HTTP/1.1" 200 2462
+INFO 2025-05-23 14:44:55,191 basehttp 37588 6161952768 "GET /static/website/images/gate.ico HTTP/1.1" 200 619
+INFO 2025-05-23 14:44:55,193 basehttp 37588 6161952768 "GET /static/website/images/bybit.ico HTTP/1.1" 200 15086
+INFO 2025-05-23 14:44:55,237 basehttp 37588 6161952768 "GET / HTTP/1.1" 200 42436
+INFO 2025-05-23 14:44:55,583 basehttp 37588 6161952768 "GET /static/website/images/binance.ico HTTP/1.1" 200 4286
+INFO 2025-05-23 14:44:55,586 basehttp 37588 6161952768 "GET /static/website/images/okx.ico HTTP/1.1" 200 2462
+INFO 2025-05-23 14:44:55,588 basehttp 37588 6161952768 "GET /static/website/images/gate.ico HTTP/1.1" 200 619
+INFO 2025-05-23 14:44:55,591 basehttp 37588 6161952768 "GET /static/website/images/bybit.ico HTTP/1.1" 200 15086
+INFO 2025-05-23 14:44:55,618 basehttp 37588 6161952768 "GET /static/website/images/htx.ico HTTP/1.1" 200 1536
+WARNING 2025-05-23 14:44:55,623 basehttp 37588 6325039104 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-23 14:44:55,687 basehttp 37588 6161952768 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-23 14:44:56,007 basehttp 37588 6161952768 "GET /static/website/images/favicon.ico HTTP/1.1" 200 4286
+INFO 2025-05-23 14:44:56,581 basehttp 37588 6161952768 "GET /static/website/images/favicon.ico HTTP/1.1" 200 4286
+WARNING 2025-05-24 01:27:31,263 log 37588 6161952768 Not Found: /favicon.ico
+WARNING 2025-05-24 01:27:31,265 basehttp 37588 6161952768 "GET /favicon.ico HTTP/1.1" 404 2931
+INFO 2025-05-24 01:27:45,399 basehttp 37588 6161952768 "GET /admin/user/user/ HTTP/1.1" 200 14654
+INFO 2025-05-24 01:27:45,464 basehttp 37588 6161952768 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+WARNING 2025-05-24 01:27:45,707 log 37588 6161952768 Not Found: /favicon.ico
+WARNING 2025-05-24 01:27:45,707 basehttp 37588 6161952768 "GET /favicon.ico HTTP/1.1" 404 2931
+INFO 2025-05-24 01:32:48,870 autoreload 37588 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-05-24 01:32:50,046 autoreload 72225 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-24 01:32:57,094 autoreload 72225 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-05-24 01:33:01,248 autoreload 72245 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-24 01:33:16,277 autoreload 72245 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-24 01:33:17,943 autoreload 72274 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-24 01:33:39,201 autoreload 72274 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-24 01:33:40,521 autoreload 72303 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-24 01:34:11,129 autoreload 72303 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-05-24 01:34:13,016 autoreload 72342 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-24 01:37:57,253 autoreload 72506 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-24 01:38:11,454 autoreload 72598 8300977920 Watching for file changes with StatReloader
+WARNING 2025-05-24 01:38:21,452 log 72598 6208106496 Bad Request: /api/auth/login/
+WARNING 2025-05-24 01:38:21,453 basehttp 72598 6208106496 "POST /api/auth/login/ HTTP/1.1" 400 52
+INFO 2025-05-24 01:38:30,515 basehttp 72598 6208106496 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-05-24 01:38:51,194 basehttp 72598 6208106496 "GET /api/crypto/technical-indicators-data/BTCUSDT/ HTTP/1.1" 200 413
+INFO 2025-05-24 01:39:16,009 basehttp 72598 6208106496 "GET /api/crypto/get_report/BTCUSDT/?language=en-US HTTP/1.1" 200 2739
+WARNING 2025-05-24 01:39:32,214 log 72598 6208106496 Unauthorized: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-24 01:39:32,216 basehttp 72598 6208106496 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 401 34
+ERROR 2025-05-24 01:39:37,324 log 72598 6208106496 Internal Server Error: /api/crypto/technical-indicators/BTCUSDT/
+ERROR 2025-05-24 01:39:37,324 basehttp 72598 6208106496 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 500 82
+WARNING 2025-05-24 01:40:04,320 log 72598 6242332672 Unauthorized: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-24 01:40:04,320 basehttp 72598 6242332672 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 401 5348
+INFO 2025-05-24 01:40:04,525 basehttp 72598 6242332672 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2025-05-24 01:40:04,527 basehttp 72598 6242332672 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-05-24 01:40:04,528 basehttp 72598 6292811776 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2025-05-24 01:40:04,528 basehttp 72598 6275985408 "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2025-05-24 01:40:04,528 basehttp 72598 6259159040 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-05-24 01:40:04,531 basehttp 72598 6292811776 "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 304 0
+INFO 2025-05-24 01:40:04,537 basehttp 72598 6309638144 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2025-05-24 01:40:04,541 basehttp 72598 6326464512 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2025-05-24 01:40:04,543 basehttp 72598 6275985408 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2025-05-24 01:40:04,559 basehttp 72598 6259159040 "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2025-05-24 01:40:44,536 autoreload 72598 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-05-24 01:40:49,269 autoreload 72810 8300977920 Watching for file changes with StatReloader
+ERROR 2025-05-24 01:41:16,290 log 72810 6199341056 Internal Server Error: /api/crypto/technical-indicators/BTCUSDT/
+ERROR 2025-05-24 01:41:16,291 basehttp 72810 6199341056 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 500 98
+INFO 2025-05-24 01:42:12,975 autoreload 72810 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-05-24 01:42:15,272 autoreload 73584 8300977920 Watching for file changes with StatReloader
+ERROR 2025-05-24 01:42:41,569 log 73584 6170324992 Internal Server Error: /api/crypto/technical-indicators/BTCUSDT/
+ERROR 2025-05-24 01:42:41,574 basehttp 73584 6170324992 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 500 98
+ERROR 2025-05-24 01:42:45,336 log 73584 6170324992 Internal Server Error: /api/crypto/technical-indicators/BTCUSDT/
+ERROR 2025-05-24 01:42:45,336 basehttp 73584 6170324992 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 500 98
+ERROR 2025-05-24 01:55:21,485 log 73584 6203977728 Internal Server Error: /api/crypto/technical-indicators/BTCUSDT/
+ERROR 2025-05-24 01:55:21,486 basehttp 73584 6203977728 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 500 98
+INFO 2025-05-24 01:58:13,393 autoreload 73584 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/gate_api.py changed, reloading.
+INFO 2025-05-24 01:58:14,373 autoreload 96844 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-24 01:59:15,920 autoreload 96844 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/services/technical_analysis.py changed, reloading.
+INFO 2025-05-24 01:59:16,361 autoreload 96910 8300977920 Watching for file changes with StatReloader
+ERROR 2025-05-24 01:59:23,796 log 96910 6135934976 Internal Server Error: /api/crypto/technical-indicators/BTCUSDT/
+ERROR 2025-05-24 01:59:23,797 basehttp 96910 6135934976 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 500 98
+ERROR 2025-05-24 01:59:38,529 log 96910 6135934976 Internal Server Error: /api/crypto/technical-indicators/BTCUSDT/
+ERROR 2025-05-24 01:59:38,529 basehttp 96910 6135934976 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 500 98
+ERROR 2025-05-24 01:59:54,543 log 96910 6135934976 Internal Server Error: /api/crypto/technical-indicators/BTCUSDT/
+ERROR 2025-05-24 01:59:54,544 basehttp 96910 6135934976 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 500 98
+INFO 2025-05-24 02:00:30,116 autoreload 96910 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-05-24 02:00:30,597 autoreload 97218 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-24 02:00:38,304 basehttp 97218 6169407488 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2928
+WARNING 2025-05-24 02:00:45,061 log 97218 6169407488 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-24 02:00:45,061 basehttp 97218 6169407488 "GET /api/crypto/technical-indicators/BTCUSDT/?language=zh-CN HTTP/1.1" 404 132
+INFO 2025-05-24 03:18:44,185 basehttp 97218 6169407488 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2928
+INFO 2025-05-24 03:27:26,074 autoreload 97218 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_indicators_data.py changed, reloading.
+INFO 2025-05-24 03:27:26,678 autoreload 1427 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-24 03:27:35,458 basehttp 1427 6203011072 "GET /api/crypto/technical-indicators-data/BTCUSDT/ HTTP/1.1" 200 410
+INFO 2025-05-24 03:27:43,607 basehttp 1427 6203011072 "GET /api/crypto/technical-indicators-data/ETHUSDT/ HTTP/1.1" 200 402
+INFO 2025-05-24 03:27:49,252 basehttp 1427 6203011072 "GET /api/crypto/technical-indicators/ETHUSDT/?language=en-US HTTP/1.1" 200 2530
+INFO 2025-05-24 03:34:28,054 autoreload 1873 8300977920 Watching for file changes with StatReloader

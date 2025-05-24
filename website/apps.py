@@ -1,6 +1,7 @@
 from django.apps import AppConfig
+import os
 
 
 class WebsiteConfig(AppConfig):
-    default_auto_field = "django.db.models.BigAutoField"
-    name = "website"
+    name = 'website'
+    path = os.path.abspath(os.path.dirname(__file__))

@@ -660,13 +660,13 @@ class CryptoReportAPIView(APIView):
                     return None
 
                 # 轮询获取对话结果
-                max_poll_retries = 20
+                max_poll_retries = 30  # 增加最大重试次数
                 poll_retry_count = 0
-                poll_retry_interval = 1.0
-                max_poll_retry_interval = 5.0
+                poll_retry_interval = 2.0  # 增加初始重试间隔
+                max_poll_retry_interval = 8.0  # 增加最大重试间隔
 
                 # 添加初始延迟
-                time.sleep(2.0)
+                time.sleep(3.0)  # 增加初始延迟
 
                 while poll_retry_count < max_poll_retries:
                     try:
@@ -1654,13 +1654,13 @@ class CryptoReportAPIView(APIView):
                     return None
 
                 # 轮询获取对话结果
-                max_retries = 20
+                max_retries = 30  # 增加最大重试次数
                 retry_count = 0
-                retry_interval = 1.0
-                max_retry_interval = 5.0
+                retry_interval = 2.0  # 增加初始重试间隔
+                max_retry_interval = 8.0  # 增加最大重试间隔
 
                 # 添加初始延迟
-                time.sleep(2.0)
+                time.sleep(3.0)  # 增加初始延迟
 
                 while retry_count < max_retries:
                     try:
@@ -1785,6 +1785,10 @@ class CryptoReportAPIView(APIView):
                     retry_interval = min(retry_interval * 1.5, max_retry_interval)
 
                 logger.error("轮询Coze API未获得有效响应")
+                # 如果是非英文报告，尝试使用英文报告作为备选
+                if target_language != 'en-US' and english_report:
+                    logger.info(f"使用英文报告作为备选，英文报告ID: {english_report.id}")
+                    return english_report
                 return None
 
             except Exception as e:
