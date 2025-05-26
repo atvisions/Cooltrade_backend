@@ -251,6 +251,9 @@ class CryptoReportAPIView(APIView):
         return {
             'language': report.language,
             'timestamp': report.timestamp,
+            'last_update_time': report.timestamp.isoformat(),
+            'current_price': report.snapshot_price,
+            'snapshot_price': report.snapshot_price,
             'price': report.snapshot_price,  # 使用 snapshot_price 替代 price
             'trend_analysis': {
                 'up_probability': report.trend_up_probability,
@@ -799,14 +802,15 @@ class CryptoReportAPIView(APIView):
                             # 获取对话状态失败
                             pass
 
-                    except requests.exceptions.Timeout:
+                    except requests.exceptions.Timeout as e:
                         # 获取对话状态超时，重试
-                        pass
-                    except requests.exceptions.ConnectionError:
+                        logger.warning(f"获取对话状态超时，重试 {poll_retry_count + 1}/{max_poll_retries}: {str(e)}")
+                    except requests.exceptions.ConnectionError as e:
                         # 获取对话状态连接错误，重试
-                        pass
-                    except Exception:
+                        logger.warning(f"获取对话状态连接错误，重试 {poll_retry_count + 1}/{max_poll_retries}: {str(e)}")
+                    except Exception as e:
                         # 获取对话状态时发生错误
+                        logger.error(f"获取对话状态时发生未知错误，重试 {poll_retry_count + 1}/{max_poll_retries}: {str(e)}")
                         pass
 
                     poll_retry_count += 1
@@ -814,14 +818,17 @@ class CryptoReportAPIView(APIView):
                     poll_retry_interval = min(poll_retry_interval * 1.5, max_poll_retry_interval)
 
                 # 轮询Coze API未获得有效响应
+                logger.error(f"轮询Coze API失败，已达到最大重试次数 {max_poll_retries}，总耗时约 {max_poll_retries * poll_retry_interval} 秒")
                 return None
 
-            except Exception:
+            except Exception as e:
                 # 解析 Coze API 响应时发生错误
+                logger.error(f"解析 Coze API 响应时发生错误: {str(e)}", exc_info=True)
                 return None
 
-        except Exception:
+        except Exception as e:
             # 生成并保存报告时发生错误
+            logger.error(f"生成并保存报告时发生错误: {str(e)}", exc_info=True)
             return None
 
     def _build_prompt(self, technical_data: Dict[str, Any], _: str) -> str:

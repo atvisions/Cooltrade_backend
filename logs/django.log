@@ -1463,3 +1463,38 @@ INFO 2025-05-24 03:27:35,458 basehttp 1427 6203011072 "GET /api/crypto/technical
 INFO 2025-05-24 03:27:43,607 basehttp 1427 6203011072 "GET /api/crypto/technical-indicators-data/ETHUSDT/ HTTP/1.1" 200 402
 INFO 2025-05-24 03:27:49,252 basehttp 1427 6203011072 "GET /api/crypto/technical-indicators/ETHUSDT/?language=en-US HTTP/1.1" 200 2530
 INFO 2025-05-24 03:34:28,054 autoreload 1873 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-26 07:10:02,341 autoreload 99133 8300977920 Watching for file changes with StatReloader
+WARNING 2025-05-26 07:10:08,538 log 99133 6160248832 Unauthorized: /api/crypto/get_report/BTCUSDT/
+WARNING 2025-05-26 07:10:08,539 basehttp 99133 6160248832 "GET /api/crypto/get_report/BTCUSDT/?language=en-US HTTP/1.1" 401 34
+WARNING 2025-05-26 07:13:06,474 log 99133 6160248832 Unauthorized: /api/crypto/get_report/BTCUSDT/
+WARNING 2025-05-26 07:13:06,476 basehttp 99133 6160248832 "GET /api/crypto/get_report/BTCUSDT/?language=en-US HTTP/1.1" 401 34
+WARNING 2025-05-26 07:13:11,290 log 99133 6160248832 Bad Request: /api/auth/login/
+WARNING 2025-05-26 07:13:11,290 basehttp 99133 6160248832 "POST /api/auth/login/ HTTP/1.1" 400 52
+INFO 2025-05-26 07:13:29,767 basehttp 99133 6160248832 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-05-26 07:13:40,849 basehttp 99133 6160248832 "GET /api/crypto/technical-indicators-data/BTCUSDT/ HTTP/1.1" 200 411
+INFO 2025-05-26 07:14:00,061 basehttp 99133 6160248832 "GET /api/crypto/get_report/BTCUSDT/?language=en-US HTTP/1.1" 200 2781
+INFO 2025-05-26 08:11:27,962 autoreload 19158 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-26 08:11:30,824 basehttp 19158 6171242496 "GET / HTTP/1.1" 200 42554
+INFO 2025-05-26 08:11:30,972 basehttp 19158 6171242496 "GET /static/website/images/binance.ico HTTP/1.1" 304 0
+INFO 2025-05-26 08:11:31,250 basehttp 19158 6171242496 "GET /static/website/images/gate.ico HTTP/1.1" 304 0
+INFO 2025-05-26 08:11:31,250 basehttp 19158 6188068864 "GET /static/website/images/okx.ico HTTP/1.1" 304 0
+INFO 2025-05-26 08:11:31,254 basehttp 19158 6171242496 "GET /static/website/images/bybit.ico HTTP/1.1" 304 0
+INFO 2025-05-26 08:11:31,255 basehttp 19158 6188068864 "GET /static/website/images/htx.ico HTTP/1.1" 304 0
+WARNING 2025-05-26 08:11:31,295 basehttp 19158 6188068864 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-26 08:11:31,359 basehttp 19158 6171242496 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-26 08:11:31,401 basehttp 19158 6171242496 "GET /static/website/images/favicon.ico HTTP/1.1" 304 0
+INFO 2025-05-26 08:12:32,653 basehttp 19158 6171242496 "GET / HTTP/1.1" 200 42608
+WARNING 2025-05-26 08:12:32,881 basehttp 19158 6171242496 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-26 08:12:32,937 basehttp 19158 6188068864 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-26 08:13:03,104 basehttp 19158 6171242496 "GET / HTTP/1.1" 200 42640
+WARNING 2025-05-26 08:13:03,311 basehttp 19158 6171242496 "GET /static/website/images/btc.png HTTP/1.1" 404 1929
+WARNING 2025-05-26 08:13:03,366 basehttp 19158 6188068864 "GET /static/website/images/hero-bg.jpg HTTP/1.1" 404 1941
+INFO 2025-05-26 14:48:16,705 autoreload 12356 8300977920 Watching for file changes with StatReloader
+WARNING 2025-05-26 14:49:24,172 log 12356 6194032640 Unauthorized: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-26 14:49:24,173 basehttp 12356 6194032640 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 401 34
+INFO 2025-05-26 14:51:56,811 autoreload 14985 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-26 14:55:14,177 autoreload 17531 8300977920 Watching for file changes with StatReloader
+WARNING 2025-05-26 14:55:19,587 log 17531 6205026304 Unauthorized: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-05-26 14:55:19,588 basehttp 17531 6205026304 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 401 34
+INFO 2025-05-26 14:55:28,850 basehttp 17531 6205026304 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-05-26 14:55:35,060 basehttp 17531 6205026304 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 3075

@@ -179,6 +179,9 @@ class TechnicalIndicatorsAPIView(APIView):
                     'data': {
                         'symbol': symbol,
                         'price': safe_float(latest_report.snapshot_price, 'snapshot_price'),
+                        'current_price': safe_float(latest_report.snapshot_price, 'snapshot_price'),
+                        'snapshot_price': safe_float(latest_report.snapshot_price, 'snapshot_price'),
+                        'last_update_time': latest_report.timestamp.isoformat(),
                         'trend_analysis': {
                             'probabilities': {
                                 'up': latest_report.trend_up_probability,
