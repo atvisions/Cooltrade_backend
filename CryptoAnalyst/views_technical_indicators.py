@@ -12,6 +12,8 @@ import time
 import logging
 import datetime
 import traceback
+from django.db import connection
+from django.db.utils import OperationalError
 
 from .services.technical_analysis import TechnicalAnalysisService
 from .services.market_data_service import MarketDataService
@@ -63,14 +65,30 @@ class TechnicalIndicatorsAPIView(APIView):
 
             # 处理查询
             try:
-                # 首先尝试使用完整的 symbol 查找代币记录
-                token_qs = await sync_to_async(Token.objects.filter)(symbol=symbol.upper())
-                token = await sync_to_async(token_qs.first)()
+                max_retries = 3
+                retry_delay = 1  # 秒
 
-                # 如果找不到，再尝试使用清理后的 symbol 查找
-                if not token:
-                    token_qs = await sync_to_async(Token.objects.filter)(symbol=clean_symbol)
-                    token = await sync_to_async(token_qs.first)()
+                for attempt in range(max_retries):
+                    try:
+                        # 首先尝试使用完整的 symbol 查找代币记录
+                        token_qs = await sync_to_async(Token.objects.filter)(symbol=symbol.upper())
+                        token = await sync_to_async(token_qs.first)()
+
+                        # 如果找不到，再尝试使用清理后的 symbol 查找
+                        if not token:
+                            token_qs = await sync_to_async(Token.objects.filter)(symbol=clean_symbol)
+                            token = await sync_to_async(token_qs.first)()
+
+                        if token:
+                            break
+                    except OperationalError as e:
+                        if attempt < max_retries - 1:
+                            logger.warning(f"MySQL连接错误，尝试重连 ({attempt + 1}/{max_retries}): {str(e)}")
+                            time.sleep(retry_delay)
+                            connection.close()
+                            continue
+                        else:
+                            raise
 
                 if not token:
                     # 记录日志，帮助调试

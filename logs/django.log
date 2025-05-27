@@ -1498,3 +1498,16 @@ WARNING 2025-05-26 14:55:19,587 log 17531 6205026304 Unauthorized: /api/crypto/t
 WARNING 2025-05-26 14:55:19,588 basehttp 17531 6205026304 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 401 34
 INFO 2025-05-26 14:55:28,850 basehttp 17531 6205026304 "POST /api/auth/login/ HTTP/1.1" 200 295
 INFO 2025-05-26 14:55:35,060 basehttp 17531 6205026304 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 3075
+ERROR 2025-05-27 06:41:13,860 log 17531 6238679040 Internal Server Error: /api/crypto/technical-indicators/BTCUSDT/
+ERROR 2025-05-27 06:41:13,861 basehttp 17531 6238679040 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 500 98
+ERROR 2025-05-27 06:41:38,581 log 17531 6238679040 Internal Server Error: /api/crypto/technical-indicators-data/BTCUSDT/
+ERROR 2025-05-27 06:41:38,581 basehttp 17531 6238679040 "GET /api/crypto/technical-indicators-data/BTCUSDT/ HTTP/1.1" 500 38
+INFO 2025-05-27 06:44:00,173 autoreload 17531 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-05-27 06:44:01,007 autoreload 68770 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-27 06:44:08,332 autoreload 68770 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_indicators_data.py changed, reloading.
+INFO 2025-05-27 06:44:08,767 autoreload 68804 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-27 06:44:17,830 autoreload 68804 8300977920 /Users/liuzhao/Documents/Projects/Cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-05-27 06:44:18,299 autoreload 68822 8300977920 Watching for file changes with StatReloader
+INFO 2025-05-27 06:44:24,336 basehttp 68822 6195638272 "GET /api/crypto/technical-indicators-data/BTCUSDT/ HTTP/1.1" 200 427
+INFO 2025-05-27 06:44:42,704 basehttp 68822 6195638272 "GET /api/crypto/get_report/BTCUSDT/?language=en-US HTTP/1.1" 200 2830
+INFO 2025-05-27 06:44:54,425 basehttp 68822 6195638272 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 3034

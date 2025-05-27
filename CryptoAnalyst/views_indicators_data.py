@@ -9,6 +9,9 @@ import asyncio
 from asgiref.sync import sync_to_async
 from django.utils import timezone
 from datetime import timedelta
+from django.db import connection
+from django.db.utils import OperationalError
+import time
 
 from .services.technical_analysis import TechnicalAnalysisService
 from .services.market_data_service import MarketDataService
@@ -39,11 +42,33 @@ class TechnicalIndicatorsDataAPIView(APIView):
                 self.market_service = MarketDataService()
 
             # 获取技术指标
-            technical_data = await sync_to_async(self.ta_service.get_all_indicators)(symbol)
-            if technical_data['status'] == 'error':
-                return Response(technical_data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            try:
+                max_retries = 3
+                retry_delay = 1  # 秒
 
-            indicators = technical_data['data']['indicators']
+                for attempt in range(max_retries):
+                    try:
+                        technical_data = await sync_to_async(self.ta_service.get_all_indicators)(symbol)
+                        if technical_data['status'] == 'error':
+                            return Response(technical_data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                        break
+                    except OperationalError as e:
+                        if attempt < max_retries - 1:
+                            logger.warning(f"MySQL连接错误，尝试重连 ({attempt + 1}/{max_retries}): {str(e)}")
+                            time.sleep(retry_delay)
+                            connection.close()
+                            continue
+                        else:
+                            raise
+
+                indicators = technical_data['data']['indicators']
+
+            except Exception as e:
+                logger.error(f"获取技术指标数据失败: {str(e)}")
+                return Response({
+                    'status': 'error',
+                    'message': str(e)
+                }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
             # 清理符号格式
             clean_symbol = symbol.upper().replace('USDT', '').replace('-PERP', '').replace('_PERP', '').replace('PERP', '')

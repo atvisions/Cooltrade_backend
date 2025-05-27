@@ -1547,3 +1547,5 @@
 [2025-05-26 00:05:00,000: INFO/MainProcess] Scheduler: Sending due task generate-analysis-reports-at-0 (CryptoAnalyst.tasks.generate_analysis_reports)
 [2025-05-26 12:00:00,004: INFO/MainProcess] Scheduler: Sending due task update-technical-analysis-at-12 (CryptoAnalyst.tasks.update_technical_analysis)
 [2025-05-26 12:05:00,000: INFO/MainProcess] Scheduler: Sending due task generate-analysis-reports-at-12 (CryptoAnalyst.tasks.generate_analysis_reports)
+[2025-05-27 00:00:00,010: INFO/MainProcess] Scheduler: Sending due task update-technical-analysis-at-0 (CryptoAnalyst.tasks.update_technical_analysis)
+[2025-05-27 00:05:00,039: INFO/MainProcess] Scheduler: Sending due task generate-analysis-reports-at-0 (CryptoAnalyst.tasks.generate_analysis_reports)
