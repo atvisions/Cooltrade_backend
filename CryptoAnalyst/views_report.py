@@ -61,6 +61,10 @@ class CryptoReportAPIView(APIView):
             # 获取语言参数
             language = request.GET.get('language', 'zh-CN')
 
+            # 获取强制刷新参数
+            force_refresh = request.GET.get('force_refresh', 'false').lower() == 'true'
+            logger.info(f"接收到请求参数 - symbol: {symbol}, language: {language}, force_refresh: {force_refresh}, 原始参数: {request.GET.get('force_refresh', 'false')}")
+
             # 验证语言支持
             if language not in self.SUPPORTED_LANGUAGES:
                 return Response({
@@ -154,33 +158,13 @@ class CryptoReportAPIView(APIView):
                 technical_analysis=latest_analysis
             ).first()
 
-            # 如果请求的是英文报告，直接返回最新的英文报告（如果有）
-            if language == 'en-US':
-                if latest_english_report:
-                    # 找到与最新技术分析关联的英文报告，直接返回
-                    report_data = self._format_report_data(latest_english_report)
-                    return Response({
-                        'status': 'success',
-                        'data': {
-                            'symbol': symbol,
-                            'reports': [report_data]
-                        }
-                    })
-            else:
-                # 如果请求的是非英文报告，检查是否有基于最新英文报告的对应语言报告
-                if latest_english_report:
-                    # 查找基于最新英文报告的对应语言报告
-                    # 使用英文报告的时间戳作为参考，确保非英文报告是在英文报告之后生成的
-                    existing_report = AnalysisReport.objects.filter(
-                        token=token,
-                        language=language,
-                        technical_analysis=latest_analysis,
-                        timestamp__gte=latest_english_report.timestamp  # 确保是基于最新英文报告生成的
-                    ).first()
-
-                    if existing_report:
-                        # 找到基于最新英文报告的对应语言报告，直接返回
-                        report_data = self._format_report_data(existing_report)
+            # 如果不是强制刷新，检查是否有现有报告
+            if not force_refresh:
+                # 如果请求的是英文报告，直接返回最新的英文报告（如果有）
+                if language == 'en-US':
+                    if latest_english_report:
+                        # 找到与最新技术分析关联的英文报告，直接返回
+                        report_data = self._format_report_data(latest_english_report)
                         return Response({
                             'status': 'success',
                             'data': {
@@ -188,6 +172,31 @@ class CryptoReportAPIView(APIView):
                                 'reports': [report_data]
                             }
                         })
+                else:
+                    # 如果请求的是非英文报告，检查是否有基于最新英文报告的对应语言报告
+                    if latest_english_report:
+                        # 查找基于最新英文报告的对应语言报告
+                        # 使用英文报告的时间戳作为参考，确保非英文报告是在英文报告之后生成的
+                        existing_report = AnalysisReport.objects.filter(
+                            token=token,
+                            language=language,
+                            technical_analysis=latest_analysis,
+                            timestamp__gte=latest_english_report.timestamp  # 确保是基于最新英文报告生成的
+                        ).first()
+
+                        if existing_report:
+                            # 找到基于最新英文报告的对应语言报告，直接返回
+                            report_data = self._format_report_data(existing_report)
+                            return Response({
+                                'status': 'success',
+                                'data': {
+                                    'symbol': symbol,
+                                    'reports': [report_data]
+                                }
+                            })
+            else:
+                # 强制刷新模式，记录日志
+                logger.info(f"强制刷新模式，将重新生成 {symbol} 的 {language} 报告")
 
             # 没有则生成新报告
             if language == 'en-US':

@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-your-secret-key-her
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.3.16', 'www.cooltrade.xyz', 'cooltrade.xyz']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.3.56', 'www.cooltrade.xyz', 'cooltrade.xyz']
 
 
 # Application definition
@@ -99,7 +99,8 @@ DATABASES = {
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
-        }
+        },
+        'CONN_MAX_AGE': 60,  # 让 Django 自动重连
     }
 }
 
@@ -320,7 +321,7 @@ LOGGING = {
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    "chrome-extension://diiipggohidleibcopmihbenfhckbihg",  # 您的扩展 ID
+    "chrome-extension://llakgdikmaijodjohfcagjpgkmflceed",  # 您的扩展 ID
     "chrome-extension://donikojkgchpmgdbfodnpbjhfpiehfhd",
     "http://localhost:3001",
     "http://127.0.0.1:3001",

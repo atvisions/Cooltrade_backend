@@ -12,7 +12,7 @@ import time
 import logging
 import datetime
 import traceback
-from django.db import connection
+from django.db import connection, close_old_connections
 from django.db.utils import OperationalError
 
 from .services.technical_analysis import TechnicalAnalysisService
@@ -41,6 +41,8 @@ class TechnicalIndicatorsAPIView(APIView):
 
     async def async_get(self, request, symbol: str):
         """异步处理 GET 请求"""
+        # 确保每次请求前连接可用，防止连接断开和跨线程问题
+        close_old_connections()
         try:
             # 确保服务已初始化
             if self.ta_service is None:
@@ -51,6 +53,10 @@ class TechnicalIndicatorsAPIView(APIView):
             # 获取语言参数
             language = request.GET.get('language', 'zh-CN')
             logger.info(f"请求的语言: {language}")
+
+            # 获取强制刷新参数
+            force_refresh = request.GET.get('force_refresh', 'false').lower() == 'true'
+            logger.info(f"强制刷新参数: {force_refresh}")
 
             # 支持的语言列表
             supported_languages = ['zh-CN', 'en-US', 'ja-JP', 'ko-KR']
@@ -70,22 +76,36 @@ class TechnicalIndicatorsAPIView(APIView):
 
                 for attempt in range(max_retries):
                     try:
-                        # 首先尝试使用完整的 symbol 查找代币记录
-                        token_qs = await sync_to_async(Token.objects.filter)(symbol=symbol.upper())
-                        token = await sync_to_async(token_qs.first)()
+                        # 确保每次请求前连接可用，防止连接断开和跨线程问题
+                        close_old_connections()
+                        # 使用 sync_to_async 包装整个数据库操作
+                        @sync_to_async
+                        def get_token():
+                            try:
+                                # 首先尝试使用完整的 symbol 查找代币记录
+                                token = Token.objects.filter(symbol=symbol.upper()).first()
+                                
+                                # 如果找不到，再尝试使用清理后的 symbol 查找
+                                if not token:
+                                    token = Token.objects.filter(symbol=clean_symbol).first()
+                                
+                                return token
+                            except Exception as e:
+                                logger.error(f"查询代币记录时发生错误: {str(e)}")
+                                raise
 
-                        # 如果找不到，再尝试使用清理后的 symbol 查找
-                        if not token:
-                            token_qs = await sync_to_async(Token.objects.filter)(symbol=clean_symbol)
-                            token = await sync_to_async(token_qs.first)()
-
+                        token = await get_token()
+                        close_old_connections()
                         if token:
                             break
+                            
                     except OperationalError as e:
                         if attempt < max_retries - 1:
                             logger.warning(f"MySQL连接错误，尝试重连 ({attempt + 1}/{max_retries}): {str(e)}")
-                            time.sleep(retry_delay)
-                            connection.close()
+                            await asyncio.sleep(retry_delay)
+                            # 使用 sync_to_async 包装连接关闭操作
+                            await sync_to_async(connection.close)()
+                            close_old_connections()
                             continue
                         else:
                             raise
@@ -95,7 +115,14 @@ class TechnicalIndicatorsAPIView(APIView):
                     logger.error(f"未找到代币记录，尝试查找的符号: {symbol.upper()} 和 {clean_symbol}")
 
                     # 查看数据库中有哪些代币记录
-                    all_tokens = await sync_to_async(list)(Token.objects.all())
+                    close_old_connections()
+                    @sync_to_async
+                    def get_all_tokens():
+                        close_old_connections()
+                        return list(Token.objects.all())
+                        
+                    all_tokens = await get_all_tokens()
+                    close_old_connections()
                     token_symbols = [t.symbol for t in all_tokens]
                     logger.info(f"数据库中的代币记录: {token_symbols}")
 
@@ -118,34 +145,93 @@ class TechnicalIndicatorsAPIView(APIView):
                     'message': "Error occurred while querying token records, please try again later" if language == 'en-US' else "查询代币记录时发生错误，请稍后重试"
                 }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+            # 如果是强制刷新，异步触发新报告生成，但仍返回现有数据
+            if force_refresh:
+                logger.info(f"强制刷新模式，将异步触发 {symbol} 的 {language} 报告重新生成")
+                try:
+                    # 异步触发新报告生成，但不等待完成
+                    @sync_to_async
+                    def trigger_report_generation():
+                        try:
+                            # 导入报告生成相关的模块
+                            from .views_report import CryptoReportAPIView
+                            from django.http import HttpRequest
+
+                            # 创建一个模拟请求
+                            mock_request = HttpRequest()
+                            mock_request.method = 'GET'
+                            mock_request.GET = {'language': language, 'force_refresh': 'true'}
+
+                            # 异步触发报告生成（不等待结果）
+                            import threading
+                            def generate_in_background():
+                                try:
+                                    report_view = CryptoReportAPIView()
+                                    result = report_view.get(mock_request, clean_symbol)
+                                    logger.info(f"后台报告生成完成，状态码: {result.status_code}")
+                                except Exception as bg_e:
+                                    logger.error(f"后台报告生成失败: {str(bg_e)}")
+
+                            # 启动后台线程
+                            bg_thread = threading.Thread(target=generate_in_background)
+                            bg_thread.daemon = True
+                            bg_thread.start()
+                            logger.info(f"已启动后台线程生成新报告")
+
+                            return True
+                        except Exception as e:
+                            logger.error(f"触发报告生成失败: {str(e)}")
+                            return False
+
+                    await trigger_report_generation()
+                    logger.info(f"强制刷新：已触发后台报告生成，继续返回现有数据")
+
+                except Exception as e:
+                    logger.error(f"强制刷新时触发报告生成出错: {str(e)}")
+                    logger.error(traceback.format_exc())
+                    # 继续执行，即使触发失败也尝试返回现有数据
+
             # 获取指定语言的最新分析报告
             try:
-                reports_qs = await sync_to_async(AnalysisReport.objects.filter)(token=token, language=language)
-                reports_qs = await sync_to_async(reports_qs.order_by)('-timestamp')
-                latest_report = await sync_to_async(reports_qs.first)()
+                # 确保每次请求前连接可用，防止连接断开和跨线程问题
+                close_old_connections()
+                @sync_to_async
+                def get_latest_report():
+                    close_old_connections()
+                    start_time = time.time()
+                    reports_qs = AnalysisReport.objects.filter(token=token, language=language).order_by('-timestamp')
+                    report = reports_qs.first()
+                    duration = time.time() - start_time
+                    logger.info(f"获取最新报告耗时: {duration:.3f}秒")
+                    return report
+
+                latest_report = await get_latest_report()
+                close_old_connections()
+                if latest_report:
+                    logger.info(f"获取到最新报告ID: {latest_report.id}, 时间: {latest_report.timestamp}")
 
                 # 定义报告新鲜度阈值 (12小时)
                 freshness_threshold = timezone.now() - datetime.timedelta(hours=12)
 
-                # 如果找不到指定语言的报告，直接返回错误
-                if not latest_report or latest_report.timestamp < freshness_threshold:
-                    # 记录日志
-                    if not latest_report:
-                        logger.warning(f"未找到代币 {symbol} 的 {language} 语言分析报告，返回 404。")
-                    else:
-                        logger.warning(f"代币 {symbol} 的 {language} 语言最新报告 ({latest_report.timestamp}) 已超过 12 小时新鲜度阈值 ({freshness_threshold})，返回 404。")
-
+                # 如果找不到指定语言的报告，返回错误
+                if not latest_report:
+                    logger.warning(f"未找到代币 {symbol} 的 {language} 语言分析报告，返回 404。")
                     error_messages = {
-                        'zh-CN': f"未找到代币 {symbol} 的最新 {language} 语言分析数据或数据已过期",
-                        'en-US': f"Latest {language} analysis data not found or expired for token {symbol}",
-                        'ja-JP': f"トークン {symbol} の最新の {language} 分析データが見つからないか期限切れです",
-                        'ko-KR': f"토큰 {symbol}에 대한 최신 {language} 분석 데이터를 찾을 수 없거나 만료되었습니다"
+                        'zh-CN': f"未找到代币 {symbol} 的 {language} 语言分析数据",
+                        'en-US': f"{language} analysis data not found for token {symbol}",
+                        'ja-JP': f"トークン {symbol} の {language} 分析データが見つかりません",
+                        'ko-KR': f"토큰 {symbol}에 대한 {language} 분석 데이터를 찾을 수 없습니다"
                     }
                     return Response({
                         'status': 'not_found',
                         'message': error_messages.get(language, error_messages['zh-CN']),
                         'needs_refresh': True
                     }, status=status.HTTP_404_NOT_FOUND)
+
+                # 检查报告是否过期（超过12小时）
+                is_stale = latest_report.timestamp < freshness_threshold
+                if is_stale:
+                    logger.info(f"代币 {symbol} 的 {language} 语言最新报告 ({latest_report.timestamp}) 已超过 12 小时新鲜度阈值 ({freshness_threshold})，但仍返回数据并标记为过期。")
             except Exception as e:
                 logger.error(f"查询分析报告时发生错误: {str(e)}")
                 logger.error(traceback.format_exc())
@@ -156,9 +242,22 @@ class TechnicalIndicatorsAPIView(APIView):
 
             # 获取相关的技术分析数据
             try:
-                ta_qs = await sync_to_async(TechnicalAnalysis.objects.filter)(token=token)
-                ta_qs = await sync_to_async(ta_qs.order_by)('-timestamp')
-                technical_analysis = await sync_to_async(ta_qs.first)()
+                # 确保每次请求前连接可用，防止连接断开和跨线程问题
+                close_old_connections()
+                @sync_to_async
+                def get_technical_analysis():
+                    close_old_connections()
+                    start_time = time.time()
+                    ta_qs = TechnicalAnalysis.objects.filter(token=token).order_by('-timestamp')
+                    ta = ta_qs.first()
+                    duration = time.time() - start_time
+                    logger.info(f"获取技术分析数据耗时: {duration:.3f}秒")
+                    return ta
+
+                technical_analysis = await get_technical_analysis()
+                close_old_connections()
+                if technical_analysis:
+                    logger.info(f"获取到技术分析数据ID: {technical_analysis.id}, 时间: {technical_analysis.timestamp}")
 
                 if not technical_analysis:
                     error_messages = {
@@ -200,6 +299,7 @@ class TechnicalIndicatorsAPIView(APIView):
                         'current_price': safe_float(latest_report.snapshot_price, 'snapshot_price'),
                         'snapshot_price': safe_float(latest_report.snapshot_price, 'snapshot_price'),
                         'last_update_time': latest_report.timestamp.isoformat(),
+                        'is_stale': is_stale,
                         'trend_analysis': {
                             'probabilities': {
                                 'up': latest_report.trend_up_probability,
@@ -304,7 +404,13 @@ class TechnicalIndicatorsAPIView(APIView):
         except Exception as e:
             logger.error(f"处理请求时发生错误: {str(e)}")
             logger.error(traceback.format_exc())
+            # 安全地获取语言参数，避免 UnboundLocalError
+            try:
+                request_language = request.GET.get('language', 'zh-CN')
+            except:
+                request_language = 'zh-CN'
+
             return Response({
                 'status': 'error',
-                'message': "Error occurred while processing request, please try again later" if language == 'en-US' else "处理请求时发生错误，请稍后重试"
+                'message': "Error occurred while processing request, please try again later" if request_language == 'en-US' else "处理请求时发生错误，请稍后重试"
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
