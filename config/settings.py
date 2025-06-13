@@ -99,8 +99,11 @@ DATABASES = {
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'autocommit': True,
         },
-        'CONN_MAX_AGE': 60,  # 让 Django 自动重连
+        'CONN_MAX_AGE': 0,  # Disable persistent connections for async views
+        'ATOMIC_REQUESTS': False,  # Disable atomic requests for better async compatibility
     }
 }
 
@@ -318,14 +321,21 @@ LOGGING = {
 }
 
 # CORS 配置
-CORS_ALLOW_ALL_ORIGINS = False
+# 临时启用所有来源以进行调试 - 生产环境中应该设置为 False
+CORS_ALLOW_ALL_ORIGINS = True  # 临时设置为 True 进行调试
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "chrome-extension://llakgdikmaijodjohfcagjpgkmflceed",  # 您的扩展 ID
     "chrome-extension://donikojkgchpmgdbfodnpbjhfpiehfhd",
     "http://localhost:3001",
+    "http://localhost:5000",  # Vite 默认端口
+    "http://localhost:5001",  # 您当前使用的端口
     "http://127.0.0.1:3001",
+    "http://127.0.0.1:5000",
+    "http://127.0.0.1:5001",
     "http://192.168.3.16:8000",  # 添加本地开发服务器
+    "http://192.168.3.56:8000",  # 您提到的服务器地址
+    "https://www.cooltrade.xyz",  # 生产环境
 ]
 
 CORS_ALLOW_METHODS = [

@@ -158,54 +158,23 @@ class CryptoReportAPIView(APIView):
                 technical_analysis=latest_analysis
             ).first()
 
-            # 如果不是强制刷新，检查是否有现有报告
-            if not force_refresh:
-                # 如果请求的是英文报告，直接返回最新的英文报告（如果有）
-                if language == 'en-US':
-                    if latest_english_report:
-                        # 找到与最新技术分析关联的英文报告，直接返回
-                        report_data = self._format_report_data(latest_english_report)
-                        return Response({
-                            'status': 'success',
-                            'data': {
-                                'symbol': symbol,
-                                'reports': [report_data]
-                            }
-                        })
-                else:
-                    # 如果请求的是非英文报告，检查是否有基于最新英文报告的对应语言报告
-                    if latest_english_report:
-                        # 查找基于最新英文报告的对应语言报告
-                        # 使用英文报告的时间戳作为参考，确保非英文报告是在英文报告之后生成的
-                        existing_report = AnalysisReport.objects.filter(
-                            token=token,
-                            language=language,
-                            technical_analysis=latest_analysis,
-                            timestamp__gte=latest_english_report.timestamp  # 确保是基于最新英文报告生成的
-                        ).first()
-
-                        if existing_report:
-                            # 找到基于最新英文报告的对应语言报告，直接返回
-                            report_data = self._format_report_data(existing_report)
-                            return Response({
-                                'status': 'success',
-                                'data': {
-                                    'symbol': symbol,
-                                    'reports': [report_data]
-                                }
-                            })
-            else:
-                # 强制刷新模式，记录日志
-                logger.info(f"强制刷新模式，将重新生成 {symbol} 的 {language} 报告")
+            # get_report 接口每次都生成全新报告，不使用任何缓存
+            logger.info(f"get_report 接口调用，将生成全新的 {symbol} 的 {language} 报告（不使用缓存）")
 
             # 没有则生成新报告
             if language == 'en-US':
                 # 英文报告直接生成
                 technical_data = self._get_technical_data(symbol)
                 if not technical_data:
+                    error_messages = {
+                        'zh-CN': '获取技术指标数据失败',
+                        'en-US': 'Failed to get technical indicator data',
+                        'ja-JP': 'テクニカル指標データの取得に失敗しました',
+                        'ko-KR': '기술적 지표 데이터 가져오기에 실패했습니다'
+                    }
                     return Response({
                         'status': 'error',
-                        'message': '获取技术指标数据失败'
+                        'message': error_messages.get(language, error_messages['en-US'])
                     }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
                 report = self._generate_and_save_report(token, technical_data, language)
             else:
@@ -215,17 +184,29 @@ class CryptoReportAPIView(APIView):
                     # 没有找到最新的英文报告，需要生成
                     technical_data = self._get_technical_data(symbol)
                     if not technical_data:
+                        error_messages = {
+                            'zh-CN': '获取技术指标数据失败',
+                            'en-US': 'Failed to get technical indicator data',
+                            'ja-JP': 'テクニカル指標データの取得に失敗しました',
+                            'ko-KR': '기술적 지표 데이터 가져오기에 실패했습니다'
+                        }
                         return Response({
                             'status': 'error',
-                            'message': '获取技术指标数据失败'
+                            'message': error_messages.get(language, error_messages['en-US'])
                         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
                     latest_english_report = self._generate_and_save_report(token, technical_data, 'en-US')
 
                 # 确保我们有英文报告
                 if not latest_english_report:
+                    error_messages = {
+                        'zh-CN': '生成英文报告失败，无法翻译',
+                        'en-US': 'Failed to generate English report, cannot translate',
+                        'ja-JP': '英語レポートの生成に失敗しました、翻訳できません',
+                        'ko-KR': '영어 보고서 생성에 실패했습니다, 번역할 수 없습니다'
+                    }
                     return Response({
                         'status': 'error',
-                        'message': '生成英文报告失败，无法翻译'
+                        'message': error_messages.get(language, error_messages['en-US'])
                     }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
                 # 翻译最新的英文报告
@@ -235,9 +216,16 @@ class CryptoReportAPIView(APIView):
                 logger.info(f"基于最新英文报告 (ID: {latest_english_report.id}, 时间: {latest_english_report.timestamp}) 生成 {language} 报告")
 
             if not report:
+                # 根据语言返回相应的错误信息
+                error_messages = {
+                    'zh-CN': '生成分析报告失败',
+                    'en-US': 'Failed to generate analysis report',
+                    'ja-JP': '分析レポートの生成に失敗しました',
+                    'ko-KR': '분석 보고서 생성에 실패했습니다'
+                }
                 return Response({
                     'status': 'error',
-                    'message': '生成分析报告失败'
+                    'message': error_messages.get(language, error_messages['en-US'])
                 }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
             report_data = self._format_report_data(report)
@@ -333,7 +321,7 @@ class CryptoReportAPIView(APIView):
     def _get_technical_data(self, symbol: str) -> Optional[Dict[str, Any]]:
         """获取技术指标数据
 
-        首先尝试从数据库获取最新的技术指标数据，如果没有找到，则调用 API 获取
+        get_report 接口专用：每次都调用 API 获取最新数据，不使用任何缓存
         """
         try:
             # 清理符号格式
@@ -357,93 +345,17 @@ class CryptoReportAPIView(APIView):
 
                 return None
 
-            # 从数据库获取最新的技术分析记录
-            latest_analysis = TechnicalAnalysis.objects.filter(token=token).order_by('-timestamp').first()
+            # get_report 接口：每次都调用 API 获取最新数据，绕过数据库缓存
+            logger.info(f"get_report 接口：直接调用 API 获取 {symbol} 的最新技术指标数据")
 
-            # 如果找到了最新的技术分析记录，并且时间在24小时内，直接使用它
-            if latest_analysis:
-                # 计算时间差
-                time_diff = timezone.now() - latest_analysis.timestamp
-                if time_diff.total_seconds() < 24 * 60 * 60:
-                    # 从数据库获取技术指标数据
-
-                    # 获取实时价格
-                    current_price = 0
-                    try:
-                        # 初始化 TechnicalAnalysisService
-                        ta_service = TechnicalAnalysisService()
-
-                        # 获取实时价格
-                        current_price = ta_service.gate_api.get_realtime_price(symbol)
-
-                        # 如果无法获取实时价格，使用最新的分析报告中的价格
-                        if not current_price:
-                            latest_report = AnalysisReport.objects.filter(token=token).order_by('-timestamp').first()
-                            if latest_report:
-                                current_price = latest_report.snapshot_price
-                    except Exception as e:
-                        logger.error(f"获取实时价格失败: {str(e)}")
-                        # 如果无法获取实时价格，使用最新的分析报告中的价格
-                        latest_report = AnalysisReport.objects.filter(token=token).order_by('-timestamp').first()
-                        if latest_report:
-                            current_price = latest_report.snapshot_price
-
-                    # 构建技术指标数据
-                    return {
-                        'symbol': symbol,
-                        'current_price': current_price,
-                        'indicators': {
-                            'rsi': {
-                                'value': latest_analysis.rsi
-                            },
-                            'macd': {
-                                'macd_line': latest_analysis.macd_line,
-                                'signal_line': latest_analysis.macd_signal,
-                                'histogram': latest_analysis.macd_histogram
-                            },
-                            'bollinger_bands': {
-                                'upper': latest_analysis.bollinger_upper,
-                                'middle': latest_analysis.bollinger_middle,
-                                'lower': latest_analysis.bollinger_lower
-                            },
-                            'bias': {
-                                'value': latest_analysis.bias
-                            },
-                            'psy': {
-                                'value': latest_analysis.psy
-                            },
-                            'dmi': {
-                                'plus_di': latest_analysis.dmi_plus,
-                                'minus_di': latest_analysis.dmi_minus,
-                                'adx': latest_analysis.dmi_adx
-                            },
-                            'vwap': {
-                                'value': latest_analysis.vwap
-                            },
-                            'funding_rate': {
-                                'value': latest_analysis.funding_rate / 100  # 转换回小数形式，例如 0.01% -> 0.0001
-                            },
-                            'exchange_netflow': {
-                                'value': latest_analysis.exchange_netflow
-                            },
-                            'nupl': {
-                                'value': latest_analysis.nupl
-                            },
-                            'mayer_multiple': {
-                                'value': latest_analysis.mayer_multiple
-                            }
-                        }
-                    }
-
-            # 如果没有找到最新的技术分析记录，或者时间超过24小时，调用 API 获取
-            # 数据库中没有找到最新的技术指标数据，调用 API 获取
-
-            # 使用 TechnicalIndicatorsAPIView 获取数据
-            # 创建一个模拟的请求对象
+            # 使用 TechnicalIndicatorsDataAPIView 获取最新数据，绕过缓存
+            # 创建一个模拟的请求对象，强制绕过缓存
             class MockRequest:
                 def __init__(self):
                     self._request = None
                     self.user = None
+                    # 模拟 GET 参数，强制绕过缓存
+                    self.GET = {'bypass_cache': 'true'}
 
             mock_request = MockRequest()
             if hasattr(self, 'request') and hasattr(self.request, '_request'):
@@ -454,6 +366,10 @@ class CryptoReportAPIView(APIView):
                 self.technical_indicators_view = TechnicalIndicatorsDataAPIView(internal_call=True)
             else:
                 self.technical_indicators_view.internal_call = True
+
+            # 强制清除缓存
+            if hasattr(self.technical_indicators_view, 'ta_service') and self.technical_indicators_view.ta_service:
+                self._clear_all_cache(self.technical_indicators_view.ta_service, symbol)
 
             response = self.technical_indicators_view.get(mock_request, symbol)
 
@@ -488,6 +404,83 @@ class CryptoReportAPIView(APIView):
         except Exception as e:
             logger.error(f"获取技术指标数据时发生错误: {str(e)}", exc_info=True)
             return None
+
+    def _clear_all_cache(self, ta_service, symbol: str):
+        """清除指定代币的所有缓存"""
+        try:
+            logger.info(f"清除 {symbol} 的所有缓存")
+
+            # 清除 Gate API 缓存
+            if hasattr(ta_service, 'gate_api'):
+                gate_api = ta_service.gate_api
+
+                # 清除价格缓存
+                if hasattr(gate_api, 'price_cache'):
+                    gate_api.price_cache.pop(symbol, None)
+                    gate_api.price_cache.pop(symbol.upper(), None)
+
+                if hasattr(gate_api, 'price_cache_time'):
+                    gate_api.price_cache_time.pop(symbol, None)
+                    gate_api.price_cache_time.pop(symbol.upper(), None)
+
+                # 清除K线缓存
+                if hasattr(gate_api, 'kline_cache'):
+                    keys_to_remove = [k for k in gate_api.kline_cache.keys() if symbol.upper() in k]
+                    for key in keys_to_remove:
+                        gate_api.kline_cache.pop(key, None)
+
+                if hasattr(gate_api, 'kline_cache_time'):
+                    keys_to_remove = [k for k in gate_api.kline_cache_time.keys() if symbol.upper() in k]
+                    for key in keys_to_remove:
+                        gate_api.kline_cache_time.pop(key, None)
+
+                # 清除ticker缓存
+                if hasattr(gate_api, 'ticker_cache'):
+                    gate_api.ticker_cache.pop(symbol, None)
+                    gate_api.ticker_cache.pop(symbol.upper(), None)
+
+                if hasattr(gate_api, 'ticker_cache_time'):
+                    gate_api.ticker_cache_time.pop(symbol, None)
+                    gate_api.ticker_cache_time.pop(symbol.upper(), None)
+
+            # 清除 OKX API 缓存
+            if hasattr(ta_service, 'okx_api'):
+                okx_api = ta_service.okx_api
+
+                # 清除价格缓存
+                if hasattr(okx_api, 'price_cache'):
+                    okx_api.price_cache.pop(symbol, None)
+                    okx_api.price_cache.pop(symbol.upper(), None)
+
+                if hasattr(okx_api, 'price_cache_time'):
+                    okx_api.price_cache_time.pop(symbol, None)
+                    okx_api.price_cache_time.pop(symbol.upper(), None)
+
+                # 清除K线缓存
+                if hasattr(okx_api, 'kline_cache'):
+                    keys_to_remove = [k for k in okx_api.kline_cache.keys() if symbol.upper() in k]
+                    for key in keys_to_remove:
+                        okx_api.kline_cache.pop(key, None)
+
+                if hasattr(okx_api, 'kline_cache_time'):
+                    keys_to_remove = [k for k in okx_api.kline_cache_time.keys() if symbol.upper() in k]
+                    for key in keys_to_remove:
+                        okx_api.kline_cache_time.pop(key, None)
+
+                # 清除ticker缓存
+                if hasattr(okx_api, 'ticker_cache'):
+                    okx_api.ticker_cache.pop(symbol, None)
+                    okx_api.ticker_cache.pop(symbol.upper(), None)
+
+                if hasattr(okx_api, 'ticker_cache_time'):
+                    okx_api.ticker_cache_time.pop(symbol, None)
+                    okx_api.ticker_cache_time.pop(symbol.upper(), None)
+
+            logger.info(f"已清除 {symbol} 的所有缓存")
+
+        except Exception as e:
+            logger.error(f"清除缓存时出错: {str(e)}")
+            # 即使清除缓存失败，也继续执行
 
     @transaction.atomic
     def _generate_and_save_report(self, token: Token, technical_data: Dict[str, Any], language: str) -> Optional[Dict[str, Any]]:
@@ -739,6 +732,12 @@ class CryptoReportAPIView(APIView):
                                                     if message.get('role') == 'assistant' and message.get('type') == 'answer':
                                                         content = message.get('content', '')
                                                         if content and content != '###':
+                                                            # 打印 Coze 返回的原始内容用于调试
+                                                            logger.info(f"=== Coze 原始响应内容 (生成报告) ===")
+                                                            logger.info(f"Content length: {len(content)}")
+                                                            logger.info(f"Content: {content}")
+                                                            logger.info(f"=== Coze 原始响应内容结束 ===")
+
                                                             # 解析翻译后的内容
                                                             translated_data = self._extract_json_from_content(content)
                                                             if translated_data:
@@ -1078,26 +1077,73 @@ class CryptoReportAPIView(APIView):
     def _extract_json_from_content(self, content: str) -> Optional[Dict[str, Any]]:
         """从内容中提取JSON数据"""
         try:
+            logger.info(f"=== 开始解析 JSON 内容 ===")
+            logger.info(f"Content preview (first 500 chars): {content[:500]}")
+
             # 保存原始内容到文件，方便调试
             self._save_coze_response_to_file(content)
 
             # 检测语言（无需记录日志）
 
             # 首先尝试语言特定的 JSON 处理
+            logger.info("尝试语言特定的 JSON 处理...")
             language_specific_result = self._handle_language_specific_json(content)
             if language_specific_result:
+                logger.info("语言特定的 JSON 处理成功")
                 return self._convert_chinese_to_english_fields(language_specific_result)
+            else:
+                logger.warning("语言特定的 JSON 处理失败")
 
             # 如果语言特定的处理失败，尝试直接解析
             try:
+                logger.info("尝试直接解析 JSON...")
                 analysis_result = json.loads(content)
+                logger.info("直接解析 JSON 成功")
                 return self._convert_chinese_to_english_fields(analysis_result)
-            except json.JSONDecodeError:
+            except json.JSONDecodeError as e:
+                logger.warning(f"直接解析 JSON 失败: {str(e)}")
                 # 直接解析JSON失败，尝试修复JSON格式
                 try:
+                    logger.info("开始尝试修复 JSON 格式...")
                     # 尝试修复JSON格式
                     # 1. 移除可能的markdown代码块标记
                     content = content.replace('```json', '').replace('```', '').strip()
+
+                    # 1.5. 检查是否是截断的JSON，尝试补全
+                    if not content.endswith('}') and not content.endswith(']'):
+                        logger.info("检测到截断的JSON，尝试补全...")
+                        # 计算未闭合的括号和引号
+                        open_braces = content.count('{')
+                        close_braces = content.count('}')
+                        open_brackets = content.count('[')
+                        close_brackets = content.count(']')
+
+                        # 检查是否在字符串中
+                        quote_count = content.count('"')
+                        # 如果引号数量是奇数，说明有未闭合的字符串
+                        if quote_count % 2 == 1:
+                            content += '"'
+                            logger.info("补全了未闭合的字符串")
+
+                        # 补全数组
+                        if open_brackets > close_brackets:
+                            content += ']' * (open_brackets - close_brackets)
+                            logger.info(f"补全了 {open_brackets - close_brackets} 个数组闭合符")
+
+                        # 补全对象
+                        if open_braces > close_braces:
+                            content += '}' * (open_braces - close_braces)
+                            logger.info(f"补全了 {open_braces - close_braces} 个对象闭合符")
+
+                        # 尝试解析补全后的JSON
+                        try:
+                            logger.info("尝试解析补全后的JSON...")
+                            analysis_result = json.loads(content)
+                            logger.info("补全后的JSON解析成功！")
+                            return self._convert_chinese_to_english_fields(analysis_result)
+                        except json.JSONDecodeError as e:
+                            logger.warning(f"补全后的JSON解析仍然失败: {str(e)}")
+                            # 继续执行原有的修复逻辑
 
                     # 2. 修复未闭合的字符串
                     lines = content.split('\n')
@@ -1258,14 +1304,14 @@ class CryptoReportAPIView(APIView):
                             # 所有宽松JSON解析器都失败
                             pass
 
-                    # 7. 如果所有尝试都失败，创建一个默认的分析结果
-                    default_result = self._create_default_analysis_result()
-                    return default_result
+                    # 7. 如果所有尝试都失败，返回 None 表示解析失败
+                    logger.error("Coze API response parsing failed after all attempts")
+                    return None
 
                 except Exception:
-                    # 修复JSON格式失败，创建一个默认的分析结果
-                    default_result = self._create_default_analysis_result()
-                    return default_result
+                    # 修复JSON格式失败，返回 None 表示解析失败
+                    logger.error("JSON format fixing failed")
+                    return None
 
         except Exception:
             # 处理语言特定 JSON 时发生错误
@@ -1276,74 +1322,7 @@ class CryptoReportAPIView(APIView):
         # 此功能已禁用，不再保存响应到文件
         pass
 
-    def _create_default_analysis_result(self) -> Dict[str, Any]:
-        """创建默认的分析结果"""
-        return {
-            "trend_analysis": {
-                "up_probability": 33,
-                "sideways_probability": 34,
-                "down_probability": 33,
-                "summary": "无法解析Coze返回的数据，使用默认分析结果。"
-            },
-            "indicators_analysis": {
-                "rsi": {
-                    "analysis": "无法解析Coze返回的数据。",
-                    "support_trend": "neutral"
-                },
-                "macd": {
-                    "analysis": "无法解析Coze返回的数据。",
-                    "support_trend": "neutral"
-                },
-                "bollinger_bands": {
-                    "analysis": "无法解析Coze返回的数据。",
-                    "support_trend": "neutral"
-                },
-                "bias": {
-                    "analysis": "无法解析Coze返回的数据。",
-                    "support_trend": "neutral"
-                },
-                "psy": {
-                    "analysis": "无法解析Coze返回的数据。",
-                    "support_trend": "neutral"
-                },
-                "dmi": {
-                    "analysis": "无法解析Coze返回的数据。",
-                    "support_trend": "neutral"
-                },
-                "vwap": {
-                    "analysis": "无法解析Coze返回的数据。",
-                    "support_trend": "neutral"
-                },
-                "funding_rate": {
-                    "analysis": "无法解析Coze返回的数据。",
-                    "support_trend": "neutral"
-                },
-                "exchange_netflow": {
-                    "analysis": "无法解析Coze返回的数据。",
-                    "support_trend": "neutral"
-                },
-                "nupl": {
-                    "analysis": "无法解析Coze返回的数据。",
-                    "support_trend": "neutral"
-                },
-                "mayer_multiple": {
-                    "analysis": "无法解析Coze返回的数据。",
-                    "support_trend": "neutral"
-                }
-            },
-            "trading_advice": {
-                "action": "等待",
-                "reason": "无法解析Coze返回的数据，建议等待。",
-                "entry_price": 0,
-                "stop_loss": 0,
-                "take_profit": 0
-            },
-            "risk_assessment": {
-                "level": "中",
-                "score": 50,
-                "details": ["无法解析Coze返回的数据，使用默认风险评估。"]
-            }
-        }
+
 
     def _convert_chinese_to_english_fields(self, analysis_result: Dict[str, Any]) -> Dict[str, Any]:
         """将中文/日语/韩语字段名转换为英文字段名"""
@@ -1353,33 +1332,10 @@ class CryptoReportAPIView(APIView):
                 return analysis_result
 
             # 检查是否是部分提取的JSON数据
-            # 如果只有趋势分析部分，创建一个完整的结构
+            # 如果只有趋势分析部分，说明解析不完整，返回 None
             if "上昇確率" in analysis_result or "上涨概率" in analysis_result or "상승 확률" in analysis_result:
-
-                # 创建一个默认的完整结构
-                complete_result = self._create_default_analysis_result()
-
-                # 更新趋势分析部分
-                if "上昇確率" in analysis_result:  # 日语
-                    complete_result["trend_analysis"]["up_probability"] = analysis_result.get("上昇確率", 33)
-                    complete_result["trend_analysis"]["sideways_probability"] = analysis_result.get("横ばい確率", 34)
-                    complete_result["trend_analysis"]["down_probability"] = analysis_result.get("下降確率", 33)
-                    complete_result["trend_analysis"]["summary"] = analysis_result.get("トレンド概要", "")
-                elif "上涨概率" in analysis_result:  # 中文
-                    complete_result["trend_analysis"]["up_probability"] = analysis_result.get("上涨概率", 33)
-                    complete_result["trend_analysis"]["sideways_probability"] = analysis_result.get("横盘概率", 34)
-                    complete_result["trend_analysis"]["down_probability"] = analysis_result.get("下跌概率", 33)
-                    complete_result["trend_analysis"]["summary"] = analysis_result.get("趋势总结", "")
-                elif "상승 확률" in analysis_result:  # 韩语
-                    complete_result["trend_analysis"]["up_probability"] = analysis_result.get("상승 확률", 33)
-                    complete_result["trend_analysis"]["sideways_probability"] = analysis_result.get("횡보 확률", 34)
-                    complete_result["trend_analysis"]["down_probability"] = analysis_result.get("하락 확률", 33)
-                    complete_result["trend_analysis"]["summary"] = analysis_result.get("트렌드 요약", "")
-
-                # 如果有其他部分，也更新它们
-                # ...
-
-                return complete_result
+                logger.warning("Only partial trend analysis data found, parsing incomplete")
+                return None
 
             # 字段映射
             field_mapping = {
@@ -1734,6 +1690,13 @@ class CryptoReportAPIView(APIView):
                                                     if message.get('role') == 'assistant' and message.get('type') == 'answer':
                                                         content = message.get('content', '')
                                                         if content and content != '###':
+                                                            # 打印 Coze 返回的原始内容用于调试
+                                                            logger.info(f"=== Coze 原始响应内容 (翻译报告) ===")
+                                                            logger.info(f"Target language: {target_language}")
+                                                            logger.info(f"Content length: {len(content)}")
+                                                            logger.info(f"Content: {content}")
+                                                            logger.info(f"=== Coze 原始响应内容结束 ===")
+
                                                             # 解析翻译后的内容
                                                             translated_data = self._extract_json_from_content(content)
                                                             if translated_data:

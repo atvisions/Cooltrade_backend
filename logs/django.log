@@ -2470,3 +2470,112 @@ INFO 2025-06-11 14:38:52,214 basehttp 27345 6193328128 "GET /api/auth/invitation
 INFO 2025-06-11 14:38:59,527 basehttp 27345 6193328128 "GET /api/crypto/technical-indicators/BTCUSDT/?language=en-US HTTP/1.1" 200 2893
 INFO 2025-06-11 14:39:00,401 basehttp 27345 6193328128 "GET /api/auth/invitation-info/ HTTP/1.1" 200 281
 INFO 2025-06-11 14:39:00,416 basehttp 27345 6193328128 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 200 32
+INFO 2025-06-12 11:04:07,809 autoreload 27345 8574721792 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-12 11:04:13,955 autoreload 64247 8574721792 Watching for file changes with StatReloader
+INFO 2025-06-12 11:04:26,980 autoreload 64247 8574721792 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-12 11:04:29,321 autoreload 65035 8574721792 Watching for file changes with StatReloader
+INFO 2025-06-12 11:04:55,028 autoreload 65035 8574721792 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-12 11:04:59,638 autoreload 65065 8574721792 Watching for file changes with StatReloader
+INFO 2025-06-12 11:05:17,973 autoreload 65065 8574721792 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-12 11:05:20,425 autoreload 65080 8574721792 Watching for file changes with StatReloader
+INFO 2025-06-12 11:05:46,670 autoreload 65080 8574721792 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-12 11:05:51,378 autoreload 65099 8574721792 Watching for file changes with StatReloader
+INFO 2025-06-12 11:06:11,175 autoreload 65099 8574721792 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-06-12 11:06:13,469 autoreload 65132 8574721792 Watching for file changes with StatReloader
+WARNING 2025-06-12 11:22:17,545 log 65132 6139670528 Bad Request: /api/auth/login/
+WARNING 2025-06-12 11:22:17,554 basehttp 65132 6139670528 "POST /api/auth/login/ HTTP/1.1" 400 52
+WARNING 2025-06-12 11:22:51,397 log 65132 6139670528 Unauthorized: /api/auth/change-password/
+WARNING 2025-06-12 11:22:51,406 basehttp 65132 6139670528 "POST /api/auth/change-password/ HTTP/1.1" 401 34
+INFO 2025-06-12 11:23:17,353 basehttp 65132 6139670528 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-06-12 11:23:33,645 basehttp 65132 6139670528 "POST /api/auth/change-password/ HTTP/1.1" 200 111
+INFO 2025-06-12 11:23:45,622 basehttp 65132 6139670528 "POST /api/auth/login/ HTTP/1.1" 200 295
+ERROR 2025-06-12 11:24:03,881 log 65132 6139670528 Internal Server Error: /api/crypto/get_report/SQLUSDT/
+ERROR 2025-06-12 11:24:03,882 basehttp 65132 6139670528 "GET /api/crypto/get_report/SQLUSDT/?language=en-US&force_refresh=true HTTP/1.1" 500 61
+ERROR 2025-06-12 11:25:54,834 log 65132 6139670528 Internal Server Error: /api/crypto/get_report/SQLUSDT/
+ERROR 2025-06-12 11:25:54,966 basehttp 65132 6139670528 "GET /api/crypto/get_report/SQLUSDT/?language=en-US&force_refresh=true HTTP/1.1" 500 61
+INFO 2025-06-12 12:49:27,440 autoreload 67843 8574721792 Watching for file changes with StatReloader
+ERROR 2025-06-12 12:50:01,595 log 67843 6209155072 Internal Server Error: /api/crypto/get_report/SQLUSDT/
+ERROR 2025-06-12 12:50:01,599 basehttp 67843 6209155072 "GET /api/crypto/get_report/SQLUSDT/?language=en-US&force_refresh=true HTTP/1.1" 500 61
+INFO 2025-06-12 12:51:59,345 basehttp 67843 6243381248 "GET /api/crypto/get_report/SOLUSDT/?language=en-US&force_refresh=true HTTP/1.1" 200 2937
+INFO 2025-06-12 12:52:51,613 basehttp 67843 6243381248 "GET /api/crypto/get_report/SOLUSDT/?language=en-US&force_refresh=true HTTP/1.1" 200 3358
+INFO 2025-06-12 12:53:11,350 basehttp 67843 6243381248 "GET /api/crypto/technical-indicators/SOLUSDT/?language=en-US HTTP/1.1" 200 3561
+INFO 2025-06-12 12:53:15,176 basehttp 67843 6243381248 "GET /api/crypto/technical-indicators/SOLUSDT/?language=en-US HTTP/1.1" 200 3561
+INFO 2025-06-13 05:06:47,177 autoreload 36056 8300961536 Watching for file changes with StatReloader
+WARNING 2025-06-13 05:07:07,022 log 36056 6127595520 Unauthorized: /api/crypto/get_report/BTCUSDT/
+WARNING 2025-06-13 05:07:07,022 basehttp 36056 6127595520 "GET /api/crypto/get_report/BTCUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 401 34
+INFO 2025-06-13 05:07:43,188 basehttp 36056 6127595520 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-06-13 05:14:23,885 autoreload 42522 8300961536 Watching for file changes with StatReloader
+WARNING 2025-06-13 05:16:19,054 log 42522 6208598016 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-06-13 05:16:19,055 basehttp 42522 6208598016 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 126
+WARNING 2025-06-13 05:17:03,046 log 42522 6225424384 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-06-13 05:17:03,047 basehttp 42522 6225424384 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 404 126
+INFO 2025-06-13 05:19:21,053 basehttp 42522 6174371840 - Broken pipe from ('127.0.0.1', 63019)
+INFO 2025-06-13 05:21:32,104 autoreload 42522 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-13 05:21:32,869 autoreload 42724 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 05:21:58,183 autoreload 42724 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-13 05:21:58,587 autoreload 42751 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 05:22:54,637 autoreload 42751 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-13 05:22:55,091 autoreload 42766 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 05:23:38,782 autoreload 42766 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-13 05:23:39,327 autoreload 42846 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 05:24:52,506 autoreload 43166 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 05:26:58,702 autoreload 43166 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-13 05:26:59,224 autoreload 43289 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 05:29:14,715 autoreload 43289 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-13 05:29:15,270 autoreload 43448 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 05:30:09,702 basehttp 43448 6170537984 "GET /api/crypto/get_report/BTCUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 200 3396
+INFO 2025-06-13 05:31:11,301 basehttp 43448 6170537984 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ja-JP HTTP/1.1" 200 3616
+WARNING 2025-06-13 05:35:18,258 log 43448 6204764160 Unauthorized: /api/crypto/get_report/BTCUSDT/
+WARNING 2025-06-13 05:35:18,260 basehttp 43448 6204764160 "GET /api/crypto/get_report/BTCUSDT/?language=ko-KR&force_refresh=true HTTP/1.1" 401 34
+INFO 2025-06-13 05:43:59,395 autoreload 47193 8300961536 Watching for file changes with StatReloader
+WARNING 2025-06-13 05:44:18,766 log 47193 6207172608 Unauthorized: /api/crypto/get_report/BTCUSDT/
+WARNING 2025-06-13 05:44:18,766 basehttp 47193 6207172608 "GET /api/crypto/get_report/BTCUSDT/?language=ko-KR&force_refresh=true HTTP/1.1" 401 43
+INFO 2025-06-13 05:45:47,045 basehttp 47193 6207172608 "GET /api/crypto/get_report/BTCUSDT/?language=ko-KR&force_refresh=true HTTP/1.1" 200 3461
+INFO 2025-06-13 05:46:19,132 basehttp 47193 6207172608 "GET /api/crypto/technical-indicators/BTCUSDT/?language=ko-KR HTTP/1.1" 200 3681
+INFO 2025-06-13 14:02:56,622 basehttp 47193 6241398784 "OPTIONS /api/crypto/get_report/PIUSDT/?language=en-US&force_refresh=true HTTP/1.1" 200 0
+WARNING 2025-06-13 14:02:56,707 log 47193 6241398784 Unauthorized: /api/crypto/get_report/PIUSDT/
+WARNING 2025-06-13 14:02:56,708 basehttp 47193 6241398784 "GET /api/crypto/get_report/PIUSDT/?language=en-US&force_refresh=true HTTP/1.1" 401 34
+WARNING 2025-06-13 14:02:58,190 log 47193 6241398784 Unauthorized: /api/crypto/get_report/PIUSDT/
+WARNING 2025-06-13 14:02:58,191 basehttp 47193 6241398784 "GET /api/crypto/get_report/PIUSDT/?language=en-US&force_refresh=true HTTP/1.1" 401 34
+WARNING 2025-06-13 14:02:59,699 log 47193 6241398784 Unauthorized: /api/crypto/get_report/PIUSDT/
+WARNING 2025-06-13 14:02:59,700 basehttp 47193 6241398784 "GET /api/crypto/get_report/PIUSDT/?language=en-US&force_refresh=true HTTP/1.1" 401 34
+INFO 2025-06-13 14:03:48,530 basehttp 47193 6241398784 "OPTIONS /api/auth/invitation-info/ HTTP/1.1" 200 0
+WARNING 2025-06-13 14:03:48,540 log 47193 6241398784 Unauthorized: /api/auth/invitation-info/
+WARNING 2025-06-13 14:03:48,542 basehttp 47193 6241398784 "GET /api/auth/invitation-info/ HTTP/1.1" 401 34
+INFO 2025-06-13 14:03:48,547 basehttp 47193 6241398784 "OPTIONS /api/auth/invitation-info/ranking/ HTTP/1.1" 200 0
+WARNING 2025-06-13 14:03:48,566 log 47193 6241398784 Unauthorized: /api/auth/invitation-info/ranking/
+WARNING 2025-06-13 14:03:48,567 basehttp 47193 6241398784 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 401 34
+WARNING 2025-06-13 14:04:00,570 log 47193 6241398784 Unauthorized: /api/auth/invitation-info/
+WARNING 2025-06-13 14:04:00,570 basehttp 47193 6241398784 "GET /api/auth/invitation-info/ HTTP/1.1" 401 34
+WARNING 2025-06-13 14:04:00,584 log 47193 6241398784 Unauthorized: /api/auth/invitation-info/ranking/
+WARNING 2025-06-13 14:04:00,585 basehttp 47193 6241398784 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 401 34
+WARNING 2025-06-13 14:04:14,511 log 47193 6241398784 Unauthorized: /api/auth/invitation-info/
+WARNING 2025-06-13 14:04:14,512 basehttp 47193 6241398784 "GET /api/auth/invitation-info/ HTTP/1.1" 401 34
+WARNING 2025-06-13 14:04:14,520 log 47193 6241398784 Unauthorized: /api/auth/invitation-info/ranking/
+WARNING 2025-06-13 14:04:14,521 basehttp 47193 6241398784 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 401 34
+INFO 2025-06-13 22:33:16,872 autoreload 47193 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-06-13 22:33:17,550 autoreload 66197 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 22:33:24,386 autoreload 66197 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-06-13 22:33:24,700 autoreload 66213 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 22:33:38,562 autoreload 66213 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-06-13 22:33:39,044 autoreload 66221 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 22:33:53,047 autoreload 66221 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-06-13 22:33:53,543 autoreload 66234 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 22:34:04,336 autoreload 66234 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-06-13 22:34:04,858 autoreload 66249 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 22:34:14,732 autoreload 66249 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-06-13 22:34:15,125 autoreload 66259 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 22:34:22,939 autoreload 66259 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-06-13 22:34:23,298 autoreload 66269 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 22:34:30,086 autoreload 66269 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-06-13 22:34:30,407 autoreload 66276 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 22:34:40,200 autoreload 66276 8300961536 /Users/lucas/Documents/cooltrade/backend/config/settings.py changed, reloading.
+INFO 2025-06-13 22:34:40,660 autoreload 66286 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 22:35:00,855 autoreload 66286 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_indicators_data.py changed, reloading.
+INFO 2025-06-13 22:35:01,398 autoreload 66302 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 22:35:14,517 autoreload 66302 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_indicators_data.py changed, reloading.
+INFO 2025-06-13 22:35:14,885 autoreload 66322 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 22:35:28,763 autoreload 66322 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_indicators_data.py changed, reloading.
+INFO 2025-06-13 22:35:29,097 autoreload 66332 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-13 22:35:39,882 autoreload 66332 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_indicators_data.py changed, reloading.
+INFO 2025-06-13 22:35:40,187 autoreload 66341 8300961536 Watching for file changes with StatReloader

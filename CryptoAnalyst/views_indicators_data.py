@@ -9,8 +9,7 @@ import asyncio
 from asgiref.sync import sync_to_async
 from django.utils import timezone
 from datetime import timedelta
-from django.db import connection
-from django.db.utils import OperationalError
+from django.db import transaction
 import time
 
 from .services.technical_analysis import TechnicalAnalysisService
@@ -43,23 +42,9 @@ class TechnicalIndicatorsDataAPIView(APIView):
 
             # 获取技术指标
             try:
-                max_retries = 3
-                retry_delay = 1  # 秒
-
-                for attempt in range(max_retries):
-                    try:
-                        technical_data = await sync_to_async(self.ta_service.get_all_indicators)(symbol)
-                        if technical_data['status'] == 'error':
-                            return Response(technical_data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-                        break
-                    except OperationalError as e:
-                        if attempt < max_retries - 1:
-                            logger.warning(f"MySQL连接错误，尝试重连 ({attempt + 1}/{max_retries}): {str(e)}")
-                            time.sleep(retry_delay)
-                            connection.close()
-                            continue
-                        else:
-                            raise
+                technical_data = await sync_to_async(self.ta_service.get_all_indicators)(symbol)
+                if technical_data['status'] == 'error':
+                    return Response(technical_data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
                 indicators = technical_data['data']['indicators']
 
@@ -73,21 +58,32 @@ class TechnicalIndicatorsDataAPIView(APIView):
             # 清理符号格式
             clean_symbol = symbol.upper().replace('USDT', '').replace('-PERP', '').replace('_PERP', '').replace('PERP', '')
 
-            # 首先尝试使用完整的 symbol 查找代币记录
-            token_qs = await sync_to_async(Token.objects.filter)(symbol=symbol.upper())
-            token = await sync_to_async(token_qs.first)()
+            # Thread-safe token retrieval
+            @sync_to_async
+            def get_token_safe():
+                """Thread-safe token retrieval"""
+                # 首先尝试使用完整的 symbol 查找代币记录
+                token = Token.objects.filter(symbol=symbol.upper()).first()
 
-            # 如果找不到，再尝试使用清理后的 symbol 查找
-            if not token:
-                token_qs = await sync_to_async(Token.objects.filter)(symbol=clean_symbol)
-                token = await sync_to_async(token_qs.first)()
+                # 如果找不到，再尝试使用清理后的 symbol 查找
+                if not token:
+                    token = Token.objects.filter(symbol=clean_symbol).first()
+
+                return token
+
+            token = await get_token_safe()
 
             if not token:
                 # 记录日志，帮助调试
                 logger.error(f"未找到代币记录，尝试查找的符号: {symbol.upper()} 和 {clean_symbol}")
 
                 # 查看数据库中有哪些代币记录
-                all_tokens = await sync_to_async(list)(Token.objects.all())
+                @sync_to_async
+                def get_all_tokens_safe():
+                    """Thread-safe token list retrieval"""
+                    return list(Token.objects.all())
+
+                all_tokens = await get_all_tokens_safe()
                 token_symbols = [t.symbol for t in all_tokens]
                 logger.info(f"数据库中的代币记录: {token_symbols}")
 
