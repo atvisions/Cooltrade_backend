@@ -14,6 +14,7 @@ from datetime import datetime, timedelta
 from .models import Token, Chain, AnalysisReport, TechnicalAnalysis
 from .views_indicators_data import TechnicalIndicatorsDataAPIView
 from .services.technical_analysis import TechnicalAnalysisService
+from .utils import invalidate_technical_indicators_cache
 
 logger = logging.getLogger(__name__)
 
@@ -795,6 +796,11 @@ class CryptoReportAPIView(APIView):
                                                                     risk_score=translated_data.get('risk_assessment', {}).get('score', 50),
                                                                     risk_details=translated_data.get('risk_assessment', {}).get('details', [])
                                                                 )
+
+                                                                # Invalidate technical indicators cache after creating new report
+                                                                invalidate_technical_indicators_cache(token.symbol, language)
+                                                                logger.info(f"Invalidated technical indicators cache for {token.symbol} ({language}) after creating new report")
+
                                                                 return translated_report
                                         except json.JSONDecodeError:
                                             pass
@@ -1742,6 +1748,11 @@ class CryptoReportAPIView(APIView):
                                                                     risk_score=english_report.risk_score,
                                                                     risk_details=translated_data.get('risk_assessment', {}).get('details', [])
                                                                 )
+
+                                                                # Invalidate technical indicators cache after creating new translated report
+                                                                invalidate_technical_indicators_cache(token.symbol, target_language)
+                                                                logger.info(f"Invalidated technical indicators cache for {token.symbol} ({target_language}) after creating translated report")
+
                                                                 return translated_report
                                         except json.JSONDecodeError:
                                             pass

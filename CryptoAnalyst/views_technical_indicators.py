@@ -1,25 +1,27 @@
 """
-Technical Indicators API Views
+Technical Indicators API Views - Simplified Synchronous Version
 """
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
-import asyncio
-from asgiref.sync import sync_to_async
 from django.utils import timezone
 import time
 import logging
 import datetime
 import traceback
-from django.db import close_old_connections
 
 from .services.technical_analysis import TechnicalAnalysisService
 from .services.market_data_service import MarketDataService
 from .models import Token, AnalysisReport, TechnicalAnalysis
+from .utils import (
+    safe_read_operation, safe_model_operation,
+    get_cached_technical_indicators, set_cached_technical_indicators
+)
 
 # Configure logging
 logger = logging.getLogger(__name__)
+
 
 class TechnicalIndicatorsAPIView(APIView):
     """Technical Indicators API View
@@ -35,26 +37,13 @@ class TechnicalIndicatorsAPIView(APIView):
         self.market_service = None
 
     def get(self, request, symbol: str):
-        """Synchronous entry point, calls async processing"""
-        return asyncio.run(self.async_get(request, symbol))
-
-    async def async_get(self, request, symbol: str):
-        """Async processing of GET requests"""
-        # Ensure connection is available before each request to prevent disconnection and cross-thread issues
-        close_old_connections()
+        """Synchronous processing of GET requests"""
         try:
-            # Ensure services are initialized
-            if self.ta_service is None:
-                self.ta_service = TechnicalAnalysisService()
-            if self.market_service is None:
-                self.market_service = MarketDataService()
-
-            # Get language parameter
+            # Get request parameters
             language = request.GET.get('language', 'en-US')
-            logger.info(f"Requested language: {language}")
-
-            # Get force refresh parameter
             force_refresh = request.GET.get('force_refresh', 'false').lower() == 'true'
+
+            logger.info(f"Requested language: {language}")
             logger.info(f"Force refresh parameter: {force_refresh}")
 
             # Supported languages list
@@ -65,41 +54,44 @@ class TechnicalIndicatorsAPIView(APIView):
                 logger.warning(f"Unsupported language: {language}, using default language en-US")
                 language = 'en-US'
 
+            # Check cache first (unless force refresh is requested)
+            if not force_refresh:
+                cached_data = get_cached_technical_indicators(symbol, language)
+                if cached_data:
+                    logger.info(f"Returning cached technical indicators for {symbol} ({language})")
+                    return Response(cached_data)
+
+            # Ensure services are initialized
+            if self.ta_service is None:
+                self.ta_service = TechnicalAnalysisService()
+            if self.market_service is None:
+                self.market_service = MarketDataService()
+
             # Normalize symbol format, remove common suffixes
             clean_symbol = symbol.upper().replace('USDT', '').replace('-PERP', '').replace('_PERP', '').replace('PERP', '')
 
             # Handle query processing
             try:
-                # Use database_sync_to_async for proper thread-safe database operations
-                @sync_to_async
-                def get_token_safe():
-                    """Thread-safe token retrieval"""
-                    try:
-                        # First try to find token record using complete symbol
-                        token = Token.objects.filter(symbol=symbol.upper()).first()
+                # Simple synchronous token retrieval with robust error handling
+                @safe_read_operation
+                def get_token():
+                    token = Token.objects.filter(symbol=symbol.upper()).first()
+                    if not token:
+                        token = Token.objects.filter(symbol=clean_symbol).first()
+                    return token
 
-                        # If not found, try using cleaned symbol
-                        if not token:
-                            token = Token.objects.filter(symbol=clean_symbol).first()
-
-                        return token
-                    except Exception as e:
-                        logger.error(f"Error occurred while querying token record: {str(e)}")
-                        raise
-
-                token = await get_token_safe()
+                token = get_token()
 
                 if not token:
                     # Log for debugging
                     logger.error(f"Token record not found, attempted symbols: {symbol.upper()} and {clean_symbol}")
 
                     # Check what token records exist in database
-                    @sync_to_async
-                    def get_all_tokens_safe():
-                        """Thread-safe token list retrieval"""
+                    @safe_read_operation
+                    def get_all_tokens():
                         return list(Token.objects.all())
 
-                    all_tokens = await get_all_tokens_safe()
+                    all_tokens = get_all_tokens()
                     token_symbols = [t.symbol for t in all_tokens]
                     logger.info(f"Token records in database: {token_symbols}")
 
@@ -107,7 +99,7 @@ class TechnicalIndicatorsAPIView(APIView):
                         'zh-CN': f"未找到代币 {symbol} 的分析数据",
                         'en-US': f"Analysis data not found for token {symbol}",
                         'ja-JP': f"トークン {symbol} の分析データが見つかりません",
-                        'ko-KR': f"토큰 {symbol}에 대한 분析 데이터를 찾을 수 없습니다"
+                        'ko-KR': f"토큰 {symbol}에 대한 분석 데이터를 찾을 수 없습니다"
                     }
                     return Response({
                         'status': 'not_found',
@@ -128,17 +120,19 @@ class TechnicalIndicatorsAPIView(APIView):
 
             # Get latest analysis report for specified language
             try:
-                @sync_to_async
-                def get_latest_report_safe():
-                    """Thread-safe latest report retrieval"""
+                @safe_read_operation
+                def get_latest_report():
                     start_time = time.time()
-                    reports_qs = AnalysisReport.objects.filter(token=token, language=language).order_by('-timestamp')
-                    report = reports_qs.first()
+                    reports_qs = AnalysisReport.objects.select_related('token').filter(
+                        token=token, language=language
+                    ).order_by('-timestamp')
+                    latest_report = reports_qs.first()
                     duration = time.time() - start_time
                     logger.info(f"Get latest report time cost: {duration:.3f}s")
-                    return report
+                    return latest_report
 
-                latest_report = await get_latest_report_safe()
+                latest_report = get_latest_report()
+                
                 if latest_report:
                     logger.info(f"Got latest report ID: {latest_report.id}, time: {latest_report.timestamp}")
 
@@ -174,17 +168,19 @@ class TechnicalIndicatorsAPIView(APIView):
 
             # Get related technical analysis data
             try:
-                @sync_to_async
-                def get_technical_analysis_safe():
-                    """Thread-safe technical analysis retrieval"""
+                @safe_read_operation
+                def get_technical_analysis():
                     start_time = time.time()
-                    ta_qs = TechnicalAnalysis.objects.filter(token=token).order_by('-timestamp')
-                    ta = ta_qs.first()
+                    ta_qs = TechnicalAnalysis.objects.select_related('token').filter(
+                        token=token
+                    ).order_by('-timestamp')
+                    technical_analysis = ta_qs.first()
                     duration = time.time() - start_time
                     logger.info(f"Get technical analysis data time cost: {duration:.3f}s")
-                    return ta
+                    return technical_analysis
 
-                technical_analysis = await get_technical_analysis_safe()
+                technical_analysis = get_technical_analysis()
+                
                 if technical_analysis:
                     logger.info(f"Got technical analysis data ID: {technical_analysis.id}, time: {technical_analysis.timestamp}")
 
@@ -320,6 +316,10 @@ class TechnicalIndicatorsAPIView(APIView):
                 }
 
                 logger.info(f"Successfully retrieved technical indicators data for token {symbol}")
+
+                # Cache the response data for future requests
+                set_cached_technical_indicators(symbol, language, response_data, timeout=1800)  # 30 minutes cache
+
                 return Response(response_data)
 
             except Exception as e:

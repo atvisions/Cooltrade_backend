@@ -1,15 +1,12 @@
 """
-技术指标数据API视图
+Technical Indicators Data API Views - Simplified Synchronous Version
 """
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
-import asyncio
-from asgiref.sync import sync_to_async
 from django.utils import timezone
 from datetime import timedelta
-from django.db import transaction
 import time
 
 from .services.technical_analysis import TechnicalAnalysisService
@@ -31,122 +28,97 @@ class TechnicalIndicatorsDataAPIView(APIView):
         self.ta_service = None
         self.market_service = None
 
-    async def async_get(self, request, symbol: str):
-        """异步处理 GET 请求"""
+    def get(self, request, symbol: str):
+        """Synchronous processing of GET requests"""
         try:
-            # 确保服务已初始化
+            # Ensure services are initialized
             if self.ta_service is None:
                 self.ta_service = TechnicalAnalysisService()
             if self.market_service is None:
                 self.market_service = MarketDataService()
 
-            # 获取技术指标
+            # Get technical indicators
             try:
-                technical_data = await sync_to_async(self.ta_service.get_all_indicators)(symbol)
+                technical_data = self.ta_service.get_all_indicators(symbol)
                 if technical_data['status'] == 'error':
                     return Response(technical_data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
                 indicators = technical_data['data']['indicators']
 
             except Exception as e:
-                logger.error(f"获取技术指标数据失败: {str(e)}")
+                logger.error(f"Failed to get technical indicator data: {str(e)}")
                 return Response({
                     'status': 'error',
                     'message': str(e)
                 }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-            # 清理符号格式
+            # Clean symbol format
             clean_symbol = symbol.upper().replace('USDT', '').replace('-PERP', '').replace('_PERP', '').replace('PERP', '')
 
-            # Thread-safe token retrieval
-            @sync_to_async
-            def get_token_safe():
-                """Thread-safe token retrieval"""
-                # 首先尝试使用完整的 symbol 查找代币记录
-                token = Token.objects.filter(symbol=symbol.upper()).first()
-
-                # 如果找不到，再尝试使用清理后的 symbol 查找
-                if not token:
-                    token = Token.objects.filter(symbol=clean_symbol).first()
-
-                return token
-
-            token = await get_token_safe()
+            # Simple synchronous token retrieval
+            token = Token.objects.filter(symbol=symbol.upper()).first()
+            if not token:
+                token = Token.objects.filter(symbol=clean_symbol).first()
 
             if not token:
-                # 记录日志，帮助调试
-                logger.error(f"未找到代币记录，尝试查找的符号: {symbol.upper()} 和 {clean_symbol}")
+                # Log for debugging
+                logger.error(f"Token record not found, attempted symbols: {symbol.upper()} and {clean_symbol}")
 
-                # 查看数据库中有哪些代币记录
-                @sync_to_async
-                def get_all_tokens_safe():
-                    """Thread-safe token list retrieval"""
-                    return list(Token.objects.all())
-
-                all_tokens = await get_all_tokens_safe()
+                # Check what token records exist in database
+                all_tokens = list(Token.objects.all())
                 token_symbols = [t.symbol for t in all_tokens]
-                logger.info(f"数据库中的代币记录: {token_symbols}")
+                logger.info(f"Token records in database: {token_symbols}")
 
-                # 如果数据库中没有代币记录，尝试创建一个
+                # If no token records in database, try to create one
                 if not all_tokens:
-                    logger.info(f"数据库中没有代币记录，尝试创建一个: {symbol.upper()}")
+                    logger.info(f"No token records in database, trying to create one: {symbol.upper()}")
 
-                    # 创建默认链
+                    # Create default chain
                     from .models import Chain
 
-                    @sync_to_async
-                    def create_chain():
-                        chain, created = Chain.objects.get_or_create(
-                            chain=symbol.upper(),
-                            defaults={
-                                'is_active': True,
-                                'is_testnet': False
-                            }
-                        )
-                        return chain
+                    chain, _ = Chain.objects.get_or_create(
+                        chain=symbol.upper(),
+                        defaults={
+                            'is_active': True,
+                            'is_testnet': False
+                        }
+                    )
 
-                    chain = await create_chain()
+                    # Create token record
+                    token, _ = Token.objects.get_or_create(
+                        symbol=symbol.upper(),
+                        defaults={
+                            'chain': chain,
+                            'name': symbol.upper()
+                        }
+                    )
 
-                    # 创建代币记录
-                    @sync_to_async
-                    def create_token():
-                        token, created = Token.objects.get_or_create(
-                            symbol=symbol.upper(),
-                            defaults={
-                                'chain': chain,
-                                'name': symbol.upper()
-                            }
-                        )
-                        return token
-
-                    token = await create_token()
-
-                    logger.info(f"成功创建代币记录: {token.symbol}")
+                    logger.info(f"Successfully created token record: {token.symbol}")
                 else:
                     return Response({
                         'status': 'error',
-                        'message': f"未找到代币 {symbol} 的记录"
+                        'message': f"Token {symbol} record not found"
                     }, status=status.HTTP_404_NOT_FOUND)
 
             # 直接使用当前价格，而不依赖于分析报告
             # 从技术指标数据中获取当前价格
             current_price = technical_data.get('data', {}).get('current_price', 0)
 
-            # 如果技术指标数据中没有当前价格，尝试从 Gate API 获取
+            # If no current price in technical indicator data, try to get from Gate API
             if not current_price:
                 try:
-                    # 确保 ta_service 已初始化
+                    # Ensure ta_service is initialized
                     if self.ta_service is None:
                         self.ta_service = TechnicalAnalysisService()
 
-                    # 获取实时价格
-                    current_price = await sync_to_async(self.ta_service.gate_api.get_realtime_price)(symbol)
+                    # Get real-time price
+                    current_price = self.ta_service.gate_api.get_realtime_price(symbol)
 
-                    # 如果仍然无法获取价格，使用默认值
+                    # If still unable to get price, use default value
                     if not current_price:
                         current_price = 0
                 except Exception as e:
-                    logger.error(f"获取实时价格失败: {str(e)}")
+                    logger.error(f"Failed to get real-time price: {str(e)}")
                     current_price = 0
 
             # 使用当前价格
@@ -173,62 +145,49 @@ class TechnicalIndicatorsDataAPIView(APIView):
                 'mayer_multiple': float(indicators.get('MayerMultiple', 0))
             }
 
-            # 保存技术指标数据到数据库
+            # Save technical indicator data to database
             try:
-                # 定义一个同步函数来创建技术分析记录
-                async def create_technical_analysis():
-                    # 使用 Django ORM 的事务管理
-                    from django.db import transaction
-                    from django.utils import timezone
-                    from datetime import timedelta
+                # Use Django ORM transaction management
+                from django.db import transaction
 
-                    # 计算12小时分段起点
-                    now = timezone.now()
-                    period_hour = (now.hour // 12) * 12
-                    period_start = now.replace(minute=0, second=0, microsecond=0, hour=period_hour)
+                # Calculate 12-hour segment start point
+                now = timezone.now()
+                period_hour = (now.hour // 12) * 12
+                period_start = now.replace(minute=0, second=0, microsecond=0, hour=period_hour)
 
-                    # 使用 sync_to_async 包装事务操作
-                    @sync_to_async
-                    def get_or_create_record():
-                        with transaction.atomic():
-                            obj, created = TechnicalAnalysis.objects.get_or_create(
-                                token=token,
-                                period_start=period_start,
-                                defaults={
-                                    'timestamp': now,
-                                    'rsi': formatted_indicators['rsi'],
-                                    'macd_line': formatted_indicators['macd_line'],
-                                    'macd_signal': formatted_indicators['macd_signal'],
-                                    'macd_histogram': formatted_indicators['macd_histogram'],
-                                    'bollinger_upper': formatted_indicators['bollinger_upper'],
-                                    'bollinger_middle': formatted_indicators['bollinger_middle'],
-                                    'bollinger_lower': formatted_indicators['bollinger_lower'],
-                                    'bias': formatted_indicators['bias'],
-                                    'psy': formatted_indicators['psy'],
-                                    'dmi_plus': formatted_indicators['dmi_plus'],
-                                    'dmi_minus': formatted_indicators['dmi_minus'],
-                                    'dmi_adx': formatted_indicators['dmi_adx'],
-                                    'vwap': formatted_indicators['vwap'],
-                                    'funding_rate': formatted_indicators['funding_rate'],
-                                    'exchange_netflow': formatted_indicators['exchange_netflow'],
-                                    'nupl': formatted_indicators['nupl'],
-                                    'mayer_multiple': formatted_indicators['mayer_multiple']
-                                }
-                            )
-                            if not created:
-                                logger.info(f"12小时内已有技术分析记录，ID: {obj.id}，不再新建")
-                            return obj
+                # Use transaction operation
+                with transaction.atomic():
+                    obj, created = TechnicalAnalysis.objects.get_or_create(
+                        token=token,
+                        period_start=period_start,
+                        defaults={
+                            'timestamp': now,
+                            'rsi': formatted_indicators['rsi'],
+                            'macd_line': formatted_indicators['macd_line'],
+                            'macd_signal': formatted_indicators['macd_signal'],
+                            'macd_histogram': formatted_indicators['macd_histogram'],
+                            'bollinger_upper': formatted_indicators['bollinger_upper'],
+                            'bollinger_middle': formatted_indicators['bollinger_middle'],
+                            'bollinger_lower': formatted_indicators['bollinger_lower'],
+                            'bias': formatted_indicators['bias'],
+                            'psy': formatted_indicators['psy'],
+                            'dmi_plus': formatted_indicators['dmi_plus'],
+                            'dmi_minus': formatted_indicators['dmi_minus'],
+                            'dmi_adx': formatted_indicators['dmi_adx'],
+                            'vwap': formatted_indicators['vwap'],
+                            'funding_rate': formatted_indicators['funding_rate'],
+                            'exchange_netflow': formatted_indicators['exchange_netflow'],
+                            'nupl': formatted_indicators['nupl'],
+                            'mayer_multiple': formatted_indicators['mayer_multiple']
+                        }
+                    )
+                    if not created:
+                        logger.info(f"Technical analysis record already exists within 12 hours, ID: {obj.id}, not creating new one")
 
-                    # 调用包装后的函数
-                    technical_analysis = await get_or_create_record()
-                    return technical_analysis
-
-                # 执行异步函数
-                technical_analysis = await create_technical_analysis()
-                logger.info(f"成功保存技术指标数据: {symbol}, ID: {technical_analysis.id}")
+                logger.info(f"Successfully saved technical indicator data: {symbol}, ID: {obj.id}")
             except Exception as e:
-                logger.error(f"保存技术指标数据失败: {str(e)}")
-                # 即使保存失败，仍然返回数据，不影响 API 响应
+                logger.error(f"Failed to save technical indicator data: {str(e)}")
+                # Even if saving fails, still return data, don't affect API response
 
             return Response({
                 'status': 'success',
@@ -240,12 +199,8 @@ class TechnicalIndicatorsDataAPIView(APIView):
             })
 
         except Exception as e:
-            logger.error(f"获取技术指标数据失败: {str(e)}")
+            logger.error(f"Failed to get technical indicator data: {str(e)}")
             return Response({
                 'status': 'error',
                 'message': str(e)
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-    def get(self, request, symbol: str):
-        """同步入口点，调用异步处理"""
-        return asyncio.run(self.async_get(request, symbol))

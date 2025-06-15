@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # 必须在 CommonMiddleware 之前
+    'config.middleware.DatabaseHealthCheckMiddleware',  # Database health check
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -61,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'config.middleware.ConnectionCleanupMiddleware',  # Connection cleanup
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -100,10 +102,13 @@ DATABASES = {
         'OPTIONS': {
             'charset': 'utf8mb4',
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            'autocommit': True,
+            # Add connection health checks and timeouts
+            'connect_timeout': 60,
+            'read_timeout': 30,
+            'write_timeout': 30,
         },
-        'CONN_MAX_AGE': 0,  # Disable persistent connections for async views
-        'ATOMIC_REQUESTS': False,  # Disable atomic requests for better async compatibility
+        'CONN_MAX_AGE': 300,  # Keep connections for 5 minutes, then refresh
+        'CONN_HEALTH_CHECKS': True,  # Enable connection health checks
     }
 }
 
@@ -144,6 +149,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Cache configuration
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+        'TIMEOUT': 3600,  # 1 hour default timeout
+        'OPTIONS': {
+            'MAX_ENTRIES': 1000,
+        }
+    }
+}
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
@@ -203,7 +220,7 @@ EMAIL_TEMPLATE = '''
 <body>
   <div class="container">
     <div class="logo">
-      <img src="https://www.cooltrade.xyz/icons/icon128.png" alt="Cooltrade Logo" />
+      <img src="https://www.cooltrade.xyz/static/images/logo.png" alt="Cooltrade Logo" />
     </div>
     <div class="brand">Cooltrade</div>
     <div class="desc">Your verification code is:</div>

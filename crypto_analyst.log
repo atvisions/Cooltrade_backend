@@ -1,2 +1,2 @@
-2025-05-24 00:05:03,699 - CryptoAnalyst.utils - INFO - 成功保存技术指标数据: BTCUSDT, ID: 1620
-2025-05-26 00:05:02,620 - CryptoAnalyst.utils - INFO - 成功保存技术指标数据: BTCUSDT, ID: 1977
+2025-06-15 03:03:53,129 - CryptoAnalyst.utils - INFO - Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+2025-06-15 03:03:53,129 - CryptoAnalyst.utils - INFO - Invalidated technical indicators cache for BTCUSDT (en-US)

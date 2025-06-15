@@ -119,10 +119,10 @@ def parse_timestamp(timestamp_str: str) -> datetime:
 
 def safe_json_loads(json_str: str) -> Dict:
     """安全地解析JSON字符串
-    
+
     Args:
         json_str: JSON字符串
-        
+
     Returns:
         dict: 解析后的字典，如果解析失败则返回空字典
     """
@@ -130,4 +130,215 @@ def safe_json_loads(json_str: str) -> Dict:
         return json.loads(json_str)
     except json.JSONDecodeError:
         logger.error(f"JSON解析失败: {json_str}")
-        return {} 
+        return {}
+
+
+# Database utilities for robust connection handling
+import time
+from functools import wraps
+from django.db import connection, transaction
+from django.db.utils import OperationalError, InterfaceError
+
+
+def robust_db_operation(max_retries=3, retry_delay=1.0, exponential_backoff=True):
+    """
+    Decorator for robust database operations with automatic retry and connection management
+
+    Args:
+        max_retries: Maximum number of retry attempts
+        retry_delay: Initial delay between retries (seconds)
+        exponential_backoff: Whether to use exponential backoff for retry delays
+    """
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            last_exception = None
+
+            for attempt in range(max_retries + 1):
+                try:
+                    # Ensure connection is healthy before operation
+                    ensure_connection_health()
+
+                    # Execute the function
+                    return func(*args, **kwargs)
+
+                except (OperationalError, InterfaceError) as e:
+                    last_exception = e
+                    logger.warning(f"Database operation failed on attempt {attempt + 1}/{max_retries + 1}: {e}")
+
+                    if attempt < max_retries:
+                        # Close problematic connection
+                        try:
+                            connection.close()
+                        except:
+                            pass
+
+                        # Calculate retry delay
+                        if exponential_backoff:
+                            delay = retry_delay * (2 ** attempt)
+                        else:
+                            delay = retry_delay
+
+                        logger.info(f"Retrying in {delay} seconds...")
+                        time.sleep(delay)
+                        continue
+                    else:
+                        logger.error(f"Database operation failed after {max_retries + 1} attempts")
+                        raise
+
+                except Exception as e:
+                    # Non-database errors should not be retried
+                    logger.error(f"Non-database error in operation: {e}")
+                    raise
+
+            # This should never be reached, but just in case
+            if last_exception:
+                raise last_exception
+
+        return wrapper
+    return decorator
+
+
+def ensure_connection_health():
+    """
+    Ensure database connection is healthy, reconnect if necessary
+    """
+    try:
+        # Test connection with a simple query
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT 1")
+            cursor.fetchone()
+        return True
+
+    except (OperationalError, InterfaceError):
+        logger.warning("Database connection unhealthy, attempting to reconnect")
+
+        try:
+            # Close existing connection
+            connection.close()
+
+            # Force new connection
+            connection.ensure_connection()
+
+            # Test new connection
+            with connection.cursor() as cursor:
+                cursor.execute("SELECT 1")
+                cursor.fetchone()
+
+            logger.info("Database connection restored")
+            return True
+
+        except Exception as e:
+            logger.error(f"Failed to restore database connection: {e}")
+            raise
+
+
+# Convenience decorators for common use cases
+def safe_model_operation(func):
+    """Decorator for Django model operations"""
+    return robust_db_operation(max_retries=3, retry_delay=1.0)(func)
+
+
+def safe_bulk_operation(func):
+    """Decorator for bulk database operations"""
+    return robust_db_operation(max_retries=2, retry_delay=2.0)(func)
+
+
+def safe_read_operation(func):
+    """Decorator for read-only database operations"""
+    return robust_db_operation(max_retries=5, retry_delay=0.5)(func)
+
+
+# Cache utilities for technical indicators
+from django.core.cache import cache
+import hashlib
+
+
+def get_technical_indicators_cache_key(symbol: str, language: str) -> str:
+    """
+    Generate cache key for technical indicators data
+
+    Args:
+        symbol: Trading symbol (e.g., 'BTCUSDT')
+        language: Language code (e.g., 'en-US')
+
+    Returns:
+        str: Cache key
+    """
+    key_data = f"technical_indicators:{symbol.upper()}:{language}"
+    return hashlib.md5(key_data.encode()).hexdigest()
+
+
+def get_cached_technical_indicators(symbol: str, language: str):
+    """
+    Get cached technical indicators data
+
+    Args:
+        symbol: Trading symbol
+        language: Language code
+
+    Returns:
+        dict or None: Cached data or None if not found
+    """
+    cache_key = get_technical_indicators_cache_key(symbol, language)
+    return cache.get(cache_key)
+
+
+def set_cached_technical_indicators(symbol: str, language: str, data: dict, timeout: int = 3600):
+    """
+    Set cached technical indicators data
+
+    Args:
+        symbol: Trading symbol
+        language: Language code
+        data: Data to cache
+        timeout: Cache timeout in seconds (default: 1 hour)
+    """
+    cache_key = get_technical_indicators_cache_key(symbol, language)
+    cache.set(cache_key, data, timeout)
+    logger.info(f"Cached technical indicators for {symbol} ({language}) with key: {cache_key}")
+
+
+def invalidate_technical_indicators_cache(symbol: str, language: str = None):
+    """
+    Invalidate cached technical indicators data
+
+    Args:
+        symbol: Trading symbol
+        language: Language code (if None, invalidate all languages)
+    """
+    if language:
+        # Invalidate specific language
+        cache_key = get_technical_indicators_cache_key(symbol, language)
+        cache.delete(cache_key)
+        logger.info(f"Invalidated technical indicators cache for {symbol} ({language})")
+    else:
+        # Invalidate all languages for this symbol
+        languages = ['zh-CN', 'en-US', 'ja-JP', 'ko-KR']
+        for lang in languages:
+            cache_key = get_technical_indicators_cache_key(symbol, lang)
+            cache.delete(cache_key)
+        logger.info(f"Invalidated all technical indicators cache for {symbol}")
+
+
+def get_cache_stats():
+    """
+    Get cache statistics for monitoring
+
+    Returns:
+        dict: Cache statistics
+    """
+    try:
+        # This is a simple implementation for LocMemCache
+        # For Redis or Memcached, you might want to use different methods
+        return {
+            'backend': 'locmem',
+            'status': 'active'
+        }
+    except Exception as e:
+        logger.error(f"Error getting cache stats: {e}")
+        return {
+            'backend': 'unknown',
+            'status': 'error',
+            'error': str(e)
+        }

@@ -1,7 +1,9 @@
+import logging
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .models import Token, TechnicalAnalysis, AnalysisReport
-from .utils import logger
+
+logger = logging.getLogger(__name__)
 
 @receiver(post_save, sender=TechnicalAnalysis)
 def log_technical_analysis_update(sender, instance, created, **kwargs):
