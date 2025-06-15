@@ -13,7 +13,7 @@ import traceback
 
 from .services.technical_analysis import TechnicalAnalysisService
 from .services.market_data_service import MarketDataService
-from .models import Token, AnalysisReport, TechnicalAnalysis
+from .models import Token, AnalysisReport, TechnicalAnalysis, Chain
 from .utils import (
     safe_read_operation, safe_model_operation,
     get_cached_technical_indicators, set_cached_technical_indicators
@@ -24,147 +24,54 @@ logger = logging.getLogger(__name__)
 
 
 class TechnicalIndicatorsAPIView(APIView):
-    """Technical Indicators API View
-
-    Handles /api/crypto/technical-indicators/<str:symbol>/ endpoint requests
-    Returns technical indicator analysis reports for specified tokens
-    """
-    permission_classes = [IsAuthenticated]
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.ta_service = None
-        self.market_service = None
+    """Technical Indicators API View"""
 
     def get(self, request, symbol: str):
         """Synchronous processing of GET requests"""
         try:
-            # Get request parameters
-            language = request.GET.get('language', 'en-US')
-            force_refresh = request.GET.get('force_refresh', 'false').lower() == 'true'
+            # 获取或创建链记录
+            chain, _ = Chain.objects.get_or_create(
+                chain=symbol,
+                defaults={
+                    'is_active': True,
+                    'is_testnet': False
+                }
+            )
 
-            logger.info(f"Requested language: {language}")
-            logger.info(f"Force refresh parameter: {force_refresh}")
+            # 获取或创建交易对记录
+            token, _ = Token.objects.get_or_create(
+                symbol=symbol,
+                defaults={
+                    'chain': chain,
+                    'name': symbol
+                }
+            )
 
-            # Supported languages list
-            supported_languages = ['zh-CN', 'en-US', 'ja-JP', 'ko-KR']
+            # 获取最新的技术分析记录（24小时内）
+            time_window = timezone.now() - datetime.timedelta(hours=24)
+            latest_analysis = TechnicalAnalysis.objects.filter(
+                token=token,
+                timestamp__gte=time_window
+            ).order_by('-timestamp').first()
 
-            # Validate language support
-            if language not in supported_languages:
-                logger.warning(f"Unsupported language: {language}, using default language en-US")
-                language = 'en-US'
-
-            # Check cache first (unless force refresh is requested)
-            if not force_refresh:
-                cached_data = get_cached_technical_indicators(symbol, language)
-                if cached_data:
-                    logger.info(f"Returning cached technical indicators for {symbol} ({language})")
-                    return Response(cached_data)
-
-            # Ensure services are initialized
-            if self.ta_service is None:
-                self.ta_service = TechnicalAnalysisService()
-            if self.market_service is None:
-                self.market_service = MarketDataService()
-
-            # Normalize symbol format, remove common suffixes
-            clean_symbol = symbol.upper().replace('USDT', '').replace('-PERP', '').replace('_PERP', '').replace('PERP', '')
-
-            # Handle query processing
-            try:
-                # Simple synchronous token retrieval with robust error handling
-                @safe_read_operation
-                def get_token():
-                    token = Token.objects.filter(symbol=symbol.upper()).first()
-                    if not token:
-                        token = Token.objects.filter(symbol=clean_symbol).first()
-                    return token
-
-                token = get_token()
-
-                if not token:
-                    # Log for debugging
-                    logger.error(f"Token record not found, attempted symbols: {symbol.upper()} and {clean_symbol}")
-
-                    # Check what token records exist in database
-                    @safe_read_operation
-                    def get_all_tokens():
-                        return list(Token.objects.all())
-
-                    all_tokens = get_all_tokens()
-                    token_symbols = [t.symbol for t in all_tokens]
-                    logger.info(f"Token records in database: {token_symbols}")
-
-                    error_messages = {
-                        'zh-CN': f"未找到代币 {symbol} 的分析数据",
-                        'en-US': f"Analysis data not found for token {symbol}",
-                        'ja-JP': f"トークン {symbol} の分析データが見つかりません",
-                        'ko-KR': f"토큰 {symbol}에 대한 분석 데이터를 찾을 수 없습니다"
-                    }
-                    return Response({
-                        'status': 'not_found',
-                        'message': error_messages.get(language, error_messages['en-US']),
-                        'needs_refresh': True
-                    }, status=status.HTTP_404_NOT_FOUND)
-            except Exception as e:
-                logger.error(f"Error occurred while querying token record: {str(e)}")
-                logger.error(traceback.format_exc())
+            if not latest_analysis:
                 return Response({
                     'status': 'error',
-                    'message': "Error occurred while querying token records, please try again later"
-                }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                    'message': 'No technical analysis data available'
+                }, status=status.HTTP_404_NOT_FOUND)
 
-            # technical-indicators interface only reads local database, does not trigger report generation
-            if force_refresh:
-                logger.info(f"technical-indicators interface received force_refresh parameter, but this interface only reads local database and does not trigger report generation")
+            # 获取最新的英文报告
+            latest_report = AnalysisReport.objects.filter(
+                token=token,
+                language='en-US',
+                technical_analysis=latest_analysis
+            ).first()
 
-            # Get latest analysis report for specified language
-            try:
-                @safe_read_operation
-                def get_latest_report():
-                    start_time = time.time()
-                    reports_qs = AnalysisReport.objects.select_related('token').filter(
-                        token=token, language=language
-                    ).order_by('-timestamp')
-                    latest_report = reports_qs.first()
-                    duration = time.time() - start_time
-                    logger.info(f"Get latest report time cost: {duration:.3f}s")
-                    return latest_report
-
-                latest_report = get_latest_report()
-                
-                if latest_report:
-                    logger.info(f"Got latest report ID: {latest_report.id}, time: {latest_report.timestamp}")
-
-                # Define report freshness threshold (12 hours)
-                freshness_threshold = timezone.now() - datetime.timedelta(hours=12)
-
-                # If no report found for specified language, return error
-                if not latest_report:
-                    logger.warning(f"No {language} language analysis report found for token {symbol}, returning 404.")
-                    error_messages = {
-                        'zh-CN': f"未找到代币 {symbol} 的 {language} 语言分析数据",
-                        'en-US': f"{language} analysis data not found for token {symbol}",
-                        'ja-JP': f"トークン {symbol} の {language} 分析データが見つかりません",
-                        'ko-KR': f"토큰 {symbol}에 대한 {language} 분석 데이터를 찾을 수 없습니다"
-                    }
-                    return Response({
-                        'status': 'not_found',
-                        'message': error_messages.get(language, error_messages['en-US']),
-                        'needs_refresh': True
-                    }, status=status.HTTP_404_NOT_FOUND)
-
-                # Check if report is stale (older than 12 hours)
-                is_stale = latest_report.timestamp < freshness_threshold
-                if is_stale:
-                    logger.info(f"Latest {language} language report for token {symbol} ({latest_report.timestamp}) is older than 12-hour freshness threshold ({freshness_threshold}), but still returning data marked as stale.")
-            except Exception as e:
-                logger.error(f"Error occurred while querying analysis report: {str(e)}")
-                logger.error(traceback.format_exc())
+            if not latest_report:
                 return Response({
                     'status': 'error',
-                    'message': "Error occurred while querying analysis report, please try again later"
-                }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                    'message': 'No analysis report available'
+                }, status=status.HTTP_404_NOT_FOUND)
 
             # Get related technical analysis data
             try:
@@ -193,7 +100,7 @@ class TechnicalIndicatorsAPIView(APIView):
                     }
                     return Response({
                         'status': 'not_found',
-                        'message': error_messages.get(language, error_messages['en-US']),
+                        'message': error_messages.get('en-US', error_messages['en-US']),
                         'needs_refresh': True
                     }, status=status.HTTP_404_NOT_FOUND)
             except Exception as e:
@@ -224,7 +131,7 @@ class TechnicalIndicatorsAPIView(APIView):
                         'current_price': safe_float(latest_report.snapshot_price, 'snapshot_price'),
                         'snapshot_price': safe_float(latest_report.snapshot_price, 'snapshot_price'),
                         'last_update_time': latest_report.timestamp.isoformat(),
-                        'is_stale': is_stale,
+                        'is_stale': False,
                         'trend_analysis': {
                             'probabilities': {
                                 'up': latest_report.trend_up_probability,
@@ -318,7 +225,7 @@ class TechnicalIndicatorsAPIView(APIView):
                 logger.info(f"Successfully retrieved technical indicators data for token {symbol}")
 
                 # Cache the response data for future requests
-                set_cached_technical_indicators(symbol, language, response_data, timeout=1800)  # 30 minutes cache
+                set_cached_technical_indicators(symbol, 'en-US', response_data, timeout=1800)  # 30 minutes cache
 
                 return Response(response_data)
 

@@ -55,3 +55,692 @@ INFO 2025-06-15 05:09:05,806 autoreload 29859 8300961536 /Users/lucas/Documents/
 INFO 2025-06-15 05:09:06,344 autoreload 29880 8300961536 Watching for file changes with StatReloader
 INFO 2025-06-15 05:09:24,621 basehttp 29880 6136082432 "GET /api/crypto/get_report/ETHUSDT/?language=en-US&force_refresh=true HTTP/1.1" 200 3067
 INFO 2025-06-15 05:09:50,431 basehttp 29880 6136082432 "GET /api/crypto/technical-indicators/ETHUSDT/?language=en-US HTTP/1.1" 200 3269
+INFO 2025-06-15 05:15:14,115 autoreload 33327 8300961536 Watching for file changes with StatReloader
+WARNING 2025-06-15 05:16:55,781 log 33327 6201192448 Not Found: /api/crypto/technical-indicators/XRPUSDT/
+WARNING 2025-06-15 05:16:55,781 basehttp 33327 6201192448 "GET /api/crypto/technical-indicators/XRPUSDT/?language=en-US HTTP/1.1" 404 97
+WARNING 2025-06-15 05:41:40,575 log 33327 6218018816 Not Found: /api/v1/wallets/get_supported_chains/
+WARNING 2025-06-15 05:41:40,575 basehttp 33327 6218018816 "GET /api/v1/wallets/get_supported_chains/ HTTP/1.1" 404 3006
+INFO 2025-06-15 10:57:54,875 autoreload 44559 8300961536 Watching for file changes with StatReloader
+WARNING 2025-06-15 10:58:24,448 log 44559 6193295360 Unauthorized: /api/crypto/get_report/ETHUSDT/
+WARNING 2025-06-15 10:58:24,449 basehttp 44559 6193295360 "GET /api/crypto/get_report/ETHUSDT/?language=ko-KR&force_refresh=true HTTP/1.1" 401 34
+INFO 2025-06-15 10:58:28,947 basehttp 44559 6193295360 "POST /api/auth/login/ HTTP/1.1" 200 295
+WARNING 2025-06-15 10:58:51,855 log 44559 6210695168 Not Found: /api/crypto/technical-indicators/SUIUSDT/
+WARNING 2025-06-15 10:58:51,856 basehttp 44559 6210695168 "GET /api/crypto/technical-indicators/SUIUSDT/?language=en-U HTTP/1.1" 404 97
+INFO 2025-06-15 10:58:58,030 basehttp 44559 6193295360 "GET /api/crypto/get_report/ETHUSDT/?language=ko-KR&force_refresh=true HTTP/1.1" 200 3370
+WARNING 2025-06-15 10:59:06,121 log 44559 6193295360 Not Found: /api/crypto/technical-indicators/SUIUSDT/
+WARNING 2025-06-15 10:59:06,121 basehttp 44559 6193295360 "GET /api/crypto/technical-indicators/SUIUSDT/?language=ko-KR HTTP/1.1" 404 124
+INFO 2025-06-15 11:01:51,536 autoreload 44559 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:01:52,160 autoreload 44686 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:02:09,238 autoreload 44686 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:02:09,637 autoreload 44700 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:02:47,083 basehttp 44700 6325039104 "GET /api/crypto/get_report/SUIUSDT/?language=ko-KR&force_refresh=true HTTP/1.1" 200 3387
+INFO 2025-06-15 11:02:59,887 basehttp 44700 6325039104 "GET /api/crypto/technical-indicators/SUIUSDT/?language=ko-KR HTTP/1.1" 200 3569
+INFO 2025-06-15 11:03:19,239 basehttp 44700 6325039104 "GET /api/crypto/technical-indicators/SUIUSDT/?language=jp HTTP/1.1" 200 3247
+WARNING 2025-06-15 11:03:26,757 log 44700 6325039104 Bad Request: /api/crypto/get_report/SUIUSDT/
+WARNING 2025-06-15 11:03:26,758 basehttp 44700 6325039104 "GET /api/crypto/get_report/SUIUSDT/?language=jp&force_refresh=true HTTP/1.1" 400 99
+WARNING 2025-06-15 11:03:41,263 log 44700 6325039104 Not Found: /api/crypto/technical-indicators/SUIUSDT/
+WARNING 2025-06-15 11:03:41,263 basehttp 44700 6325039104 "GET /api/crypto/technical-indicators/SUIUSDT/?language=ja-JP HTTP/1.1" 404 126
+INFO 2025-06-15 11:05:05,158 autoreload 44700 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:05:05,714 autoreload 44775 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:05:10,428 autoreload 44775 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:05:10,725 autoreload 44786 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:06:13,917 autoreload 44786 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:06:14,493 autoreload 44826 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:06:19,113 autoreload 44826 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:06:19,463 autoreload 44834 8300961536 Watching for file changes with StatReloader
+ERROR 2025-06-15 11:06:22,963 log 44834 6138671104 Internal Server Error: /api/crypto/get_report/SUIUSDT/
+ERROR 2025-06-15 11:06:22,964 basehttp 44834 6138671104 "GET /api/crypto/get_report/SUIUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 500 79
+INFO 2025-06-15 11:06:56,912 autoreload 44834 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:06:57,452 autoreload 44856 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:07:10,433 autoreload 44856 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:07:10,871 autoreload 44867 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:08:00,592 autoreload 44867 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:08:01,712 autoreload 44897 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:08:05,517 autoreload 44897 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:08:05,837 autoreload 44907 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:09:24,395 autoreload 44907 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:09:24,964 autoreload 44949 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:14:26,025 autoreload 44949 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:14:26,494 autoreload 45073 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:15:32,661 autoreload 45073 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:15:33,270 autoreload 45103 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:17:25,376 autoreload 45103 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:17:25,850 autoreload 45123 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:18:38,132 autoreload 45123 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:18:39,093 autoreload 45161 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:18:48,944 autoreload 45161 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:18:49,344 autoreload 45178 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:20:13,197 autoreload 45178 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:20:13,710 autoreload 45216 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:20:29,655 autoreload 45216 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:20:30,105 autoreload 45226 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:21:46,437 autoreload 45226 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:21:46,928 autoreload 45274 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:22:18,145 autoreload 45274 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:22:18,635 autoreload 45285 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:22:24,269 autoreload 45285 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:22:24,667 autoreload 45294 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:23:29,058 autoreload 45294 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:23:29,939 autoreload 45328 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:24:00,140 autoreload 45328 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:24:00,780 autoreload 45342 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:24:06,557 autoreload 45342 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:24:07,083 autoreload 45351 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:24:33,186 autoreload 45374 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:24:58,186 autoreload 45374 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:24:58,641 autoreload 45380 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:25:00,260 autoreload 45380 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:25:00,687 autoreload 45385 8300961536 Watching for file changes with StatReloader
+ERROR 2025-06-15 11:25:05,140 log 45385 6195245056 Internal Server Error: /api/crypto/get_report/SUIUSDT/
+ERROR 2025-06-15 11:25:05,141 basehttp 45385 6195245056 "GET /api/crypto/get_report/SUIUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 500 79
+INFO 2025-06-15 11:25:39,216 autoreload 45385 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:25:39,696 autoreload 45395 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:25:52,605 autoreload 45395 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:25:53,044 autoreload 45406 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:27:24,022 autoreload 45406 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:27:24,840 autoreload 45453 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:27:44,118 autoreload 45453 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:27:44,504 autoreload 45470 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:32:02,027 basehttp 45470 6325039104 "GET /api/crypto/get_report/SUIUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 200 3065
+INFO 2025-06-15 11:32:32,930 autoreload 45470 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:32:33,587 autoreload 45638 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:32:47,599 autoreload 45638 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:32:47,997 autoreload 45655 8300961536 Watching for file changes with StatReloader
+ERROR 2025-06-15 11:33:23,290 log 45655 6206091264 Internal Server Error: /api/crypto/get_report/SUIUSDT/
+ERROR 2025-06-15 11:33:23,290 basehttp 45655 6206091264 "GET /api/crypto/get_report/SUIUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 500 79
+INFO 2025-06-15 11:34:18,921 autoreload 45655 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:34:19,613 autoreload 45681 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:34:21,281 autoreload 45681 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:34:21,702 autoreload 45692 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:34:24,803 basehttp 45692 6202142720 "GET /api/crypto/get_report/SUIUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 200 1016
+INFO 2025-06-15 11:35:24,719 autoreload 45692 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:35:25,412 autoreload 45703 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:35:37,411 autoreload 45703 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:35:37,819 autoreload 45720 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:35:40,656 basehttp 45720 6163542016 "GET /api/crypto/get_report/SUIUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 200 1011
+INFO 2025-06-15 11:36:18,670 autoreload 45720 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:36:19,360 autoreload 45731 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:39:53,753 autoreload 45842 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:40:19,675 basehttp 45842 6207287296 "GET /api/crypto/get_report/SUIUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 200 3471
+INFO 2025-06-15 11:40:52,232 basehttp 45842 6207287296 "GET /api/crypto/technical-indicators/SUIUSDT/?language=ja-JP HTTP/1.1" 200 3653
+INFO 2025-06-15 11:45:09,032 autoreload 45842 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:45:09,846 autoreload 45930 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:45:21,723 autoreload 45930 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:45:22,174 autoreload 45948 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:45:53,079 basehttp 45948 6131200000 "GET /api/crypto/get_report/SUIUSDT/?language=ja-JP&force_refresh=true HTTP/1.1" 200 2443
+INFO 2025-06-15 11:46:19,952 basehttp 45948 6131200000 "GET /api/crypto/technical-indicators/SUIUSDT/?language=ja-JP HTTP/1.1" 200 2631
+INFO 2025-06-15 11:53:26,286 autoreload 45948 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:53:26,908 autoreload 46123 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:53:36,643 autoreload 46123 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_technical_indicators.py changed, reloading.
+INFO 2025-06-15 11:53:37,135 autoreload 46134 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:53:47,971 autoreload 46134 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:53:48,403 autoreload 46148 8300961536 Watching for file changes with StatReloader
+ERROR 2025-06-15 11:54:04,335 log 46148 6170734592 Internal Server Error: /api/crypto/get_report/SUIUSDT/
+ERROR 2025-06-15 11:54:04,336 basehttp 46148 6170734592 "GET /api/crypto/get_report/SUIUSDT/ HTTP/1.1" 500 65
+INFO 2025-06-15 11:54:40,818 autoreload 46148 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:54:41,380 autoreload 46181 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:54:57,317 autoreload 46181 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:54:57,718 autoreload 46193 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:55:17,470 basehttp 46193 6196047872 "GET /api/crypto/get_report/SUIUSDT/ HTTP/1.1" 200 3512
+INFO 2025-06-15 11:56:53,457 autoreload 46193 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:56:54,043 autoreload 46239 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:57:05,025 autoreload 46239 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:57:05,626 autoreload 46250 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:57:56,223 autoreload 46250 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:57:56,766 autoreload 46284 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:58:14,589 autoreload 46284 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:58:15,057 autoreload 46305 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 11:58:44,083 autoreload 46305 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 11:58:44,626 autoreload 46366 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 12:18:03,738 autoreload 46366 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 12:18:04,293 autoreload 46732 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 12:19:05,416 autoreload 46732 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 12:19:06,126 autoreload 46750 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 12:19:26,482 autoreload 46750 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 12:19:26,909 autoreload 46774 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 12:19:35,049 basehttp 46774 6126841856 "GET /api/crypto/technical-indicators/SUIUSDT/ HTTP/1.1" 200 3694
+WARNING 2025-06-15 12:42:55,758 log 46774 6143668224 Unauthorized: /api/auth/invitation-info/ranking/
+WARNING 2025-06-15 12:42:55,759 basehttp 46774 6143668224 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 401 34
+INFO 2025-06-15 12:43:01,465 basehttp 46774 6143668224 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-06-15 12:43:10,469 basehttp 46774 6143668224 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 200 32
+INFO 2025-06-15 12:45:13,250 basehttp 46774 6160494592 "OPTIONS /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 0
+WARNING 2025-06-15 12:45:13,269 log 46774 6160494592 Unauthorized: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-06-15 12:45:13,269 basehttp 46774 6160494592 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 401 34
+INFO 2025-06-15 12:45:26,903 basehttp 46774 6160494592 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-06-15 12:45:27,093 basehttp 46774 6160494592 "POST /api/auth/login/ HTTP/1.1" 200 295
+WARNING 2025-06-15 12:45:27,618 log 46774 6160494592 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-06-15 12:45:27,618 basehttp 46774 6160494592 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 12:45:42,639 log 46774 6160494592 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-06-15 12:45:42,639 basehttp 46774 6160494592 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 12:46:24,786 log 46774 6160494592 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-06-15 12:46:24,787 basehttp 46774 6160494592 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 404 67
+ERROR 2025-06-15 12:46:39,774 log 46774 6160494592 Internal Server Error: /api/crypto/get_report/BTCUSDT/
+ERROR 2025-06-15 12:46:39,774 basehttp 46774 6160494592 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 500 65
+INFO 2025-06-15 12:49:41,616 autoreload 46774 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 12:49:42,191 autoreload 48485 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 12:49:45,940 autoreload 48485 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 12:49:46,413 autoreload 48493 8300961536 Watching for file changes with StatReloader
+ERROR 2025-06-15 12:49:52,472 log 48493 6206468096 Internal Server Error: /api/crypto/get_report/BTCUSDT/
+ERROR 2025-06-15 12:49:52,473 basehttp 48493 6206468096 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 500 65
+INFO 2025-06-15 12:51:23,672 autoreload 48493 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 12:51:24,269 autoreload 48519 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 12:51:27,997 autoreload 48519 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 12:51:28,319 autoreload 48532 8300961536 Watching for file changes with StatReloader
+ERROR 2025-06-15 12:51:34,546 log 48532 6133510144 Internal Server Error: /api/crypto/get_report/BTCUSDT/
+ERROR 2025-06-15 12:51:34,547 basehttp 48532 6133510144 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 500 65
+INFO 2025-06-15 12:52:35,582 autoreload 48532 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 12:52:36,899 autoreload 48578 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 12:52:40,644 autoreload 48578 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 12:52:41,087 autoreload 48592 8300961536 Watching for file changes with StatReloader
+ERROR 2025-06-15 12:52:46,439 log 48592 6325039104 Internal Server Error: /api/crypto/get_report/BTCUSDT/
+ERROR 2025-06-15 12:52:46,440 basehttp 48592 6325039104 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 500 65
+INFO 2025-06-15 12:57:37,314 autoreload 48592 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 12:57:37,979 autoreload 48665 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 12:57:49,746 autoreload 48665 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 12:57:50,137 autoreload 48684 8300961536 Watching for file changes with StatReloader
+ERROR 2025-06-15 12:57:58,717 log 48684 6131101696 Internal Server Error: /api/crypto/get_report/BTCUSDT/
+ERROR 2025-06-15 12:57:58,718 basehttp 48684 6131101696 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 500 65
+INFO 2025-06-15 12:59:16,058 autoreload 48684 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 12:59:16,653 autoreload 48794 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 13:00:51,187 autoreload 48794 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 13:00:51,791 autoreload 48820 8300961536 Watching for file changes with StatReloader
+ERROR 2025-06-15 13:00:58,651 log 48820 6134362112 Internal Server Error: /api/crypto/get_report/BTCUSDT/
+ERROR 2025-06-15 13:00:58,652 basehttp 48820 6134362112 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 500 65
+INFO 2025-06-15 13:02:02,449 autoreload 48820 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 13:02:03,075 autoreload 48854 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 13:02:04,735 autoreload 48854 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 13:02:05,044 autoreload 48859 8300961536 Watching for file changes with StatReloader
+ERROR 2025-06-15 13:02:16,237 log 48859 6203256832 Internal Server Error: /api/crypto/get_report/BTCUSDT/
+ERROR 2025-06-15 13:02:16,237 basehttp 48859 6203256832 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 500 65
+INFO 2025-06-15 13:03:50,508 autoreload 48859 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 13:03:51,229 autoreload 48879 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 13:03:54,099 autoreload 48879 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 13:03:54,403 autoreload 48892 8300961536 Watching for file changes with StatReloader
+ERROR 2025-06-15 13:04:03,105 log 48892 6131068928 Internal Server Error: /api/crypto/get_report/BTCUSDT/
+ERROR 2025-06-15 13:04:03,105 basehttp 48892 6131068928 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 500 65
+INFO 2025-06-15 13:05:59,132 autoreload 48892 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 13:05:59,860 autoreload 48918 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 13:10:54,565 autoreload 48918 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 13:10:55,051 autoreload 48982 8300961536 Watching for file changes with StatReloader
+ERROR 2025-06-15 13:11:02,107 log 48982 6129725440 Internal Server Error: /api/crypto/get_report/BTCUSDT/
+ERROR 2025-06-15 13:11:02,107 basehttp 48982 6129725440 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 500 65
+INFO 2025-06-15 13:12:53,539 autoreload 48982 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 13:12:54,523 autoreload 49019 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 13:13:00,192 autoreload 49019 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 13:13:00,613 autoreload 49036 8300961536 Watching for file changes with StatReloader
+WARNING 2025-06-15 13:13:04,147 log 49036 6198538240 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-06-15 13:13:04,147 basehttp 49036 6198538240 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 13:13:30,542 log 49036 6198538240 Not Found: /api/crypto/technical-indicators/BTCUSDT/
+WARNING 2025-06-15 13:13:30,543 basehttp 49036 6198538240 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 404 59
+INFO 2025-06-15 13:15:01,449 autoreload 49128 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 13:15:03,404 autoreload 49128 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 13:15:04,139 autoreload 49135 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 13:15:07,932 autoreload 49135 8300961536 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-06-15 13:15:08,260 autoreload 49140 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 13:15:28,483 basehttp 49140 6161313792 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 200 3009
+INFO 2025-06-15 13:15:35,536 basehttp 49140 6161313792 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 13:15:52,281 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 13:16:08,007 basehttp 49140 6178713600 "OPTIONS /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 0
+WARNING 2025-06-15 13:16:08,024 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:16:08,025 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:16:08,317 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:16:08,317 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:16:11,588 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:16:11,589 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:17:38,011 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:17:38,012 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:17:38,294 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:17:38,294 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:17:41,513 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:17:41,513 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:17:41,808 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:17:41,809 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:17:44,827 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:17:44,828 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:17:45,127 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:17:45,127 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:17:51,645 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 13:17:51,942 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 13:17:53,251 basehttp 49140 6178713600 "OPTIONS /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 0
+INFO 2025-06-15 13:17:53,266 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 13:17:53,564 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 13:17:56,558 basehttp 49140 6178713600 "OPTIONS /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 0
+WARNING 2025-06-15 13:17:56,568 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/SOLUSDT/
+WARNING 2025-06-15 13:17:56,568 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:17:56,867 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/SOLUSDT/
+WARNING 2025-06-15 13:17:56,867 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:17:58,810 basehttp 49140 6178713600 "OPTIONS /api/crypto/technical-indicators/BNBUSDT/ HTTP/1.1" 200 0
+WARNING 2025-06-15 13:17:58,832 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/BNBUSDT/
+WARNING 2025-06-15 13:17:58,832 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/BNBUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:17:59,114 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/BNBUSDT/
+WARNING 2025-06-15 13:17:59,114 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/BNBUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:25:32,427 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+WARNING 2025-06-15 13:25:37,590 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:25:37,590 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:25:37,887 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:25:37,888 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:25:40,334 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:25:40,335 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:25:54,752 log 49140 6178713600 Unauthorized: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:25:54,752 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 401 5285
+INFO 2025-06-15 13:25:54,776 basehttp 49140 6195539968 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+INFO 2025-06-15 13:25:54,776 basehttp 49140 6229192704 "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2025-06-15 13:25:54,777 basehttp 49140 6262845440 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+INFO 2025-06-15 13:25:54,777 basehttp 49140 6212366336 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2025-06-15 13:25:54,780 basehttp 49140 6262845440 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2025-06-15 13:25:54,781 basehttp 49140 6212366336 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2025-06-15 13:25:54,782 basehttp 49140 6229192704 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+INFO 2025-06-15 13:25:54,785 basehttp 49140 6195539968 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2025-06-15 13:25:54,785 basehttp 49140 6178713600 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2025-06-15 13:25:54,786 basehttp 49140 6246019072 "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+INFO 2025-06-15 13:25:54,792 basehttp 49140 6246019072 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+WARNING 2025-06-15 13:25:54,842 log 49140 6246019072 Not Found: /favicon.ico
+WARNING 2025-06-15 13:25:54,842 basehttp 49140 6246019072 "GET /favicon.ico HTTP/1.1" 404 2931
+WARNING 2025-06-15 13:26:04,625 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:26:04,625 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:26:04,924 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:26:04,924 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:26:09,458 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:26:09,459 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:26:12,030 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:26:12,031 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:26:22,725 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:26:22,726 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:26:23,016 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:26:23,017 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:26:26,204 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:26:26,204 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:27:08,739 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:27:08,740 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:27:09,035 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:27:09,035 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:27:14,753 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:27:14,753 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:27:15,054 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:27:15,054 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:27:21,480 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:27:21,480 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:28:41,092 basehttp 49140 6178713600 "POST /api/auth/login/ HTTP/1.1" 200 295
+WARNING 2025-06-15 13:28:41,612 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:28:41,613 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:28:41,913 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:28:41,914 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:28:49,151 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:28:49,151 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:28:49,451 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:28:49,452 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:32:33,545 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:32:33,546 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:32:33,835 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:32:33,835 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:32:35,541 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:32:35,541 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:32:44,779 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:32:44,779 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:32:45,076 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:32:45,077 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:33:30,456 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:33:30,457 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:36:01,425 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+WARNING 2025-06-15 13:36:04,645 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:36:04,645 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:36:04,940 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:36:04,941 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:36:11,460 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:36:11,460 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:36:11,755 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:36:11,755 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:36:17,980 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:36:17,980 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:36:18,279 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:36:18,279 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:36:26,534 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:36:26,534 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:37:03,428 basehttp 49140 6178713600 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-06-15 13:37:03,958 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+WARNING 2025-06-15 13:37:07,660 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:37:07,660 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:37:07,977 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:37:07,977 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:37:10,630 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:37:10,631 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:37:14,604 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:37:14,604 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:37:14,902 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:37:14,902 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:37:18,829 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:37:18,830 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:39:26,925 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:39:26,926 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:39:27,214 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:39:27,215 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:39:28,245 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:39:28,245 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:39:32,607 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:39:32,608 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:39:32,905 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:39:32,905 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:39:34,071 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:39:34,072 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:41:21,410 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:41:21,412 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:41:21,696 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:41:21,696 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:41:25,544 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:41:25,545 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:42:03,360 log 49140 6178713600 Unauthorized: /api/crypto/get_report/PEPEUSDT/
+WARNING 2025-06-15 13:42:03,361 basehttp 49140 6178713600 "GET /api/crypto/get_report/PEPEUSDT/ HTTP/1.1" 401 5193
+WARNING 2025-06-15 13:42:08,605 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:42:08,606 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:42:08,906 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:42:08,907 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:42:15,486 basehttp 49140 6178713600 "POST /api/auth/login/ HTTP/1.1" 200 295
+WARNING 2025-06-15 13:42:16,007 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:42:16,008 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:42:16,309 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:42:16,310 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:42:17,544 basehttp 49140 6178713600 "OPTIONS /api/crypto/get_report/PEPEUSDT/?_t=1749994937537 HTTP/1.1" 200 0
+WARNING 2025-06-15 13:42:17,859 log 49140 6178713600 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:42:17,859 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:42:31,032 basehttp 49140 6178713600 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 13:43:22,519 autoreload 50617 8300961536 Watching for file changes with StatReloader
+WARNING 2025-06-15 13:43:38,356 log 50617 6171504640 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:43:38,356 basehttp 50617 6171504640 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:43:38,640 log 50617 6171504640 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:43:38,641 basehttp 50617 6171504640 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:43:39,395 basehttp 50617 6171504640 "OPTIONS /api/crypto/get_report/PEPEUSDT/?_t=1749995019391 HTTP/1.1" 200 0
+WARNING 2025-06-15 13:43:39,709 log 50617 6171504640 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:43:39,710 basehttp 50617 6171504640 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:43:40,645 basehttp 50617 6171504640 "OPTIONS /api/crypto/get_report/PEPEUSDT/?_t=1749995020641 HTTP/1.1" 200 0
+WARNING 2025-06-15 13:43:40,957 log 50617 6171504640 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:43:40,958 basehttp 50617 6171504640 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:43:41,496 basehttp 50617 6171504640 "OPTIONS /api/crypto/get_report/PEPEUSDT/?_t=1749995021491 HTTP/1.1" 200 0
+WARNING 2025-06-15 13:43:41,811 log 50617 6171504640 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:43:41,812 basehttp 50617 6171504640 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:43:52,421 log 50617 6171504640 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:43:52,421 basehttp 50617 6171504640 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:43:52,719 log 50617 6171504640 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:43:52,720 basehttp 50617 6171504640 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:43:57,665 basehttp 50617 6171504640 "OPTIONS /api/crypto/get_report/PEPEUSDT/?_t=1749995037660 HTTP/1.1" 200 0
+WARNING 2025-06-15 13:43:57,980 log 50617 6171504640 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:43:57,981 basehttp 50617 6171504640 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:46:05,675 autoreload 50617 8300961536 /Users/lucas/Documents/cooltrade/backend/config/settings.py changed, reloading.
+INFO 2025-06-15 13:46:06,167 autoreload 50899 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 13:46:08,905 autoreload 50899 8300961536 /Users/lucas/Documents/cooltrade/backend/config/settings.py changed, reloading.
+INFO 2025-06-15 13:46:09,243 autoreload 50910 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 13:47:31,021 autoreload 51111 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 13:48:12,533 basehttp 51111 6200324096 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-06-15 13:48:13,065 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 13:48:15,025 basehttp 51111 6200324096 "GET /api/auth/invitation-info/ HTTP/1.1" 200 281
+INFO 2025-06-15 13:48:15,037 basehttp 51111 6200324096 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 200 32
+INFO 2025-06-15 13:48:18,846 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+WARNING 2025-06-15 13:48:21,888 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:48:21,888 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:48:22,188 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 13:48:22,188 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:48:42,818 basehttp 51111 6200324096 "GET /api/crypto/get_report/PEPEUSDT/?_t=1749995302538 HTTP/1.1" 200 2689
+INFO 2025-06-15 13:48:43,139 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 13:48:53,735 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 13:48:54,031 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 13:49:08,164 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 13:49:08,459 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+WARNING 2025-06-15 13:49:10,667 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/SOLUSDT/
+WARNING 2025-06-15 13:49:10,667 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:49:10,966 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/SOLUSDT/
+WARNING 2025-06-15 13:49:10,967 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:49:35,006 basehttp 51111 6200324096 "GET /api/crypto/get_report/SOLUSDT/?_t=1749995355996 HTTP/1.1" 200 2869
+INFO 2025-06-15 13:49:35,390 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 3061
+INFO 2025-06-15 13:53:20,911 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 13:53:21,228 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 13:53:33,989 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 13:53:34,280 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+WARNING 2025-06-15 13:53:35,846 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/DOGEUSDT/
+WARNING 2025-06-15 13:53:35,847 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/DOGEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:53:36,144 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/DOGEUSDT/
+WARNING 2025-06-15 13:53:36,144 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/DOGEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:53:40,208 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/XRPUSDT/
+WARNING 2025-06-15 13:53:40,210 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:53:40,508 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/XRPUSDT/
+WARNING 2025-06-15 13:53:40,508 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:53:42,174 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ADAUSDT/
+WARNING 2025-06-15 13:53:42,175 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:53:42,464 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ADAUSDT/
+WARNING 2025-06-15 13:53:42,464 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:53:44,953 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/BNBUSDT/
+WARNING 2025-06-15 13:53:44,954 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BNBUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:53:45,245 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/BNBUSDT/
+WARNING 2025-06-15 13:53:45,246 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BNBUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:53:47,721 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 13:53:48,019 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 13:53:52,740 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 13:53:53,040 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 13:53:55,302 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 3061
+INFO 2025-06-15 13:53:55,599 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 3061
+WARNING 2025-06-15 13:53:57,767 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/BNBUSDT/
+WARNING 2025-06-15 13:53:57,768 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BNBUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:53:58,072 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/BNBUSDT/
+WARNING 2025-06-15 13:53:58,072 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BNBUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:54:17,588 basehttp 51111 6200324096 "GET /api/crypto/get_report/BNBUSDT/?_t=1749995642888 HTTP/1.1" 200 3205
+INFO 2025-06-15 13:54:17,914 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BNBUSDT/ HTTP/1.1" 200 3398
+INFO 2025-06-15 13:54:52,158 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 13:54:52,461 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+WARNING 2025-06-15 13:54:55,967 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/DOGEUSDT/
+WARNING 2025-06-15 13:54:55,968 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/DOGEUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:54:56,267 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/DOGEUSDT/
+WARNING 2025-06-15 13:54:56,268 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/DOGEUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:55:16,753 basehttp 51111 6200324096 "GET /api/crypto/get_report/DOGEUSDT/?_t=1749995697145 HTTP/1.1" 200 3604
+INFO 2025-06-15 13:55:17,829 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/DOGEUSDT/ HTTP/1.1" 200 3787
+INFO 2025-06-15 13:57:16,552 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 13:57:16,843 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+WARNING 2025-06-15 13:57:20,560 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/XRPUSDT/
+WARNING 2025-06-15 13:57:20,560 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:57:20,856 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/XRPUSDT/
+WARNING 2025-06-15 13:57:20,856 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:57:36,338 basehttp 51111 6200324096 "GET /api/crypto/get_report/XRPUSDT/?_t=1749995842345 HTTP/1.1" 200 3294
+INFO 2025-06-15 13:57:36,655 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 200 3492
+INFO 2025-06-15 13:59:05,693 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 13:59:11,011 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 13:59:11,287 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+WARNING 2025-06-15 13:59:13,765 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ADAUSDT/
+WARNING 2025-06-15 13:59:13,765 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 13:59:14,062 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ADAUSDT/
+WARNING 2025-06-15 13:59:14,062 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 13:59:36,097 basehttp 51111 6200324096 "GET /api/crypto/get_report/ADAUSDT/?_t=1749995954782 HTTP/1.1" 200 3029
+INFO 2025-06-15 13:59:36,414 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 200 3228
+INFO 2025-06-15 13:59:55,976 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 13:59:56,274 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 14:00:08,286 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 14:00:08,582 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 14:00:20,191 basehttp 51111 6200324096 "GET /api/auth/invitation-info/ HTTP/1.1" 200 281
+INFO 2025-06-15 14:00:20,197 basehttp 51111 6200324096 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 200 32
+INFO 2025-06-15 14:00:22,667 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 14:00:22,961 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 14:00:31,599 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 3061
+INFO 2025-06-15 14:00:31,900 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 3061
+INFO 2025-06-15 14:00:56,483 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 14:00:56,763 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 14:00:59,399 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 200 3492
+INFO 2025-06-15 14:00:59,701 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 200 3492
+INFO 2025-06-15 14:01:00,950 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 14:01:01,249 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 14:01:02,220 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/DOGEUSDT/ HTTP/1.1" 200 3787
+INFO 2025-06-15 14:01:02,519 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/DOGEUSDT/ HTTP/1.1" 200 3787
+WARNING 2025-06-15 14:01:04,164 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/AVAXUSDT/
+WARNING 2025-06-15 14:01:04,165 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/AVAXUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 14:01:04,462 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/AVAXUSDT/
+WARNING 2025-06-15 14:01:04,462 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/AVAXUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 14:01:26,045 basehttp 51111 6200324096 "GET /api/crypto/get_report/AVAXUSDT/?_t=1749996066411 HTTP/1.1" 200 3254
+INFO 2025-06-15 14:01:26,373 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/AVAXUSDT/ HTTP/1.1" 200 3441
+WARNING 2025-06-15 14:02:31,854 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/GTUSDT/
+WARNING 2025-06-15 14:02:31,856 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/GTUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 14:02:32,135 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/GTUSDT/
+WARNING 2025-06-15 14:02:32,136 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/GTUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 14:02:53,700 basehttp 51111 6200324096 "GET /api/crypto/get_report/GTUSDT/?_t=1749996153249 HTTP/1.1" 200 3079
+WARNING 2025-06-15 14:03:08,008 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/PIUSDT/
+WARNING 2025-06-15 14:03:08,008 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PIUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 14:03:08,298 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/PIUSDT/
+WARNING 2025-06-15 14:03:08,299 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PIUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 14:03:36,545 basehttp 51111 6200324096 "GET /api/crypto/get_report/PIUSDT/?_t=1749996189619 HTTP/1.1" 200 3593
+INFO 2025-06-15 14:03:36,868 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PIUSDT/ HTTP/1.1" 200 3776
+INFO 2025-06-15 14:04:36,382 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PIUSDT/ HTTP/1.1" 200 3776
+INFO 2025-06-15 14:04:36,678 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PIUSDT/ HTTP/1.1" 200 3776
+INFO 2025-06-15 14:04:40,720 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PIUSDT/ HTTP/1.1" 200 3776
+INFO 2025-06-15 14:04:41,008 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PIUSDT/ HTTP/1.1" 200 3776
+INFO 2025-06-15 14:05:48,281 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PIUSDT/ HTTP/1.1" 200 3776
+INFO 2025-06-15 14:05:48,526 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PIUSDT/ HTTP/1.1" 200 3776
+INFO 2025-06-15 14:05:59,320 basehttp 51111 6200324096 "GET /api/auth/invitation-info/ HTTP/1.1" 200 281
+INFO 2025-06-15 14:05:59,328 basehttp 51111 6200324096 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 200 32
+INFO 2025-06-15 14:06:01,895 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PIUSDT/ HTTP/1.1" 200 3776
+INFO 2025-06-15 14:06:02,193 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/PIUSDT/ HTTP/1.1" 200 3776
+INFO 2025-06-15 14:06:13,615 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/SUIUSDT/ HTTP/1.1" 200 3694
+INFO 2025-06-15 14:06:13,914 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/SUIUSDT/ HTTP/1.1" 200 3694
+WARNING 2025-06-15 14:06:23,783 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/KASUSDT/
+WARNING 2025-06-15 14:06:23,783 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/KASUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 14:06:24,083 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/KASUSDT/
+WARNING 2025-06-15 14:06:24,084 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/KASUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 14:06:54,414 basehttp 51111 6200324096 "GET /api/crypto/get_report/KASUSDT/?_t=1749996387397 HTTP/1.1" 200 3069
+INFO 2025-06-15 14:06:54,735 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/KASUSDT/ HTTP/1.1" 200 3252
+INFO 2025-06-15 14:08:55,383 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/KASUSDT/ HTTP/1.1" 200 3252
+INFO 2025-06-15 14:08:55,672 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/KASUSDT/ HTTP/1.1" 200 3252
+WARNING 2025-06-15 14:09:02,864 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/OPUSDT/
+WARNING 2025-06-15 14:09:02,864 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/OPUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 14:09:03,159 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/OPUSDT/
+WARNING 2025-06-15 14:09:03,160 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/OPUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 14:14:03,386 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 14:14:09,226 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 14:14:20,443 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 14:16:49,325 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 14:16:53,095 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 14:18:54,622 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 14:19:11,057 basehttp 51111 6200324096 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-06-15 14:19:11,890 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 14:19:17,206 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 14:24:47,588 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 14:25:19,313 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+WARNING 2025-06-15 14:26:15,871 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/OPUSDT/
+WARNING 2025-06-15 14:26:15,872 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/OPUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 14:26:16,162 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/OPUSDT/
+WARNING 2025-06-15 14:26:16,163 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/OPUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 14:26:43,637 basehttp 51111 6200324096 "GET /api/crypto/get_report/OPUSDT/?_t=1749997582975 HTTP/1.1" 200 3098
+INFO 2025-06-15 14:26:43,958 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/OPUSDT/ HTTP/1.1" 200 3282
+INFO 2025-06-15 14:26:52,563 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/OPUSDT/ HTTP/1.1" 200 3282
+INFO 2025-06-15 14:26:52,861 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/OPUSDT/ HTTP/1.1" 200 3282
+INFO 2025-06-15 14:26:55,309 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/OPUSDT/ HTTP/1.1" 200 3282
+INFO 2025-06-15 14:26:55,613 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/OPUSDT/ HTTP/1.1" 200 3282
+INFO 2025-06-15 14:27:08,789 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 14:27:09,089 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 14:27:13,603 basehttp 51111 6200324096 "GET /api/auth/invitation-info/ HTTP/1.1" 200 281
+INFO 2025-06-15 14:27:13,611 basehttp 51111 6200324096 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 200 32
+INFO 2025-06-15 14:27:18,243 basehttp 51111 6200324096 "GET /api/auth/invitation-info/ HTTP/1.1" 200 281
+INFO 2025-06-15 14:27:18,253 basehttp 51111 6200324096 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 200 32
+INFO 2025-06-15 14:27:19,967 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 14:27:20,271 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 14:27:28,019 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 3061
+INFO 2025-06-15 14:27:28,318 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 3061
+INFO 2025-06-15 14:27:30,855 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BNBUSDT/ HTTP/1.1" 200 3398
+INFO 2025-06-15 14:27:31,158 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/BNBUSDT/ HTTP/1.1" 200 3398
+INFO 2025-06-15 14:27:33,835 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 200 3228
+INFO 2025-06-15 14:27:34,136 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 200 3228
+INFO 2025-06-15 14:27:36,564 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 200 3492
+INFO 2025-06-15 14:27:36,869 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 200 3492
+INFO 2025-06-15 14:27:38,116 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/DOGEUSDT/ HTTP/1.1" 200 3787
+INFO 2025-06-15 14:27:38,421 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/DOGEUSDT/ HTTP/1.1" 200 3787
+INFO 2025-06-15 14:27:52,884 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 14:27:53,184 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 14:27:59,898 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 14:28:00,190 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 14:28:09,872 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 14:28:10,171 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 23:06:41,555 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+INFO 2025-06-15 23:06:41,789 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3269
+ERROR 2025-06-15 23:07:02,228 log 51111 6200324096 Internal Server Error: /api/crypto/get_report/ETHUSDT/
+ERROR 2025-06-15 23:07:02,228 basehttp 51111 6200324096 "GET /api/crypto/get_report/ETHUSDT/?_t=1750028818878 HTTP/1.1" 500 65
+WARNING 2025-06-15 23:07:02,238 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:07:02,238 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/?_t=1750028822230 HTTP/1.1" 404 59
+WARNING 2025-06-15 23:08:10,503 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:08:10,504 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:08:10,785 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:08:10,785 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+ERROR 2025-06-15 23:08:17,793 log 51111 6200324096 Internal Server Error: /api/crypto/get_report/ETHUSDT/
+ERROR 2025-06-15 23:08:17,793 basehttp 51111 6200324096 "GET /api/crypto/get_report/ETHUSDT/?_t=1750028894675 HTTP/1.1" 500 65
+WARNING 2025-06-15 23:08:18,109 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:08:18,109 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:10:02,639 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:10:02,641 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:10:02,947 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:10:02,947 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:11:51,662 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:11:51,664 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:11:51,947 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:11:51,947 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:12:27,758 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:12:27,760 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:12:28,038 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:12:28,038 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:13:01,684 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:13:01,685 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:13:01,972 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:13:01,973 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:13:07,858 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:13:07,859 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:13:08,136 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:13:08,137 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:13:48,520 log 51111 6200324096 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:13:48,521 basehttp 51111 6200324096 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+INFO 2025-06-15 23:15:34,995 basehttp 51111 6217723904 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 23:15:35,240 basehttp 51111 6217723904 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 23:15:37,181 basehttp 51111 6217723904 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 3061
+INFO 2025-06-15 23:15:37,475 basehttp 51111 6217723904 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 3061
+WARNING 2025-06-15 23:15:39,892 log 51111 6217723904 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:15:39,893 basehttp 51111 6217723904 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:15:40,200 log 51111 6217723904 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:15:40,201 basehttp 51111 6217723904 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+ERROR 2025-06-15 23:16:26,972 log 51111 6217723904 Internal Server Error: /api/crypto/get_report/BTCUSDT/
+ERROR 2025-06-15 23:16:26,973 basehttp 51111 6217723904 "GET /api/crypto/get_report/BTCUSDT/ HTTP/1.1" 500 65
+INFO 2025-06-15 23:17:59,144 basehttp 51111 6234550272 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+INFO 2025-06-15 23:18:03,413 basehttp 51111 6234550272 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3218
+ERROR 2025-06-15 23:18:20,091 log 51111 6234550272 Internal Server Error: /api/crypto/get_report/ETHUSDT/
+ERROR 2025-06-15 23:18:20,091 basehttp 51111 6234550272 "GET /api/crypto/get_report/ETHUSDT/ HTTP/1.1" 500 65
+ERROR 2025-06-15 23:20:42,615 log 51111 6251950080 Internal Server Error: /api/crypto/get_report/ETHUSDT/
+ERROR 2025-06-15 23:20:42,616 basehttp 51111 6251950080 "GET /api/crypto/get_report/ETHUSDT/?_t=1750029639245 HTTP/1.1" 500 65
+WARNING 2025-06-15 23:20:42,940 log 51111 6251950080 Not Found: /api/crypto/technical-indicators/ETHUSDT/
+WARNING 2025-06-15 23:20:42,941 basehttp 51111 6251950080 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 404 59
+WARNING 2025-06-15 23:22:09,704 log 51111 6251950080 Unauthorized: /api/crypto/technical-indicators/PEPEUSDT/
+WARNING 2025-06-15 23:22:09,708 basehttp 51111 6251950080 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 401 5285
+INFO 2025-06-15 23:24:26,135 autoreload 61591 8300961536 Watching for file changes with StatReloader
+ERROR 2025-06-15 23:24:34,676 log 61591 6163132416 Internal Server Error: /api/crypto/get_report/ETHUSDT/
+ERROR 2025-06-15 23:24:34,676 basehttp 61591 6163132416 "GET /api/crypto/get_report/ETHUSDT/ HTTP/1.1" 500 65
+INFO 2025-06-15 23:32:45,040 autoreload 62117 8300961536 Watching for file changes with StatReloader
+INFO 2025-06-15 23:33:02,821 basehttp 62117 6139539456 "GET /api/crypto/get_report/ETHUSDT/ HTTP/1.1" 200 3072
+INFO 2025-06-15 23:33:17,678 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3272
+INFO 2025-06-15 23:33:17,946 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/ETHUSDT/ HTTP/1.1" 200 3272
+INFO 2025-06-15 23:33:28,748 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 3061
+INFO 2025-06-15 23:33:29,023 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 3061
+INFO 2025-06-15 23:33:31,823 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/BNBUSDT/ HTTP/1.1" 200 3398
+INFO 2025-06-15 23:33:32,124 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/BNBUSDT/ HTTP/1.1" 200 3398
+INFO 2025-06-15 23:33:37,418 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 200 3492
+INFO 2025-06-15 23:33:37,707 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 200 3492
+INFO 2025-06-15 23:33:40,905 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/DOGEUSDT/ HTTP/1.1" 200 3787
+INFO 2025-06-15 23:33:41,201 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/DOGEUSDT/ HTTP/1.1" 200 3787
+INFO 2025-06-15 23:33:43,337 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/AVAXUSDT/ HTTP/1.1" 200 3441
+INFO 2025-06-15 23:33:43,631 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/AVAXUSDT/ HTTP/1.1" 200 3441
+INFO 2025-06-15 23:33:45,737 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 200 3228
+INFO 2025-06-15 23:33:46,030 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 200 3228
+INFO 2025-06-15 23:34:05,203 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/GTUSDT/ HTTP/1.1" 200 3263
+INFO 2025-06-15 23:34:05,478 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/GTUSDT/ HTTP/1.1" 200 3263
+INFO 2025-06-15 23:34:25,980 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+INFO 2025-06-15 23:34:26,267 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/PEPEUSDT/ HTTP/1.1" 200 2882
+WARNING 2025-06-15 23:34:45,842 log 62117 6156939264 Not Found: /api/crypto/technical-indicators/SPXUSDT/
+WARNING 2025-06-15 23:34:45,842 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/SPXUSDT/ HTTP/1.1" 404 67
+WARNING 2025-06-15 23:34:46,119 log 62117 6156939264 Not Found: /api/crypto/technical-indicators/SPXUSDT/
+WARNING 2025-06-15 23:34:46,119 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/SPXUSDT/ HTTP/1.1" 404 67
+INFO 2025-06-15 23:35:06,633 basehttp 62117 6156939264 "GET /api/crypto/get_report/SPXUSDT/?_t=1750030487799 HTTP/1.1" 200 3316
+INFO 2025-06-15 23:35:06,951 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/SPXUSDT/ HTTP/1.1" 200 3492
+INFO 2025-06-15 23:35:17,424 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/SPXUSDT/ HTTP/1.1" 200 3492
+INFO 2025-06-15 23:35:17,711 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/SPXUSDT/ HTTP/1.1" 200 3492
+INFO 2025-06-15 23:35:20,137 basehttp 62117 6156939264 "GET /api/auth/invitation-info/ HTTP/1.1" 200 281
+INFO 2025-06-15 23:35:20,148 basehttp 62117 6156939264 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 200 32
+INFO 2025-06-15 23:35:24,032 basehttp 62117 6156939264 "GET /api/auth/invitation-info/ HTTP/1.1" 200 281
+INFO 2025-06-15 23:35:24,043 basehttp 62117 6156939264 "GET /api/auth/invitation-info/ranking/ HTTP/1.1" 200 32
+INFO 2025-06-15 23:35:25,109 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/SPXUSDT/ HTTP/1.1" 200 3492
+INFO 2025-06-15 23:35:25,410 basehttp 62117 6156939264 "GET /api/crypto/technical-indicators/SPXUSDT/ HTTP/1.1" 200 3492
