@@ -15113,3 +15113,391 @@ INFO 2025-06-15 23:35:25,409 views_technical_indicators 62117 6156939264 Get tec
 INFO 2025-06-15 23:35:25,409 views_technical_indicators 62117 6156939264 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
 INFO 2025-06-15 23:35:25,409 views_technical_indicators 62117 6156939264 Successfully retrieved technical indicators data for token SPXUSDT
 INFO 2025-06-15 23:35:25,409 utils 62117 6156939264 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:37:51,551 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.001s
+INFO 2025-06-15 23:37:51,551 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:37:51,551 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:37:51,551 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:37:51,852 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:37:51,852 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:37:51,852 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:37:51,853 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:37:57,359 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:37:57,359 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:37:57,360 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:37:57,360 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:37:57,645 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.001s
+INFO 2025-06-15 23:37:57,646 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:37:57,646 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:37:57,646 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:39:57,777 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-15 23:39:57,778 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 83, time: 2025-06-15 13:54:59.768857+00:00
+INFO 2025-06-15 23:39:57,779 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token DOGEUSDT
+INFO 2025-06-15 23:39:57,779 utils 62663 6160510976 Cached technical indicators for DOGEUSDT (en-US) with key: 36bbb32a24523e327c22ddc7812a492a
+INFO 2025-06-15 23:39:58,044 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:39:58,044 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 83, time: 2025-06-15 13:54:59.768857+00:00
+INFO 2025-06-15 23:39:58,044 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token DOGEUSDT
+INFO 2025-06-15 23:39:58,045 utils 62663 6160510976 Cached technical indicators for DOGEUSDT (en-US) with key: 36bbb32a24523e327c22ddc7812a492a
+INFO 2025-06-15 23:40:01,458 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:40:01,459 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 83, time: 2025-06-15 13:54:59.768857+00:00
+INFO 2025-06-15 23:40:01,459 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token DOGEUSDT
+INFO 2025-06-15 23:40:01,459 utils 62663 6160510976 Cached technical indicators for DOGEUSDT (en-US) with key: 36bbb32a24523e327c22ddc7812a492a
+INFO 2025-06-15 23:40:02,311 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:40:02,311 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:40:02,311 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:40:02,312 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:40:02,614 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:40:02,614 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:40:02,614 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:40:02,615 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:40:25,090 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-15 23:40:25,091 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 83, time: 2025-06-15 13:54:59.768857+00:00
+INFO 2025-06-15 23:40:25,091 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token DOGEUSDT
+INFO 2025-06-15 23:40:25,092 utils 62663 6160510976 Cached technical indicators for DOGEUSDT (en-US) with key: 36bbb32a24523e327c22ddc7812a492a
+INFO 2025-06-15 23:40:25,096 views_technical_indicators 62663 6325039104 Get technical analysis data time cost: 0.004s
+INFO 2025-06-15 23:40:25,097 views_technical_indicators 62663 6325039104 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:40:25,097 views_technical_indicators 62663 6325039104 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:40:25,097 utils 62663 6325039104 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:40:26,090 views_technical_indicators 62663 6325039104 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:40:26,091 views_technical_indicators 62663 6325039104 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:40:26,091 views_technical_indicators 62663 6325039104 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:40:26,091 utils 62663 6325039104 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:40:26,389 views_technical_indicators 62663 6325039104 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:40:26,390 views_technical_indicators 62663 6325039104 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:40:26,390 views_technical_indicators 62663 6325039104 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:40:26,390 utils 62663 6325039104 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:42:56,014 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:42:56,015 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:42:56,015 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:42:56,016 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:42:56,305 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-15 23:42:56,306 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:42:56,306 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:42:56,306 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:43:01,254 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.004s
+INFO 2025-06-15 23:43:01,254 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:43:01,254 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:43:01,255 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:43:01,531 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:43:01,531 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:43:01,531 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:43:01,531 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:43:23,996 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:43:23,996 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-15 23:43:23,997 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-15 23:43:23,997 utils 62663 6160510976 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-15 23:43:29,851 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:43:29,851 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-15 23:43:29,851 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-15 23:43:29,852 utils 62663 6160510976 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-15 23:43:38,367 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-15 23:43:38,368 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:43:38,368 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:43:38,368 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:43:38,662 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:43:38,663 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:43:38,663 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:43:38,663 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:43:44,425 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.001s
+INFO 2025-06-15 23:43:44,425 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:43:44,425 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:43:44,425 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:43:44,720 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:43:44,721 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 92, time: 2025-06-15 23:34:50.336490+00:00
+INFO 2025-06-15 23:43:44,721 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SPXUSDT
+INFO 2025-06-15 23:43:44,721 utils 62663 6160510976 Cached technical indicators for SPXUSDT (en-US) with key: c3d140de297402e237ba136a7361ea6c
+INFO 2025-06-15 23:43:58,544 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:43:58,545 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-15 23:43:58,545 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-15 23:43:58,545 utils 62663 6160510976 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-15 23:44:03,299 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:44:03,300 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-15 23:44:03,300 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-15 23:44:03,300 utils 62663 6160510976 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-15 23:44:23,238 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:44:23,239 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-15 23:44:23,239 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-15 23:44:23,239 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-15 23:44:23,532 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-15 23:44:23,532 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-15 23:44:23,533 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-15 23:44:23,533 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-15 23:44:27,046 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-15 23:44:27,046 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-15 23:44:27,046 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-15 23:44:27,046 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-15 23:44:27,341 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-15 23:44:27,341 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-15 23:44:27,342 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-15 23:44:27,342 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-15 23:46:28,549 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-15 23:46:28,551 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-15 23:46:28,551 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-15 23:46:28,551 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-15 23:46:28,833 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-15 23:46:28,833 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-15 23:46:28,834 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-15 23:46:28,834 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-15 23:46:34,624 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:46:34,626 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-15 23:46:34,626 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-15 23:46:34,626 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-15 23:46:34,899 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.001s
+INFO 2025-06-15 23:46:34,899 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-15 23:46:34,899 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-15 23:46:34,899 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-15 23:46:42,209 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-15 23:46:42,209 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-15 23:46:42,209 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-15 23:46:42,210 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-15 23:46:42,508 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-15 23:46:42,508 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-15 23:46:42,508 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-15 23:46:42,508 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-15 23:46:49,202 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.002s
+INFO 2025-06-15 23:46:49,203 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-15 23:46:49,204 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-15 23:46:49,204 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-15 23:46:49,486 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.001s
+INFO 2025-06-15 23:46:49,486 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-15 23:46:49,487 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-15 23:46:49,487 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:28:32,315 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.004s
+INFO 2025-06-16 00:28:32,317 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:28:32,317 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:28:32,317 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:28:32,771 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.063s
+INFO 2025-06-16 00:28:32,772 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:28:32,780 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:28:32,805 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:29:19,522 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.004s
+INFO 2025-06-16 00:29:19,524 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:29:19,524 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:29:19,526 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:29:19,810 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:29:19,810 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:29:19,810 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:29:19,810 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:29:26,614 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:29:26,614 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:29:26,614 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:29:26,614 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:29:26,901 views_technical_indicators 62663 6160510976 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:29:26,901 views_technical_indicators 62663 6160510976 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:29:26,901 views_technical_indicators 62663 6160510976 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:29:26,902 utils 62663 6160510976 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:30:10,496 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:30:10,496 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:30:10,496 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:30:10,496 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:30:33,084 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:30:33,084 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 84, time: 2025-06-15 13:57:24.957845+00:00
+INFO 2025-06-16 00:30:33,084 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token XRPUSDT
+INFO 2025-06-16 00:30:33,085 utils 64129 6199914496 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-06-16 00:30:33,290 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:30:33,290 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 84, time: 2025-06-15 13:57:24.957845+00:00
+INFO 2025-06-16 00:30:33,290 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token XRPUSDT
+INFO 2025-06-16 00:30:33,291 utils 64129 6199914496 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-06-16 00:30:45,470 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.009s
+INFO 2025-06-16 00:30:45,471 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:30:45,471 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:30:45,471 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:31:17,346 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:31:17,346 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 85, time: 2025-06-15 13:59:17.274481+00:00
+INFO 2025-06-16 00:31:17,347 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token ADAUSDT
+INFO 2025-06-16 00:31:17,349 utils 64129 6199914496 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-06-16 00:31:17,598 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:31:17,598 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 85, time: 2025-06-15 13:59:17.274481+00:00
+INFO 2025-06-16 00:31:17,598 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token ADAUSDT
+INFO 2025-06-16 00:31:17,598 utils 64129 6199914496 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-06-16 00:33:17,754 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.005s
+INFO 2025-06-16 00:33:17,757 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:33:17,758 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:33:17,758 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:34:23,601 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:34:23,602 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:34:23,602 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:34:23,602 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:34:32,627 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:34:32,628 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 85, time: 2025-06-15 13:59:17.274481+00:00
+INFO 2025-06-16 00:34:32,628 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token ADAUSDT
+INFO 2025-06-16 00:34:32,628 utils 64129 6199914496 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-06-16 00:34:32,908 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:34:32,908 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 85, time: 2025-06-15 13:59:17.274481+00:00
+INFO 2025-06-16 00:34:32,908 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token ADAUSDT
+INFO 2025-06-16 00:34:32,908 utils 64129 6199914496 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-06-16 00:34:54,665 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:34:54,665 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 85, time: 2025-06-15 13:59:17.274481+00:00
+INFO 2025-06-16 00:34:54,665 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token ADAUSDT
+INFO 2025-06-16 00:34:54,666 utils 64129 6199914496 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-06-16 00:34:58,531 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:34:58,531 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:34:58,531 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:34:58,532 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:35:59,919 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:35:59,920 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:35:59,921 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:35:59,922 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:36:52,442 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:36:52,443 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:36:52,443 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:36:52,443 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:36:59,366 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:36:59,366 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 85, time: 2025-06-15 13:59:17.274481+00:00
+INFO 2025-06-16 00:36:59,367 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token ADAUSDT
+INFO 2025-06-16 00:36:59,367 utils 64129 6199914496 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-06-16 00:37:06,198 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.007s
+INFO 2025-06-16 00:37:06,198 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:37:06,198 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:37:06,198 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:37:21,762 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:37:21,762 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 85, time: 2025-06-15 13:59:17.274481+00:00
+INFO 2025-06-16 00:37:21,762 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token ADAUSDT
+INFO 2025-06-16 00:37:21,763 utils 64129 6199914496 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-06-16 00:38:04,737 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:38:04,737 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:38:04,737 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:38:04,738 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:38:05,020 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:38:05,021 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:38:05,021 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:38:05,021 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:38:11,050 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.004s
+INFO 2025-06-16 00:38:11,051 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:38:11,051 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:38:11,051 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:38:11,345 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:38:11,345 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:38:11,346 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:38:11,347 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:38:27,052 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:38:27,052 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:38:27,052 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:38:27,053 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:38:27,343 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:38:27,343 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:38:27,343 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:38:27,343 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:38:47,195 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:38:47,195 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:38:47,195 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:38:47,196 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:38:52,497 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:38:52,497 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:38:52,497 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:38:52,498 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:38:57,122 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:38:57,122 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:38:57,122 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:38:57,123 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:38:57,408 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:38:57,408 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:38:57,408 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:38:57,408 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:39:06,001 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:39:06,002 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:39:06,002 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:39:06,003 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:39:06,246 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:39:06,247 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:39:06,247 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:39:06,247 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:39:40,211 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:39:40,213 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:39:40,213 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:39:40,215 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:39:48,449 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.007s
+INFO 2025-06-16 00:39:48,455 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:39:48,457 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:39:48,460 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:39:55,539 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:39:55,541 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 84, time: 2025-06-15 13:57:24.957845+00:00
+INFO 2025-06-16 00:39:55,541 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token XRPUSDT
+INFO 2025-06-16 00:39:55,542 utils 64129 6199914496 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-06-16 00:39:58,936 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:39:58,936 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:39:58,936 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:39:58,936 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:40:12,326 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:40:12,327 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 85, time: 2025-06-15 13:59:17.274481+00:00
+INFO 2025-06-16 00:40:12,328 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token ADAUSDT
+INFO 2025-06-16 00:40:12,330 utils 64129 6199914496 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-06-16 00:40:19,843 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:40:19,846 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 84, time: 2025-06-15 13:57:24.957845+00:00
+INFO 2025-06-16 00:40:19,846 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token XRPUSDT
+INFO 2025-06-16 00:40:19,847 utils 64129 6199914496 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-06-16 00:41:25,246 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:41:25,246 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:41:25,247 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:41:25,247 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:41:25,510 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:41:25,510 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:41:25,510 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:41:25,510 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:44:33,061 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.004s
+INFO 2025-06-16 00:44:33,063 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:44:33,064 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:44:33,065 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:44:33,238 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:44:33,238 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:44:33,239 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:44:33,239 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:44:39,491 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:44:39,491 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:44:39,491 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:44:39,491 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:44:39,783 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:44:39,784 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:44:39,784 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:44:39,784 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:45:05,091 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:45:05,092 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:45:05,092 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:45:05,092 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:45:05,377 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:45:05,377 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:45:05,377 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:45:05,378 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:45:40,378 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:45:40,379 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:45:40,379 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:45:40,379 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:45:58,781 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:45:58,782 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 91, time: 2025-06-15 23:07:01.623698+00:00
+INFO 2025-06-16 00:45:58,783 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token ETHUSDT
+INFO 2025-06-16 00:45:58,783 utils 64129 6199914496 Cached technical indicators for ETHUSDT (en-US) with key: 1b1a88d91eed9e1ef3381f5d1d95b2d1
+INFO 2025-06-16 00:46:01,587 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:46:01,587 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:46:01,587 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:46:01,587 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:46:03,989 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:46:03,990 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 82, time: 2025-06-15 13:54:05.767794+00:00
+INFO 2025-06-16 00:46:03,990 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BNBUSDT
+INFO 2025-06-16 00:46:03,990 utils 64129 6199914496 Cached technical indicators for BNBUSDT (en-US) with key: 5a4fb3291ebb2e6aaa550d9826461fb1
+INFO 2025-06-16 00:46:07,854 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:46:07,855 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:46:07,855 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:46:07,856 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:46:08,150 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:46:08,150 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:46:08,150 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:46:08,150 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:47:22,816 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.004s
+INFO 2025-06-16 00:47:22,817 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 79, time: 2025-06-15 12:46:37.483087+00:00
+INFO 2025-06-16 00:47:22,817 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token BTCUSDT
+INFO 2025-06-16 00:47:22,819 utils 64129 6199914496 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-06-16 00:47:47,283 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.001s
+INFO 2025-06-16 00:47:47,284 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:47:47,285 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:47:47,285 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:47:47,573 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:47:47,573 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:47:47,573 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:47:47,574 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:47:55,276 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.003s
+INFO 2025-06-16 00:47:55,276 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:47:55,276 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:47:55,277 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-06-16 00:47:55,577 views_technical_indicators 64129 6199914496 Get technical analysis data time cost: 0.002s
+INFO 2025-06-16 00:47:55,577 views_technical_indicators 64129 6199914496 Got technical analysis data ID: 81, time: 2025-06-15 13:49:18.744715+00:00
+INFO 2025-06-16 00:47:55,577 views_technical_indicators 64129 6199914496 Successfully retrieved technical indicators data for token SOLUSDT
+INFO 2025-06-16 00:47:55,577 utils 64129 6199914496 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167

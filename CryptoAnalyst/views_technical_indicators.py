@@ -83,14 +83,10 @@ class TechnicalIndicatorsAPIView(APIView):
                     ).order_by('-timestamp')
                     technical_analysis = ta_qs.first()
                     duration = time.time() - start_time
-                    logger.info(f"Get technical analysis data time cost: {duration:.3f}s")
                     return technical_analysis
 
                 technical_analysis = get_technical_analysis()
                 
-                if technical_analysis:
-                    logger.info(f"Got technical analysis data ID: {technical_analysis.id}, time: {technical_analysis.timestamp}")
-
                 if not technical_analysis:
                     error_messages = {
                         'zh-CN': f"未找到代币 {symbol} 的技术分析数据",
@@ -104,8 +100,6 @@ class TechnicalIndicatorsAPIView(APIView):
                         'needs_refresh': True
                     }, status=status.HTTP_404_NOT_FOUND)
             except Exception as e:
-                logger.error(f"Error occurred while querying technical analysis data: {str(e)}")
-                logger.error(traceback.format_exc())
                 return Response({
                     'status': 'error',
                     'message': "Error occurred while querying technical analysis data, please try again later"
@@ -120,7 +114,6 @@ class TechnicalIndicatorsAPIView(APIView):
                     try:
                         return float(value)
                     except (ValueError, TypeError) as e:
-                        logger.error(f"Error converting field {field_name} value {value} to float: {str(e)}")
                         return None
 
                 response_data = {
@@ -222,25 +215,18 @@ class TechnicalIndicatorsAPIView(APIView):
                     }
                 }
 
-                logger.info(f"Successfully retrieved technical indicators data for token {symbol}")
-
                 # Cache the response data for future requests
                 set_cached_technical_indicators(symbol, 'en-US', response_data, timeout=1800)  # 30 minutes cache
 
                 return Response(response_data)
 
             except Exception as e:
-                logger.error(f"Error occurred while building response data: {str(e)}")
-                logger.error(traceback.format_exc())
                 return Response({
                     'status': 'error',
                     'message': "Error occurred while building response data, please try again later"
                 }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         except Exception as e:
-            logger.error(f"Error occurred while processing request: {str(e)}")
-            logger.error(traceback.format_exc())
-
             return Response({
                 'status': 'error',
                 'message': "Error occurred while processing request, please try again later"

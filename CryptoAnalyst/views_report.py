@@ -15,7 +15,6 @@ from .models import Token, Chain, AnalysisReport, TechnicalAnalysis
 from .views_indicators_data import TechnicalIndicatorsDataAPIView
 from .services.technical_analysis import TechnicalAnalysisService
 from .utils import invalidate_technical_indicators_cache
-import traceback
 
 logger = logging.getLogger(__name__)
 
@@ -43,7 +42,7 @@ class CryptoReportAPIView(APIView):
             # 只处理英文
             language = 'en-US'
             force_refresh = request.GET.get('force_refresh', 'false').lower() == 'true'
-            logger.info(f"接收到请求参数 - symbol: {symbol}, force_refresh: {force_refresh}")
+            print(f"接收到请求参数 - symbol: {symbol}, force_refresh: {force_refresh}")
 
             # 获取或创建链记录
             chain, _ = Chain.objects.get_or_create(
@@ -118,7 +117,7 @@ class CryptoReportAPIView(APIView):
                     }
                 )
 
-            logger.info(f"get_report 接口调用，将生成全新的 {symbol} 的英文报告（不使用缓存）")
+            print(f"get_report 接口调用，将生成全新的 {symbol} 的英文报告（不使用缓存）")
             technical_data = self._get_technical_data(symbol)
             if not technical_data:
                 return Response({
@@ -140,7 +139,7 @@ class CryptoReportAPIView(APIView):
                 }
             })
         except Exception as e:
-            logger.error(f"生成分析报告时发生错误: {str(e)}", exc_info=True)
+            print(f"生成分析报告时发生错误: {str(e)}")
             return Response({
                 'status': 'error',
                 'message': f'生成分析报告时发生错误: {str(e)}'
@@ -239,17 +238,17 @@ class CryptoReportAPIView(APIView):
 
             if not token:
                 # 记录日志，帮助调试
-                logger.error(f"未找到代币记录，尝试查找的符号: {symbol.upper()} 和 {clean_symbol}")
+                print(f"未找到代币记录，尝试查找的符号: {symbol.upper()} 和 {clean_symbol}")
 
                 # 查看数据库中有哪些代币记录
                 all_tokens = list(Token.objects.all())
                 token_symbols = [t.symbol for t in all_tokens]
-                logger.info(f"数据库中的代币记录: {token_symbols}")
+                print(f"数据库中的代币记录: {token_symbols}")
 
                 return None
 
             # get_report 接口：每次都调用 API 获取最新数据，绕过数据库缓存
-            logger.info(f"get_report 接口：直接调用 API 获取 {symbol} 的最新技术指标数据")
+            print(f"get_report 接口：直接调用 API 获取 {symbol} 的最新技术指标数据")
 
             # 使用 TechnicalIndicatorsDataAPIView 获取最新数据，绕过缓存
             # 创建一个模拟的请求对象，强制绕过缓存
@@ -298,20 +297,20 @@ class CryptoReportAPIView(APIView):
                             data['current_price'] = current_price
                             # 成功获取实时价格
                     except Exception as e:
-                        logger.error(f"获取实时价格失败: {str(e)}")
+                        print(f"获取实时价格失败: {str(e)}")
 
                 return data
 
-            logger.error(f"获取技术指标数据失败: {response.data}")
+            print(f"获取技术指标数据失败: {response.data}")
             return None
         except Exception as e:
-            logger.error(f"获取技术指标数据时发生错误: {str(e)}", exc_info=True)
+            print(f"获取技术指标数据时发生错误: {str(e)}")
             return None
 
     def _clear_all_cache(self, ta_service, symbol: str):
         """清除指定代币的所有缓存"""
         try:
-            logger.info(f"清除 {symbol} 的所有缓存")
+            print(f"清除 {symbol} 的所有缓存")
 
             # 清除 Gate API 缓存
             if hasattr(ta_service, 'gate_api'):
@@ -379,10 +378,10 @@ class CryptoReportAPIView(APIView):
                     okx_api.ticker_cache_time.pop(symbol, None)
                     okx_api.ticker_cache_time.pop(symbol.upper(), None)
 
-            logger.info(f"已清除 {symbol} 的所有缓存")
+            print(f"已清除 {symbol} 的所有缓存")
 
         except Exception as e:
-            logger.error(f"清除缓存时出错: {str(e)}")
+            print(f"清除缓存时出错: {str(e)}")
             # 即使清除缓存失败，也继续执行
 
     @transaction.atomic
@@ -391,7 +390,6 @@ class CryptoReportAPIView(APIView):
             print("[DEBUG] 开始生成并保存报告")
             current_price = technical_data.get('current_price', 0)
             if not current_price:
-                logger.error("无法获取当前价格")
                 print("无法获取当前价格")
                 return None
             indicators = technical_data.get('indicators', {})
@@ -442,12 +440,10 @@ class CryptoReportAPIView(APIView):
             print("[DEBUG] 技术分析记录已创建或获取")
             bot_id = self.COZE_BOT_IDS.get('en-US')
             if not bot_id:
-                logger.error("未找到英文 Coze Bot ID")
                 print("未找到英文 Coze Bot ID")
                 return None
             prompt = self._build_prompt(technical_data, 'en-US')
             chat_url = f"{self.coze_api_url}/v3/chat"
-            logger.info(f"调用 Coze API 创建对话: {chat_url}")
             print(f"[DEBUG] 调用 Coze API 创建对话: {chat_url}")
             payload = {
                 "bot_id": bot_id,
@@ -479,27 +475,21 @@ class CryptoReportAPIView(APIView):
                 )
                 print(f"[DEBUG] Coze API response status: {response.status_code}")
                 if response.status_code != 200:
-                    logger.error(f"Coze API 响应错误: {response.text}")
                     print(f"Coze API 响应错误: {response.text}")
                     return None
                 try:
                     response_data = response.json()
                 except Exception as e:
-                    logger.error(f"Coze API 响应无法解析为 JSON，原始内容: {response.text}")
-                    logger.error(traceback.format_exc())
                     print(f"Coze API 响应无法解析为 JSON，原始内容: {response.text}")
-                    print(traceback.format_exc())
                     return None
                 print(f"[DEBUG] Coze API response json: {response_data}")
                 if response_data.get('code') != 0:
-                    logger.error(f"Coze API 响应错误: {response_data}")
                     print(f"Coze API 响应错误: {response_data}")
                     return None
                 data = response_data.get('data', {})
                 chat_id = data.get('id')
                 conversation_id = data.get('conversation_id')
                 if not chat_id or not conversation_id:
-                    logger.error("Coze API 响应中缺少 chat_id 或 conversation_id")
                     print("Coze API 响应中缺少 chat_id 或 conversation_id")
                     return None
                 # 轮询获取最终分析内容
@@ -554,7 +544,6 @@ class CryptoReportAPIView(APIView):
                                                 elif isinstance(messages_data.get('data'), list):
                                                     messages = messages_data.get('data', [])
                                                 else:
-                                                    logger.error(f"无法解析消息列表格式: {messages_data}")
                                                     print(f"无法解析消息列表格式: {messages_data}")
                                                     continue
                                                 for message in messages:
@@ -614,45 +603,32 @@ class CryptoReportAPIView(APIView):
                                                             print("[DEBUG] 分析报告已保存")
                                                             return report
                                         except Exception as e:
-                                            logger.error(f"处理消息列表时发生错误: {str(e)}")
-                                            logger.error(traceback.format_exc())
                                             print(f"处理消息列表时发生错误: {str(e)}")
-                                            print(traceback.format_exc())
-                                            continue
+                                            return None
                                     else:
-                                        logger.error(f"获取消息列表失败: HTTP状态码 {messages_response.status_code}")
-                                        print(f"获取消息列表失败: HTTP状态码 {messages_response.status_code}")
-                                else:
-                                    print(f"[DEBUG] Coze 还未完成，等待 {retry_interval} 秒...")
-                                    time.sleep(retry_interval)
-                                    retry_interval = min(retry_interval * 1.5, max_retry_interval)
-                                    retry_count += 1
-                                    continue
+                                        print(f"[DEBUG] Coze 还未完成，等待 {retry_interval} 秒...")
+                                        time.sleep(retry_interval)
+                                        retry_interval = min(retry_interval * 1.5, max_retry_interval)
+                                        retry_count += 1
+                                        continue
                         else:
-                            logger.error(f"获取对话状态失败: HTTP状态码 {status_response.status_code}")
-                            print(f"获取对话状态失败: HTTP状态码 {status_response.status_code}")
+                            print(f"[DEBUG] Coze 获取对话状态失败: HTTP状态码 {status_response.status_code}")
+                            time.sleep(retry_interval)
+                            retry_interval = min(retry_interval * 1.5, max_retry_interval)
+                            retry_count += 1
+                            continue
                     except Exception as e:
-                        logger.error(f"轮询状态时发生错误: {str(e)}")
-                        logger.error(traceback.format_exc())
-                        print(f"轮询状态时发生错误: {str(e)}")
-                        print(traceback.format_exc())
+                        print(f"[DEBUG] 轮询状态时发生错误: {str(e)}")
                         time.sleep(retry_interval)
                         retry_interval = min(retry_interval * 1.5, max_retry_interval)
                         retry_count += 1
-                logger.error("达到最大重试次数，未能获取到有效响应")
                 print("达到最大重试次数，未能获取到有效响应")
                 return None
             except Exception as e:
-                logger.error(f"调用 Coze API 时发生错误: {str(e)}")
-                logger.error(traceback.format_exc())
                 print(f"调用 Coze API 时发生错误: {str(e)}")
-                print(traceback.format_exc())
                 return None
         except Exception as e:
-            logger.error(f"生成报告时发生错误: {str(e)}")
-            logger.error(traceback.format_exc())
             print(f"生成报告时发生错误: {str(e)}")
-            print(traceback.format_exc())
             return None
 
     def _build_prompt(self, technical_data: Dict[str, Any], _: str) -> str:
@@ -666,7 +642,7 @@ class CryptoReportAPIView(APIView):
         try:
             return json.dumps(technical_data, indent=2, ensure_ascii=False)
         except Exception as e:
-            logger.error(f"格式化技术指标数据失败: {str(e)}")
+            print(f"格式化技术指标数据失败: {str(e)}")
             return str(technical_data)
 
     def _extract_json_from_content(self, content: str) -> Optional[Dict[str, Any]]:
@@ -703,13 +679,9 @@ class CryptoReportAPIView(APIView):
                 except json.JSONDecodeError:
                     continue
 
-            logger.error(f"无法从内容中提取有效的 JSON: {content[:200]}...")
             print(f"无法从内容中提取有效的 JSON: {content[:200]}...")
             return None
 
         except Exception as e:
-            logger.error(f"提取 JSON 时发生错误: {str(e)}")
-            logger.error(traceback.format_exc())
             print(f"提取 JSON 时发生错误: {str(e)}")
-            print(traceback.format_exc())
             return None
