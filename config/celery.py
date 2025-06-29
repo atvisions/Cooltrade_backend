@@ -73,6 +73,4 @@ app.conf.update(
     task_ignore_unknown=True,  # 忽略未知任务
 )
 
-@app.task(bind=True)
-def debug_task(self):
-    print(f'Request: {self.request!r}')
+

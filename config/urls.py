@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('user.urls')),
     path('api/crypto/', include('CryptoAnalyst.urls')),
+    path('api/stock/', include('CryptoAnalyst.urls')),  # 添加股票API路径
     path('', include('website.urls')),
 ]
 # 静态文件和媒体文件都要加

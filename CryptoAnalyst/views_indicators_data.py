@@ -158,7 +158,7 @@ class TechnicalIndicatorsDataAPIView(APIView):
                 # Use transaction operation
                 with transaction.atomic():
                     obj, created = TechnicalAnalysis.objects.get_or_create(
-                        token=token,
+                        asset=token,
                         period_start=period_start,
                         defaults={
                             'timestamp': now,

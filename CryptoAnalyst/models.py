@@ -3,8 +3,28 @@ from django.utils import timezone
 from django.conf import settings
 from datetime import timedelta
 
+class MarketType(models.Model):
+    """市场类型模型 - 支持加密货币和美股"""
+    MARKET_CHOICES = (
+        ('crypto', 'Cryptocurrency'),
+        ('stock', 'US Stock'),
+    )
+
+    name = models.CharField(max_length=20, choices=MARKET_CHOICES, unique=True)
+    display_name = models.CharField(max_length=50)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "市场类型"
+        verbose_name_plural = "市场类型"
+
+    def __str__(self):
+        return self.display_name
+
 class Chain(models.Model):
-    """链模型"""
+    """链模型 - 仅用于加密货币"""
     chain = models.CharField(max_length=50, unique=True)
     is_active = models.BooleanField(default=True)
     is_testnet = models.BooleanField(default=False)
@@ -18,24 +38,61 @@ class Chain(models.Model):
     def __str__(self):
         return self.chain
 
-class Token(models.Model):
-    """代币基本信息模型"""
-    chain = models.ForeignKey(Chain, on_delete=models.CASCADE, related_name='tokens')
-    symbol = models.CharField(max_length=20, unique=True)
-    name = models.CharField(max_length=100)
-    address = models.CharField(max_length=100, blank=True)
-    decimals = models.IntegerField(default=18)
+class Exchange(models.Model):
+    """交易所模型 - 支持加密货币交易所和美股交易所"""
+    name = models.CharField(max_length=50, unique=True)
+    display_name = models.CharField(max_length=100)
+    market_type = models.ForeignKey(MarketType, on_delete=models.CASCADE, related_name='exchanges')
+    is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name = "交易所"
+        verbose_name_plural = "交易所"
+
     def __str__(self):
-        return f"{self.chain.chain} - {self.symbol} - {self.name}"
+        return f"{self.display_name} ({self.market_type.display_name})"
+
+class Asset(models.Model):
+    """资产模型 - 统一的代币和股票模型"""
+    market_type = models.ForeignKey(MarketType, on_delete=models.CASCADE, related_name='assets')
+    symbol = models.CharField(max_length=20)
+    name = models.CharField(max_length=100)
+
+    # 加密货币相关字段
+    chain = models.ForeignKey(Chain, on_delete=models.CASCADE, related_name='assets', null=True, blank=True)
+    address = models.CharField(max_length=100, blank=True)
+    decimals = models.IntegerField(default=18, null=True, blank=True)
+
+    # 美股相关字段
+    exchange = models.ForeignKey(Exchange, on_delete=models.CASCADE, related_name='assets', null=True, blank=True)
+    sector = models.CharField(max_length=100, blank=True)  # 行业
+    industry = models.CharField(max_length=100, blank=True)  # 子行业
+    market_cap = models.BigIntegerField(null=True, blank=True)  # 市值
+
+    # 通用字段
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = ('symbol', 'market_type')
+        verbose_name = "资产"
+        verbose_name_plural = "资产"
+
+    def __str__(self):
+        return f"{self.symbol} ({self.market_type.display_name}) - {self.name}"
+
+# 保持向后兼容的Token模型别名
+Token = Asset
 
 class TechnicalAnalysis(models.Model):
     """技术分析数据模型 - 存储原始指标数据"""
-    token = models.ForeignKey(Token, on_delete=models.CASCADE, related_name='technical_analysis')
+    asset = models.ForeignKey(Asset, on_delete=models.CASCADE, related_name='technical_analysis')
     timestamp = models.DateTimeField(default=timezone.now)
 
+    # 通用技术指标 (适用于加密货币和美股)
     # RSI
     rsi = models.FloatField(null=True)
 
@@ -63,13 +120,27 @@ class TechnicalAnalysis(models.Model):
     # VWAP
     vwap = models.FloatField(null=True)
 
+    # 加密货币特有指标
     # 资金费率
-    funding_rate = models.FloatField(null=True)
+    funding_rate = models.FloatField(null=True, blank=True)
 
     # 链上数据
-    exchange_netflow = models.FloatField(null=True)
-    nupl = models.FloatField(null=True)
-    mayer_multiple = models.FloatField(null=True)
+    exchange_netflow = models.FloatField(null=True, blank=True)
+    nupl = models.FloatField(null=True, blank=True)
+    mayer_multiple = models.FloatField(null=True, blank=True)
+
+    # 美股特有指标
+    # P/E比率
+    pe_ratio = models.FloatField(null=True, blank=True)
+    # P/B比率
+    pb_ratio = models.FloatField(null=True, blank=True)
+    # 股息收益率
+    dividend_yield = models.FloatField(null=True, blank=True)
+    # 52周高点/低点
+    week_52_high = models.FloatField(null=True, blank=True)
+    week_52_low = models.FloatField(null=True, blank=True)
+    # 平均成交量
+    avg_volume = models.BigIntegerField(null=True, blank=True)
 
     # 每12小时唯一分段起点
     period_start = models.DateTimeField(null=True, default=timezone.now)
@@ -77,7 +148,12 @@ class TechnicalAnalysis(models.Model):
     class Meta:
         ordering = ['-timestamp']
         get_latest_by = 'timestamp'
-        unique_together = ('token', 'period_start')
+        unique_together = ('asset', 'period_start')
+
+    # 保持向后兼容
+    @property
+    def token(self):
+        return self.asset
 
 # MarketData 模型已移除，使用 AnalysisReport 中的 snapshot_price 作为价格数据
 
@@ -90,11 +166,16 @@ class AnalysisReport(models.Model):
         ('ko-KR', '한국어'),
     )
 
-    token = models.ForeignKey(Token, on_delete=models.CASCADE, related_name='analysis_reports')
+    asset = models.ForeignKey(Asset, on_delete=models.CASCADE, related_name='analysis_reports')
     timestamp = models.DateTimeField(default=timezone.now)
     technical_analysis = models.ForeignKey(TechnicalAnalysis, on_delete=models.CASCADE, related_name='analysis_reports')
     snapshot_price = models.FloatField(default=0)  # 添加报告生成时的价格字段
     language = models.CharField(max_length=10, choices=LANGUAGE_CHOICES, default='en-US', verbose_name='报告语言')
+
+    # 保持向后兼容
+    @property
+    def token(self):
+        return self.asset
 
     # 趋势分析
     trend_up_probability = models.IntegerField(default=0)  # 上涨概率
@@ -164,6 +245,22 @@ class AnalysisReport(models.Model):
         get_latest_by = 'timestamp'
 
     def __str__(self):
-        return f"{self.token.symbol} - {self.timestamp}"
+        return f"{self.asset.symbol} - {self.timestamp}"
+
+class UserFavorite(models.Model):
+    """用户收藏模型"""
+    from user.models import User
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='favorites')
+    asset = models.ForeignKey(Asset, on_delete=models.CASCADE, related_name='favorited_by')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'asset')
+        verbose_name = "用户收藏"
+        verbose_name_plural = "用户收藏"
+
+    def __str__(self):
+        return f"{self.user.email} - {self.asset.symbol}"
 
 # 用户相关模型已移至 user 应用

@@ -4,7 +4,7 @@ Technical Indicators API Views - Simplified Synchronous Version
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.utils import timezone
 import time
 import logging
@@ -13,7 +13,7 @@ import traceback
 
 from .services.technical_analysis import TechnicalAnalysisService
 from .services.market_data_service import MarketDataService
-from .models import Token, AnalysisReport, TechnicalAnalysis, Chain
+from .models import Asset, AnalysisReport, TechnicalAnalysis, MarketType
 from .utils import (
     safe_read_operation, safe_model_operation,
     get_cached_technical_indicators, set_cached_technical_indicators
@@ -25,44 +25,63 @@ logger = logging.getLogger(__name__)
 
 class TechnicalIndicatorsAPIView(APIView):
     """Technical Indicators API View"""
+    permission_classes = [AllowAny]
 
     def get(self, request, symbol: str):
         """Synchronous processing of GET requests"""
         try:
-            # 获取或创建链记录
-            chain, _ = Chain.objects.get_or_create(
-                chain=symbol,
-                defaults={
-                    'is_active': True,
-                    'is_testnet': False
-                }
+            # 检测市场类型 - 通过请求路径判断
+            is_stock_request = '/api/stock/' in request.path
+            market_type_name = 'stock' if is_stock_request else 'crypto'
+
+            # 获取或创建市场类型记录
+            market_type, _ = MarketType.objects.get_or_create(
+                name=market_type_name,
+                defaults={'description': f'{market_type_name.title()} Market'}
             )
 
-            # 获取或创建交易对记录
-            token, _ = Token.objects.get_or_create(
+            # 获取或创建资产记录
+            asset, _ = Asset.objects.get_or_create(
                 symbol=symbol,
+                market_type=market_type,
                 defaults={
-                    'chain': chain,
-                    'name': symbol
+                    'name': symbol,
+                    'is_active': True
                 }
             )
 
-            # 获取最新的技术分析记录（24小时内）
-            time_window = timezone.now() - datetime.timedelta(hours=24)
+            # 获取最新的技术分析记录（7天内）
+            time_window = timezone.now() - datetime.timedelta(days=7)
             latest_analysis = TechnicalAnalysis.objects.filter(
-                token=token,
+                asset=asset,
                 timestamp__gte=time_window
             ).order_by('-timestamp').first()
 
             if not latest_analysis:
-                return Response({
-                    'status': 'error',
-                    'message': 'No technical analysis data available'
-                }, status=status.HTTP_404_NOT_FOUND)
+                # 尝试获取任何技术分析数据（不限时间）
+                any_analysis = TechnicalAnalysis.objects.filter(asset=asset).order_by('-timestamp').first()
+                if any_analysis:
+                    print(f"Found analysis for {symbol} but outside time window. Latest: {any_analysis.timestamp}")
+                    latest_analysis = any_analysis  # 使用最新的分析数据，不管时间
+                else:
+                    # 对于股票请求，返回特殊的not_found状态
+                    if market_type_name == 'stock':
+                        print(f"No technical analysis data for stock symbol: {symbol}")
+                        return Response({
+                            'status': 'not_found',
+                            'message': f'No technical analysis data available for stock {symbol}. Please generate a new report first.',
+                            'symbol': symbol,
+                            'market_type': 'stock'
+                        }, status=status.HTTP_200_OK)  # 返回200状态码，让前端处理
+                    else:
+                        return Response({
+                            'status': 'error',
+                            'message': 'No technical analysis data available'
+                        }, status=status.HTTP_404_NOT_FOUND)
 
             # 获取最新的英文报告
             latest_report = AnalysisReport.objects.filter(
-                token=token,
+                asset=asset,
                 language='en-US',
                 technical_analysis=latest_analysis
             ).first()
@@ -78,8 +97,8 @@ class TechnicalIndicatorsAPIView(APIView):
                 @safe_read_operation
                 def get_technical_analysis():
                     start_time = time.time()
-                    ta_qs = TechnicalAnalysis.objects.select_related('token').filter(
-                        token=token
+                    ta_qs = TechnicalAnalysis.objects.select_related('asset').filter(
+                        asset=asset
                     ).order_by('-timestamp')
                     technical_analysis = ta_qs.first()
                     duration = time.time() - start_time

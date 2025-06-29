@@ -104,10 +104,10 @@ class ConnectionCleanupMiddleware:
         finally:
             # Clean up connections after each request to prevent leaks
             try:
-                # Log query count for debugging
+                # Monitor query count for performance
                 if hasattr(connection, 'queries') and connection.queries:
                     query_count = len(connection.queries)
-                    if query_count > 50:  # Log if too many queries (increased threshold)
+                    if query_count > 50:
                         logger.warning(f"High query count in request: {query_count}")
 
                 # Close connection if it's been open too long or has issues

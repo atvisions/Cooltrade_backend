@@ -271,6 +271,9 @@ BINANCE_API_SECRET = os.getenv('BINANCE_API_SECRET')
 # CoinGecko API配置
 COINGECKO_API_KEY = os.getenv('COINGECKO_API_KEY')
 
+# Tiingo API配置 (用于股票数据)
+TIINGO_API_KEY = os.getenv('TIINGO_API_KEY')
+
 # Coze API配置
 COZE_API_KEY = os.getenv('COZE_API_KEY')
 COZE_API_URL = os.getenv('COZE_API_URL')
@@ -375,6 +378,8 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
     'expires',  # 允许 Expires header
+    'cache-control',  # 添加 cache-control 头部支持
+    'pragma',  # 添加 pragma 头部支持
 ]
 
 CORS_EXPOSE_HEADERS = ['Content-Type', 'X-CSRFToken']

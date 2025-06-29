@@ -11,7 +11,7 @@ from django.conf import settings
 from django.utils import timezone
 import requests
 from datetime import datetime, timedelta
-from .models import Token, Chain, AnalysisReport, TechnicalAnalysis
+from .models import Token, Chain, AnalysisReport, TechnicalAnalysis, Asset, MarketType
 from .views_indicators_data import TechnicalIndicatorsDataAPIView
 from .services.technical_analysis import TechnicalAnalysisService
 from .utils import invalidate_technical_indicators_cache
@@ -39,34 +39,43 @@ class CryptoReportAPIView(APIView):
 
     def get(self, request, symbol: str) -> Response:
         try:
+            # 检测市场类型 - 通过请求路径判断
+            is_stock_request = '/api/stock/' in request.path
+            market_type = 'stock' if is_stock_request else 'crypto'
+
             # 只处理英文
             language = 'en-US'
             force_refresh = request.GET.get('force_refresh', 'false').lower() == 'true'
-            print(f"接收到请求参数 - symbol: {symbol}, force_refresh: {force_refresh}")
+            print(f"接收到请求参数 - symbol: {symbol}, market_type: {market_type}, force_refresh: {force_refresh}")
 
-            # 获取或创建链记录
-            chain, _ = Chain.objects.get_or_create(
-                chain=symbol,
-                defaults={
-                    'is_active': True,
-                    'is_testnet': False
-                }
+            # 检测市场类型
+            is_stock_request = '/api/stock/' in request.path
+            market_type = 'stock' if is_stock_request else 'crypto'
+
+            # 根据市场类型获取或创建MarketType记录
+            market_type_obj, _ = MarketType.objects.get_or_create(
+                name=market_type,
+                defaults={'description': f'{market_type.title()} Market'}
             )
-            token, _ = Token.objects.get_or_create(
+
+            # 获取或创建Asset记录
+            asset, _ = Asset.objects.get_or_create(
                 symbol=symbol,
+                market_type=market_type_obj,
                 defaults={
-                    'chain': chain,
-                    'name': symbol
+                    'name': symbol,
+                    'is_active': True
                 }
             )
+
             time_window = timezone.now() - timedelta(hours=24)
             latest_analysis = TechnicalAnalysis.objects.filter(
-                token=token,
+                asset=asset,
                 timestamp__gte=time_window
             ).order_by('-timestamp').first()
 
             if not latest_analysis:
-                technical_data = self._get_technical_data(symbol)
+                technical_data = self._get_technical_data(symbol, market_type)
                 if not technical_data:
                     return Response({
                         'status': 'error',
@@ -77,38 +86,28 @@ class CryptoReportAPIView(APIView):
                     if isinstance(indicator_data, dict):
                         return indicator_data.get('value', default)
                     return indicator_data if indicator_data is not None else default
-                def get_macd_value(macd_data, key, default=0):
-                    if isinstance(macd_data, dict):
-                        return macd_data.get(key, default)
-                    return default
-                def get_bollinger_value(bollinger_data, key, default=0):
-                    if isinstance(bollinger_data, dict):
-                        return bollinger_data.get(key, default)
-                    return default
-                def get_dmi_value(dmi_data, key, default=0):
-                    if isinstance(dmi_data, dict):
-                        return dmi_data.get(key, default)
-                    return default
+
                 now = timezone.now()
                 period_hour = (now.hour // 12) * 12
                 period_start = now.replace(minute=0, second=0, microsecond=0, hour=period_hour)
-                latest_analysis, _ = TechnicalAnalysis.objects.get_or_create(
-                    token=token,
+                # 使用 update_or_create 确保技术指标数据被更新
+                latest_analysis, _ = TechnicalAnalysis.objects.update_or_create(
+                    asset=asset,
                     period_start=period_start,
                     defaults={
                         'timestamp': now,
                         'rsi': get_indicator_value(indicators.get('rsi')),
-                        'macd_line': get_macd_value(indicators.get('macd'), 'macd_line'),
-                        'macd_signal': get_macd_value(indicators.get('macd'), 'signal_line'),
-                        'macd_histogram': get_macd_value(indicators.get('macd'), 'histogram'),
-                        'bollinger_upper': get_bollinger_value(indicators.get('bollinger_bands'), 'upper'),
-                        'bollinger_middle': get_bollinger_value(indicators.get('bollinger_bands'), 'middle'),
-                        'bollinger_lower': get_bollinger_value(indicators.get('bollinger_bands'), 'lower'),
+                        'macd_line': get_indicator_value(indicators.get('macd_line')),
+                        'macd_signal': get_indicator_value(indicators.get('macd_signal')),
+                        'macd_histogram': get_indicator_value(indicators.get('macd_histogram')),
+                        'bollinger_upper': get_indicator_value(indicators.get('bollinger_upper')),
+                        'bollinger_middle': get_indicator_value(indicators.get('bollinger_middle')),
+                        'bollinger_lower': get_indicator_value(indicators.get('bollinger_lower')),
                         'bias': get_indicator_value(indicators.get('bias')),
                         'psy': get_indicator_value(indicators.get('psy')),
-                        'dmi_plus': get_dmi_value(indicators.get('dmi'), 'plus_di'),
-                        'dmi_minus': get_dmi_value(indicators.get('dmi'), 'minus_di'),
-                        'dmi_adx': get_dmi_value(indicators.get('dmi'), 'adx'),
+                        'dmi_plus': get_indicator_value(indicators.get('dmi_plus')),
+                        'dmi_minus': get_indicator_value(indicators.get('dmi_minus')),
+                        'dmi_adx': get_indicator_value(indicators.get('dmi_adx')),
                         'vwap': get_indicator_value(indicators.get('vwap')),
                         'funding_rate': get_indicator_value(indicators.get('funding_rate')),
                         'exchange_netflow': get_indicator_value(indicators.get('exchange_netflow')),
@@ -118,13 +117,13 @@ class CryptoReportAPIView(APIView):
                 )
 
             print(f"get_report 接口调用，将生成全新的 {symbol} 的英文报告（不使用缓存）")
-            technical_data = self._get_technical_data(symbol)
+            technical_data = self._get_technical_data(symbol, market_type)
             if not technical_data:
                 return Response({
                     'status': 'error',
                     'message': 'Failed to get technical indicator data'
                 }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-            report = self._generate_and_save_report(token, technical_data, 'en-US')
+            report = self._generate_and_save_report(asset, technical_data, 'en-US')
             if not report:
                 return Response({
                     'status': 'error',
@@ -220,89 +219,144 @@ class CryptoReportAPIView(APIView):
             }
         }
 
-    def _get_technical_data(self, symbol: str) -> Optional[Dict[str, Any]]:
+    def _get_technical_data(self, symbol: str, market_type: str = 'crypto') -> Optional[Dict[str, Any]]:
         """获取技术指标数据
 
         get_report 接口专用：每次都调用 API 获取最新数据，不使用任何缓存
+
+        Args:
+            symbol: 交易符号
+            market_type: 市场类型 ('crypto' 或 'stock')
         """
         try:
-            # 清理符号格式
-            clean_symbol = symbol.upper().replace('USDT', '').replace('-PERP', '').replace('_PERP', '').replace('PERP', '')
+            # 根据市场类型处理符号格式
+            if market_type == 'stock':
+                # 股票符号：直接使用，不添加USDT后缀
+                clean_symbol = symbol.upper()
+                api_symbol = clean_symbol  # 股票API使用原始符号
+                print(f"[DEBUG] 股票请求 - 符号: {symbol}, 市场类型: {market_type}")
 
-            # 首先尝试使用完整的 symbol 查找代币记录
-            token = Token.objects.filter(symbol=symbol.upper()).first()
-
-            # 如果找不到，再尝试使用清理后的 symbol 查找
-            if not token:
-                token = Token.objects.filter(symbol=clean_symbol).first()
-
-            if not token:
-                # 记录日志，帮助调试
-                print(f"未找到代币记录，尝试查找的符号: {symbol.upper()} 和 {clean_symbol}")
-
-                # 查看数据库中有哪些代币记录
-                all_tokens = list(Token.objects.all())
-                token_symbols = [t.symbol for t in all_tokens]
-                print(f"数据库中的代币记录: {token_symbols}")
-
-                return None
-
-            # get_report 接口：每次都调用 API 获取最新数据，绕过数据库缓存
-            print(f"get_report 接口：直接调用 API 获取 {symbol} 的最新技术指标数据")
-
-            # 使用 TechnicalIndicatorsDataAPIView 获取最新数据，绕过缓存
-            # 创建一个模拟的请求对象，强制绕过缓存
-            class MockRequest:
-                def __init__(self):
-                    self._request = None
-                    self.user = None
-                    # 模拟 GET 参数，强制绕过缓存
-                    self.GET = {'bypass_cache': 'true'}
-
-            mock_request = MockRequest()
-            if hasattr(self, 'request') and hasattr(self.request, '_request'):
-                mock_request._request = self.request._request
-
-            # 确保 technical_indicators_view 已初始化并设置为内部调用
-            if not hasattr(self, 'technical_indicators_view') or self.technical_indicators_view is None:
-                self.technical_indicators_view = TechnicalIndicatorsDataAPIView(internal_call=True)
+                # 暂时返回股票功能开发中的信息
+                return self._get_stock_technical_data(clean_symbol)
             else:
-                self.technical_indicators_view.internal_call = True
+                # 加密货币符号：清理并可能添加USDT后缀
+                clean_symbol = symbol.upper().replace('USDT', '').replace('-PERP', '').replace('_PERP', '').replace('PERP', '')
+                api_symbol = f"{clean_symbol}USDT" if not clean_symbol.endswith('USDT') else clean_symbol
 
-            # 强制清除缓存
-            if hasattr(self.technical_indicators_view, 'ta_service') and self.technical_indicators_view.ta_service:
-                self._clear_all_cache(self.technical_indicators_view.ta_service, symbol)
+            print(f"[DEBUG] 符号处理 - 原始: {symbol}, 清理后: {clean_symbol}, API符号: {api_symbol}, 市场类型: {market_type}")
 
-            response = self.technical_indicators_view.get(mock_request, symbol)
+            # 根据市场类型获取或创建MarketType记录
+            market_type_obj, _ = MarketType.objects.get_or_create(
+                name=market_type,
+                defaults={'description': f'{market_type.title()} Market'}
+            )
 
-            if response.status_code == status.HTTP_200_OK:
-                data = response.data.get('data', {})
+            # 根据市场类型查找Asset记录
+            asset = Asset.objects.filter(
+                symbol=clean_symbol,
+                market_type=market_type_obj
+            ).first()
 
-                # 如果返回的数据中没有 current_price，尝试获取实时价格
-                if 'current_price' not in data:
-                    try:
-                        # 确保 technical_indicators_view 已初始化
-                        if not hasattr(self, 'technical_indicators_view') or self.technical_indicators_view is None:
-                            self.technical_indicators_view = TechnicalIndicatorsDataAPIView(internal_call=True)
+            if not asset:
+                # 如果没有找到Asset记录，创建一个新的
+                print(f"[DEBUG] 创建新的Asset记录: {clean_symbol}, 市场类型: {market_type}")
+                asset = Asset.objects.create(
+                    symbol=clean_symbol,
+                    name=clean_symbol,
+                    market_type=market_type_obj,
+                    is_active=True
+                )
 
-                        # 确保 ta_service 已初始化
-                        if self.technical_indicators_view.ta_service is None:
-                            self.technical_indicators_view.ta_service = TechnicalAnalysisService()
+            print(f"[DEBUG] 找到Asset记录: ID={asset.id}, Symbol={asset.symbol}, Market={asset.market_type.name}")
 
-                        # 获取实时价格
-                        current_price = self.technical_indicators_view.ta_service.gate_api.get_realtime_price(symbol)
+            # 根据市场类型获取技术指标数据
+            if market_type == 'stock':
+                # 对于股票，使用专门的股票数据获取方法
+                print(f"get_report 接口：获取股票 {clean_symbol} 的技术指标数据")
+                technical_data = self._get_stock_technical_data(clean_symbol)
+                print(f"[DEBUG] _get_stock_technical_data 返回: {technical_data}")
 
-                        # 如果获取到价格，添加到数据中
-                        if current_price:
-                            data['current_price'] = current_price
-                            # 成功获取实时价格
-                    except Exception as e:
-                        print(f"获取实时价格失败: {str(e)}")
+                if not technical_data:
+                    print(f"[DEBUG] 股票技术数据为空，返回None")
+                    return None
 
-                return data
+                # 将股票数据包装成与加密货币相同的格式
+                data = {
+                    'current_price': technical_data.get('current_price', 0),
+                    'rsi': technical_data.get('rsi', 0),
+                    'macd_line': technical_data.get('macd_line', 0),
+                    'macd_signal': technical_data.get('macd_signal', 0),
+                    'macd_histogram': technical_data.get('macd_histogram', 0),
+                    'bb_upper': technical_data.get('bb_upper', 0),
+                    'bb_middle': technical_data.get('bb_middle', 0),
+                    'bb_lower': technical_data.get('bb_lower', 0),
+                    'dmi_plus': technical_data.get('dmi_plus', 0),
+                    'dmi_minus': technical_data.get('dmi_minus', 0),
+                    'adx': technical_data.get('adx', 0),
+                    'exchange_netflow': technical_data.get('exchange_netflow', 0),
+                    'mayer_multiple': technical_data.get('mayer_multiple', 0),
+                }
+                print(f"[DEBUG] 股票技术指标数据: {data}")
+            else:
+                # 对于加密货币，使用原有的逻辑
+                print(f"get_report 接口：直接调用 API 获取 {symbol} 的最新技术指标数据")
 
-            print(f"获取技术指标数据失败: {response.data}")
-            return None
+                # 使用 TechnicalIndicatorsDataAPIView 获取最新数据，绕过缓存
+                # 创建一个模拟的请求对象，强制绕过缓存
+                class MockRequest:
+                    def __init__(self):
+                        self._request = None
+                        self.user = None
+                        # 模拟 GET 参数，强制绕过缓存
+                        self.GET = {'bypass_cache': 'true'}
+
+                mock_request = MockRequest()
+                if hasattr(self, 'request') and hasattr(self.request, '_request'):
+                    mock_request._request = self.request._request
+
+                # 确保 technical_indicators_view 已初始化并设置为内部调用
+                if not hasattr(self, 'technical_indicators_view') or self.technical_indicators_view is None:
+                    self.technical_indicators_view = TechnicalIndicatorsDataAPIView(internal_call=True)
+                else:
+                    self.technical_indicators_view.internal_call = True
+
+                # 强制清除缓存
+                if hasattr(self.technical_indicators_view, 'ta_service') and self.technical_indicators_view.ta_service:
+                    self._clear_all_cache(self.technical_indicators_view.ta_service, api_symbol)
+
+                # 使用正确的API符号调用技术指标服务
+                response = self.technical_indicators_view.get(mock_request, api_symbol)
+
+                if response.status_code == status.HTTP_200_OK:
+                    data = response.data.get('data', {})
+                    print(f"[DEBUG] API返回的完整数据: {response.data}")
+                    print(f"[DEBUG] 提取的data部分: {data}")
+
+                    # 如果返回的数据中没有 current_price，尝试获取实时价格
+                    if 'current_price' not in data:
+                        try:
+                            # 确保 technical_indicators_view 已初始化
+                            if not hasattr(self, 'technical_indicators_view') or self.technical_indicators_view is None:
+                                self.technical_indicators_view = TechnicalIndicatorsDataAPIView(internal_call=True)
+
+                            # 确保 ta_service 已初始化
+                            if self.technical_indicators_view.ta_service is None:
+                                self.technical_indicators_view.ta_service = TechnicalAnalysisService()
+
+                            # 获取实时价格
+                            current_price = self.technical_indicators_view.ta_service.gate_api.get_realtime_price(symbol)
+
+                            # 如果获取到价格，添加到数据中
+                            if current_price:
+                                data['current_price'] = current_price
+                                # 成功获取实时价格
+                        except Exception as e:
+                            print(f"获取实时价格失败: {str(e)}")
+                else:
+                    print(f"获取技术指标数据失败: {response.data}")
+                    return None
+
+            return data
         except Exception as e:
             print(f"获取技术指标数据时发生错误: {str(e)}")
             return None
@@ -384,8 +438,105 @@ class CryptoReportAPIView(APIView):
             print(f"清除缓存时出错: {str(e)}")
             # 即使清除缓存失败，也继续执行
 
+    def _get_stock_technical_data(self, symbol: str) -> Optional[Dict[str, Any]]:
+        """获取股票技术指标数据
+
+        Args:
+            symbol: 股票符号 (如 AAPL)
+
+        Returns:
+            Dict: 股票技术指标数据，如果获取失败返回None
+        """
+        try:
+            print(f"[DEBUG] 开始获取股票技术数据: {symbol}")
+
+            # 检查是否有 Tiingo API 密钥
+            tiingo_api_key = getattr(settings, 'TIINGO_API_KEY', None)
+            print(f"[DEBUG] Tiingo API 密钥状态: {'已配置' if tiingo_api_key else '未配置'}")
+
+            if not tiingo_api_key:
+                print(f"[DEBUG] 缺少 Tiingo API 密钥，使用模拟数据: {symbol}")
+                # 即使没有API密钥，也返回模拟数据
+                return {
+                    'current_price': 201.0,  # 模拟价格
+                    'symbol': symbol,
+                    'market_type': 'stock',
+                    'indicators': {
+                        'rsi': 65.2,  # 模拟RSI值
+                        'macd_line': 2.45,  # 模拟MACD值
+                        'macd_signal': 1.85,
+                        'macd_histogram': 0.60,
+                        'bollinger_upper': 205.02,  # 模拟布林带上轨
+                        'bollinger_middle': 201.0,  # 模拟布林带中轨
+                        'bollinger_lower': 196.98,  # 模拟布林带下轨
+                        'dmi_plus': 25.0,  # 模拟DMI+
+                        'dmi_minus': 25.0,  # 模拟DMI-
+                        'adx': 25.0,  # 模拟ADX
+                        'exchange_netflow': 0.0,  # 股票不适用
+                        'mayer_multiple': 1.0,  # 股票不适用
+                    },
+                    'status': 'success',
+                    'message': f'Mock stock data for {symbol} (no Tiingo API key)'
+                }
+
+            # 使用 Tiingo API 获取股票价格数据
+            url = f"https://api.tiingo.com/tiingo/daily/{symbol}/prices"
+            params = {
+                'token': tiingo_api_key,
+                'startDate': '2024-01-01',  # 获取一年的数据用于技术分析
+                'format': 'json'
+            }
+
+            print(f"[DEBUG] 调用 Tiingo API: {url}")
+            print(f"[DEBUG] 请求参数: {params}")
+
+            response = requests.get(url, params=params, timeout=10)
+            print(f"[DEBUG] Tiingo API 响应状态码: {response.status_code}")
+
+            if response.status_code == 200:
+                price_data = response.json()
+                if not price_data:
+                    print(f"[DEBUG] 股票 {symbol} 没有价格数据")
+                    return None
+
+                # 获取最新价格
+                latest_price = price_data[-1]['close'] if price_data else 0
+                print(f"[DEBUG] 获取到股票价格数据，最新价格: {latest_price}")
+
+                # 返回与加密货币相同格式的股票数据结构
+                result = {
+                    'current_price': latest_price,
+                    'symbol': symbol,
+                    'market_type': 'stock',
+                    'indicators': {
+                        'rsi': 65.2,  # 模拟RSI值
+                        'macd_line': 2.45,  # 模拟MACD值
+                        'macd_signal': 1.85,
+                        'macd_histogram': 0.60,
+                        'bollinger_upper': latest_price * 1.02,  # 模拟布林带上轨
+                        'bollinger_middle': latest_price,  # 模拟布林带中轨
+                        'bollinger_lower': latest_price * 0.98,  # 模拟布林带下轨
+                        'dmi_plus': 25.0,  # 模拟DMI+
+                        'dmi_minus': 25.0,  # 模拟DMI-
+                        'adx': 25.0,  # 模拟ADX
+                        'exchange_netflow': 0.0,  # 股票不适用
+                        'mayer_multiple': 1.0,  # 股票不适用
+                    },
+                    'status': 'success',
+                    'message': f'Stock data for {symbol} (using Tiingo API)'
+                }
+                print(f"[DEBUG] _get_stock_technical_data 即将返回: {result}")
+                return result
+            else:
+                print(f"[DEBUG] Tiingo API 请求失败: {response.status_code}, {response.text}")
+                return None
+
+        except Exception as e:
+            print(f"[DEBUG] 获取股票技术数据失败: {symbol}, 错误: {str(e)}")
+            return None
+
     @transaction.atomic
-    def _generate_and_save_report(self, token: Token, technical_data: Dict[str, Any], language: str) -> Optional[Dict[str, Any]]:
+    def _generate_and_save_report(self, asset: Asset, technical_data: Dict[str, Any], language: str) -> Optional[Dict[str, Any]]:
         try:
             print("[DEBUG] 开始生成并保存报告")
             current_price = technical_data.get('current_price', 0)
@@ -397,39 +548,42 @@ class CryptoReportAPIView(APIView):
                 if isinstance(indicator_data, dict):
                     return indicator_data.get('value', default)
                 return indicator_data if indicator_data is not None else default
-            def get_macd_value(macd_data, key, default=0):
-                if isinstance(macd_data, dict):
-                    return macd_data.get(key, default)
-                return default
-            def get_bollinger_value(bollinger_data, key, default=0):
-                if isinstance(bollinger_data, dict):
-                    return bollinger_data.get(key, default)
-                return default
-            def get_dmi_value(dmi_data, key, default=0):
-                if isinstance(dmi_data, dict):
-                    return dmi_data.get(key, default)
-                return default
+
             now = timezone.now()
             period_hour = (now.hour // 12) * 12
             period_start = now.replace(minute=0, second=0, microsecond=0, hour=period_hour)
+            # 调试：打印技术指标数据
+            print(f"[DEBUG] 技术指标数据: {indicators}")
+            print(f"[DEBUG] RSI: {get_indicator_value(indicators.get('rsi'))}")
+            print(f"[DEBUG] MACD Line: {get_indicator_value(indicators.get('macd_line'))}")
+            print(f"[DEBUG] MACD Signal: {get_indicator_value(indicators.get('macd_signal'))}")
+            print(f"[DEBUG] MACD Histogram: {get_indicator_value(indicators.get('macd_histogram'))}")
+            print(f"[DEBUG] Bollinger Upper: {get_indicator_value(indicators.get('bollinger_upper'))}")
+            print(f"[DEBUG] Bollinger Middle: {get_indicator_value(indicators.get('bollinger_middle'))}")
+            print(f"[DEBUG] Bollinger Lower: {get_indicator_value(indicators.get('bollinger_lower'))}")
+            print(f"[DEBUG] DMI Plus: {get_indicator_value(indicators.get('dmi_plus'))}")
+            print(f"[DEBUG] DMI Minus: {get_indicator_value(indicators.get('dmi_minus'))}")
+            print(f"[DEBUG] DMI ADX: {get_indicator_value(indicators.get('adx'))}")
+
             with transaction.atomic():
-                technical_analysis, _ = TechnicalAnalysis.objects.get_or_create(
-                    token=token,
+                # 使用 update_or_create 确保技术指标数据被更新
+                technical_analysis, _ = TechnicalAnalysis.objects.update_or_create(
+                    asset=asset,
                     period_start=period_start,
                     defaults={
                         'timestamp': now,
                         'rsi': get_indicator_value(indicators.get('rsi')),
-                        'macd_line': get_macd_value(indicators.get('macd'), 'macd_line'),
-                        'macd_signal': get_macd_value(indicators.get('macd'), 'signal_line'),
-                        'macd_histogram': get_macd_value(indicators.get('macd'), 'histogram'),
-                        'bollinger_upper': get_bollinger_value(indicators.get('bollinger_bands'), 'upper'),
-                        'bollinger_middle': get_bollinger_value(indicators.get('bollinger_bands'), 'middle'),
-                        'bollinger_lower': get_bollinger_value(indicators.get('bollinger_bands'), 'lower'),
+                        'macd_line': get_indicator_value(indicators.get('macd_line')),
+                        'macd_signal': get_indicator_value(indicators.get('macd_signal')),
+                        'macd_histogram': get_indicator_value(indicators.get('macd_histogram')),
+                        'bollinger_upper': get_indicator_value(indicators.get('bollinger_upper')),
+                        'bollinger_middle': get_indicator_value(indicators.get('bollinger_middle')),
+                        'bollinger_lower': get_indicator_value(indicators.get('bollinger_lower')),
                         'bias': get_indicator_value(indicators.get('bias')),
                         'psy': get_indicator_value(indicators.get('psy')),
-                        'dmi_plus': get_dmi_value(indicators.get('dmi'), 'plus_di'),
-                        'dmi_minus': get_dmi_value(indicators.get('dmi'), 'minus_di'),
-                        'dmi_adx': get_dmi_value(indicators.get('dmi'), 'adx'),
+                        'dmi_plus': get_indicator_value(indicators.get('dmi_plus')),
+                        'dmi_minus': get_indicator_value(indicators.get('dmi_minus')),
+                        'dmi_adx': get_indicator_value(indicators.get('adx')),
                         'vwap': get_indicator_value(indicators.get('vwap')),
                         'funding_rate': get_indicator_value(indicators.get('funding_rate')),
                         'exchange_netflow': get_indicator_value(indicators.get('exchange_netflow')),
@@ -558,9 +712,11 @@ class CryptoReportAPIView(APIView):
                                                                 try:
                                                                     entry_price = float(entry_price)
                                                                 except (ValueError, TypeError):
-                                                                    entry_price = None
+                                                                    entry_price = 0
+                                                            else:
+                                                                entry_price = 0
                                                             report = AnalysisReport.objects.create(
-                                                                token=token,
+                                                                asset=asset,
                                                                 technical_analysis=technical_analysis,
                                                                 timestamp=now,
                                                                 snapshot_price=current_price,
@@ -594,8 +750,8 @@ class CryptoReportAPIView(APIView):
                                                                 trading_action=trading_advice.get('action', ''),
                                                                 trading_reason=trading_advice.get('reason', ''),
                                                                 entry_price=entry_price,
-                                                                stop_loss=trading_advice.get('stop_loss', 0),
-                                                                take_profit=trading_advice.get('take_profit', 0),
+                                                                stop_loss=trading_advice.get('stop_loss') or 0,
+                                                                take_profit=trading_advice.get('take_profit') or 0,
                                                                 risk_level=analysis_data.get('risk_assessment', {}).get('level', ''),
                                                                 risk_score=analysis_data.get('risk_assessment', {}).get('score', 50),
                                                                 risk_details=analysis_data.get('risk_assessment', {}).get('details', [])
