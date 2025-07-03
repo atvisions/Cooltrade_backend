@@ -274,6 +274,16 @@ COINGECKO_API_KEY = os.getenv('COINGECKO_API_KEY')
 # Tiingo API配置 (用于股票数据)
 TIINGO_API_KEY = os.getenv('TIINGO_API_KEY')
 
+# 新闻API配置
+# NewsAPI配置 (用于加密货币新闻)
+NEWSAPI_KEY = os.getenv('NEWSAPI_KEY')
+
+# Alpha Vantage API配置 (用于金融新闻)
+ALPHAVANTAGE_API_KEY = os.getenv('ALPHAVANTAGE_API_KEY')
+
+# CryptoPanic API配置 (备用加密货币新闻源)
+CRYPTOPANIC_API_KEY = os.getenv('CRYPTOPANIC_API_KEY')
+
 # Coze API配置
 COZE_API_KEY = os.getenv('COZE_API_KEY')
 COZE_API_URL = os.getenv('COZE_API_URL')

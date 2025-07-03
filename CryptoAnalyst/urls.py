@@ -5,6 +5,7 @@ from .views_indicators_data import TechnicalIndicatorsDataAPIView
 from .views_technical_indicators import TechnicalIndicatorsAPIView
 from .views_search import AssetSearchAPIView, PopularAssetsAPIView
 from .views_favorites import UserFavoritesAPIView, FavoriteStatusAPIView
+from .views_news import get_news, get_crypto_news, get_news_by_market
 
 urlpatterns = [
     # 技术指标数据
@@ -26,4 +27,9 @@ urlpatterns = [
     # 收藏功能
     path('favorites/', UserFavoritesAPIView.as_view(), name='user_favorites'),
     path('favorites/status/<str:symbol>/', FavoriteStatusAPIView.as_view(), name='favorite_status'),
+
+    # 新闻功能
+    path('news/', get_news, name='get_news'),  # 保持向后兼容
+    path('news/<str:symbol>/', get_news_by_market, name='get_news_by_market'),  # 新的统一接口
+    path('crypto-news/<str:symbol>/', get_crypto_news, name='get_crypto_news'),  # 向后兼容
 ]

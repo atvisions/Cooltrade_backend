@@ -6597,3 +6597,198 @@ INFO 2025-06-29 14:34:05,004 basehttp 69033 6269906944 "GET /api/stock/technical
 INFO 2025-06-29 14:34:05,657 basehttp 69033 6236254208 "GET /api/crypto/favorites/status/NVDA/?market_type=stock HTTP/1.1" 200 86
 INFO 2025-06-29 14:34:05,666 basehttp 69033 6236254208 "GET /api/crypto/favorites/status/NVDA/?market_type=stock HTTP/1.1" 200 86
 INFO 2025-06-29 14:34:05,675 basehttp 69033 6236254208 "GET /api/crypto/favorites/status/NVDA/?market_type=stock HTTP/1.1" 200 86
+INFO 2025-07-01 09:49:59,147 autoreload 60393 8525864704 Watching for file changes with StatReloader
+WARNING 2025-07-01 09:53:16,654 log 60393 6171750400 Not Found: /api/api/crypto/popular/
+WARNING 2025-07-01 09:53:16,654 basehttp 60393 6171750400 "GET /api/api/crypto/popular/?market_type=crypto HTTP/1.1" 404 3093
+WARNING 2025-07-01 09:53:16,667 log 60393 6171750400 Not Found: /api/api/crypto/technical-indicators/SOLUSDT/
+WARNING 2025-07-01 09:53:16,667 basehttp 60393 6171750400 "GET /api/api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 404 3137
+WARNING 2025-07-01 10:08:16,349 log 60393 6171750400 Unauthorized: /api/crypto/popular-assets/
+WARNING 2025-07-01 10:08:16,350 basehttp 60393 6171750400 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 401 92
+INFO 2025-07-01 10:08:16,381 basehttp 60393 6171750400 "GET /api/crypto/technical-indicators/SOLUSDT/ HTTP/1.1" 200 3268
+WARNING 2025-07-01 14:01:59,031 log 60393 6171750400 Unauthorized: /api/crypto/search/
+WARNING 2025-07-01 14:01:59,032 basehttp 60393 6171750400 "GET /api/crypto/search/?q=b&market_type=crypto&limit=10 HTTP/1.1" 401 71
+INFO 2025-07-01 14:04:57,497 autoreload 60393 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_search.py changed, reloading.
+INFO 2025-07-01 14:04:58,120 autoreload 70345 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-01 14:05:26,523 autoreload 70345 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_search.py changed, reloading.
+INFO 2025-07-01 14:05:26,951 autoreload 70376 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-01 14:16:48,338 autoreload 70376 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_search.py changed, reloading.
+INFO 2025-07-01 14:16:48,838 autoreload 70567 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-01 14:55:06,446 autoreload 70567 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_search.py changed, reloading.
+INFO 2025-07-01 14:55:07,055 autoreload 72281 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-01 23:02:42,766 autoreload 72281 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/urls.py changed, reloading.
+INFO 2025-07-01 23:02:43,409 autoreload 87434 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-01 23:02:57,373 autoreload 87434 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/urls.py changed, reloading.
+INFO 2025-07-01 23:02:57,813 autoreload 87449 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-01 23:03:39,505 autoreload 87449 8525864704 /Users/lucas/Documents/cooltrade/backend/config/settings.py changed, reloading.
+INFO 2025-07-01 23:03:39,984 autoreload 87476 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-01 23:06:58,502 autoreload 87476 8525864704 /Users/lucas/Documents/cooltrade/backend/config/settings.py changed, reloading.
+INFO 2025-07-01 23:06:58,990 autoreload 87609 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-01 23:08:04,460 autoreload 87609 8525864704 /Users/lucas/Documents/cooltrade/backend/config/settings.py changed, reloading.
+INFO 2025-07-01 23:08:04,956 autoreload 87642 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-01 23:09:15,677 basehttp 87642 6204846080 "GET /api/crypto/news/?tickers=BTC-USD&limit=5 HTTP/1.1" 200 33
+INFO 2025-07-01 23:09:29,234 basehttp 87642 6204846080 "GET /api/crypto/news/?tickers=BTCUSD&limit=5 HTTP/1.1" 200 33
+INFO 2025-07-01 23:09:42,449 basehttp 87642 6204846080 "GET /api/crypto/news/?tickers=AAPL&limit=5 HTTP/1.1" 200 3471
+INFO 2025-07-01 23:09:57,938 basehttp 87642 6204846080 "GET /api/crypto/news/?tickers=bitcoin&limit=3 HTTP/1.1" 200 33
+INFO 2025-07-01 23:10:11,131 basehttp 87642 6204846080 "GET /api/crypto/news/?tickers=crypto&limit=3 HTTP/1.1" 200 33
+INFO 2025-07-01 23:11:00,255 basehttp 87642 6204846080 "GET /api/crypto/news/?tickers=COIN,MSTR&limit=3 HTTP/1.1" 200 1781
+INFO 2025-07-02 07:36:47,513 autoreload 87642 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 07:36:48,113 autoreload 99528 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 07:38:09,056 autoreload 99528 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 07:38:09,632 autoreload 99565 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 07:38:59,738 autoreload 99565 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 07:39:00,324 autoreload 99601 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 07:39:40,015 autoreload 99601 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/urls.py changed, reloading.
+INFO 2025-07-02 07:39:40,679 autoreload 99651 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 07:39:48,577 autoreload 99651 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/urls.py changed, reloading.
+INFO 2025-07-02 07:39:49,136 autoreload 99662 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 07:40:10,948 basehttp 99662 6168244224 "GET /api/crypto/news/BTC/?limit=3 HTTP/1.1" 200 1647
+INFO 2025-07-02 07:57:24,097 autoreload 99662 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 07:57:24,655 autoreload 325 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 08:53:54,744 autoreload 325 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 08:53:55,401 autoreload 2086 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 08:55:00,946 autoreload 2086 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 08:55:01,548 autoreload 2111 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 08:55:58,006 basehttp 2111 6204813312 "GET /api/crypto/news/BTC/?limit=3&skip_cache=true HTTP/1.1" 200 8413
+INFO 2025-07-02 12:31:15,207 autoreload 2111 8525864704 /Users/lucas/Documents/cooltrade/backend/config/settings.py changed, reloading.
+INFO 2025-07-02 12:31:16,398 autoreload 7505 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 12:31:52,359 autoreload 7505 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 12:31:52,810 autoreload 7533 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 12:32:16,184 autoreload 7533 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 12:32:16,623 autoreload 7565 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 12:32:45,040 autoreload 7565 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 12:32:45,672 autoreload 7595 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 12:33:17,471 autoreload 7595 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 12:33:17,950 autoreload 7631 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 13:48:24,646 basehttp 7631 6195064832 "GET /api/crypto/news/BTC/?limit=3&skip_cache=true HTTP/1.1" 200 1587
+INFO 2025-07-02 13:50:35,905 autoreload 7631 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 13:50:36,634 autoreload 9039 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 13:51:04,648 basehttp 9039 6135771136 "GET /api/crypto/news/BTC/?limit=3&skip_cache=true HTTP/1.1" 200 913
+INFO 2025-07-02 13:51:20,404 basehttp 9039 6135771136 "GET /api/crypto/news/BTC/?limit=2&skip_cache=true HTTP/1.1" 200 610
+INFO 2025-07-02 13:53:31,570 autoreload 9039 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 13:53:32,062 autoreload 9284 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 13:54:33,948 basehttp 9284 6135787520 "GET /api/crypto/news/BTC/?limit=2&skip_cache=true HTTP/1.1" 200 820
+INFO 2025-07-02 13:54:52,134 autoreload 9284 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 13:54:52,570 autoreload 9328 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 13:57:10,083 autoreload 9328 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 13:57:10,575 autoreload 9572 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 13:58:15,149 autoreload 9572 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 13:58:15,759 autoreload 9607 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 13:59:15,081 basehttp 9607 6195769344 "GET /api/crypto/news/BTC/?limit=2&skip_cache=true HTTP/1.1" 200 820
+INFO 2025-07-02 13:59:55,479 autoreload 9607 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 13:59:55,969 autoreload 9659 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-02 14:01:09,152 basehttp 9659 6175141888 "GET /api/crypto/news/BTC/?limit=2&skip_cache=true HTTP/1.1" 200 1129
+INFO 2025-07-02 14:01:55,058 autoreload 9659 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-02 14:01:55,548 autoreload 9717 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 07:49:53,098 autoreload 9717 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 07:49:53,702 autoreload 30839 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 07:50:04,634 autoreload 30839 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 07:50:05,060 autoreload 30868 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 07:50:15,985 autoreload 30868 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 07:50:16,451 autoreload 30879 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 07:50:32,591 autoreload 30879 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 07:50:32,983 autoreload 30887 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 07:50:56,498 basehttp 30887 6139244544 "GET /api/crypto/news/BTC/?limit=3&skip_cache=true HTTP/1.1" 200 1241
+INFO 2025-07-03 07:51:20,952 autoreload 30887 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 07:51:21,433 autoreload 31011 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 07:52:38,477 basehttp 31011 6174748672 "GET /api/crypto/news/BTC/?limit=3&skip_cache=true HTTP/1.1" 200 1241
+INFO 2025-07-03 07:52:51,799 autoreload 31011 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 07:52:52,268 autoreload 31073 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 07:53:07,085 basehttp 31073 6204321792 "GET /api/crypto/news/BTC/?limit=3&skip_cache=true HTTP/1.1" 200 1241
+INFO 2025-07-03 07:53:29,009 autoreload 31073 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 07:53:29,443 autoreload 31118 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 07:57:25,753 basehttp 31118 6160183296 "GET /api/crypto/news/BTC/?limit=2&skip_cache=true HTTP/1.1" 200 777
+INFO 2025-07-03 07:58:03,999 autoreload 31118 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 07:58:04,478 autoreload 31362 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 07:58:16,303 basehttp 31362 6208876544 "GET /api/crypto/news/BTC/?limit=3&skip_cache=true HTTP/1.1" 200 50
+INFO 2025-07-03 07:58:43,360 autoreload 31362 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 07:58:43,819 autoreload 31408 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 07:59:02,047 autoreload 31408 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 07:59:02,485 autoreload 31421 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 07:59:47,365 basehttp 31421 6171193344 "GET /api/crypto/news/BTC/?limit=3&skip_cache=true HTTP/1.1" 200 1241
+INFO 2025-07-03 08:00:13,244 autoreload 31421 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:00:13,716 autoreload 31456 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:00:33,246 basehttp 31456 6169014272 "GET /api/crypto/news/BTC/?limit=2&skip_cache=true HTTP/1.1" 200 777
+INFO 2025-07-03 08:06:30,108 autoreload 31456 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:06:30,809 autoreload 31620 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:06:48,580 basehttp 31620 6175076352 "GET /api/crypto/news/BTC/?limit=3&skip_cache=true HTTP/1.1" 200 1241
+INFO 2025-07-03 08:07:00,298 autoreload 31620 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:07:00,784 autoreload 31664 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:07:16,451 basehttp 31664 6207188992 "GET /api/crypto/news/BTC/?limit=3&skip_cache=true HTTP/1.1" 200 50
+INFO 2025-07-03 08:07:40,690 autoreload 31664 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:07:41,252 autoreload 31710 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:07:52,234 autoreload 31710 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:07:52,704 autoreload 31725 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:08:06,687 basehttp 31725 6197702656 "GET /api/crypto/news/BTC/?limit=3&skip_cache=true HTTP/1.1" 200 50
+INFO 2025-07-03 08:08:17,074 autoreload 31725 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:08:17,499 autoreload 31766 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:08:47,922 autoreload 31766 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:08:48,363 autoreload 31789 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:18:41,490 autoreload 31789 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:18:42,054 autoreload 37305 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:19:05,428 autoreload 37305 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:19:05,884 autoreload 37322 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:19:59,483 autoreload 37322 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:19:59,989 autoreload 37349 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:20:55,426 autoreload 37349 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:20:55,869 autoreload 37371 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:21:33,593 autoreload 37371 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:21:34,034 autoreload 37396 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:21:45,987 autoreload 37396 8525864704 /Users/lucas/Documents/cooltrade/backend/config/settings.py changed, reloading.
+INFO 2025-07-03 08:21:46,397 autoreload 37412 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:22:56,215 autoreload 37412 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:22:56,738 autoreload 37442 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:23:29,135 autoreload 37442 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:23:29,548 autoreload 37461 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:24:04,145 autoreload 37461 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/urls.py changed, reloading.
+INFO 2025-07-03 08:24:04,581 autoreload 37474 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:24:16,559 autoreload 37474 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/urls.py changed, reloading.
+INFO 2025-07-03 08:24:16,886 autoreload 37491 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:30:28,839 basehttp 37491 6208565248 "GET /api/crypto/news/BTC/?limit=3 HTTP/1.1" 200 75
+INFO 2025-07-03 08:30:49,506 basehttp 37491 6208565248 "GET /api/stock/news/AAPL/?limit=3 HTTP/1.1" 200 1165
+INFO 2025-07-03 08:33:30,839 autoreload 37491 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:33:31,339 autoreload 37800 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:33:49,467 basehttp 37800 6139916288 "GET /api/crypto/news/BTC/?limit=3 HTTP/1.1" 200 75
+INFO 2025-07-03 08:37:59,543 autoreload 37800 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:38:00,114 autoreload 37886 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:38:14,972 autoreload 37886 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:38:15,477 autoreload 37916 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:38:44,669 autoreload 37916 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:38:45,112 autoreload 37932 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:39:23,893 autoreload 37932 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 08:39:24,413 autoreload 37956 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 08:41:50,968 basehttp 37956 6159577088 "GET /api/crypto/news/BTC/?limit=5 HTTP/1.1" 200 2137
+INFO 2025-07-03 08:42:16,821 basehttp 37956 6159577088 "GET /api/stock/news/AAPL/?limit=3 HTTP/1.1" 200 1017
+INFO 2025-07-03 10:31:24,939 autoreload 57174 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 10:31:35,947 basehttp 57174 6169866240 "GET /api/stock/news/AAPL/?limit=5 HTTP/1.1" 200 1730
+INFO 2025-07-03 10:35:57,231 basehttp 57174 6169866240 "GET /api/crypto/news/BTC/?limit=5 HTTP/1.1" 200 2054
+INFO 2025-07-03 10:36:15,833 autoreload 57174 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 10:36:16,399 autoreload 60936 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 10:37:49,619 basehttp 60936 6137999360 "GET /api/stock/news/NVDA/?limit=10 HTTP/1.1" 200 4780
+INFO 2025-07-03 10:38:14,983 basehttp 60936 6137999360 "OPTIONS /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 0
+WARNING 2025-07-03 10:38:15,011 log 60936 6137999360 Unauthorized: /api/stock/popular-assets/
+WARNING 2025-07-03 10:38:15,012 basehttp 60936 6137999360 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 401 34
+INFO 2025-07-03 10:38:15,028 basehttp 60936 6154825728 "GET /api/stock/news/NVDA/?limit=10 HTTP/1.1" 200 4755
+INFO 2025-07-03 10:38:16,979 basehttp 60936 6137999360 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-07-03 10:38:17,155 basehttp 60936 6137999360 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-07-03 10:38:17,179 basehttp 60936 6137999360 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-03 10:38:17,183 basehttp 60936 6154825728 "GET /api/stock/news/NVDA/?limit=10 HTTP/1.1" 200 4755
+INFO 2025-07-03 10:38:19,172 basehttp 60936 6137999360 "OPTIONS /api/stock/technical-indicators/NVDA/ HTTP/1.1" 200 0
+INFO 2025-07-03 10:38:19,204 basehttp 60936 6137999360 "GET /api/stock/technical-indicators/NVDA/ HTTP/1.1" 200 2906
+INFO 2025-07-03 10:38:19,254 basehttp 60936 6137999360 "OPTIONS /api/crypto/favorites/status/NVDA/?market_type=stock HTTP/1.1" 200 0
+INFO 2025-07-03 10:38:19,259 basehttp 60936 6137999360 "GET /api/crypto/favorites/status/NVDA/?market_type=stock HTTP/1.1" 200 86
+INFO 2025-07-03 10:38:47,684 basehttp 60936 6154825728 "GET /api/stock/news/AAPL/?limit=5 HTTP/1.1" 200 1824
+INFO 2025-07-03 10:39:10,317 basehttp 60936 6137999360 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-03 10:39:11,524 basehttp 60936 6154825728 "GET /api/stock/news/NVDA/?limit=10 HTTP/1.1" 200 4780
+INFO 2025-07-03 10:39:12,326 basehttp 60936 6137999360 "GET /api/stock/technical-indicators/NVDA/ HTTP/1.1" 200 2906
+INFO 2025-07-03 10:39:12,345 basehttp 60936 6137999360 "GET /api/crypto/favorites/status/NVDA/?market_type=stock HTTP/1.1" 200 86
+INFO 2025-07-03 10:39:22,514 basehttp 60936 6137999360 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-03 10:39:22,518 basehttp 60936 6154825728 "GET /api/stock/news/NVDA/?limit=10 HTTP/1.1" 200 4755
+INFO 2025-07-03 10:39:24,526 basehttp 60936 6137999360 "GET /api/stock/technical-indicators/NVDA/ HTTP/1.1" 200 2906
+INFO 2025-07-03 10:39:24,556 basehttp 60936 6137999360 "GET /api/crypto/favorites/status/NVDA/?market_type=stock HTTP/1.1" 200 86
+INFO 2025-07-03 10:40:37,442 basehttp 60936 6137999360 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-03 10:40:39,454 basehttp 60936 6137999360 "GET /api/stock/technical-indicators/NVDA/ HTTP/1.1" 200 2906
+INFO 2025-07-03 10:40:39,485 basehttp 60936 6137999360 "GET /api/crypto/favorites/status/NVDA/?market_type=stock HTTP/1.1" 200 86
+INFO 2025-07-03 10:41:43,033 autoreload 60936 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 10:41:43,505 autoreload 61504 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-03 10:42:43,857 autoreload 61504 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_news.py changed, reloading.
+INFO 2025-07-03 10:42:44,338 autoreload 61546 8525864704 Watching for file changes with StatReloader

@@ -31,24 +31,23 @@ class AssetSearchAPIView(APIView):
                     'message': 'Query parameter is required'
                 }, status=status.HTTP_400_BAD_REQUEST)
 
-            # Build search filters
+            # 优先使用外部API获取实时数据
+            external_results = self._search_external_apis(query, market_type)
+            if external_results:
+                return Response({
+                    'status': 'success',
+                    'data': external_results,
+                    'source': 'external'
+                })
+
+            # 如果外部API没有结果，再搜索数据库
             search_filters = Q(symbol__icontains=query) | Q(name__icontains=query)
-            
+
             if market_type and market_type in ['crypto', 'stock']:
                 search_filters &= Q(market_type__name=market_type)
 
             # Search in database
             assets = Asset.objects.filter(search_filters).select_related('market_type', 'exchange')[:limit]
-
-            # If no results found and query looks like a symbol, try external APIs
-            if not assets and len(query) <= 10:  # Likely a symbol
-                external_results = self._search_external_apis(query, market_type)
-                if external_results:
-                    return Response({
-                        'status': 'success',
-                        'data': external_results,
-                        'source': 'external'
-                    })
 
             # Format results
             results = []
@@ -97,38 +96,44 @@ class AssetSearchAPIView(APIView):
             # Use Gate API to search for crypto symbols
             url = "https://api.gateio.ws/api/v4/spot/currency_pairs"
             response = requests.get(url, timeout=5)
-            
+
             if response.status_code == 200:
                 pairs = response.json()
                 results = []
-                
+                query_upper = query.upper()
+
                 for pair in pairs:
                     symbol = pair.get('id', '')
                     base = pair.get('base', '')
                     quote = pair.get('quote', '')
-                    
+
+                    # 只处理USDT交易对
+                    if quote.upper() != 'USDT':
+                        continue
+
                     # Check if query matches symbol or base currency
-                    if (query.upper() in symbol.upper() or 
-                        query.upper() == base.upper() or
-                        query.upper() in base.upper()):
-                        
+                    if (query_upper in symbol.upper() or
+                        query_upper == base.upper() or
+                        query_upper in base.upper()):
+
                         results.append({
                             'symbol': symbol,
-                            'name': f"{base}/{quote}",
+                            'name': base,  # 只使用基础货币名称，避免重复
                             'market_type': 'crypto',
                             'exchange': 'Gate.io',
                             'sector': None,
                             'is_active': True
                         })
-                        
-                        if len(results) >= 10:  # Limit crypto results
+
+                        # 限制结果数量
+                        if len(results) >= 10:
                             break
-                
+
                 return results
-                
+
         except Exception as e:
             logger.error(f"Crypto API search error: {str(e)}")
-        
+
         return []
 
     def _search_stock_api(self, query):
