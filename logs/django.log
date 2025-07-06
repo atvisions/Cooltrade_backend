@@ -7545,3 +7545,395 @@ INFO 2025-07-06 12:20:48,098 basehttp 76572 12918534144 "GET /api/crypto/news/AD
 INFO 2025-07-06 12:20:48,112 basehttp 76572 12901707776 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 200 3152
 INFO 2025-07-06 12:20:49,751 basehttp 76572 12901707776 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 200 3152
 INFO 2025-07-06 12:20:50,099 basehttp 76572 12901707776 "GET /api/crypto/favorites/status/ADAUSDT/?market_type=crypto HTTP/1.1" 200 90
+INFO 2025-07-06 12:23:00,366 autoreload 76875 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-06 12:23:15,637 autoreload 76914 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-06 12:23:22,047 basehttp 76914 6165360640 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 12:23:24,813 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 2918
+INFO 2025-07-06 12:23:24,926 basehttp 76914 6183907328 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 12:23:25,181 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 2918
+INFO 2025-07-06 12:23:26,853 basehttp 76914 6165360640 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 12:23:32,452 basehttp 76914 6165360640 "OPTIONS /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:23:32,525 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:23:34,462 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:23:41,048 basehttp 76914 6165360640 "OPTIONS /api/china/technical-indicators/600887.SH/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:23:41,066 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600887.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:23:43,059 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600887.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:24:44,845 basehttp 76914 6165360640 "OPTIONS /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:24:45,179 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+INFO 2025-07-06 12:24:46,845 basehttp 76914 6200733696 "OPTIONS /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 0
+INFO 2025-07-06 12:24:46,871 basehttp 76914 6165360640 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 12:24:46,957 basehttp 76914 6200733696 "GET /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 12:24:47,274 basehttp 76914 6183907328 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+INFO 2025-07-06 12:24:50,126 basehttp 76914 6183907328 "OPTIONS /api/china/technical-indicators/000725.SZ/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:24:50,144 basehttp 76914 6183907328 "GET /api/china/technical-indicators/000725.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:24:52,138 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000725.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:24:59,236 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600887.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:25:01,235 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600887.SH/ HTTP/1.1" 200 173
+WARNING 2025-07-06 12:25:57,728 log 76914 6165360640 Not Found: /api/search/popular-assets/
+WARNING 2025-07-06 12:25:57,729 basehttp 76914 6165360640 "GET /api/search/popular-assets/?market_type=china HTTP/1.1" 404 3211
+INFO 2025-07-06 12:26:32,100 basehttp 76914 6165360640 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-06 12:26:34,094 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/META/ HTTP/1.1" 200 2772
+INFO 2025-07-06 12:26:34,123 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/META/ HTTP/1.1" 200 2772
+INFO 2025-07-06 12:26:34,137 basehttp 76914 6217560064 "GET /api/crypto/favorites/status/META/?market_type=stock HTTP/1.1" 200 86
+INFO 2025-07-06 12:26:35,162 basehttp 76914 6183907328 "GET /api/stock/news/META/?limit=10 HTTP/1.1" 200 4502
+INFO 2025-07-06 12:26:35,175 basehttp 76914 6217560064 "GET /api/stock/news/META/?limit=10 HTTP/1.1" 200 4477
+INFO 2025-07-06 12:26:36,932 basehttp 76914 6165360640 "OPTIONS /api/stock/technical-indicators/TSLA/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:26:36,965 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/TSLA/ HTTP/1.1" 200 3055
+INFO 2025-07-06 12:26:38,935 basehttp 76914 6200733696 "OPTIONS /api/crypto/favorites/status/TSLA/?market_type=stock HTTP/1.1" 200 0
+INFO 2025-07-06 12:26:38,936 basehttp 76914 6183907328 "OPTIONS /api/stock/news/TSLA/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:26:38,974 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/TSLA/ HTTP/1.1" 200 3055
+INFO 2025-07-06 12:26:38,983 basehttp 76914 6183907328 "GET /api/crypto/favorites/status/TSLA/?market_type=stock HTTP/1.1" 200 86
+INFO 2025-07-06 12:26:39,102 basehttp 76914 6183907328 "GET /api/crypto/favorites/status/TSLA/?market_type=stock HTTP/1.1" 200 86
+INFO 2025-07-06 12:26:40,384 basehttp 76914 6200733696 "GET /api/stock/news/TSLA/?limit=10 HTTP/1.1" 200 5875
+INFO 2025-07-06 12:26:45,765 basehttp 76914 6165360640 "OPTIONS /api/stock/search/?q=s&market_type=stock&limit=20 HTTP/1.1" 200 0
+INFO 2025-07-06 12:26:47,362 basehttp 76914 6165360640 "GET /api/stock/search/?q=s&market_type=stock&limit=20 HTTP/1.1" 200 865
+INFO 2025-07-06 12:26:48,798 basehttp 76914 6165360640 "OPTIONS /api/stock/technical-indicators/S/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:26:48,823 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/S/ HTTP/1.1" 200 155
+INFO 2025-07-06 12:26:50,799 basehttp 76914 6183907328 "OPTIONS /api/stock/news/S/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:26:50,822 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/S/ HTTP/1.1" 200 155
+INFO 2025-07-06 12:26:52,318 basehttp 76914 6183907328 "GET /api/stock/news/S/?limit=10 HTTP/1.1" 200 5642
+INFO 2025-07-06 12:27:57,426 basehttp 76914 6165360640 "OPTIONS /api/stock/technical-indicators/SAABY/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:27:57,466 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/SAABY/ HTTP/1.1" 200 163
+INFO 2025-07-06 12:27:59,424 basehttp 76914 6183907328 "OPTIONS /api/stock/news/SAABY/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:27:59,444 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/SAABY/ HTTP/1.1" 200 163
+INFO 2025-07-06 12:28:00,871 basehttp 76914 6183907328 "GET /api/stock/news/SAABY/?limit=10 HTTP/1.1" 200 5870
+INFO 2025-07-06 12:29:20,172 basehttp 76914 6165360640 "GET /api/stock/news/SAABY/?limit=10 HTTP/1.1" 200 5870
+INFO 2025-07-06 12:29:20,670 basehttp 76914 6165360640 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-06 12:29:20,693 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/SAABY/ HTTP/1.1" 200 163
+INFO 2025-07-06 12:29:43,805 basehttp 76914 6165360640 "GET /api/stock/news/SAABY/?limit=10 HTTP/1.1" 200 5845
+INFO 2025-07-06 12:29:45,716 basehttp 76914 6165360640 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-06 12:29:45,750 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/SAABY/ HTTP/1.1" 200 163
+INFO 2025-07-06 12:30:03,034 basehttp 76914 6165360640 "GET /api/stock/news/SAABY/?limit=10 HTTP/1.1" 200 5845
+INFO 2025-07-06 12:30:05,016 basehttp 76914 6165360640 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-06 12:30:05,056 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/SAABY/ HTTP/1.1" 200 163
+INFO 2025-07-06 12:30:33,812 basehttp 76914 6165360640 "GET /api/stock/news/SAABY/?limit=10 HTTP/1.1" 200 5870
+INFO 2025-07-06 12:30:34,582 basehttp 76914 6165360640 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-06 12:30:34,606 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/SAABY/ HTTP/1.1" 200 163
+INFO 2025-07-06 12:30:58,149 basehttp 76914 6165360640 "GET /api/stock/news/SAABY/?limit=10 HTTP/1.1" 200 5845
+INFO 2025-07-06 12:30:59,973 basehttp 76914 6165360640 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-06 12:31:00,030 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/SAABY/ HTTP/1.1" 200 163
+INFO 2025-07-06 12:31:24,935 basehttp 76914 6165360640 "GET /api/stock/news/SAABY/?limit=10 HTTP/1.1" 200 5845
+INFO 2025-07-06 12:31:26,922 basehttp 76914 6165360640 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-06 12:31:26,963 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/SAABY/ HTTP/1.1" 200 163
+INFO 2025-07-06 12:32:26,409 basehttp 76914 6165360640 "OPTIONS /api/stock/search/?q=d&market_type=stock&limit=20 HTTP/1.1" 200 0
+INFO 2025-07-06 12:32:28,069 basehttp 76914 6165360640 "GET /api/stock/search/?q=d&market_type=stock&limit=20 HTTP/1.1" 200 738
+INFO 2025-07-06 12:32:29,285 basehttp 76914 6165360640 "OPTIONS /api/stock/technical-indicators/D/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:32:29,310 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/D/ HTTP/1.1" 200 155
+INFO 2025-07-06 12:32:31,285 basehttp 76914 6165360640 "OPTIONS /api/stock/news/D/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:32:31,307 basehttp 76914 6183907328 "GET /api/stock/technical-indicators/D/ HTTP/1.1" 200 155
+INFO 2025-07-06 12:32:32,680 basehttp 76914 6165360640 "GET /api/stock/news/D/?limit=10 HTTP/1.1" 200 6251
+INFO 2025-07-06 12:32:35,479 basehttp 76914 6165360640 "GET /api/stock/news/D/?limit=10 HTTP/1.1" 200 6226
+INFO 2025-07-06 12:32:37,487 basehttp 76914 6165360640 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-06 12:32:37,500 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/D/ HTTP/1.1" 200 155
+INFO 2025-07-06 12:32:41,380 basehttp 76914 6165360640 "OPTIONS /api/stock/technical-indicators/NVDA/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:32:41,411 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/NVDA/ HTTP/1.1" 200 2906
+INFO 2025-07-06 12:32:43,384 basehttp 76914 6183907328 "OPTIONS /api/crypto/favorites/status/NVDA/?market_type=stock HTTP/1.1" 200 0
+INFO 2025-07-06 12:32:43,384 basehttp 76914 6165360640 "OPTIONS /api/stock/news/NVDA/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:32:43,405 basehttp 76914 6165360640 "GET /api/crypto/favorites/status/NVDA/?market_type=stock HTTP/1.1" 200 86
+INFO 2025-07-06 12:32:43,425 basehttp 76914 6200733696 "GET /api/stock/technical-indicators/NVDA/ HTTP/1.1" 200 2906
+INFO 2025-07-06 12:32:43,685 basehttp 76914 6200733696 "GET /api/crypto/favorites/status/NVDA/?market_type=stock HTTP/1.1" 200 86
+INFO 2025-07-06 12:32:44,620 basehttp 76914 6183907328 "GET /api/stock/news/NVDA/?limit=10 HTTP/1.1" 200 5280
+INFO 2025-07-06 12:32:55,563 basehttp 76914 6165360640 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 12:32:57,814 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 2918
+INFO 2025-07-06 12:32:57,843 basehttp 76914 6183907328 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 12:32:58,075 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 2918
+INFO 2025-07-06 12:32:59,840 basehttp 76914 6165360640 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 12:33:03,103 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:33:05,093 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:33:07,727 basehttp 76914 6165360640 "OPTIONS /api/china/technical-indicators/000002.SZ/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:33:08,005 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000002.SZ/ HTTP/1.1" 200 3119
+INFO 2025-07-06 12:33:09,729 basehttp 76914 6165360640 "OPTIONS /api/crypto/favorites/status/000002.SZ/?market_type=china HTTP/1.1" 200 0
+INFO 2025-07-06 12:33:09,749 basehttp 76914 6165360640 "GET /api/crypto/favorites/status/000002.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 12:33:10,054 basehttp 76914 6183907328 "GET /api/china/technical-indicators/000002.SZ/ HTTP/1.1" 200 3119
+INFO 2025-07-06 12:33:10,090 basehttp 76914 6183907328 "GET /api/crypto/favorites/status/000002.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 12:33:13,269 basehttp 76914 6165360640 "OPTIONS /api/china/technical-indicators/600519.SH/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:33:13,288 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600519.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:33:15,286 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600519.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:36:16,371 basehttp 76914 6165360640 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 12:36:18,655 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600519.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:36:46,623 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+INFO 2025-07-06 12:36:48,310 basehttp 76914 6183907328 "GET /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 12:36:48,698 basehttp 76914 6165360640 - Broken pipe from ('127.0.0.1', 52262)
+INFO 2025-07-06 12:36:48,700 basehttp 76914 6183907328 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 12:36:50,864 basehttp 76914 6183907328 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+INFO 2025-07-06 12:36:50,917 basehttp 76914 6183907328 "GET /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 12:36:53,860 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:36:55,853 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:37:25,997 basehttp 76914 6165360640 "GET /api/auth/profile/ HTTP/1.1" 200 235
+INFO 2025-07-06 12:37:26,015 basehttp 76914 6165360640 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-07-06 12:37:27,797 basehttp 76914 6165360640 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-07-06 12:37:27,967 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:37:27,974 basehttp 76914 6183907328 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-07-06 12:37:29,807 basehttp 76914 6183907328 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 12:37:29,821 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:37:30,090 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:37:35,862 basehttp 76914 6165360640 "OPTIONS /api/china/technical-indicators/600000.SH/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:37:35,899 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600000.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:37:37,872 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600000.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:40:51,036 basehttp 76914 6165360640 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 12:40:52,979 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600000.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:41:19,783 basehttp 76914 6165360640 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 12:41:21,760 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600000.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:41:50,987 basehttp 76914 6165360640 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 12:41:52,948 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600000.SH/ HTTP/1.1" 200 173
+WARNING 2025-07-06 12:42:42,559 log 76914 6165360640 Unauthorized: /api/china/get_report/000858.SZ/
+WARNING 2025-07-06 12:42:42,559 basehttp 76914 6165360640 "HEAD /api/china/get_report/000858.SZ/ HTTP/1.1" 401 0
+INFO 2025-07-06 12:42:42,882 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 173
+WARNING 2025-07-06 12:42:45,515 log 76914 6183907328 Unauthorized: /api/china/get_report/600887.SH/
+WARNING 2025-07-06 12:42:45,516 basehttp 76914 6183907328 "HEAD /api/china/get_report/600887.SH/ HTTP/1.1" 401 0
+INFO 2025-07-06 12:42:45,841 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600887.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:42:50,254 basehttp 76914 6165360640 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-06 12:42:52,281 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/NVDA/ HTTP/1.1" 200 2906
+INFO 2025-07-06 12:42:52,309 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/NVDA/ HTTP/1.1" 200 2906
+INFO 2025-07-06 12:42:52,554 basehttp 76914 6165360640 "GET /api/crypto/favorites/status/NVDA/?market_type=stock HTTP/1.1" 200 86
+INFO 2025-07-06 12:42:53,563 basehttp 76914 6183907328 "GET /api/stock/news/NVDA/?limit=10 HTTP/1.1" 200 5333
+INFO 2025-07-06 12:42:53,584 basehttp 76914 6165360640 "GET /api/stock/news/NVDA/?limit=10 HTTP/1.1" 200 5308
+INFO 2025-07-06 12:42:57,539 basehttp 76914 6165360640 "OPTIONS /api/stock/search/?q=p&market_type=stock&limit=20 HTTP/1.1" 200 0
+INFO 2025-07-06 12:42:59,099 basehttp 76914 6165360640 "GET /api/stock/search/?q=p&market_type=stock&limit=20 HTTP/1.1" 200 408
+WARNING 2025-07-06 12:42:59,840 log 76914 6183907328 Unauthorized: /api/stock/get_report/P6NA:DU/
+WARNING 2025-07-06 12:42:59,840 basehttp 76914 6183907328 "HEAD /api/stock/get_report/P6NA:DU/ HTTP/1.1" 401 0
+INFO 2025-07-06 12:42:59,845 basehttp 76914 6165360640 "OPTIONS /api/stock/news/P6NA%3ADU/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:43:00,817 basehttp 76914 6165360640 "GET /api/stock/news/P6NA%3ADU/?limit=10 HTTP/1.1" 200 74
+INFO 2025-07-06 12:43:01,846 basehttp 76914 6165360640 "OPTIONS /api/stock/technical-indicators/P6NA:DU/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:43:01,864 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/P6NA:DU/ HTTP/1.1" 200 167
+INFO 2025-07-06 12:43:05,154 basehttp 76914 6165360640 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+INFO 2025-07-06 12:43:07,189 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 200 3152
+INFO 2025-07-06 12:43:07,207 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 200 3152
+INFO 2025-07-06 12:43:07,457 basehttp 76914 6165360640 "GET /api/crypto/favorites/status/ADAUSDT/?market_type=crypto HTTP/1.1" 200 90
+INFO 2025-07-06 12:43:08,263 basehttp 76914 6183907328 "GET /api/crypto/news/ADA/?limit=10 HTTP/1.1" 200 2063
+INFO 2025-07-06 12:43:08,267 basehttp 76914 6183907328 "GET /api/crypto/news/ADA/?limit=10 HTTP/1.1" 200 2037
+INFO 2025-07-06 12:43:12,227 basehttp 76914 6165360640 "OPTIONS /api/crypto/search/?q=k&market_type=crypto&limit=20 HTTP/1.1" 200 0
+INFO 2025-07-06 12:43:13,261 basehttp 76914 6165360640 "GET /api/crypto/search/?q=k&market_type=crypto&limit=20 HTTP/1.1" 200 1183
+WARNING 2025-07-06 12:43:15,001 log 76914 6183907328 Unauthorized: /api/crypto/get_report/kiltusdt/
+WARNING 2025-07-06 12:43:15,001 basehttp 76914 6183907328 "HEAD /api/crypto/get_report/kiltusdt/ HTTP/1.1" 401 0
+INFO 2025-07-06 12:43:15,010 basehttp 76914 6165360640 "OPTIONS /api/crypto/news/KILT/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:43:15,982 basehttp 76914 6165360640 "GET /api/crypto/news/KILT/?limit=10 HTTP/1.1" 200 75
+INFO 2025-07-06 12:43:17,010 basehttp 76914 6165360640 "OPTIONS /api/crypto/technical-indicators/KILTUSDT/ HTTP/1.1" 200 0
+WARNING 2025-07-06 12:43:17,031 log 76914 6165360640 Not Found: /api/crypto/technical-indicators/KILTUSDT/
+WARNING 2025-07-06 12:43:17,032 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/KILTUSDT/ HTTP/1.1" 404 67
+INFO 2025-07-06 12:44:41,639 basehttp 76914 6165360640 "GET /api/crypto/news/ADA/?limit=10 HTTP/1.1" 200 2063
+INFO 2025-07-06 12:44:42,287 basehttp 76914 6165360640 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+INFO 2025-07-06 12:44:42,313 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/ADAUSDT/ HTTP/1.1" 200 3152
+INFO 2025-07-06 12:44:44,300 basehttp 76914 6165360640 "GET /api/crypto/favorites/status/ADAUSDT/?market_type=crypto HTTP/1.1" 200 90
+INFO 2025-07-06 12:45:41,777 basehttp 76914 6165360640 "OPTIONS /api/crypto/search/?q=g&market_type=crypto&limit=20 HTTP/1.1" 200 0
+INFO 2025-07-06 12:45:42,644 basehttp 76914 6165360640 "GET /api/crypto/search/?q=g&market_type=crypto&limit=20 HTTP/1.1" 200 1181
+WARNING 2025-07-06 12:45:44,025 log 76914 6183907328 Unauthorized: /api/crypto/get_report/argusdt/
+WARNING 2025-07-06 12:45:44,025 basehttp 76914 6183907328 "GET /api/crypto/get_report/argusdt/ HTTP/1.1" 401 34
+INFO 2025-07-06 12:45:44,034 basehttp 76914 6165360640 "OPTIONS /api/crypto/technical-indicators/ARGUSDT/ HTTP/1.1" 200 0
+WARNING 2025-07-06 12:45:44,055 log 76914 6165360640 Not Found: /api/crypto/technical-indicators/ARGUSDT/
+WARNING 2025-07-06 12:45:44,055 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/ARGUSDT/ HTTP/1.1" 404 67
+INFO 2025-07-06 12:45:46,036 basehttp 76914 6165360640 "OPTIONS /api/crypto/news/ARG/?limit=10 HTTP/1.1" 200 0
+WARNING 2025-07-06 12:45:46,054 log 76914 6183907328 Not Found: /api/crypto/technical-indicators/ARGUSDT/
+WARNING 2025-07-06 12:45:46,054 basehttp 76914 6183907328 "GET /api/crypto/technical-indicators/ARGUSDT/ HTTP/1.1" 404 67
+INFO 2025-07-06 12:45:48,095 basehttp 76914 6183907328 "GET /api/crypto/news/ARG/?limit=10 HTTP/1.1" 200 4216
+INFO 2025-07-06 12:45:48,273 basehttp 76914 6165360640 "GET /api/crypto/news/ARG/?limit=10 HTTP/1.1" 200 4216
+INFO 2025-07-06 12:45:48,274 basehttp 76914 6165360640 - Broken pipe from ('127.0.0.1', 55396)
+INFO 2025-07-06 12:45:49,033 basehttp 76914 6183907328 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+WARNING 2025-07-06 12:45:49,055 log 76914 6183907328 Not Found: /api/crypto/technical-indicators/ARGUSDT/
+WARNING 2025-07-06 12:45:49,055 basehttp 76914 6183907328 "GET /api/crypto/technical-indicators/ARGUSDT/ HTTP/1.1" 404 67
+INFO 2025-07-06 12:45:53,695 basehttp 76914 6165360640 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+INFO 2025-07-06 12:45:55,692 basehttp 76914 6200733696 "OPTIONS /api/stock/news/ADAUSDT/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:45:55,693 basehttp 76914 6165360640 "OPTIONS /api/stock/technical-indicators/ADAUSDT/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:45:55,693 basehttp 76914 6183907328 "OPTIONS /api/stock/news/ADAUSDT/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:45:55,694 basehttp 76914 6217560064 "OPTIONS /api/stock/technical-indicators/ADAUSDT/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:45:55,719 basehttp 76914 6183907328 "GET /api/stock/technical-indicators/ADAUSDT/ HTTP/1.1" 200 167
+INFO 2025-07-06 12:45:55,754 basehttp 76914 6183907328 "GET /api/stock/technical-indicators/ADAUSDT/ HTTP/1.1" 200 167
+INFO 2025-07-06 12:45:57,456 basehttp 76914 6200733696 "GET /api/stock/news/ADAUSDT/?limit=10 HTTP/1.1" 200 74
+INFO 2025-07-06 12:45:58,986 basehttp 76914 6200733696 "GET /api/stock/news/ADAUSDT/?limit=10 HTTP/1.1" 200 74
+INFO 2025-07-06 12:46:08,350 basehttp 76914 6165360640 "GET /api/stock/search/?q=y&market_type=stock&limit=20 HTTP/1.1" 200 844
+WARNING 2025-07-06 12:46:09,486 log 76914 6183907328 Unauthorized: /api/stock/get_report/YAAS/
+WARNING 2025-07-06 12:46:09,486 basehttp 76914 6183907328 "GET /api/stock/get_report/YAAS/ HTTP/1.1" 401 34
+INFO 2025-07-06 12:46:09,516 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/YAAS/ HTTP/1.1" 200 2889
+INFO 2025-07-06 12:46:11,522 basehttp 76914 6183907328 "GET /api/crypto/favorites/status/YAAS/?market_type=stock HTTP/1.1" 200 87
+INFO 2025-07-06 12:46:11,532 basehttp 76914 6200733696 "GET /api/stock/technical-indicators/YAAS/ HTTP/1.1" 200 2889
+INFO 2025-07-06 12:46:11,804 basehttp 76914 6200733696 "GET /api/crypto/favorites/status/YAAS/?market_type=stock HTTP/1.1" 200 87
+INFO 2025-07-06 12:46:12,546 basehttp 76914 6165360640 "GET /api/stock/news/YAAS/?limit=10 HTTP/1.1" 200 528
+WARNING 2025-07-06 12:46:15,724 log 76914 6217560064 Unauthorized: /api/stock/get_report/YAC/
+WARNING 2025-07-06 12:46:15,724 basehttp 76914 6217560064 "GET /api/stock/get_report/YAC/ HTTP/1.1" 401 34
+INFO 2025-07-06 12:46:15,736 basehttp 76914 6165360640 "OPTIONS /api/stock/technical-indicators/YAC/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:46:15,759 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/YAC/ HTTP/1.1" 200 159
+INFO 2025-07-06 12:46:17,736 basehttp 76914 6165360640 "OPTIONS /api/stock/news/YAC/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:46:17,756 basehttp 76914 6183907328 "GET /api/stock/technical-indicators/YAC/ HTTP/1.1" 200 159
+INFO 2025-07-06 12:46:18,936 basehttp 76914 6165360640 "GET /api/stock/news/YAC/?limit=10 HTTP/1.1" 200 74
+INFO 2025-07-06 12:46:21,473 basehttp 76914 6165360640 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 12:46:23,792 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 2918
+INFO 2025-07-06 12:46:23,846 basehttp 76914 6183907328 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 12:46:24,059 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 2918
+WARNING 2025-07-06 12:46:27,235 log 76914 6165360640 Unauthorized: /api/china/get_report/600887.SH/
+WARNING 2025-07-06 12:46:27,235 basehttp 76914 6165360640 "GET /api/china/get_report/600887.SH/ HTTP/1.1" 401 34
+INFO 2025-07-06 12:46:27,266 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600887.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:46:29,257 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600887.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:46:54,875 basehttp 76914 6165360640 "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:46:55,054 basehttp 76914 6165360640 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-07-06 12:46:55,079 basehttp 76914 6165360640 "OPTIONS /api/crypto/news/BTC/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:46:56,307 basehttp 76914 6165360640 "GET /api/crypto/news/BTC/?limit=10 HTTP/1.1" 200 4324
+INFO 2025-07-06 12:46:57,080 basehttp 76914 6165360640 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+INFO 2025-07-06 12:46:57,086 basehttp 76914 6165360640 "OPTIONS /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:46:57,109 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 12:46:59,111 basehttp 76914 6165360640 "OPTIONS /api/crypto/favorites/status/BTCUSDT/?market_type=crypto HTTP/1.1" 200 0
+INFO 2025-07-06 12:46:59,121 basehttp 76914 6165360640 "GET /api/crypto/favorites/status/BTCUSDT/?market_type=crypto HTTP/1.1" 200 90
+INFO 2025-07-06 12:47:02,958 basehttp 76914 6165360640 "OPTIONS /api/crypto/search/?q=d&market_type=crypto&limit=20 HTTP/1.1" 200 0
+INFO 2025-07-06 12:47:04,629 basehttp 76914 6165360640 "GET /api/crypto/search/?q=d&market_type=crypto&limit=20 HTTP/1.1" 200 1183
+WARNING 2025-07-06 12:47:05,979 log 76914 6183907328 Unauthorized: /api/crypto/get_report/hamusdt/
+WARNING 2025-07-06 12:47:05,979 basehttp 76914 6183907328 "GET /api/crypto/get_report/hamusdt/ HTTP/1.1" 401 34
+INFO 2025-07-06 12:47:05,987 basehttp 76914 6165360640 "OPTIONS /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 200 0
+WARNING 2025-07-06 12:47:05,999 log 76914 6165360640 Not Found: /api/crypto/technical-indicators/HAMUSDT/
+WARNING 2025-07-06 12:47:05,999 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 404 67
+INFO 2025-07-06 12:47:07,990 basehttp 76914 6165360640 "OPTIONS /api/crypto/news/HAM/?limit=10 HTTP/1.1" 200 0
+WARNING 2025-07-06 12:47:08,014 log 76914 6183907328 Not Found: /api/crypto/technical-indicators/HAMUSDT/
+WARNING 2025-07-06 12:47:08,015 basehttp 76914 6183907328 "GET /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 404 67
+INFO 2025-07-06 12:47:09,591 basehttp 76914 6165360640 "GET /api/crypto/news/HAM/?limit=10 HTTP/1.1" 200 687
+INFO 2025-07-06 12:48:41,480 basehttp 76914 6165360640 "GET /api/crypto/news/HAM/?limit=10 HTTP/1.1" 200 687
+INFO 2025-07-06 12:48:42,216 basehttp 76914 6165360640 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+WARNING 2025-07-06 12:48:42,232 log 76914 6165360640 Not Found: /api/crypto/technical-indicators/HAMUSDT/
+WARNING 2025-07-06 12:48:42,233 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 404 67
+INFO 2025-07-06 12:49:10,687 basehttp 76914 6165360640 "GET /api/crypto/news/HAM/?limit=10 HTTP/1.1" 200 661
+INFO 2025-07-06 12:49:12,666 basehttp 76914 6165360640 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+WARNING 2025-07-06 12:49:12,688 log 76914 6165360640 Not Found: /api/crypto/technical-indicators/HAMUSDT/
+WARNING 2025-07-06 12:49:12,689 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 404 67
+INFO 2025-07-06 12:49:46,796 basehttp 76914 6251212800 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+WARNING 2025-07-06 12:49:46,819 log 76914 6251212800 Not Found: /api/crypto/technical-indicators/HAMUSDT/
+WARNING 2025-07-06 12:49:46,819 basehttp 76914 6251212800 "GET /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 404 67
+INFO 2025-07-06 12:49:47,237 basehttp 76914 6165360640 "GET /api/crypto/news/HAM/?limit=10 HTTP/1.1" 200 687
+INFO 2025-07-06 12:50:18,040 basehttp 76914 6165360640 "GET /api/crypto/news/HAM/?limit=10 HTTP/1.1" 200 661
+INFO 2025-07-06 12:50:20,007 basehttp 76914 6165360640 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+WARNING 2025-07-06 12:50:20,043 log 76914 6165360640 Not Found: /api/crypto/technical-indicators/HAMUSDT/
+WARNING 2025-07-06 12:50:20,044 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 404 67
+INFO 2025-07-06 12:50:49,701 basehttp 76914 6165360640 "GET /api/crypto/news/HAM/?limit=10 HTTP/1.1" 200 687
+INFO 2025-07-06 12:50:50,575 basehttp 76914 6165360640 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+WARNING 2025-07-06 12:50:50,589 log 76914 6165360640 Not Found: /api/crypto/technical-indicators/HAMUSDT/
+WARNING 2025-07-06 12:50:50,591 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 404 67
+INFO 2025-07-06 12:51:24,056 basehttp 76914 6165360640 "GET /api/crypto/news/HAM/?limit=10 HTTP/1.1" 200 661
+INFO 2025-07-06 12:51:26,016 basehttp 76914 6165360640 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+WARNING 2025-07-06 12:51:26,042 log 76914 6165360640 Not Found: /api/crypto/technical-indicators/HAMUSDT/
+WARNING 2025-07-06 12:51:26,043 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 404 67
+INFO 2025-07-06 12:51:56,852 basehttp 76914 6165360640 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-06 12:51:58,824 basehttp 76914 6165360640 "OPTIONS /api/stock/technical-indicators/AAPL/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:51:58,827 basehttp 76914 6183907328 "OPTIONS /api/stock/technical-indicators/AAPL/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:51:58,828 basehttp 76914 6200733696 "OPTIONS /api/stock/news/AAPL/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:51:58,829 basehttp 76914 6217560064 "OPTIONS /api/stock/news/AAPL/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:51:58,862 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/AAPL/ HTTP/1.1" 200 2850
+INFO 2025-07-06 12:51:58,885 basehttp 76914 6217560064 "OPTIONS /api/crypto/favorites/status/AAPL/?market_type=stock HTTP/1.1" 200 0
+INFO 2025-07-06 12:51:58,885 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/AAPL/ HTTP/1.1" 200 2850
+INFO 2025-07-06 12:51:58,896 basehttp 76914 6217560064 "GET /api/crypto/favorites/status/AAPL/?market_type=stock HTTP/1.1" 200 86
+INFO 2025-07-06 12:51:59,836 basehttp 76914 6200733696 "GET /api/stock/news/AAPL/?limit=10 HTTP/1.1" 200 5035
+INFO 2025-07-06 12:51:59,840 basehttp 76914 6200733696 "GET /api/stock/news/AAPL/?limit=10 HTTP/1.1" 200 5010
+INFO 2025-07-06 12:52:03,102 basehttp 76914 6165360640 "OPTIONS /api/stock/search/?q=f&market_type=stock&limit=20 HTTP/1.1" 200 0
+INFO 2025-07-06 12:52:04,529 basehttp 76914 6165360640 "GET /api/stock/search/?q=f&market_type=stock&limit=20 HTTP/1.1" 200 1271
+INFO 2025-07-06 12:52:05,536 basehttp 76914 6165360640 "OPTIONS /api/stock/technical-indicators/F/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:52:05,558 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/F/ HTTP/1.1" 200 155
+INFO 2025-07-06 12:52:07,535 basehttp 76914 6165360640 "OPTIONS /api/stock/news/F/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 12:52:07,546 basehttp 76914 6183907328 "GET /api/stock/technical-indicators/F/ HTTP/1.1" 200 155
+INFO 2025-07-06 12:52:08,804 basehttp 76914 6165360640 "GET /api/stock/news/F/?limit=10 HTTP/1.1" 200 6100
+INFO 2025-07-06 12:52:12,465 basehttp 76914 6165360640 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+WARNING 2025-07-06 12:52:14,469 log 76914 6165360640 Not Found: /api/crypto/technical-indicators/HAMUSDT/
+WARNING 2025-07-06 12:52:14,472 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 404 67
+WARNING 2025-07-06 12:52:14,493 log 76914 6165360640 Not Found: /api/crypto/technical-indicators/HAMUSDT/
+WARNING 2025-07-06 12:52:14,494 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 404 67
+INFO 2025-07-06 12:52:16,073 basehttp 76914 6183907328 "GET /api/crypto/news/HAM/?limit=10 HTTP/1.1" 200 687
+INFO 2025-07-06 12:52:16,079 basehttp 76914 6183907328 "GET /api/crypto/news/HAM/?limit=10 HTTP/1.1" 200 661
+INFO 2025-07-06 12:52:16,667 basehttp 76914 6183907328 "OPTIONS /api/crypto/get_report/HAMUSDT/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:52:35,886 basehttp 76914 6183907328 "GET /api/crypto/get_report/HAMUSDT/ HTTP/1.1" 200 3190
+INFO 2025-07-06 12:52:36,208 basehttp 76914 6165360640 "GET /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 200 3105
+INFO 2025-07-06 12:52:38,196 basehttp 76914 6165360640 "OPTIONS /api/crypto/favorites/status/HAMUSDT/?market_type=crypto HTTP/1.1" 200 0
+INFO 2025-07-06 12:52:38,207 basehttp 76914 6165360640 "GET /api/crypto/favorites/status/HAMUSDT/?market_type=crypto HTTP/1.1" 200 91
+INFO 2025-07-06 12:53:16,934 basehttp 76914 6165360640 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-06 12:53:18,939 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/F/ HTTP/1.1" 200 155
+INFO 2025-07-06 12:53:18,951 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/F/ HTTP/1.1" 200 155
+INFO 2025-07-06 12:53:20,004 basehttp 76914 6183907328 "GET /api/stock/news/F/?limit=10 HTTP/1.1" 200 6100
+INFO 2025-07-06 12:53:20,009 basehttp 76914 6165360640 "GET /api/stock/news/F/?limit=10 HTTP/1.1" 200 6075
+INFO 2025-07-06 12:53:20,499 basehttp 76914 6165360640 "OPTIONS /api/stock/get_report/F/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:53:33,960 basehttp 76914 6165360640 "GET /api/stock/get_report/F/ HTTP/1.1" 200 2976
+INFO 2025-07-06 12:53:34,290 basehttp 76914 6165360640 "GET /api/stock/technical-indicators/F/ HTTP/1.1" 200 2903
+INFO 2025-07-06 12:53:36,330 basehttp 76914 6165360640 "OPTIONS /api/crypto/favorites/status/F/?market_type=stock HTTP/1.1" 200 0
+INFO 2025-07-06 12:53:36,342 basehttp 76914 6165360640 "GET /api/crypto/favorites/status/F/?market_type=stock HTTP/1.1" 200 84
+INFO 2025-07-06 12:53:44,907 basehttp 76914 6165360640 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 12:53:47,441 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 2918
+INFO 2025-07-06 12:53:47,482 basehttp 76914 6183907328 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 12:53:47,783 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 2918
+INFO 2025-07-06 12:53:51,929 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600519.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:53:53,924 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600519.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:53:55,167 basehttp 76914 6165360640 "OPTIONS /api/china/get_report/600519.SH/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:54:07,524 basehttp 76914 6165360640 "GET /api/china/get_report/600519.SH/ HTTP/1.1" 200 3225
+INFO 2025-07-06 12:54:08,135 basehttp 76914 6165360640 "GET /api/china/technical-indicators/600519.SH/ HTTP/1.1" 200 3180
+INFO 2025-07-06 12:54:09,835 basehttp 76914 6165360640 "OPTIONS /api/crypto/favorites/status/600519.SH/?market_type=china HTTP/1.1" 200 0
+INFO 2025-07-06 12:54:09,844 basehttp 76914 6165360640 "GET /api/crypto/favorites/status/600519.SH/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 12:54:24,492 basehttp 76914 6165360640 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 12:54:28,083 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000725.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:54:30,079 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000725.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 12:54:31,035 basehttp 76914 6165360640 "OPTIONS /api/china/get_report/000725.SZ/ HTTP/1.1" 200 0
+INFO 2025-07-06 12:54:42,713 basehttp 76914 6165360640 "GET /api/china/get_report/000725.SZ/ HTTP/1.1" 200 3387
+INFO 2025-07-06 12:54:43,367 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000725.SZ/ HTTP/1.1" 200 3280
+INFO 2025-07-06 12:54:45,024 basehttp 76914 6165360640 "OPTIONS /api/crypto/favorites/status/000725.SZ/?market_type=china HTTP/1.1" 200 0
+INFO 2025-07-06 12:54:45,035 basehttp 76914 6165360640 "GET /api/crypto/favorites/status/000725.SZ/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 12:55:04,670 basehttp 76914 6165360640 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 12:55:06,967 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 2918
+INFO 2025-07-06 12:55:07,238 basehttp 76914 6165360640 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 2918
+INFO 2025-07-06 12:55:08,017 basehttp 76914 6165360640 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 12:55:34,378 basehttp 76914 6165360640 "GET /api/china/get_report/000001.SZ/ HTTP/1.1" 200 3034
+INFO 2025-07-06 12:55:37,319 basehttp 76914 6183907328 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 12:55:39,477 basehttp 76914 6183907328 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 2993
+INFO 2025-07-06 12:55:39,531 basehttp 76914 6183907328 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 12:57:35,423 basehttp 76914 6183907328 "GET /api/china/technical-indicators-data/000002.SZ/ HTTP/1.1" 200 381
+INFO 2025-07-06 12:58:10,807 basehttp 76914 6183907328 "GET /api/china/get_report/000002.SZ/ HTTP/1.1" 200 2933
+INFO 2025-07-06 12:59:44,022 autoreload 78343 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-06 13:00:16,767 basehttp 78343 6160248832 "GET /api/china/get_report/000002.SZ/ HTTP/1.1" 200 3259
+INFO 2025-07-06 13:01:04,917 autoreload 78343 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-07-06 13:01:05,465 autoreload 78399 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-06 13:01:36,028 autoreload 78399 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-07-06 13:01:36,557 autoreload 78420 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-06 13:02:02,751 basehttp 78420 6194507776 "GET /api/china/get_report/000002.SZ/ HTTP/1.1" 200 3164
+INFO 2025-07-06 13:03:00,419 autoreload 78420 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-07-06 13:03:00,881 autoreload 78523 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-06 13:03:13,890 autoreload 78523 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-07-06 13:03:14,289 autoreload 78538 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-06 13:03:30,327 autoreload 78538 8525864704 /Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/views_report.py changed, reloading.
+INFO 2025-07-06 13:03:30,767 autoreload 78555 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-06 13:04:15,810 basehttp 78555 6133067776 "GET /api/china/get_report/000002.SZ/ HTTP/1.1" 200 3332
+INFO 2025-07-06 13:04:55,547 basehttp 78555 6133067776 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:04:57,705 basehttp 78555 6133067776 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 2993
+INFO 2025-07-06 13:04:57,734 basehttp 78555 6133067776 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:05:14,450 basehttp 78555 6133067776 "GET /api/china/get_report/000001.SZ/ HTTP/1.1" 200 3141
+INFO 2025-07-06 13:05:21,554 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:05:23,889 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:05:24,006 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:05:39,520 basehttp 78555 6150467584 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+INFO 2025-07-06 13:05:41,534 basehttp 78555 6167293952 "GET /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 200 3105
+INFO 2025-07-06 13:05:41,560 basehttp 78555 6167293952 "GET /api/crypto/technical-indicators/HAMUSDT/ HTTP/1.1" 200 3105
+INFO 2025-07-06 13:05:41,807 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/HAMUSDT/?market_type=crypto HTTP/1.1" 200 91
+INFO 2025-07-06 13:05:42,546 basehttp 78555 6150467584 "GET /api/crypto/news/HAM/?limit=10 HTTP/1.1" 200 687
+INFO 2025-07-06 13:05:42,552 basehttp 78555 6150467584 "GET /api/crypto/news/HAM/?limit=10 HTTP/1.1" 200 661
+INFO 2025-07-06 13:05:43,570 basehttp 78555 6150467584 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 13:05:45,199 basehttp 78555 6150467584 "OPTIONS /api/crypto/technical-indicators/AVAXUSDT/ HTTP/1.1" 200 0
+INFO 2025-07-06 13:05:45,199 basehttp 78555 6167293952 "OPTIONS /api/crypto/news/AVAX/?limit=10 HTTP/1.1" 200 0
+INFO 2025-07-06 13:05:45,200 basehttp 78555 13035925504 "OPTIONS /api/crypto/technical-indicators/AVAXUSDT/ HTTP/1.1" 200 0
+INFO 2025-07-06 13:05:45,222 basehttp 78555 6167293952 "GET /api/crypto/technical-indicators/AVAXUSDT/ HTTP/1.1" 200 3079
+INFO 2025-07-06 13:05:45,246 basehttp 78555 6167293952 "GET /api/crypto/technical-indicators/AVAXUSDT/ HTTP/1.1" 200 3079
+INFO 2025-07-06 13:05:45,906 basehttp 78555 6150467584 "GET /api/crypto/news/AVAX/?limit=10 HTTP/1.1" 200 75
+INFO 2025-07-06 13:05:46,999 basehttp 78555 6150467584 "OPTIONS /api/crypto/favorites/status/AVAXUSDT/?market_type=crypto HTTP/1.1" 200 0
+INFO 2025-07-06 13:05:47,001 basehttp 78555 6167293952 "OPTIONS /api/crypto/get_report/AVAXUSDT/ HTTP/1.1" 200 0
+INFO 2025-07-06 13:05:47,013 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/AVAXUSDT/?market_type=crypto HTTP/1.1" 200 91
+INFO 2025-07-06 13:05:58,489 basehttp 78555 6167293952 "GET /api/crypto/get_report/AVAXUSDT/ HTTP/1.1" 200 3178
+INFO 2025-07-06 13:06:00,494 basehttp 78555 6167293952 "OPTIONS /api/crypto/technical-indicators/AVAXUSDT/?no_cache=true HTTP/1.1" 200 0
+INFO 2025-07-06 13:06:00,506 basehttp 78555 6167293952 "GET /api/crypto/technical-indicators/AVAXUSDT/?no_cache=true HTTP/1.1" 200 3093
+INFO 2025-07-06 13:06:14,602 basehttp 78555 6150467584 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 13:06:16,617 basehttp 78555 6150467584 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 200 3226
+INFO 2025-07-06 13:06:16,641 basehttp 78555 6150467584 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 200 3226
+INFO 2025-07-06 13:06:17,442 basehttp 78555 6167293952 "GET /api/crypto/news/XRP/?limit=10 HTTP/1.1" 200 3716
+INFO 2025-07-06 13:06:17,976 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/XRPUSDT/?market_type=crypto HTTP/1.1" 200 90
+INFO 2025-07-06 13:06:26,946 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:06:29,208 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:06:29,245 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:06:29,539 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:06:31,717 basehttp 78555 6150467584 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 13:06:33,970 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000002.SZ/ HTTP/1.1" 200 3266
+INFO 2025-07-06 13:06:34,337 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000002.SZ/ HTTP/1.1" 200 3266
+INFO 2025-07-06 13:06:35,279 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000002.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:06:37,741 basehttp 78555 6150467584 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 13:06:42,368 basehttp 78555 6150467584 "GET /api/china/technical-indicators/600000.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 13:06:44,362 basehttp 78555 6150467584 "GET /api/china/technical-indicators/600000.SH/ HTTP/1.1" 200 173
+INFO 2025-07-06 13:06:45,311 basehttp 78555 6150467584 "OPTIONS /api/china/get_report/600000.SH/ HTTP/1.1" 200 0
+INFO 2025-07-06 13:06:54,217 basehttp 78555 6150467584 "GET /api/china/get_report/600000.SH/ HTTP/1.1" 200 3270
+INFO 2025-07-06 13:06:54,793 basehttp 78555 6150467584 "GET /api/china/technical-indicators/600000.SH/ HTTP/1.1" 200 3169
+INFO 2025-07-06 13:06:56,529 basehttp 78555 6150467584 "OPTIONS /api/crypto/favorites/status/600000.SH/?market_type=china HTTP/1.1" 200 0
+INFO 2025-07-06 13:06:56,541 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/600000.SH/?market_type=china HTTP/1.1" 200 92

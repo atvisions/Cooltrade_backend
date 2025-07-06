@@ -606,44 +606,100 @@ class CryptoReportAPIView(APIView):
             period_start = now.replace(minute=0, second=0, microsecond=0, hour=period_hour)
             # 调试：打印技术指标数据
             print(f"[DEBUG] 技术指标数据: {indicators}")
-            print(f"[DEBUG] RSI: {get_indicator_value(indicators.get('rsi'))}")
-            print(f"[DEBUG] MACD Line: {get_indicator_value(indicators.get('macd_line'))}")
-            print(f"[DEBUG] MACD Signal: {get_indicator_value(indicators.get('macd_signal'))}")
-            print(f"[DEBUG] MACD Histogram: {get_indicator_value(indicators.get('macd_histogram'))}")
-            print(f"[DEBUG] Bollinger Upper: {get_indicator_value(indicators.get('bollinger_upper'))}")
-            print(f"[DEBUG] BIAS: {get_indicator_value(indicators.get('bias'))}")
-            print(f"[DEBUG] PSY: {get_indicator_value(indicators.get('psy'))}")
-            print(f"[DEBUG] DMI Plus: {get_indicator_value(indicators.get('dmi_plus'))}")
-            print(f"[DEBUG] VWAP: {get_indicator_value(indicators.get('vwap'))}")
-            print(f"[DEBUG] FundingRate: {get_indicator_value(indicators.get('funding_rate'))}")
-            print(f"[DEBUG] ExchangeNetflow: {get_indicator_value(indicators.get('exchange_netflow'))}")
-            print(f"[DEBUG] NUPL: {get_indicator_value(indicators.get('nupl'))}")
-            print(f"[DEBUG] MayerMultiple: {get_indicator_value(indicators.get('mayer_multiple'))}")
+            print(f"[DEBUG] 市场类型: {asset.market_type}")
+            if 'China' in str(asset.market_type) or 'china' in str(asset.market_type).lower():
+                print(f"[DEBUG] RSI: {get_indicator_value(indicators.get('RSI'))}")
+                print(f"[DEBUG] MACD: {indicators.get('MACD')}")
+                print(f"[DEBUG] BollingerBands: {indicators.get('BollingerBands')}")
+                print(f"[DEBUG] BIAS: {get_indicator_value(indicators.get('BIAS'))}")
+                print(f"[DEBUG] PSY: {get_indicator_value(indicators.get('PSY'))}")
+                print(f"[DEBUG] DMI: {indicators.get('DMI')}")
+                print(f"[DEBUG] VWAP: {get_indicator_value(indicators.get('VWAP'))}")
+            else:
+                print(f"[DEBUG] RSI: {get_indicator_value(indicators.get('rsi'))}")
+                print(f"[DEBUG] MACD Line: {get_indicator_value(indicators.get('macd_line'))}")
+                print(f"[DEBUG] MACD Signal: {get_indicator_value(indicators.get('macd_signal'))}")
+                print(f"[DEBUG] MACD Histogram: {get_indicator_value(indicators.get('macd_histogram'))}")
+                print(f"[DEBUG] Bollinger Upper: {get_indicator_value(indicators.get('bollinger_upper'))}")
+                print(f"[DEBUG] BIAS: {get_indicator_value(indicators.get('bias'))}")
+                print(f"[DEBUG] PSY: {get_indicator_value(indicators.get('psy'))}")
+                print(f"[DEBUG] DMI Plus: {get_indicator_value(indicators.get('dmi_plus'))}")
+                print(f"[DEBUG] VWAP: {get_indicator_value(indicators.get('vwap'))}")
+            is_china = 'China' in str(asset.market_type) or 'china' in str(asset.market_type).lower()
+            print(f"[DEBUG] FundingRate: {get_indicator_value(indicators.get('funding_rate') if not is_china else indicators.get('FundingRate'))}")
+            print(f"[DEBUG] ExchangeNetflow: {get_indicator_value(indicators.get('exchange_netflow') if not is_china else indicators.get('ExchangeNetflow'))}")
+            print(f"[DEBUG] NUPL: {get_indicator_value(indicators.get('nupl') if not is_china else indicators.get('NUPL'))}")
+            print(f"[DEBUG] MayerMultiple: {get_indicator_value(indicators.get('mayer_multiple') if not is_china else indicators.get('MayerMultiple'))}")
 
             with transaction.atomic():
+                # 根据市场类型确定键名格式
+                market_type_str = str(asset.market_type)
+                print(f"[DEBUG] 市场类型字符串: '{market_type_str}'")
+                if 'China' in market_type_str or 'china' in market_type_str.lower():
+                    # A股使用大写键名和嵌套结构
+                    rsi_value = get_indicator_value(indicators.get('RSI'))
+                    macd_data = indicators.get('MACD', {})
+                    macd_line = get_indicator_value(macd_data.get('line'))
+                    macd_signal = get_indicator_value(macd_data.get('signal'))
+                    macd_histogram = get_indicator_value(macd_data.get('histogram'))
+                    bollinger_data = indicators.get('BollingerBands', {})
+                    bollinger_upper = get_indicator_value(bollinger_data.get('upper'))
+                    bollinger_middle = get_indicator_value(bollinger_data.get('middle'))
+                    bollinger_lower = get_indicator_value(bollinger_data.get('lower'))
+                    bias_value = get_indicator_value(indicators.get('BIAS'))
+                    psy_value = get_indicator_value(indicators.get('PSY'))
+                    dmi_data = indicators.get('DMI', {})
+                    dmi_plus = get_indicator_value(dmi_data.get('plus_di'))
+                    dmi_minus = get_indicator_value(dmi_data.get('minus_di'))
+                    dmi_adx = get_indicator_value(dmi_data.get('adx'))
+                    vwap_value = get_indicator_value(indicators.get('VWAP'))
+                    funding_rate_value = get_indicator_value(indicators.get('FundingRate'))
+                    exchange_netflow_value = get_indicator_value(indicators.get('ExchangeNetflow'))
+                    nupl_value = get_indicator_value(indicators.get('NUPL'))
+                    mayer_multiple_value = get_indicator_value(indicators.get('MayerMultiple'))
+                else:
+                    # 加密货币和美股使用小写键名
+                    rsi_value = get_indicator_value(indicators.get('rsi'))
+                    macd_line = get_indicator_value(indicators.get('macd_line'))
+                    macd_signal = get_indicator_value(indicators.get('macd_signal'))
+                    macd_histogram = get_indicator_value(indicators.get('macd_histogram'))
+                    bollinger_upper = get_indicator_value(indicators.get('bollinger_upper'))
+                    bollinger_middle = get_indicator_value(indicators.get('bollinger_middle'))
+                    bollinger_lower = get_indicator_value(indicators.get('bollinger_lower'))
+                    bias_value = get_indicator_value(indicators.get('bias'))
+                    psy_value = get_indicator_value(indicators.get('psy'))
+                    dmi_plus = get_indicator_value(indicators.get('dmi_plus'))
+                    dmi_minus = get_indicator_value(indicators.get('dmi_minus'))
+                    dmi_adx = get_indicator_value(indicators.get('dmi_adx'))
+                    vwap_value = get_indicator_value(indicators.get('vwap'))
+                    funding_rate_value = get_indicator_value(indicators.get('funding_rate'))
+                    exchange_netflow_value = get_indicator_value(indicators.get('exchange_netflow'))
+                    nupl_value = get_indicator_value(indicators.get('nupl'))
+                    mayer_multiple_value = get_indicator_value(indicators.get('mayer_multiple'))
+
                 # 使用 update_or_create 确保技术指标数据被更新
                 technical_analysis, _ = TechnicalAnalysis.objects.update_or_create(
                     asset=asset,
                     period_start=period_start,
                     defaults={
                         'timestamp': now,
-                        'rsi': get_indicator_value(indicators.get('rsi')),
-                        'macd_line': get_indicator_value(indicators.get('macd_line')),
-                        'macd_signal': get_indicator_value(indicators.get('macd_signal')),
-                        'macd_histogram': get_indicator_value(indicators.get('macd_histogram')),
-                        'bollinger_upper': get_indicator_value(indicators.get('bollinger_upper')),
-                        'bollinger_middle': get_indicator_value(indicators.get('bollinger_middle')),
-                        'bollinger_lower': get_indicator_value(indicators.get('bollinger_lower')),
-                        'bias': get_indicator_value(indicators.get('bias')),
-                        'psy': get_indicator_value(indicators.get('psy')),
-                        'dmi_plus': get_indicator_value(indicators.get('dmi_plus')),
-                        'dmi_minus': get_indicator_value(indicators.get('dmi_minus')),
-                        'dmi_adx': get_indicator_value(indicators.get('dmi_adx')),
-                        'vwap': get_indicator_value(indicators.get('vwap')),
-                        'funding_rate': get_indicator_value(indicators.get('funding_rate')),
-                        'exchange_netflow': get_indicator_value(indicators.get('exchange_netflow')),
-                        'nupl': get_indicator_value(indicators.get('nupl')),
-                        'mayer_multiple': get_indicator_value(indicators.get('mayer_multiple'))
+                        'rsi': rsi_value,
+                        'macd_line': macd_line,
+                        'macd_signal': macd_signal,
+                        'macd_histogram': macd_histogram,
+                        'bollinger_upper': bollinger_upper,
+                        'bollinger_middle': bollinger_middle,
+                        'bollinger_lower': bollinger_lower,
+                        'bias': bias_value,
+                        'psy': psy_value,
+                        'dmi_plus': dmi_plus,
+                        'dmi_minus': dmi_minus,
+                        'dmi_adx': dmi_adx,
+                        'vwap': vwap_value,
+                        'funding_rate': funding_rate_value,
+                        'exchange_netflow': exchange_netflow_value,
+                        'nupl': nupl_value,
+                        'mayer_multiple': mayer_multiple_value
                     }
                 )
             print("[DEBUG] 技术分析记录已创建或获取")

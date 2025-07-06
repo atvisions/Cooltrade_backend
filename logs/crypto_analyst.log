@@ -21880,3 +21880,492 @@ INFO 2025-07-06 12:20:48,091 views_news 76572 12918534144 Getting news for ADA i
 INFO 2025-07-06 12:20:48,092 views_news 76572 12918534144 Returning cached news for ADA (crypto)
 INFO 2025-07-06 12:20:48,110 utils 76572 12901707776 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
 INFO 2025-07-06 12:20:49,750 utils 76572 12901707776 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-07-06 12:23:24,810 technical_analysis 76914 6165360640 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:23:24,811 utils 76914 6165360640 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:23:25,179 technical_analysis 76914 6165360640 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:23:25,180 utils 76914 6165360640 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:24:45,176 technical_analysis 76914 6165360640 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 12:24:45,177 utils 76914 6165360640 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 12:24:47,272 technical_analysis 76914 6183907328 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 12:24:47,272 utils 76914 6183907328 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 12:26:34,086 views_news 76914 6183907328 Getting news for META in stock market
+INFO 2025-07-06 12:26:34,087 views_news 76914 6183907328 Tiingo key available: True
+INFO 2025-07-06 12:26:34,088 views_news 76914 6183907328 NewsAPI key available: False
+INFO 2025-07-06 12:26:34,093 utils 76914 6165360640 Cached technical indicators for META (en-US) with key: c970dbe09d96bd23949ab1ff6d13745e
+INFO 2025-07-06 12:26:34,122 utils 76914 6165360640 Cached technical indicators for META (en-US) with key: c970dbe09d96bd23949ab1ff6d13745e
+INFO 2025-07-06 12:26:35,159 views_news 76914 6183907328 tiingo returned 10 news items
+INFO 2025-07-06 12:26:35,165 views_news 76914 6217560064 Getting news for META in stock market
+INFO 2025-07-06 12:26:35,166 views_news 76914 6217560064 Returning cached news for META (stock)
+INFO 2025-07-06 12:26:36,964 utils 76914 6165360640 Cached technical indicators for TSLA (en-US) with key: e7d0b18f131d869084b350bf13cc5896
+INFO 2025-07-06 12:26:38,967 views_news 76914 6200733696 Getting news for TSLA in stock market
+INFO 2025-07-06 12:26:38,968 views_news 76914 6200733696 Tiingo key available: True
+INFO 2025-07-06 12:26:38,968 views_news 76914 6200733696 NewsAPI key available: False
+INFO 2025-07-06 12:26:38,969 utils 76914 6165360640 Cached technical indicators for TSLA (en-US) with key: e7d0b18f131d869084b350bf13cc5896
+INFO 2025-07-06 12:26:40,381 views_news 76914 6200733696 tiingo returned 10 news items
+INFO 2025-07-06 12:26:50,818 views_news 76914 6183907328 Getting news for S in stock market
+INFO 2025-07-06 12:26:50,819 views_news 76914 6183907328 Tiingo key available: True
+INFO 2025-07-06 12:26:50,820 views_news 76914 6183907328 NewsAPI key available: False
+INFO 2025-07-06 12:26:52,316 views_news 76914 6183907328 tiingo returned 10 news items
+INFO 2025-07-06 12:27:59,438 views_news 76914 6183907328 Getting news for SAABY in stock market
+INFO 2025-07-06 12:27:59,440 views_news 76914 6183907328 Tiingo key available: True
+INFO 2025-07-06 12:27:59,440 views_news 76914 6183907328 NewsAPI key available: False
+INFO 2025-07-06 12:28:00,869 views_news 76914 6183907328 tiingo returned 10 news items
+INFO 2025-07-06 12:29:18,829 views_news 76914 6165360640 Getting news for SAABY in stock market
+INFO 2025-07-06 12:29:18,834 views_news 76914 6165360640 Tiingo key available: True
+INFO 2025-07-06 12:29:18,834 views_news 76914 6165360640 NewsAPI key available: False
+INFO 2025-07-06 12:29:20,170 views_news 76914 6165360640 tiingo returned 10 news items
+INFO 2025-07-06 12:29:43,803 views_news 76914 6165360640 Getting news for SAABY in stock market
+INFO 2025-07-06 12:29:43,804 views_news 76914 6165360640 Returning cached news for SAABY (stock)
+INFO 2025-07-06 12:30:03,030 views_news 76914 6165360640 Getting news for SAABY in stock market
+INFO 2025-07-06 12:30:03,031 views_news 76914 6165360640 Returning cached news for SAABY (stock)
+INFO 2025-07-06 12:30:32,624 views_news 76914 6165360640 Getting news for SAABY in stock market
+INFO 2025-07-06 12:30:32,625 views_news 76914 6165360640 Tiingo key available: True
+INFO 2025-07-06 12:30:32,625 views_news 76914 6165360640 NewsAPI key available: False
+INFO 2025-07-06 12:30:33,811 views_news 76914 6165360640 tiingo returned 10 news items
+INFO 2025-07-06 12:30:58,096 views_news 76914 6165360640 Getting news for SAABY in stock market
+INFO 2025-07-06 12:30:58,125 views_news 76914 6165360640 Returning cached news for SAABY (stock)
+INFO 2025-07-06 12:31:24,934 views_news 76914 6165360640 Getting news for SAABY in stock market
+INFO 2025-07-06 12:31:24,934 views_news 76914 6165360640 Returning cached news for SAABY (stock)
+INFO 2025-07-06 12:32:31,290 views_news 76914 6165360640 Getting news for D in stock market
+INFO 2025-07-06 12:32:31,292 views_news 76914 6165360640 Tiingo key available: True
+INFO 2025-07-06 12:32:31,292 views_news 76914 6165360640 NewsAPI key available: False
+INFO 2025-07-06 12:32:32,678 views_news 76914 6165360640 tiingo returned 10 news items
+INFO 2025-07-06 12:32:35,478 views_news 76914 6165360640 Getting news for D in stock market
+INFO 2025-07-06 12:32:35,478 views_news 76914 6165360640 Returning cached news for D (stock)
+INFO 2025-07-06 12:32:41,407 utils 76914 6165360640 Cached technical indicators for NVDA (en-US) with key: 130fa8c433f1d4269ee755598cd71bab
+INFO 2025-07-06 12:32:43,400 views_news 76914 6183907328 Getting news for NVDA in stock market
+INFO 2025-07-06 12:32:43,402 views_news 76914 6183907328 Tiingo key available: True
+INFO 2025-07-06 12:32:43,403 views_news 76914 6183907328 NewsAPI key available: False
+INFO 2025-07-06 12:32:43,424 utils 76914 6200733696 Cached technical indicators for NVDA (en-US) with key: 130fa8c433f1d4269ee755598cd71bab
+INFO 2025-07-06 12:32:44,619 views_news 76914 6183907328 tiingo returned 10 news items
+INFO 2025-07-06 12:32:57,813 technical_analysis 76914 6165360640 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:32:57,813 utils 76914 6165360640 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:32:58,073 technical_analysis 76914 6165360640 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:32:58,074 utils 76914 6165360640 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:33:08,003 technical_analysis 76914 6165360640 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 12:33:08,004 utils 76914 6165360640 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 12:33:10,052 technical_analysis 76914 6183907328 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 12:33:10,052 utils 76914 6183907328 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 12:36:46,619 technical_analysis 76914 6165360640 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 12:36:46,621 utils 76914 6165360640 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 12:36:48,606 technical_analysis 76914 6165360640 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 12:36:48,608 utils 76914 6165360640 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 12:36:50,862 technical_analysis 76914 6183907328 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 12:36:50,862 utils 76914 6183907328 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 12:42:52,257 views_news 76914 6183907328 Getting news for NVDA in stock market
+INFO 2025-07-06 12:42:52,258 views_news 76914 6183907328 Tiingo key available: True
+INFO 2025-07-06 12:42:52,259 views_news 76914 6183907328 NewsAPI key available: False
+INFO 2025-07-06 12:42:52,279 utils 76914 6165360640 Cached technical indicators for NVDA (en-US) with key: 130fa8c433f1d4269ee755598cd71bab
+INFO 2025-07-06 12:42:52,307 utils 76914 6165360640 Cached technical indicators for NVDA (en-US) with key: 130fa8c433f1d4269ee755598cd71bab
+INFO 2025-07-06 12:42:53,561 views_news 76914 6183907328 tiingo returned 10 news items
+INFO 2025-07-06 12:42:53,581 views_news 76914 6165360640 Getting news for NVDA in stock market
+INFO 2025-07-06 12:42:53,581 views_news 76914 6165360640 Returning cached news for NVDA (stock)
+INFO 2025-07-06 12:42:59,857 views_news 76914 6165360640 Getting news for P6NA:DU in stock market
+INFO 2025-07-06 12:42:59,859 views_news 76914 6165360640 Tiingo key available: True
+INFO 2025-07-06 12:42:59,859 views_news 76914 6165360640 NewsAPI key available: False
+INFO 2025-07-06 12:43:07,163 views_news 76914 6183907328 Getting news for ADA in crypto market
+INFO 2025-07-06 12:43:07,165 views_news 76914 6183907328 Getting crypto news for ADA
+INFO 2025-07-06 12:43:07,166 views_news 76914 6200733696 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:43:07,167 views_news 76914 6217560064 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:43:07,169 views_news 76914 6234386432 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:43:07,177 views_news 76914 6251212800 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 12:43:07,188 utils 76914 6165360640 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-07-06 12:43:07,207 utils 76914 6165360640 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-07-06 12:43:07,789 views_news 76914 6200733696 RSS feed returned 2 news items
+INFO 2025-07-06 12:43:07,793 views_news 76914 6183907328 coindesk returned 2 news items
+INFO 2025-07-06 12:43:07,952 views_news 76914 6217560064 RSS feed returned 0 news items
+INFO 2025-07-06 12:43:08,197 views_news 76914 6234386432 RSS feed returned 2 news items
+INFO 2025-07-06 12:43:08,198 views_news 76914 6183907328 decrypt returned 2 news items
+INFO 2025-07-06 12:43:08,260 views_news 76914 6251212800 RSS feed returned 0 news items
+INFO 2025-07-06 12:43:08,266 views_news 76914 6183907328 Getting news for ADA in crypto market
+INFO 2025-07-06 12:43:08,266 views_news 76914 6183907328 Returning cached news for ADA (crypto)
+INFO 2025-07-06 12:43:15,015 views_news 76914 6165360640 Getting news for KILT in crypto market
+INFO 2025-07-06 12:43:15,015 views_news 76914 6165360640 Getting crypto news for KILT
+INFO 2025-07-06 12:43:15,016 views_news 76914 6183907328 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:43:15,016 views_news 76914 6200733696 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:43:15,016 views_news 76914 6217560064 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:43:15,017 views_news 76914 6234386432 Fetching RSS news from: https://beincrypto.com/feed/
+ERROR 2025-07-06 12:43:15,639 views_news 76914 6183907328 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 12:43:15,639 views_news 76914 6183907328 RSS feed returned 0 news items
+INFO 2025-07-06 12:43:15,684 views_news 76914 6217560064 RSS feed returned 0 news items
+INFO 2025-07-06 12:43:15,703 views_news 76914 6234386432 RSS feed returned 0 news items
+INFO 2025-07-06 12:43:15,977 views_news 76914 6200733696 RSS feed returned 0 news items
+INFO 2025-07-06 12:44:40,361 views_news 76914 6165360640 Getting news for ADA in crypto market
+INFO 2025-07-06 12:44:40,363 views_news 76914 6165360640 Getting crypto news for ADA
+INFO 2025-07-06 12:44:40,365 views_news 76914 6183907328 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:44:40,365 views_news 76914 6200733696 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:44:40,366 views_news 76914 6217560064 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:44:40,366 views_news 76914 6234386432 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 12:44:40,856 views_news 76914 6200733696 RSS feed returned 0 news items
+INFO 2025-07-06 12:44:41,174 views_news 76914 6217560064 RSS feed returned 2 news items
+INFO 2025-07-06 12:44:41,246 views_news 76914 6234386432 RSS feed returned 0 news items
+INFO 2025-07-06 12:44:41,636 views_news 76914 6183907328 RSS feed returned 2 news items
+INFO 2025-07-06 12:44:41,638 views_news 76914 6165360640 coindesk returned 2 news items
+INFO 2025-07-06 12:44:41,638 views_news 76914 6165360640 decrypt returned 2 news items
+INFO 2025-07-06 12:44:42,312 utils 76914 6165360640 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-07-06 12:45:46,037 views_news 76914 6165360640 Getting news for ARG in crypto market
+INFO 2025-07-06 12:45:46,038 views_news 76914 6165360640 Getting crypto news for ARG
+INFO 2025-07-06 12:45:46,039 views_news 76914 6200733696 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:45:46,039 views_news 76914 6217560064 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:45:46,040 views_news 76914 6234386432 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:45:46,041 views_news 76914 6251212800 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 12:45:46,574 views_news 76914 6217560064 RSS feed returned 2 news items
+INFO 2025-07-06 12:45:46,902 views_news 76914 6234386432 RSS feed returned 2 news items
+INFO 2025-07-06 12:45:47,029 views_news 76914 6183907328 Getting news for ARG in crypto market
+INFO 2025-07-06 12:45:47,029 views_news 76914 6183907328 Getting crypto news for ARG
+INFO 2025-07-06 12:45:47,030 views_news 76914 6268039168 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:45:47,030 views_news 76914 6284865536 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:45:47,031 views_news 76914 6301691904 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:45:47,031 views_news 76914 6318518272 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 12:45:47,286 views_news 76914 6251212800 RSS feed returned 2 news items
+INFO 2025-07-06 12:45:47,592 views_news 76914 6284865536 RSS feed returned 2 news items
+ERROR 2025-07-06 12:45:47,720 views_news 76914 6268039168 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 12:45:47,720 views_news 76914 6268039168 RSS feed returned 2 news items
+INFO 2025-07-06 12:45:47,723 views_news 76914 6183907328 coindesk returned 2 news items
+INFO 2025-07-06 12:45:47,723 views_news 76914 6183907328 cointelegraph returned 2 news items
+INFO 2025-07-06 12:45:47,864 views_news 76914 6301691904 RSS feed returned 2 news items
+INFO 2025-07-06 12:45:47,865 views_news 76914 6183907328 decrypt returned 2 news items
+INFO 2025-07-06 12:45:48,090 views_news 76914 6318518272 RSS feed returned 2 news items
+INFO 2025-07-06 12:45:48,093 views_news 76914 6183907328 beincrypto returned 2 news items
+ERROR 2025-07-06 12:45:48,269 views_news 76914 6200733696 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 12:45:48,270 views_news 76914 6200733696 RSS feed returned 2 news items
+INFO 2025-07-06 12:45:48,271 views_news 76914 6165360640 coindesk returned 2 news items
+INFO 2025-07-06 12:45:48,271 views_news 76914 6165360640 cointelegraph returned 2 news items
+INFO 2025-07-06 12:45:48,272 views_news 76914 6165360640 decrypt returned 2 news items
+INFO 2025-07-06 12:45:48,272 views_news 76914 6165360640 beincrypto returned 2 news items
+INFO 2025-07-06 12:45:55,699 views_news 76914 6200733696 Getting news for ADAUSDT in stock market
+INFO 2025-07-06 12:45:55,704 views_news 76914 6200733696 Tiingo key available: True
+INFO 2025-07-06 12:45:55,704 views_news 76914 6200733696 NewsAPI key available: False
+INFO 2025-07-06 12:45:57,459 views_news 76914 6200733696 Getting news for ADAUSDT in stock market
+INFO 2025-07-06 12:45:57,459 views_news 76914 6200733696 Tiingo key available: True
+INFO 2025-07-06 12:45:57,459 views_news 76914 6200733696 NewsAPI key available: False
+INFO 2025-07-06 12:46:09,515 utils 76914 6165360640 Cached technical indicators for YAAS (en-US) with key: 65b6695f3145976abeb42eae725a55b6
+INFO 2025-07-06 12:46:11,502 views_news 76914 6165360640 Getting news for YAAS in stock market
+INFO 2025-07-06 12:46:11,503 views_news 76914 6165360640 Tiingo key available: True
+INFO 2025-07-06 12:46:11,503 views_news 76914 6165360640 NewsAPI key available: False
+INFO 2025-07-06 12:46:11,531 utils 76914 6200733696 Cached technical indicators for YAAS (en-US) with key: 65b6695f3145976abeb42eae725a55b6
+INFO 2025-07-06 12:46:12,544 views_news 76914 6165360640 tiingo returned 1 news items
+INFO 2025-07-06 12:46:17,740 views_news 76914 6165360640 Getting news for YAC in stock market
+INFO 2025-07-06 12:46:17,742 views_news 76914 6165360640 Tiingo key available: True
+INFO 2025-07-06 12:46:17,742 views_news 76914 6165360640 NewsAPI key available: False
+INFO 2025-07-06 12:46:23,790 technical_analysis 76914 6165360640 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:46:23,791 utils 76914 6165360640 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:46:24,057 technical_analysis 76914 6165360640 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:46:24,058 utils 76914 6165360640 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:46:55,084 views_news 76914 6165360640 Getting news for BTC in crypto market
+INFO 2025-07-06 12:46:55,084 views_news 76914 6165360640 Getting crypto news for BTC
+INFO 2025-07-06 12:46:55,085 views_news 76914 6183907328 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:46:55,087 views_news 76914 6200733696 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:46:55,088 views_news 76914 6217560064 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:46:55,088 views_news 76914 6234386432 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 12:46:55,640 views_news 76914 6200733696 RSS feed returned 2 news items
+INFO 2025-07-06 12:46:55,927 views_news 76914 6183907328 RSS feed returned 2 news items
+INFO 2025-07-06 12:46:55,929 views_news 76914 6165360640 coindesk returned 2 news items
+INFO 2025-07-06 12:46:55,929 views_news 76914 6165360640 cointelegraph returned 2 news items
+INFO 2025-07-06 12:46:56,288 views_news 76914 6234386432 RSS feed returned 2 news items
+INFO 2025-07-06 12:46:56,303 views_news 76914 6217560064 RSS feed returned 2 news items
+INFO 2025-07-06 12:46:56,305 views_news 76914 6165360640 decrypt returned 2 news items
+INFO 2025-07-06 12:46:56,305 views_news 76914 6165360640 beincrypto returned 2 news items
+INFO 2025-07-06 12:46:57,108 utils 76914 6165360640 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 12:47:08,000 views_news 76914 6165360640 Getting news for HAM in crypto market
+INFO 2025-07-06 12:47:08,003 views_news 76914 6165360640 Getting crypto news for HAM
+INFO 2025-07-06 12:47:08,003 views_news 76914 6200733696 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:47:08,004 views_news 76914 6217560064 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:47:08,004 views_news 76914 6234386432 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:47:08,004 views_news 76914 6251212800 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 12:47:08,651 views_news 76914 6217560064 RSS feed returned 1 news items
+INFO 2025-07-06 12:47:09,190 views_news 76914 6251212800 RSS feed returned 0 news items
+INFO 2025-07-06 12:47:09,412 views_news 76914 6234386432 RSS feed returned 0 news items
+ERROR 2025-07-06 12:47:09,585 views_news 76914 6200733696 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 12:47:09,586 views_news 76914 6200733696 RSS feed returned 0 news items
+INFO 2025-07-06 12:47:09,589 views_news 76914 6165360640 cointelegraph returned 1 news items
+INFO 2025-07-06 12:48:40,272 views_news 76914 6165360640 Getting news for HAM in crypto market
+INFO 2025-07-06 12:48:40,275 views_news 76914 6165360640 Getting crypto news for HAM
+INFO 2025-07-06 12:48:40,275 views_news 76914 6183907328 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:48:40,277 views_news 76914 6200733696 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:48:40,280 views_news 76914 6217560064 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:48:40,286 views_news 76914 6234386432 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 12:48:40,694 views_news 76914 6217560064 RSS feed returned 0 news items
+ERROR 2025-07-06 12:48:41,089 views_news 76914 6183907328 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 12:48:41,089 views_news 76914 6183907328 RSS feed returned 0 news items
+INFO 2025-07-06 12:48:41,201 views_news 76914 6234386432 RSS feed returned 0 news items
+INFO 2025-07-06 12:48:41,478 views_news 76914 6200733696 RSS feed returned 1 news items
+INFO 2025-07-06 12:48:41,479 views_news 76914 6165360640 cointelegraph returned 1 news items
+INFO 2025-07-06 12:49:10,685 views_news 76914 6165360640 Getting news for HAM in crypto market
+INFO 2025-07-06 12:49:10,685 views_news 76914 6165360640 Returning cached news for HAM (crypto)
+INFO 2025-07-06 12:49:44,819 views_news 76914 6165360640 Getting news for HAM in crypto market
+INFO 2025-07-06 12:49:44,820 views_news 76914 6165360640 Getting crypto news for HAM
+INFO 2025-07-06 12:49:44,820 views_news 76914 6183907328 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:49:44,821 views_news 76914 6200733696 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:49:44,821 views_news 76914 6217560064 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:49:44,821 views_news 76914 6234386432 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 12:49:45,638 views_news 76914 6217560064 RSS feed returned 0 news items
+ERROR 2025-07-06 12:49:45,639 views_news 76914 6183907328 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 12:49:45,639 views_news 76914 6183907328 RSS feed returned 0 news items
+INFO 2025-07-06 12:49:46,182 views_news 76914 6200733696 RSS feed returned 1 news items
+INFO 2025-07-06 12:49:46,184 views_news 76914 6165360640 cointelegraph returned 1 news items
+INFO 2025-07-06 12:49:47,233 views_news 76914 6234386432 RSS feed returned 0 news items
+INFO 2025-07-06 12:50:18,034 views_news 76914 6165360640 Getting news for HAM in crypto market
+INFO 2025-07-06 12:50:18,036 views_news 76914 6165360640 Returning cached news for HAM (crypto)
+INFO 2025-07-06 12:50:48,623 views_news 76914 6165360640 Getting news for HAM in crypto market
+INFO 2025-07-06 12:50:48,624 views_news 76914 6165360640 Getting crypto news for HAM
+INFO 2025-07-06 12:50:48,625 views_news 76914 6183907328 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:50:48,637 views_news 76914 6200733696 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:50:48,642 views_news 76914 6217560064 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:50:48,646 views_news 76914 6234386432 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 12:50:49,074 views_news 76914 6200733696 RSS feed returned 1 news items
+ERROR 2025-07-06 12:50:49,337 views_news 76914 6183907328 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 12:50:49,337 views_news 76914 6183907328 RSS feed returned 0 news items
+INFO 2025-07-06 12:50:49,338 views_news 76914 6165360640 cointelegraph returned 1 news items
+INFO 2025-07-06 12:50:49,508 views_news 76914 6217560064 RSS feed returned 0 news items
+INFO 2025-07-06 12:50:49,697 views_news 76914 6234386432 RSS feed returned 0 news items
+INFO 2025-07-06 12:51:24,049 views_news 76914 6165360640 Getting news for HAM in crypto market
+INFO 2025-07-06 12:51:24,052 views_news 76914 6165360640 Returning cached news for HAM (crypto)
+INFO 2025-07-06 12:51:58,844 views_news 76914 6200733696 Getting news for AAPL in stock market
+INFO 2025-07-06 12:51:58,851 views_news 76914 6200733696 Tiingo key available: True
+INFO 2025-07-06 12:51:58,851 views_news 76914 6200733696 NewsAPI key available: False
+INFO 2025-07-06 12:51:58,861 utils 76914 6165360640 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 12:51:58,883 utils 76914 6165360640 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 12:51:59,834 views_news 76914 6200733696 tiingo returned 10 news items
+INFO 2025-07-06 12:51:59,838 views_news 76914 6200733696 Getting news for AAPL in stock market
+INFO 2025-07-06 12:51:59,839 views_news 76914 6200733696 Returning cached news for AAPL (stock)
+INFO 2025-07-06 12:52:07,540 views_news 76914 6165360640 Getting news for F in stock market
+INFO 2025-07-06 12:52:07,541 views_news 76914 6165360640 Tiingo key available: True
+INFO 2025-07-06 12:52:07,541 views_news 76914 6165360640 NewsAPI key available: False
+INFO 2025-07-06 12:52:08,803 views_news 76914 6165360640 tiingo returned 10 news items
+INFO 2025-07-06 12:52:14,469 views_news 76914 6183907328 Getting news for HAM in crypto market
+INFO 2025-07-06 12:52:14,470 views_news 76914 6183907328 Getting crypto news for HAM
+INFO 2025-07-06 12:52:14,470 views_news 76914 6200733696 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:52:14,470 views_news 76914 6217560064 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:52:14,472 views_news 76914 6234386432 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:52:14,474 views_news 76914 6268039168 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 12:52:15,023 views_news 76914 6217560064 RSS feed returned 1 news items
+INFO 2025-07-06 12:52:15,052 views_news 76914 6234386432 RSS feed returned 0 news items
+ERROR 2025-07-06 12:52:15,341 views_news 76914 6200733696 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 12:52:15,341 views_news 76914 6200733696 RSS feed returned 0 news items
+INFO 2025-07-06 12:52:15,344 views_news 76914 6183907328 cointelegraph returned 1 news items
+INFO 2025-07-06 12:52:16,069 views_news 76914 6268039168 RSS feed returned 0 news items
+INFO 2025-07-06 12:52:16,077 views_news 76914 6183907328 Getting news for HAM in crypto market
+INFO 2025-07-06 12:52:16,078 views_news 76914 6183907328 Returning cached news for HAM (crypto)
+INFO 2025-07-06 12:52:16,689 technical_analysis 76914 6183907328 检测到HAMUSDT的市场类型: crypto
+DEBUG 2025-07-06 12:52:16,695 gate_api 76914 6183907328 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:52:16,696 gate_api 76914 6183907328 请求参数: {'currency_pair': 'HAM_USDT'}
+DEBUG 2025-07-06 12:52:17,901 gate_api 76914 6183907328 Gate API请求成功，耗时: 1.21秒
+INFO 2025-07-06 12:52:17,902 technical_analysis 76914 6183907328 开始计算HAMUSDT的技术指标
+DEBUG 2025-07-06 12:52:17,902 gate_api 76914 6183907328 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 12:52:17,902 gate_api 76914 6183907328 请求参数: {'currency_pair': 'HAM_USDT', 'interval': '1d', 'from': 1743166337, 'limit': 1000}
+DEBUG 2025-07-06 12:52:18,465 gate_api 76914 6183907328 Gate API请求成功，耗时: 0.56秒
+INFO 2025-07-06 12:52:18,468 technical_analysis 76914 6183907328 获取到HAMUSDT的101条K线数据
+INFO 2025-07-06 12:52:18,468 technical_analysis 76914 6183907328 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 4.492e-10, 4.665e-10, 4.155e-10, 4.229e-10, 2256.1412875, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 12:52:18,494 gate_api 76914 6183907328 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 12:52:18,495 gate_api 76914 6183907328 请求参数: {'contract': 'HAM_USDT'}
+WARNING 2025-07-06 12:52:19,063 gate_api 76914 6183907328 Gate API请求失败 (1/3): HTTP 400, 耗时: 0.57秒, URL: https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+WARNING 2025-07-06 12:52:19,063 gate_api 76914 6183907328 响应内容: {"label":"CONTRACT_NOT_FOUND","succeeded":false}
+DEBUG 2025-07-06 12:52:20,063 gate_api 76914 6183907328 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 12:52:20,064 gate_api 76914 6183907328 请求参数: {'contract': 'HAM_USDT'}
+WARNING 2025-07-06 12:52:20,852 gate_api 76914 6183907328 Gate API请求失败 (2/3): HTTP 400, 耗时: 0.79秒, URL: https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+WARNING 2025-07-06 12:52:20,852 gate_api 76914 6183907328 响应内容: {"label":"CONTRACT_NOT_FOUND","succeeded":false}
+DEBUG 2025-07-06 12:52:21,857 gate_api 76914 6183907328 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 12:52:21,858 gate_api 76914 6183907328 请求参数: {'contract': 'HAM_USDT'}
+WARNING 2025-07-06 12:52:23,149 gate_api 76914 6183907328 Gate API请求失败 (3/3): HTTP 400, 耗时: 1.29秒, URL: https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+WARNING 2025-07-06 12:52:23,150 gate_api 76914 6183907328 响应内容: {"label":"CONTRACT_NOT_FOUND","succeeded":false}
+ERROR 2025-07-06 12:52:24,150 gate_api 76914 6183907328 在3次尝试后仍无法完成请求: None
+DEBUG 2025-07-06 12:52:24,153 gate_api 76914 6183907328 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 12:52:24,153 gate_api 76914 6183907328 请求参数: {'settle': 'usdt'}
+DEBUG 2025-07-06 12:52:25,028 gate_api 76914 6183907328 Gate API请求成功，耗时: 0.86秒
+WARNING 2025-07-06 12:52:25,031 gate_api 76914 6183907328 无法获取 HAMUSDT 的资金费率，使用默认值
+INFO 2025-07-06 12:52:25,037 technical_analysis 76914 6183907328 成功计算HAMUSDT的所有技术指标
+INFO 2025-07-06 12:52:25,046 views_indicators_data 76914 6183907328 Successfully saved technical indicator data: HAMUSDT, ID: 145
+INFO 2025-07-06 12:52:25,055 technical_analysis 76914 6183907328 检测到HAMUSDT的市场类型: crypto
+DEBUG 2025-07-06 12:52:25,055 gate_api 76914 6183907328 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:52:25,055 gate_api 76914 6183907328 请求参数: {'currency_pair': 'HAM_USDT'}
+DEBUG 2025-07-06 12:52:25,885 gate_api 76914 6183907328 Gate API请求成功，耗时: 0.83秒
+INFO 2025-07-06 12:52:25,888 technical_analysis 76914 6183907328 开始计算HAMUSDT的技术指标
+DEBUG 2025-07-06 12:52:25,888 gate_api 76914 6183907328 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 12:52:25,888 gate_api 76914 6183907328 请求参数: {'currency_pair': 'HAM_USDT', 'interval': '1d', 'from': 1743166345, 'limit': 1000}
+DEBUG 2025-07-06 12:52:26,729 gate_api 76914 6183907328 Gate API请求成功，耗时: 0.84秒
+INFO 2025-07-06 12:52:26,731 technical_analysis 76914 6183907328 获取到HAMUSDT的101条K线数据
+INFO 2025-07-06 12:52:26,731 technical_analysis 76914 6183907328 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 4.492e-10, 4.665e-10, 4.155e-10, 4.229e-10, 2256.1412875, 0, 0, 0, 0, 0, 0]
+INFO 2025-07-06 12:52:26,858 technical_analysis 76914 6183907328 成功计算HAMUSDT的所有技术指标
+INFO 2025-07-06 12:52:26,866 views_indicators_data 76914 6183907328 Technical analysis record already exists within 12 hours, ID: 145, not creating new one
+INFO 2025-07-06 12:52:26,870 views_indicators_data 76914 6183907328 Successfully saved technical indicator data: HAMUSDT, ID: 145
+INFO 2025-07-06 12:52:36,208 utils 76914 6165360640 Cached technical indicators for HAMUSDT (en-US) with key: 15e34395476d47ad19ebc29030a371e0
+INFO 2025-07-06 12:53:18,936 views_news 76914 6183907328 Getting news for F in stock market
+INFO 2025-07-06 12:53:18,937 views_news 76914 6183907328 Tiingo key available: True
+INFO 2025-07-06 12:53:18,938 views_news 76914 6183907328 NewsAPI key available: False
+INFO 2025-07-06 12:53:20,002 views_news 76914 6183907328 tiingo returned 10 news items
+INFO 2025-07-06 12:53:20,007 views_news 76914 6165360640 Getting news for F in stock market
+INFO 2025-07-06 12:53:20,008 views_news 76914 6165360640 Returning cached news for F (stock)
+INFO 2025-07-06 12:53:34,288 utils 76914 6165360640 Cached technical indicators for F (en-US) with key: be5a7c200a0a9df033d7176ca026ec19
+INFO 2025-07-06 12:53:47,438 technical_analysis 76914 6165360640 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:53:47,439 utils 76914 6165360640 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:53:47,781 technical_analysis 76914 6165360640 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:53:47,782 utils 76914 6165360640 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:53:55,181 technical_analysis 76914 6165360640 检测到600519.SH的市场类型: china
+INFO 2025-07-06 12:53:55,386 technical_analysis 76914 6165360640 格式化后的股票代码: 600519.SH
+INFO 2025-07-06 12:53:55,474 technical_analysis 76914 6165360640 开始计算600519.SH的技术指标
+INFO 2025-07-06 12:53:55,867 technical_analysis 76914 6165360640 成功获取600519.SH的A股基本面指标
+INFO 2025-07-06 12:53:55,873 technical_analysis 76914 6165360640 成功计算600519.SH的所有技术指标
+INFO 2025-07-06 12:53:55,967 technical_analysis 76914 6165360640 检测到600519.SH的市场类型: china
+INFO 2025-07-06 12:53:56,163 technical_analysis 76914 6165360640 格式化后的股票代码: 600519.SH
+INFO 2025-07-06 12:53:56,242 technical_analysis 76914 6165360640 开始计算600519.SH的技术指标
+INFO 2025-07-06 12:53:56,629 technical_analysis 76914 6165360640 成功获取600519.SH的A股基本面指标
+INFO 2025-07-06 12:53:56,633 technical_analysis 76914 6165360640 成功计算600519.SH的所有技术指标
+INFO 2025-07-06 12:54:08,129 technical_analysis 76914 6165360640 成功获取600519.SH的A股基本面指标
+INFO 2025-07-06 12:54:08,129 utils 76914 6165360640 Cached technical indicators for 600519.SH (en-US) with key: 88ce974e5082e106cb68e0f51982d443
+INFO 2025-07-06 12:54:31,052 technical_analysis 76914 6165360640 检测到000725.SZ的市场类型: china
+INFO 2025-07-06 12:54:31,313 technical_analysis 76914 6165360640 格式化后的股票代码: 000725.SZ
+INFO 2025-07-06 12:54:31,393 technical_analysis 76914 6165360640 开始计算000725.SZ的技术指标
+INFO 2025-07-06 12:54:31,794 technical_analysis 76914 6165360640 成功获取000725.SZ的A股基本面指标
+INFO 2025-07-06 12:54:31,800 technical_analysis 76914 6165360640 成功计算000725.SZ的所有技术指标
+INFO 2025-07-06 12:54:31,892 technical_analysis 76914 6165360640 检测到000725.SZ的市场类型: china
+INFO 2025-07-06 12:54:32,085 technical_analysis 76914 6165360640 格式化后的股票代码: 000725.SZ
+INFO 2025-07-06 12:54:32,169 technical_analysis 76914 6165360640 开始计算000725.SZ的技术指标
+INFO 2025-07-06 12:54:32,545 technical_analysis 76914 6165360640 成功获取000725.SZ的A股基本面指标
+INFO 2025-07-06 12:54:32,551 technical_analysis 76914 6165360640 成功计算000725.SZ的所有技术指标
+INFO 2025-07-06 12:54:43,364 technical_analysis 76914 6165360640 成功获取000725.SZ的A股基本面指标
+INFO 2025-07-06 12:54:43,366 utils 76914 6165360640 Cached technical indicators for 000725.SZ (en-US) with key: 6efe9f872bf16db260bea71f9403e774
+INFO 2025-07-06 12:55:06,964 technical_analysis 76914 6165360640 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:55:06,966 utils 76914 6165360640 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:55:07,236 technical_analysis 76914 6165360640 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:55:07,237 utils 76914 6165360640 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:55:25,337 technical_analysis 76914 6165360640 检测到000001.SZ的市场类型: china
+INFO 2025-07-06 12:55:25,562 technical_analysis 76914 6165360640 格式化后的股票代码: 000001.SZ
+INFO 2025-07-06 12:55:25,643 technical_analysis 76914 6165360640 开始计算000001.SZ的技术指标
+INFO 2025-07-06 12:55:26,040 technical_analysis 76914 6165360640 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:55:26,045 technical_analysis 76914 6165360640 成功计算000001.SZ的所有技术指标
+INFO 2025-07-06 12:55:39,475 technical_analysis 76914 6183907328 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:55:39,476 utils 76914 6183907328 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:57:34,580 technical_analysis 76914 6183907328 检测到000002.SZ的市场类型: china
+INFO 2025-07-06 12:57:34,838 technical_analysis 76914 6183907328 格式化后的股票代码: 000002.SZ
+INFO 2025-07-06 12:57:34,947 technical_analysis 76914 6183907328 开始计算000002.SZ的技术指标
+INFO 2025-07-06 12:57:35,409 technical_analysis 76914 6183907328 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 12:57:35,413 technical_analysis 76914 6183907328 成功计算000002.SZ的所有技术指标
+INFO 2025-07-06 12:57:35,422 views_indicators_data 76914 6183907328 Successfully saved technical indicator data: 000002.SZ, ID: 150
+INFO 2025-07-06 12:58:02,042 technical_analysis 76914 6183907328 检测到000002.SZ的市场类型: china
+INFO 2025-07-06 12:58:02,239 technical_analysis 76914 6183907328 格式化后的股票代码: 000002.SZ
+INFO 2025-07-06 12:58:02,328 technical_analysis 76914 6183907328 开始计算000002.SZ的技术指标
+INFO 2025-07-06 12:58:02,710 technical_analysis 76914 6183907328 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 12:58:02,713 technical_analysis 76914 6183907328 成功计算000002.SZ的所有技术指标
+INFO 2025-07-06 13:00:07,851 technical_analysis 78343 6160248832 检测到000002.SZ的市场类型: china
+INFO 2025-07-06 13:00:08,066 technical_analysis 78343 6160248832 格式化后的股票代码: 000002.SZ
+INFO 2025-07-06 13:00:08,146 technical_analysis 78343 6160248832 开始计算000002.SZ的技术指标
+INFO 2025-07-06 13:00:08,520 technical_analysis 78343 6160248832 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 13:00:08,523 technical_analysis 78343 6160248832 成功计算000002.SZ的所有技术指标
+INFO 2025-07-06 13:01:53,941 technical_analysis 78420 6194507776 检测到000002.SZ的市场类型: china
+INFO 2025-07-06 13:01:54,133 technical_analysis 78420 6194507776 格式化后的股票代码: 000002.SZ
+INFO 2025-07-06 13:01:54,210 technical_analysis 78420 6194507776 开始计算000002.SZ的技术指标
+INFO 2025-07-06 13:01:54,597 technical_analysis 78420 6194507776 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 13:01:54,600 technical_analysis 78420 6194507776 成功计算000002.SZ的所有技术指标
+INFO 2025-07-06 13:04:07,016 technical_analysis 78555 6133067776 检测到000002.SZ的市场类型: china
+INFO 2025-07-06 13:04:07,202 technical_analysis 78555 6133067776 格式化后的股票代码: 000002.SZ
+INFO 2025-07-06 13:04:07,278 technical_analysis 78555 6133067776 开始计算000002.SZ的技术指标
+INFO 2025-07-06 13:04:07,727 technical_analysis 78555 6133067776 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 13:04:07,729 technical_analysis 78555 6133067776 成功计算000002.SZ的所有技术指标
+INFO 2025-07-06 13:04:57,704 technical_analysis 78555 6133067776 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:04:57,705 utils 78555 6133067776 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:05:04,973 technical_analysis 78555 6133067776 检测到000001.SZ的市场类型: china
+INFO 2025-07-06 13:05:05,158 technical_analysis 78555 6133067776 格式化后的股票代码: 000001.SZ
+INFO 2025-07-06 13:05:05,240 technical_analysis 78555 6133067776 开始计算000001.SZ的技术指标
+INFO 2025-07-06 13:05:05,686 technical_analysis 78555 6133067776 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:05:05,690 technical_analysis 78555 6133067776 成功计算000001.SZ的所有技术指标
+INFO 2025-07-06 13:05:23,887 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:05:23,888 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:05:41,514 views_news 78555 6150467584 Getting news for HAM in crypto market
+INFO 2025-07-06 13:05:41,516 views_news 78555 6150467584 Getting crypto news for HAM
+INFO 2025-07-06 13:05:41,518 views_news 78555 13035925504 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 13:05:41,519 views_news 78555 13052751872 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 13:05:41,520 views_news 78555 13069578240 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 13:05:41,521 views_news 78555 13086404608 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 13:05:41,533 utils 78555 6167293952 Cached technical indicators for HAMUSDT (en-US) with key: 15e34395476d47ad19ebc29030a371e0
+INFO 2025-07-06 13:05:41,559 utils 78555 6167293952 Cached technical indicators for HAMUSDT (en-US) with key: 15e34395476d47ad19ebc29030a371e0
+INFO 2025-07-06 13:05:41,936 views_news 78555 13069578240 RSS feed returned 0 news items
+INFO 2025-07-06 13:05:41,984 views_news 78555 13052751872 RSS feed returned 1 news items
+ERROR 2025-07-06 13:05:42,050 views_news 78555 13035925504 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 13:05:42,051 views_news 78555 13035925504 RSS feed returned 0 news items
+INFO 2025-07-06 13:05:42,054 views_news 78555 6150467584 cointelegraph returned 1 news items
+INFO 2025-07-06 13:05:42,539 views_news 78555 13086404608 RSS feed returned 0 news items
+INFO 2025-07-06 13:05:42,550 views_news 78555 6150467584 Getting news for HAM in crypto market
+INFO 2025-07-06 13:05:42,550 views_news 78555 6150467584 Returning cached news for HAM (crypto)
+INFO 2025-07-06 13:05:45,201 views_news 78555 6150467584 Getting news for AVAX in crypto market
+INFO 2025-07-06 13:05:45,203 views_news 78555 6150467584 Getting crypto news for AVAX
+INFO 2025-07-06 13:05:45,203 views_news 78555 13052751872 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 13:05:45,203 views_news 78555 13069578240 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 13:05:45,204 views_news 78555 13086404608 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 13:05:45,207 views_news 78555 13103230976 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 13:05:45,221 utils 78555 6167293952 Cached technical indicators for AVAXUSDT (en-US) with key: 1d63dff4db3944ab576c8050c7be9e38
+INFO 2025-07-06 13:05:45,243 utils 78555 6167293952 Cached technical indicators for AVAXUSDT (en-US) with key: 1d63dff4db3944ab576c8050c7be9e38
+INFO 2025-07-06 13:05:45,567 views_news 78555 13069578240 RSS feed returned 0 news items
+INFO 2025-07-06 13:05:45,569 views_news 78555 13086404608 RSS feed returned 0 news items
+ERROR 2025-07-06 13:05:45,619 views_news 78555 13052751872 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 13:05:45,619 views_news 78555 13052751872 RSS feed returned 0 news items
+INFO 2025-07-06 13:05:45,902 views_news 78555 13103230976 RSS feed returned 0 news items
+INFO 2025-07-06 13:05:47,019 technical_analysis 78555 6167293952 检测到AVAXUSDT的市场类型: crypto
+DEBUG 2025-07-06 13:05:47,021 gate_api 78555 6167293952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 13:05:47,021 gate_api 78555 6167293952 请求参数: {'currency_pair': 'AVAX_USDT'}
+DEBUG 2025-07-06 13:05:47,991 gate_api 78555 6167293952 Gate API请求成功，耗时: 0.97秒
+INFO 2025-07-06 13:05:47,994 technical_analysis 78555 6167293952 开始计算AVAXUSDT的技术指标
+DEBUG 2025-07-06 13:05:47,995 gate_api 78555 6167293952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 13:05:47,995 gate_api 78555 6167293952 请求参数: {'currency_pair': 'AVAX_USDT', 'interval': '1d', 'from': 1743167147, 'limit': 1000}
+DEBUG 2025-07-06 13:05:48,601 gate_api 78555 6167293952 Gate API请求成功，耗时: 0.61秒
+INFO 2025-07-06 13:05:48,604 technical_analysis 78555 6167293952 获取到AVAXUSDT的101条K线数据
+INFO 2025-07-06 13:05:48,605 technical_analysis 78555 6167293952 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 22.03, 22.19, 19.77, 20.36, 4197248.152258, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 13:05:48,623 gate_api 78555 6167293952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 13:05:48,623 gate_api 78555 6167293952 请求参数: {'contract': 'AVAX_USDT'}
+DEBUG 2025-07-06 13:05:49,161 gate_api 78555 6167293952 Gate API请求成功，耗时: 0.54秒
+DEBUG 2025-07-06 13:05:49,163 gate_api 78555 6167293952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 13:05:49,163 gate_api 78555 6167293952 请求参数: {'settle': 'usdt'}
+DEBUG 2025-07-06 13:05:50,041 gate_api 78555 6167293952 Gate API请求成功，耗时: 0.87秒
+INFO 2025-07-06 13:05:50,046 technical_analysis 78555 6167293952 成功计算AVAXUSDT的所有技术指标
+INFO 2025-07-06 13:05:50,055 views_indicators_data 78555 6167293952 Successfully saved technical indicator data: AVAXUSDT, ID: 151
+INFO 2025-07-06 13:05:50,064 technical_analysis 78555 6167293952 检测到AVAXUSDT的市场类型: crypto
+DEBUG 2025-07-06 13:05:50,064 gate_api 78555 6167293952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 13:05:50,064 gate_api 78555 6167293952 请求参数: {'currency_pair': 'AVAX_USDT'}
+DEBUG 2025-07-06 13:05:50,727 gate_api 78555 6167293952 Gate API请求成功，耗时: 0.66秒
+INFO 2025-07-06 13:05:50,730 technical_analysis 78555 6167293952 开始计算AVAXUSDT的技术指标
+DEBUG 2025-07-06 13:05:50,730 gate_api 78555 6167293952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 13:05:50,730 gate_api 78555 6167293952 请求参数: {'currency_pair': 'AVAX_USDT', 'interval': '1d', 'from': 1743167150, 'limit': 1000}
+DEBUG 2025-07-06 13:05:51,322 gate_api 78555 6167293952 Gate API请求成功，耗时: 0.59秒
+INFO 2025-07-06 13:05:51,326 technical_analysis 78555 6167293952 获取到AVAXUSDT的101条K线数据
+INFO 2025-07-06 13:05:51,326 technical_analysis 78555 6167293952 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 22.03, 22.19, 19.77, 20.36, 4197248.152258, 0, 0, 0, 0, 0, 0]
+INFO 2025-07-06 13:05:51,335 technical_analysis 78555 6167293952 成功计算AVAXUSDT的所有技术指标
+INFO 2025-07-06 13:05:51,340 views_indicators_data 78555 6167293952 Technical analysis record already exists within 12 hours, ID: 151, not creating new one
+INFO 2025-07-06 13:05:51,342 views_indicators_data 78555 6167293952 Successfully saved technical indicator data: AVAXUSDT, ID: 151
+INFO 2025-07-06 13:06:00,505 utils 78555 6167293952 Cached technical indicators for AVAXUSDT (en-US) with key: 1d63dff4db3944ab576c8050c7be9e38
+INFO 2025-07-06 13:06:16,597 views_news 78555 6167293952 Getting news for XRP in crypto market
+INFO 2025-07-06 13:06:16,599 views_news 78555 6167293952 Getting crypto news for XRP
+INFO 2025-07-06 13:06:16,600 views_news 78555 13035925504 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 13:06:16,600 views_news 78555 13052751872 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 13:06:16,601 views_news 78555 13069578240 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 13:06:16,602 views_news 78555 13086404608 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 13:06:16,615 utils 78555 6150467584 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-07-06 13:06:16,639 utils 78555 6150467584 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-07-06 13:06:16,965 views_news 78555 13069578240 RSS feed returned 2 news items
+INFO 2025-07-06 13:06:16,970 views_news 78555 13052751872 RSS feed returned 2 news items
+ERROR 2025-07-06 13:06:17,053 views_news 78555 13035925504 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 13:06:17,054 views_news 78555 13035925504 RSS feed returned 1 news items
+INFO 2025-07-06 13:06:17,056 views_news 78555 6167293952 coindesk returned 1 news items
+INFO 2025-07-06 13:06:17,057 views_news 78555 6167293952 cointelegraph returned 2 news items
+INFO 2025-07-06 13:06:17,057 views_news 78555 6167293952 decrypt returned 2 news items
+INFO 2025-07-06 13:06:17,436 views_news 78555 13086404608 RSS feed returned 2 news items
+INFO 2025-07-06 13:06:17,440 views_news 78555 6167293952 beincrypto returned 2 news items
+INFO 2025-07-06 13:06:29,206 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:06:29,207 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:06:29,537 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:06:29,537 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:06:33,968 technical_analysis 78555 6150467584 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 13:06:33,969 utils 78555 6150467584 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 13:06:34,336 technical_analysis 78555 6150467584 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 13:06:34,336 utils 78555 6150467584 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 13:06:45,328 technical_analysis 78555 6150467584 检测到600000.SH的市场类型: china
+INFO 2025-07-06 13:06:45,540 technical_analysis 78555 6150467584 格式化后的股票代码: 600000.SH
+INFO 2025-07-06 13:06:45,623 technical_analysis 78555 6150467584 开始计算600000.SH的技术指标
+INFO 2025-07-06 13:06:46,021 technical_analysis 78555 6150467584 成功获取600000.SH的A股基本面指标
+INFO 2025-07-06 13:06:46,026 technical_analysis 78555 6150467584 成功计算600000.SH的所有技术指标
+INFO 2025-07-06 13:06:46,128 technical_analysis 78555 6150467584 检测到600000.SH的市场类型: china
+INFO 2025-07-06 13:06:46,332 technical_analysis 78555 6150467584 格式化后的股票代码: 600000.SH
+INFO 2025-07-06 13:06:46,418 technical_analysis 78555 6150467584 开始计算600000.SH的技术指标
+INFO 2025-07-06 13:06:46,898 technical_analysis 78555 6150467584 成功获取600000.SH的A股基本面指标
+INFO 2025-07-06 13:06:46,903 technical_analysis 78555 6150467584 成功计算600000.SH的所有技术指标
+INFO 2025-07-06 13:06:54,790 technical_analysis 78555 6150467584 成功获取600000.SH的A股基本面指标
+INFO 2025-07-06 13:06:54,792 utils 78555 6150467584 Cached technical indicators for 600000.SH (en-US) with key: f31d04f3e55143cd6c334cff610acc29
