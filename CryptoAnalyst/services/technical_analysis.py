@@ -5,6 +5,7 @@ import time
 from typing import Dict, List, Optional, Union
 from datetime import datetime, timedelta
 from CryptoAnalyst.services.gate_api import GateAPI
+from CryptoAnalyst.services.tushare_api import TushareAPI
 import requests
 import os
 import traceback
@@ -17,6 +18,30 @@ class TechnicalAnalysisService:
     def __init__(self):
         """初始化技术分析服务"""
         self.gate_api = GateAPI()  # 使用Gate API
+        self.tushare_api = TushareAPI()  # 使用Tushare API
+
+    def _detect_market_type(self, symbol: str) -> str:
+        """检测市场类型
+
+        Args:
+            symbol: 交易符号
+
+        Returns:
+            str: 市场类型 ('crypto', 'stock', 'china')
+        """
+        symbol = symbol.upper()
+
+        # A股市场检测
+        if ('.' in symbol and (symbol.endswith('.SZ') or symbol.endswith('.SH'))) or \
+           (symbol.isdigit() and len(symbol) == 6):
+            return 'china'
+
+        # 美股市场检测（通常是字母组合，不含USDT）
+        if symbol.isalpha() and not symbol.endswith('USDT'):
+            return 'stock'
+
+        # 默认为加密货币市场
+        return 'crypto'
 
     def get_all_indicators(self, symbol: str, interval: str = '1d', limit: int = 1000) -> Dict:
         """获取所有技术指标数据
@@ -29,6 +54,26 @@ class TechnicalAnalysisService:
         Returns:
             Dict: 包含所有技术指标的字典
         """
+        try:
+            # 检测市场类型
+            market_type = self._detect_market_type(symbol)
+            logger.info(f"检测到{symbol}的市场类型: {market_type}")
+
+            if market_type == 'china':
+                return self._get_china_stock_indicators(symbol, interval, limit)
+            else:
+                return self._get_crypto_indicators(symbol, interval, limit)
+
+        except Exception as e:
+            logger.error(f"获取技术指标时发生错误: {str(e)}")
+            logger.error(traceback.format_exc())
+            return {
+                'status': 'error',
+                'message': "获取技术指标时发生错误，请稍后重试"
+            }
+
+    def _get_crypto_indicators(self, symbol: str, interval: str = '1d', limit: int = 1000) -> Dict:
+        """获取加密货币技术指标"""
         try:
             # 确保 gate_api 客户端已初始化
             if not self.gate_api._ensure_client():
@@ -50,6 +95,56 @@ class TechnicalAnalysisService:
             # 成功获取实时价格，开始计算技术指标
             logger.info(f"开始计算{symbol}的技术指标")
 
+            return self._calculate_crypto_technical_indicators(symbol, interval, limit, price)
+
+        except Exception as e:
+            logger.error(f"获取加密货币技术指标时发生错误: {str(e)}")
+            logger.error(traceback.format_exc())
+            return {
+                'status': 'error',
+                'message': "获取技术指标时发生错误，请稍后重试"
+            }
+
+    def _get_china_stock_indicators(self, symbol: str, interval: str = '1d', limit: int = 100) -> Dict:
+        """获取A股技术指标"""
+        try:
+            # 确保 tushare_api 客户端已初始化
+            if not self.tushare_api._ensure_client():
+                logger.error("无法初始化 Tushare API 客户端")
+                return {
+                    'status': 'error',
+                    'message': "无法连接到 Tushare API，请检查API配置"
+                }
+
+            # 格式化股票代码
+            ts_code = self.tushare_api.format_symbol(symbol)
+            logger.info(f"格式化后的股票代码: {ts_code}")
+
+            # 首先检查是否能获取实时价格
+            price = self.tushare_api.get_realtime_price(ts_code)
+            if not price:
+                logger.error(f"无法获取{ts_code}的实时价格，股票代码可能不存在")
+                return {
+                    'status': 'error',
+                    'message': f"无法获取{symbol}的实时价格，请检查股票代码是否存在"
+                }
+
+            # 成功获取实时价格，开始计算技术指标
+            logger.info(f"开始计算{ts_code}的技术指标")
+
+            return self._calculate_china_stock_technical_indicators(ts_code, interval, limit, price)
+
+        except Exception as e:
+            logger.error(f"获取A股技术指标时发生错误: {str(e)}")
+            logger.error(traceback.format_exc())
+            return {
+                'status': 'error',
+                'message': "获取A股技术指标时发生错误，请稍后重试"
+            }
+
+    def _calculate_crypto_technical_indicators(self, symbol: str, interval: str, limit: int, price: float) -> Dict:
+        """计算加密货币技术指标"""
+        try:
             # 获取历史K线数据，减少请求数据量
             # 从之前的1000天减少到100天，对于新上线的代币更友好
             klines = self.gate_api.get_historical_klines(symbol, interval, '100 days ago UTC')
@@ -244,12 +339,198 @@ class TechnicalAnalysisService:
             }
 
         except Exception as e:
-            logger.error(f"获取技术指标时发生错误: {str(e)}")
+            logger.error(f"获取加密货币技术指标时发生错误: {str(e)}")
             logger.error(traceback.format_exc())
             return {
                 'status': 'error',
                 'message': "获取技术指标时发生错误，请稍后重试"
             }
+
+    def _calculate_china_stock_technical_indicators(self, ts_code: str, interval: str, limit: int, price: float) -> Dict:
+        """计算A股技术指标"""
+        try:
+            # 获取历史日线数据
+            end_date = datetime.now().strftime('%Y%m%d')
+            start_date = (datetime.now() - timedelta(days=limit)).strftime('%Y%m%d')
+
+            df = self.tushare_api.get_daily_price(ts_code, start_date=start_date, end_date=end_date, limit=limit)
+
+            if df is None or df.empty:
+                logger.warning(f"无法获取{ts_code}的历史数据")
+                return {
+                    'status': 'error',
+                    'message': f"无法获取{ts_code}的历史数据，请稍后重试"
+                }
+
+            # 转换数据格式以适配现有的技术指标计算方法
+            try:
+                # 确保数据类型正确
+                df['trade_date'] = pd.to_datetime(df['trade_date'])
+                df['close'] = df['close'].astype(float)
+                df['open'] = df['open'].astype(float)
+                df['high'] = df['high'].astype(float)
+                df['low'] = df['low'].astype(float)
+                df['vol'] = df['vol'].astype(float)
+
+                # 重命名列以匹配技术指标计算方法的期望格式
+                df = df.rename(columns={
+                    'trade_date': 'timestamp',
+                    'vol': 'volume'
+                })
+
+                # 按时间排序
+                df = df.sort_values('timestamp')
+
+            except Exception as e:
+                logger.error(f"处理A股数据格式时发生错误: {str(e)}")
+                return {
+                    'status': 'error',
+                    'message': "数据处理错误，请稍后重试"
+                }
+
+            # 计算技术指标
+            indicators = {}
+
+            try:
+                # 基本指标，至少需要14天数据
+                if len(df) >= 14:
+                    indicators['RSI'] = self._calculate_rsi(df)
+                    indicators['MACD'] = self._calculate_macd(df)
+                    indicators['BollingerBands'] = self._calculate_bollinger_bands(df)
+                    indicators['BIAS'] = self._calculate_bias(df)
+                else:
+                    logger.warning(f"A股数据不足，无法计算基本技术指标")
+                    # 提供默认值
+                    indicators['RSI'] = 50.0
+                    indicators['MACD'] = {'line': 0.0, 'signal': 0.0, 'histogram': 0.0}
+                    indicators['BollingerBands'] = {'upper': price * 1.02, 'middle': price, 'lower': price * 0.98}
+                    indicators['BIAS'] = 0.0
+
+                # 其他指标
+                if len(df) >= 12:
+                    indicators['PSY'] = self._calculate_psy(df)
+                else:
+                    indicators['PSY'] = 50.0
+
+                if len(df) >= 14:
+                    indicators['DMI'] = self._calculate_dmi(df)
+                else:
+                    indicators['DMI'] = {'plus_di': 25.0, 'minus_di': 25.0, 'adx': 20.0}
+
+                if len(df) >= 20:
+                    indicators['VWAP'] = self._calculate_vwap(df)
+                else:
+                    indicators['VWAP'] = price
+
+                # A股特有指标 - 获取基本面数据
+                basic_data = self._get_china_stock_basic_indicators(ts_code)
+                if basic_data:
+                    indicators.update(basic_data)
+
+                # A股不适用的指标设为0
+                indicators['FundingRate'] = 0.0  # A股没有资金费率
+                indicators['ExchangeNetflow'] = 0.0  # A股没有交易所净流入概念
+
+                # 高级指标
+                if len(df) >= 200:
+                    indicators['NUPL'] = self._calculate_nupl(df, window=200)
+                    indicators['MayerMultiple'] = self._calculate_mayer_multiple(df, window=200)
+                elif len(df) >= 100:
+                    indicators['NUPL'] = self._calculate_nupl(df, window=100)
+                    indicators['MayerMultiple'] = self._calculate_mayer_multiple(df, window=100)
+                elif len(df) >= 50:
+                    indicators['NUPL'] = self._calculate_nupl(df, window=50)
+                    indicators['MayerMultiple'] = self._calculate_mayer_multiple(df, window=50)
+                else:
+                    indicators['NUPL'] = 0.0
+                    indicators['MayerMultiple'] = 1.0
+
+            except Exception as e:
+                logger.error(f"计算A股技术指标时发生错误: {str(e)}")
+                logger.error(traceback.format_exc())
+                return {
+                    'status': 'error',
+                    'message': "计算技术指标时发生错误，请稍后重试"
+                }
+
+            # 验证指标值
+            try:
+                for key, value in indicators.items():
+                    if isinstance(value, (int, float)):
+                        if np.isnan(value) or np.isinf(value):
+                            logger.warning(f"指标 {key} 值异常: {value}，设置为默认值")
+                            indicators[key] = 0.0
+                    elif isinstance(value, dict):
+                        for sub_key, sub_value in value.items():
+                            if isinstance(sub_value, (int, float)) and (np.isnan(sub_value) or np.isinf(sub_value)):
+                                logger.warning(f"指标 {key}.{sub_key} 值异常: {sub_value}，设置为默认值")
+                                value[sub_key] = 0.0
+            except Exception as e:
+                logger.error(f"验证A股指标值时发生错误: {str(e)}")
+
+            # 成功计算所有技术指标
+            logger.info(f"成功计算{ts_code}的所有技术指标")
+            return {
+                'status': 'success',
+                'data': {
+                    'symbol': ts_code,
+                    'interval': interval,
+                    'timestamp': datetime.now().isoformat(),
+                    'indicators': indicators
+                }
+            }
+
+        except Exception as e:
+            logger.error(f"获取A股技术指标时发生错误: {str(e)}")
+            logger.error(traceback.format_exc())
+            return {
+                'status': 'error',
+                'message': "获取A股技术指标时发生错误，请稍后重试"
+            }
+
+    def _get_china_stock_basic_indicators(self, ts_code: str) -> Dict:
+        """获取A股基本面指标
+
+        Args:
+            ts_code: 股票代码
+
+        Returns:
+            Dict: A股基本面指标
+        """
+        try:
+            # 获取每日基本面指标
+            basic_df = self.tushare_api.get_daily_basic(ts_code=ts_code)
+
+            if basic_df is None or basic_df.empty:
+                logger.warning(f"无法获取{ts_code}的基本面数据")
+                return {}
+
+            # 取最新一条数据
+            latest_data = basic_df.iloc[0]
+
+            # 构建A股特有指标
+            china_indicators = {
+                'TurnoverRate': float(latest_data.get('turnover_rate', 0) or 0),  # 换手率
+                'VolumeRatio': float(latest_data.get('volume_ratio', 0) or 0),    # 量比
+                'PE': float(latest_data.get('pe', 0) or 0),                       # 市盈率
+                'PE_TTM': float(latest_data.get('pe_ttm', 0) or 0),              # 市盈率TTM
+                'PB': float(latest_data.get('pb', 0) or 0),                       # 市净率
+                'PS': float(latest_data.get('ps', 0) or 0),                       # 市销率
+                'PS_TTM': float(latest_data.get('ps_ttm', 0) or 0),              # 市销率TTM
+                'DividendYield': float(latest_data.get('dv_ratio', 0) or 0),      # 股息率
+                'DividendYield_TTM': float(latest_data.get('dv_ttm', 0) or 0),   # 股息率TTM
+                'TotalMarketValue': float(latest_data.get('total_mv', 0) or 0),   # 总市值(万元)
+                'CircMarketValue': float(latest_data.get('circ_mv', 0) or 0),     # 流通市值(万元)
+                'TotalShare': float(latest_data.get('total_share', 0) or 0),      # 总股本(万股)
+                'FloatShare': float(latest_data.get('float_share', 0) or 0),      # 流通股本(万股)
+            }
+
+            logger.info(f"成功获取{ts_code}的A股基本面指标")
+            return china_indicators
+
+        except Exception as e:
+            logger.error(f"获取A股基本面指标失败: {str(e)}")
+            return {}
 
     def _calculate_rsi(self, df: pd.DataFrame, period: int = 14) -> float:
         """计算RSI指标

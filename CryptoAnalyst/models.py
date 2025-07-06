@@ -4,10 +4,11 @@ from django.conf import settings
 from datetime import timedelta
 
 class MarketType(models.Model):
-    """市场类型模型 - 支持加密货币和美股"""
+    """市场类型模型 - 支持加密货币、美股和A股"""
     MARKET_CHOICES = (
         ('crypto', 'Cryptocurrency'),
         ('stock', 'US Stock'),
+        ('china', 'China A-Share'),
     )
 
     name = models.CharField(max_length=20, choices=MARKET_CHOICES, unique=True)

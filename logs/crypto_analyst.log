@@ -19926,3 +19926,1957 @@ INFO 2025-07-03 10:39:22,517 views_news 60936 6154825728 Getting news for NVDA i
 INFO 2025-07-03 10:39:22,517 views_news 60936 6154825728 Returning cached news for NVDA (stock)
 INFO 2025-07-03 10:39:24,525 utils 60936 6137999360 Cached technical indicators for NVDA (en-US) with key: 130fa8c433f1d4269ee755598cd71bab
 INFO 2025-07-03 10:40:39,454 utils 60936 6137999360 Cached technical indicators for NVDA (en-US) with key: 130fa8c433f1d4269ee755598cd71bab
+ERROR 2025-07-05 11:08:39,137 tushare_api 34415 8525864704 未找到 Tushare API 密钥，请设置 TUSHARE_API_KEY
+ERROR 2025-07-05 11:10:43,898 tushare_api 34597 8525864704 未找到 Tushare API 密钥，请设置 TUSHARE_API_KEY
+ERROR 2025-07-05 11:16:33,320 tushare_api 35025 8525864704 TushareAPI 客户端初始化失败: maximum recursion depth exceeded
+ERROR 2025-07-05 11:16:33,323 tushare_api 35025 8525864704 Traceback (most recent call last):
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 34, in _init_client
+    load_dotenv()
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/site-packages/dotenv/main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/site-packages/dotenv/main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/site-packages/dotenv/main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/site-packages/dotenv/main.py", line 238, in resolve_variables
+    for (name, value) in values:
+                         ^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/site-packages/dotenv/main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/site-packages/dotenv/main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+                   ^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/site-packages/dotenv/parser.py", line 175, in parse_stream
+    yield parse_binding(reader)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/site-packages/dotenv/parser.py", line 147, in parse_binding
+    key = parse_key(reader)
+          ^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/site-packages/dotenv/parser.py", line 112, in parse_key
+    (key,) = reader.read_regex(_unquoted_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/site-packages/dotenv/parser.py", line 94, in read_regex
+    self.position.advance(self.string[match.start():match.end()])
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/site-packages/dotenv/parser.py", line 55, in advance
+    self.line += len(re.findall(_newline, string))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/re/__init__.py", line 217, in findall
+    return _compile(pattern, flags).findall(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+
+ERROR 2025-07-05 11:16:33,323 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,323 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,323 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,323 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,323 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,323 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,323 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,323 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,323 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,324 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,325 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,326 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,327 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,328 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,329 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:16:33,330 tushare_api 35025 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,135 tushare_api 35226 8525864704 TushareAPI 客户端初始化失败: maximum recursion depth exceeded
+ERROR 2025-07-05 11:18:26,138 tushare_api 35226 8525864704 Traceback (most recent call last):
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 34, in _init_client
+    self.token = getattr(settings, 'TUSHARE_API_KEY', None) or os.getenv('TUSHARE_API_KEY')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 66, in _request
+    if not self._ensure_client():
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 60, in _ensure_client
+    return self._init_client()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 51, in _init_client
+    logger.error(f"TushareAPI 客户端初始化失败: {e}")
+RecursionError: maximum recursion depth exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1798, in isEnabledFor
+    return self._cache[level]
+           ~~~~~~~~~~~^^^^^^^
+KeyError: 40
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 41, in _init_client
+    test_result = self._request('stock_basic', fields='ts_code,symbol,name', limit=1)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 96, in _request
+    logger.error(f"Tushare API 请求失败: {str(e)}")
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1567, in error
+    if self.isEnabledFor(ERROR):
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1800, in isEnabledFor
+    _acquireLock()
+RecursionError: maximum recursion depth exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 66, in _request
+    if not self._ensure_client():
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 60, in _ensure_client
+    return self._init_client()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 51, in _init_client
+    logger.error(f"TushareAPI 客户端初始化失败: {e}")
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1568, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1672, in _log
+    fn, lno, func, sinfo = self.findCaller(stack_info, stacklevel)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1616, in findCaller
+    f = currentframe()
+        ^^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 41, in _init_client
+    test_result = self._request('stock_basic', fields='ts_code,symbol,name', limit=1)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 96, in _request
+    logger.error(f"Tushare API 请求失败: {str(e)}")
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1568, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1682, in _log
+    record = self.makeRecord(self.name, level, fn, lno, msg, args,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1651, in makeRecord
+    rv = _logRecordFactory(name, level, fn, lno, msg, args, exc_info, func,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 332, in __init__
+    self.filename = os.path.basename(pathname)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 172, in basename
+RecursionError: maximum recursion depth exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 66, in _request
+    if not self._ensure_client():
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 60, in _ensure_client
+    return self._init_client()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 51, in _init_client
+    logger.error(f"TushareAPI 客户端初始化失败: {e}")
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1568, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1684, in _log
+    self.handle(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1700, in handle
+    self.callHandlers(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1762, in callHandlers
+    hdlr.handle(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1028, in handle
+    self.emit(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 41, in _init_client
+    test_result = self._request('stock_basic', fields='ts_code,symbol,name', limit=1)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 96, in _request
+    logger.error(f"Tushare API 请求失败: {str(e)}")
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1568, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1684, in _log
+    self.handle(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1700, in handle
+    self.callHandlers(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1762, in callHandlers
+    hdlr.handle(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1028, in handle
+    self.emit(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 999, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 703, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 66, in _request
+    if not self._ensure_client():
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 60, in _ensure_client
+    return self._init_client()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 51, in _init_client
+    logger.error(f"TushareAPI 客户端初始化失败: {e}")
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1568, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1684, in _log
+    self.handle(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1700, in handle
+    self.callHandlers(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1762, in callHandlers
+    hdlr.handle(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1028, in handle
+    self.emit(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 999, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 704, in format
+    if self.usesTime():
+       ^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 672, in usesTime
+    return self._style.usesTime()
+           ^^^^^^^^^^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 41, in _init_client
+    test_result = self._request('stock_basic', fields='ts_code,symbol,name', limit=1)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/Documents/cooltrade/backend/CryptoAnalyst/services/tushare_api.py", line 96, in _request
+    logger.error(f"Tushare API 请求失败: {str(e)}")
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1568, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1684, in _log
+    self.handle(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1700, in handle
+    self.callHandlers(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1762, in callHandlers
+    hdlr.handle(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1028, in handle
+    self.emit(record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1280, in emit
+    StreamHandler.emit(self, record)
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 999, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 706, in format
+    s = self.formatMessage(record)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 675, in formatMessage
+    return self._style.format(record)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lucas/miniconda3/envs/cooltrade/lib/python3.12/logging/__init__.py", line 464, in format
+    return self._format(record)
+           ^^^^^^^^^^^^^^^^^^^^
+RecursionError: maximum recursion depth exceeded
+
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,139 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,140 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,141 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,142 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,143 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,144 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,144 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,144 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,144 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,144 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,144 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,144 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,144 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,145 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,145 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,145 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,145 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,145 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,145 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,145 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,145 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,145 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,146 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,146 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,146 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,147 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,147 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,147 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,147 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,147 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,147 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,147 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,147 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,147 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,147 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,147 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,147 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,148 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,148 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,148 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,148 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,148 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,148 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,148 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,148 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,148 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,148 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,148 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,148 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,148 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,149 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,150 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,150 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,150 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,150 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,150 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,150 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,150 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,150 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,150 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,150 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,150 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,150 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,150 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,151 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,151 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,151 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,152 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,152 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,152 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,152 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,152 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,152 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,153 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+ERROR 2025-07-05 11:18:26,154 tushare_api 35226 8525864704 Tushare API 连接测试失败
+INFO 2025-07-05 11:29:35,626 technical_analysis 35917 8525864704 检测到000001.SZ的市场类型: china
+ERROR 2025-07-05 11:29:35,708 technical_analysis 35917 8525864704 无法初始化 Tushare API 客户端
+WARNING 2025-07-05 13:29:16,638 views_search 38933 6129840128 Unable to get China stock basic data from Tushare
+INFO 2025-07-06 08:41:20,325 views_search 67094 6139047936 PopularAssets request path: /api/china/popular-assets/, detected market_type: china
+INFO 2025-07-06 08:43:06,859 views_news 67094 6139047936 Getting news for 000001.SZ in china market
+INFO 2025-07-06 08:43:06,859 views_news 67094 6139047936 Getting China stock news for 000001.SZ
+INFO 2025-07-06 08:43:06,861 views_news 67094 6139047936 No news found for China stock 000001.SZ
+INFO 2025-07-06 08:44:30,146 technical_analysis 67094 6139047936 检测到000001.SZUSDT的市场类型: crypto
+DEBUG 2025-07-06 08:44:30,148 gate_api 67094 6139047936 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 08:44:30,149 gate_api 67094 6139047936 请求参数: {'currency_pair': '000001.SZ_USDT'}
+WARNING 2025-07-06 08:44:31,207 gate_api 67094 6139047936 Gate API请求失败 (1/3): HTTP 400, 耗时: 1.06秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-07-06 08:44:31,207 gate_api 67094 6139047936 响应内容: {"label":"INVALID_CURRENCY","message":"Invalid currency 000001.SZ"}
+DEBUG 2025-07-06 08:44:32,211 gate_api 67094 6139047936 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 08:44:32,212 gate_api 67094 6139047936 请求参数: {'currency_pair': '000001.SZ_USDT'}
+WARNING 2025-07-06 08:44:33,456 gate_api 67094 6139047936 Gate API请求失败 (2/3): HTTP 400, 耗时: 1.24秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-07-06 08:44:33,456 gate_api 67094 6139047936 响应内容: {"label":"INVALID_CURRENCY","message":"Invalid currency 000001.SZ"}
+DEBUG 2025-07-06 08:44:34,456 gate_api 67094 6139047936 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 08:44:34,457 gate_api 67094 6139047936 请求参数: {'currency_pair': '000001.SZ_USDT'}
+WARNING 2025-07-06 08:44:36,099 gate_api 67094 6139047936 Gate API请求失败 (3/3): HTTP 400, 耗时: 1.64秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-07-06 08:44:36,099 gate_api 67094 6139047936 响应内容: {"label":"INVALID_CURRENCY","message":"Invalid currency 000001.SZ"}
+ERROR 2025-07-06 08:44:37,101 gate_api 67094 6139047936 在3次尝试后仍无法完成请求: None
+ERROR 2025-07-06 08:44:37,107 gate_api 67094 6139047936 获取000001.SZUSDT实时价格失败
+ERROR 2025-07-06 08:44:37,110 technical_analysis 67094 6139047936 无法获取000001.SZUSDT的实时价格，交易对可能不存在
+INFO 2025-07-06 08:51:11,718 technical_analysis 68050 8525864704 检测到000001.SZ的市场类型: china
+INFO 2025-07-06 08:51:11,910 technical_analysis 68050 8525864704 格式化后的股票代码: 000001.SZ
+INFO 2025-07-06 08:51:11,996 technical_analysis 68050 8525864704 开始计算000001.SZ的技术指标
+INFO 2025-07-06 08:51:12,169 technical_analysis 68050 8525864704 成功计算000001.SZ的所有技术指标
+INFO 2025-07-06 08:51:53,321 technical_analysis 67552 6160723968 检测到000001.SZUSDT的市场类型: crypto
+DEBUG 2025-07-06 08:51:53,324 gate_api 67552 6160723968 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 08:51:53,324 gate_api 67552 6160723968 请求参数: {'currency_pair': '000001.SZ_USDT'}
+WARNING 2025-07-06 08:51:54,181 gate_api 67552 6160723968 Gate API请求失败 (1/3): HTTP 400, 耗时: 0.86秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-07-06 08:51:54,181 gate_api 67552 6160723968 响应内容: {"label":"INVALID_CURRENCY","message":"Invalid currency 000001.SZ"}
+DEBUG 2025-07-06 08:51:55,182 gate_api 67552 6160723968 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 08:51:55,182 gate_api 67552 6160723968 请求参数: {'currency_pair': '000001.SZ_USDT'}
+WARNING 2025-07-06 08:51:55,924 gate_api 67552 6160723968 Gate API请求失败 (2/3): HTTP 400, 耗时: 0.74秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-07-06 08:51:55,924 gate_api 67552 6160723968 响应内容: {"label":"INVALID_CURRENCY","message":"Invalid currency 000001.SZ"}
+DEBUG 2025-07-06 08:51:56,928 gate_api 67552 6160723968 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 08:51:56,929 gate_api 67552 6160723968 请求参数: {'currency_pair': '000001.SZ_USDT'}
+WARNING 2025-07-06 08:51:57,914 gate_api 67552 6160723968 Gate API请求失败 (3/3): HTTP 400, 耗时: 0.99秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-07-06 08:51:57,915 gate_api 67552 6160723968 响应内容: {"label":"INVALID_CURRENCY","message":"Invalid currency 000001.SZ"}
+ERROR 2025-07-06 08:51:58,915 gate_api 67552 6160723968 在3次尝试后仍无法完成请求: None
+ERROR 2025-07-06 08:51:58,919 gate_api 67552 6160723968 获取000001.SZUSDT实时价格失败
+ERROR 2025-07-06 08:51:58,920 technical_analysis 67552 6160723968 无法获取000001.SZUSDT的实时价格，交易对可能不存在
+INFO 2025-07-06 08:53:11,360 technical_analysis 67552 6160723968 检测到000001.SZUSDT的市场类型: crypto
+DEBUG 2025-07-06 08:53:11,363 gate_api 67552 6160723968 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 08:53:11,363 gate_api 67552 6160723968 请求参数: {'currency_pair': '000001.SZ_USDT'}
+WARNING 2025-07-06 08:53:12,531 gate_api 67552 6160723968 Gate API请求失败 (1/3): HTTP 400, 耗时: 1.17秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-07-06 08:53:12,531 gate_api 67552 6160723968 响应内容: {"label":"INVALID_CURRENCY","message":"Invalid currency 000001.SZ"}
+DEBUG 2025-07-06 08:53:13,532 gate_api 67552 6160723968 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 08:53:13,532 gate_api 67552 6160723968 请求参数: {'currency_pair': '000001.SZ_USDT'}
+WARNING 2025-07-06 08:53:14,840 gate_api 67552 6160723968 Gate API请求失败 (2/3): HTTP 400, 耗时: 1.31秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-07-06 08:53:14,840 gate_api 67552 6160723968 响应内容: {"label":"INVALID_CURRENCY","message":"Invalid currency 000001.SZ"}
+DEBUG 2025-07-06 08:53:15,841 gate_api 67552 6160723968 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 08:53:15,841 gate_api 67552 6160723968 请求参数: {'currency_pair': '000001.SZ_USDT'}
+WARNING 2025-07-06 08:53:17,188 gate_api 67552 6160723968 Gate API请求失败 (3/3): HTTP 400, 耗时: 1.35秒, URL: https://api.gateio.ws/api/v4/spot/tickers
+WARNING 2025-07-06 08:53:17,188 gate_api 67552 6160723968 响应内容: {"label":"INVALID_CURRENCY","message":"Invalid currency 000001.SZ"}
+ERROR 2025-07-06 08:53:18,193 gate_api 67552 6160723968 在3次尝试后仍无法完成请求: None
+ERROR 2025-07-06 08:53:18,199 gate_api 67552 6160723968 获取000001.SZUSDT实时价格失败
+ERROR 2025-07-06 08:53:18,200 technical_analysis 67552 6160723968 无法获取000001.SZUSDT的实时价格，交易对可能不存在
+INFO 2025-07-06 08:57:51,354 technical_analysis 68316 6137999360 检测到000001.SZ的市场类型: china
+INFO 2025-07-06 08:57:52,134 technical_analysis 68316 6137999360 格式化后的股票代码: 000001.SZ
+INFO 2025-07-06 08:57:52,229 technical_analysis 68316 6137999360 开始计算000001.SZ的技术指标
+INFO 2025-07-06 08:57:52,381 technical_analysis 68316 6137999360 成功计算000001.SZ的所有技术指标
+INFO 2025-07-06 08:57:52,388 technical_analysis 68316 6137999360 检测到000001.SZ的市场类型: china
+INFO 2025-07-06 08:57:52,614 technical_analysis 68316 6137999360 格式化后的股票代码: 000001.SZ
+INFO 2025-07-06 08:57:52,696 technical_analysis 68316 6137999360 开始计算000001.SZ的技术指标
+INFO 2025-07-06 08:57:52,868 technical_analysis 68316 6137999360 成功计算000001.SZ的所有技术指标
+INFO 2025-07-06 08:58:51,778 technical_analysis 68444 6167490560 检测到000001.SZ的市场类型: china
+INFO 2025-07-06 08:58:52,025 technical_analysis 68444 6167490560 格式化后的股票代码: 000001.SZ
+INFO 2025-07-06 08:58:52,106 technical_analysis 68444 6167490560 开始计算000001.SZ的技术指标
+INFO 2025-07-06 08:58:52,267 technical_analysis 68444 6167490560 成功计算000001.SZ的所有技术指标
+INFO 2025-07-06 08:59:33,571 utils 68444 6167490560 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:00:58,761 views_news 68444 6184890368 Getting news for 000001.SZ in china market
+INFO 2025-07-06 09:00:58,761 views_news 68444 6184890368 Getting China stock news for 000001.SZ
+INFO 2025-07-06 09:00:58,763 views_news 68444 6184890368 No news found for China stock 000001.SZ
+INFO 2025-07-06 09:26:44,120 utils 70451 6134329344 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:26:52,368 views_news 70451 6134329344 Getting news for FUN in crypto market
+INFO 2025-07-06 09:26:52,369 views_news 70451 6134329344 Getting crypto news for FUN
+INFO 2025-07-06 09:26:52,371 views_news 70451 6201634816 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 09:26:52,372 views_news 70451 6218461184 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 09:26:52,374 views_news 70451 6235287552 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 09:26:52,376 views_news 70451 6252113920 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 09:26:52,954 views_news 70451 6218461184 RSS feed returned 1 news items
+INFO 2025-07-06 09:26:52,993 views_news 70451 6235287552 RSS feed returned 2 news items
+ERROR 2025-07-06 09:26:53,085 views_news 70451 6201634816 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 09:26:53,085 views_news 70451 6201634816 RSS feed returned 0 news items
+INFO 2025-07-06 09:26:53,086 views_news 70451 6134329344 cointelegraph returned 1 news items
+INFO 2025-07-06 09:26:53,086 views_news 70451 6134329344 decrypt returned 2 news items
+INFO 2025-07-06 09:26:53,323 views_news 70451 6252113920 RSS feed returned 1 news items
+INFO 2025-07-06 09:26:53,325 views_news 70451 6134329344 beincrypto returned 1 news items
+INFO 2025-07-06 09:26:53,330 views_news 70451 6134329344 Getting news for FUN in crypto market
+INFO 2025-07-06 09:26:53,331 views_news 70451 6134329344 Returning cached news for FUN (crypto)
+INFO 2025-07-06 09:27:18,103 views_news 70451 6134329344 Getting news for FUN in crypto market
+INFO 2025-07-06 09:27:18,104 views_news 70451 6134329344 Returning cached news for FUN (crypto)
+INFO 2025-07-06 09:28:24,804 utils 70451 6134329344 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:28:24,833 utils 70451 6134329344 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:28:37,159 utils 70451 6134329344 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:29:43,209 utils 70451 6134329344 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:29:53,656 utils 70451 6134329344 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:30:52,449 utils 70612 6138933248 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:32:05,050 utils 70612 6138933248 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:32:42,859 utils 70612 6138933248 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:33:15,067 utils 70612 6138933248 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:33:45,010 utils 70612 6138933248 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:34:07,526 views_news 70612 6138933248 Getting news for BTC in crypto market
+INFO 2025-07-06 09:34:07,526 views_news 70612 6138933248 Getting crypto news for BTC
+INFO 2025-07-06 09:34:07,527 views_news 70612 6155759616 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 09:34:07,527 views_news 70612 6172585984 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 09:34:07,528 views_news 70612 6189412352 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 09:34:07,535 views_news 70612 6206238720 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 09:34:07,993 views_news 70612 6172585984 RSS feed returned 2 news items
+INFO 2025-07-06 09:34:08,132 views_news 70612 6155759616 RSS feed returned 2 news items
+INFO 2025-07-06 09:34:08,134 views_news 70612 6138933248 coindesk returned 2 news items
+INFO 2025-07-06 09:34:08,134 views_news 70612 6138933248 cointelegraph returned 2 news items
+INFO 2025-07-06 09:34:08,373 views_news 70612 6189412352 RSS feed returned 2 news items
+INFO 2025-07-06 09:34:08,375 views_news 70612 6138933248 decrypt returned 2 news items
+INFO 2025-07-06 09:34:08,619 views_news 70612 6206238720 RSS feed returned 2 news items
+INFO 2025-07-06 09:34:08,622 views_news 70612 6138933248 beincrypto returned 2 news items
+INFO 2025-07-06 09:34:09,529 utils 70612 6138933248 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 09:38:27,482 views_news 70612 6155759616 Getting news for BTC in crypto market
+INFO 2025-07-06 09:38:27,485 views_news 70612 6155759616 Getting crypto news for BTC
+INFO 2025-07-06 09:38:27,486 views_news 70612 6172585984 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 09:38:27,487 views_news 70612 6189412352 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 09:38:27,492 views_news 70612 6206238720 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 09:38:27,496 views_news 70612 6223638528 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 09:38:27,525 utils 70612 6138933248 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 09:38:27,578 utils 70612 6138933248 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 09:38:27,854 views_news 70612 6189412352 RSS feed returned 2 news items
+INFO 2025-07-06 09:38:27,865 views_news 70612 6206238720 RSS feed returned 2 news items
+INFO 2025-07-06 09:38:28,188 views_news 70612 6172585984 RSS feed returned 2 news items
+INFO 2025-07-06 09:38:28,193 views_news 70612 6155759616 coindesk returned 2 news items
+INFO 2025-07-06 09:38:28,193 views_news 70612 6155759616 cointelegraph returned 2 news items
+INFO 2025-07-06 09:38:28,193 views_news 70612 6155759616 decrypt returned 2 news items
+INFO 2025-07-06 09:38:28,497 views_news 70612 6223638528 RSS feed returned 2 news items
+INFO 2025-07-06 09:38:28,502 views_news 70612 6155759616 beincrypto returned 2 news items
+INFO 2025-07-06 09:38:28,508 views_news 70612 6240464896 Getting news for BTC in crypto market
+INFO 2025-07-06 09:38:28,509 views_news 70612 6240464896 Returning cached news for BTC (crypto)
+INFO 2025-07-06 09:38:39,015 views_news 70612 6155759616 Getting news for AAPL in stock market
+INFO 2025-07-06 09:38:39,015 views_news 70612 6155759616 Tiingo key available: True
+INFO 2025-07-06 09:38:39,015 views_news 70612 6155759616 NewsAPI key available: False
+INFO 2025-07-06 09:38:39,022 utils 70612 6138933248 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:38:39,048 utils 70612 6138933248 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:38:40,286 views_news 70612 6155759616 tiingo returned 10 news items
+INFO 2025-07-06 09:38:40,305 views_news 70612 6155759616 Getting news for AAPL in stock market
+INFO 2025-07-06 09:38:40,305 views_news 70612 6155759616 Returning cached news for AAPL (stock)
+INFO 2025-07-06 09:39:02,841 views_news 70612 6138933248 Getting news for AAPL in stock market
+INFO 2025-07-06 09:39:02,842 views_news 70612 6138933248 Returning cached news for AAPL (stock)
+INFO 2025-07-06 09:39:04,879 utils 70612 6138933248 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:39:33,544 utils 70612 6155759616 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:39:33,574 utils 70612 6155759616 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:39:53,768 utils 70612 6138933248 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:40:04,848 utils 70612 6138933248 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:48:50,877 technical_analysis 71337 6204633088 检测到000001.SZ的市场类型: china
+INFO 2025-07-06 09:48:51,587 technical_analysis 71337 6204633088 格式化后的股票代码: 000001.SZ
+INFO 2025-07-06 09:48:51,681 technical_analysis 71337 6204633088 开始计算000001.SZ的技术指标
+INFO 2025-07-06 09:48:51,834 technical_analysis 71337 6204633088 成功计算000001.SZ的所有技术指标
+INFO 2025-07-06 09:49:21,006 utils 71337 6204633088 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:52:44,656 utils 71337 6204633088 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:52:44,687 utils 71337 6204633088 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:52:52,405 utils 71337 6204633088 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:54:35,800 views_news 71337 6238859264 Getting news for 000001.SZ in stock market
+INFO 2025-07-06 09:54:35,812 views_news 71337 6238859264 Tiingo key available: True
+INFO 2025-07-06 09:54:35,817 views_news 71337 6238859264 NewsAPI key available: False
+INFO 2025-07-06 09:54:36,858 views_news 71337 6238859264 Getting news for 000001.SZ in stock market
+INFO 2025-07-06 09:54:36,858 views_news 71337 6238859264 Tiingo key available: True
+INFO 2025-07-06 09:54:36,858 views_news 71337 6238859264 NewsAPI key available: False
+INFO 2025-07-06 09:54:44,565 views_news 71337 6222032896 Getting news for BTC in crypto market
+INFO 2025-07-06 09:54:44,568 views_news 71337 6222032896 Getting crypto news for BTC
+INFO 2025-07-06 09:54:44,568 views_news 71337 6238859264 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 09:54:44,568 views_news 71337 6255685632 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 09:54:44,576 views_news 71337 6272512000 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 09:54:44,579 views_news 71337 6289338368 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 09:54:44,586 utils 71337 6204633088 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 09:54:44,609 utils 71337 6204633088 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 09:54:45,081 views_news 71337 6255685632 RSS feed returned 2 news items
+INFO 2025-07-06 09:54:45,127 views_news 71337 6238859264 RSS feed returned 2 news items
+INFO 2025-07-06 09:54:45,128 views_news 71337 6222032896 coindesk returned 2 news items
+INFO 2025-07-06 09:54:45,128 views_news 71337 6222032896 cointelegraph returned 2 news items
+INFO 2025-07-06 09:54:45,387 views_news 71337 6272512000 RSS feed returned 2 news items
+INFO 2025-07-06 09:54:45,396 views_news 71337 6222032896 decrypt returned 2 news items
+INFO 2025-07-06 09:54:45,491 views_news 71337 6289338368 RSS feed returned 2 news items
+INFO 2025-07-06 09:54:45,493 views_news 71337 6222032896 beincrypto returned 2 news items
+INFO 2025-07-06 09:54:45,510 views_news 71337 6204633088 Getting news for BTC in crypto market
+INFO 2025-07-06 09:54:45,511 views_news 71337 6204633088 Returning cached news for BTC (crypto)
+INFO 2025-07-06 09:54:46,637 views_news 71337 6238859264 Getting news for AAPL in stock market
+INFO 2025-07-06 09:54:46,637 views_news 71337 6238859264 Tiingo key available: True
+INFO 2025-07-06 09:54:46,637 views_news 71337 6238859264 NewsAPI key available: False
+INFO 2025-07-06 09:54:46,643 utils 71337 6222032896 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:54:47,644 views_news 71337 6238859264 tiingo returned 10 news items
+INFO 2025-07-06 09:54:47,649 views_news 71337 6238859264 Getting news for AAPL in stock market
+INFO 2025-07-06 09:54:47,649 views_news 71337 6238859264 Returning cached news for AAPL (stock)
+INFO 2025-07-06 09:54:48,584 utils 71337 6238859264 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 09:54:53,349 utils 71337 6204633088 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:54:53,375 utils 71337 6204633088 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:55:19,321 technical_analysis 71337 6204633088 检测到000002.SZ的市场类型: china
+INFO 2025-07-06 09:55:19,514 technical_analysis 71337 6204633088 格式化后的股票代码: 000002.SZ
+INFO 2025-07-06 09:55:19,597 technical_analysis 71337 6204633088 开始计算000002.SZ的技术指标
+INFO 2025-07-06 09:55:19,798 technical_analysis 71337 6204633088 成功计算000002.SZ的所有技术指标
+INFO 2025-07-06 09:55:19,897 technical_analysis 71337 6204633088 检测到000002.SZ的市场类型: china
+INFO 2025-07-06 09:55:20,080 technical_analysis 71337 6204633088 格式化后的股票代码: 000002.SZ
+INFO 2025-07-06 09:55:20,158 technical_analysis 71337 6204633088 开始计算000002.SZ的技术指标
+INFO 2025-07-06 09:55:20,318 technical_analysis 71337 6204633088 成功计算000002.SZ的所有技术指标
+INFO 2025-07-06 09:55:28,967 utils 71337 6204633088 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 09:55:59,529 utils 71337 6204633088 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:55:59,555 utils 71337 6204633088 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:56:14,021 utils 71337 6204633088 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 09:56:14,045 utils 71337 6204633088 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 09:58:57,826 views_news 71337 6204633088 Getting news for 000002.SZ in stock market
+INFO 2025-07-06 09:58:57,826 views_news 71337 6204633088 Tiingo key available: True
+INFO 2025-07-06 09:58:57,826 views_news 71337 6204633088 NewsAPI key available: False
+INFO 2025-07-06 09:58:58,936 views_news 71337 6204633088 Getting news for 000002.SZ in stock market
+INFO 2025-07-06 09:58:58,936 views_news 71337 6204633088 Tiingo key available: True
+INFO 2025-07-06 09:58:58,936 views_news 71337 6204633088 NewsAPI key available: False
+INFO 2025-07-06 09:59:01,899 views_news 71337 6222032896 Getting news for 000001.SZ in stock market
+INFO 2025-07-06 09:59:01,900 views_news 71337 6222032896 Tiingo key available: True
+INFO 2025-07-06 09:59:01,900 views_news 71337 6222032896 NewsAPI key available: False
+INFO 2025-07-06 09:59:05,828 views_news 71337 6204633088 Getting news for 000001.SZ in stock market
+INFO 2025-07-06 09:59:05,829 views_news 71337 6204633088 Tiingo key available: True
+INFO 2025-07-06 09:59:05,829 views_news 71337 6204633088 NewsAPI key available: False
+INFO 2025-07-06 09:59:14,896 views_news 71337 6222032896 Getting news for BTC in crypto market
+INFO 2025-07-06 09:59:14,899 views_news 71337 6222032896 Getting crypto news for BTC
+INFO 2025-07-06 09:59:14,899 views_news 71337 6238859264 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 09:59:14,900 views_news 71337 6255685632 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 09:59:14,901 views_news 71337 6272512000 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 09:59:14,902 views_news 71337 6289338368 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 09:59:14,957 utils 71337 6204633088 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 09:59:14,998 utils 71337 6204633088 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 09:59:15,338 views_news 71337 6272512000 RSS feed returned 2 news items
+INFO 2025-07-06 09:59:15,583 views_news 71337 6238859264 RSS feed returned 2 news items
+INFO 2025-07-06 09:59:15,585 views_news 71337 6222032896 coindesk returned 2 news items
+INFO 2025-07-06 09:59:15,670 views_news 71337 6289338368 RSS feed returned 2 news items
+INFO 2025-07-06 09:59:15,853 views_news 71337 6255685632 RSS feed returned 2 news items
+INFO 2025-07-06 09:59:15,856 views_news 71337 6222032896 cointelegraph returned 2 news items
+INFO 2025-07-06 09:59:15,857 views_news 71337 6222032896 decrypt returned 2 news items
+INFO 2025-07-06 09:59:15,857 views_news 71337 6222032896 beincrypto returned 2 news items
+INFO 2025-07-06 09:59:15,865 views_news 71337 6222032896 Getting news for BTC in crypto market
+INFO 2025-07-06 09:59:15,866 views_news 71337 6222032896 Returning cached news for BTC (crypto)
+INFO 2025-07-06 09:59:19,422 utils 71337 6222032896 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 09:59:19,453 utils 71337 6222032896 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:00:45,161 technical_analysis 71337 6204633088 检测到600036.SH的市场类型: china
+INFO 2025-07-06 10:00:45,361 technical_analysis 71337 6204633088 格式化后的股票代码: 600036.SH
+INFO 2025-07-06 10:00:45,447 technical_analysis 71337 6204633088 开始计算600036.SH的技术指标
+INFO 2025-07-06 10:00:45,608 technical_analysis 71337 6204633088 成功计算600036.SH的所有技术指标
+INFO 2025-07-06 10:00:45,698 technical_analysis 71337 6204633088 检测到600036.SH的市场类型: china
+INFO 2025-07-06 10:00:45,897 technical_analysis 71337 6204633088 格式化后的股票代码: 600036.SH
+INFO 2025-07-06 10:00:45,978 technical_analysis 71337 6204633088 开始计算600036.SH的技术指标
+INFO 2025-07-06 10:00:46,142 technical_analysis 71337 6204633088 成功计算600036.SH的所有技术指标
+INFO 2025-07-06 10:00:54,107 utils 71337 6204633088 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 10:27:59,120 utils 71337 6204633088 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:28:01,137 utils 71337 6204633088 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:28:13,231 technical_analysis 71337 6204633088 检测到000002.SZ的市场类型: china
+INFO 2025-07-06 10:28:14,310 technical_analysis 71337 6204633088 格式化后的股票代码: 000002.SZ
+INFO 2025-07-06 10:28:14,393 technical_analysis 71337 6204633088 开始计算000002.SZ的技术指标
+INFO 2025-07-06 10:28:14,551 technical_analysis 71337 6204633088 成功计算000002.SZ的所有技术指标
+INFO 2025-07-06 10:31:13,579 utils 71337 6222032896 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:31:32,865 utils 71337 6222032896 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:36:36,015 utils 72683 6136786944 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:36:48,606 utils 72683 6136786944 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:37:07,377 utils 72683 6136786944 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:38:26,347 utils 72683 6136786944 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:41:50,262 technical_analysis 72907 6134968320 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 10:41:50,264 utils 72907 6134968320 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:42:32,691 technical_analysis 72907 6134968320 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 10:42:32,692 utils 72907 6134968320 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:43:06,795 views_news 72907 6152368128 Getting news for BTC in crypto market
+INFO 2025-07-06 10:43:06,796 views_news 72907 6152368128 Getting crypto news for BTC
+INFO 2025-07-06 10:43:06,797 views_news 72907 6169194496 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 10:43:06,797 views_news 72907 6186020864 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 10:43:06,800 views_news 72907 6202847232 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 10:43:06,802 views_news 72907 6219673600 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 10:43:06,817 utils 72907 6134968320 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 10:43:06,836 utils 72907 6134968320 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 10:43:07,408 views_news 72907 6186020864 RSS feed returned 2 news items
+INFO 2025-07-06 10:43:07,413 views_news 72907 6202847232 RSS feed returned 2 news items
+INFO 2025-07-06 10:43:07,760 views_news 72907 6169194496 RSS feed returned 2 news items
+INFO 2025-07-06 10:43:07,762 views_news 72907 6152368128 coindesk returned 2 news items
+INFO 2025-07-06 10:43:07,763 views_news 72907 6152368128 cointelegraph returned 2 news items
+INFO 2025-07-06 10:43:07,763 views_news 72907 6152368128 decrypt returned 2 news items
+INFO 2025-07-06 10:43:08,184 views_news 72907 6219673600 RSS feed returned 2 news items
+INFO 2025-07-06 10:43:08,189 views_news 72907 6152368128 beincrypto returned 2 news items
+INFO 2025-07-06 10:43:08,196 views_news 72907 6236499968 Getting news for BTC in crypto market
+INFO 2025-07-06 10:43:08,198 views_news 72907 6236499968 Returning cached news for BTC (crypto)
+INFO 2025-07-06 10:43:16,490 technical_analysis 72907 6134968320 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:43:16,490 utils 72907 6134968320 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:43:16,782 technical_analysis 72907 6134968320 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:43:16,783 utils 72907 6134968320 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:46:54,169 technical_analysis 73064 6170931200 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:46:54,171 utils 73064 6170931200 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:46:57,369 technical_analysis 73064 6170931200 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:46:57,369 utils 73064 6170931200 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:47:29,221 technical_analysis 73064 6170931200 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:47:29,221 utils 73064 6170931200 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:47:45,921 technical_analysis 73064 6170931200 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:47:45,929 utils 73064 6170931200 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:49:13,694 technical_analysis 73064 6170931200 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 10:49:13,695 utils 73064 6170931200 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:49:30,531 technical_analysis 73064 6170931200 检测到000002.SZ的市场类型: china
+INFO 2025-07-06 10:49:30,738 technical_analysis 73064 6170931200 格式化后的股票代码: 000002.SZ
+INFO 2025-07-06 10:49:30,830 technical_analysis 73064 6170931200 开始计算000002.SZ的技术指标
+INFO 2025-07-06 10:49:31,307 technical_analysis 73064 6170931200 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 10:49:31,309 technical_analysis 73064 6170931200 成功计算000002.SZ的所有技术指标
+INFO 2025-07-06 10:49:47,156 technical_analysis 73064 6188331008 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 10:49:47,158 utils 73064 6188331008 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:49:47,446 technical_analysis 73064 6188331008 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 10:49:47,446 utils 73064 6188331008 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:51:45,311 technical_analysis 73064 6188331008 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 10:51:45,317 utils 73064 6188331008 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:52:08,151 technical_analysis 73064 6188331008 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 10:52:08,152 utils 73064 6188331008 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:53:14,240 technical_analysis 73064 6188331008 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 10:53:14,240 utils 73064 6188331008 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:53:31,031 views_news 73064 6205157376 Getting news for BTC in crypto market
+INFO 2025-07-06 10:53:31,032 views_news 73064 6205157376 Getting crypto news for BTC
+INFO 2025-07-06 10:53:31,033 views_news 73064 6221983744 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 10:53:31,038 views_news 73064 6255636480 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 10:53:31,054 views_news 73064 6272462848 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 10:53:31,033 views_news 73064 6238810112 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 10:53:31,075 utils 73064 6188331008 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 10:53:31,101 utils 73064 6188331008 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 10:53:31,591 views_news 73064 6221983744 RSS feed returned 2 news items
+INFO 2025-07-06 10:53:31,595 views_news 73064 6205157376 coindesk returned 2 news items
+INFO 2025-07-06 10:53:31,680 views_news 73064 6238810112 RSS feed returned 2 news items
+INFO 2025-07-06 10:53:31,683 views_news 73064 6205157376 cointelegraph returned 2 news items
+INFO 2025-07-06 10:53:32,064 views_news 73064 6255636480 RSS feed returned 2 news items
+INFO 2025-07-06 10:53:32,067 views_news 73064 6205157376 decrypt returned 2 news items
+INFO 2025-07-06 10:53:33,189 views_news 73064 6272462848 RSS feed returned 2 news items
+INFO 2025-07-06 10:53:33,192 views_news 73064 6205157376 beincrypto returned 2 news items
+INFO 2025-07-06 10:53:33,197 views_news 73064 6188331008 Getting news for BTC in crypto market
+INFO 2025-07-06 10:53:33,197 views_news 73064 6188331008 Returning cached news for BTC (crypto)
+INFO 2025-07-06 10:53:38,614 views_news 73064 6205157376 Getting news for AAPL in stock market
+INFO 2025-07-06 10:53:38,617 views_news 73064 6205157376 Tiingo key available: True
+INFO 2025-07-06 10:53:38,617 views_news 73064 6205157376 NewsAPI key available: False
+INFO 2025-07-06 10:53:38,629 utils 73064 6188331008 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 10:53:38,652 utils 73064 6188331008 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 10:53:39,937 views_news 73064 6205157376 tiingo returned 10 news items
+INFO 2025-07-06 10:53:39,942 views_news 73064 6205157376 Getting news for AAPL in stock market
+INFO 2025-07-06 10:53:39,942 views_news 73064 6205157376 Returning cached news for AAPL (stock)
+INFO 2025-07-06 10:53:43,790 technical_analysis 73064 6205157376 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:53:43,790 utils 73064 6205157376 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:53:44,067 technical_analysis 73064 6205157376 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:53:44,068 utils 73064 6205157376 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:54:08,644 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:54:08,645 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:54:10,834 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:54:10,835 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:55:30,218 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:55:30,220 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:57:42,081 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:57:42,083 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:58:29,378 technical_analysis 73064 6188331008 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 10:58:29,380 utils 73064 6188331008 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 10:58:37,332 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:58:37,334 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:58:44,683 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:58:44,684 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:59:15,077 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:59:15,078 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 10:59:26,665 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 10:59:26,667 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:00:02,206 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:00:02,207 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:00:02,466 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:00:02,467 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:00:02,717 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:00:02,717 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:00:02,984 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:00:02,985 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:00:03,309 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:00:03,309 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:01:28,606 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:01:28,607 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:02:05,353 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:02:05,354 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:02:24,543 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:02:24,544 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:02:26,262 technical_analysis 73064 6205157376 检测到000001.SZ的市场类型: china
+INFO 2025-07-06 11:02:26,458 technical_analysis 73064 6205157376 格式化后的股票代码: 000001.SZ
+INFO 2025-07-06 11:02:26,595 technical_analysis 73064 6205157376 开始计算000001.SZ的技术指标
+INFO 2025-07-06 11:02:27,001 technical_analysis 73064 6205157376 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:02:27,008 technical_analysis 73064 6205157376 成功计算000001.SZ的所有技术指标
+INFO 2025-07-06 11:02:44,631 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:02:44,632 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:06:00,250 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:06:00,251 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:06:12,754 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:06:12,755 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:06:34,276 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:06:34,277 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:06:50,564 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:06:50,565 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:06:52,396 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:06:52,397 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:08:45,390 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:08:45,392 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:08:50,002 technical_analysis 73064 6221983744 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:08:50,003 utils 73064 6221983744 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:09:09,746 views_news 73064 6221983744 Getting news for BTC in crypto market
+INFO 2025-07-06 11:09:09,747 views_news 73064 6221983744 Getting crypto news for BTC
+INFO 2025-07-06 11:09:09,749 views_news 73064 6238810112 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 11:09:09,750 views_news 73064 6255636480 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 11:09:09,754 views_news 73064 6272462848 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 11:09:09,763 views_news 73064 6289289216 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 11:09:09,779 utils 73064 6188331008 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:09:09,910 utils 73064 6188331008 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:09:10,233 views_news 73064 6255636480 RSS feed returned 2 news items
+INFO 2025-07-06 11:09:10,305 views_news 73064 6272462848 RSS feed returned 2 news items
+INFO 2025-07-06 11:09:10,351 views_news 73064 6238810112 RSS feed returned 2 news items
+INFO 2025-07-06 11:09:10,353 views_news 73064 6221983744 coindesk returned 2 news items
+INFO 2025-07-06 11:09:10,353 views_news 73064 6221983744 cointelegraph returned 2 news items
+INFO 2025-07-06 11:09:10,353 views_news 73064 6221983744 decrypt returned 2 news items
+INFO 2025-07-06 11:09:10,826 views_news 73064 6289289216 RSS feed returned 2 news items
+INFO 2025-07-06 11:09:10,831 views_news 73064 6221983744 beincrypto returned 2 news items
+INFO 2025-07-06 11:09:10,842 views_news 73064 6221983744 Getting news for BTC in crypto market
+INFO 2025-07-06 11:09:10,843 views_news 73064 6221983744 Returning cached news for BTC (crypto)
+INFO 2025-07-06 11:09:22,197 views_news 73064 6188331008 Getting news for BTC in crypto market
+INFO 2025-07-06 11:09:22,200 views_news 73064 6188331008 Returning cached news for BTC (crypto)
+INFO 2025-07-06 11:09:24,178 utils 73064 6188331008 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:09:30,049 views_news 73064 6221983744 Getting news for AAPL in stock market
+INFO 2025-07-06 11:09:30,051 views_news 73064 6221983744 Tiingo key available: True
+INFO 2025-07-06 11:09:30,051 views_news 73064 6221983744 NewsAPI key available: False
+INFO 2025-07-06 11:09:30,064 utils 73064 6188331008 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 11:09:30,104 utils 73064 6188331008 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 11:09:31,062 views_news 73064 6221983744 tiingo returned 10 news items
+INFO 2025-07-06 11:09:31,066 views_news 73064 6221983744 Getting news for AAPL in stock market
+INFO 2025-07-06 11:09:31,067 views_news 73064 6221983744 Returning cached news for AAPL (stock)
+INFO 2025-07-06 11:09:35,315 utils 73064 6188331008 Cached technical indicators for MSFT (en-US) with key: c0c40d928bbb3cd72ee5ff0e835023bd
+INFO 2025-07-06 11:09:37,285 views_news 73064 6188331008 Getting news for MSFT in stock market
+INFO 2025-07-06 11:09:37,286 views_news 73064 6188331008 Tiingo key available: True
+INFO 2025-07-06 11:09:37,288 views_news 73064 6188331008 NewsAPI key available: False
+INFO 2025-07-06 11:09:37,310 utils 73064 6221983744 Cached technical indicators for MSFT (en-US) with key: c0c40d928bbb3cd72ee5ff0e835023bd
+INFO 2025-07-06 11:09:38,551 views_news 73064 6188331008 tiingo returned 10 news items
+INFO 2025-07-06 11:09:43,099 views_news 73064 6188331008 Getting news for MSFT in stock market
+INFO 2025-07-06 11:09:43,102 views_news 73064 6188331008 Returning cached news for MSFT (stock)
+INFO 2025-07-06 11:09:45,455 utils 73064 6188331008 Cached technical indicators for MSFT (en-US) with key: c0c40d928bbb3cd72ee5ff0e835023bd
+INFO 2025-07-06 11:09:48,770 utils 73064 6188331008 Cached technical indicators for NFLX (en-US) with key: ec18604960b69b1e238c4b52d07a30d4
+INFO 2025-07-06 11:09:50,761 views_news 73064 6238810112 Getting news for NFLX in stock market
+INFO 2025-07-06 11:09:50,761 views_news 73064 6238810112 Tiingo key available: True
+INFO 2025-07-06 11:09:50,762 views_news 73064 6238810112 NewsAPI key available: False
+INFO 2025-07-06 11:09:50,780 utils 73064 6188331008 Cached technical indicators for NFLX (en-US) with key: ec18604960b69b1e238c4b52d07a30d4
+INFO 2025-07-06 11:09:51,794 views_news 73064 6238810112 tiingo returned 10 news items
+INFO 2025-07-06 11:10:07,773 utils 73064 6188331008 Cached technical indicators for META (en-US) with key: c970dbe09d96bd23949ab1ff6d13745e
+INFO 2025-07-06 11:10:09,765 views_news 73064 6188331008 Getting news for META in stock market
+INFO 2025-07-06 11:10:09,768 views_news 73064 6188331008 Tiingo key available: True
+INFO 2025-07-06 11:10:09,768 views_news 73064 6188331008 NewsAPI key available: False
+INFO 2025-07-06 11:10:09,784 utils 73064 6238810112 Cached technical indicators for META (en-US) with key: c970dbe09d96bd23949ab1ff6d13745e
+INFO 2025-07-06 11:10:10,780 views_news 73064 6188331008 tiingo returned 10 news items
+INFO 2025-07-06 11:12:21,935 views_news 73064 6221983744 Getting news for YAAS in stock market
+INFO 2025-07-06 11:12:21,938 views_news 73064 6221983744 Tiingo key available: True
+INFO 2025-07-06 11:12:21,938 views_news 73064 6221983744 NewsAPI key available: False
+INFO 2025-07-06 11:12:23,124 views_news 73064 6221983744 tiingo returned 1 news items
+INFO 2025-07-06 11:12:23,814 views_news 73064 6221983744 Getting news for YAAS in stock market
+INFO 2025-07-06 11:12:23,828 views_news 73064 6221983744 Returning cached news for YAAS (stock)
+INFO 2025-07-06 11:12:47,591 utils 73064 6188331008 Cached technical indicators for YAAS (en-US) with key: 65b6695f3145976abeb42eae725a55b6
+INFO 2025-07-06 11:13:11,341 views_news 73064 6221983744 Getting news for BTC in crypto market
+INFO 2025-07-06 11:13:11,342 views_news 73064 6221983744 Getting crypto news for BTC
+INFO 2025-07-06 11:13:11,343 views_news 73064 6238810112 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 11:13:11,345 views_news 73064 6255636480 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 11:13:11,399 views_news 73064 6272462848 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 11:13:11,400 views_news 73064 6289289216 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 11:13:11,411 utils 73064 6188331008 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:13:11,512 utils 73064 6188331008 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:13:11,733 views_news 73064 6272462848 RSS feed returned 2 news items
+INFO 2025-07-06 11:13:11,913 views_news 73064 6255636480 RSS feed returned 2 news items
+INFO 2025-07-06 11:13:12,000 views_news 73064 6238810112 RSS feed returned 2 news items
+INFO 2025-07-06 11:13:12,002 views_news 73064 6221983744 coindesk returned 2 news items
+INFO 2025-07-06 11:13:12,002 views_news 73064 6221983744 cointelegraph returned 2 news items
+INFO 2025-07-06 11:13:12,002 views_news 73064 6221983744 decrypt returned 2 news items
+INFO 2025-07-06 11:13:12,286 views_news 73064 6289289216 RSS feed returned 2 news items
+INFO 2025-07-06 11:13:12,289 views_news 73064 6221983744 beincrypto returned 2 news items
+INFO 2025-07-06 11:13:12,296 views_news 73064 6306115584 Getting news for BTC in crypto market
+INFO 2025-07-06 11:13:12,296 views_news 73064 6306115584 Returning cached news for BTC (crypto)
+INFO 2025-07-06 11:14:11,081 views_news 73064 6188331008 Getting news for BTC in crypto market
+INFO 2025-07-06 11:14:11,083 views_news 73064 6188331008 Returning cached news for BTC (crypto)
+INFO 2025-07-06 11:14:13,142 utils 73064 6188331008 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:14:18,202 views_news 73064 6221983744 Getting news for BTC in crypto market
+INFO 2025-07-06 11:14:18,205 views_news 73064 6221983744 Getting crypto news for BTC
+INFO 2025-07-06 11:14:18,208 views_news 73064 6255636480 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 11:14:18,213 views_news 73064 6272462848 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 11:14:18,220 views_news 73064 6289289216 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 11:14:18,222 views_news 73064 6306115584 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 11:14:18,240 utils 73064 6188331008 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:14:18,572 views_news 73064 6272462848 RSS feed returned 2 news items
+INFO 2025-07-06 11:14:18,602 views_news 73064 6289289216 RSS feed returned 2 news items
+INFO 2025-07-06 11:14:18,634 views_news 73064 6255636480 RSS feed returned 2 news items
+INFO 2025-07-06 11:14:18,637 views_news 73064 6221983744 coindesk returned 2 news items
+INFO 2025-07-06 11:14:18,638 views_news 73064 6221983744 cointelegraph returned 2 news items
+INFO 2025-07-06 11:14:18,638 views_news 73064 6221983744 decrypt returned 2 news items
+INFO 2025-07-06 11:14:19,212 views_news 73064 6306115584 RSS feed returned 2 news items
+INFO 2025-07-06 11:14:19,215 views_news 73064 6221983744 beincrypto returned 2 news items
+INFO 2025-07-06 11:14:19,722 utils 73064 6188331008 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:15:35,122 views_news 73064 6188331008 Getting news for FUN in crypto market
+INFO 2025-07-06 11:15:35,124 views_news 73064 6188331008 Getting crypto news for FUN
+INFO 2025-07-06 11:15:35,126 views_news 73064 6221983744 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 11:15:35,126 views_news 73064 6238810112 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 11:15:35,129 views_news 73064 6255636480 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 11:15:35,131 views_news 73064 6272462848 Fetching RSS news from: https://beincrypto.com/feed/
+ERROR 2025-07-06 11:15:35,621 views_news 73064 6221983744 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 11:15:35,622 views_news 73064 6221983744 RSS feed returned 0 news items
+INFO 2025-07-06 11:15:35,831 views_news 73064 6255636480 RSS feed returned 2 news items
+INFO 2025-07-06 11:15:35,840 views_news 73064 6238810112 RSS feed returned 1 news items
+INFO 2025-07-06 11:15:35,841 views_news 73064 6188331008 cointelegraph returned 1 news items
+INFO 2025-07-06 11:15:35,842 views_news 73064 6188331008 decrypt returned 2 news items
+INFO 2025-07-06 11:15:36,145 views_news 73064 6272462848 RSS feed returned 1 news items
+INFO 2025-07-06 11:15:36,146 views_news 73064 6188331008 beincrypto returned 1 news items
+INFO 2025-07-06 11:15:49,540 views_news 73064 6188331008 Getting news for FUN in crypto market
+INFO 2025-07-06 11:15:49,541 views_news 73064 6188331008 Returning cached news for FUN (crypto)
+INFO 2025-07-06 11:15:56,209 views_news 73064 6188331008 Getting news for AAPL in stock market
+INFO 2025-07-06 11:15:56,210 views_news 73064 6188331008 Tiingo key available: True
+INFO 2025-07-06 11:15:56,211 views_news 73064 6188331008 NewsAPI key available: False
+INFO 2025-07-06 11:15:56,229 utils 73064 6255636480 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 11:15:56,519 utils 73064 6255636480 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 11:15:57,281 views_news 73064 6188331008 tiingo returned 10 news items
+INFO 2025-07-06 11:15:57,284 views_news 73064 6255636480 Getting news for AAPL in stock market
+INFO 2025-07-06 11:15:57,284 views_news 73064 6255636480 Returning cached news for AAPL (stock)
+INFO 2025-07-06 11:16:09,064 views_news 73064 6188331008 Getting news for AAPL in stock market
+INFO 2025-07-06 11:16:09,064 views_news 73064 6188331008 Returning cached news for AAPL (stock)
+INFO 2025-07-06 11:16:09,606 utils 73064 6188331008 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 11:16:22,659 technical_analysis 73064 6221983744 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:16:22,660 utils 73064 6221983744 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:16:22,929 technical_analysis 73064 6221983744 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:16:22,930 utils 73064 6221983744 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:16:28,788 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:16:28,789 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:16:30,642 technical_analysis 73064 6188331008 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:16:30,643 utils 73064 6188331008 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:17:34,165 views_news 73064 6238810112 Getting news for FUN in crypto market
+INFO 2025-07-06 11:17:34,169 views_news 73064 6238810112 Getting crypto news for FUN
+INFO 2025-07-06 11:17:34,169 views_news 73064 6255636480 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 11:17:34,256 views_news 73064 6272462848 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 11:17:34,257 views_news 73064 6289289216 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 11:17:34,261 views_news 73064 6306115584 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 11:17:34,691 views_news 73064 6272462848 RSS feed returned 1 news items
+INFO 2025-07-06 11:17:34,699 views_news 73064 6289289216 RSS feed returned 2 news items
+ERROR 2025-07-06 11:17:35,057 views_news 73064 6255636480 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 11:17:35,057 views_news 73064 6255636480 RSS feed returned 0 news items
+INFO 2025-07-06 11:17:35,060 views_news 73064 6238810112 cointelegraph returned 1 news items
+INFO 2025-07-06 11:17:35,060 views_news 73064 6238810112 decrypt returned 2 news items
+INFO 2025-07-06 11:17:35,399 views_news 73064 6306115584 RSS feed returned 1 news items
+INFO 2025-07-06 11:17:35,400 views_news 73064 6238810112 beincrypto returned 1 news items
+INFO 2025-07-06 11:17:35,404 views_news 73064 6238810112 Getting news for FUN in crypto market
+INFO 2025-07-06 11:17:35,409 views_news 73064 6238810112 Returning cached news for FUN (crypto)
+INFO 2025-07-06 11:17:36,252 technical_analysis 73064 6238810112 检测到FUNUSDT的市场类型: crypto
+DEBUG 2025-07-06 11:17:36,254 gate_api 73064 6238810112 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 11:17:36,254 gate_api 73064 6238810112 请求参数: {'currency_pair': 'FUN_USDT'}
+DEBUG 2025-07-06 11:17:37,647 gate_api 73064 6238810112 Gate API请求成功，耗时: 1.39秒
+INFO 2025-07-06 11:17:37,649 technical_analysis 73064 6238810112 开始计算FUNUSDT的技术指标
+DEBUG 2025-07-06 11:17:37,649 gate_api 73064 6238810112 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 11:17:37,649 gate_api 73064 6238810112 请求参数: {'currency_pair': 'FUN_USDT', 'interval': '1d', 'from': 1743160657, 'limit': 1000}
+DEBUG 2025-07-06 11:17:39,884 gate_api 73064 6238810112 Gate API请求成功，耗时: 2.23秒
+INFO 2025-07-06 11:17:39,887 technical_analysis 73064 6238810112 获取到FUNUSDT的101条K线数据
+INFO 2025-07-06 11:17:39,887 technical_analysis 73064 6238810112 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 0.002386, 0.00251, 0.002269, 0.002424, 65174.1396729, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 11:17:39,908 gate_api 73064 6238810112 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 11:17:39,908 gate_api 73064 6238810112 请求参数: {'contract': 'FUN_USDT'}
+DEBUG 2025-07-06 11:17:40,850 gate_api 73064 6238810112 Gate API请求成功，耗时: 0.94秒
+DEBUG 2025-07-06 11:17:40,853 gate_api 73064 6238810112 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 11:17:40,854 gate_api 73064 6238810112 请求参数: {'settle': 'usdt'}
+DEBUG 2025-07-06 11:17:41,983 gate_api 73064 6238810112 Gate API请求成功，耗时: 1.12秒
+INFO 2025-07-06 11:17:41,991 technical_analysis 73064 6238810112 成功计算FUNUSDT的所有技术指标
+INFO 2025-07-06 11:17:41,999 views_indicators_data 73064 6238810112 Successfully saved technical indicator data: FUNUSDT, ID: 137
+INFO 2025-07-06 11:17:42,007 technical_analysis 73064 6238810112 检测到FUNUSDT的市场类型: crypto
+DEBUG 2025-07-06 11:17:42,007 gate_api 73064 6238810112 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 11:17:42,007 gate_api 73064 6238810112 请求参数: {'currency_pair': 'FUN_USDT'}
+DEBUG 2025-07-06 11:17:43,757 gate_api 73064 6238810112 Gate API请求成功，耗时: 1.75秒
+INFO 2025-07-06 11:17:43,759 technical_analysis 73064 6238810112 开始计算FUNUSDT的技术指标
+DEBUG 2025-07-06 11:17:43,759 gate_api 73064 6238810112 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 11:17:43,759 gate_api 73064 6238810112 请求参数: {'currency_pair': 'FUN_USDT', 'interval': '1d', 'from': 1743160663, 'limit': 1000}
+DEBUG 2025-07-06 11:17:44,994 gate_api 73064 6238810112 Gate API请求成功，耗时: 1.23秒
+INFO 2025-07-06 11:17:44,997 technical_analysis 73064 6238810112 获取到FUNUSDT的101条K线数据
+INFO 2025-07-06 11:17:44,997 technical_analysis 73064 6238810112 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 0.002386, 0.00251, 0.002269, 0.002424, 65174.1396729, 0, 0, 0, 0, 0, 0]
+INFO 2025-07-06 11:17:45,016 technical_analysis 73064 6238810112 成功计算FUNUSDT的所有技术指标
+INFO 2025-07-06 11:17:45,021 views_indicators_data 73064 6238810112 Technical analysis record already exists within 12 hours, ID: 137, not creating new one
+INFO 2025-07-06 11:17:45,021 views_indicators_data 73064 6238810112 Successfully saved technical indicator data: FUNUSDT, ID: 137
+INFO 2025-07-06 11:17:53,889 utils 73064 6238810112 Cached technical indicators for FUNUSDT (en-US) with key: 0c4ab899cc2af9752cec2870088ff8b4
+INFO 2025-07-06 11:18:11,856 views_news 73064 6188331008 Getting news for SOL in crypto market
+INFO 2025-07-06 11:18:11,857 views_news 73064 6188331008 Getting crypto news for SOL
+INFO 2025-07-06 11:18:11,857 views_news 73064 6238810112 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 11:18:11,857 views_news 73064 6255636480 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 11:18:11,858 views_news 73064 6272462848 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 11:18:11,859 views_news 73064 6289289216 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 11:18:11,880 utils 73064 6221983744 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-07-06 11:18:12,160 utils 73064 6221983744 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-07-06 11:18:12,215 views_news 73064 6272462848 RSS feed returned 2 news items
+ERROR 2025-07-06 11:18:12,340 views_news 73064 6238810112 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 11:18:12,341 views_news 73064 6238810112 RSS feed returned 1 news items
+INFO 2025-07-06 11:18:12,343 views_news 73064 6188331008 coindesk returned 1 news items
+INFO 2025-07-06 11:18:12,747 views_news 73064 6289289216 RSS feed returned 2 news items
+INFO 2025-07-06 11:18:12,936 views_news 73064 6255636480 RSS feed returned 2 news items
+INFO 2025-07-06 11:18:12,940 views_news 73064 6188331008 cointelegraph returned 2 news items
+INFO 2025-07-06 11:18:12,940 views_news 73064 6188331008 decrypt returned 2 news items
+INFO 2025-07-06 11:18:12,940 views_news 73064 6188331008 beincrypto returned 2 news items
+INFO 2025-07-06 11:18:14,600 technical_analysis 73064 6188331008 检测到SOLUSDT的市场类型: crypto
+DEBUG 2025-07-06 11:18:14,603 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 11:18:14,603 gate_api 73064 6188331008 请求参数: {'currency_pair': 'SOL_USDT'}
+DEBUG 2025-07-06 11:18:17,631 gate_api 73064 6188331008 Gate API请求成功，耗时: 3.03秒
+INFO 2025-07-06 11:18:17,633 technical_analysis 73064 6188331008 开始计算SOLUSDT的技术指标
+DEBUG 2025-07-06 11:18:17,633 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 11:18:17,634 gate_api 73064 6188331008 请求参数: {'currency_pair': 'SOL_USDT', 'interval': '1d', 'from': 1743160697, 'limit': 1000}
+DEBUG 2025-07-06 11:18:19,994 gate_api 73064 6188331008 Gate API请求成功，耗时: 2.36秒
+INFO 2025-07-06 11:18:19,996 technical_analysis 73064 6188331008 获取到SOLUSDT的101条K线数据
+INFO 2025-07-06 11:18:19,996 technical_analysis 73064 6188331008 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 138.47, 139.04, 127.76, 129.49, 27999786.18972, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 11:18:20,015 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 11:18:20,016 gate_api 73064 6188331008 请求参数: {'contract': 'SOL_USDT'}
+DEBUG 2025-07-06 11:18:20,621 gate_api 73064 6188331008 Gate API请求成功，耗时: 0.61秒
+DEBUG 2025-07-06 11:18:20,624 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 11:18:20,624 gate_api 73064 6188331008 请求参数: {'settle': 'usdt'}
+DEBUG 2025-07-06 11:18:25,618 gate_api 73064 6188331008 Gate API请求成功，耗时: 4.98秒
+INFO 2025-07-06 11:18:25,627 technical_analysis 73064 6188331008 成功计算SOLUSDT的所有技术指标
+INFO 2025-07-06 11:18:25,633 views_indicators_data 73064 6188331008 Successfully saved technical indicator data: SOLUSDT, ID: 138
+INFO 2025-07-06 11:18:25,641 technical_analysis 73064 6188331008 检测到SOLUSDT的市场类型: crypto
+DEBUG 2025-07-06 11:18:25,642 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 11:18:25,642 gate_api 73064 6188331008 请求参数: {'currency_pair': 'SOL_USDT'}
+DEBUG 2025-07-06 11:18:27,469 gate_api 73064 6188331008 Gate API请求成功，耗时: 1.83秒
+INFO 2025-07-06 11:18:27,471 technical_analysis 73064 6188331008 开始计算SOLUSDT的技术指标
+DEBUG 2025-07-06 11:18:27,471 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 11:18:27,471 gate_api 73064 6188331008 请求参数: {'currency_pair': 'SOL_USDT', 'interval': '1d', 'from': 1743160707, 'limit': 1000}
+DEBUG 2025-07-06 11:18:28,173 gate_api 73064 6188331008 Gate API请求成功，耗时: 0.70秒
+INFO 2025-07-06 11:18:28,176 technical_analysis 73064 6188331008 获取到SOLUSDT的101条K线数据
+INFO 2025-07-06 11:18:28,176 technical_analysis 73064 6188331008 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 138.47, 139.04, 127.76, 129.49, 27999786.18972, 0, 0, 0, 0, 0, 0]
+INFO 2025-07-06 11:18:28,199 technical_analysis 73064 6188331008 成功计算SOLUSDT的所有技术指标
+INFO 2025-07-06 11:18:28,203 views_indicators_data 73064 6188331008 Technical analysis record already exists within 12 hours, ID: 138, not creating new one
+INFO 2025-07-06 11:18:28,203 views_indicators_data 73064 6188331008 Successfully saved technical indicator data: SOLUSDT, ID: 138
+INFO 2025-07-06 11:18:37,935 utils 73064 6188331008 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-07-06 11:20:03,196 views_news 73064 6188331008 Getting news for BTC in crypto market
+INFO 2025-07-06 11:20:03,197 views_news 73064 6188331008 Getting crypto news for BTC
+INFO 2025-07-06 11:20:03,198 views_news 73064 6221983744 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 11:20:03,199 views_news 73064 6238810112 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 11:20:03,201 views_news 73064 6255636480 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 11:20:03,203 views_news 73064 6272462848 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 11:20:03,647 views_news 73064 6238810112 RSS feed returned 2 news items
+INFO 2025-07-06 11:20:03,713 views_news 73064 6221983744 RSS feed returned 2 news items
+INFO 2025-07-06 11:20:03,714 views_news 73064 6188331008 coindesk returned 2 news items
+INFO 2025-07-06 11:20:03,714 views_news 73064 6188331008 cointelegraph returned 2 news items
+INFO 2025-07-06 11:20:03,911 views_news 73064 6255636480 RSS feed returned 2 news items
+INFO 2025-07-06 11:20:03,921 views_news 73064 6188331008 decrypt returned 2 news items
+INFO 2025-07-06 11:20:04,116 views_news 73064 6272462848 RSS feed returned 2 news items
+INFO 2025-07-06 11:20:04,120 views_news 73064 6188331008 beincrypto returned 2 news items
+INFO 2025-07-06 11:20:05,671 utils 73064 6188331008 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:20:22,123 views_news 73064 6188331008 Getting news for BTC in crypto market
+INFO 2025-07-06 11:20:22,125 views_news 73064 6188331008 Returning cached news for BTC (crypto)
+INFO 2025-07-06 11:20:23,900 views_news 73064 6238810112 Getting news for XRP in crypto market
+INFO 2025-07-06 11:20:23,900 views_news 73064 6238810112 Getting crypto news for XRP
+INFO 2025-07-06 11:20:23,900 views_news 73064 6255636480 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 11:20:23,901 views_news 73064 6272462848 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 11:20:23,903 views_news 73064 6289289216 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 11:20:23,910 views_news 73064 6306115584 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 11:20:23,919 utils 73064 6221983744 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-07-06 11:20:24,176 utils 73064 6221983744 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-07-06 11:20:24,272 views_news 73064 6272462848 RSS feed returned 2 news items
+INFO 2025-07-06 11:20:24,617 views_news 73064 6289289216 RSS feed returned 2 news items
+INFO 2025-07-06 11:20:24,658 utils 73064 6188331008 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+ERROR 2025-07-06 11:20:24,772 views_news 73064 6255636480 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 11:20:24,772 views_news 73064 6255636480 RSS feed returned 1 news items
+INFO 2025-07-06 11:20:24,775 views_news 73064 6238810112 coindesk returned 1 news items
+INFO 2025-07-06 11:20:24,775 views_news 73064 6238810112 cointelegraph returned 2 news items
+INFO 2025-07-06 11:20:24,775 views_news 73064 6238810112 decrypt returned 2 news items
+INFO 2025-07-06 11:20:25,358 views_news 73064 6306115584 RSS feed returned 2 news items
+INFO 2025-07-06 11:20:25,361 views_news 73064 6238810112 beincrypto returned 2 news items
+INFO 2025-07-06 11:20:30,768 technical_analysis 73064 6188331008 检测到XRPUSDT的市场类型: crypto
+DEBUG 2025-07-06 11:20:30,772 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 11:20:30,772 gate_api 73064 6188331008 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 11:20:31,844 gate_api 73064 6188331008 Gate API请求成功，耗时: 1.07秒
+INFO 2025-07-06 11:20:31,848 technical_analysis 73064 6188331008 开始计算XRPUSDT的技术指标
+DEBUG 2025-07-06 11:20:31,848 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 11:20:31,848 gate_api 73064 6188331008 请求参数: {'currency_pair': 'XRP_USDT', 'interval': '1d', 'from': 1743160831, 'limit': 1000}
+DEBUG 2025-07-06 11:20:32,447 gate_api 73064 6188331008 Gate API请求成功，耗时: 0.60秒
+INFO 2025-07-06 11:20:32,449 technical_analysis 73064 6188331008 获取到XRPUSDT的101条K线数据
+INFO 2025-07-06 11:20:32,449 technical_analysis 73064 6188331008 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 2.34118, 2.34339, 2.1536, 2.20639, 34685230.48592784, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 11:20:32,467 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 11:20:32,467 gate_api 73064 6188331008 请求参数: {'contract': 'XRP_USDT'}
+DEBUG 2025-07-06 11:20:33,590 gate_api 73064 6188331008 Gate API请求成功，耗时: 1.12秒
+DEBUG 2025-07-06 11:20:33,592 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 11:20:33,592 gate_api 73064 6188331008 请求参数: {'settle': 'usdt'}
+INFO 2025-07-06 11:20:36,328 views_news 73064 6221983744 Getting news for BTC in crypto market
+INFO 2025-07-06 11:20:36,329 views_news 73064 6221983744 Returning cached news for BTC (crypto)
+INFO 2025-07-06 11:20:38,671 utils 73064 6221983744 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+DEBUG 2025-07-06 11:20:41,310 gate_api 73064 6188331008 Gate API请求成功，耗时: 7.70秒
+INFO 2025-07-06 11:20:41,327 technical_analysis 73064 6188331008 成功计算XRPUSDT的所有技术指标
+INFO 2025-07-06 11:20:41,337 views_indicators_data 73064 6188331008 Successfully saved technical indicator data: XRPUSDT, ID: 139
+INFO 2025-07-06 11:20:41,347 technical_analysis 73064 6188331008 检测到XRPUSDT的市场类型: crypto
+DEBUG 2025-07-06 11:20:41,347 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 11:20:41,347 gate_api 73064 6188331008 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 11:20:44,240 gate_api 73064 6188331008 Gate API请求成功，耗时: 2.89秒
+INFO 2025-07-06 11:20:44,244 technical_analysis 73064 6188331008 开始计算XRPUSDT的技术指标
+DEBUG 2025-07-06 11:20:44,244 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 11:20:44,244 gate_api 73064 6188331008 请求参数: {'currency_pair': 'XRP_USDT', 'interval': '1d', 'from': 1743160844, 'limit': 1000}
+DEBUG 2025-07-06 11:20:46,840 gate_api 73064 6188331008 Gate API请求成功，耗时: 2.60秒
+INFO 2025-07-06 11:20:46,842 technical_analysis 73064 6188331008 获取到XRPUSDT的101条K线数据
+INFO 2025-07-06 11:20:46,843 technical_analysis 73064 6188331008 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 2.34118, 2.34339, 2.1536, 2.20639, 34685230.48592784, 0, 0, 0, 0, 0, 0]
+INFO 2025-07-06 11:20:46,865 technical_analysis 73064 6188331008 成功计算XRPUSDT的所有技术指标
+INFO 2025-07-06 11:20:46,869 views_indicators_data 73064 6188331008 Technical analysis record already exists within 12 hours, ID: 139, not creating new one
+INFO 2025-07-06 11:20:46,869 views_indicators_data 73064 6188331008 Successfully saved technical indicator data: XRPUSDT, ID: 139
+INFO 2025-07-06 11:20:57,161 utils 73064 6188331008 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-07-06 11:21:12,856 technical_analysis 73064 6188331008 检测到XRPUSDT的市场类型: crypto
+DEBUG 2025-07-06 11:21:12,858 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 11:21:12,858 gate_api 73064 6188331008 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 11:21:14,550 gate_api 73064 6188331008 Gate API请求成功，耗时: 1.69秒
+INFO 2025-07-06 11:21:14,552 technical_analysis 73064 6188331008 开始计算XRPUSDT的技术指标
+DEBUG 2025-07-06 11:21:14,553 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 11:21:14,553 gate_api 73064 6188331008 请求参数: {'currency_pair': 'XRP_USDT', 'interval': '1d', 'from': 1743160874, 'limit': 1000}
+DEBUG 2025-07-06 11:21:15,571 gate_api 73064 6188331008 Gate API请求成功，耗时: 1.02秒
+INFO 2025-07-06 11:21:15,573 technical_analysis 73064 6188331008 获取到XRPUSDT的101条K线数据
+INFO 2025-07-06 11:21:15,573 technical_analysis 73064 6188331008 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 2.34118, 2.34339, 2.1536, 2.20639, 34685230.48592784, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 11:21:15,594 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 11:21:15,595 gate_api 73064 6188331008 请求参数: {'contract': 'XRP_USDT'}
+DEBUG 2025-07-06 11:21:16,212 gate_api 73064 6188331008 Gate API请求成功，耗时: 0.62秒
+DEBUG 2025-07-06 11:21:16,215 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 11:21:16,215 gate_api 73064 6188331008 请求参数: {'settle': 'usdt'}
+DEBUG 2025-07-06 11:21:20,365 gate_api 73064 6188331008 Gate API请求成功，耗时: 4.14秒
+INFO 2025-07-06 11:21:20,396 technical_analysis 73064 6188331008 成功计算XRPUSDT的所有技术指标
+INFO 2025-07-06 11:21:20,405 views_indicators_data 73064 6188331008 Technical analysis record already exists within 12 hours, ID: 139, not creating new one
+INFO 2025-07-06 11:21:20,406 views_indicators_data 73064 6188331008 Successfully saved technical indicator data: XRPUSDT, ID: 139
+DEBUG 2025-07-06 11:21:20,408 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 11:21:20,410 gate_api 73064 6188331008 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 11:21:21,154 gate_api 73064 6188331008 Gate API请求成功，耗时: 0.74秒
+INFO 2025-07-06 11:21:21,172 technical_analysis 73064 6188331008 检测到XRPUSDT的市场类型: crypto
+DEBUG 2025-07-06 11:21:21,172 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 11:21:21,172 gate_api 73064 6188331008 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 11:21:21,760 gate_api 73064 6188331008 Gate API请求成功，耗时: 0.59秒
+INFO 2025-07-06 11:21:21,762 technical_analysis 73064 6188331008 开始计算XRPUSDT的技术指标
+DEBUG 2025-07-06 11:21:21,763 gate_api 73064 6188331008 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 11:21:21,763 gate_api 73064 6188331008 请求参数: {'currency_pair': 'XRP_USDT', 'interval': '1d', 'from': 1743160881, 'limit': 1000}
+DEBUG 2025-07-06 11:21:23,878 gate_api 73064 6188331008 Gate API请求成功，耗时: 2.11秒
+INFO 2025-07-06 11:21:23,878 technical_analysis 73064 6188331008 获取到XRPUSDT的101条K线数据
+INFO 2025-07-06 11:21:23,878 technical_analysis 73064 6188331008 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 2.34118, 2.34339, 2.1536, 2.20639, 34685230.48592784, 0, 0, 0, 0, 0, 0]
+INFO 2025-07-06 11:21:23,895 technical_analysis 73064 6188331008 成功计算XRPUSDT的所有技术指标
+INFO 2025-07-06 11:21:23,900 views_indicators_data 73064 6188331008 Technical analysis record already exists within 12 hours, ID: 139, not creating new one
+INFO 2025-07-06 11:21:23,900 views_indicators_data 73064 6188331008 Successfully saved technical indicator data: XRPUSDT, ID: 139
+INFO 2025-07-06 11:22:29,179 views_news 73064 6221983744 Getting news for BTC in crypto market
+INFO 2025-07-06 11:22:29,180 views_news 73064 6221983744 Getting crypto news for BTC
+INFO 2025-07-06 11:22:29,180 views_news 73064 6238810112 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 11:22:29,182 views_news 73064 6255636480 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 11:22:29,183 views_news 73064 6272462848 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 11:22:29,188 views_news 73064 6289289216 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 11:22:29,536 views_news 73064 6255636480 RSS feed returned 2 news items
+INFO 2025-07-06 11:22:29,657 views_news 73064 6272462848 RSS feed returned 2 news items
+INFO 2025-07-06 11:22:30,113 views_news 73064 6238810112 RSS feed returned 2 news items
+INFO 2025-07-06 11:22:30,117 views_news 73064 6221983744 coindesk returned 2 news items
+INFO 2025-07-06 11:22:30,117 views_news 73064 6221983744 cointelegraph returned 2 news items
+INFO 2025-07-06 11:22:30,117 views_news 73064 6221983744 decrypt returned 2 news items
+INFO 2025-07-06 11:22:30,314 views_news 73064 6289289216 RSS feed returned 2 news items
+INFO 2025-07-06 11:22:30,315 views_news 73064 6221983744 beincrypto returned 2 news items
+INFO 2025-07-06 11:22:31,712 utils 73064 6221983744 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:22:42,245 views_news 73064 6221983744 Getting news for BTC in crypto market
+INFO 2025-07-06 11:22:42,246 views_news 73064 6221983744 Returning cached news for BTC (crypto)
+INFO 2025-07-06 11:22:44,782 utils 73064 6221983744 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:24:09,112 views_news 73064 6221983744 Getting news for BTC in crypto market
+INFO 2025-07-06 11:24:09,114 views_news 73064 6221983744 Getting crypto news for BTC
+INFO 2025-07-06 11:24:09,115 views_news 73064 6238810112 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 11:24:09,116 views_news 73064 6255636480 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 11:24:09,117 views_news 73064 6272462848 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 11:24:09,117 views_news 73064 6289289216 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 11:24:09,458 views_news 73064 6272462848 RSS feed returned 2 news items
+INFO 2025-07-06 11:24:09,467 views_news 73064 6255636480 RSS feed returned 2 news items
+INFO 2025-07-06 11:24:09,718 views_news 73064 6238810112 RSS feed returned 2 news items
+INFO 2025-07-06 11:24:09,719 views_news 73064 6221983744 coindesk returned 2 news items
+INFO 2025-07-06 11:24:09,719 views_news 73064 6221983744 cointelegraph returned 2 news items
+INFO 2025-07-06 11:24:09,719 views_news 73064 6221983744 decrypt returned 2 news items
+INFO 2025-07-06 11:24:10,126 views_news 73064 6289289216 RSS feed returned 2 news items
+INFO 2025-07-06 11:24:10,128 views_news 73064 6221983744 beincrypto returned 2 news items
+INFO 2025-07-06 11:24:11,115 utils 73064 6221983744 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:24:36,608 views_news 73064 6221983744 Getting news for BTC in crypto market
+INFO 2025-07-06 11:24:36,610 views_news 73064 6221983744 Returning cached news for BTC (crypto)
+INFO 2025-07-06 11:24:38,596 utils 73064 6221983744 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:24:53,833 views_news 73064 6221983744 Getting news for BTC in crypto market
+INFO 2025-07-06 11:24:53,834 views_news 73064 6221983744 Returning cached news for BTC (crypto)
+INFO 2025-07-06 11:24:55,869 utils 73064 6221983744 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 11:25:03,041 views_news 73064 6238810112 Getting news for XRP in crypto market
+INFO 2025-07-06 11:25:03,041 views_news 73064 6238810112 Getting crypto news for XRP
+INFO 2025-07-06 11:25:03,042 views_news 73064 6272462848 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 11:25:03,045 views_news 73064 6289289216 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 11:25:03,046 views_news 73064 6306115584 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 11:25:03,050 views_news 73064 6322941952 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 11:25:03,054 utils 73064 6221983744 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-07-06 11:25:03,081 utils 73064 6221983744 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-07-06 11:25:03,362 views_news 73064 6306115584 RSS feed returned 2 news items
+INFO 2025-07-06 11:25:03,425 views_news 73064 6289289216 RSS feed returned 2 news items
+ERROR 2025-07-06 11:25:03,707 views_news 73064 6272462848 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 11:25:03,708 views_news 73064 6272462848 RSS feed returned 1 news items
+INFO 2025-07-06 11:25:03,711 views_news 73064 6238810112 coindesk returned 1 news items
+INFO 2025-07-06 11:25:03,712 views_news 73064 6238810112 cointelegraph returned 2 news items
+INFO 2025-07-06 11:25:03,712 views_news 73064 6238810112 decrypt returned 2 news items
+INFO 2025-07-06 11:25:03,774 views_news 73064 6322941952 RSS feed returned 2 news items
+INFO 2025-07-06 11:25:03,777 views_news 73064 6238810112 beincrypto returned 2 news items
+INFO 2025-07-06 11:25:21,804 views_news 73064 6221983744 Getting news for XRP in crypto market
+INFO 2025-07-06 11:25:21,804 views_news 73064 6221983744 Returning cached news for XRP (crypto)
+INFO 2025-07-06 11:25:23,833 utils 73064 6221983744 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-07-06 11:25:30,748 technical_analysis 73064 6221983744 检测到XRPUSDT的市场类型: crypto
+DEBUG 2025-07-06 11:25:30,750 gate_api 73064 6221983744 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 11:25:30,750 gate_api 73064 6221983744 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 11:25:31,486 gate_api 73064 6221983744 Gate API请求成功，耗时: 0.74秒
+INFO 2025-07-06 11:25:31,487 technical_analysis 73064 6221983744 开始计算XRPUSDT的技术指标
+DEBUG 2025-07-06 11:25:31,488 gate_api 73064 6221983744 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 11:25:31,488 gate_api 73064 6221983744 请求参数: {'currency_pair': 'XRP_USDT', 'interval': '1d', 'from': 1743161131, 'limit': 1000}
+DEBUG 2025-07-06 11:25:32,099 gate_api 73064 6221983744 Gate API请求成功，耗时: 0.61秒
+INFO 2025-07-06 11:25:32,103 technical_analysis 73064 6221983744 获取到XRPUSDT的101条K线数据
+INFO 2025-07-06 11:25:32,103 technical_analysis 73064 6221983744 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 2.34118, 2.34339, 2.1536, 2.20639, 34685230.48592784, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 11:25:32,161 gate_api 73064 6221983744 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 11:25:32,161 gate_api 73064 6221983744 请求参数: {'contract': 'XRP_USDT'}
+DEBUG 2025-07-06 11:25:32,752 gate_api 73064 6221983744 Gate API请求成功，耗时: 0.59秒
+DEBUG 2025-07-06 11:25:32,753 gate_api 73064 6221983744 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 11:25:32,753 gate_api 73064 6221983744 请求参数: {'settle': 'usdt'}
+DEBUG 2025-07-06 11:25:33,993 gate_api 73064 6221983744 Gate API请求成功，耗时: 1.24秒
+INFO 2025-07-06 11:25:33,997 technical_analysis 73064 6221983744 成功计算XRPUSDT的所有技术指标
+INFO 2025-07-06 11:25:34,000 views_indicators_data 73064 6221983744 Technical analysis record already exists within 12 hours, ID: 139, not creating new one
+INFO 2025-07-06 11:25:34,001 views_indicators_data 73064 6221983744 Successfully saved technical indicator data: XRPUSDT, ID: 139
+DEBUG 2025-07-06 11:25:34,001 gate_api 73064 6221983744 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 11:25:34,001 gate_api 73064 6221983744 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 11:25:34,620 gate_api 73064 6221983744 Gate API请求成功，耗时: 0.62秒
+INFO 2025-07-06 11:25:51,405 views_news 73064 6238810112 Getting news for XRP in crypto market
+INFO 2025-07-06 11:25:51,407 views_news 73064 6238810112 Returning cached news for XRP (crypto)
+INFO 2025-07-06 11:25:53,421 utils 73064 6238810112 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-07-06 11:28:43,784 technical_analysis 74990 6195179520 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:28:43,785 utils 74990 6195179520 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:28:46,810 technical_analysis 75009 6141865984 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:28:46,811 utils 75009 6141865984 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 11:29:09,270 technical_analysis 75009 6141865984 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 11:29:09,271 utils 75009 6141865984 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:07:41,147 technical_analysis 75009 6141865984 检测到XRPUSDT的市场类型: crypto
+DEBUG 2025-07-06 12:07:41,160 gate_api 75009 6141865984 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:07:41,160 gate_api 75009 6141865984 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 12:07:41,977 gate_api 75009 6141865984 Gate API请求成功，耗时: 0.82秒
+INFO 2025-07-06 12:07:41,979 technical_analysis 75009 6141865984 开始计算XRPUSDT的技术指标
+DEBUG 2025-07-06 12:07:41,979 gate_api 75009 6141865984 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 12:07:41,979 gate_api 75009 6141865984 请求参数: {'currency_pair': 'XRP_USDT', 'interval': '1d', 'from': 1743163661, 'limit': 1000}
+DEBUG 2025-07-06 12:07:42,600 gate_api 75009 6141865984 Gate API请求成功，耗时: 0.62秒
+INFO 2025-07-06 12:07:42,601 technical_analysis 75009 6141865984 获取到XRPUSDT的101条K线数据
+INFO 2025-07-06 12:07:42,602 technical_analysis 75009 6141865984 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 2.34118, 2.34339, 2.1536, 2.20639, 34685230.48592784, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 12:07:42,657 gate_api 75009 6141865984 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 12:07:42,657 gate_api 75009 6141865984 请求参数: {'contract': 'XRP_USDT'}
+DEBUG 2025-07-06 12:07:43,235 gate_api 75009 6141865984 Gate API请求成功，耗时: 0.58秒
+DEBUG 2025-07-06 12:07:43,237 gate_api 75009 6141865984 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 12:07:43,237 gate_api 75009 6141865984 请求参数: {'settle': 'usdt'}
+DEBUG 2025-07-06 12:07:44,565 gate_api 75009 6141865984 Gate API请求成功，耗时: 1.32秒
+INFO 2025-07-06 12:07:44,574 technical_analysis 75009 6141865984 成功计算XRPUSDT的所有技术指标
+INFO 2025-07-06 12:07:44,588 views_indicators_data 75009 6141865984 Successfully saved technical indicator data: XRPUSDT, ID: 141
+DEBUG 2025-07-06 12:07:44,589 gate_api 75009 6141865984 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:07:44,589 gate_api 75009 6141865984 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 12:07:45,693 gate_api 75009 6141865984 Gate API请求成功，耗时: 1.10秒
+INFO 2025-07-06 12:09:49,085 technical_analysis 76182 6203174912 检测到XRPUSDT的市场类型: crypto
+DEBUG 2025-07-06 12:09:49,088 gate_api 76182 6203174912 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:09:49,089 gate_api 76182 6203174912 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 12:09:49,717 gate_api 76182 6203174912 Gate API请求成功，耗时: 0.63秒
+INFO 2025-07-06 12:09:49,719 technical_analysis 76182 6203174912 开始计算XRPUSDT的技术指标
+DEBUG 2025-07-06 12:09:49,720 gate_api 76182 6203174912 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 12:09:49,720 gate_api 76182 6203174912 请求参数: {'currency_pair': 'XRP_USDT', 'interval': '1d', 'from': 1743163789, 'limit': 1000}
+DEBUG 2025-07-06 12:09:50,816 gate_api 76182 6203174912 Gate API请求成功，耗时: 1.10秒
+INFO 2025-07-06 12:09:50,820 technical_analysis 76182 6203174912 获取到XRPUSDT的101条K线数据
+INFO 2025-07-06 12:09:50,821 technical_analysis 76182 6203174912 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 2.34118, 2.34339, 2.1536, 2.20639, 34685230.48592784, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 12:09:50,847 gate_api 76182 6203174912 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 12:09:50,848 gate_api 76182 6203174912 请求参数: {'contract': 'XRP_USDT'}
+DEBUG 2025-07-06 12:09:51,823 gate_api 76182 6203174912 Gate API请求成功，耗时: 0.98秒
+DEBUG 2025-07-06 12:09:51,825 gate_api 76182 6203174912 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 12:09:51,826 gate_api 76182 6203174912 请求参数: {'settle': 'usdt'}
+DEBUG 2025-07-06 12:09:53,144 gate_api 76182 6203174912 Gate API请求成功，耗时: 1.31秒
+INFO 2025-07-06 12:09:53,152 technical_analysis 76182 6203174912 成功计算XRPUSDT的所有技术指标
+INFO 2025-07-06 12:09:53,160 views_indicators_data 76182 6203174912 Technical analysis record already exists within 12 hours, ID: 141, not creating new one
+INFO 2025-07-06 12:09:53,161 views_indicators_data 76182 6203174912 Successfully saved technical indicator data: XRPUSDT, ID: 141
+DEBUG 2025-07-06 12:09:53,162 gate_api 76182 6203174912 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:09:53,162 gate_api 76182 6203174912 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 12:09:54,341 gate_api 76182 6203174912 Gate API请求成功，耗时: 1.18秒
+INFO 2025-07-06 12:11:03,678 technical_analysis 76182 6220574720 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:11:03,679 utils 76182 6220574720 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:12:05,470 technical_analysis 76182 6220574720 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:12:05,470 utils 76182 6220574720 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:14:46,305 technical_analysis 76469 6136573952 检测到XRPUSDT的市场类型: crypto
+DEBUG 2025-07-06 12:14:46,310 gate_api 76469 6136573952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:14:46,311 gate_api 76469 6136573952 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 12:14:47,387 gate_api 76469 6136573952 Gate API请求成功，耗时: 1.08秒
+INFO 2025-07-06 12:14:47,388 technical_analysis 76469 6136573952 开始计算XRPUSDT的技术指标
+DEBUG 2025-07-06 12:14:47,388 gate_api 76469 6136573952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 12:14:47,388 gate_api 76469 6136573952 请求参数: {'currency_pair': 'XRP_USDT', 'interval': '1d', 'from': 1743164087, 'limit': 1000}
+DEBUG 2025-07-06 12:14:48,477 gate_api 76469 6136573952 Gate API请求成功，耗时: 1.09秒
+INFO 2025-07-06 12:14:48,481 technical_analysis 76469 6136573952 获取到XRPUSDT的101条K线数据
+INFO 2025-07-06 12:14:48,481 technical_analysis 76469 6136573952 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 2.34118, 2.34339, 2.1536, 2.20639, 34685230.48592784, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 12:14:48,516 gate_api 76469 6136573952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 12:14:48,517 gate_api 76469 6136573952 请求参数: {'contract': 'XRP_USDT'}
+DEBUG 2025-07-06 12:14:49,777 gate_api 76469 6136573952 Gate API请求成功，耗时: 1.26秒
+DEBUG 2025-07-06 12:14:49,780 gate_api 76469 6136573952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 12:14:49,780 gate_api 76469 6136573952 请求参数: {'settle': 'usdt'}
+DEBUG 2025-07-06 12:14:50,630 gate_api 76469 6136573952 Gate API请求成功，耗时: 0.85秒
+INFO 2025-07-06 12:14:50,635 technical_analysis 76469 6136573952 成功计算XRPUSDT的所有技术指标
+INFO 2025-07-06 12:14:50,640 views_indicators_data 76469 6136573952 Technical analysis record already exists within 12 hours, ID: 141, not creating new one
+INFO 2025-07-06 12:14:50,640 views_indicators_data 76469 6136573952 Successfully saved technical indicator data: XRPUSDT, ID: 141
+INFO 2025-07-06 12:15:10,885 technical_analysis 76469 6136573952 检测到XRPUSDT的市场类型: crypto
+DEBUG 2025-07-06 12:15:10,887 gate_api 76469 6136573952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:15:10,887 gate_api 76469 6136573952 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 12:15:11,858 gate_api 76469 6136573952 Gate API请求成功，耗时: 0.97秒
+INFO 2025-07-06 12:15:11,859 technical_analysis 76469 6136573952 开始计算XRPUSDT的技术指标
+DEBUG 2025-07-06 12:15:11,859 gate_api 76469 6136573952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 12:15:11,859 gate_api 76469 6136573952 请求参数: {'currency_pair': 'XRP_USDT', 'interval': '1d', 'from': 1743164111, 'limit': 1000}
+DEBUG 2025-07-06 12:15:13,196 gate_api 76469 6136573952 Gate API请求成功，耗时: 1.34秒
+INFO 2025-07-06 12:15:13,200 technical_analysis 76469 6136573952 获取到XRPUSDT的101条K线数据
+INFO 2025-07-06 12:15:13,200 technical_analysis 76469 6136573952 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 2.34118, 2.34339, 2.1536, 2.20639, 34685230.48592784, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 12:15:13,224 gate_api 76469 6136573952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 12:15:13,224 gate_api 76469 6136573952 请求参数: {'contract': 'XRP_USDT'}
+DEBUG 2025-07-06 12:15:14,333 gate_api 76469 6136573952 Gate API请求成功，耗时: 1.11秒
+DEBUG 2025-07-06 12:15:14,337 gate_api 76469 6136573952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 12:15:14,337 gate_api 76469 6136573952 请求参数: {'settle': 'usdt'}
+DEBUG 2025-07-06 12:15:15,538 gate_api 76469 6136573952 Gate API请求成功，耗时: 1.19秒
+INFO 2025-07-06 12:15:15,547 technical_analysis 76469 6136573952 成功计算XRPUSDT的所有技术指标
+INFO 2025-07-06 12:15:15,552 views_indicators_data 76469 6136573952 Technical analysis record already exists within 12 hours, ID: 141, not creating new one
+INFO 2025-07-06 12:15:15,552 views_indicators_data 76469 6136573952 Successfully saved technical indicator data: XRPUSDT, ID: 141
+DEBUG 2025-07-06 12:15:15,553 gate_api 76469 6136573952 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:15:15,553 gate_api 76469 6136573952 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 12:15:16,349 gate_api 76469 6136573952 Gate API请求成功，耗时: 0.80秒
+INFO 2025-07-06 12:17:46,240 technical_analysis 76572 6161903616 检测到XRPUSDT的市场类型: crypto
+DEBUG 2025-07-06 12:17:46,242 gate_api 76572 6161903616 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:17:46,242 gate_api 76572 6161903616 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 12:17:47,117 gate_api 76572 6161903616 Gate API请求成功，耗时: 0.87秒
+INFO 2025-07-06 12:17:47,120 technical_analysis 76572 6161903616 开始计算XRPUSDT的技术指标
+DEBUG 2025-07-06 12:17:47,120 gate_api 76572 6161903616 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 12:17:47,120 gate_api 76572 6161903616 请求参数: {'currency_pair': 'XRP_USDT', 'interval': '1d', 'from': 1743164267, 'limit': 1000}
+DEBUG 2025-07-06 12:17:47,719 gate_api 76572 6161903616 Gate API请求成功，耗时: 0.60秒
+INFO 2025-07-06 12:17:47,722 technical_analysis 76572 6161903616 获取到XRPUSDT的101条K线数据
+INFO 2025-07-06 12:17:47,722 technical_analysis 76572 6161903616 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 2.34118, 2.34339, 2.1536, 2.20639, 34685230.48592784, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 12:17:47,753 gate_api 76572 6161903616 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 12:17:47,753 gate_api 76572 6161903616 请求参数: {'contract': 'XRP_USDT'}
+DEBUG 2025-07-06 12:17:48,841 gate_api 76572 6161903616 Gate API请求成功，耗时: 1.09秒
+DEBUG 2025-07-06 12:17:48,844 gate_api 76572 6161903616 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 12:17:48,845 gate_api 76572 6161903616 请求参数: {'settle': 'usdt'}
+DEBUG 2025-07-06 12:17:50,754 gate_api 76572 6161903616 Gate API请求成功，耗时: 1.90秒
+INFO 2025-07-06 12:17:50,760 technical_analysis 76572 6161903616 成功计算XRPUSDT的所有技术指标
+INFO 2025-07-06 12:17:50,764 views_indicators_data 76572 6161903616 Technical analysis record already exists within 12 hours, ID: 141, not creating new one
+INFO 2025-07-06 12:17:50,765 views_indicators_data 76572 6161903616 Successfully saved technical indicator data: XRPUSDT, ID: 141
+DEBUG 2025-07-06 12:17:50,765 gate_api 76572 6161903616 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:17:50,766 gate_api 76572 6161903616 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 12:17:51,403 gate_api 76572 6161903616 Gate API请求成功，耗时: 0.64秒
+INFO 2025-07-06 12:18:27,491 technical_analysis 76572 6161903616 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 12:18:27,493 utils 76572 6161903616 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 12:18:29,563 views_news 76572 12918534144 Getting news for XRP in crypto market
+INFO 2025-07-06 12:18:29,565 views_news 76572 12918534144 Getting crypto news for XRP
+INFO 2025-07-06 12:18:29,565 views_news 76572 12935360512 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:18:29,565 views_news 76572 12952186880 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:18:29,567 views_news 76572 12969013248 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:18:29,567 views_news 76572 12985839616 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 12:18:30,347 views_news 76572 12952186880 RSS feed returned 2 news items
+ERROR 2025-07-06 12:18:30,568 views_news 76572 12935360512 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 12:18:30,568 views_news 76572 12935360512 RSS feed returned 1 news items
+INFO 2025-07-06 12:18:30,572 views_news 76572 12918534144 coindesk returned 1 news items
+INFO 2025-07-06 12:18:30,572 views_news 76572 12918534144 cointelegraph returned 2 news items
+INFO 2025-07-06 12:18:30,666 views_news 76572 12969013248 RSS feed returned 2 news items
+INFO 2025-07-06 12:18:30,668 views_news 76572 12918534144 decrypt returned 2 news items
+INFO 2025-07-06 12:18:30,978 views_news 76572 12985839616 RSS feed returned 2 news items
+INFO 2025-07-06 12:18:30,982 views_news 76572 12918534144 beincrypto returned 2 news items
+INFO 2025-07-06 12:18:30,986 views_news 76572 12918534144 Getting news for XRP in crypto market
+INFO 2025-07-06 12:18:30,987 views_news 76572 12918534144 Returning cached news for XRP (crypto)
+INFO 2025-07-06 12:18:32,486 technical_analysis 76572 12918534144 检测到XRPUSDT的市场类型: crypto
+DEBUG 2025-07-06 12:18:32,488 gate_api 76572 12918534144 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:18:32,488 gate_api 76572 12918534144 请求参数: {'currency_pair': 'XRP_USDT'}
+DEBUG 2025-07-06 12:18:33,741 gate_api 76572 12918534144 Gate API请求成功，耗时: 1.25秒
+INFO 2025-07-06 12:18:33,742 technical_analysis 76572 12918534144 开始计算XRPUSDT的技术指标
+DEBUG 2025-07-06 12:18:33,742 gate_api 76572 12918534144 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 12:18:33,742 gate_api 76572 12918534144 请求参数: {'currency_pair': 'XRP_USDT', 'interval': '1d', 'from': 1743164313, 'limit': 1000}
+DEBUG 2025-07-06 12:18:34,316 gate_api 76572 12918534144 Gate API请求成功，耗时: 0.57秒
+INFO 2025-07-06 12:18:34,319 technical_analysis 76572 12918534144 获取到XRPUSDT的101条K线数据
+INFO 2025-07-06 12:18:34,320 technical_analysis 76572 12918534144 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 2.34118, 2.34339, 2.1536, 2.20639, 34685230.48592784, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 12:18:34,330 gate_api 76572 12918534144 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 12:18:34,330 gate_api 76572 12918534144 请求参数: {'contract': 'XRP_USDT'}
+DEBUG 2025-07-06 12:18:35,762 gate_api 76572 12918534144 Gate API请求成功，耗时: 1.43秒
+DEBUG 2025-07-06 12:18:35,766 gate_api 76572 12918534144 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 12:18:35,766 gate_api 76572 12918534144 请求参数: {'settle': 'usdt'}
+DEBUG 2025-07-06 12:18:37,316 gate_api 76572 12918534144 Gate API请求成功，耗时: 1.54秒
+INFO 2025-07-06 12:18:37,326 technical_analysis 76572 12918534144 成功计算XRPUSDT的所有技术指标
+INFO 2025-07-06 12:18:37,330 views_indicators_data 76572 12918534144 Technical analysis record already exists within 12 hours, ID: 141, not creating new one
+INFO 2025-07-06 12:18:37,330 views_indicators_data 76572 12918534144 Successfully saved technical indicator data: XRPUSDT, ID: 141
+INFO 2025-07-06 12:18:48,040 utils 76572 12918534144 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-07-06 12:19:16,325 views_news 76572 12901707776 Getting news for YAAS in stock market
+INFO 2025-07-06 12:19:16,327 views_news 76572 12901707776 Tiingo key available: True
+INFO 2025-07-06 12:19:16,327 views_news 76572 12901707776 NewsAPI key available: False
+INFO 2025-07-06 12:19:16,346 utils 76572 6161903616 Cached technical indicators for YAAS (en-US) with key: 65b6695f3145976abeb42eae725a55b6
+INFO 2025-07-06 12:19:16,364 utils 76572 6161903616 Cached technical indicators for YAAS (en-US) with key: 65b6695f3145976abeb42eae725a55b6
+INFO 2025-07-06 12:19:17,850 views_news 76572 12901707776 tiingo returned 1 news items
+INFO 2025-07-06 12:19:17,855 views_news 76572 12901707776 Getting news for YAAS in stock market
+INFO 2025-07-06 12:19:17,856 views_news 76572 12901707776 Returning cached news for YAAS (stock)
+INFO 2025-07-06 12:19:20,846 views_news 76572 6161903616 Getting news for META in stock market
+INFO 2025-07-06 12:19:20,846 views_news 76572 6161903616 Tiingo key available: True
+INFO 2025-07-06 12:19:20,847 views_news 76572 6161903616 NewsAPI key available: False
+INFO 2025-07-06 12:19:20,867 utils 76572 12901707776 Cached technical indicators for META (en-US) with key: c970dbe09d96bd23949ab1ff6d13745e
+INFO 2025-07-06 12:19:21,893 views_news 76572 6161903616 tiingo returned 10 news items
+INFO 2025-07-06 12:19:22,651 utils 76572 12901707776 Cached technical indicators for META (en-US) with key: c970dbe09d96bd23949ab1ff6d13745e
+INFO 2025-07-06 12:19:38,388 utils 76572 12901707776 Cached technical indicators for META (en-US) with key: c970dbe09d96bd23949ab1ff6d13745e
+INFO 2025-07-06 12:19:57,614 views_news 76572 12901707776 Getting news for XRP in crypto market
+INFO 2025-07-06 12:19:57,616 views_news 76572 12901707776 Getting crypto news for XRP
+INFO 2025-07-06 12:19:57,616 views_news 76572 12918534144 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:19:57,617 views_news 76572 12935360512 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:19:57,617 views_news 76572 12952186880 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:19:57,619 views_news 76572 12969013248 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 12:19:57,639 utils 76572 6161903616 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-07-06 12:19:57,667 utils 76572 6161903616 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+INFO 2025-07-06 12:19:58,155 views_news 76572 12952186880 RSS feed returned 2 news items
+INFO 2025-07-06 12:19:58,208 views_news 76572 12935360512 RSS feed returned 2 news items
+ERROR 2025-07-06 12:19:58,673 views_news 76572 12918534144 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 12:19:58,674 views_news 76572 12918534144 RSS feed returned 1 news items
+INFO 2025-07-06 12:19:58,678 views_news 76572 12901707776 coindesk returned 1 news items
+INFO 2025-07-06 12:19:58,678 views_news 76572 12901707776 cointelegraph returned 2 news items
+INFO 2025-07-06 12:19:58,678 views_news 76572 12901707776 decrypt returned 2 news items
+INFO 2025-07-06 12:19:58,709 views_news 76572 12969013248 RSS feed returned 2 news items
+INFO 2025-07-06 12:19:58,712 views_news 76572 12901707776 beincrypto returned 2 news items
+INFO 2025-07-06 12:19:58,716 views_news 76572 12901707776 Getting news for XRP in crypto market
+INFO 2025-07-06 12:19:58,717 views_news 76572 12901707776 Returning cached news for XRP (crypto)
+INFO 2025-07-06 12:20:16,643 views_news 76572 12901707776 Getting news for ADA in crypto market
+INFO 2025-07-06 12:20:16,646 views_news 76572 12901707776 Getting crypto news for ADA
+INFO 2025-07-06 12:20:16,646 views_news 76572 12935360512 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 12:20:16,647 views_news 76572 12952186880 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 12:20:16,648 views_news 76572 12969013248 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 12:20:16,651 views_news 76572 12985839616 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 12:20:16,668 utils 76572 12918534144 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-07-06 12:20:16,695 utils 76572 12918534144 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-07-06 12:20:17,201 views_news 76572 12952186880 RSS feed returned 0 news items
+INFO 2025-07-06 12:20:17,326 views_news 76572 12935360512 RSS feed returned 2 news items
+INFO 2025-07-06 12:20:17,330 views_news 76572 12901707776 coindesk returned 2 news items
+INFO 2025-07-06 12:20:17,506 views_news 76572 12985839616 RSS feed returned 0 news items
+INFO 2025-07-06 12:20:17,752 views_news 76572 12969013248 RSS feed returned 2 news items
+INFO 2025-07-06 12:20:17,754 views_news 76572 12901707776 decrypt returned 2 news items
+INFO 2025-07-06 12:20:19,978 technical_analysis 76572 12901707776 检测到ADAUSDT的市场类型: crypto
+DEBUG 2025-07-06 12:20:19,980 gate_api 76572 12901707776 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:20:19,981 gate_api 76572 12901707776 请求参数: {'currency_pair': 'ADA_USDT'}
+DEBUG 2025-07-06 12:20:21,330 gate_api 76572 12901707776 Gate API请求成功，耗时: 1.35秒
+INFO 2025-07-06 12:20:21,333 technical_analysis 76572 12901707776 开始计算ADAUSDT的技术指标
+DEBUG 2025-07-06 12:20:21,334 gate_api 76572 12901707776 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 12:20:21,334 gate_api 76572 12901707776 请求参数: {'currency_pair': 'ADA_USDT', 'interval': '1d', 'from': 1743164421, 'limit': 1000}
+DEBUG 2025-07-06 12:20:22,324 gate_api 76572 12901707776 Gate API请求成功，耗时: 0.99秒
+INFO 2025-07-06 12:20:22,326 technical_analysis 76572 12901707776 获取到ADAUSDT的101条K线数据
+INFO 2025-07-06 12:20:22,326 technical_analysis 76572 12901707776 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 0.7382, 0.7464, 0.6897, 0.7062, 7569657.768092, 0, 0, 0, 0, 0, 0]
+DEBUG 2025-07-06 12:20:22,339 gate_api 76572 12901707776 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/funding_rate
+DEBUG 2025-07-06 12:20:22,339 gate_api 76572 12901707776 请求参数: {'contract': 'ADA_USDT'}
+DEBUG 2025-07-06 12:20:23,302 gate_api 76572 12901707776 Gate API请求成功，耗时: 0.96秒
+DEBUG 2025-07-06 12:20:23,305 gate_api 76572 12901707776 发送请求到Gate API: GET https://api.gateio.ws/api/v4/futures/usdt/contracts
+DEBUG 2025-07-06 12:20:23,305 gate_api 76572 12901707776 请求参数: {'settle': 'usdt'}
+DEBUG 2025-07-06 12:20:24,486 gate_api 76572 12901707776 Gate API请求成功，耗时: 1.18秒
+INFO 2025-07-06 12:20:24,492 technical_analysis 76572 12901707776 成功计算ADAUSDT的所有技术指标
+INFO 2025-07-06 12:20:24,500 views_indicators_data 76572 12901707776 Successfully saved technical indicator data: ADAUSDT, ID: 144
+INFO 2025-07-06 12:20:24,506 technical_analysis 76572 12901707776 检测到ADAUSDT的市场类型: crypto
+DEBUG 2025-07-06 12:20:24,507 gate_api 76572 12901707776 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/tickers
+DEBUG 2025-07-06 12:20:24,507 gate_api 76572 12901707776 请求参数: {'currency_pair': 'ADA_USDT'}
+DEBUG 2025-07-06 12:20:25,307 gate_api 76572 12901707776 Gate API请求成功，耗时: 0.80秒
+INFO 2025-07-06 12:20:25,310 technical_analysis 76572 12901707776 开始计算ADAUSDT的技术指标
+DEBUG 2025-07-06 12:20:25,310 gate_api 76572 12901707776 发送请求到Gate API: GET https://api.gateio.ws/api/v4/spot/candlesticks
+DEBUG 2025-07-06 12:20:25,310 gate_api 76572 12901707776 请求参数: {'currency_pair': 'ADA_USDT', 'interval': '1d', 'from': 1743164425, 'limit': 1000}
+DEBUG 2025-07-06 12:20:26,281 gate_api 76572 12901707776 Gate API请求成功，耗时: 0.97秒
+INFO 2025-07-06 12:20:26,284 technical_analysis 76572 12901707776 获取到ADAUSDT的101条K线数据
+INFO 2025-07-06 12:20:26,284 technical_analysis 76572 12901707776 K线数据格式 - 总数: 101, 列数: 12, 示例: [1743120000000, 0.7382, 0.7464, 0.6897, 0.7062, 7569657.768092, 0, 0, 0, 0, 0, 0]
+INFO 2025-07-06 12:20:26,297 technical_analysis 76572 12901707776 成功计算ADAUSDT的所有技术指标
+INFO 2025-07-06 12:20:26,300 views_indicators_data 76572 12901707776 Technical analysis record already exists within 12 hours, ID: 144, not creating new one
+INFO 2025-07-06 12:20:26,300 views_indicators_data 76572 12901707776 Successfully saved technical indicator data: ADAUSDT, ID: 144
+INFO 2025-07-06 12:20:37,959 utils 76572 6161903616 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-07-06 12:20:48,091 views_news 76572 12918534144 Getting news for ADA in crypto market
+INFO 2025-07-06 12:20:48,092 views_news 76572 12918534144 Returning cached news for ADA (crypto)
+INFO 2025-07-06 12:20:48,110 utils 76572 12901707776 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee
+INFO 2025-07-06 12:20:49,750 utils 76572 12901707776 Cached technical indicators for ADAUSDT (en-US) with key: 6c05bf31a516022e7caf0d47eb4c7bee

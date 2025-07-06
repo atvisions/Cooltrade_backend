@@ -21,7 +21,9 @@ def detect_market_type(symbol, request_path=None, request=None):
     """检测市场类型"""
     # 通过请求路径判断 - 检查完整的请求路径
     if request_path:
-        if '/stock/' in request_path:
+        if '/china/' in request_path:
+            return 'china'
+        elif '/stock/' in request_path:
             return 'stock'
         elif '/crypto/' in request_path:
             return 'crypto'
@@ -29,12 +31,19 @@ def detect_market_type(symbol, request_path=None, request=None):
     # 如果有request对象，检查完整的请求路径
     if request:
         full_path = request.get_full_path()
-        if '/api/stock/' in full_path:
+        if '/api/china/' in full_path:
+            return 'china'
+        elif '/api/stock/' in full_path:
             return 'stock'
         elif '/api/crypto/' in full_path:
             return 'crypto'
 
     # 通过符号判断（备用方法）
+    # A股符号检测
+    if ('.' in symbol and (symbol.endswith('.SZ') or symbol.endswith('.SH'))) or \
+       (symbol.isdigit() and len(symbol) == 6):
+        return 'china'
+
     # 美股符号通常是字母组合，加密货币符号通常较短且常见
     crypto_symbols = ['BTC', 'ETH', 'ADA', 'SOL', 'DOGE', 'XRP', 'DOT', 'LINK', 'LTC', 'BCH', 'UNI', 'MATIC', 'AVAX', 'ATOM', 'FTM', 'NEAR']
     if symbol.upper() in crypto_symbols:
@@ -514,6 +523,8 @@ def get_news_by_market(request, symbol):
             news_data = get_crypto_news_data(symbol, limit)
         elif market_type == 'stock':
             news_data = get_stock_news_data(symbol, limit)
+        elif market_type == 'china':
+            news_data = get_china_stock_news_data(symbol, limit)
         else:
             return JsonResponse({
                 'status': 'error',
@@ -750,6 +761,142 @@ def fetch_newsapi_stock_news_sync(symbol, limit, newsapi_key):
 
     except Exception as e:
         logger.error(f"NewsAPI stock news error: {str(e)}")
+        return []
+
+
+def get_china_stock_news_data(symbol, limit):
+    """获取A股新闻数据"""
+    from .services.tushare_api import TushareAPI
+
+    logger.info(f"Getting China stock news for {symbol}")
+
+    news_data = []
+
+    try:
+        # 初始化Tushare API
+        tushare_api = TushareAPI()
+
+        # 格式化股票代码
+        ts_code = tushare_api.format_symbol(symbol)
+
+        # 尝试从Tushare获取新闻（如果API支持）
+        # 注意：Tushare的新闻接口可能需要更高级别的权限
+        try:
+            # 这里可以扩展Tushare API来获取新闻
+            # 目前先使用模拟数据或通用新闻源
+            pass
+        except Exception as e:
+            logger.warning(f"Tushare news API not available: {str(e)}")
+
+        # 使用通用新闻API搜索A股相关新闻
+        newsapi_key = getattr(settings, 'NEWSAPI_KEY', None)
+        if newsapi_key:
+            try:
+                # 获取股票基本信息用于搜索
+                stock_info = tushare_api.get_stock_basic()
+                stock_name = None
+
+                if stock_info is not None and not stock_info.empty:
+                    # 查找对应的股票名称
+                    matching_stocks = stock_info[stock_info['ts_code'] == ts_code]
+                    if not matching_stocks.empty:
+                        stock_name = matching_stocks.iloc[0]['name']
+
+                # 构建搜索查询
+                if stock_name:
+                    query = f"{stock_name} OR {ts_code} OR {symbol}"
+                else:
+                    query = f"{ts_code} OR {symbol}"
+
+                # 添加A股相关关键词
+                query += " 股票 OR 上市公司 OR A股"
+
+                # 调用NewsAPI
+                china_news = fetch_newsapi_china_stock_news_sync(query, limit, newsapi_key)
+                if china_news:
+                    news_data.extend(china_news)
+
+            except Exception as e:
+                logger.error(f"Error fetching China stock news from NewsAPI: {str(e)}")
+
+        # 如果没有获取到新闻，返回默认消息
+        if not news_data:
+            logger.info(f"No news found for China stock {symbol}")
+            return []
+
+        # 去重和排序
+        seen_urls = set()
+        unique_news = []
+        for news in news_data:
+            url = news.get('url', '')
+            if url and url not in seen_urls:
+                seen_urls.add(url)
+                unique_news.append(news)
+
+        # 按发布时间排序
+        try:
+            unique_news.sort(key=lambda x: x.get('published_at', ''), reverse=True)
+        except Exception as e:
+            logger.error(f"Error sorting China stock news: {str(e)}")
+
+        return unique_news[:limit]
+
+    except Exception as e:
+        logger.error(f"Error in get_china_stock_news_data: {str(e)}")
+        return []
+
+
+def fetch_newsapi_china_stock_news_sync(query, limit, newsapi_key):
+    """同步获取NewsAPI A股新闻"""
+    try:
+        if not newsapi_key:
+            return []
+
+        # NewsAPI URL
+        newsapi_url = "https://newsapi.org/v2/everything"
+
+        # 构建参数
+        params = {
+            'q': query,
+            'apiKey': newsapi_key,
+            'language': 'zh',  # 中文新闻
+            'sortBy': 'publishedAt',
+            'pageSize': min(limit * 2, 100),
+            'from': (datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d')
+        }
+
+        response = requests.get(newsapi_url, params=params, timeout=10)
+
+        if response.status_code == 200:
+            data = response.json()
+            articles = data.get('articles', [])
+
+            # 格式化结果
+            formatted_articles = []
+            for article in articles:
+                if article.get('title') == '[Removed]':
+                    continue
+
+                formatted_articles.append({
+                    'id': hash(article.get('url', '')),
+                    'title': article.get('title'),
+                    'url': article.get('url'),
+                    'published_at': article.get('publishedAt'),
+                    'source': article.get('source', {}).get('name', 'NewsAPI'),
+                    'body': article.get('description', ''),
+                    'source_type': 'newsapi_china'
+                })
+
+                if len(formatted_articles) >= limit:
+                    break
+
+            return formatted_articles
+        else:
+            logger.error(f"NewsAPI China stock news error: {response.status_code}")
+            return []
+
+    except Exception as e:
+        logger.error(f"NewsAPI China stock news error: {str(e)}")
         return []
 
 

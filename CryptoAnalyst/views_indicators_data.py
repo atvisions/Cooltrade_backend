@@ -104,15 +104,23 @@ class TechnicalIndicatorsDataAPIView(APIView):
             # 从技术指标数据中获取当前价格
             current_price = technical_data.get('data', {}).get('current_price', 0)
 
-            # If no current price in technical indicator data, try to get from Gate API
+            # If no current price in technical indicator data, try to get from appropriate API
             if not current_price:
                 try:
                     # Ensure ta_service is initialized
                     if self.ta_service is None:
                         self.ta_service = TechnicalAnalysisService()
 
-                    # Get real-time price
-                    current_price = self.ta_service.gate_api.get_realtime_price(symbol)
+                    # Detect market type and get real-time price from appropriate API
+                    market_type = self.ta_service._detect_market_type(symbol)
+
+                    if market_type == 'china':
+                        # For A-share stocks, use Tushare API
+                        ts_code = self.ta_service.tushare_api.format_symbol(symbol)
+                        current_price = self.ta_service.tushare_api.get_realtime_price(ts_code)
+                    else:
+                        # For crypto and US stocks, use Gate API
+                        current_price = self.ta_service.gate_api.get_realtime_price(symbol)
 
                     # If still unable to get price, use default value
                     if not current_price:

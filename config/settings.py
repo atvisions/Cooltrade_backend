@@ -274,6 +274,9 @@ COINGECKO_API_KEY = os.getenv('COINGECKO_API_KEY')
 # Tiingo API配置 (用于股票数据)
 TIINGO_API_KEY = os.getenv('TIINGO_API_KEY')
 
+# Tushare API配置 (用于A股数据)
+TUSHARE_API_KEY = os.getenv('TUSHARE_API_KEY')
+
 # 新闻API配置
 # NewsAPI配置 (用于加密货币新闻)
 NEWSAPI_KEY = os.getenv('NEWSAPI_KEY')
@@ -360,12 +363,14 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",
     "http://localhost:5000",  # Vite 默认端口
     "http://localhost:5001",  # 您当前使用的端口
+    "http://localhost:5002",  # 当前前端运行端口
     "http://127.0.0.1:3001",
     "http://127.0.0.1:5000",
     "http://127.0.0.1:5001",
+    "http://127.0.0.1:5002",  # 当前前端运行端口
     "http://192.168.3.16:8000",  # 添加本地开发服务器
     "http://192.168.3.56:8000",  # 您提到的服务器地址
-    "https://www.cooltrade.xyz",  # 生产环境
+    "http://localhost:8000",  # 本地后端地址
 ]
 
 CORS_ALLOW_METHODS = [

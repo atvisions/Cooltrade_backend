@@ -40,17 +40,22 @@ class CryptoReportAPIView(APIView):
     def get(self, request, symbol: str) -> Response:
         try:
             # 检测市场类型 - 通过请求路径判断
+            is_china_request = '/api/china/' in request.path
             is_stock_request = '/api/stock/' in request.path
-            market_type = 'stock' if is_stock_request else 'crypto'
+
+            if is_china_request:
+                market_type = 'china'
+            elif is_stock_request:
+                market_type = 'stock'
+            else:
+                market_type = 'crypto'
 
             # 只处理英文
             language = 'en-US'
             force_refresh = request.GET.get('force_refresh', 'false').lower() == 'true'
             print(f"接收到请求参数 - symbol: {symbol}, market_type: {market_type}, force_refresh: {force_refresh}")
 
-            # 检测市场类型
-            is_stock_request = '/api/stock/' in request.path
-            market_type = 'stock' if is_stock_request else 'crypto'
+
 
             # 根据市场类型获取或创建MarketType记录
             market_type_obj, _ = MarketType.objects.get_or_create(
@@ -84,7 +89,9 @@ class CryptoReportAPIView(APIView):
                 indicators = technical_data.get('indicators', {})
                 def get_indicator_value(indicator_data, default=0):
                     if isinstance(indicator_data, dict):
+                        # 如果是字典，优先查找'value'键，如果没有则返回默认值
                         return indicator_data.get('value', default)
+                    # 如果是直接的数值（如A股指标），直接返回
                     return indicator_data if indicator_data is not None else default
 
                 now = timezone.now()
@@ -96,23 +103,23 @@ class CryptoReportAPIView(APIView):
                     period_start=period_start,
                     defaults={
                         'timestamp': now,
-                        'rsi': get_indicator_value(indicators.get('rsi')),
-                        'macd_line': get_indicator_value(indicators.get('macd_line')),
-                        'macd_signal': get_indicator_value(indicators.get('macd_signal')),
-                        'macd_histogram': get_indicator_value(indicators.get('macd_histogram')),
-                        'bollinger_upper': get_indicator_value(indicators.get('bollinger_upper')),
-                        'bollinger_middle': get_indicator_value(indicators.get('bollinger_middle')),
-                        'bollinger_lower': get_indicator_value(indicators.get('bollinger_lower')),
-                        'bias': get_indicator_value(indicators.get('bias')),
-                        'psy': get_indicator_value(indicators.get('psy')),
-                        'dmi_plus': get_indicator_value(indicators.get('dmi_plus')),
-                        'dmi_minus': get_indicator_value(indicators.get('dmi_minus')),
-                        'dmi_adx': get_indicator_value(indicators.get('dmi_adx')),
-                        'vwap': get_indicator_value(indicators.get('vwap')),
-                        'funding_rate': get_indicator_value(indicators.get('funding_rate')),
-                        'exchange_netflow': get_indicator_value(indicators.get('exchange_netflow')),
-                        'nupl': get_indicator_value(indicators.get('nupl')),
-                        'mayer_multiple': get_indicator_value(indicators.get('mayer_multiple'))
+                        'rsi': get_indicator_value(indicators.get('RSI')),
+                        'macd_line': get_indicator_value(indicators.get('MACD', {}).get('line')),
+                        'macd_signal': get_indicator_value(indicators.get('MACD', {}).get('signal')),
+                        'macd_histogram': get_indicator_value(indicators.get('MACD', {}).get('histogram')),
+                        'bollinger_upper': get_indicator_value(indicators.get('BollingerBands', {}).get('upper')),
+                        'bollinger_middle': get_indicator_value(indicators.get('BollingerBands', {}).get('middle')),
+                        'bollinger_lower': get_indicator_value(indicators.get('BollingerBands', {}).get('lower')),
+                        'bias': get_indicator_value(indicators.get('BIAS')),
+                        'psy': get_indicator_value(indicators.get('PSY')),
+                        'dmi_plus': get_indicator_value(indicators.get('DMI', {}).get('plus_di')),
+                        'dmi_minus': get_indicator_value(indicators.get('DMI', {}).get('minus_di')),
+                        'dmi_adx': get_indicator_value(indicators.get('DMI', {}).get('adx')),
+                        'vwap': get_indicator_value(indicators.get('VWAP')),
+                        'funding_rate': get_indicator_value(indicators.get('FundingRate')),
+                        'exchange_netflow': get_indicator_value(indicators.get('ExchangeNetflow')),
+                        'nupl': get_indicator_value(indicators.get('NUPL')),
+                        'mayer_multiple': get_indicator_value(indicators.get('MayerMultiple'))
                     }
                 )
 
@@ -146,6 +153,9 @@ class CryptoReportAPIView(APIView):
 
     def _format_report_data(self, report):
         """格式化报告数据"""
+        # 获取关联的技术分析数据以获取指标数值
+        technical_analysis = report.technical_analysis
+
         return {
             'language': report.language,
             'timestamp': report.timestamp,
@@ -161,46 +171,69 @@ class CryptoReportAPIView(APIView):
             },
             'indicators_analysis': {
                 'rsi': {
+                    'value': technical_analysis.rsi if technical_analysis.rsi is not None else 0,
                     'analysis': report.rsi_analysis,
                     'support_trend': report.rsi_support_trend
                 },
                 'macd': {
+                    'value': {
+                        'line': technical_analysis.macd_line if technical_analysis.macd_line is not None else 0,
+                        'signal': technical_analysis.macd_signal if technical_analysis.macd_signal is not None else 0,
+                        'histogram': technical_analysis.macd_histogram if technical_analysis.macd_histogram is not None else 0
+                    },
                     'analysis': report.macd_analysis,
                     'support_trend': report.macd_support_trend
                 },
                 'bollinger_bands': {
+                    'value': {
+                        'upper': technical_analysis.bollinger_upper if technical_analysis.bollinger_upper is not None else 0,
+                        'middle': technical_analysis.bollinger_middle if technical_analysis.bollinger_middle is not None else 0,
+                        'lower': technical_analysis.bollinger_lower if technical_analysis.bollinger_lower is not None else 0
+                    },
                     'analysis': report.bollinger_analysis,
                     'support_trend': report.bollinger_support_trend
                 },
                 'bias': {
+                    'value': technical_analysis.bias if technical_analysis.bias is not None else 0,
                     'analysis': report.bias_analysis,
                     'support_trend': report.bias_support_trend
                 },
                 'psy': {
+                    'value': technical_analysis.psy if technical_analysis.psy is not None else 0,
                     'analysis': report.psy_analysis,
                     'support_trend': report.psy_support_trend
                 },
                 'dmi': {
+                    'value': {
+                        'plus_di': technical_analysis.dmi_plus if technical_analysis.dmi_plus is not None else 0,
+                        'minus_di': technical_analysis.dmi_minus if technical_analysis.dmi_minus is not None else 0,
+                        'adx': technical_analysis.dmi_adx if technical_analysis.dmi_adx is not None else 0
+                    },
                     'analysis': report.dmi_analysis,
                     'support_trend': report.dmi_support_trend
                 },
                 'vwap': {
+                    'value': technical_analysis.vwap if technical_analysis.vwap is not None else 0,
                     'analysis': report.vwap_analysis,
                     'support_trend': report.vwap_support_trend
                 },
                 'funding_rate': {
+                    'value': technical_analysis.funding_rate if technical_analysis.funding_rate is not None else 0,
                     'analysis': report.funding_rate_analysis,
                     'support_trend': report.funding_rate_support_trend
                 },
                 'exchange_netflow': {
+                    'value': technical_analysis.exchange_netflow if technical_analysis.exchange_netflow is not None else 0,
                     'analysis': report.exchange_netflow_analysis,
                     'support_trend': report.exchange_netflow_support_trend
                 },
                 'nupl': {
+                    'value': technical_analysis.nupl if technical_analysis.nupl is not None else 0,
                     'analysis': report.nupl_analysis,
                     'support_trend': report.nupl_support_trend
                 },
                 'mayer_multiple': {
+                    'value': technical_analysis.mayer_multiple if technical_analysis.mayer_multiple is not None else 0,
                     'analysis': report.mayer_multiple_analysis,
                     'support_trend': report.mayer_multiple_support_trend
                 }
@@ -230,7 +263,15 @@ class CryptoReportAPIView(APIView):
         """
         try:
             # 根据市场类型处理符号格式
-            if market_type == 'stock':
+            if market_type == 'china':
+                # A股符号：直接使用
+                clean_symbol = symbol.upper()
+                api_symbol = clean_symbol
+                print(f"[DEBUG] A股请求 - 符号: {symbol}, 市场类型: {market_type}")
+
+                # 使用A股技术分析
+                return self._get_china_stock_technical_data(clean_symbol)
+            elif market_type == 'stock':
                 # 股票符号：直接使用，不添加USDT后缀
                 clean_symbol = symbol.upper()
                 api_symbol = clean_symbol  # 股票API使用原始符号
@@ -270,7 +311,16 @@ class CryptoReportAPIView(APIView):
             print(f"[DEBUG] 找到Asset记录: ID={asset.id}, Symbol={asset.symbol}, Market={asset.market_type.name}")
 
             # 根据市场类型获取技术指标数据
-            if market_type == 'stock':
+            if market_type == 'china':
+                # 对于A股，使用专门的A股数据获取方法
+                print(f"get_report 接口：获取A股 {clean_symbol} 的技术指标数据")
+                technical_data = self._get_china_stock_technical_data(clean_symbol)
+                print(f"[DEBUG] _get_china_stock_technical_data 返回: {technical_data}")
+
+                if not technical_data:
+                    print(f"[DEBUG] A股技术数据为空，返回None")
+                    return None
+            elif market_type == 'stock':
                 # 对于股票，使用专门的股票数据获取方法
                 print(f"get_report 接口：获取股票 {clean_symbol} 的技术指标数据")
                 technical_data = self._get_stock_technical_data(clean_symbol)
@@ -546,7 +596,9 @@ class CryptoReportAPIView(APIView):
             indicators = technical_data.get('indicators', {})
             def get_indicator_value(indicator_data, default=0):
                 if isinstance(indicator_data, dict):
+                    # 如果是字典，优先查找'value'键，如果没有则返回默认值
                     return indicator_data.get('value', default)
+                # 如果是直接的数值（如A股指标），直接返回
                 return indicator_data if indicator_data is not None else default
 
             now = timezone.now()
@@ -559,11 +611,14 @@ class CryptoReportAPIView(APIView):
             print(f"[DEBUG] MACD Signal: {get_indicator_value(indicators.get('macd_signal'))}")
             print(f"[DEBUG] MACD Histogram: {get_indicator_value(indicators.get('macd_histogram'))}")
             print(f"[DEBUG] Bollinger Upper: {get_indicator_value(indicators.get('bollinger_upper'))}")
-            print(f"[DEBUG] Bollinger Middle: {get_indicator_value(indicators.get('bollinger_middle'))}")
-            print(f"[DEBUG] Bollinger Lower: {get_indicator_value(indicators.get('bollinger_lower'))}")
+            print(f"[DEBUG] BIAS: {get_indicator_value(indicators.get('bias'))}")
+            print(f"[DEBUG] PSY: {get_indicator_value(indicators.get('psy'))}")
             print(f"[DEBUG] DMI Plus: {get_indicator_value(indicators.get('dmi_plus'))}")
-            print(f"[DEBUG] DMI Minus: {get_indicator_value(indicators.get('dmi_minus'))}")
-            print(f"[DEBUG] DMI ADX: {get_indicator_value(indicators.get('adx'))}")
+            print(f"[DEBUG] VWAP: {get_indicator_value(indicators.get('vwap'))}")
+            print(f"[DEBUG] FundingRate: {get_indicator_value(indicators.get('funding_rate'))}")
+            print(f"[DEBUG] ExchangeNetflow: {get_indicator_value(indicators.get('exchange_netflow'))}")
+            print(f"[DEBUG] NUPL: {get_indicator_value(indicators.get('nupl'))}")
+            print(f"[DEBUG] MayerMultiple: {get_indicator_value(indicators.get('mayer_multiple'))}")
 
             with transaction.atomic():
                 # 使用 update_or_create 确保技术指标数据被更新
@@ -583,7 +638,7 @@ class CryptoReportAPIView(APIView):
                         'psy': get_indicator_value(indicators.get('psy')),
                         'dmi_plus': get_indicator_value(indicators.get('dmi_plus')),
                         'dmi_minus': get_indicator_value(indicators.get('dmi_minus')),
-                        'dmi_adx': get_indicator_value(indicators.get('adx')),
+                        'dmi_adx': get_indicator_value(indicators.get('dmi_adx')),
                         'vwap': get_indicator_value(indicators.get('vwap')),
                         'funding_rate': get_indicator_value(indicators.get('funding_rate')),
                         'exchange_netflow': get_indicator_value(indicators.get('exchange_netflow')),
@@ -840,4 +895,49 @@ class CryptoReportAPIView(APIView):
 
         except Exception as e:
             print(f"提取 JSON 时发生错误: {str(e)}")
+            return None
+
+    def _get_china_stock_technical_data(self, symbol: str) -> Optional[Dict[str, Any]]:
+        """获取A股技术指标数据"""
+        try:
+            from .services.technical_analysis import TechnicalAnalysisService
+
+            print(f"[DEBUG] 开始获取A股 {symbol} 的技术指标数据")
+
+            # 使用技术分析服务获取A股数据
+            ta_service = TechnicalAnalysisService()
+            result = ta_service.get_all_indicators(symbol)
+
+            if result.get('status') == 'success':
+                data = result.get('data', {})
+                print(f"[DEBUG] A股技术分析成功，数据: {data}")
+
+                # 从技术分析数据中提取当前价格
+                current_price = data.get('current_price', 0)
+
+                # 如果技术分析数据中没有当前价格，尝试从Tushare API获取
+                if not current_price:
+                    try:
+                        ta_service = TechnicalAnalysisService()
+                        current_price = ta_service.tushare_api.get_realtime_price(symbol)
+                        if not current_price:
+                            current_price = 0
+                    except Exception as e:
+                        print(f"[DEBUG] 获取A股实时价格失败: {str(e)}")
+                        current_price = 0
+
+                # 格式化数据以匹配预期的结构
+                formatted_data = {
+                    'current_price': current_price,
+                    'indicators': data.get('indicators', data)
+                }
+
+                print(f"[DEBUG] 格式化后的A股数据: current_price={current_price}")
+                return formatted_data
+            else:
+                print(f"[DEBUG] A股技术分析失败: {result.get('message')}")
+                return None
+
+        except Exception as e:
+            print(f"[DEBUG] 获取A股技术数据时出错: {str(e)}")
             return None
