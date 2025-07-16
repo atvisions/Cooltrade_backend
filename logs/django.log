@@ -7937,3 +7937,414 @@ INFO 2025-07-06 13:06:54,217 basehttp 78555 6150467584 "GET /api/china/get_repor
 INFO 2025-07-06 13:06:54,793 basehttp 78555 6150467584 "GET /api/china/technical-indicators/600000.SH/ HTTP/1.1" 200 3169
 INFO 2025-07-06 13:06:56,529 basehttp 78555 6150467584 "OPTIONS /api/crypto/favorites/status/600000.SH/?market_type=china HTTP/1.1" 200 0
 INFO 2025-07-06 13:06:56,541 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/600000.SH/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 13:08:39,412 basehttp 78555 13086404608 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+INFO 2025-07-06 13:08:39,435 basehttp 78555 13086404608 "GET /api/crypto/technical-indicators/XRPUSDT/ HTTP/1.1" 200 3226
+INFO 2025-07-06 13:08:39,468 basehttp 78555 13086404608 "GET /api/crypto/favorites/status/XRPUSDT/?market_type=crypto HTTP/1.1" 200 90
+INFO 2025-07-06 13:08:39,670 basehttp 78555 6150467584 "GET /api/crypto/news/XRP/?limit=10 HTTP/1.1" 200 3716
+INFO 2025-07-06 13:08:45,753 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:08:46,031 basehttp 78555 6167293952 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:08:46,048 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:08:46,310 basehttp 78555 6167293952 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:08:46,323 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:08:48,798 basehttp 78555 6167293952 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 13:08:53,046 basehttp 78555 6150467584 "OPTIONS /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 0
+INFO 2025-07-06 13:08:53,312 basehttp 78555 6150467584 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+INFO 2025-07-06 13:08:53,318 basehttp 78555 6150467584 "OPTIONS /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 0
+INFO 2025-07-06 13:08:53,328 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 13:08:53,600 basehttp 78555 6150467584 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+INFO 2025-07-06 13:08:53,613 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 13:08:58,012 basehttp 78555 6150467584 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+WARNING 2025-07-06 13:12:05,096 log 78555 6150467584 Not Found: /api/search/assets/
+WARNING 2025-07-06 13:12:05,097 basehttp 78555 6150467584 "GET /api/search/assets/?query=600036&market_type=china&limit=1 HTTP/1.1" 404 3216
+INFO 2025-07-06 13:12:26,711 autoreload 79120 8525864704 Watching for file changes with StatReloader
+WARNING 2025-07-06 13:12:30,917 log 78555 6150467584 Bad Request: /api/crypto/search/
+WARNING 2025-07-06 13:12:30,917 basehttp 78555 6150467584 "GET /api/crypto/search/?query=600036&market_type=china&limit=1 HTTP/1.1" 400 58
+INFO 2025-07-06 13:13:10,193 basehttp 78555 6150467584 "GET /api/crypto/search/?q=600036&market_type=china&limit=1 HTTP/1.1" 200 164
+INFO 2025-07-06 13:13:26,914 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:13:28,608 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:13:28,967 basehttp 78555 6167293952 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:13:54,168 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:13:56,470 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:13:56,502 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:13:56,503 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:13:56,533 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+WARNING 2025-07-06 13:14:00,356 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:14:00,356 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+WARNING 2025-07-06 13:14:03,950 log 78555 6150467584 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:14:03,951 basehttp 78555 6150467584 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+WARNING 2025-07-06 13:14:18,554 log 78555 6150467584 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:14:18,556 basehttp 78555 6150467584 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:14:18,563 basehttp 78555 6167293952 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+WARNING 2025-07-06 13:14:18,573 log 78555 6150467584 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:14:18,574 basehttp 78555 6150467584 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+WARNING 2025-07-06 13:14:21,111 log 78555 6150467584 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:14:21,111 basehttp 78555 6150467584 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+WARNING 2025-07-06 13:14:21,564 log 78555 6150467584 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:14:21,565 basehttp 78555 6150467584 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+WARNING 2025-07-06 13:14:23,321 log 78555 6150467584 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:14:23,323 basehttp 78555 6150467584 "GET /api/crypto/search/?q=600036.SH&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:14:23,587 basehttp 78555 6167293952 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+WARNING 2025-07-06 13:14:23,602 log 78555 6150467584 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:14:23,603 basehttp 78555 6150467584 "GET /api/crypto/search/?q=600036.SH&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:14:25,338 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 13:14:25,613 basehttp 78555 6167293952 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+WARNING 2025-07-06 13:14:25,628 log 78555 13035925504 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:14:25,628 basehttp 78555 13035925504 "GET /api/crypto/search/?q=600036.SH&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:14:25,647 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 13:14:50,861 basehttp 78555 6150467584 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:15:14,214 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:15:16,516 basehttp 78555 6150467584 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+WARNING 2025-07-06 13:15:16,536 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:15:16,537 basehttp 78555 6167293952 "GET /api/crypto/search/?q=600036.SH&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:15:16,559 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 13:15:36,455 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:15:38,703 basehttp 78555 6150467584 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+WARNING 2025-07-06 13:15:38,714 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:15:38,714 basehttp 78555 6167293952 "GET /api/crypto/search/?q=600036.SH&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:15:38,734 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 13:15:48,424 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:15:50,673 basehttp 78555 6150467584 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+WARNING 2025-07-06 13:15:50,693 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:15:50,694 basehttp 78555 6167293952 "GET /api/crypto/search/?q=600036.SH&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:15:50,714 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 92
+WARNING 2025-07-06 13:15:51,494 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:15:51,494 basehttp 78555 6167293952 "GET /api/crypto/search/?q=600036.SH&market_type=china&limit=1 HTTP/1.1" 401 34
+WARNING 2025-07-06 13:15:52,761 log 78555 6150467584 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:15:52,762 basehttp 78555 6150467584 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:15:53,030 basehttp 78555 6167293952 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:15:53,046 log 78555 6150467584 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:15:53,047 basehttp 78555 6150467584 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:15:54,766 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:15:55,027 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:15:55,043 log 78555 13035925504 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:15:55,043 basehttp 78555 13035925504 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:15:55,074 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+WARNING 2025-07-06 13:15:57,552 log 78555 6150467584 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:15:57,552 basehttp 78555 6150467584 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:16:14,661 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:16:17,013 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:16:17,031 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:16:17,032 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:16:17,041 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+WARNING 2025-07-06 13:16:21,398 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:16:21,399 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+WARNING 2025-07-06 13:16:21,407 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:16:21,407 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:17:14,278 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:17:16,504 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:17:16,530 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:17:16,531 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:17:16,554 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+WARNING 2025-07-06 13:17:19,106 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:17:19,106 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+WARNING 2025-07-06 13:17:19,119 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:17:19,120 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+WARNING 2025-07-06 13:17:29,811 log 78555 6150467584 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:17:29,816 basehttp 78555 6150467584 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:17:44,458 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:17:46,905 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:17:46,946 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+WARNING 2025-07-06 13:17:46,999 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:17:46,999 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:17:48,945 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:17:49,694 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:17:49,710 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:17:49,710 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:17:50,962 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:18:07,551 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:18:09,810 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:18:09,823 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:18:09,824 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:18:09,832 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:18:40,633 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:18:42,905 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:18:42,921 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:18:42,921 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:18:42,944 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:19:22,917 basehttp 78555 6150467584 "POST /api/auth/login/ HTTP/1.1" 200 295
+INFO 2025-07-06 13:19:24,157 basehttp 78555 6150467584 "GET /api/crypto/news/BTC/?limit=10 HTTP/1.1" 200 4251
+INFO 2025-07-06 13:19:24,939 basehttp 78555 6150467584 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+INFO 2025-07-06 13:19:24,961 basehttp 78555 6150467584 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 13:19:26,953 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/BTCUSDT/?market_type=crypto HTTP/1.1" 200 90
+INFO 2025-07-06 13:19:27,115 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+WARNING 2025-07-06 13:19:27,120 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:19:27,120 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:19:29,425 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:19:29,452 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:19:29,455 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:19:29,471 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:19:29,700 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:20:07,421 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:20:09,670 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:20:09,688 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:20:09,689 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:20:09,699 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:20:31,445 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:20:33,680 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:20:33,697 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:20:33,697 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:20:33,809 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:20:49,690 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:20:51,909 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:20:51,928 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:20:51,928 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:20:51,955 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:21:30,964 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:21:33,260 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:21:33,295 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:21:33,296 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 34
+INFO 2025-07-06 13:21:33,312 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:22:12,144 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:22:14,708 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+WARNING 2025-07-06 13:22:14,760 log 78555 6167293952 Unauthorized: /api/crypto/search/
+WARNING 2025-07-06 13:22:14,761 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 401 92
+INFO 2025-07-06 13:22:14,762 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:22:24,132 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:22:26,367 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:22:26,428 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:22:26,824 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:30:18,739 basehttp 78555 6150467584 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+INFO 2025-07-06 13:30:20,741 basehttp 78555 6150467584 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 13:30:20,771 basehttp 78555 6150467584 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 13:30:20,786 basehttp 78555 6251425792 "GET /api/crypto/favorites/status/BTCUSDT/?market_type=crypto HTTP/1.1" 200 90
+INFO 2025-07-06 13:30:22,093 basehttp 78555 6167293952 "GET /api/crypto/news/BTC/?limit=10 HTTP/1.1" 200 4219
+INFO 2025-07-06 13:30:22,100 basehttp 78555 6167293952 "GET /api/crypto/news/BTC/?limit=10 HTTP/1.1" 200 4193
+INFO 2025-07-06 13:30:27,076 basehttp 78555 6150467584 "GET /api/stock/popular-assets/?market_type=stock HTTP/1.1" 200 760
+INFO 2025-07-06 13:30:29,093 basehttp 78555 6150467584 "GET /api/stock/technical-indicators/AAPL/ HTTP/1.1" 200 2850
+INFO 2025-07-06 13:30:29,146 basehttp 78555 6150467584 "GET /api/stock/technical-indicators/AAPL/ HTTP/1.1" 200 2850
+INFO 2025-07-06 13:30:29,154 basehttp 78555 6200946688 "GET /api/crypto/favorites/status/AAPL/?market_type=stock HTTP/1.1" 200 86
+INFO 2025-07-06 13:30:30,196 basehttp 78555 6167293952 "GET /api/stock/news/AAPL/?limit=10 HTTP/1.1" 200 5035
+INFO 2025-07-06 13:30:30,201 basehttp 78555 6167293952 "GET /api/stock/news/AAPL/?limit=10 HTTP/1.1" 200 5010
+INFO 2025-07-06 13:30:33,149 basehttp 78555 6150467584 "OPTIONS /api/china/popular-assets/?market_type=china HTTP/1.1" 200 0
+INFO 2025-07-06 13:30:33,159 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:30:35,782 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:30:35,825 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:30:36,078 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:30:37,826 basehttp 78555 6150467584 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 13:31:21,113 basehttp 78555 6150467584 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 13:31:23,515 basehttp 78555 6150467584 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 13:31:27,516 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000002.SZ/ HTTP/1.1" 200 3266
+INFO 2025-07-06 13:31:27,641 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000002.SZ&market_type=china&limit=1 HTTP/1.1" 200 160
+INFO 2025-07-06 13:31:27,974 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000002.SZ&market_type=china&limit=1 HTTP/1.1" 200 160
+INFO 2025-07-06 13:31:29,174 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/000002.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:31:29,413 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000002.SZ/ HTTP/1.1" 200 3266
+INFO 2025-07-06 13:31:32,107 basehttp 78555 6150467584 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 13:31:34,633 basehttp 78555 6150467584 "GET /api/crypto/favorites/ HTTP/1.1" 200 1733
+INFO 2025-07-06 13:31:36,948 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:31:37,252 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:31:37,560 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:31:53,372 basehttp 78555 6150467584 "OPTIONS /api/china/search/?q=%E4%BA%94%E7%B2%AE%E6%B6%B2&market_type=china&limit=20 HTTP/1.1" 200 0
+INFO 2025-07-06 13:31:53,748 basehttp 78555 6150467584 "GET /api/china/search/?q=%E4%BA%94%E7%B2%AE%E6%B6%B2&market_type=china&limit=20 HTTP/1.1" 200 162
+INFO 2025-07-06 13:31:56,106 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 13:31:56,468 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000858.SZ&market_type=china&limit=1 HTTP/1.1" 200 162
+INFO 2025-07-06 13:31:58,167 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 13:31:58,978 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:32:00,980 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 173
+INFO 2025-07-06 13:32:09,830 basehttp 78555 6150467584 "OPTIONS /api/china/get_report/000858.SZ/ HTTP/1.1" 200 0
+INFO 2025-07-06 13:32:20,327 basehttp 78555 6150467584 "GET /api/china/get_report/000858.SZ/ HTTP/1.1" 200 3211
+INFO 2025-07-06 13:32:20,912 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 3119
+INFO 2025-07-06 13:32:21,257 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000858.SZ&market_type=china&limit=1 HTTP/1.1" 200 162
+INFO 2025-07-06 13:32:22,639 basehttp 78555 6150467584 "OPTIONS /api/crypto/favorites/status/000858.SZ/?market_type=china HTTP/1.1" 200 0
+INFO 2025-07-06 13:32:22,652 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000858.SZ/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 13:32:23,929 basehttp 78555 6150467584 "POST /api/crypto/favorites/ HTTP/1.1" 201 182
+INFO 2025-07-06 13:32:25,918 basehttp 78555 6150467584 "GET /api/crypto/favorites/ HTTP/1.1" 200 1879
+INFO 2025-07-06 13:32:25,933 basehttp 78555 6150467584 "GET /api/crypto/favorites/ HTTP/1.1" 200 1879
+INFO 2025-07-06 13:32:26,316 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:32:26,380 basehttp 78555 6184120320 "GET /api/crypto/search/?q=000002.SZ&market_type=china&limit=1 HTTP/1.1" 200 160
+INFO 2025-07-06 13:32:26,779 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:32:26,805 basehttp 78555 6184120320 "GET /api/crypto/search/?q=000002.SZ&market_type=china&limit=1 HTTP/1.1" 200 160
+INFO 2025-07-06 13:32:27,171 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000002.SZ&market_type=china&limit=1 HTTP/1.1" 200 160
+INFO 2025-07-06 13:32:27,532 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000002.SZ&market_type=china&limit=1 HTTP/1.1" 200 160
+INFO 2025-07-06 13:32:42,437 basehttp 78555 6150467584 "OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+INFO 2025-07-06 13:32:42,450 basehttp 78555 6150467584 "GET /api/auth/profile/ HTTP/1.1" 200 235
+INFO 2025-07-06 13:32:44,523 basehttp 78555 6150467584 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-07-06 13:32:44,531 basehttp 78555 6167293952 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-07-06 13:32:46,804 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 3119
+INFO 2025-07-06 13:32:46,804 basehttp 78555 6167293952 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:32:47,126 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:32:47,136 basehttp 78555 6167293952 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 3119
+INFO 2025-07-06 13:32:47,425 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:33:38,673 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:33:41,208 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 3119
+INFO 2025-07-06 13:33:41,250 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000858.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:33:41,586 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000858.SZ&market_type=china&limit=1 HTTP/1.1" 200 162
+INFO 2025-07-06 13:38:04,813 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:38:06,929 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 3119
+INFO 2025-07-06 13:38:06,977 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000858.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:38:07,322 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000858.SZ&market_type=china&limit=1 HTTP/1.1" 200 162
+INFO 2025-07-06 13:38:19,338 basehttp 78555 6150467584 "GET /api/auth/profile/ HTTP/1.1" 200 235
+INFO 2025-07-06 13:38:19,360 basehttp 78555 6150467584 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-07-06 13:38:21,321 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:38:21,590 basehttp 78555 6167293952 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 3119
+INFO 2025-07-06 13:38:22,021 basehttp 78555 6167293952 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 3119
+INFO 2025-07-06 13:38:22,538 basehttp 78555 6184120320 "GET /api/crypto/search/?q=000858.SZ&market_type=china&limit=1 HTTP/1.1" 200 162
+INFO 2025-07-06 13:38:23,435 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000858.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:38:37,627 basehttp 78555 6150467584 "GET /api/auth/profile/ HTTP/1.1" 200 235
+INFO 2025-07-06 13:38:40,785 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:38:43,094 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 3119
+INFO 2025-07-06 13:38:43,251 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000858.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:38:43,630 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000858.SZ&market_type=china&limit=1 HTTP/1.1" 200 162
+INFO 2025-07-06 13:38:45,138 basehttp 78555 6150467584 "GET /api/crypto/favorites/ HTTP/1.1" 200 1879
+INFO 2025-07-06 13:38:45,623 basehttp 78555 6184120320 "GET /api/crypto/search/?q=000002.SZ&market_type=china&limit=1 HTTP/1.1" 200 160
+INFO 2025-07-06 13:38:45,623 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:38:45,988 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000002.SZ&market_type=china&limit=1 HTTP/1.1" 200 160
+INFO 2025-07-06 13:38:46,352 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000002.SZ&market_type=china&limit=1 HTTP/1.1" 200 160
+INFO 2025-07-06 13:38:46,690 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:38:48,457 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:38:48,706 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:38:48,735 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:39:39,460 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:39:41,881 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:39:41,929 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:39:42,278 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:40:02,639 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:40:04,846 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:40:04,901 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:40:05,254 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:41:35,645 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:41:37,760 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:41:37,819 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:41:38,158 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:44:43,093 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:44:45,402 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:44:45,466 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:44:45,797 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:44:58,474 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:45:00,746 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:45:00,808 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:45:01,176 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:45:25,511 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:45:27,795 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:45:27,835 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:45:28,183 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:45:50,607 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:45:52,834 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:45:52,883 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:45:53,226 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:46:19,296 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:46:21,448 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:46:21,480 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:46:21,831 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:46:45,788 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:46:48,241 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:46:48,273 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:46:48,613 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:49:13,072 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:49:15,261 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:49:15,311 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:49:15,660 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:49:47,231 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:49:49,435 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:49:49,479 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:49:49,825 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:51:57,962 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:52:00,075 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:52:00,122 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:52:00,542 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:53:10,572 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:53:12,836 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:53:12,879 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:53:13,239 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:55:20,982 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:55:23,224 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:55:23,283 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:55:23,618 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:56:43,916 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:56:46,148 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:56:46,199 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:56:46,548 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 13:59:18,298 basehttp 78555 6150467584 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 13:59:21,094 basehttp 78555 6150467584 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 13:59:21,137 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 13:59:21,599 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 14:01:26,252 basehttp 78555 6150467584 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+INFO 2025-07-06 14:01:28,234 basehttp 78555 6167293952 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 14:01:28,272 basehttp 78555 6167293952 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 14:01:28,286 basehttp 78555 12969013248 "GET /api/crypto/favorites/status/BTCUSDT/?market_type=crypto HTTP/1.1" 200 90
+INFO 2025-07-06 14:01:29,580 basehttp 78555 6150467584 "GET /api/crypto/news/BTC/?limit=10 HTTP/1.1" 200 4219
+INFO 2025-07-06 14:01:29,588 basehttp 78555 6150467584 "GET /api/crypto/news/BTC/?limit=10 HTTP/1.1" 200 4193
+INFO 2025-07-06 14:02:07,072 basehttp 78555 6150467584 "GET /api/crypto/news/BTC/?limit=10 HTTP/1.1" 200 4193
+INFO 2025-07-06 14:02:08,984 basehttp 78555 6150467584 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+INFO 2025-07-06 14:02:09,011 basehttp 78555 6150467584 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 14:02:10,998 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/BTCUSDT/?market_type=crypto HTTP/1.1" 200 90
+INFO 2025-07-06 14:02:23,366 basehttp 78555 6150467584 "GET /api/crypto/news/BTC/?limit=10 HTTP/1.1" 200 4193
+INFO 2025-07-06 14:02:25,287 basehttp 78555 6150467584 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+INFO 2025-07-06 14:02:25,308 basehttp 78555 6150467584 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 14:02:27,309 basehttp 78555 6150467584 "GET /api/crypto/favorites/status/BTCUSDT/?market_type=crypto HTTP/1.1" 200 90
+WARNING 2025-07-06 14:03:07,980 log 78555 6150467584 Unauthorized: /api/auth/generate-invitation-code/
+WARNING 2025-07-06 14:03:07,981 basehttp 78555 6150467584 "GET /api/auth/generate-invitation-code/ HTTP/1.1" 401 34
+INFO 2025-07-06 14:03:16,771 basehttp 78555 6167293952 "GET /api/crypto/news/BTC/?limit=10 HTTP/1.1" 200 4219
+INFO 2025-07-06 14:03:17,835 basehttp 78555 6167293952 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+INFO 2025-07-06 14:03:17,867 basehttp 78555 6167293952 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 14:03:18,367 basehttp 78555 6150467584 "GET /api/auth/generate-invitation-code/ HTTP/1.1" 200 109
+INFO 2025-07-06 14:03:19,850 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/BTCUSDT/?market_type=crypto HTTP/1.1" 200 90
+INFO 2025-07-06 14:04:29,006 basehttp 78555 6167293952 "GET /api/auth/profile/ HTTP/1.1" 200 235
+INFO 2025-07-06 14:04:31,245 basehttp 78555 6167293952 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-07-06 14:04:31,256 basehttp 78555 12901707776 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-07-06 14:04:33,283 basehttp 78555 12952186880 "GET /api/crypto/popular-assets/?market_type=crypto HTTP/1.1" 200 514
+INFO 2025-07-06 14:04:33,304 basehttp 78555 12901707776 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 14:04:33,495 basehttp 78555 12901707776 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 14:04:33,516 basehttp 78555 12901707776 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 14:04:33,525 basehttp 78555 12901707776 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 14:04:33,641 basehttp 78555 12901707776 "GET /api/crypto/technical-indicators/BTCUSDT/ HTTP/1.1" 200 3026
+INFO 2025-07-06 14:04:33,907 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:33,934 basehttp 78555 12935360512 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 3119
+INFO 2025-07-06 14:04:34,148 basehttp 78555 6167293952 "GET /api/crypto/news/BTC/?limit=10 HTTP/1.1" 200 4219
+INFO 2025-07-06 14:04:34,161 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:34,178 basehttp 78555 12935360512 "GET /api/china/technical-indicators/000858.SZ/ HTTP/1.1" 200 3119
+INFO 2025-07-06 14:04:34,424 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:34,779 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:35,039 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:35,312 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:35,337 basehttp 78555 12935360512 "GET /api/crypto/favorites/status/BTCUSDT/?market_type=crypto HTTP/1.1" 200 90
+INFO 2025-07-06 14:04:35,606 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:35,860 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:36,166 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:36,478 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:36,775 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:37,045 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:37,441 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:37,701 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:37,947 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:38,222 basehttp 78555 12918534144 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:48,936 basehttp 78555 12901707776 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 14:04:49,288 basehttp 78555 6167293952 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 14:04:51,183 basehttp 78555 12901707776 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:51,457 basehttp 78555 12901707776 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:04:53,735 basehttp 78555 12901707776 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-07-06 14:05:04,702 basehttp 78555 6167293952 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 14:05:06,960 basehttp 78555 6167293952 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:05:07,008 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 14:05:07,357 basehttp 78555 12901707776 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 14:05:10,654 basehttp 78555 6167293952 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 14:05:12,923 basehttp 78555 6167293952 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:05:12,969 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 14:05:13,305 basehttp 78555 12901707776 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 14:05:22,718 basehttp 78555 6167293952 "GET /api/auth/profile/ HTTP/1.1" 200 235
+INFO 2025-07-06 14:05:22,735 basehttp 78555 6167293952 "PUT /api/auth/profile/ HTTP/1.1" 200 260
+INFO 2025-07-06 14:05:24,965 basehttp 78555 6167293952 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:05:25,134 basehttp 78555 6167293952 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 14:05:27,154 basehttp 78555 6167293952 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:05:27,207 basehttp 78555 6167293952 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 14:05:27,549 basehttp 78555 12901707776 "GET /api/crypto/search/?q=000001.SZ&market_type=china&limit=1 HTTP/1.1" 200 165
+INFO 2025-07-06 14:16:32,643 autoreload 78555 8525864704 /Users/lucas/Documents/cooltrade/backend/config/settings.py changed, reloading.
+INFO 2025-07-06 14:16:33,344 autoreload 81799 8525864704 Watching for file changes with StatReloader
+INFO 2025-07-06 14:25:33,227 basehttp 81799 6127333376 "OPTIONS /api/china/popular-assets/?market_type=china HTTP/1.1" 200 0
+INFO 2025-07-06 14:25:33,249 basehttp 81799 6127333376 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 14:25:33,902 basehttp 81799 6127333376 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+INFO 2025-07-06 14:25:33,917 basehttp 81799 6127333376 "GET /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 14:25:42,758 basehttp 81799 6127333376 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+INFO 2025-07-06 14:25:44,100 basehttp 81799 6127333376 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 14:25:44,362 basehttp 81799 6127333376 "GET /api/china/technical-indicators/600036.SH/ HTTP/1.1" 200 3037
+INFO 2025-07-06 14:25:44,374 basehttp 81799 6127333376 "GET /api/crypto/favorites/status/600036.SH/?market_type=china HTTP/1.1" 200 92
+INFO 2025-07-06 14:25:54,627 basehttp 81799 6127333376 "OPTIONS /api/crypto/favorites/ HTTP/1.1" 200 0
+INFO 2025-07-06 14:25:54,644 basehttp 81799 6127333376 "GET /api/crypto/favorites/ HTTP/1.1" 200 1879
+INFO 2025-07-06 14:25:55,916 basehttp 81799 6127333376 "OPTIONS /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 0
+INFO 2025-07-06 14:25:56,208 basehttp 81799 6127333376 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:25:56,217 basehttp 81799 6127333376 "OPTIONS /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 0
+INFO 2025-07-06 14:25:56,228 basehttp 81799 6127333376 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 14:25:56,499 basehttp 81799 6127333376 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:25:56,523 basehttp 81799 6127333376 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91
+INFO 2025-07-06 14:28:04,133 basehttp 81799 6127333376 "GET /api/china/popular-assets/?market_type=china HTTP/1.1" 200 720
+INFO 2025-07-06 14:28:04,699 basehttp 81799 6127333376 "GET /api/china/technical-indicators/000001.SZ/ HTTP/1.1" 200 3060
+INFO 2025-07-06 14:28:04,711 basehttp 81799 6127333376 "GET /api/crypto/favorites/status/000001.SZ/?market_type=china HTTP/1.1" 200 91

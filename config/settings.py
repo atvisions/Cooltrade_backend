@@ -371,6 +371,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://192.168.3.16:8000",  # 添加本地开发服务器
     "http://192.168.3.56:8000",  # 您提到的服务器地址
     "http://localhost:8000",  # 本地后端地址
+    "https://www.cooltrade.xyz",  # 生产环境域名
+    "https://cooltrade.xyz",  # 生产环境域名（无www）
 ]
 
 CORS_ALLOW_METHODS = [

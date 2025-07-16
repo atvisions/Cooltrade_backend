@@ -22369,3 +22369,314 @@ INFO 2025-07-06 13:06:46,898 technical_analysis 78555 6150467584 成功获取600
 INFO 2025-07-06 13:06:46,903 technical_analysis 78555 6150467584 成功计算600000.SH的所有技术指标
 INFO 2025-07-06 13:06:54,790 technical_analysis 78555 6150467584 成功获取600000.SH的A股基本面指标
 INFO 2025-07-06 13:06:54,792 utils 78555 6150467584 Cached technical indicators for 600000.SH (en-US) with key: f31d04f3e55143cd6c334cff610acc29
+INFO 2025-07-06 13:08:38,909 views_news 78555 6150467584 Getting news for XRP in crypto market
+INFO 2025-07-06 13:08:38,910 views_news 78555 6150467584 Getting crypto news for XRP
+INFO 2025-07-06 13:08:38,910 views_news 78555 6167293952 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 13:08:38,910 views_news 78555 13035925504 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 13:08:38,911 views_news 78555 13052751872 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 13:08:38,912 views_news 78555 13069578240 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 13:08:39,316 views_news 78555 13052751872 RSS feed returned 2 news items
+INFO 2025-07-06 13:08:39,340 views_news 78555 13035925504 RSS feed returned 2 news items
+INFO 2025-07-06 13:08:39,434 utils 78555 13086404608 Cached technical indicators for XRPUSDT (en-US) with key: 86f6e9c3cbcc022ac067ccf2bd74f710
+ERROR 2025-07-06 13:08:39,592 views_news 78555 6167293952 Error parsing RSS item: can only concatenate str (not "NoneType") to str
+INFO 2025-07-06 13:08:39,592 views_news 78555 6167293952 RSS feed returned 1 news items
+INFO 2025-07-06 13:08:39,596 views_news 78555 6150467584 coindesk returned 1 news items
+INFO 2025-07-06 13:08:39,597 views_news 78555 6150467584 cointelegraph returned 2 news items
+INFO 2025-07-06 13:08:39,597 views_news 78555 6150467584 decrypt returned 2 news items
+INFO 2025-07-06 13:08:39,665 views_news 78555 13069578240 RSS feed returned 2 news items
+INFO 2025-07-06 13:08:39,669 views_news 78555 6150467584 beincrypto returned 2 news items
+INFO 2025-07-06 13:08:46,029 technical_analysis 78555 6167293952 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:08:46,030 utils 78555 6167293952 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:08:46,308 technical_analysis 78555 6167293952 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:08:46,308 utils 78555 6167293952 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:08:53,310 technical_analysis 78555 6150467584 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 13:08:53,310 utils 78555 6150467584 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 13:08:53,598 technical_analysis 78555 6150467584 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 13:08:53,598 utils 78555 6150467584 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 13:13:26,911 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:13:26,912 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:13:28,965 technical_analysis 78555 6167293952 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:13:28,965 utils 78555 6167293952 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:13:56,468 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:13:56,469 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:14:23,585 technical_analysis 78555 6167293952 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 13:14:23,586 utils 78555 6167293952 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 13:14:25,611 technical_analysis 78555 6167293952 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 13:14:25,612 utils 78555 6167293952 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 13:15:16,514 technical_analysis 78555 6150467584 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 13:15:16,515 utils 78555 6150467584 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 13:15:38,698 technical_analysis 78555 6150467584 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 13:15:38,699 utils 78555 6150467584 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 13:15:50,672 technical_analysis 78555 6150467584 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 13:15:50,672 utils 78555 6150467584 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 13:15:53,027 technical_analysis 78555 6167293952 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:15:53,028 utils 78555 6167293952 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:15:55,025 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:15:55,025 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:16:17,013 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:16:17,013 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:17:16,501 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:17:16,502 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:17:46,903 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:17:46,904 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:17:49,692 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:17:49,693 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:18:09,809 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:18:09,809 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:18:42,903 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:18:42,903 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:19:22,940 views_news 78555 6150467584 Getting news for BTC in crypto market
+INFO 2025-07-06 13:19:22,940 views_news 78555 6150467584 Getting crypto news for BTC
+INFO 2025-07-06 13:19:22,941 views_news 78555 6167293952 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 13:19:22,941 views_news 78555 6184120320 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 13:19:22,941 views_news 78555 6200946688 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 13:19:22,984 views_news 78555 6217773056 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 13:19:23,438 views_news 78555 6184120320 RSS feed returned 2 news items
+INFO 2025-07-06 13:19:23,519 views_news 78555 6167293952 RSS feed returned 2 news items
+INFO 2025-07-06 13:19:23,520 views_news 78555 6150467584 coindesk returned 2 news items
+INFO 2025-07-06 13:19:23,521 views_news 78555 6150467584 cointelegraph returned 2 news items
+INFO 2025-07-06 13:19:23,696 views_news 78555 6200946688 RSS feed returned 2 news items
+INFO 2025-07-06 13:19:23,699 views_news 78555 6150467584 decrypt returned 2 news items
+INFO 2025-07-06 13:19:24,150 views_news 78555 6217773056 RSS feed returned 2 news items
+INFO 2025-07-06 13:19:24,155 views_news 78555 6150467584 beincrypto returned 2 news items
+INFO 2025-07-06 13:19:24,960 utils 78555 6150467584 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 13:19:29,423 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:19:29,424 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:19:29,699 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:19:29,699 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:20:09,664 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:20:09,666 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:20:33,679 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:20:33,680 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:20:51,907 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:20:51,908 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:21:33,258 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:21:33,259 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:22:14,708 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:22:14,708 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:22:26,364 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:22:26,364 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:30:20,720 views_news 78555 6167293952 Getting news for BTC in crypto market
+INFO 2025-07-06 13:30:20,722 views_news 78555 6167293952 Getting crypto news for BTC
+INFO 2025-07-06 13:30:20,723 views_news 78555 6184120320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 13:30:20,723 views_news 78555 6200946688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 13:30:20,723 views_news 78555 6217773056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 13:30:20,724 views_news 78555 6234599424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 13:30:20,740 utils 78555 6150467584 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 13:30:20,768 utils 78555 6150467584 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 13:30:21,277 views_news 78555 6200946688 RSS feed returned 2 news items
+INFO 2025-07-06 13:30:21,332 views_news 78555 6184120320 RSS feed returned 2 news items
+INFO 2025-07-06 13:30:21,336 views_news 78555 6167293952 coindesk returned 2 news items
+INFO 2025-07-06 13:30:21,336 views_news 78555 6167293952 cointelegraph returned 2 news items
+INFO 2025-07-06 13:30:21,337 views_news 78555 6217773056 RSS feed returned 2 news items
+INFO 2025-07-06 13:30:21,339 views_news 78555 6167293952 decrypt returned 2 news items
+INFO 2025-07-06 13:30:22,088 views_news 78555 6234599424 RSS feed returned 2 news items
+INFO 2025-07-06 13:30:22,091 views_news 78555 6167293952 beincrypto returned 2 news items
+INFO 2025-07-06 13:30:22,097 views_news 78555 6167293952 Getting news for BTC in crypto market
+INFO 2025-07-06 13:30:22,097 views_news 78555 6167293952 Returning cached news for BTC (crypto)
+INFO 2025-07-06 13:30:29,073 views_news 78555 6167293952 Getting news for AAPL in stock market
+INFO 2025-07-06 13:30:29,073 views_news 78555 6167293952 Tiingo key available: True
+INFO 2025-07-06 13:30:29,074 views_news 78555 6167293952 NewsAPI key available: False
+INFO 2025-07-06 13:30:29,092 utils 78555 6150467584 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 13:30:29,119 utils 78555 6150467584 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-06 13:30:30,190 views_news 78555 6167293952 tiingo returned 10 news items
+INFO 2025-07-06 13:30:30,200 views_news 78555 6167293952 Getting news for AAPL in stock market
+INFO 2025-07-06 13:30:30,200 views_news 78555 6167293952 Returning cached news for AAPL (stock)
+INFO 2025-07-06 13:30:35,779 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:30:35,781 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:30:36,076 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:30:36,076 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:31:27,513 technical_analysis 78555 6150467584 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 13:31:27,515 utils 78555 6150467584 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 13:31:29,411 technical_analysis 78555 6150467584 成功获取000002.SZ的A股基本面指标
+INFO 2025-07-06 13:31:29,412 utils 78555 6150467584 Cached technical indicators for 000002.SZ (en-US) with key: 2822398121695f431d7365bd5ed65ad0
+INFO 2025-07-06 13:31:36,944 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:31:36,946 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:31:37,251 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:31:37,252 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:32:09,866 technical_analysis 78555 6150467584 检测到000858.SZ的市场类型: china
+INFO 2025-07-06 13:32:10,107 technical_analysis 78555 6150467584 格式化后的股票代码: 000858.SZ
+INFO 2025-07-06 13:32:10,195 technical_analysis 78555 6150467584 开始计算000858.SZ的技术指标
+INFO 2025-07-06 13:32:10,577 technical_analysis 78555 6150467584 成功获取000858.SZ的A股基本面指标
+INFO 2025-07-06 13:32:10,579 technical_analysis 78555 6150467584 成功计算000858.SZ的所有技术指标
+INFO 2025-07-06 13:32:10,662 technical_analysis 78555 6150467584 检测到000858.SZ的市场类型: china
+INFO 2025-07-06 13:32:10,850 technical_analysis 78555 6150467584 格式化后的股票代码: 000858.SZ
+INFO 2025-07-06 13:32:10,974 technical_analysis 78555 6150467584 开始计算000858.SZ的技术指标
+INFO 2025-07-06 13:32:11,376 technical_analysis 78555 6150467584 成功获取000858.SZ的A股基本面指标
+INFO 2025-07-06 13:32:11,379 technical_analysis 78555 6150467584 成功计算000858.SZ的所有技术指标
+INFO 2025-07-06 13:32:20,910 technical_analysis 78555 6150467584 成功获取000858.SZ的A股基本面指标
+INFO 2025-07-06 13:32:20,911 utils 78555 6150467584 Cached technical indicators for 000858.SZ (en-US) with key: f2d2fcdcb44b1dddc6040d3e172de2d9
+INFO 2025-07-06 13:32:46,799 technical_analysis 78555 6150467584 成功获取000858.SZ的A股基本面指标
+INFO 2025-07-06 13:32:46,800 technical_analysis 78555 6167293952 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:32:46,801 utils 78555 6150467584 Cached technical indicators for 000858.SZ (en-US) with key: f2d2fcdcb44b1dddc6040d3e172de2d9
+INFO 2025-07-06 13:32:46,802 utils 78555 6167293952 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:32:47,122 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:32:47,123 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:32:47,132 technical_analysis 78555 6167293952 成功获取000858.SZ的A股基本面指标
+INFO 2025-07-06 13:32:47,133 utils 78555 6167293952 Cached technical indicators for 000858.SZ (en-US) with key: f2d2fcdcb44b1dddc6040d3e172de2d9
+INFO 2025-07-06 13:32:47,423 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:32:47,424 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:33:41,205 technical_analysis 78555 6150467584 成功获取000858.SZ的A股基本面指标
+INFO 2025-07-06 13:33:41,206 utils 78555 6150467584 Cached technical indicators for 000858.SZ (en-US) with key: f2d2fcdcb44b1dddc6040d3e172de2d9
+INFO 2025-07-06 13:38:06,927 technical_analysis 78555 6150467584 成功获取000858.SZ的A股基本面指标
+INFO 2025-07-06 13:38:06,928 utils 78555 6150467584 Cached technical indicators for 000858.SZ (en-US) with key: f2d2fcdcb44b1dddc6040d3e172de2d9
+INFO 2025-07-06 13:38:21,589 technical_analysis 78555 6167293952 成功获取000858.SZ的A股基本面指标
+INFO 2025-07-06 13:38:21,589 utils 78555 6167293952 Cached technical indicators for 000858.SZ (en-US) with key: f2d2fcdcb44b1dddc6040d3e172de2d9
+INFO 2025-07-06 13:38:22,019 technical_analysis 78555 6167293952 成功获取000858.SZ的A股基本面指标
+INFO 2025-07-06 13:38:22,020 utils 78555 6167293952 Cached technical indicators for 000858.SZ (en-US) with key: f2d2fcdcb44b1dddc6040d3e172de2d9
+INFO 2025-07-06 13:38:43,092 technical_analysis 78555 6150467584 成功获取000858.SZ的A股基本面指标
+INFO 2025-07-06 13:38:43,093 utils 78555 6150467584 Cached technical indicators for 000858.SZ (en-US) with key: f2d2fcdcb44b1dddc6040d3e172de2d9
+INFO 2025-07-06 13:38:46,689 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:38:46,689 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:38:48,705 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:38:48,705 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:39:41,879 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:39:41,879 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:40:04,844 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:40:04,845 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:41:37,757 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:41:37,759 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:44:45,399 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:44:45,400 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:45:00,744 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:45:00,744 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:45:27,794 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:45:27,794 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:45:52,832 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:45:52,833 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:46:21,447 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:46:21,447 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:46:48,240 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:46:48,240 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:49:15,257 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:49:15,260 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:49:49,432 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:49:49,433 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:52:00,073 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:52:00,074 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:53:12,833 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:53:12,834 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:55:23,222 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:55:23,223 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:56:46,146 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:56:46,147 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 13:59:21,092 technical_analysis 78555 6150467584 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 13:59:21,093 utils 78555 6150467584 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:01:28,207 views_news 78555 6150467584 Getting news for BTC in crypto market
+INFO 2025-07-06 14:01:28,208 views_news 78555 6150467584 Getting crypto news for BTC
+INFO 2025-07-06 14:01:28,208 views_news 78555 12901707776 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 14:01:28,209 views_news 78555 12918534144 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 14:01:28,209 views_news 78555 12935360512 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 14:01:28,210 views_news 78555 12952186880 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 14:01:28,233 utils 78555 6167293952 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 14:01:28,270 utils 78555 6167293952 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 14:01:28,699 views_news 78555 12918534144 RSS feed returned 2 news items
+INFO 2025-07-06 14:01:29,140 views_news 78555 12901707776 RSS feed returned 2 news items
+INFO 2025-07-06 14:01:29,142 views_news 78555 6150467584 coindesk returned 2 news items
+INFO 2025-07-06 14:01:29,143 views_news 78555 6150467584 cointelegraph returned 2 news items
+INFO 2025-07-06 14:01:29,153 views_news 78555 12935360512 RSS feed returned 2 news items
+INFO 2025-07-06 14:01:29,156 views_news 78555 6150467584 decrypt returned 2 news items
+INFO 2025-07-06 14:01:29,574 views_news 78555 12952186880 RSS feed returned 2 news items
+INFO 2025-07-06 14:01:29,578 views_news 78555 6150467584 beincrypto returned 2 news items
+INFO 2025-07-06 14:01:29,585 views_news 78555 6150467584 Getting news for BTC in crypto market
+INFO 2025-07-06 14:01:29,585 views_news 78555 6150467584 Returning cached news for BTC (crypto)
+INFO 2025-07-06 14:02:07,063 views_news 78555 6150467584 Getting news for BTC in crypto market
+INFO 2025-07-06 14:02:07,064 views_news 78555 6150467584 Returning cached news for BTC (crypto)
+INFO 2025-07-06 14:02:09,010 utils 78555 6150467584 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 14:02:23,318 views_news 78555 6150467584 Getting news for BTC in crypto market
+INFO 2025-07-06 14:02:23,320 views_news 78555 6150467584 Returning cached news for BTC (crypto)
+INFO 2025-07-06 14:02:25,306 utils 78555 6150467584 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 14:03:15,836 views_news 78555 6167293952 Getting news for BTC in crypto market
+INFO 2025-07-06 14:03:15,837 views_news 78555 6167293952 Getting crypto news for BTC
+INFO 2025-07-06 14:03:15,837 views_news 78555 12901707776 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 14:03:15,838 views_news 78555 12918534144 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 14:03:15,838 views_news 78555 12935360512 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 14:03:15,839 views_news 78555 12952186880 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 14:03:16,278 views_news 78555 12918534144 RSS feed returned 2 news items
+INFO 2025-07-06 14:03:16,408 views_news 78555 12901707776 RSS feed returned 2 news items
+INFO 2025-07-06 14:03:16,412 views_news 78555 6167293952 coindesk returned 2 news items
+INFO 2025-07-06 14:03:16,412 views_news 78555 6167293952 cointelegraph returned 2 news items
+INFO 2025-07-06 14:03:16,728 views_news 78555 12935360512 RSS feed returned 2 news items
+INFO 2025-07-06 14:03:16,731 views_news 78555 6167293952 decrypt returned 2 news items
+INFO 2025-07-06 14:03:16,768 views_news 78555 12952186880 RSS feed returned 2 news items
+INFO 2025-07-06 14:03:16,769 views_news 78555 6167293952 beincrypto returned 2 news items
+INFO 2025-07-06 14:03:17,864 utils 78555 6167293952 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 14:04:33,253 views_news 78555 6167293952 Getting news for BTC in crypto market
+INFO 2025-07-06 14:04:33,255 views_news 78555 6167293952 Getting crypto news for BTC
+INFO 2025-07-06 14:04:33,256 views_news 78555 12969013248 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-06 14:04:33,257 views_news 78555 12985839616 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-06 14:04:33,258 views_news 78555 13002665984 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-06 14:04:33,259 views_news 78555 13170143232 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-06 14:04:33,296 utils 78555 12901707776 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 14:04:33,494 utils 78555 12901707776 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 14:04:33,515 utils 78555 12901707776 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 14:04:33,524 utils 78555 12901707776 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 14:04:33,640 utils 78555 12901707776 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-06 14:04:33,766 views_news 78555 13002665984 RSS feed returned 2 news items
+INFO 2025-07-06 14:04:33,904 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:33,904 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:33,933 technical_analysis 78555 12935360512 成功获取000858.SZ的A股基本面指标
+INFO 2025-07-06 14:04:33,933 utils 78555 12935360512 Cached technical indicators for 000858.SZ (en-US) with key: f2d2fcdcb44b1dddc6040d3e172de2d9
+INFO 2025-07-06 14:04:33,967 views_news 78555 12985839616 RSS feed returned 2 news items
+INFO 2025-07-06 14:04:34,089 views_news 78555 12969013248 RSS feed returned 2 news items
+INFO 2025-07-06 14:04:34,091 views_news 78555 6167293952 coindesk returned 2 news items
+INFO 2025-07-06 14:04:34,092 views_news 78555 6167293952 cointelegraph returned 2 news items
+INFO 2025-07-06 14:04:34,092 views_news 78555 6167293952 decrypt returned 2 news items
+INFO 2025-07-06 14:04:34,145 views_news 78555 13170143232 RSS feed returned 2 news items
+INFO 2025-07-06 14:04:34,147 views_news 78555 6167293952 beincrypto returned 2 news items
+INFO 2025-07-06 14:04:34,160 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:34,160 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:34,176 technical_analysis 78555 12935360512 成功获取000858.SZ的A股基本面指标
+INFO 2025-07-06 14:04:34,177 utils 78555 12935360512 Cached technical indicators for 000858.SZ (en-US) with key: f2d2fcdcb44b1dddc6040d3e172de2d9
+INFO 2025-07-06 14:04:34,422 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:34,423 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:34,777 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:34,777 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:35,039 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:35,039 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:35,309 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:35,310 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:35,604 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:35,604 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:35,858 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:35,859 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:36,163 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:36,164 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:36,476 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:36,477 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:36,773 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:36,774 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:37,044 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:37,045 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:37,440 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:37,440 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:37,699 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:37,699 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:37,946 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:37,946 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:38,220 technical_analysis 78555 12918534144 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:38,221 utils 78555 12918534144 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:51,180 technical_analysis 78555 12901707776 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:51,181 utils 78555 12901707776 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:04:51,455 technical_analysis 78555 12901707776 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:04:51,456 utils 78555 12901707776 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:05:06,958 technical_analysis 78555 6167293952 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:05:06,959 utils 78555 6167293952 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:05:12,920 technical_analysis 78555 6167293952 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:05:12,921 utils 78555 6167293952 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:05:24,962 technical_analysis 78555 6167293952 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:05:24,963 utils 78555 6167293952 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:05:27,151 technical_analysis 78555 6167293952 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:05:27,152 utils 78555 6167293952 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:25:33,896 technical_analysis 81799 6127333376 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 14:25:33,901 utils 81799 6127333376 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 14:25:42,757 technical_analysis 81799 6127333376 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 14:25:42,757 utils 81799 6127333376 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 14:25:44,361 technical_analysis 81799 6127333376 成功获取600036.SH的A股基本面指标
+INFO 2025-07-06 14:25:44,361 utils 81799 6127333376 Cached technical indicators for 600036.SH (en-US) with key: fa70d39db167a7d9a57726175cd8f84b
+INFO 2025-07-06 14:25:56,207 technical_analysis 81799 6127333376 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:25:56,207 utils 81799 6127333376 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:25:56,498 technical_analysis 81799 6127333376 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:25:56,498 utils 81799 6127333376 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
+INFO 2025-07-06 14:28:04,698 technical_analysis 81799 6127333376 成功获取000001.SZ的A股基本面指标
+INFO 2025-07-06 14:28:04,698 utils 81799 6127333376 Cached technical indicators for 000001.SZ (en-US) with key: ef3a5e62d1d7643f5d3fd6f1cb5d6d82
