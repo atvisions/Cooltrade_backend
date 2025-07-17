@@ -1,0 +1,115 @@
+{% extends "admin/index.html" %}
+{% load i18n static %}
+
+{% block content %}
+{{ block.super }}
+
+<!-- 会员管理快捷操作 -->
+<div class="module" id="membership-shortcuts">
+    <table>
+        <caption>
+            <a href="#" class="section" id="membership-shortcuts-link">
+                会员管理快捷操作
+            </a>
+        </caption>
+        <tbody>
+            <tr class="model-membershipplan">
+                <th scope="row">
+                    <a href="{% url 'admin:membership_management' %}">会员管理中心</a>
+                </th>
+                <td>
+                    <a href="{% url 'admin:membership_management' %}" class="addlink">
+                        管理用户会员状态和时间
+                    </a>
+                </td>
+            </tr>
+            <tr class="model-membershiporder">
+                <th scope="row">
+                    <a href="{% url 'admin:user_membershiporder_changelist' %}">会员订单</a>
+                </th>
+                <td>
+                    <a href="{% url 'admin:user_membershiporder_changelist' %}" class="changelink">
+                        查看和处理会员订单
+                    </a>
+                </td>
+            </tr>
+            <tr class="model-membershipplan">
+                <th scope="row">
+                    <a href="{% url 'admin:user_membershipplan_changelist' %}">会员套餐</a>
+                </th>
+                <td>
+                    <a href="{% url 'admin:user_membershipplan_changelist' %}" class="changelink">
+                        管理会员套餐和价格
+                    </a>
+                </td>
+            </tr>
+            <tr class="model-pointstransaction">
+                <th scope="row">
+                    <a href="{% url 'admin:user_pointstransaction_changelist' %}">积分记录</a>
+                </th>
+                <td>
+                    <a href="{% url 'admin:user_pointstransaction_changelist' %}" class="changelink">
+                        查看积分交易历史
+                    </a>
+                </td>
+            </tr>
+            <tr class="model-user">
+                <th scope="row">
+                    <a href="{% url 'admin:points_leaderboard' %}">积分排行榜</a>
+                </th>
+                <td>
+                    <a href="{% url 'admin:points_leaderboard' %}" class="changelink">
+                        查看用户积分排行
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<style>
+#membership-shortcuts {
+    margin-top: 20px;
+}
+
+#membership-shortcuts table {
+    width: 100%;
+}
+
+#membership-shortcuts caption {
+    text-align: left;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 8px 10px;
+    background: #79aec8;
+    color: white;
+}
+
+#membership-shortcuts th {
+    width: 30%;
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+#membership-shortcuts td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+#membership-shortcuts .addlink,
+#membership-shortcuts .changelink {
+    padding-left: 16px;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+}
+
+#membership-shortcuts .addlink {
+    background-image: url("{% static 'admin/img/icon-addlink.svg' %}");
+}
+
+#membership-shortcuts .changelink {
+    background-image: url("{% static 'admin/img/icon-changelink.svg' %}");
+}
+</style>
+{% endblock %}

@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 import random
 import string
-from datetime import timedelta
+from datetime import timedelta, datetime
 import uuid
 
 class UserManager(BaseUserManager):
@@ -50,6 +50,10 @@ class User(AbstractUser):
     points = models.IntegerField(default=0, verbose_name='积分')
     invitation_code = models.ForeignKey('InvitationCode', on_delete=models.SET_NULL, null=True, blank=True, related_name='registered_users')
     inviter = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, related_name='invited_users', verbose_name='邀请人')
+
+    # 会员相关字段
+    is_premium = models.BooleanField(default=False, verbose_name='是否为高级会员')
+    premium_expires_at = models.DateTimeField(null=True, blank=True, verbose_name='会员到期时间')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -98,6 +102,20 @@ class User(AbstractUser):
             )
 
         return invitation
+
+    def is_premium_active(self):
+        """检查用户是否为有效的高级会员"""
+        if not self.is_premium:
+            return False
+        if not self.premium_expires_at:
+            return False
+        return timezone.now() < self.premium_expires_at
+
+    def get_membership_status(self):
+        """获取用户会员状态"""
+        if self.is_premium_active():
+            return 'premium'
+        return 'regular'
 
 class VerificationCode(models.Model):
     """验证码模型"""
@@ -183,3 +201,98 @@ class TemporaryInvitation(models.Model):
 
     def __str__(self):
         return f'临时邀请码: {{self.invitation_code}} (UUID: {{self.uuid}})'
+
+# 会员相关模型
+class MembershipPlan(models.Model):
+    """会员套餐模型"""
+    PLAN_TYPE_CHOICES = (
+        ('monthly', '月付'),
+        ('yearly', '年付'),
+    )
+
+    name = models.CharField(max_length=50, verbose_name='套餐名称')
+    plan_type = models.CharField(max_length=10, choices=PLAN_TYPE_CHOICES, verbose_name='套餐类型')
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='价格')
+    duration_days = models.IntegerField(verbose_name='有效天数')
+    is_active = models.BooleanField(default=True, verbose_name='是否启用')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+
+    class Meta:
+        verbose_name = '会员套餐'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return f"{self.name} - {self.price}元"
+
+class MembershipOrder(models.Model):
+    """会员订单模型"""
+    STATUS_CHOICES = (
+        ('pending', '待支付'),
+        ('paid', '已支付'),
+        ('expired', '已过期'),
+        ('cancelled', '已取消'),
+    )
+
+    PAYMENT_METHOD_CHOICES = (
+        ('alipay', '支付宝'),
+        ('bank_transfer', '银行转账'),
+        ('wechat_friend', '微信好友'),
+        ('other', '其他'),
+    )
+
+    order_id = models.CharField(max_length=32, unique=True, verbose_name='订单号')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='membership_orders', verbose_name='用户')
+    plan = models.ForeignKey(MembershipPlan, on_delete=models.CASCADE, verbose_name='套餐')
+    amount = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='金额')
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending', verbose_name='状态')
+    payment_method = models.CharField(max_length=20, choices=PAYMENT_METHOD_CHOICES, null=True, blank=True, verbose_name='支付方式')
+    payment_info = models.JSONField(default=dict, blank=True, verbose_name='支付信息')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+    paid_at = models.DateTimeField(null=True, blank=True, verbose_name='支付时间')
+    expires_at = models.DateTimeField(null=True, blank=True, verbose_name='过期时间')
+
+    class Meta:
+        verbose_name = '会员订单'
+        verbose_name_plural = verbose_name
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"{self.order_id} - {self.user.email} - {self.plan.name}"
+
+    def save(self, *args, **kwargs):
+        if not self.order_id:
+            # 生成订单号
+            import time
+            self.order_id = f"MB{int(time.time())}{random.randint(1000, 9999)}"
+        super().save(*args, **kwargs)
+
+class PointsTransaction(models.Model):
+    """积分交易记录模型"""
+    TRANSACTION_TYPE_CHOICES = (
+        ('earn', '获得'),
+        ('spend', '消费'),
+    )
+
+    REASON_CHOICES = (
+        ('registration', '注册奖励'),
+        ('invitation', '邀请好友'),
+        ('premium_analysis', '查看高级分析'),
+        ('save_image', '保存图片'),
+        ('admin_adjust', '管理员调整'),
+    )
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='points_transactions', verbose_name='用户')
+    transaction_type = models.CharField(max_length=10, choices=TRANSACTION_TYPE_CHOICES, verbose_name='交易类型')
+    amount = models.IntegerField(verbose_name='积分数量')
+    reason = models.CharField(max_length=20, choices=REASON_CHOICES, verbose_name='原因')
+    description = models.TextField(blank=True, verbose_name='描述')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+
+    class Meta:
+        verbose_name = '积分交易记录'
+        verbose_name_plural = verbose_name
+        ordering = ['-created_at']
+
+    def __str__(self):
+        sign = '+' if self.transaction_type == 'earn' else '-'
+        return f"{self.user.email} {sign}{self.amount} 积分 - {self.get_reason_display()}"

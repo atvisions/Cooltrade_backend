@@ -1,0 +1,296 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+&rsaquo; {{ title }}
+</div>
+{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<!-- 统计信息 -->
+<div class="module">
+    <h2>会员统计</h2>
+    <div class="stats-grid">
+        <div class="stat-item">
+            <div class="stat-number">{{ total_users }}</div>
+            <div class="stat-label">总用户数</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">{{ premium_users }}</div>
+            <div class="stat-label">高级会员数</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">{{ active_premium_users }}</div>
+            <div class="stat-label">有效会员数</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">{{ expired_premium_users }}</div>
+            <div class="stat-label">过期会员数</div>
+        </div>
+    </div>
+</div>
+
+<!-- 最近订单 -->
+<div class="module">
+    <h2>最近订单</h2>
+    <div class="results">
+        <table>
+            <thead>
+                <tr>
+                    <th>订单号</th>
+                    <th>用户</th>
+                    <th>套餐</th>
+                    <th>金额</th>
+                    <th>状态</th>
+                    <th>创建时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in recent_orders %}
+                <tr>
+                    <td><a href="{% url 'admin:user_membershiporder_change' order.id %}">{{ order.order_id }}</a></td>
+                    <td><a href="{% url 'admin:user_user_change' order.user.id %}">{{ order.user.email }}</a></td>
+                    <td>{{ order.plan.name }}</td>
+                    <td>¥{{ order.amount }}</td>
+                    <td>
+                        {% if order.status == 'paid' %}
+                            <span class="status-paid">已支付</span>
+                        {% elif order.status == 'pending' %}
+                            <span class="status-pending">待支付</span>
+                        {% elif order.status == 'cancelled' %}
+                            <span class="status-cancelled">已取消</span>
+                        {% else %}
+                            {{ order.get_status_display }}
+                        {% endif %}
+                    </td>
+                    <td>{{ order.created_at|date:"Y-m-d H:i" }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6">暂无订单</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- 用户管理 -->
+<div class="module">
+    <h2>用户管理</h2>
+    
+    <!-- 搜索和筛选 -->
+    <div class="search-form">
+        <form method="get">
+            <input type="text" name="search" value="{{ search_query }}" placeholder="搜索用户邮箱...">
+            <select name="filter">
+                <option value="all" {% if filter_type == 'all' %}selected{% endif %}>所有用户</option>
+                <option value="premium" {% if filter_type == 'premium' %}selected{% endif %}>高级会员</option>
+                <option value="regular" {% if filter_type == 'regular' %}selected{% endif %}>普通用户</option>
+                <option value="expired" {% if filter_type == 'expired' %}selected{% endif %}>过期会员</option>
+            </select>
+            <input type="submit" value="搜索">
+        </form>
+    </div>
+    
+    <!-- 批量操作表单 -->
+    <form method="post" id="membership-form">
+        {% csrf_token %}
+        <div class="batch-actions">
+            <select name="action" id="action-select">
+                <option value="">选择操作...</option>
+                <option value="set_premium">设置为高级会员</option>
+                <option value="extend_premium">延长会员时间</option>
+                <option value="remove_premium">移除会员权限</option>
+            </select>
+            <input type="number" name="days" id="days-input" placeholder="天数" min="1" value="30" style="display:none;">
+            <input type="submit" value="执行" class="button">
+        </div>
+        
+        <div class="results">
+            <table>
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" id="select-all"></th>
+                        <th>邮箱</th>
+                        <th>用户名</th>
+                        <th>会员状态</th>
+                        <th>到期时间</th>
+                        <th>积分</th>
+                        <th>注册时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users_list %}
+                    <tr>
+                        <td><input type="checkbox" name="user_ids" value="{{ user.id }}"></td>
+                        <td><a href="{% url 'admin:user_user_change' user.id %}">{{ user.email }}</a></td>
+                        <td>{{ user.username|default:"-" }}</td>
+                        <td>
+                            {% if user.is_premium_active %}
+                                <span class="status-premium">🔥 高级会员</span>
+                            {% else %}
+                                <span class="status-regular">👤 普通用户</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if user.premium_expires_at %}
+                                {{ user.premium_expires_at|date:"Y-m-d H:i" }}
+                            {% else %}
+                                -
+                            {% endif %}
+                        </td>
+                        <td>{{ user.points }}</td>
+                        <td>{{ user.created_at|date:"Y-m-d" }}</td>
+                        <td>
+                            <a href="{% url 'admin:user_user_change' user.id %}" class="button">编辑</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="8">没有找到用户</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 全选功能
+    const selectAll = document.getElementById('select-all');
+    const checkboxes = document.querySelectorAll('input[name="user_ids"]');
+    
+    selectAll.addEventListener('change', function() {
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = selectAll.checked;
+        });
+    });
+    
+    // 操作选择变化时显示/隐藏天数输入
+    const actionSelect = document.getElementById('action-select');
+    const daysInput = document.getElementById('days-input');
+    
+    actionSelect.addEventListener('change', function() {
+        if (this.value === 'set_premium' || this.value === 'extend_premium') {
+            daysInput.style.display = 'inline-block';
+        } else {
+            daysInput.style.display = 'none';
+        }
+    });
+});
+</script>
+
+<style>
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.stat-number {
+    font-size: 2em;
+    font-weight: bold;
+    color: #007cba;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.search-form {
+    padding: 15px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.search-form input, .search-form select {
+    margin-right: 10px;
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.batch-actions {
+    padding: 15px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+}
+
+.batch-actions select, .batch-actions input {
+    margin-right: 10px;
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.status-paid { color: #28a745; font-weight: bold; }
+.status-pending { color: #ffc107; font-weight: bold; }
+.status-cancelled { color: #dc3545; font-weight: bold; }
+.status-premium { color: #ffc107; font-weight: bold; }
+.status-regular { color: #6c757d; }
+
+.module h2 {
+    margin: 0;
+    padding: 8px 10px;
+    font-size: 13px;
+    text-align: left;
+    font-weight: normal;
+    background: #79aec8;
+    color: white;
+}
+
+.results table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.results th, .results td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.results th {
+    background: #f8f9fa;
+    font-weight: bold;
+}
+
+.button {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #007cba;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.button:hover {
+    background: #005a87;
+}
+</style>
+{% endblock %}

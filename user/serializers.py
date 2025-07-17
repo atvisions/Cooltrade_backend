@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from rest_framework.authtoken.models import Token
-from .models import User, VerificationCode, InvitationCode, InvitationRecord
+from .models import User, VerificationCode, InvitationCode, InvitationRecord, MembershipPlan, MembershipOrder, PointsTransaction
 from datetime import datetime, timedelta
 from django.utils import timezone
 import re
@@ -12,8 +12,8 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['id', 'email', 'username', 'language', 'points', 'invitation_code', 'created_at', 'updated_at']
-        read_only_fields = ['id', 'points', 'invitation_code', 'created_at', 'updated_at']
+        fields = ['id', 'email', 'username', 'language', 'points', 'invitation_code', 'is_premium', 'premium_expires_at', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'points', 'invitation_code', 'is_premium', 'premium_expires_at', 'created_at', 'updated_at']
 
     def get_invitation_code(self, obj):
         """获取用户的个人邀请码"""
@@ -206,3 +206,57 @@ class InvitationRecordSerializer(serializers.ModelSerializer):
         model = InvitationRecord
         fields = ['invitee_email', 'invitee_username', 'points_awarded', 'created_at']
         read_only_fields = ['invitee_email', 'invitee_username', 'points_awarded', 'created_at']
+
+# 会员相关序列化器
+class MembershipPlanSerializer(serializers.ModelSerializer):
+    """会员套餐序列化器"""
+    class Meta:
+        model = MembershipPlan
+        fields = ['id', 'name', 'plan_type', 'price', 'duration_days', 'is_active']
+        read_only_fields = ['id']
+
+class MembershipOrderSerializer(serializers.ModelSerializer):
+    """会员订单序列化器"""
+    plan_name = serializers.CharField(source='plan.name', read_only=True)
+    plan_type = serializers.CharField(source='plan.plan_type', read_only=True)
+
+    class Meta:
+        model = MembershipOrder
+        fields = ['id', 'order_id', 'plan', 'plan_name', 'plan_type', 'amount', 'status',
+                 'payment_method', 'created_at', 'paid_at', 'expires_at']
+        read_only_fields = ['id', 'order_id', 'plan_name', 'plan_type', 'created_at', 'paid_at', 'expires_at']
+
+class CreateMembershipOrderSerializer(serializers.Serializer):
+    """创建会员订单序列化器"""
+    plan_id = serializers.IntegerField()
+    payment_method = serializers.ChoiceField(choices=MembershipOrder.PAYMENT_METHOD_CHOICES)
+
+    def validate_plan_id(self, value):
+        try:
+            plan = MembershipPlan.objects.get(id=value, is_active=True)
+            return value
+        except MembershipPlan.DoesNotExist:
+            raise serializers.ValidationError("套餐不存在或已停用")
+
+class PointsTransactionSerializer(serializers.ModelSerializer):
+    """积分交易记录序列化器"""
+    class Meta:
+        model = PointsTransaction
+        fields = ['id', 'transaction_type', 'amount', 'reason', 'description', 'created_at']
+        read_only_fields = ['id', 'created_at']
+
+class UserMembershipStatusSerializer(serializers.ModelSerializer):
+    """用户会员状态序列化器"""
+    membership_status = serializers.SerializerMethodField()
+    is_premium_active = serializers.SerializerMethodField()
+
+    class Meta:
+        model = User
+        fields = ['id', 'email', 'is_premium', 'premium_expires_at', 'membership_status', 'is_premium_active', 'points']
+        read_only_fields = ['id', 'email', 'is_premium', 'premium_expires_at', 'membership_status', 'is_premium_active', 'points']
+
+    def get_membership_status(self, obj):
+        return obj.get_membership_status()
+
+    def get_is_premium_active(self, obj):
+        return obj.is_premium_active()

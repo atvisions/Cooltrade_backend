@@ -1,0 +1,167 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+<a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+&rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+&rsaquo; <a href="{% url 'admin:user_user_changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>
+&rsaquo; {{ title }}
+</div>
+{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<div class="module aligned">
+    <h2>选中的用户</h2>
+    <div class="results">
+        <table id="result_list">
+            <thead>
+                <tr>
+                    <th scope="col">邮箱</th>
+                    <th scope="col">用户名</th>
+                    <th scope="col">当前积分</th>
+                    <th scope="col">会员状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr class="{% cycle 'row1' 'row2' %}">
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.username|default:"-" }}</td>
+                    <td>{{ user.points }}</td>
+                    <td>
+                        {% if user.is_premium_active %}
+                            <span style="color: #ffc107;">🔥 高级会员</span>
+                        {% else %}
+                            <span style="color: #6c757d;">👤 普通用户</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">没有选中的用户</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<form method="post" action="">
+    {% csrf_token %}
+    <input type="hidden" name="user_ids" value="{{ user_ids }}">
+    
+    <div class="module aligned">
+        <h2>积分调整</h2>
+        <div class="form-row">
+            <div>
+                <label for="id_points_change">积分变化量:</label>
+                <input type="number" name="points_change" id="id_points_change" required>
+                <p class="help">输入正数增加积分，负数减少积分</p>
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div>
+                <label for="id_reason">调整原因:</label>
+                <input type="text" name="reason" id="id_reason" value="管理员调整" maxlength="100">
+                <p class="help">调整原因将记录在积分交易历史中</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="submit-row">
+        <input type="submit" value="确认调整" class="default">
+        <a href="{% url 'admin:user_user_changelist' %}" class="button cancel-link">取消</a>
+    </div>
+</form>
+
+<style>
+.module h2 {
+    margin: 0;
+    padding: 8px 10px;
+    font-size: 13px;
+    text-align: left;
+    font-weight: normal;
+    background: #79aec8;
+    color: white;
+}
+
+.form-row {
+    overflow: hidden;
+    padding: 10px;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-row div {
+    float: left;
+    margin-right: 20px;
+}
+
+.form-row label {
+    float: left;
+    width: 150px;
+    padding-right: 10px;
+    line-height: 2em;
+    text-align: right;
+    font-weight: bold;
+    color: #666;
+}
+
+.form-row input[type="number"], .form-row input[type="text"] {
+    margin-left: 160px;
+    padding: 5px 6px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-row .help {
+    margin-left: 160px;
+    padding-left: 0;
+    font-size: 11px;
+    color: #999;
+    margin-top: 2px;
+}
+
+.submit-row {
+    padding: 12px 14px;
+    margin: 0 0 20px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    text-align: right;
+}
+
+.submit-row input[type="submit"] {
+    margin: 0 0 0 5px;
+    background: #417690;
+    border: 1px solid #205067;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.submit-row .cancel-link {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 0 0 10px;
+    background: #ba2121;
+    border: 1px solid #ba2121;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px;
+}
+</style>
+{% endblock %}

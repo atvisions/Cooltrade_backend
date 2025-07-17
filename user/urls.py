@@ -3,7 +3,9 @@ from .views import (
     SendVerificationCodeView, RegisterView, LoginView, UserProfileView,
     TokenRefreshView, ChangePasswordView, RequestPasswordResetView,
     ResetPasswordWithCodeView, GenerateInvitationCodeView, UserInvitationView, UserRankingView,
-    ClaimTemporaryInvitationView
+    ClaimTemporaryInvitationView, MembershipPlansView, CreateMembershipOrderView,
+    UserMembershipStatusView, UserMembershipOrdersView, SpendPointsView, SpendPointsForImageView,
+    CheckPremiumAccessView, PointsConfigView, PointsTransactionHistoryView
 )
 
 urlpatterns = [
@@ -24,4 +26,17 @@ urlpatterns = [
     path('change-password/', ChangePasswordView.as_view(), name='change_password'),
     path('request-password-reset/', RequestPasswordResetView.as_view(), name='request_password_reset'),
     path('reset-password-with-code/', ResetPasswordWithCodeView.as_view(), name='reset_password_with_code'),
+
+    # 会员相关
+    path('membership/plans/', MembershipPlansView.as_view(), name='membership_plans'),
+    path('membership/orders/create/', CreateMembershipOrderView.as_view(), name='create_membership_order'),
+    path('membership/status/', UserMembershipStatusView.as_view(), name='user_membership_status'),
+    path('membership/orders/', UserMembershipOrdersView.as_view(), name='user_membership_orders'),
+
+    # 积分相关
+    path('points/spend/', SpendPointsView.as_view(), name='spend_points'),
+    path('points/spend-for-image/', SpendPointsForImageView.as_view(), name='spend_points_for_image'),
+    path('points/check-access/', CheckPremiumAccessView.as_view(), name='check_premium_access'),
+    path('points/config/', PointsConfigView.as_view(), name='points_config'),
+    path('points/transactions/', PointsTransactionHistoryView.as_view(), name='points_transaction_history'),
 ]

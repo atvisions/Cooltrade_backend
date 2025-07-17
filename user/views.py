@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.conf import settings
-from .models import User, VerificationCode, InvitationCode, InvitationRecord, SystemSetting, TemporaryInvitation
+from .models import User, VerificationCode, InvitationCode, InvitationRecord, SystemSetting, TemporaryInvitation, MembershipPlan, MembershipOrder, PointsTransaction
 from django.utils import timezone
 import random
 import string
@@ -15,7 +15,9 @@ from .serializers import (
     UserSerializer, RegisterSerializer, LoginSerializer,
     SendVerificationCodeSerializer, TokenRefreshSerializer,
     ChangePasswordSerializer, ResetPasswordWithCodeSerializer, ResetPasswordCodeSerializer,
-    InvitationCodeSerializer, InvitationRecordSerializer
+    InvitationCodeSerializer, InvitationRecordSerializer,
+    MembershipPlanSerializer, MembershipOrderSerializer, CreateMembershipOrderSerializer,
+    PointsTransactionSerializer, UserMembershipStatusSerializer
 )
 from django.core.mail import send_mail
 from django.db import transaction
@@ -171,8 +173,20 @@ class RegisterView(APIView):
                         # 邀请码不存在，但不阻止注册
                         pass
 
+                # 给新用户10个积分作为注册奖励
+                user.points = 10
+
                 # 保存用户
                 user.save()
+
+                # 创建注册奖励积分交易记录
+                PointsTransaction.objects.create(
+                    user=user,
+                    transaction_type='earn',
+                    amount=10,
+                    reason='registration',
+                    description='新用户注册奖励'
+                )
 
                 # 更新验证码状态
                 verification.is_used = True
@@ -684,4 +698,393 @@ class ClaimTemporaryInvitationView(APIView):
             return Response({
                 'status': 'error',
                 'message': '认领临时邀请失败'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+# 会员相关视图
+class MembershipPlansView(APIView):
+    """会员套餐列表视图"""
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        """获取所有可用的会员套餐"""
+        try:
+            plans = MembershipPlan.objects.filter(is_active=True).order_by('price')
+            serializer = MembershipPlanSerializer(plans, many=True)
+
+            return Response({
+                'status': 'success',
+                'data': serializer.data
+            })
+        except Exception as e:
+            logger.error(f"获取会员套餐失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '获取会员套餐失败'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class CreateMembershipOrderView(APIView):
+    """创建会员订单视图"""
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        """创建会员订单"""
+        try:
+            serializer = CreateMembershipOrderSerializer(data=request.data)
+            if not serializer.is_valid():
+                return Response({
+                    'status': 'error',
+                    'message': serializer.errors
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            plan_id = serializer.validated_data['plan_id']
+            payment_method = serializer.validated_data['payment_method']
+
+            # 获取套餐信息
+            plan = MembershipPlan.objects.get(id=plan_id, is_active=True)
+
+            # 创建订单
+            order = MembershipOrder.objects.create(
+                user=request.user,
+                plan=plan,
+                amount=plan.price,
+                payment_method=payment_method
+            )
+
+            # 设置过期时间（创建后30分钟内支付）
+            order.expires_at = timezone.now() + timedelta(minutes=30)
+            order.save()
+
+            return Response({
+                'status': 'success',
+                'data': {
+                    'order_id': order.order_id,
+                    'amount': str(order.amount),
+                    'payment_method': order.payment_method,
+                    'expires_at': order.expires_at
+                }
+            }, status=status.HTTP_201_CREATED)
+
+        except MembershipPlan.DoesNotExist:
+            return Response({
+                'status': 'error',
+                'message': '套餐不存在'
+            }, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.error(f"创建会员订单失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '创建会员订单失败'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class UserMembershipStatusView(APIView):
+    """用户会员状态视图"""
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        """获取用户会员状态"""
+        try:
+            serializer = UserMembershipStatusSerializer(request.user)
+            return Response({
+                'status': 'success',
+                'data': serializer.data
+            })
+        except Exception as e:
+            logger.error(f"获取用户会员状态失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '获取用户会员状态失败'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class UserMembershipOrdersView(APIView):
+    """用户会员订单列表视图"""
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        """获取用户的会员订单列表"""
+        try:
+            orders = MembershipOrder.objects.filter(user=request.user).order_by('-created_at')
+            serializer = MembershipOrderSerializer(orders, many=True)
+
+            return Response({
+                'status': 'success',
+                'data': serializer.data
+            })
+        except Exception as e:
+            logger.error(f"获取用户订单失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '获取用户订单失败'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class SpendPointsView(APIView):
+    """消费积分视图"""
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        """消费积分查看高级分析"""
+        try:
+            # 检查用户是否为会员
+            if request.user.is_premium_active():
+                return Response({
+                    'status': 'success',
+                    'message': '会员用户无需消费积分',
+                    'is_premium': True
+                })
+
+            # 检查配置的时间内是否已经消费过积分
+            duration_minutes = getattr(settings, 'POINTS_ACCESS_DURATION_MINUTES', 1440)  # 默认24小时
+            time_ago = timezone.now() - timedelta(minutes=duration_minutes)
+            recent_transaction = PointsTransaction.objects.filter(
+                user=request.user,
+                transaction_type='spend',
+                reason='premium_analysis',
+                created_at__gte=time_ago
+            ).first()
+
+            if recent_transaction:
+                # 有效期内已经消费过积分，无需再次消费
+                duration_minutes = getattr(settings, 'POINTS_ACCESS_DURATION_MINUTES', 1440)
+                return Response({
+                    'status': 'success',
+                    'message': f'{duration_minutes}分钟内已消费积分，可直接查看',
+                    'points_spent': 0,
+                    'remaining_points': request.user.points,
+                    'is_premium': False,
+                    'has_valid_access': True,
+                    'access_expires_at': recent_transaction.created_at + timedelta(minutes=duration_minutes)
+                })
+
+            # 检查积分是否足够
+            required_points = 10  # 查看详情需要10积分
+            if request.user.points < required_points:
+                return Response({
+                    'status': 'error',
+                    'message': f'积分不足，需要{required_points}积分',
+                    'current_points': request.user.points,
+                    'required_points': required_points
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            # 扣除积分
+            with transaction.atomic():
+                request.user.points -= required_points
+                request.user.save()
+
+                # 记录积分交易
+                transaction_record = PointsTransaction.objects.create(
+                    user=request.user,
+                    transaction_type='spend',
+                    amount=required_points,
+                    reason='premium_analysis',
+                    description='查看高级分析报告'
+                )
+
+            duration_minutes = getattr(settings, 'POINTS_ACCESS_DURATION_MINUTES', 1440)
+            return Response({
+                'status': 'success',
+                'message': '积分扣除成功',
+                'points_spent': required_points,
+                'remaining_points': request.user.points,
+                'is_premium': False,
+                'has_valid_access': True,
+                'access_expires_at': transaction_record.created_at + timedelta(minutes=duration_minutes)
+            })
+
+        except Exception as e:
+            logger.error(f"消费积分失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '消费积分失败'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class SpendPointsForImageView(APIView):
+    """消费积分保存图片视图"""
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        """消费积分保存图片"""
+        try:
+            # 检查用户是否为会员
+            if request.user.is_premium_active():
+                return Response({
+                    'status': 'success',
+                    'message': '会员用户无需消费积分',
+                    'is_premium': True
+                })
+
+            # 检查配置的时间内是否已经消费过积分
+            duration_minutes = getattr(settings, 'POINTS_ACCESS_DURATION_MINUTES', 1440)  # 默认24小时
+            time_ago = timezone.now() - timedelta(minutes=duration_minutes)
+            recent_transaction = PointsTransaction.objects.filter(
+                user=request.user,
+                transaction_type='spend',
+                reason__in=['premium_analysis', 'save_image'],  # 检查任何高级功能访问
+                created_at__gte=time_ago
+            ).first()
+
+            if recent_transaction:
+                # 有效期内已经消费过积分，无需再次消费
+                duration_minutes = getattr(settings, 'POINTS_ACCESS_DURATION_MINUTES', 1440)
+                return Response({
+                    'status': 'success',
+                    'message': f'{duration_minutes}分钟内已消费积分，可直接使用',
+                    'points_spent': 0,
+                    'remaining_points': request.user.points,
+                    'is_premium': False,
+                    'has_valid_access': True,
+                    'access_expires_at': recent_transaction.created_at + timedelta(minutes=duration_minutes)
+                })
+
+            # 检查积分是否足够
+            required_points = 10  # 保存图片需要10积分
+            if request.user.points < required_points:
+                return Response({
+                    'status': 'error',
+                    'message': f'积分不足，需要{required_points}积分',
+                    'current_points': request.user.points,
+                    'required_points': required_points
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            # 扣除积分
+            with transaction.atomic():
+                request.user.points -= required_points
+                request.user.save()
+
+                # 记录积分交易
+                transaction_record = PointsTransaction.objects.create(
+                    user=request.user,
+                    transaction_type='spend',
+                    amount=required_points,
+                    reason='save_image',
+                    description='保存分析图片'
+                )
+
+            duration_minutes = getattr(settings, 'POINTS_ACCESS_DURATION_MINUTES', 1440)
+            return Response({
+                'status': 'success',
+                'message': '积分扣除成功',
+                'points_spent': required_points,
+                'remaining_points': request.user.points,
+                'is_premium': False,
+                'has_valid_access': True,
+                'access_expires_at': transaction_record.created_at + timedelta(minutes=duration_minutes)
+            })
+
+        except Exception as e:
+            logger.error(f"消费积分保存图片失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '消费积分失败'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class CheckPremiumAccessView(APIView):
+    """检查高级分析访问权限视图"""
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        """检查用户是否有访问高级分析的权限"""
+        try:
+            # 检查用户是否为会员
+            if request.user.is_premium_active():
+                return Response({
+                    'status': 'success',
+                    'has_access': True,
+                    'access_type': 'premium',
+                    'message': '会员用户可直接访问'
+                })
+
+            # 检查配置的时间内是否已经消费过积分
+            duration_minutes = getattr(settings, 'POINTS_ACCESS_DURATION_MINUTES', 1440)
+            time_ago = timezone.now() - timedelta(minutes=duration_minutes)
+            recent_transaction = PointsTransaction.objects.filter(
+                user=request.user,
+                transaction_type='spend',
+                reason='premium_analysis',
+                created_at__gte=time_ago
+            ).first()
+
+            if recent_transaction:
+                # 有效期内已经消费过积分
+                duration_minutes = getattr(settings, 'POINTS_ACCESS_DURATION_MINUTES', 1440)
+                expires_at = recent_transaction.created_at + timedelta(minutes=duration_minutes)
+                return Response({
+                    'status': 'success',
+                    'has_access': True,
+                    'access_type': 'points',
+                    'message': f'{duration_minutes}分钟内已消费积分，可直接查看',
+                    'access_expires_at': expires_at,
+                    'time_remaining': (expires_at - timezone.now()).total_seconds()
+                })
+
+            # 没有访问权限
+            return Response({
+                'status': 'success',
+                'has_access': False,
+                'access_type': 'none',
+                'message': '需要消费积分或升级会员',
+                'current_points': request.user.points,
+                'required_points': 10
+            })
+
+        except Exception as e:
+            logger.error(f"检查高级分析访问权限失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '检查访问权限失败'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class PointsConfigView(APIView):
+    """积分配置视图"""
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        """获取积分相关配置"""
+        try:
+            duration_minutes = getattr(settings, 'POINTS_ACCESS_DURATION_MINUTES', 1440)
+
+            # 计算友好的时间显示
+            if duration_minutes < 60:
+                duration_text = f"{duration_minutes}分钟"
+                duration_text_en = f"{duration_minutes} minute{'s' if duration_minutes != 1 else ''}"
+            elif duration_minutes < 1440:
+                hours = duration_minutes // 60
+                duration_text = f"{hours}小时"
+                duration_text_en = f"{hours} hour{'s' if hours != 1 else ''}"
+            else:
+                days = duration_minutes // 1440
+                duration_text = f"{days}天"
+                duration_text_en = f"{days} day{'s' if days != 1 else ''}"
+
+            return Response({
+                'status': 'success',
+                'duration_minutes': duration_minutes,
+                'duration_text': duration_text,
+                'duration_text_en': duration_text_en,
+                'required_points': 10
+            })
+        except Exception as e:
+            logger.error(f"获取积分配置失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '获取积分配置失败'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class PointsTransactionHistoryView(APIView):
+    """积分交易历史视图"""
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        """获取用户的积分交易历史"""
+        try:
+            transactions = PointsTransaction.objects.filter(user=request.user).order_by('-created_at')[:50]
+            serializer = PointsTransactionSerializer(transactions, many=True)
+
+            return Response({
+                'status': 'success',
+                'data': serializer.data
+            })
+        except Exception as e:
+            logger.error(f"获取积分交易历史失败: {str(e)}")
+            return Response({
+                'status': 'error',
+                'message': '获取积分交易历史失败'
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
