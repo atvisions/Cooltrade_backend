@@ -57,6 +57,32 @@ def create_crypto_payment_order(request):
                 'message': 'Plan ID is required'
             }, status=status.HTTP_400_BAD_REQUEST)
         
+        # 检查用户是否有未支付的订单
+        from user.models import MembershipOrder
+        from django.utils import timezone
+        
+        pending_orders = MembershipOrder.objects.filter(
+            user=request.user,
+            status='pending',
+            expires_at__gt=timezone.now()  # 只检查未过期的订单
+        ).order_by('-created_at')
+        
+        if pending_orders.exists():
+            latest_pending_order = pending_orders.first()
+            logger.warning(f'User {request.user.id} has pending order {latest_pending_order.order_id}')
+            return Response({
+                'status': 'error',
+                'message': '您有一笔未完成的订单正在等待支付，请先完成该订单或取消后再创建新订单',
+                'data': {
+                    'pending_order_id': latest_pending_order.order_id,
+                    'pending_order_amount': str(latest_pending_order.amount),
+                    'pending_order_created_at': latest_pending_order.created_at.isoformat(),
+                    'pending_order_expires_at': latest_pending_order.expires_at.isoformat() if latest_pending_order.expires_at else None,
+                    'pending_order_plan_name': latest_pending_order.plan.name,
+                    'pending_order_payment_method': latest_pending_order.payment_method
+                }
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
         # 获取会员套餐
         try:
             plan = MembershipPlan.objects.get(id=plan_id, is_active=True)
@@ -116,31 +142,55 @@ def verify_crypto_payment(request):
     """验证加密货币支付"""
     try:
         data = request.data
+        logger.info(f'Received verification request data: {data}')
+        
         order_id = data.get('order_id')
         tx_hash = data.get('tx_hash')
         token_symbol = data.get('token_symbol', 'USDT')
         network = data.get('network', 'ethereum')
         
+        logger.info(f'Parsed parameters - order_id: {order_id}, tx_hash: {tx_hash}, token_symbol: {token_symbol}, network: {network}')
+        
         if not order_id or not tx_hash:
+            logger.warning(f'Missing required parameters - order_id: {order_id}, tx_hash: {tx_hash}')
             return Response({
                 'status': 'error',
                 'message': 'Order ID and transaction hash are required'
             }, status=status.HTTP_400_BAD_REQUEST)
         
+        # 检查交易hash是否已经被使用过
+        from user.models import MembershipOrder
+        existing_order_with_tx = MembershipOrder.objects.filter(
+            payment_info__contains=tx_hash,
+            status='paid'
+        ).first()
+        
+        if existing_order_with_tx:
+            logger.warning(f'Transaction hash {tx_hash} has already been used for order {existing_order_with_tx.order_id}')
+            return Response({
+                'status': 'error',
+                'message': f'Transaction hash has already been used for another order: {existing_order_with_tx.order_id}'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
         # 获取订单
+        logger.info(f'Looking for order {order_id} for user {request.user.id} with status pending')
         try:
             order = MembershipOrder.objects.get(
                 order_id=order_id,
                 user=request.user,
                 status='pending'
             )
+            logger.info(f'Found order: {order.order_id}, status: {order.status}')
         except MembershipOrder.DoesNotExist:
+            logger.warning(f'Order {order_id} not found or already processed for user {request.user.id}')
             return Response({
                 'status': 'error',
                 'message': 'Order not found or already processed'
             }, status=status.HTTP_400_BAD_REQUEST)
         
         # 验证支付
+        logger.info(f'Starting verification for order {order_id}, tx_hash: {tx_hash}, token: {token_symbol}, network: {network}')
+        
         verification_result = crypto_payment_service.verify_payment(
             order_id=order_id,
             token_symbol=token_symbol,
@@ -148,12 +198,23 @@ def verify_crypto_payment(request):
             tx_hash=tx_hash
         )
         
+        logger.info(f'Verification result for order {order_id}: {verification_result}')
+        
         if verification_result['verified']:
             # 支付验证成功，更新订单状态
             order.status = 'paid'
             order.paid_at = timezone.now()
-            order.payment_info['tx_hash'] = tx_hash
-            order.payment_info['verification_result'] = verification_result
+            
+            # 确保 payment_info 是字典格式
+            if isinstance(order.payment_info, str):
+                import json
+                payment_info = json.loads(order.payment_info)
+            else:
+                payment_info = order.payment_info or {}
+            
+            payment_info['tx_hash'] = tx_hash
+            payment_info['verification_result'] = verification_result
+            order.payment_info = payment_info
             order.save()
             
             # 激活会员
@@ -174,33 +235,40 @@ def verify_crypto_payment(request):
             user.save()
             
             # 记录积分交易
+            from user.models import PointsTransaction
             PointsTransaction.objects.create(
                 user=user,
                 transaction_type='earn',
                 amount=points_to_award,
                 reason='premium_purchase',
-                description=f'Premium membership purchase reward for order {order_id}'
+                description=f'会员购买奖励 - 订单 {order_id}'
             )
+            
+            logger.info(f'Payment verified successfully for order {order_id}. User {user.id} awarded {points_to_award} points.')
             
             return Response({
                 'status': 'success',
+                'message': 'Payment verified successfully',
                 'data': {
-                    'message': 'Payment verified successfully',
+                    'order_id': order_id,
                     'points_awarded': points_to_award,
-                    'membership_expires_at': user.premium_expires_at.isoformat()
+                    'membership_expires_at': user.premium_expires_at.isoformat() if user.premium_expires_at else None
                 }
             })
         else:
+            logger.warning(f'Payment verification failed for order {order_id}: {verification_result.get("message", "Unknown error")}')
             return Response({
                 'status': 'error',
-                'message': verification_result['message']
+                'message': verification_result.get('message', 'Payment verification failed')
             }, status=status.HTTP_400_BAD_REQUEST)
-        
+            
     except Exception as e:
+        import traceback
         logger.error(f'Error verifying crypto payment: {e}')
+        logger.error(f'Traceback: {traceback.format_exc()}')
         return Response({
             'status': 'error',
-            'message': 'Failed to verify payment'
+            'message': f'Failed to verify payment: {str(e)}'
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(['GET'])
@@ -219,6 +287,15 @@ def get_crypto_payment_status(request, order_id):
                 'status': 'error',
                 'message': 'Order not found'
             }, status=status.HTTP_404_NOT_FOUND)
+        
+        # 如果订单状态是pending，尝试自动检查支付
+        if order.status == 'pending':
+            auto_check_result = crypto_payment_service.auto_check_payment(order_id)
+            
+            # 如果自动检查成功，重新获取订单信息
+            if auto_check_result.get('verified'):
+                order.refresh_from_db()
+                logger.info(f'Auto-check successful for order {order_id}')
         
         return Response({
             'status': 'success',
@@ -330,7 +407,7 @@ def get_user_orders(request):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def cancel_order(request):
-    """取消订单"""
+    """取消未支付的订单"""
     try:
         data = request.data
         order_id = data.get('order_id')
@@ -354,30 +431,25 @@ def cancel_order(request):
                 'message': 'Order not found or cannot be cancelled'
             }, status=status.HTTP_400_BAD_REQUEST)
         
-        # 检查订单是否过期
-        if order.expires_at and order.expires_at < timezone.now():
-            order.status = 'expired'
-            order.save()
-            return Response({
-                'status': 'error',
-                'message': 'Order has already expired'
-            }, status=status.HTTP_400_BAD_REQUEST)
-        
         # 取消订单
         order.status = 'cancelled'
         order.save()
         
+        logger.info(f'Order {order_id} cancelled by user {request.user.id}')
+        
         return Response({
             'status': 'success',
+            'message': '订单已取消',
             'data': {
-                'message': 'Order cancelled successfully',
                 'order_id': order_id
             }
         })
         
     except Exception as e:
+        import traceback
         logger.error(f'Error cancelling order: {e}')
+        logger.error(f'Traceback: {traceback.format_exc()}')
         return Response({
             'status': 'error',
-            'message': 'Failed to cancel order'
+            'message': f'Failed to cancel order: {str(e)}'
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR) 
