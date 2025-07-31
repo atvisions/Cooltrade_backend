@@ -23444,3 +23444,380 @@ INFO 2025-07-17 01:53:25,037 views_news 93908 6135083008 decrypt returned 2 news
 INFO 2025-07-17 01:53:26,283 utils 93908 6135083008 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
 INFO 2025-07-17 01:53:26,309 utils 93908 6135083008 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
 INFO 2025-07-17 01:53:26,329 utils 93908 6135083008 Cached technical indicators for SOLUSDT (en-US) with key: 381d0fa187639b0ea7ea4b00a8f4e167
+INFO 2025-07-30 01:46:23,294 views_news 67973 6146109440 Getting news for DOGE in crypto market
+INFO 2025-07-30 01:46:23,294 views_news 67973 6146109440 Getting crypto news for DOGE
+INFO 2025-07-30 01:46:23,295 views_news 67973 6162935808 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-30 01:46:23,295 views_news 67973 6179762176 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-30 01:46:23,295 views_news 67973 6196588544 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-30 01:46:23,298 views_news 67973 6213414912 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-30 01:46:23,320 utils 67973 6129283072 Cached technical indicators for DOGEUSDT (en-US) with key: 36bbb32a24523e327c22ddc7812a492a
+INFO 2025-07-30 01:46:23,684 views_news 67973 6179762176 RSS feed returned 0 news items
+INFO 2025-07-30 01:46:24,045 views_news 67973 6162935808 RSS feed returned 1 news items
+INFO 2025-07-30 01:46:24,046 views_news 67973 6146109440 coindesk returned 1 news items
+INFO 2025-07-30 01:46:24,059 views_news 67973 6196588544 RSS feed returned 2 news items
+INFO 2025-07-30 01:46:24,060 views_news 67973 6146109440 decrypt returned 2 news items
+INFO 2025-07-30 01:46:24,540 views_news 67973 6213414912 RSS feed returned 0 news items
+INFO 2025-07-30 01:46:29,809 utils 67973 6129283072 Cached technical indicators for DOGEUSDT (en-US) with key: 36bbb32a24523e327c22ddc7812a492a
+INFO 2025-07-30 01:47:25,829 views_news 67973 6146109440 Getting news for DOGE in crypto market
+INFO 2025-07-30 01:47:25,830 views_news 67973 6146109440 Getting crypto news for DOGE
+INFO 2025-07-30 01:47:25,833 views_news 67973 6162935808 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-30 01:47:25,835 views_news 67973 6179762176 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-30 01:47:25,836 views_news 67973 6196588544 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-30 01:47:25,838 views_news 67973 6213414912 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-30 01:47:25,850 utils 67973 6129283072 Cached technical indicators for DOGEUSDT (en-US) with key: 36bbb32a24523e327c22ddc7812a492a
+INFO 2025-07-30 01:47:26,120 views_news 67973 6179762176 RSS feed returned 0 news items
+INFO 2025-07-30 01:47:26,270 views_news 67973 6162935808 RSS feed returned 1 news items
+INFO 2025-07-30 01:47:26,271 views_news 67973 6146109440 coindesk returned 1 news items
+INFO 2025-07-30 01:47:28,054 views_news 67973 6196588544 RSS feed returned 2 news items
+INFO 2025-07-30 01:47:28,058 views_news 67973 6146109440 decrypt returned 2 news items
+INFO 2025-07-30 01:47:28,184 views_news 67973 6213414912 RSS feed returned 0 news items
+INFO 2025-07-31 01:01:51,623 views_news 67973 6129856512 Getting news for AAPL in stock market
+INFO 2025-07-31 01:01:51,625 views_news 67973 6129856512 Tiingo key available: True
+INFO 2025-07-31 01:01:51,625 views_news 67973 6129856512 NewsAPI key available: False
+INFO 2025-07-31 01:01:51,654 utils 67973 6146682880 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-31 01:01:53,955 views_news 67973 6129856512 tiingo returned 10 news items
+INFO 2025-07-31 01:02:20,670 utils 67973 6163509248 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-31 01:05:42,141 views_news 67973 6163509248 Getting news for AAPL in stock market
+INFO 2025-07-31 01:05:42,142 views_news 67973 6163509248 Tiingo key available: True
+INFO 2025-07-31 01:05:42,142 views_news 67973 6163509248 NewsAPI key available: False
+INFO 2025-07-31 01:05:42,177 utils 67973 6146682880 Cached technical indicators for AAPL (en-US) with key: c4170428b5fc8e8603d4c64ffa91e95b
+INFO 2025-07-31 01:05:43,054 views_news 67973 6163509248 tiingo returned 10 news items
+INFO 2025-07-31 01:24:28,072 views_news 67973 6213988352 Getting news for BTC in crypto market
+INFO 2025-07-31 01:24:28,072 views_news 67973 6213988352 Getting crypto news for BTC
+INFO 2025-07-31 01:24:28,073 views_news 67973 6299873280 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 01:24:28,074 views_news 67973 6316699648 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 01:24:28,075 views_news 67973 6333526016 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 01:24:28,077 views_news 67973 6350352384 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 01:24:28,621 utils 67973 6197161984 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 01:24:28,676 views_news 67973 6299873280 RSS feed returned 2 news items
+INFO 2025-07-31 01:24:28,677 views_news 67973 6213988352 coindesk returned 2 news items
+INFO 2025-07-31 01:24:28,819 views_news 67973 6333526016 RSS feed returned 2 news items
+INFO 2025-07-31 01:24:29,200 views_news 67973 6316699648 RSS feed returned 2 news items
+INFO 2025-07-31 01:24:29,201 views_news 67973 6213988352 cointelegraph returned 2 news items
+INFO 2025-07-31 01:24:29,202 views_news 67973 6213988352 decrypt returned 2 news items
+INFO 2025-07-31 01:24:30,479 views_news 67973 6350352384 RSS feed returned 0 news items
+INFO 2025-07-31 01:24:52,990 views_news 67973 6197161984 Getting news for BTC in crypto market
+INFO 2025-07-31 01:24:52,991 views_news 67973 6197161984 Returning cached news for BTC (crypto)
+INFO 2025-07-31 01:24:53,551 utils 67973 6197161984 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 01:26:11,766 views_news 67973 6129856512 Getting news for BTC in crypto market
+INFO 2025-07-31 01:26:11,766 views_news 67973 6129856512 Getting crypto news for BTC
+INFO 2025-07-31 01:26:11,768 views_news 67973 6163509248 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 01:26:11,768 views_news 67973 6180335616 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 01:26:11,769 views_news 67973 6299873280 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 01:26:11,769 views_news 67973 6316699648 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 01:26:12,090 views_news 67973 6180335616 RSS feed returned 2 news items
+INFO 2025-07-31 01:26:12,139 views_news 67973 6163509248 RSS feed returned 2 news items
+INFO 2025-07-31 01:26:12,140 views_news 67973 6129856512 coindesk returned 2 news items
+INFO 2025-07-31 01:26:12,140 views_news 67973 6129856512 cointelegraph returned 2 news items
+INFO 2025-07-31 01:26:12,341 utils 67973 6213988352 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 01:26:12,391 views_news 67973 6299873280 RSS feed returned 2 news items
+INFO 2025-07-31 01:26:12,394 views_news 67973 6129856512 decrypt returned 2 news items
+INFO 2025-07-31 01:26:13,100 views_news 67973 6316699648 RSS feed returned 0 news items
+INFO 2025-07-31 01:26:21,380 views_news 67973 6197161984 Getting news for BTC in crypto market
+INFO 2025-07-31 01:26:21,382 views_news 67973 6197161984 Returning cached news for BTC (crypto)
+INFO 2025-07-31 01:26:21,942 utils 67973 6213988352 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:26:51,754 views_news 30531 6211776512 Getting news for DOGE in crypto market
+INFO 2025-07-31 02:26:51,759 views_news 30531 6211776512 Getting crypto news for DOGE
+INFO 2025-07-31 02:26:51,761 views_news 30531 6246002688 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:26:51,763 views_news 30531 6262829056 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:26:51,770 views_news 30531 6279655424 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:26:51,770 views_news 30531 6296481792 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:26:51,800 utils 30531 6229176320 Cached technical indicators for DOGEUSDT (en-US) with key: 36bbb32a24523e327c22ddc7812a492a
+INFO 2025-07-31 02:26:52,127 views_news 30531 6262829056 RSS feed returned 1 news items
+INFO 2025-07-31 02:26:52,322 views_news 30531 6246002688 RSS feed returned 0 news items
+INFO 2025-07-31 02:26:52,326 views_news 30531 6211776512 cointelegraph returned 1 news items
+INFO 2025-07-31 02:26:52,546 views_news 30531 6279655424 RSS feed returned 2 news items
+INFO 2025-07-31 02:26:52,548 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:26:53,458 views_news 30531 6296481792 RSS feed returned 1 news items
+INFO 2025-07-31 02:26:53,463 views_news 30531 6211776512 beincrypto returned 1 news items
+INFO 2025-07-31 02:29:15,927 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:29:15,933 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:29:15,934 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:29:15,941 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:29:15,955 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:29:15,958 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:29:16,292 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:29:16,345 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:29:16,348 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:29:16,348 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:29:16,517 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:29:16,607 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:29:16,610 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:29:17,125 views_news 30531 6279655424 RSS feed returned 1 news items
+INFO 2025-07-31 02:29:17,128 views_news 30531 6211776512 beincrypto returned 1 news items
+INFO 2025-07-31 02:29:33,871 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:29:33,874 views_news 30531 6211776512 Returning cached news for BTC (crypto)
+INFO 2025-07-31 02:29:34,445 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:31:33,293 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:31:33,297 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:31:33,298 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:31:33,298 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:31:33,299 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:31:33,301 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:31:33,621 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:31:33,711 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:31:33,713 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:31:33,713 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:31:33,865 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:31:33,987 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:31:33,989 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:31:34,631 views_news 30531 6279655424 RSS feed returned 1 news items
+INFO 2025-07-31 02:31:34,636 views_news 30531 6211776512 beincrypto returned 1 news items
+INFO 2025-07-31 02:33:25,577 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:33:25,578 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:33:25,578 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:33:25,579 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:33:25,586 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:33:25,589 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:33:26,005 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:33:26,007 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:33:26,155 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:33:26,644 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:33:26,645 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:33:26,968 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:33:26,970 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:33:27,322 views_news 30531 6279655424 RSS feed returned 1 news items
+INFO 2025-07-31 02:33:27,325 views_news 30531 6211776512 beincrypto returned 1 news items
+INFO 2025-07-31 02:34:37,213 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:34:37,215 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:34:37,217 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:34:37,237 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:34:37,241 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:34:37,253 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:34:37,610 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:34:37,769 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:34:37,770 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:34:37,770 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:34:37,956 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:34:37,984 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:34:37,985 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:34:38,459 views_news 30531 6279655424 RSS feed returned 1 news items
+INFO 2025-07-31 02:34:38,462 views_news 30531 6211776512 beincrypto returned 1 news items
+INFO 2025-07-31 02:35:27,911 views_news 30531 6229176320 Getting news for BTC in crypto market
+INFO 2025-07-31 02:35:27,913 views_news 30531 6229176320 Returning cached news for BTC (crypto)
+INFO 2025-07-31 02:35:28,456 utils 30531 6211776512 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:37:05,030 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:37:05,033 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:37:05,033 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:37:05,033 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:37:05,033 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:37:05,034 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:37:05,350 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:37:05,438 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:37:05,439 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:37:05,439 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:37:05,619 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:37:05,641 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:37:05,643 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:37:06,335 views_news 30531 6279655424 RSS feed returned 1 news items
+INFO 2025-07-31 02:37:06,337 views_news 30531 6211776512 beincrypto returned 1 news items
+INFO 2025-07-31 02:38:14,235 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:38:14,238 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:38:14,239 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:38:14,240 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:38:14,241 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:38:14,242 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:38:14,539 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:38:14,755 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:38:14,757 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:38:14,757 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:38:14,810 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:38:14,865 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:38:14,867 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:38:15,123 views_news 30531 6279655424 RSS feed returned 1 news items
+INFO 2025-07-31 02:38:15,131 views_news 30531 6211776512 beincrypto returned 1 news items
+INFO 2025-07-31 02:39:12,033 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:39:12,034 views_news 30531 6211776512 Returning cached news for BTC (crypto)
+INFO 2025-07-31 02:39:12,601 utils 30531 6211776512 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:41:31,706 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:41:31,707 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:41:31,707 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:41:31,708 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:41:31,716 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:41:31,719 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:41:32,285 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:41:32,292 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:41:32,303 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:41:32,309 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:41:32,309 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:41:32,802 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:41:32,804 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:41:33,343 views_news 30531 6279655424 RSS feed returned 1 news items
+INFO 2025-07-31 02:41:33,347 views_news 30531 6211776512 beincrypto returned 1 news items
+INFO 2025-07-31 02:42:59,262 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:42:59,267 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:42:59,267 views_news 30531 6246002688 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:42:59,268 views_news 30531 6262829056 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:42:59,268 views_news 30531 6279655424 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:42:59,269 views_news 30531 6313308160 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:42:59,643 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:42:59,826 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:42:59,829 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:42:59,829 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:42:59,841 utils 30531 6296481792 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:42:59,923 views_news 30531 6279655424 RSS feed returned 2 news items
+INFO 2025-07-31 02:42:59,924 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:43:00,391 views_news 30531 6313308160 RSS feed returned 1 news items
+INFO 2025-07-31 02:43:00,399 views_news 30531 6211776512 beincrypto returned 1 news items
+INFO 2025-07-31 02:46:26,951 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:46:26,952 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:46:26,952 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:46:26,952 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:46:26,953 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:46:26,955 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:46:27,269 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:46:27,512 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:46:27,569 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:46:27,572 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:46:27,573 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:46:27,573 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:46:27,573 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:46:28,143 views_news 30531 6279655424 RSS feed returned 2 news items
+INFO 2025-07-31 02:46:28,145 views_news 30531 6211776512 beincrypto returned 2 news items
+INFO 2025-07-31 02:49:30,226 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:49:30,227 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:49:30,227 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:49:30,228 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:49:30,228 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:49:30,231 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:49:30,585 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:49:30,673 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:49:30,677 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:49:30,677 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:49:30,804 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:49:30,888 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:49:30,890 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:49:31,447 views_news 30531 6279655424 RSS feed returned 2 news items
+INFO 2025-07-31 02:49:31,448 views_news 30531 6211776512 beincrypto returned 2 news items
+INFO 2025-07-31 02:51:23,573 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:51:23,573 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:51:23,574 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:51:23,575 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:51:23,575 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:51:23,575 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:51:23,893 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:51:23,981 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:51:23,983 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:51:23,983 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:51:24,146 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:51:24,160 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:51:24,162 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:51:24,704 views_news 30531 6279655424 RSS feed returned 2 news items
+INFO 2025-07-31 02:51:24,705 views_news 30531 6211776512 beincrypto returned 2 news items
+INFO 2025-07-31 02:52:26,921 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:52:26,923 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:52:26,924 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:52:26,925 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:52:26,925 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:52:26,926 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:52:27,339 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:52:27,340 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:52:27,484 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:52:27,511 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:52:28,030 views_news 30531 6279655424 RSS feed returned 2 news items
+INFO 2025-07-31 02:52:28,064 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:52:28,065 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:52:28,065 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:52:28,065 views_news 30531 6211776512 beincrypto returned 2 news items
+INFO 2025-07-31 02:56:08,689 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:56:08,696 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:56:08,696 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:56:08,697 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:56:08,699 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:56:08,699 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:56:09,053 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:56:09,227 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:56:09,228 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:56:09,229 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:56:09,245 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:56:09,416 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:56:09,418 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:56:09,889 views_news 30531 6279655424 RSS feed returned 2 news items
+INFO 2025-07-31 02:56:09,891 views_news 30531 6211776512 beincrypto returned 2 news items
+INFO 2025-07-31 02:56:12,348 views_news 30531 6194950144 Getting news for BTC in crypto market
+INFO 2025-07-31 02:56:12,349 views_news 30531 6194950144 Returning cached news for BTC (crypto)
+INFO 2025-07-31 02:56:12,935 utils 30531 6211776512 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:58:31,438 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:58:31,440 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:58:31,440 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:58:31,441 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:58:31,441 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:58:31,441 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:58:31,777 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:58:31,779 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:58:31,841 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:58:31,844 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:58:32,007 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:58:32,092 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:58:32,094 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:58:32,365 views_news 30531 6279655424 RSS feed returned 2 news items
+INFO 2025-07-31 02:58:32,367 views_news 30531 6211776512 beincrypto returned 2 news items
+INFO 2025-07-31 02:58:36,036 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:58:36,037 views_news 30531 6211776512 Returning cached news for BTC (crypto)
+INFO 2025-07-31 02:58:36,615 utils 30531 6211776512 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:59:46,191 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 02:59:46,194 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 02:59:46,194 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 02:59:46,195 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 02:59:46,195 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 02:59:46,195 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 02:59:46,454 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 02:59:46,618 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 02:59:46,619 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 02:59:46,619 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 02:59:46,763 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 02:59:46,846 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 02:59:46,849 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 02:59:47,779 views_news 30531 6279655424 RSS feed returned 2 news items
+INFO 2025-07-31 02:59:47,780 views_news 30531 6211776512 beincrypto returned 2 news items
+INFO 2025-07-31 03:01:38,967 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 03:01:38,968 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 03:01:38,968 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 03:01:38,969 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 03:01:38,975 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 03:01:38,976 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 03:01:39,301 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 03:01:39,447 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 03:01:39,449 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 03:01:39,449 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 03:01:39,540 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 03:01:39,610 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 03:01:39,614 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 03:01:40,111 views_news 30531 6279655424 RSS feed returned 2 news items
+INFO 2025-07-31 03:01:40,113 views_news 30531 6211776512 beincrypto returned 2 news items
+INFO 2025-07-31 03:02:02,138 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 03:02:02,138 views_news 30531 6211776512 Returning cached news for BTC (crypto)
+INFO 2025-07-31 03:02:02,708 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 03:05:51,453 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 03:05:51,453 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 03:05:51,454 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 03:05:51,457 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 03:05:51,458 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 03:05:51,458 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 03:05:52,002 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 03:05:52,004 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 03:05:52,019 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 03:05:52,168 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 03:05:52,169 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 03:05:52,562 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 03:05:52,563 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 03:05:53,498 views_news 30531 6279655424 RSS feed returned 2 news items
+INFO 2025-07-31 03:05:53,499 views_news 30531 6211776512 beincrypto returned 2 news items
+INFO 2025-07-31 03:06:44,930 views_news 30531 6194950144 Getting news for BTC in crypto market
+INFO 2025-07-31 03:06:44,930 views_news 30531 6194950144 Returning cached news for BTC (crypto)
+INFO 2025-07-31 03:06:45,472 utils 30531 6211776512 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 03:07:17,193 views_news 30531 6211776512 Getting news for BTC in crypto market
+INFO 2025-07-31 03:07:17,193 views_news 30531 6211776512 Getting crypto news for BTC
+INFO 2025-07-31 03:07:17,195 views_news 30531 6229176320 Fetching RSS news from: https://www.coindesk.com/arc/outboundfeeds/rss/
+INFO 2025-07-31 03:07:17,196 views_news 30531 6246002688 Fetching RSS news from: https://cointelegraph.com/rss
+INFO 2025-07-31 03:07:17,196 views_news 30531 6262829056 Fetching RSS news from: https://decrypt.co/feed
+INFO 2025-07-31 03:07:17,196 views_news 30531 6279655424 Fetching RSS news from: https://beincrypto.com/feed/
+INFO 2025-07-31 03:07:17,489 views_news 30531 6246002688 RSS feed returned 2 news items
+INFO 2025-07-31 03:07:17,571 views_news 30531 6229176320 RSS feed returned 2 news items
+INFO 2025-07-31 03:07:17,573 views_news 30531 6211776512 coindesk returned 2 news items
+INFO 2025-07-31 03:07:17,573 views_news 30531 6211776512 cointelegraph returned 2 news items
+INFO 2025-07-31 03:07:17,753 utils 30531 6194950144 Cached technical indicators for BTCUSDT (en-US) with key: 7b51da3adbf870a39bc574b0cffd52de
+INFO 2025-07-31 03:07:17,803 views_news 30531 6262829056 RSS feed returned 2 news items
+INFO 2025-07-31 03:07:17,806 views_news 30531 6211776512 decrypt returned 2 news items
+INFO 2025-07-31 03:07:18,281 views_news 30531 6279655424 RSS feed returned 2 news items
+INFO 2025-07-31 03:07:18,282 views_news 30531 6211776512 beincrypto returned 2 news items

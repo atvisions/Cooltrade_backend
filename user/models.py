@@ -234,9 +234,9 @@ class MembershipOrder(models.Model):
     )
 
     PAYMENT_METHOD_CHOICES = (
-        ('alipay', '支付宝'),
-        ('bank_transfer', '银行转账'),
-        ('wechat_friend', '微信好友'),
+        ('usdt', 'USDT'),
+        ('usdc', 'USDC'),
+        ('paypal', 'PayPal'),
         ('other', '其他'),
     )
 

@@ -7,6 +7,10 @@ from .views import (
     UserMembershipStatusView, UserMembershipOrdersView, SpendPointsView, SpendPointsForImageView,
     CheckPremiumAccessView, PointsConfigView, PointsTransactionHistoryView
 )
+from .views_crypto_payment import (
+    get_supported_tokens, create_crypto_payment_order, verify_crypto_payment,
+    get_crypto_payment_status, get_token_price, get_user_orders, cancel_order
+)
 
 urlpatterns = [
     # 使用与原来相同的 URL 路径
@@ -39,4 +43,15 @@ urlpatterns = [
     path('points/check-access/', CheckPremiumAccessView.as_view(), name='check_premium_access'),
     path('points/config/', PointsConfigView.as_view(), name='points_config'),
     path('points/transactions/', PointsTransactionHistoryView.as_view(), name='points_transaction_history'),
+    
+    # 加密货币支付相关
+    path('crypto/supported-tokens/', get_supported_tokens, name='get_supported_tokens'),
+    path('crypto/create-order/', create_crypto_payment_order, name='create_crypto_payment_order'),
+    path('crypto/verify-payment/', verify_crypto_payment, name='verify_crypto_payment'),
+    path('crypto/payment-status/<str:order_id>/', get_crypto_payment_status, name='get_crypto_payment_status'),
+    path('crypto/token-price/', get_token_price, name='get_token_price'),
+    
+    # 订单管理相关
+    path('orders/', get_user_orders, name='get_user_orders'),
+    path('orders/cancel/', cancel_order, name='cancel_order'),
 ]
